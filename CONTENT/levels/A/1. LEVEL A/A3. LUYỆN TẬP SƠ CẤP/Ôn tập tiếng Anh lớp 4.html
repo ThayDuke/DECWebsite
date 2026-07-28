@@ -322,7 +322,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             border-radius: 18px;
             padding: 16px;
             margin-bottom: 20px;
-            font-size: 1.58rem;
+            font-size: 1.85rem;
             font-weight: 800;
             text-align: left;
             color: var(--text-color);
@@ -373,7 +373,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             border: 1px solid var(--border-main);
             transition: background-color var(--theme-motion-fast), border-color var(--theme-motion-fast), color var(--theme-motion-fast), transform 0.2s ease;
             font-weight: 600;
-            font-size: 1.32rem;
+            font-size: 1.55rem;
             position: relative;
             overflow: hidden;
         }
@@ -1249,6 +1249,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         /* --- Focus Mode Styles --- */
         body.focus-mode {
             height: 100vh;
+            height: 100dvh;
             padding: 10px;
             box-sizing: border-box;
             overflow: hidden;
@@ -1268,9 +1269,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             --focus-progress-margin-bottom: 12px;
             --focus-q-block-padding: 12px 16px;
             --focus-q-block-margin-bottom: 12px;
-            --focus-q-block-font-size: 1.28rem;
+            --focus-q-block-font-size: 1.36rem;
             --focus-option-padding: 8px 12px;
-            --focus-option-font-size: 1.08rem;
+            --focus-option-font-size: 1.12rem;
             --focus-option-radius: 10px;
             --focus-option-gap: 8px;
             --focus-btn-height: 32px;
@@ -1314,6 +1315,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
 
         body.focus-mode #btnFocusMode {
             align-self: flex-end !important;
+            justify-self: end !important;
             margin: 0 0 var(--focus-exit-margin-bottom) 0 !important;
             height: var(--focus-exit-height) !important;
             padding: var(--focus-exit-padding) !important;
@@ -1325,18 +1327,26 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             display: none !important;
         }
 
-        /* Đảm bảo phần quiz content hiển thị tốt và zoom mượt mà */
+        /* Focus shell: giữ progress/controls cố định, chỉ cho nội dung câu hỏi cuộn khi cần. */
         body.focus-mode #quiz-area {
-            display: flex !important;
-            flex-direction: column !important;
-            justify-content: space-between !important;
-            flex: 1 !important;
+            display: grid !important;
+            grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+            align-items: stretch !important;
+            flex: none !important;
             height: 100% !important;
             width: 100% !important;
-            max-width: 900px !important;
+            max-width: 1500px !important;
             margin: 0 auto !important;
-            transform-origin: center top !important;
             box-sizing: border-box !important;
+        }
+
+        body.focus-mode #question-container {
+            min-height: 0 !important;
+            overflow-x: hidden !important;
+            overflow-y: auto !important;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+            padding-right: 4px;
         }
 
         body.focus-mode .question-block {
@@ -1359,10 +1369,11 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
 
         body.focus-mode .controls {
             width: 100% !important;
-            margin-top: auto !important;
+            margin-top: var(--focus-controls-margin-top) !important;
             display: grid !important;
             grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
             align-items: center !important;
+            align-self: end !important;
         }
 
         body.focus-mode .controls .btn {
@@ -1378,7 +1389,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             margin-bottom: var(--focus-progress-margin-bottom) !important;
             padding-top: 0 !important;
             width: 100% !important;
-            max-width: 900px !important;
+            max-width: none !important;
         }
 
 
@@ -1389,7 +1400,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             margin-top: var(--feedback-margin-top) !important;
             font-size: var(--focus-option-font-size) !important;
             border-radius: var(--feedback-radius) !important;
-            height: var(--feedback-height) !important;
+            height: auto !important;
+            min-height: var(--feedback-height) !important;
+            overflow: visible !important;
         }
 
         body.focus-mode #quiz-area.zoom-pending {
@@ -1671,7 +1684,7 @@ const fullQuestionBank = [
         };
 
         // --- FOCUS MODE STATE ---
-        const Q_FOCUS_MAX_ZOOM = 2.0;
+        const Q_FOCUS_MAX_ZOOM = 2.05;
         const Q_FOCUS_STEP = 0.05;
         let qFocusZoomScale = 1.0;
         let qFocusFitFrame = null;
@@ -2040,41 +2053,48 @@ const fullQuestionBank = [
             return document.getElementById('quiz-area');
         }
 
-        function applyFocusZoomScale(scale) {
+        function applyFocusZoomScale(scale, reveal = true) {
             const panel = getFocusPanel();
             if (!panel) return;
 
             const isFocus = document.body.classList.contains('focus-mode');
             qFocusZoomScale = Math.min(Q_FOCUS_MAX_ZOOM, Math.max(1.0, Math.round(scale * 100) / 100));
             panel.style.setProperty('--focus-zoom', String(qFocusZoomScale));
+            panel.style.zoom = '';
 
-            if (!isFocus || qFocusZoomScale <= 1.001) {
-                panel.style.zoom = '';
-                panel.classList.remove('zoom-pending');
+            if (!isFocus) {
+                [
+                    '--focus-q-block-font-size',
+                    '--focus-option-font-size',
+                    '--focus-q-block-padding',
+                    '--focus-option-padding',
+                    '--focus-option-gap'
+                ].forEach(name => panel.style.removeProperty(name));
+                if (reveal) panel.classList.remove('zoom-pending');
                 return;
             }
 
-            panel.style.zoom = String(qFocusZoomScale);
-            panel.classList.remove('zoom-pending');
+            const qVertical = Math.round(12 * qFocusZoomScale);
+            const qHorizontal = Math.round(16 * qFocusZoomScale);
+            const optionVertical = Math.round(8 * qFocusZoomScale);
+            const optionHorizontal = Math.round(12 * qFocusZoomScale);
+
+            panel.style.setProperty('--focus-q-block-font-size', `${(1.36 * qFocusZoomScale).toFixed(3)}rem`);
+            panel.style.setProperty('--focus-option-font-size', `${(1.12 * qFocusZoomScale).toFixed(3)}rem`);
+            panel.style.setProperty('--focus-q-block-padding', `${qVertical}px ${qHorizontal}px`);
+            panel.style.setProperty('--focus-option-padding', `${optionVertical}px ${optionHorizontal}px`);
+            panel.style.setProperty('--focus-option-gap', `${Math.round(8 * qFocusZoomScale)}px`);
+            if (reveal) panel.classList.remove('zoom-pending');
         }
 
         function doesFocusZoomFit(scale) {
             if (!document.body.classList.contains('focus-mode')) return false;
-            const container = document.querySelector('.container');
-            if (!container) return false;
+            const contentViewport = document.getElementById('question-container');
+            if (!contentViewport || contentViewport.clientHeight <= 0) return false;
 
-            const containerRect = container.getBoundingClientRect();
-            
-            // Chiều rộng tối đa của quiz-area là 900px.
-            // Chiều cao giả định an toàn bao gồm feedback sau khi được thu nhỏ tinh gọn là 450px,
-            // giúp phóng to tối đa giao diện và giữ tỉ lệ zoom cố định chống jitter tuyệt đối.
-            const assumedHeight = 450;
-            const widthRequired = 900 * scale;
-            const heightRequired = (assumedHeight * scale) + 40; // 40px padding dự phòng
-
-            // Đảm bảo vừa vặn trong kích thước khả dụng của container
-            return widthRequired <= containerRect.width + 1 &&
-                   heightRequired <= containerRect.height + 1;
+            applyFocusZoomScale(scale, false);
+            return contentViewport.scrollWidth <= contentViewport.clientWidth + 1 &&
+                   contentViewport.scrollHeight <= contentViewport.clientHeight + 1;
         }
 
         function ensureFocusZoomFits() {
@@ -2100,6 +2120,8 @@ const fullQuestionBank = [
             const panel = getFocusPanel();
             if (!panel) return;
             panel.classList.add('zoom-pending');
+            const contentViewport = document.getElementById('question-container');
+            if (contentViewport) contentViewport.scrollTop = 0;
 
             let scale = 1.0;
             let lastFitScale = 1.0;
