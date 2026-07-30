@@ -298,6 +298,7 @@ html {
             background-repeat: no-repeat;
             background-size: cover;
             min-height: 100vh;
+            min-height: 100dvh;
             width: 100%;
             box-sizing: border-box;
             margin: 0;
@@ -359,6 +360,7 @@ html {
             margin: 0 auto 20px;
             position: relative;
             height: calc(100vh - 24px);
+            height: calc(100dvh - 1.5rem);
             min-height: 520px;
             backdrop-filter: blur(8px);
             overflow: hidden;
@@ -697,6 +699,7 @@ html {
             max-width: 100%;
             width: 100%;
             height: calc(100vh - 24px);
+            height: calc(100dvh - 1.5rem);
             border-radius: 24px;
             padding: 0;
             margin: 0;
@@ -2205,7 +2208,65 @@ html {
             font-size: 1.3em;
             font-style: italic;
         }
-    </style>
+
+        @media (max-width: 37.5rem), (max-height: 37.5rem) and (pointer: coarse) {
+            .app-container {
+                min-height: 0;
+            }
+
+            #display-area,
+            body.focus-mode #display-area {
+                min-height: 0;
+                overflow-y: auto;
+                overscroll-behavior: contain;
+            }
+
+            .control-bar,
+            body.focus-mode .control-bar {
+                width: 100%;
+                max-width: 100%;
+                min-height: 0;
+                gap: clamp(0.25rem, 1.5vw, 0.375rem);
+                padding-top: 0.625rem;
+                padding-bottom: max(0.25rem, env(safe-area-inset-bottom));
+                margin: 0 auto;
+                flex: 0 0 auto;
+            }
+
+            .control-left,
+            .control-right {
+                display: none;
+            }
+
+            .control-center {
+                width: 100%;
+                min-width: 0;
+                justify-content: space-between;
+                gap: clamp(0.25rem, 1.5vw, 0.375rem);
+            }
+
+            .btn-sm,
+            .btn-auto,
+            .btn-mic {
+                width: clamp(2.375rem, 12vw, 2.625rem);
+                height: clamp(2.375rem, 12vw, 2.625rem);
+                font-size: 1.125rem;
+            }
+
+            .btn-play {
+                width: clamp(3.375rem, 18vw, var(--control-play-width-mobile));
+                height: clamp(3.375rem, 18vw, var(--control-play-width-mobile));
+                margin: 0;
+                font-size: 1.625rem;
+                transform: none;
+            }
+
+            .btn-play:hover {
+                transform: scale(1.05);
+            }
+        }
+</style>
+    <meta name="dec-scoring-engine" content="DukePronunciationEngine@2.0.0;sha256=29fb17c9072f6a529c30c3189423a22289592aa90e1f623ad6d4528c5cb7cd87;inline=true">
 </head>
 
 <body data-dec-template="listening" data-mode="listening">
@@ -2284,643 +2345,763 @@ html {
     </div>
 
     <script>/**
- * Pure JavaScript Listening Scoring Core Module.
- * Standalone, environment-agnostic core logic for profile-based listening assessment.
- * Schema Version: 2.0.1
+ * DUKE ENGLISH CENTER - Pronunciation Engine 2.0
+ *
+ * Source-of-truth for IPA recognition-proxy scoring and Listening/Speaking
+ * lexical scoring. Standalone lesson builds inline this file verbatim.
  */
 
-(function (root, factory) {
-  if (typeof module === 'object' && module.exports) {
-    module.exports = factory();
-  } else {
-    root.ListeningScoringCore = factory();
-  }
-}(typeof self !== 'undefined' ? self : this, function () {
-  'use strict';
+const DukePronunciationEngine = (function createDukePronunciationEngine() {
+    'use strict';
 
-  function normalizeSmartQuotes(text) {
-    if (!text) return '';
-    return text.replace(/[’`]/g, "'").replace(/''/g, '"');
-  }
+    const API_VERSION = '2.0.0';
+    const IPA_POLICY_VERSION = '2.0.0';
+    const LISTENING_POLICY_VERSION = '3.0.0';
+    const LISTENING_PROFILE_VERSION = '3.0.0';
 
-  function computeSourceHash(text) {
-    const norm = normalizeSmartQuotes(text).toLowerCase().replace(/[{}[\]]/g, '').trim().replace(/\s+/g, ' ');
-    let h = 0x811c9dc5;
-    if (typeof TextEncoder !== 'undefined') {
-      const encoder = new TextEncoder();
-      const bytes = encoder.encode(norm);
-      for (let i = 0; i < bytes.length; i++) {
-        h ^= bytes[i];
-        h = Math.imul(h, 0x01000193) >>> 0;
-      }
-    } else {
-      for (let i = 0; i < norm.length; i++) {
-        const code = norm.charCodeAt(i);
-        if (code < 128) {
-          h ^= code;
-          h = Math.imul(h, 0x01000193) >>> 0;
-        } else {
-          if (code < 0x800) {
-            h ^= (0xc0 | (code >> 6));
-            h = Math.imul(h, 0x01000193) >>> 0;
-            h ^= (0x80 | (code & 0x3f));
-            h = Math.imul(h, 0x01000193) >>> 0;
-          } else {
-            h ^= (0xe0 | (code >> 12));
-            h = Math.imul(h, 0x01000193) >>> 0;
-            h ^= (0x80 | ((code >> 6) & 0x3f));
-            h = Math.imul(h, 0x01000193) >>> 0;
-            h ^= (0x80 | (code & 0x3f));
-            h = Math.imul(h, 0x01000193) >>> 0;
-          }
-        }
-      }
-    }
-    let hex = (h >>> 0).toString(16);
-    while (hex.length < 8) hex = '0' + hex;
-    return hex;
-  }
+    const IPA_PASS_SCORE = Object.freeze({ A: 84, B: 88, C: 90 });
+    const MAX_LISTENING_ALTERNATIVES = Object.freeze({ A: 3, B: 3, C: 5 });
+    const FILLERS = new Set(['uh', 'um', 'ah', 'er', 'hmm']);
 
-  const NUMBER_WORDS_MAP = {
-    'zero': '0', 'one': '1', 'two': '2', 'three': '3', 'four': '4',
-    'five': '5', 'six': '6', 'seven': '7', 'eight': '8', 'nine': '9',
-    'ten': '10', 'eleven': '11', 'twelve': '12', 'thirteen': '13', 'fourteen': '14',
-    'fifteen': '15', 'sixteen': '16', 'seventeen': '17', 'eighteen': '18', 'nineteen': '19',
-    'twenty': '20', 'thirty': '30', 'forty': '40', 'fifty': '50',
-    'sixty': '60', 'seventy': '70', 'eighty': '80', 'ninety': '90',
-    'hundred': '100', 'thousand': '1000', 'million': '1000000',
-    'first': '1', 'second': '2', 'third': '3', 'fourth': '4', 'fifth': '5',
-    'sixth': '6', 'seventh': '7', 'eighth': '8', 'ninth': '9', 'tenth': '10',
-    'eleventh': '11', 'twelfth': '12', 'thirteenth': '13', 'fourteenth': '14', 'fifteenth': '15',
-    'sixteenth': '16', 'seventeenth': '17', 'eighteenth': '18', 'nineteenth': '19', 'twentieth': '20',
-    'thirtieth': '30'
-  };
-
-  const CONTRACTION_EXPANSIONS = {
-    "can't": ["can", "not"],
-    "cant": ["can", "not"],
-    "cannot": ["can", "not"],
-    "don't": ["do", "not"],
-    "dont": ["do", "not"],
-    "doesn't": ["does", "not"],
-    "doesnt": ["does", "not"],
-    "didn't": ["did", "not"],
-    "didnt": ["did", "not"],
-    "won't": ["will", "not"],
-    "wont": ["will", "not"],
-    "isn't": ["is", "not"],
-    "isnt": ["is", "not"],
-    "aren't": ["are", "not"],
-    "arent": ["are", "not"],
-    "wasn't": ["was", "not"],
-    "wasnt": ["was", "not"],
-    "weren't": ["were", "not"],
-    "werent": ["were", "not"],
-    "shouldn't": ["should", "not"],
-    "shouldnt": ["should", "not"],
-    "wouldn't": ["would", "not"],
-    "wouldnt": ["would", "not"],
-    "couldn't": ["could", "not"],
-    "couldnt": ["could", "not"],
-    "i'm": ["i", "am"],
-    "im": ["i", "am"],
-    "you're": ["you", "are"],
-    "youre": ["you", "are"],
-    "he's": ["he", "is"],
-    "hes": ["he", "is"],
-    "she's": ["she", "is"],
-    "shes": ["she", "is"],
-    "it's": ["it", "is"],
-    "its": ["it", "is"],
-    "we're": ["we", "are"],
-    "were": ["we", "are"],
-    "they're": ["they", "are"],
-    "theyre": ["they", "are"],
-    "i've": ["i", "have"],
-    "ive": ["i", "have"],
-    "you've": ["you", "have"],
-    "youve": ["you", "have"],
-    "we've": ["we", "have"],
-    "weve": ["we", "have"],
-    "they've": ["they", "have"],
-    "theyve": ["they", "have"],
-    "i'll": ["i", "will"],
-    "ill": ["i", "will"],
-    "you'll": ["you", "will"],
-    "youll": ["you", "will"],
-    "he'll": ["he", "will"],
-    "hell": ["he", "will"],
-    "she'll": ["she", "will"],
-    "shell": ["she", "will"],
-    "we'll": ["we", "will"],
-    "well": ["we", "will"],
-    "they'll": ["they", "will"],
-    "theyll": ["they", "will"],
-    "there's": ["there", "is"],
-    "theres": ["there", "is"],
-    "what's": ["what", "is"],
-    "whats": ["what", "is"],
-    "that's": ["that", "is"],
-    "thats": ["that", "is"],
-    "o'clock": ["oclock"],
-    "oclock": ["oclock"]
-  };
-
-  const FILLER_WORDS = new Set(['uh', 'um', 'ah', 'er']);
-
-  function generatePhoneticKey(word) {
-    if (!word || !/^[a-zA-Z]+$/.test(word)) return word.toLowerCase();
-    let w = word.toLowerCase();
-    w = w.replace(/ph/g, 'f').replace(/q/g, 'k').replace(/ck/g, 'k');
-    w = w.replace(/c([aou])/g, 'k$1');
-    w = w.replace(/x/g, 'ks');
-    if (w.length > 3 && w.endsWith('e')) w = w.slice(0, -1);
-    const collapsed = [];
-    for (let i = 0; i < w.length; i++) {
-      if (i === 0 || w[i] !== w[i - 1]) collapsed.push(w[i]);
-    }
-    return collapsed.join('');
-  }
-
-  function levenshteinDistance(a, b) {
-    if (a === b) return 0;
-    if (a.length === 0) return b.length;
-    if (b.length === 0) return a.length;
-    const matrix = [];
-    for (let i = 0; i <= b.length; i++) matrix[i] = [i];
-    for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
-    for (let i = 1; i <= b.length; i++) {
-      for (let j = 1; j <= a.length; j++) {
-        if (b.charAt(i - 1) === a.charAt(j - 1)) {
-          matrix[i][j] = matrix[i - 1][j - 1];
-        } else {
-          matrix[i][j] = Math.min(
-            matrix[i - 1][j - 1] + 1,
-            matrix[i][j - 1] + 1,
-            matrix[i - 1][j] + 1
-          );
-        }
-      }
-    }
-    return matrix[b.length][a.length];
-  }
-
-  function canonicalizeWord(word) {
-    let w = word.toLowerCase().trim().replace(/[.,!?;:\"'()]/g, '');
-    if (NUMBER_WORDS_MAP[w]) return NUMBER_WORDS_MAP[w];
-    return w;
-  }
-
-  function escapeRegExp(text) {
-    return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  }
-
-  function applyPhraseEquivalences(text, equivalences) {
-    let norm = normalizeSmartQuotes(text).toLowerCase();
-    norm = norm.replace(/[.,!?;:"()]/g, ' ').replace(/o'clock/g, 'oclock');
-    const entries = Array.isArray(equivalences) ? equivalences.slice() : [];
-    entries.sort(function (a, b) {
-      return String(b.canonical || '').length - String(a.canonical || '').length;
+    // True acoustic homophones only. They are explicit, reviewable ASR aliases.
+    const IPA_ACOUSTIC_EQUIVALENTS = Object.freeze({
+        allowed: ['aloud'],
+        aloud: ['allowed'],
+        bare: ['bear'],
+        bear: ['bare'],
+        blew: ['blue'],
+        blue: ['blew'],
+        brake: ['break'],
+        break: ['brake'],
+        buy: ['by', 'bye'],
+        by: ['buy', 'bye'],
+        bye: ['buy', 'by'],
+        cell: ['sell'],
+        cent: ['scent', 'sent'],
+        deer: ['dear'],
+        dear: ['deer'],
+        fair: ['fare'],
+        fare: ['fair'],
+        flour: ['flower'],
+        flower: ['flour'],
+        hear: ['here'],
+        here: ['hear'],
+        heel: ['heal'],
+        heal: ['heel'],
+        hour: ['our'],
+        our: ['hour'],
+        knew: ['new'],
+        know: ['no'],
+        mail: ['male'],
+        male: ['mail'],
+        meat: ['meet'],
+        meet: ['meat'],
+        new: ['knew'],
+        no: ['know'],
+        one: ['won'],
+        pair: ['pear'],
+        pear: ['pair'],
+        peace: ['piece'],
+        piece: ['peace'],
+        read: ['red'],
+        red: ['read'],
+        right: ['write'],
+        sea: ['see'],
+        see: ['sea'],
+        sell: ['cell'],
+        son: ['sun'],
+        sun: ['son'],
+        tail: ['tale'],
+        tale: ['tail'],
+        their: ['there', "they're"],
+        there: ['their', "they're"],
+        to: ['too', 'two'],
+        too: ['to', 'two'],
+        two: ['to', 'too'],
+        weak: ['week'],
+        week: ['weak'],
+        wear: ['ware', 'where'],
+        where: ['ware', 'wear'],
+        whole: ['hole'],
+        won: ['one'],
+        wood: ['would'],
+        would: ['wood'],
+        write: ['right']
     });
-    for (let i = 0; i < entries.length; i++) {
-      const canonical = String(entries[i].canonical || '').trim().toLowerCase();
-      const variants = Array.isArray(entries[i].variants) ? entries[i].variants : [];
-      if (!canonical) continue;
-      for (let j = 0; j < variants.length; j++) {
-        const variant = String(variants[j] || '').trim().toLowerCase();
-        if (!variant || variant === canonical) continue;
-        const pattern = new RegExp('(^|\\s)' + escapeRegExp(variant).replace(/\\ /g, '\\s+') + '(?=\\s|$)', 'g');
-        norm = norm.replace(pattern, '$1' + canonical);
-      }
-    }
-    return norm;
-  }
 
-  function collapseCompoundNumbers(parts) {
-    const collapsed = [];
-    for (let i = 0; i < parts.length; i++) {
-      const current = parts[i];
-      const next = parts[i + 1];
-      if (/^\d+$/.test(current) && /^\d$/.test(next)) {
-        const base = Number(current);
-        const unit = Number(next);
-        if (base >= 20 && base < 100 && base % 10 === 0) {
-          collapsed.push(String(base + unit));
-          i++;
-          continue;
-        }
-      }
-      collapsed.push(current);
-    }
-    return collapsed;
-  }
+    const NUMBER_WORDS = Object.freeze({
+        zero: '0', one: '1', two: '2', three: '3', four: '4',
+        five: '5', six: '6', seven: '7', eight: '8', nine: '9',
+        ten: '10', eleven: '11', twelve: '12', thirteen: '13', fourteen: '14',
+        fifteen: '15', sixteen: '16', seventeen: '17', eighteen: '18', nineteen: '19',
+        twenty: '20', thirty: '30', forty: '40', fifty: '50',
+        sixty: '60', seventy: '70', eighty: '80', ninety: '90',
+        hundred: '100', thousand: '1000', million: '1000000',
+        first: '1', second: '2', third: '3', fourth: '4', fifth: '5',
+        sixth: '6', seventh: '7', eighth: '8', ninth: '9', tenth: '10',
+        eleventh: '11', twelfth: '12', thirteenth: '13', fourteenth: '14',
+        fifteenth: '15', sixteenth: '16', seventeenth: '17', eighteenth: '18',
+        nineteenth: '19', twentieth: '20', thirtieth: '30'
+    });
 
-  function normalizeTranscript(text, equivalences) {
-    if (!text) return [];
-    let norm = text.normalize ? text.normalize('NFC') : text;
-    norm = applyPhraseEquivalences(norm, equivalences);
-    norm = norm.replace(/[{}[\]]/g, '').trim();
-    const rawTokens = norm.split(/\s+/).filter(Boolean);
-    const parts = [];
-    for (let i = 0; i < rawTokens.length; i++) {
-      const cleanTok = rawTokens[i].replace(/[.,!?;:\"()]/g, '');
-      if (!cleanTok) continue;
-      if (CONTRACTION_EXPANSIONS[cleanTok]) {
-        const exp = CONTRACTION_EXPANSIONS[cleanTok];
-        for (let k = 0; k < exp.length; k++) parts.push(exp[k]);
-      } else {
-        const stripped = cleanTok.replace(/'/g, '');
-        if (CONTRACTION_EXPANSIONS[stripped]) {
-          const exp = CONTRACTION_EXPANSIONS[stripped];
-          for (let k = 0; k < exp.length; k++) parts.push(exp[k]);
-        } else {
-          const canon = canonicalizeWord(cleanTok);
-          parts.push(canon);
-        }
-      }
-    }
-    return collapseCompoundNumbers(parts);
-  }
+    // Only unambiguous contractions are expanded without an apostrophe.
+    const CONTRACTION_PARTS = Object.freeze({
+        "can't": ['can', 'not'],
+        cannot: ['can', 'not'],
+        dont: ['do', 'not'],
+        "don't": ['do', 'not'],
+        doesnt: ['does', 'not'],
+        "doesn't": ['does', 'not'],
+        didnt: ['did', 'not'],
+        "didn't": ['did', 'not'],
+        wont: ['will', 'not'],
+        "won't": ['will', 'not'],
+        isnt: ['is', 'not'],
+        "isn't": ['is', 'not'],
+        arent: ['are', 'not'],
+        "aren't": ['are', 'not'],
+        wasnt: ['was', 'not'],
+        "wasn't": ['was', 'not'],
+        werent: ['were', 'not'],
+        "weren't": ['were', 'not'],
+        couldnt: ['could', 'not'],
+        "couldn't": ['could', 'not'],
+        wouldnt: ['would', 'not'],
+        "wouldn't": ['would', 'not'],
+        shouldnt: ['should', 'not'],
+        "shouldn't": ['should', 'not'],
+        "i'm": ['i', 'am'],
+        "you're": ['you', 'are'],
+        "he's": ['he', 'is'],
+        "she's": ['she', 'is'],
+        "it's": ['it', 'is'],
+        "we're": ['we', 'are'],
+        "they're": ['they', 'are'],
+        "i've": ['i', 'have'],
+        "you've": ['you', 'have'],
+        "we've": ['we', 'have'],
+        "they've": ['they', 'have'],
+        "i'll": ['i', 'will'],
+        "you'll": ['you', 'will'],
+        "he'll": ['he', 'will'],
+        "she'll": ['she', 'will'],
+        "we'll": ['we', 'will'],
+        "they'll": ['they', 'will'],
+        "there's": ['there', 'is'],
+        "what's": ['what', 'is'],
+        "that's": ['that', 'is'],
+        "o'clock": ['oclock']
+    });
 
-  function computeMatchFactor(targetPartObj, candidatePart, level) {
-    const tp = targetPartObj.part;
-    const cp = candidatePart;
-    if (tp === cp) return 1.00;
-
-    if (targetPartObj.homophones && targetPartObj.homophones.indexOf(cp) !== -1) {
-      return 0.97;
-    }
-
-    if (!targetPartObj.isCritical && !targetPartObj.isNumber) {
-      if (targetPartObj.aliases && targetPartObj.aliases.indexOf(cp) !== -1) {
-        return 0.85;
-      }
+    function clamp(value, minimum, maximum) {
+        return Math.min(maximum, Math.max(minimum, value));
     }
 
-    if (!targetPartObj.isCritical && !targetPartObj.isNumber && tp.length > 3 && cp.length > 3) {
-      if ((tp + 's' === cp) || (cp + 's' === tp) || (tp + 'es' === cp) || (cp + 'es' === tp)) {
-        return 0.85;
-      }
+    function round(value, decimals) {
+        const factor = Math.pow(10, decimals);
+        return Math.round(value * factor) / factor;
     }
 
-    const cpPhonetic = generatePhoneticKey(cp);
-    if (targetPartObj.phoneticKey && cpPhonetic === targetPartObj.phoneticKey) {
-      const lvl = (level || 'B').toUpperCase();
-      if (lvl === 'A') return 0.85;
-      if (lvl === 'B') return 0.80;
-      return 0.75;
+    function normalizeLevel(level) {
+        const normalized = String(level || 'B').toUpperCase();
+        return normalized === 'A' || normalized === 'C' ? normalized : 'B';
     }
 
-    if (!targetPartObj.isCritical && !targetPartObj.isNumber && tp.length > 3 && cp.length > 3) {
-      const dist = levenshteinDistance(tp, cp);
-      const maxLen = Math.max(tp.length, cp.length);
-      const sim = 1.0 - (dist / maxLen);
-      if (sim >= 0.80) return 0.80;
+    function normalizeApostrophes(text) {
+        return String(text || '').replace(/[’`]/g, "'").replace(/''/g, '"');
     }
 
-    return 0.00;
-  }
-
-  function scoreSingleCandidate(profile, candidateTranscript, level) {
-    if (!profile || !profile.tokens) {
-      throw new Error('Invalid scoring profile: missing tokens');
+    function escapeRegExp(text) {
+        return String(text || '').replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
     }
 
-    const passScore = profile.passScore || 80;
-    const equivalences = (profile.phraseVariants || []).concat(profile.entityEquivalences || []);
-    const rawCandParts = normalizeTranscript(candidateTranscript, equivalences);
-
-    const targetParts = [];
-    for (let i = 0; i < profile.tokens.length; i++) {
-      const tok = profile.tokens[i];
-      const reqIndexes = tok.requiredPartIndexes || [];
-      const parts = tok.parts || [tok.canonical || tok.display.toLowerCase()];
-      const totalTokWeight = (typeof tok.weight === 'number') ? tok.weight : 1.0;
-      const isIgnored = tok.scorePolicy === 'ignored' || (tok.weight === 0 && tok.scorePolicy !== 'normal');
-      const perPartWeight = parts.length > 0 ? (totalTokWeight / parts.length) : 0.0;
-      const cleanDisplay = tok.display.replace(/[.,!?;:\"()]/g, '');
-
-      for (let pIdx = 0; pIdx < parts.length; pIdx++) {
-        const p = parts[pIdx];
-        const isReq = reqIndexes.indexOf(pIdx) !== -1;
-        const isNum = /\d/.test(p);
-        targetParts.push({
-          tokenId: tok.id,
-          tokenDisplay: cleanDisplay,
-          part: p,
-          isCritical: isReq,
-          isNumber: isNum,
-          isIgnored: isIgnored,
-          weight: perPartWeight,
-          homophones: (tok.homophonesByPart && tok.homophonesByPart[pIdx]) || [],
-          aliases: (tok.aliasesByPart && tok.aliasesByPart[pIdx]) || [],
-          phoneticKey: (tok.phoneticKeysByPart && tok.phoneticKeysByPart[pIdx]) || generatePhoneticKey(p)
+    function applyPhraseEquivalences(text, equivalences) {
+        let value = normalizeApostrophes(text).normalize('NFC').toLowerCase();
+        const entries = Array.isArray(equivalences) ? equivalences.slice() : [];
+        entries.sort((a, b) => String(b.canonical || '').length - String(a.canonical || '').length);
+        entries.forEach((entry) => {
+            const canonical = String(entry && entry.canonical || '').trim().toLowerCase();
+            if (!canonical) return;
+            const variants = Array.isArray(entry.variants) ? entry.variants.slice() : [];
+            variants.sort((a, b) => String(b || '').length - String(a || '').length);
+            variants.forEach((rawVariant) => {
+                const variant = String(rawVariant || '').trim().toLowerCase();
+                if (!variant || variant === canonical) return;
+                const pattern = new RegExp(
+                    '(^|\\s)' + escapeRegExp(variant).replace(/\\ /g, '\\s+') + '(?=\\s|$)',
+                    'g'
+                );
+                value = value.replace(pattern, '$1' + canonical);
+            });
         });
-      }
+        return value;
     }
 
-    // Target-guided joined token split (e.g., 'turtlesare' -> 'turtles', 'are')
-    const candidateParts = [];
-    for (let cIdx = 0; cIdx < rawCandParts.length; cIdx++) {
-      const cTok = rawCandParts[cIdx];
-      let directMatch = false;
-      for (let k = 0; k < targetParts.length; k++) {
-        if (computeMatchFactor(targetParts[k], cTok, level || profile.level) > 0) {
-          directMatch = true;
-          break;
-        }
-      }
-      if (directMatch) {
-        candidateParts.push(cTok);
-      } else {
-        let splitFound = false;
-        for (let k = 0; k < targetParts.length - 1; k++) {
-          const tp1 = targetParts[k].part;
-          const tp2 = targetParts[k + 1].part;
+    function normalizeSurface(text, equivalences) {
+        let value = applyPhraseEquivalences(text, equivalences);
+        value = value.replace(/[-–—/]+/g, ' ');
+        value = value.replace(/[^a-z0-9'\s]/g, ' ');
+        return value.replace(/\s+/g, ' ').trim();
+    }
 
-          if (cTok === (tp1 + tp2)) {
-            candidateParts.push(tp1, tp2);
-            splitFound = true;
-            break;
-          }
-
-          const stem1 = tp1.endsWith('s') ? tp1.slice(0, -1) : tp1;
-          const prefixes = [tp1, stem1];
-          for (let p = 0; p < prefixes.length; p++) {
-            const prefix = prefixes[p];
-            if (cTok.startsWith(prefix) && cTok.length > prefix.length) {
-              const suffix = cTok.slice(prefix.length);
-              const mf2 = computeMatchFactor(targetParts[k + 1], suffix, level || profile.level);
-              if (mf2 > 0 || suffix === 'is' || suffix === 'are' || suffix === 'a' || suffix === 'er' || suffix === 's') {
-                candidateParts.push(prefix, suffix);
-                splitFound = true;
-                break;
-              }
+    function normalizeTokens(text, equivalences) {
+        const surface = normalizeSurface(text, equivalences);
+        if (!surface) return [];
+        const output = [];
+        surface.split(' ').forEach((token) => {
+            const expansion = CONTRACTION_PARTS[token];
+            if (expansion) {
+                output.push(...expansion);
+                return;
             }
-          }
-          if (splitFound) break;
-        }
-        if (!splitFound) {
-          candidateParts.push(cTok);
-        }
-      }
-    }
-
-    const M = targetParts.length;
-    const N = candidateParts.length;
-
-    const dp = Array(M + 1);
-    for (let i = 0; i <= M; i++) {
-      dp[i] = Array(N + 1).fill(0);
-    }
-
-    const matchFactors = Array(M);
-    for (let i = 0; i < M; i++) {
-      matchFactors[i] = Array(N);
-      for (let j = 0; j < N; j++) {
-        matchFactors[i][j] = computeMatchFactor(targetParts[i], candidateParts[j], level || profile.level);
-      }
-    }
-
-    for (let i = 1; i <= M; i++) {
-      for (let j = 1; j <= N; j++) {
-        const factor = matchFactors[i - 1][j - 1];
-        const matchScore = dp[i - 1][j - 1] + (targetParts[i - 1].weight * factor);
-        const skipTarget = dp[i - 1][j];
-        const skipCand = dp[i][j - 1];
-        dp[i][j] = Math.max(matchScore, skipTarget, skipCand);
-      }
-    }
-
-    let i = M;
-    let j = N;
-    const matchedTargetIndices = new Set();
-    const matchedCandIndices = new Set();
-    const targetMatchDetails = Array(M).fill(null);
-
-    while (i > 0 && j > 0) {
-      const factor = matchFactors[i - 1][j - 1];
-      const matchScore = dp[i - 1][j - 1] + (targetParts[i - 1].weight * factor);
-      const current = dp[i][j];
-
-      if (Math.abs(current - matchScore) < 1e-6 && factor > 0) {
-        matchedTargetIndices.add(i - 1);
-        matchedCandIndices.add(j - 1);
-        targetMatchDetails[i - 1] = {
-          candidatePart: candidateParts[j - 1],
-          matchFactor: factor,
-          earned: targetParts[i - 1].weight * factor
-        };
-        i--;
-        j--;
-      } else if (Math.abs(current - dp[i - 1][j]) < 1e-6) {
-        i--;
-      } else {
-        j--;
-      }
-    }
-
-    let earnedWeight = 0.0;
-    let totalWeight = 0.0;
-    const missingCritical = [];
-    const missingCriticalTokens = new Set();
-
-    for (let idx = 0; idx < M; idx++) {
-      const tp = targetParts[idx];
-      if (!tp.isIgnored) {
-        totalWeight += tp.weight;
-      }
-      const details = targetMatchDetails[idx];
-
-      if (details) {
-        if (!tp.isIgnored) {
-          earnedWeight += details.earned;
-        }
-        if (tp.isCritical && details.matchFactor < 0.70) {
-          missingCriticalTokens.add(tp.tokenDisplay);
-        }
-      } else {
-        if (tp.isCritical) {
-          missingCriticalTokens.add(tp.tokenDisplay);
-        }
-      }
-    }
-
-    missingCriticalTokens.forEach(function (tok) {
-      missingCritical.push(tok);
-    });
-
-    let extraPenalty = 0.0;
-    for (let cIdx = 0; cIdx < N; cIdx++) {
-      if (!matchedCandIndices.has(cIdx)) {
-        const extraWord = candidateParts[cIdx];
-        if (FILLER_WORDS.has(extraWord)) {
-          extraPenalty += 0.5;
-        } else {
-          extraPenalty += 2.0;
-        }
-      }
-    }
-    if (extraPenalty > 10.0) extraPenalty = 10.0;
-
-    let rawScore = 0;
-    if (totalWeight > 0) {
-      rawScore = Math.round(Math.max(0, (100.0 * earnedWeight / totalWeight) - extraPenalty));
-    } else {
-      rawScore = 100;
-    }
-
-    let finalScore = rawScore;
-    if (missingCritical.length > 0) {
-      finalScore = Math.min(rawScore, passScore - 1);
-    }
-    if (earnedWeight >= totalWeight && extraPenalty === 0 && missingCritical.length === 0) {
-      finalScore = 100;
-    }
-
-    const isPass = missingCritical.length === 0 && finalScore >= passScore;
-
-    const tokenScores = [];
-    for (let tIdx = 0; tIdx < profile.tokens.length; tIdx++) {
-      const tok = profile.tokens[tIdx];
-      const isIgnored = tok.scorePolicy === 'ignored' || (tok.weight === 0 && tok.scorePolicy !== 'normal');
-      if (isIgnored) {
-        tokenScores.push({
-          id: tok.id,
-          display: tok.display,
-          status: 'ignored',
-          matchRatio: 1.0
+            output.push(NUMBER_WORDS[token] || token);
         });
-        continue;
-      }
+        return output;
+    }
 
-      let tokEarned = 0.0;
-      let tokTotal = 0.0;
-      for (let pIdx = 0; pIdx < M; pIdx++) {
-        if (targetParts[pIdx].tokenId === tok.id) {
-          tokTotal += targetParts[pIdx].weight;
-          if (targetMatchDetails[pIdx]) {
-            tokEarned += targetMatchDetails[pIdx].earned;
-          }
+    function normalizedLexicalText(text) {
+        return normalizeTokens(text, []).join(' ');
+    }
+
+    function levenshtein(a, b) {
+        if (a === b) return 0;
+        if (!a.length) return b.length;
+        if (!b.length) return a.length;
+        const previous = Array.from({ length: b.length + 1 }, (_, index) => index);
+        const current = new Array(b.length + 1);
+        for (let i = 1; i <= a.length; i++) {
+            current[0] = i;
+            for (let j = 1; j <= b.length; j++) {
+                current[j] = a[i - 1] === b[j - 1]
+                    ? previous[j - 1]
+                    : Math.min(previous[j - 1] + 1, previous[j] + 1, current[j - 1] + 1);
+            }
+            for (let j = 0; j <= b.length; j++) previous[j] = current[j];
         }
-      }
-      const tokRatio = tokTotal > 0 ? (tokEarned / tokTotal) : 0;
-      let status = 'incorrect';
-      if (tokRatio >= 0.95) status = 'correct';
-      else if (tokRatio >= 0.70) status = 'near';
-
-      tokenScores.push({
-        id: tok.id,
-        display: tok.display,
-        status: status,
-        matchRatio: roundTo(tokRatio, 2)
-      });
+        return previous[b.length];
     }
 
-    return {
-      finalScore: finalScore,
-      rawScore: rawScore,
-      isPass: isPass,
-      passScore: passScore,
-      missingCritical: missingCritical,
-      extraPenalty: extraPenalty,
-      earnedWeight: roundTo(earnedWeight, 2),
-      totalWeight: roundTo(totalWeight, 2),
-      tokenScores: tokenScores,
-      candidateText: candidateTranscript
-    };
-  }
-
-  function scoreCandidates(profile, candidateInput, level, rules) {
-    let candidates = [];
-    if (Array.isArray(candidateInput)) {
-      candidates = candidateInput;
-    } else if (typeof candidateInput === 'string') {
-      candidates = [candidateInput];
-    } else if (candidateInput && typeof candidateInput === 'object') {
-      if (candidateInput.transcript) candidates = [candidateInput.transcript];
+    function lexicalSimilarity(a, b) {
+        if (!a || !b) return a === b ? 1 : 0;
+        return 1 - levenshtein(a, b) / Math.max(a.length, b.length);
     }
 
-    candidates = candidates.map(function (c) {
-      if (typeof c === 'string') return c;
-      if (c && c.transcript) return c.transcript;
-      return String(c || '');
-    }).filter(function (c) { return c.trim().length > 0; });
-
-    if (candidates.length === 0) {
-      return {
-        finalScore: 0,
-        rawScore: 0,
-        isPass: false,
-        passScore: profile ? (profile.passScore || 80) : 80,
-        missingCritical: profile && profile.tokens ? profile.tokens.filter(function (t) { return t.requiredPartIndexes && t.requiredPartIndexes.length > 0; }).map(function (t) { return t.display.replace(/[.,!?;:\"()]/g, ''); }) : [],
-        extraPenalty: 0,
-        earnedWeight: 0,
-        totalWeight: 1,
-        tokenScores: profile && profile.tokens ? profile.tokens.map(function (t) {
-          const isIgnored = t.scorePolicy === 'ignored' || (t.weight === 0 && t.scorePolicy !== 'normal');
-          return { id: t.id, display: t.display, status: isIgnored ? 'ignored' : 'incorrect', matchRatio: isIgnored ? 1.0 : 0 };
-        }) : [],
-        candidateText: ''
-      };
+    function normalizeCandidates(candidateInput) {
+        const input = Array.isArray(candidateInput) ? candidateInput : [candidateInput];
+        const seen = new Set();
+        const output = [];
+        input.forEach((candidate, inputIndex) => {
+            const transcript = typeof candidate === 'string'
+                ? candidate
+                : String(candidate && candidate.transcript || '');
+            const trimmed = transcript.trim();
+            if (!trimmed) return;
+            const key = normalizedLexicalText(trimmed);
+            if (!key || seen.has(key)) return;
+            seen.add(key);
+            const confidenceValue = typeof candidate === 'object' && candidate !== null
+                ? Number(candidate.confidence)
+                : NaN;
+            const rankValue = typeof candidate === 'object' && candidate !== null
+                ? Number(candidate.rank)
+                : NaN;
+            output.push({
+                transcript: trimmed,
+                confidence: Number.isFinite(confidenceValue) ? clamp(confidenceValue, 0, 1) : null,
+                rank: Number.isFinite(rankValue) ? Math.max(0, Math.floor(rankValue)) : inputIndex,
+                inputIndex
+            });
+        });
+        return output;
     }
 
-    const maxAlts = (profile && profile.level === 'C') ? 5 : 3;
-    const evalCandidates = candidates.slice(0, maxAlts);
-    const scoredList = [];
-
-    for (let idx = 0; idx < evalCandidates.length; idx++) {
-      const candText = evalCandidates[idx];
-      const scoreRes = scoreSingleCandidate(profile, candText, level || (profile ? profile.level : 'B'));
-      scoreRes.candidateIndex = idx;
-      scoredList.push(scoreRes);
+    function confidenceBand(confidence) {
+        if (confidence === null || !Number.isFinite(confidence)) return 'unavailable';
+        if (confidence >= 0.8) return 'high';
+        if (confidence >= 0.55) return 'medium';
+        return 'low';
     }
 
-    scoredList.sort(function (a, b) {
-      if (a.missingCritical.length !== b.missingCritical.length) {
-        return a.missingCritical.length - b.missingCritical.length;
-      }
-      if (b.finalScore !== a.finalScore) {
-        return b.finalScore - a.finalScore;
-      }
-      if (a.extraPenalty !== b.extraPenalty) {
-        return a.extraPenalty - b.extraPenalty;
-      }
-      return a.candidateIndex - b.candidateIndex;
+    function confidenceForSort(candidate) {
+        return candidate.confidence === null ? -1 : candidate.confidence;
+    }
+
+    function ipaEquivalent(target, spoken, explicitAliases) {
+        const aliases = [];
+        const builtIn = IPA_ACOUSTIC_EQUIVALENTS[target];
+        if (Array.isArray(builtIn)) aliases.push(...builtIn);
+        if (Array.isArray(explicitAliases)) aliases.push(...explicitAliases);
+        return aliases.some((alias) => normalizedLexicalText(alias) === spoken);
+    }
+
+    function scoreIpaCandidate(profile, candidate) {
+        const target = normalizedLexicalText(profile.targetText);
+        const spoken = normalizedLexicalText(candidate.transcript);
+        const level = normalizeLevel(profile.level);
+        const passScore = IPA_PASS_SCORE[level];
+        const exact = target && spoken === target;
+        const accepted = !exact && target && ipaEquivalent(target, spoken, profile.aliases);
+        const similarity = target && spoken ? lexicalSimilarity(target, spoken) : 0;
+        let finalScore = 0;
+        let status = 'incorrect';
+
+        if (exact) {
+            finalScore = 100;
+            status = 'correct';
+        } else if (accepted) {
+            finalScore = 92;
+            status = 'accepted';
+        } else if (similarity >= 0.8) {
+            finalScore = Math.min(passScore - 1, Math.round(55 + similarity * 25));
+            status = 'near';
+        } else {
+            finalScore = Math.round(similarity * 55);
+        }
+
+        const targetWords = target ? target.split(' ') : [String(profile.targetText || '')];
+        const tokenScores = targetWords.map((word, index) => ({
+            id: index,
+            display: word,
+            status,
+            matchRatio: status === 'correct' ? 1 : (status === 'accepted' ? 0.92 : round(similarity, 2)),
+            hint: status === 'incorrect'
+                ? 'Hệ thống chưa nhận đúng từ. Hãy nghe mẫu và nói lại.'
+                : ''
+        }));
+
+        return {
+            apiVersion: API_VERSION,
+            policyVersion: IPA_POLICY_VERSION,
+            assessmentMode: 'asr_proxy',
+            finalScore,
+            rawScore: finalScore,
+            isPass: (exact || accepted) && finalScore >= passScore,
+            passScore,
+            confidenceBand: confidenceBand(candidate.confidence),
+            selectedCandidate: candidate.transcript,
+            candidateText: candidate.transcript,
+            candidateConfidence: candidate.confidence,
+            candidateRank: candidate.rank,
+            tokenScores,
+            missingCritical: [],
+            insertions: [],
+            deletions: status === 'incorrect' ? targetWords.slice() : [],
+            substitutions: status === 'near'
+                ? [{ target: target, candidate: spoken }]
+                : [],
+            extraPenalty: 0,
+            earnedWeight: round(finalScore / 100, 2),
+            totalWeight: 1,
+            diagnostics: {
+                targetIpa: String(profile.targetIpa || ''),
+                evidence: exact ? 'exact_transcript' : (accepted ? 'approved_acoustic_equivalent' : 'lexical_proxy'),
+                lexicalSimilarity: round(similarity, 3)
+            }
+        };
+    }
+
+    function emptyIpaResult(profile) {
+        const level = normalizeLevel(profile && profile.level);
+        const target = normalizedLexicalText(profile && profile.targetText);
+        return {
+            apiVersion: API_VERSION,
+            policyVersion: IPA_POLICY_VERSION,
+            assessmentMode: 'asr_proxy',
+            finalScore: 0,
+            rawScore: 0,
+            isPass: false,
+            passScore: IPA_PASS_SCORE[level],
+            confidenceBand: 'unavailable',
+            selectedCandidate: '',
+            candidateText: '',
+            candidateConfidence: null,
+            candidateRank: -1,
+            evaluatedCandidatesCount: 0,
+            tokenScores: (target ? target.split(' ') : []).map((word, index) => ({
+                id: index,
+                display: word,
+                status: 'incorrect',
+                matchRatio: 0,
+                hint: 'Không nhận được giọng nói. Hãy thử lại.'
+            })),
+            missingCritical: [],
+            insertions: [],
+            deletions: target ? target.split(' ') : [],
+            substitutions: [],
+            extraPenalty: 0,
+            earnedWeight: 0,
+            totalWeight: 1,
+            diagnostics: { targetIpa: String(profile && profile.targetIpa || ''), evidence: 'no_transcript' }
+        };
+    }
+
+    function scoreIpaCandidates(profileInput, candidateInput, legacyLevel) {
+        const profile = typeof profileInput === 'string'
+            ? { targetText: profileInput, targetIpa: '', level: legacyLevel }
+            : Object.assign({}, profileInput || {});
+        const candidates = normalizeCandidates(candidateInput);
+        if (!candidates.length) return emptyIpaResult(profile);
+        const scored = candidates.map((candidate) => scoreIpaCandidate(profile, candidate));
+        scored.sort((a, b) =>
+            b.finalScore - a.finalScore
+            || confidenceForSort(b) - confidenceForSort(a)
+            || a.candidateRank - b.candidateRank
+        );
+        scored[0].evaluatedCandidatesCount = scored.length;
+        return scored[0];
+    }
+
+    function validateListeningProfile(profile) {
+        if (!profile || profile.schemaVersion !== LISTENING_PROFILE_VERSION) {
+            throw new Error('Invalid Listening profile schema; expected 3.0.0');
+        }
+        if (!Array.isArray(profile.tokens) || !profile.tokens.length) {
+            throw new Error('Invalid Listening profile: missing tokens');
+        }
+    }
+
+    function buildListeningTargetParts(profile) {
+        const parts = [];
+        profile.tokens.forEach((token) => {
+            const tokenParts = Array.isArray(token.parts) && token.parts.length
+                ? token.parts
+                : [String(token.canonical || token.display || '').toLowerCase()];
+            const totalWeight = typeof token.weight === 'number' ? token.weight : 1;
+            const partWeight = tokenParts.length ? totalWeight / tokenParts.length : 0;
+            const requiredIndexes = Array.isArray(token.requiredPartIndexes)
+                ? token.requiredPartIndexes
+                : [];
+            tokenParts.forEach((part, partIndex) => {
+                parts.push({
+                    tokenId: token.id,
+                    tokenDisplay: String(token.display || part),
+                    part: String(part || '').toLowerCase(),
+                    tokenClass: Array.isArray(token.partClasses)
+                        ? token.partClasses[partIndex] || token.tokenClass || 'content'
+                        : token.tokenClass || 'content',
+                    criticalReason: Array.isArray(token.criticalReasons)
+                        ? token.criticalReasons[partIndex] || null
+                        : token.criticalReason || null,
+                    isCritical: requiredIndexes.includes(partIndex),
+                    isIgnored: token.scorePolicy === 'ignored' || totalWeight === 0,
+                    isNumber: /^\d+$/.test(String(part || '')),
+                    weight: partWeight,
+                    homophones: token.homophonesByPart && token.homophonesByPart[partIndex] || [],
+                    aliases: token.aliasesByPart && token.aliasesByPart[partIndex] || []
+                });
+            });
+        });
+        return parts;
+    }
+
+    function listeningMatchFactor(targetPart, candidatePart) {
+        if (targetPart.part === candidatePart) return 1;
+        if (targetPart.homophones.includes(candidatePart)) return 0.98;
+        if (!targetPart.isCritical && targetPart.aliases.includes(candidatePart)) return 0.82;
+        if (!targetPart.isCritical
+            && targetPart.tokenClass === 'content'
+            && targetPart.part.length >= 5
+            && candidatePart.length >= 5
+            && lexicalSimilarity(targetPart.part, candidatePart) >= 0.88) {
+            return 0.68;
+        }
+        return 0;
+    }
+
+    function insertionUnits(token) {
+        return FILLERS.has(token) ? 0.03 : 0.18;
+    }
+
+    function alignListening(targetParts, candidateParts) {
+        const n = targetParts.length;
+        const m = candidateParts.length;
+        const dp = Array.from({ length: n + 1 }, () => Array(m + 1).fill(0));
+        const back = Array.from({ length: n + 1 }, () => Array(m + 1).fill(null));
+
+        for (let i = 1; i <= n; i++) {
+            dp[i][0] = dp[i - 1][0];
+            back[i][0] = { op: 'delete', previousI: i - 1, previousJ: 0 };
+        }
+        for (let j = 1; j <= m; j++) {
+            dp[0][j] = dp[0][j - 1] - insertionUnits(candidateParts[j - 1]);
+            back[0][j] = { op: 'insert', previousI: 0, previousJ: j - 1 };
+        }
+
+        for (let i = 1; i <= n; i++) {
+            for (let j = 1; j <= m; j++) {
+                const target = targetParts[i - 1];
+                const candidate = candidateParts[j - 1];
+                const factor = listeningMatchFactor(target, candidate);
+                const choices = [
+                    {
+                        value: dp[i - 1][j - 1] + target.weight * factor,
+                        op: factor > 0 ? 'match' : 'substitute',
+                        factor,
+                        previousI: i - 1,
+                        previousJ: j - 1
+                    },
+                    {
+                        value: dp[i - 1][j],
+                        op: 'delete',
+                        factor: 0,
+                        previousI: i - 1,
+                        previousJ: j
+                    },
+                    {
+                        value: dp[i][j - 1] - insertionUnits(candidate),
+                        op: 'insert',
+                        factor: 0,
+                        previousI: i,
+                        previousJ: j - 1
+                    }
+                ];
+
+                if (i >= 2 && j >= 2
+                    && targetParts[i - 2].part === candidateParts[j - 1]
+                    && targetParts[i - 1].part === candidateParts[j - 2]) {
+                    choices.push({
+                        value: dp[i - 2][j - 2]
+                            + 0.8 * (targetParts[i - 2].weight + targetParts[i - 1].weight),
+                        op: 'transpose',
+                        factor: 0.8,
+                        previousI: i - 2,
+                        previousJ: j - 2
+                    });
+                }
+
+                choices.sort((a, b) => b.value - a.value);
+                dp[i][j] = choices[0].value;
+                back[i][j] = choices[0];
+            }
+        }
+
+        const details = Array(n).fill(null);
+        const matchedCandidateIndexes = new Set();
+        const insertions = [];
+        const deletions = [];
+        const substitutions = [];
+        let transpositions = 0;
+        let i = n;
+        let j = m;
+        while (i > 0 || j > 0) {
+            const step = back[i][j];
+            if (!step) break;
+            if (step.op === 'match' || step.op === 'substitute') {
+                const targetIndex = i - 1;
+                const candidateIndex = j - 1;
+                if (step.op === 'match') {
+                    details[targetIndex] = {
+                        factor: step.factor,
+                        candidateIndex,
+                        candidate: candidateParts[candidateIndex]
+                    };
+                    matchedCandidateIndexes.add(candidateIndex);
+                } else {
+                    substitutions.push({
+                        target: targetParts[targetIndex].tokenDisplay,
+                        candidate: candidateParts[candidateIndex]
+                    });
+                    matchedCandidateIndexes.add(candidateIndex);
+                }
+            } else if (step.op === 'delete') {
+                deletions.push(targetParts[i - 1].tokenDisplay);
+            } else if (step.op === 'insert') {
+                insertions.push(candidateParts[j - 1]);
+            } else if (step.op === 'transpose') {
+                details[i - 2] = { factor: 0.8, candidateIndex: j - 1, candidate: candidateParts[j - 1] };
+                details[i - 1] = { factor: 0.8, candidateIndex: j - 2, candidate: candidateParts[j - 2] };
+                matchedCandidateIndexes.add(j - 1);
+                matchedCandidateIndexes.add(j - 2);
+                transpositions++;
+            }
+            i = step.previousI;
+            j = step.previousJ;
+        }
+
+        return {
+            details,
+            matchedCandidateIndexes,
+            insertions: insertions.reverse(),
+            deletions: deletions.reverse(),
+            substitutions: substitutions.reverse(),
+            transpositions
+        };
+    }
+
+    function scoreListeningCandidate(profile, candidate, level) {
+        validateListeningProfile(profile);
+        const normalizedLevel = normalizeLevel(level || profile.level);
+        const passScore = Number(profile.passScore) || (normalizedLevel === 'A' ? 70 : (normalizedLevel === 'C' ? 88 : 80));
+        const equivalences = []
+            .concat(Array.isArray(profile.phraseVariants) ? profile.phraseVariants : [])
+            .concat(Array.isArray(profile.entityEquivalences) ? profile.entityEquivalences : []);
+        const candidateParts = normalizeTokens(candidate.transcript, equivalences);
+        const targetParts = buildListeningTargetParts(profile);
+        const alignment = alignListening(targetParts, candidateParts);
+
+        let earnedWeight = 0;
+        let totalWeight = 0;
+        const missingCriticalSet = new Set();
+        targetParts.forEach((part, index) => {
+            if (!part.isIgnored) totalWeight += part.weight;
+            const detail = alignment.details[index];
+            if (detail && !part.isIgnored) earnedWeight += part.weight * detail.factor;
+            if (part.isCritical && (!detail || detail.factor < 0.95)) {
+                missingCriticalSet.add(part.tokenDisplay.replace(/[.,!?;:"()]/g, ''));
+            }
+        });
+        const missingCritical = Array.from(missingCriticalSet);
+
+        const insertionCost = alignment.insertions.reduce(
+            (sum, token) => sum + insertionUnits(token),
+            0
+        );
+        const extraPenalty = totalWeight > 0
+            ? round(Math.min(12, 100 * insertionCost / totalWeight), 2)
+            : 0;
+        const rawScore = totalWeight > 0
+            ? Math.round(clamp(100 * earnedWeight / totalWeight - extraPenalty, 0, 100))
+            : 0;
+        const finalScore = missingCritical.length ? Math.min(rawScore, passScore - 1) : rawScore;
+
+        const tokenScores = profile.tokens.map((token) => {
+            const ignored = token.scorePolicy === 'ignored' || token.weight === 0;
+            if (ignored) {
+                return { id: token.id, display: token.display, status: 'ignored', matchRatio: 1 };
+            }
+            let tokenEarned = 0;
+            let tokenTotal = 0;
+            targetParts.forEach((part, index) => {
+                if (part.tokenId !== token.id) return;
+                tokenTotal += part.weight;
+                if (alignment.details[index]) tokenEarned += part.weight * alignment.details[index].factor;
+            });
+            const ratio = tokenTotal > 0 ? tokenEarned / tokenTotal : 0;
+            return {
+                id: token.id,
+                display: token.display,
+                status: ratio >= 0.97 ? 'correct' : (ratio >= 0.8 ? 'accepted' : (ratio >= 0.6 ? 'near' : 'incorrect')),
+                matchRatio: round(ratio, 2)
+            };
+        });
+
+        return {
+            apiVersion: API_VERSION,
+            policyVersion: LISTENING_POLICY_VERSION,
+            assessmentMode: 'asr_proxy',
+            finalScore,
+            rawScore,
+            isPass: missingCritical.length === 0 && finalScore >= passScore,
+            passScore,
+            confidenceBand: confidenceBand(candidate.confidence),
+            selectedCandidate: candidate.transcript,
+            candidateText: candidate.transcript,
+            candidateConfidence: candidate.confidence,
+            candidateRank: candidate.rank,
+            tokenScores,
+            missingCritical,
+            insertions: alignment.insertions,
+            deletions: alignment.deletions,
+            substitutions: alignment.substitutions,
+            transpositions: alignment.transpositions,
+            extraPenalty,
+            earnedWeight: round(earnedWeight, 2),
+            totalWeight: round(totalWeight, 2),
+            diagnostics: {
+                candidateTokenCount: candidateParts.length,
+                targetTokenCount: targetParts.length,
+                rulesHash: String(profile.rulesHash || '')
+            }
+        };
+    }
+
+    function emptyListeningResult(profile) {
+        validateListeningProfile(profile);
+        const passScore = Number(profile.passScore) || 80;
+        const missingCritical = profile.tokens
+            .filter((token) => Array.isArray(token.requiredPartIndexes) && token.requiredPartIndexes.length)
+            .map((token) => String(token.display || '').replace(/[.,!?;:"()]/g, ''));
+        return {
+            apiVersion: API_VERSION,
+            policyVersion: LISTENING_POLICY_VERSION,
+            assessmentMode: 'asr_proxy',
+            finalScore: 0,
+            rawScore: 0,
+            isPass: false,
+            passScore,
+            confidenceBand: 'unavailable',
+            selectedCandidate: '',
+            candidateText: '',
+            candidateConfidence: null,
+            candidateRank: -1,
+            evaluatedCandidatesCount: 0,
+            tokenScores: profile.tokens.map((token) => ({
+                id: token.id,
+                display: token.display,
+                status: token.scorePolicy === 'ignored' || token.weight === 0 ? 'ignored' : 'incorrect',
+                matchRatio: token.scorePolicy === 'ignored' || token.weight === 0 ? 1 : 0
+            })),
+            missingCritical,
+            insertions: [],
+            deletions: profile.tokens.filter((token) => token.weight > 0).map((token) => token.display),
+            substitutions: [],
+            transpositions: 0,
+            extraPenalty: 0,
+            earnedWeight: 0,
+            totalWeight: profile.tokens.reduce((sum, token) => sum + (Number(token.weight) || 0), 0),
+            diagnostics: { rulesHash: String(profile.rulesHash || ''), evidence: 'no_transcript' }
+        };
+    }
+
+    function scoreListeningCandidates(profile, candidateInput, level) {
+        validateListeningProfile(profile);
+        const candidates = normalizeCandidates(candidateInput);
+        if (!candidates.length) return emptyListeningResult(profile);
+        const normalizedLevel = normalizeLevel(level || profile.level);
+        const maximum = MAX_LISTENING_ALTERNATIVES[normalizedLevel];
+        const scored = candidates.slice(0, maximum).map(
+            (candidate) => scoreListeningCandidate(profile, candidate, normalizedLevel)
+        );
+        scored.sort((a, b) =>
+            a.missingCritical.length - b.missingCritical.length
+            || b.finalScore - a.finalScore
+            || a.deletions.length - b.deletions.length
+            || a.insertions.length - b.insertions.length
+            || confidenceForSort(b) - confidenceForSort(a)
+            || a.candidateRank - b.candidateRank
+        );
+        scored[0].evaluatedCandidatesCount = scored.length;
+        return scored[0];
+    }
+
+    return Object.freeze({
+        apiVersion: API_VERSION,
+        buildId: 'duke-pronunciation-engine-2.0.0',
+        policyVersions: Object.freeze({
+            ipa: IPA_POLICY_VERSION,
+            listening: LISTENING_POLICY_VERSION
+        }),
+        listeningProfileVersions: Object.freeze([LISTENING_PROFILE_VERSION]),
+        scoreIpaCandidates,
+        scoreListeningCandidates
     });
+}());
 
-    const best = scoredList[0];
-    best.evaluatedCandidatesCount = evalCandidates.length;
-    return best;
-  }
-
-  function roundTo(num, decimals) {
-    const factor = Math.pow(10, decimals);
-    return Math.round(num * factor) / factor;
-  }
-
-  return {
-    schemaVersion: '2.0.1',
-    computeSourceHash: computeSourceHash,
-    normalizeSmartQuotes: normalizeSmartQuotes,
-    normalizeTranscript: normalizeTranscript,
-    generatePhoneticKey: generatePhoneticKey,
-    levenshteinDistance: levenshteinDistance,
-    computeMatchFactor: computeMatchFactor,
-    scoreSingleCandidate: scoreSingleCandidate,
-    scoreCandidates: scoreCandidates
-  };
-}));
+if (typeof globalThis !== 'undefined') {
+    globalThis.DukePronunciationEngine = DukePronunciationEngine;
+}
+if (typeof module === 'object' && module.exports) {
+    module.exports = DukePronunciationEngine;
+}
 </script>
     <script>
         // [CẤU HÌNH DUKE] Thời gian làm bài cho mỗi câu (giây). 
         // Hãy tìm dòng này nếu muốn chỉnh thời gian. Mặc định là 45s.
         const CONST_TIME_PER_SENTENCE = 45;
 
-        let scoringMode = "youth"; // "youth" | "elegant"
-        const LISTENING_SCORING_VERSION = "2.0.1";
+        const LISTENING_SCORING_VERSION = "3.0.0";
         const lessonLevel = "C"; // "A" | "B" | "C"
-        const LESSON_SCORING_PROFILES = [{"schemaVersion": "2.0.1", "itemIndex": 0, "sourceText": "The roles of men and women in society have undergone great changes.", "sourceHash": "2eb337c9", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "The", "parts": ["the"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["the"]}, {"id": 1, "display": "roles", "parts": ["roles"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["roles"]}, {"id": 2, "display": "of", "parts": ["of"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["of"]}, {"id": 3, "display": "men", "parts": ["men"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["men"]}, {"id": 4, "display": "and", "parts": ["and"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["and"]}, {"id": 5, "display": "women", "parts": ["women"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["women"]}, {"id": 6, "display": "in", "parts": ["in"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["in"]}, {"id": 7, "display": "society", "parts": ["society"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["society"]}, {"id": 8, "display": "have", "parts": ["have"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["hav"]}, {"id": 9, "display": "undergone", "parts": ["undergone"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["undergon"]}, {"id": 10, "display": "great", "parts": ["great"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["great"]}, {"id": 11, "display": "changes.", "parts": ["changes"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["changes"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["society", "undergone", "changes."]}, {"schemaVersion": "2.0.1", "itemIndex": 1, "sourceText": "Women were often expected to stay home and care for families.", "sourceHash": "29f8471a", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Women", "parts": ["women"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["women"]}, {"id": 1, "display": "were", "parts": ["we", "are"], "weight": 2.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[], []], "aliasesByPart": [[], ["is", "a", "ah", "er", "r", "air", "or"]], "phoneticKeysByPart": ["we", "are"]}, {"id": 2, "display": "often", "parts": ["often"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["often"]}, {"id": 3, "display": "expected", "parts": ["expected"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["ekspected"]}, {"id": 4, "display": "to", "parts": ["to"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]], "phoneticKeysByPart": ["to"]}, {"id": 5, "display": "stay", "parts": ["stay"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["stay"]}, {"id": 6, "display": "home", "parts": ["home"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["hom"]}, {"id": 7, "display": "and", "parts": ["and"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["and"]}, {"id": 8, "display": "care", "parts": ["care"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["kar"]}, {"id": 9, "display": "for", "parts": ["for"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["for"]}, {"id": 10, "display": "families.", "parts": ["families"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["families"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["expected", "families."]}, {"schemaVersion": "2.0.1", "itemIndex": 2, "sourceText": "Men were usually the main breadwinners of the household.", "sourceHash": "250c7678", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Men", "parts": ["men"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["men"]}, {"id": 1, "display": "were", "parts": ["we", "are"], "weight": 2.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[], []], "aliasesByPart": [[], ["is", "a", "ah", "er", "r", "air", "or"]], "phoneticKeysByPart": ["we", "are"]}, {"id": 2, "display": "usually", "parts": ["usually"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["usualy"]}, {"id": 3, "display": "the", "parts": ["the"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["the"]}, {"id": 4, "display": "main", "parts": ["main"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["main"]}, {"id": 5, "display": "breadwinners", "parts": ["breadwinners"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["breadwiners"]}, {"id": 6, "display": "of", "parts": ["of"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["of"]}, {"id": 7, "display": "the", "parts": ["the"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["the"]}, {"id": 8, "display": "household.", "parts": ["household"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["household"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["usually", "breadwinners", "household."]}, {"schemaVersion": "2.0.1", "itemIndex": 3, "sourceText": "More and more women are pursuing higher education and entering the workforce.", "sourceHash": "d89bc668", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "More", "parts": ["more"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["mor"]}, {"id": 1, "display": "and", "parts": ["and"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["and"]}, {"id": 2, "display": "more", "parts": ["more"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["mor"]}, {"id": 3, "display": "women", "parts": ["women"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["women"]}, {"id": 4, "display": "are", "parts": ["are"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [["is", "a", "ah", "er", "r", "air", "or"]], "phoneticKeysByPart": ["are"]}, {"id": 5, "display": "pursuing", "parts": ["pursuing"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["pursuing"]}, {"id": 6, "display": "higher", "parts": ["higher"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["higher"]}, {"id": 7, "display": "education", "parts": ["education"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["edukation"]}, {"id": 8, "display": "and", "parts": ["and"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["and"]}, {"id": 9, "display": "entering", "parts": ["entering"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["entering"]}, {"id": 10, "display": "the", "parts": ["the"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["the"]}, {"id": 11, "display": "workforce.", "parts": ["workforce"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["workforc"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["pursuing", "education", "entering", "workforce."]}, {"schemaVersion": "2.0.1", "itemIndex": 4, "sourceText": "They are now successful in various fields such as politics and science.", "sourceHash": "862b2ce1", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "They", "parts": ["they"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["they"]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [["is", "a", "ah", "er", "r", "air", "or"]], "phoneticKeysByPart": ["are"]}, {"id": 2, "display": "now", "parts": ["now"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["now"]}, {"id": 3, "display": "successful", "parts": ["successful"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["sucesful"]}, {"id": 4, "display": "in", "parts": ["in"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["in"]}, {"id": 5, "display": "various", "parts": ["various"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["various"]}, {"id": 6, "display": "fields", "parts": ["fields"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["fields"]}, {"id": 7, "display": "such", "parts": ["such"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["such"]}, {"id": 8, "display": "as", "parts": ["as"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["as"]}, {"id": 9, "display": "politics", "parts": ["politics"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["politics"]}, {"id": 10, "display": "and", "parts": ["and"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["and"]}, {"id": 11, "display": "science.", "parts": ["science"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["scienc"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["successful", "various", "politics", "science."]}, {"schemaVersion": "2.0.1", "itemIndex": 5, "sourceText": "Men are becoming more involved in domestic duties and childcare.", "sourceHash": "0878fae8", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Men", "parts": ["men"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["men"]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [["is", "a", "ah", "er", "r", "air", "or"]], "phoneticKeysByPart": ["are"]}, {"id": 2, "display": "becoming", "parts": ["becoming"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["bekoming"]}, {"id": 3, "display": "more", "parts": ["more"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["mor"]}, {"id": 4, "display": "involved", "parts": ["involved"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["involved"]}, {"id": 5, "display": "in", "parts": ["in"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["in"]}, {"id": 6, "display": "domestic", "parts": ["domestic"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["domestic"]}, {"id": 7, "display": "duties", "parts": ["duties"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["duties"]}, {"id": 8, "display": "and", "parts": ["and"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["and"]}, {"id": 9, "display": "childcare.", "parts": ["childcare"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["childkar"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["becoming", "involved", "domestic", "childcare."]}, {"schemaVersion": "2.0.1", "itemIndex": 6, "sourceText": "This shift towards gender equality has brought many benefits to society.", "sourceHash": "bfeb9fc1", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "This", "parts": ["this"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["this"]}, {"id": 1, "display": "shift", "parts": ["shift"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["shift"]}, {"id": 2, "display": "towards", "parts": ["towards"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["towards"]}, {"id": 3, "display": "gender", "parts": ["gender"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["gender"]}, {"id": 4, "display": "equality", "parts": ["equality"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["ekuality"]}, {"id": 5, "display": "has", "parts": ["has"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["has"]}, {"id": 6, "display": "brought", "parts": ["brought"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["brought"]}, {"id": 7, "display": "many", "parts": ["many"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["many"]}, {"id": 8, "display": "benefits", "parts": ["benefits"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["benefits"]}, {"id": 9, "display": "to", "parts": ["to"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]], "phoneticKeysByPart": ["to"]}, {"id": 10, "display": "society.", "parts": ["society"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["society"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["towards", "equality", "brought", "benefits", "society."]}, {"schemaVersion": "2.0.1", "itemIndex": 7, "sourceText": "Gender equality creates equal opportunities for everyone in modern society.", "sourceHash": "3354321a", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Gender", "parts": ["gender"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["gender"]}, {"id": 1, "display": "equality", "parts": ["equality"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["ekuality"]}, {"id": 2, "display": "creates", "parts": ["creates"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["creates"]}, {"id": 3, "display": "equal", "parts": ["equal"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["ekual"]}, {"id": 4, "display": "opportunities", "parts": ["opportunities"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["oportunities"]}, {"id": 5, "display": "for", "parts": ["for"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["for"]}, {"id": 6, "display": "everyone", "parts": ["everyone"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["everyon"]}, {"id": 7, "display": "in", "parts": ["in"], "weight": 0.5, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["in"]}, {"id": 8, "display": "modern", "parts": ["modern"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["modern"]}, {"id": 9, "display": "society.", "parts": ["society"], "weight": 1.35, "scorePolicy": "normal", "skipReason": null, "entityType": null, "requiredPartIndexes": [], "homophonesByPart": [[]], "aliasesByPart": [[]], "phoneticKeysByPart": ["society"]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's", "there has"]}, {"canonical": "what is", "variants": ["what's", "what has"]}, {"canonical": "that is", "variants": ["that's", "that has"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock", "clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["equality", "creates", "opportunities", "everyone", "society."]}];
+        const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 0, "sourceText": "The roles of men and women in society have undergone great changes.", "sourceHash": "2eb337c9", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "The", "parts": ["the"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "roles", "parts": ["roles"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "of", "parts": ["of"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "men", "parts": ["men"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "and", "parts": ["and"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "women", "parts": ["women"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "in", "parts": ["in"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "society", "parts": ["society"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "have", "parts": ["have"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 9, "display": "undergone", "parts": ["undergone"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 10, "display": "great", "parts": ["great"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 11, "display": "changes.", "parts": ["changes"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["society", "undergone", "changes."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 1, "sourceText": "Women were often expected to stay home and care for families.", "sourceHash": "29f8471a", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Women", "parts": ["women"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "were", "parts": ["were"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "often", "parts": ["often"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "expected", "parts": ["expected"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "to", "parts": ["to"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]]}, {"id": 5, "display": "stay", "parts": ["stay"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "home", "parts": ["home"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "and", "parts": ["and"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "care", "parts": ["care"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 9, "display": "for", "parts": ["for"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 10, "display": "families.", "parts": ["families"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["expected", "families."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 2, "sourceText": "Men were usually the main breadwinners of the household.", "sourceHash": "250c7678", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Men", "parts": ["men"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "were", "parts": ["were"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "usually", "parts": ["usually"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "the", "parts": ["the"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "main", "parts": ["main"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "breadwinners", "parts": ["breadwinners"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "of", "parts": ["of"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "the", "parts": ["the"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "household.", "parts": ["household"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["usually", "breadwinners", "household."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 3, "sourceText": "More and more women are pursuing higher education and entering the workforce.", "sourceHash": "d89bc668", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "More", "parts": ["more"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "and", "parts": ["and"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "more", "parts": ["more"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "women", "parts": ["women"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "are", "parts": ["are"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "pursuing", "parts": ["pursuing"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "higher", "parts": ["higher"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "education", "parts": ["education"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "and", "parts": ["and"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 9, "display": "entering", "parts": ["entering"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 10, "display": "the", "parts": ["the"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 11, "display": "workforce.", "parts": ["workforce"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["pursuing", "education", "entering", "workforce."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 4, "sourceText": "They are now successful in various fields such as politics and science.", "sourceHash": "862b2ce1", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "They", "parts": ["they"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "now", "parts": ["now"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "successful", "parts": ["successful"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "in", "parts": ["in"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "various", "parts": ["various"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "fields", "parts": ["fields"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "such", "parts": ["such"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "as", "parts": ["as"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 9, "display": "politics", "parts": ["politics"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 10, "display": "and", "parts": ["and"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 11, "display": "science.", "parts": ["science"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["successful", "various", "politics", "science."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 5, "sourceText": "Men are becoming more involved in domestic duties and childcare.", "sourceHash": "0878fae8", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Men", "parts": ["men"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "becoming", "parts": ["becoming"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "more", "parts": ["more"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "involved", "parts": ["involved"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "in", "parts": ["in"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "domestic", "parts": ["domestic"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "duties", "parts": ["duties"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "and", "parts": ["and"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 9, "display": "childcare.", "parts": ["childcare"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["becoming", "involved", "domestic", "childcare."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 6, "sourceText": "This shift towards gender equality has brought many benefits to society.", "sourceHash": "bfeb9fc1", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "This", "parts": ["this"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "shift", "parts": ["shift"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "towards", "parts": ["towards"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "gender", "parts": ["gender"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "equality", "parts": ["equality"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "has", "parts": ["has"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "brought", "parts": ["brought"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "many", "parts": ["many"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "benefits", "parts": ["benefits"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 9, "display": "to", "parts": ["to"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]]}, {"id": 10, "display": "society.", "parts": ["society"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["towards", "equality", "brought", "benefits", "society."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.0.0", "rulesHash": "96ca10ca6957a6d733823391acdc011f707a3518f9ab8097638be79c4b3a2cb2", "itemIndex": 7, "sourceText": "Gender equality creates equal opportunities for everyone in modern society.", "sourceHash": "3354321a", "level": "C", "passScore": 88, "tokens": [{"id": 0, "display": "Gender", "parts": ["gender"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "equality", "parts": ["equality"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "creates", "parts": ["creates"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "equal", "parts": ["equal"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "opportunities", "parts": ["opportunities"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "for", "parts": ["for"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "everyone", "parts": ["everyone"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "in", "parts": ["in"], "weight": 0.75, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 8, "display": "modern", "parts": ["modern"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 9, "display": "society.", "parts": ["society"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "i am", "variants": ["i'm"]}, {"canonical": "you are", "variants": ["you're"]}, {"canonical": "he is", "variants": ["he's"]}, {"canonical": "she is", "variants": ["she's"]}, {"canonical": "it is", "variants": ["it's"]}, {"canonical": "we are", "variants": ["we're"]}, {"canonical": "they are", "variants": ["they're"]}, {"canonical": "i have", "variants": ["i've"]}, {"canonical": "you have", "variants": ["you've"]}, {"canonical": "we have", "variants": ["we've"]}, {"canonical": "they have", "variants": ["they've"]}, {"canonical": "i will", "variants": ["i'll"]}, {"canonical": "you will", "variants": ["you'll"]}, {"canonical": "he will", "variants": ["he'll"]}, {"canonical": "she will", "variants": ["she'll"]}, {"canonical": "we will", "variants": ["we'll"]}, {"canonical": "they will", "variants": ["they'll"]}, {"canonical": "do not", "variants": ["don't"]}, {"canonical": "does not", "variants": ["doesn't"]}, {"canonical": "did not", "variants": ["didn't"]}, {"canonical": "cannot", "variants": ["can't"]}, {"canonical": "will not", "variants": ["won't"]}, {"canonical": "is not", "variants": ["isn't"]}, {"canonical": "are not", "variants": ["aren't"]}, {"canonical": "was not", "variants": ["wasn't"]}, {"canonical": "were not", "variants": ["weren't"]}, {"canonical": "should not", "variants": ["shouldn't"]}, {"canonical": "would not", "variants": ["wouldn't"]}, {"canonical": "could not", "variants": ["couldn't"]}, {"canonical": "there is", "variants": ["there's"]}, {"canonical": "what is", "variants": ["what's"]}, {"canonical": "that is", "variants": ["that's"]}, {"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "entityEquivalences": [], "recognitionHints": ["equality", "creates", "opportunities", "everyone", "society."]}];
 
         // [DUKE] Target phonetics map (populated dynamically during generation/remaster)
         const LESSON_TARGET_PHONETICS = {
@@ -2987,60 +3168,6 @@ html {
 };
 
         // Centralized scoring calibration
-        const DUKE_SCORING_CONFIG = {
-            youth: {
-                confusion: 0.9,
-                phonetic: 0.8,
-                fuzzyHigh: 0.8,
-                fuzzyLow: 0.6,
-                contraction: 0.9,
-                missingPenalty: 0.05
-            },
-            elegant: {
-                confusion: 0.85,
-                phonetic: 0.7,
-                fuzzyHigh: 0.7,
-                fuzzyLow: 0.4,
-                contraction: 0.9,
-                missingPenalty: 0.05
-            },
-            ipa_strict: {
-                confusion: 0.95,
-                phonetic: 0.90,
-                fuzzyHigh: 0.85,
-                fuzzyLow: 0.70,
-                contraction: 1.0,
-                exactThreshold: 0.92, // Nới lỏng từ 0.98 -> 0.92
-                fuzzyThreshold: 0.88, // Nới lỏng từ 0.95 -> 0.88
-                passScore: 88         // Đặt mức 88% cho PASS (Giỏi) thay vì 95%
-            },
-            level_a: {
-                confusion: 0.95,
-                phonetic: 0.90,
-                fuzzyHigh: 0.90,
-                fuzzyLow: 0.75,
-                contraction: 0.95,
-                exactThreshold: 0.80,
-                fuzzyThreshold: 0.55,
-                passScore: 70,        // Level A dễ tính hơn (70% PASS)
-                missingPenalty: 0.0   // Không phạt thiếu từ ở Level A
-            },
-            level_c: {
-                confusion: 0.85,
-                phonetic: 0.70,
-                fuzzyHigh: 0.75,
-                fuzzyLow: 0.50,
-                contraction: 0.90,
-                exactThreshold: 0.90,
-                fuzzyThreshold: 0.80,
-                passScore: 88,        // Level C khắt khe hơn (88% PASS)
-                missingPenalty: 0.35  // Phạt nặng thiếu từ quan trọng ở Level C (35%)
-            },
-            exactThreshold: 0.85,
-            fuzzyThreshold: 0.6,
-            passScore: 80
-        };
-
         const LOGO_BASE64 = "";
         const DEC_RUNTIME_DEBUG_KEY = 'dec_ultitemp_debug';
         // [DMU-EXCEPTION] UltiTemp control buttons keep icons through an explicit DMU allowlist.
@@ -3247,161 +3374,6 @@ html {
         // =========================================================
 
         // A. ALWAYS_SKIP_WORDS: Từ hư từ, giá trị thấp (không tính điểm, hiển thị xanh nhạt)
-        const DUKE_ALWAYS_SKIP_WORDS = new Set([
-            "at", "to", "of", "a", "an", "the"
-        ]);
-
-        // B. SKIP_WORDS: Từ khó, tên riêng địa phương, từ STT không ổn định (không tính điểm)
-        const DUKE_SKIP_WORDS = new Set([
-            "tet", "trung", "thu", "pho", "bun", "cha", "com", "tam",
-            "viet", "nam", "ha", "noi", "sai", "gon", "da", "nang", "ho", "chi", "minh",
-            "nguyen", "tran", "le", "pham", "huynh", "phan", "vo", "dang", "bui", "vu",
-            "anh", "duc", "tuan", "tung", "hung", "huy", "khanh", "linh", "thanh", "thao", "thuy", "trang", "ngoc", "yen", "nhan", "nhung", "vy"
-        ]);
-
-        // C. SKIP_PHRASES: Cụm từ cần bỏ qua (được xác định sau khi tách token)
-        const DUKE_SKIP_PHRASES = [
-            ["ha", "noi"], ["ho", "chi", "minh"], ["hai", "phong"], ["da", "nang"], ["can", "tho"],
-            ["an", "giang"], ["ba", "ria", "vung", "tau"], ["bac", "giang"], ["bac", "kan"], ["bac", "lieu"], ["bac", "ninh"],
-            ["ben", "tre"], ["binh", "dinh"], ["binh", "duong"], ["binh", "phuoc"], ["binh", "thuan"],
-            ["ca", "mau"], ["cao", "bang"], ["dak", "lak"], ["dak", "nong"], ["dien", "bien"],
-            ["dong", "nai"], ["dong", "thap"], ["gia", "lai"], ["ha", "giang"], ["ha", "nam"], ["ha", "tinh"],
-            ["hai", "duong"], ["hau", "giang"], ["hoa", "binh"], ["hung", "yen"],
-            ["khanh", "hoa"], ["kien", "giang"], ["kon", "tum"],
-            ["lai", "chau"], ["lam", "dong"], ["lang", "son"], ["lao", "cai"], ["long", "an"],
-            ["nam", "dinh"], ["nghe", "an"], ["ninh", "binh"], ["ninh", "thuan"],
-            ["phu", "tho"], ["phu", "yen"],
-            ["quang", "binh"], ["quang", "nam"], ["quang", "ngai"], ["quang", "ninh"], ["quang", "tri"],
-            ["soc", "trang"], ["son", "la"], ["tay", "ninh"], ["thai", "binh"], ["thai", "nguyen"],
-            ["thanh", "hoa"], ["thua", "thien", "hue"],
-            ["tien", "giang"], ["tra", "vinh"], ["tuyen", "quang"],
-            ["vinh", "long"], ["vinh", "phuc"], ["yen", "bai"],
-            ["ha", "long"], ["ha", "long", "bay"],
-            ["phu", "quoc"], ["con", "dao"], ["cat", "ba"], ["fan", "si", "pan"],
-            ["tay", "bac"], ["tay", "nguyen"],
-            ["dong", "bang", "song", "cuu", "long"], ["dong", "bang", "song", "hong"],
-            ["hoan", "kiem"], ["ba", "na"], ["my", "son"], ["trang", "an"],
-            ["phong", "nha"], ["ke", "bang"], ["phong", "nha", "ke", "bang"],
-            ["sa", "pa"], ["mui", "ne"], ["vung", "tau"], ["cam", "ranh"], ["van", "don"], ["lang", "co"],
-            ["cu", "chi"], ["hoa", "lu"], ["co", "do", "hue"],
-            ["hoang", "sa"], ["truong", "sa"]
-        ];
-
-        // D. FORGIVE_WORDS: Từ "mềm", nếu sai không làm hỏng cả câu (giảm trọng số xuống 0.35)
-        const DUKE_FORGIVE_WORDS = new Set([
-            // Ví dụ: "please", "very", ... (Thêm theo nhu cầu của giáo viên)
-        ]);
-
-        // [DUKE] "THA THỨ" CHO CONTRACTIONS (THERE'S ~ THERE IS, ...)
-        const DUKE_CONTRACTION_GROUPS = [
-            ["i am", "i'm"], ["you are", "you're"], ["he is", "he's"], ["she is", "she's"], ["it is", "it's"], ["we are", "we're"], ["they are", "they're"],
-            ["i have", "i've"], ["you have", "you've"], ["we have", "we've"], ["they have", "they've"],
-            ["i will", "i'll"], ["you will", "you'll"], ["he will", "he'll"], ["she will", "she'll"], ["we will", "we'll"], ["they will", "they'll"],
-            ["do not", "don't"], ["does not", "doesn't"], ["did not", "didn't"],
-            ["cannot", "can't"], ["will not", "won't"],
-            ["is not", "isn't"], ["are not", "aren't"], ["was not", "wasn't"], ["were not", "weren't"],
-            ["should not", "shouldn't"], ["would not", "wouldn't"], ["could not", "couldn't"],
-            ["there is", "there's", "there has"], ["what is", "what's", "what has"], ["that is", "that's", "that has"]
-        ];
-
-        const DUKE_SEMANTIC_VARIANTS = [
-            ["oclock", "clock", "a clock", "the clock"],
-            ["going to", "gonna"],
-            ["want to", "wanna"],
-            ["got to", "gotta"],
-            ["kind of", "kinda"],
-            ["a lot of", "lotta"]
-        ];
-
-        function normalizePhraseForVariant(text) {
-            if (!text) return "";
-            return String(text).toLowerCase().replace(/\s+/g, " ").trim();
-        }
-
-        function matchSemanticVariant(target, spoken) {
-            if (!target || !spoken) return false;
-            const t = normalizePhraseForVariant(target);
-            const s = normalizePhraseForVariant(spoken);
-            if (t === s) return true;
-            for (const group of DUKE_SEMANTIC_VARIANTS) {
-                if (group.includes(t) && group.includes(s)) return true;
-            }
-            return false;
-        }
-
-        const DUKE_PHRASE_CANONICAL_MAP = [
-            { canonical: "oclock", variants: ["o clock", "clock", "a clock", "the clock"] },
-            { canonical: "going to", variants: ["gonna"] },
-            { canonical: "want to", variants: ["wanna"] },
-            { canonical: "got to", variants: ["gotta"] },
-            { canonical: "kind of", variants: ["kinda"] },
-            { canonical: "a lot of", variants: ["lotta"] }
-        ];
-
-        function normalizePhraseCanonical(text) {
-            let t = normalizePhraseForVariant(text);
-            DUKE_PHRASE_CANONICAL_MAP.forEach(rule => {
-                rule.variants.forEach(v => {
-                    const pattern = new RegExp(`\\b${v}\\b`, "g");
-                    t = t.replace(pattern, rule.canonical);
-                });
-            });
-            return t;
-        }
-
-        // Two-way contraction matching (e.g., "I'm" ↔ "I am")
-        function isContractionEquivalent(s1, s2) {
-            if (!s1 || !s2) return false;
-            const t1 = String(s1).toLowerCase().trim();
-            const t2 = String(s2).toLowerCase().trim();
-            if (t1 === t2) return true;
-            for (const group of DUKE_CONTRACTION_GROUPS) {
-                if (group.includes(t1) && group.includes(t2)) return true;
-            }
-            return false;
-        }
-
-        // Check if transcription contains a variant of the contraction
-        function isContractionInTranscript(spokenPhrase, targetPhrase) {
-            if (!spokenPhrase || !targetPhrase) return false;
-            const targetCanon = targetPhrase.toLowerCase().trim();
-            const group = DUKE_CONTRACTION_GROUPS.find(g => g.includes(targetCanon));
-            if (group) {
-                return group.some(variant => phraseHasVariant(spokenPhrase, variant));
-            }
-            return phraseHasVariant(spokenPhrase, targetPhrase);
-        }
-
-        function buildPhraseChunks(words) {
-            const chunks = [];
-            for (let i = 0; i < words.length; i++) {
-                // unigram
-                chunks.push({ text: words[i], start: i, end: i });
-                // bigram
-                if (i < words.length - 1) {
-                    chunks.push({ text: words[i] + " " + words[i + 1], start: i, end: i + 1 });
-                }
-                // trigram
-                if (i < words.length - 2) {
-                    chunks.push({ text: words[i] + " " + words[i + 1] + " " + words[i + 2], start: i, end: i + 2 });
-                }
-            }
-            return chunks;
-        }
-
-        const DUKE_CONTRACTION_MAP = new Map();
-        DUKE_CONTRACTION_GROUPS.forEach(group => { group.forEach(v => DUKE_CONTRACTION_MAP.set(v, group)); });
-
-        const DUKE_FORGIVE_CONTRACTION_KEYS = new Set([
-            "there's", "it's", "he's", "she's", "that's", "what's", "where's", "who's", "here's",
-            "you're", "we're", "they're", "i'm", "i've", "you've", "we've", "they've",
-            "i'll", "you'll", "he'll", "she'll", "it'll", "we'll", "they'll",
-            "i'd", "you'd", "he'd", "she'd", "we'd", "they'd", "don't", "doesn't", "didn't",
-            "isn't", "aren't", "wasn't", "weren't", "haven't", "hasn't", "hadn't", "won't", "wouldn't",
-            "can't", "couldn't", "shouldn't", "mustn't"
-        ]);
-
-        // E. CONFUSION_MAP: Các từ dễ gây nhầm lẫn (Đồng âm, STT nhầm tên...)
         const DUKE_CONFUSION_MAP = {
             "apple": ["aple", "appel"],
             "their": ["there", "theyre"],
@@ -3472,17 +3444,6 @@ html {
         };
 
         // F. LISTEN_ALIAS_MAP: STT alias một chiều theo từ đích (từ nghe STT có thể nhận diện sai thành alias)
-        const DUKE_LISTEN_ALIAS_MAP = {
-            "water": ["wafer", "walter", "warder"],
-            "milk": ["mil k", "milc"],
-            "thirty": ["dirty", "thirteen"],
-            "fifteen": ["fifty"],
-            "sixteen": ["sixty"],
-            "seventeen": ["seventy"],
-            "eighteen": ["eighty"],
-            "nineteen": ["ninety"]
-        };
-
         const DUKE_CONFUSION_EQUIV = new Map();
         Object.entries(DUKE_CONFUSION_MAP).forEach(([key, variants]) => {
             const set = new Set(variants); set.add(key);
@@ -3844,355 +3805,6 @@ html {
             return false;
         }
 
-        function normalizeApostrophes(text) {
-            // Chuẩn hóa dấu nháy cong về nháy thẳng để tránh lỗi so khớp
-            return (text || "").replace(/'/g, "'");
-        }
-
-        function normalizeTranscriptForPhraseMatch(text) {
-            // Chuẩn hóa transcript để kiểm tra "cụm từ" (there is / do not / ...)
-            // - lowercase
-            // - giữ chữ/số và apostrophe '
-            // - gom khoảng trắng
-            let t = normalizeApostrophes(text).toLowerCase();
-            t = t.replace(/[^a-z0-9'\s]/g, " ");
-            t = t.replace(/\s+/g, " ").trim();
-            return t;
-        }
-
-        function contractionKeyFromRaw(rawWord) {
-            // Lấy key contraction từ token gốc (VD: "There's" -> "there's")
-            // Chỉ giữ chữ/số và apostrophe, bỏ dấu câu.
-            let t = normalizeApostrophes(stripSkipMarkersFromText(rawWord || "")).toLowerCase();
-            t = t.replace(/[^a-z0-9']/g, " ");
-            t = t.replace(/\s+/g, " ").trim();
-            if (!t) return "";
-
-            const parts = t.split(" ");
-            const withApos = parts.find(x => x.includes("'"));
-            return (withApos || parts[0] || "").trim();
-        }
-
-        function phraseHasVariant(spokenPhrase, variant) {
-            // Kiểm tra transcript có chứa biến thể (phrase) hay không,
-            // nhưng "tha thứ" thêm cho trường hợp SpeechRecognition bỏ dấu nháy:
-            // "there's" -> "theres" hoặc "there s"
-            const base = normalizeTranscriptForPhraseMatch(variant);
-            if (!base) return false;
-
-            const s0 = normalizeTranscriptForPhraseMatch(spokenPhrase || "");
-            const s = " " + s0 + " ";
-
-            const candidates = new Set();
-            candidates.add(base);
-
-            // Nếu có apostrophe, tạo thêm 2 biến thể:
-            // 1) bỏ hẳn apostrophe: "there's" -> "theres"
-            // 2) thay apostrophe thành khoảng trắng: "there's" -> "there s"
-            if (base.includes("'")) {
-                candidates.add(base.replace(/'/g, ""));
-                candidates.add(base.replace(/'/g, " "));
-            }
-
-            // Nếu không có apostrophe, vẫn thử trường hợp speech engine chèn khoảng trắng bất thường
-            // (ít gặp nhưng an toàn): "dont" -> "don t"
-            if (!base.includes("'") && base.length >= 4) {
-                // chèn 1 khoảng trắng trước ký tự cuối để bắt dạng "there s" tương tự (heuristic nhẹ)
-                candidates.add(base.slice(0, -1) + " " + base.slice(-1));
-            }
-
-            for (const v of candidates) {
-                const vv = (v || "").replace(/\s+/g, " ").trim();
-                if (!vv) continue;
-                if (s.includes(" " + vv + " ")) return true;
-            }
-            return false;
-        }
-
-
-        // Tách chuỗi thành mảng các "từ sạch"
-        // Lưu ý: normalizeWord có thể trả về chuỗi có khoảng trắng (do hyphen), nên cần tách lại lần nữa.
-        function splitToCleanWords(text) {
-            const parts = (text || "").trim().split(/\s+/);
-            const out = [];
-            parts.forEach(p => {
-                const n = normalizeWord(p);
-                if (!n) return;
-                n.split(/\s+/).forEach(x => {
-                    if (x && x.length > 0) out.push(x);
-                });
-            });
-            return out;
-        }
-
-        function containsNonASCII(text) {
-            return /[^\x00-\x7F]/.test(text || "");
-        }
-
-        function isNonEnglishWord(rawWord) {
-            return containsNonASCII(rawWord);
-        }
-
-        function isAlphaWord(word) {
-            return /^[a-z]+$/i.test(word);
-        }
-
-        function phoneticNormalize(word) {
-            if (!word || !isAlphaWord(word)) return word;
-            let w = word.toLowerCase().trim();
-            w = w.replace(/ph/g, "f");
-            w = w.replace(/q/g, "k");
-            w = w.replace(/ck/g, "k");
-            w = w.replace(/c([aou])/g, "k$1");
-            w = w.replace(/x/g, "ks");
-            // Removed aggressive "th -> t" rule to preserve pronunciation distinction
-            if (w.length > 3 && w.endsWith("e")) w = w.slice(0, -1);
-            let collapsed = "";
-            for (let i = 0; i < w.length; i++) {
-                if (i === 0 || w[i] !== w[i - 1]) collapsed += w[i];
-            }
-            return collapsed;
-        }
-
-        function isConfusionEquivalent(t, s) {
-            if (t === s) return true;
-            const tSet = DUKE_CONFUSION_EQUIV.get(t);
-            if (tSet && tSet.has(s)) return true;
-            const aliases = DUKE_LISTEN_ALIAS_MAP[t];
-            if (aliases && aliases.includes(s)) return true;
-            return false;
-        }
-
-        function applySkipPhrases(tokens) {
-            // Flatten cleanParts for phrase searching but keep link to original token index
-            const flat = [];
-            tokens.forEach((t, tIdx) => {
-                (t.cleanParts || []).forEach(word => flat.push({ word, tIdx }));
-            });
-
-            DUKE_SKIP_PHRASES.forEach(phrase => {
-                if (!phrase || phrase.length === 0) return;
-                for (let i = 0; i <= flat.length - phrase.length; i++) {
-                    let match = true;
-                    for (let j = 0; j < phrase.length; j++) {
-                        if (flat[i + j].word !== phrase[j]) { match = false; break; }
-                    }
-                    if (match) {
-                        for (let j = 0; j < phrase.length; j++) {
-                            tokens[flat[i + j].tIdx].skip = true;
-                        }
-                    }
-                }
-            });
-        }
-
-        const DUKE_IMPORTANT_WORDS = new Set([
-            // Optional manual override for important keywords
-        ]);
-
-        function isAutoImportantWord(part) {
-            if (!part) return false;
-            if (DUKE_ALWAYS_SKIP_WORDS.has(part)) return false;
-            if (DUKE_SKIP_WORDS.has(part)) return false;
-            if (!/^[a-z]+$/i.test(part)) return false;
-            if (part.length <= 4) return false;
-            return true;
-        }
-
-        function classifyToken(token) {
-            // 1. Kiểm tra NON-ASCII (Tiếng Việt có dấu, ký tự lạ...) -> Skip
-            if (containsNonASCII(token.raw)) {
-                token.skip = true; return;
-            }
-            // 2. Tra từ điển Skip tuyệt đối (A & B)
-            for (const part of token.cleanParts) {
-                if (DUKE_ALWAYS_SKIP_WORDS.has(part) || DUKE_SKIP_WORDS.has(part)) {
-                    token.skip = true; return;
-                }
-            }
-            // 3. Tra từ điển Forgive (D - Soft bypass)
-            for (const part of token.cleanParts) {
-                if (DUKE_FORGIVE_WORDS.has(part)) {
-                    token.forgive = true; return;
-                }
-            }
-            // 4. Kiểm tra Contraction (đã cấu hình tha thứ)
-            if (token.contractionKey && DUKE_FORGIVE_CONTRACTION_KEYS.has(token.contractionKey)) {
-                token.skip = true; return;
-            }
-        }
-
-        function calculateTokenWeight(token) {
-            if (token.skip) return 0;
-            const totalLen = token.cleanParts.join("").length;
-            let weight = 1.0;
-            if (totalLen <= 2) weight = 0.3;
-            else if (totalLen <= 4) weight = 0.6;
-
-            if (token.forgive) weight *= 0.35;
-
-            // Auto-boost likely content words; manual set still overrides if provided
-            let shouldBoost = false;
-            if (!token.skip) {
-                for (const part of token.cleanParts) {
-                    if (DUKE_IMPORTANT_WORDS.has(part) || isAutoImportantWord(part)) {
-                        shouldBoost = true;
-                        break;
-                    }
-                }
-                if (shouldBoost) {
-                    weight *= 1.35;
-                }
-            }
-
-            return weight;
-        }
-
-        function buildTargetTokens(originalText) {
-            const rawWords = (originalText || "").trim().split(/\s+/).filter(w => w.length > 0);
-            const tokens = [];
-            let inBlock = false;
-
-            rawWords.forEach(raw => {
-                const hasStart = /[{[]/.test(raw);
-                const hasEnd = /[}\]]/.test(raw);
-                if (hasStart) inBlock = true;
-
-                const display = stripSkipMarkersFromText(raw);
-                const cleanParts = normalizeWord(raw).split(/\s+/).filter(Boolean);
-                const cKey = contractionKeyFromRaw(raw);
-
-                const token = {
-                    raw,
-                    display,
-                    cleanParts,
-                    contractionKey: cKey,
-                    skip: inBlock || hasStart || hasEnd,
-                    forgive: false,
-                    weight: 0
-                };
-
-                classifyToken(token);
-                token.weight = calculateTokenWeight(token);
-                tokens.push(token);
-
-                if (hasEnd) inBlock = false;
-            });
-
-            applySkipPhrases(tokens);
-            tokens.forEach(t => {
-                if (t.skip) t.weight = 0;
-                else t.weight = calculateTokenWeight(t);
-            });
-
-            return tokens;
-        }
-
-        // Lightweight phoneme-aware normalization for similarity scoring
-        function normalizeForSimilarity(word) {
-            if (!word) return "";
-            let w = String(word).toLowerCase().trim();
-
-            // Handle IPA symbols and long vowels
-            w = w.replace(/[ː:]/g, ""); // Remove length markers
-            w = w.replace(/[æɑ]/g, "a");
-            w = w.replace(/[ɔɒ]/g, "o");
-            w = w.replace(/[ʊu]/g, "u");
-            w = w.replace(/[ɪi]/g, "i");
-            w = w.replace(/[ɛe]/g, "e");
-            w = w.replace(/[ʌə]/g, "a");
-            w = w.replace(/[ʃ]/g, "sh");
-            w = w.replace(/[Ê']/g, "zh");
-            w = w.replace(/[θ]/g, "th");
-            w = w.replace(/[ð]/g, "th");
-            w = w.replace(/[ŋ]/g, "ng");
-
-            w = w.replace(/ph/g, "f");
-            w = w.replace(/ck/g, "k");
-            w = w.replace(/q/g, "k");
-            w = w.replace(/x/g, "ks");
-            w = w.replace(/wh/g, "w");
-            w = w.replace(/ght/g, "t");
-            w = w.replace(/kn/g, "n");
-            w = w.replace(/wr/g, "r");
-            w = w.replace(/mb$/g, "m");
-            w = w.replace(/dg(e|i|y)/g, "j$1");
-            w = w.replace(/tion/g, "shun");
-            w = w.replace(/sion/g, "zhun");
-            w = w.replace(/oo/g, "u");
-            w = w.replace(/ee/g, "i");
-            w = w.replace(/ea/g, "i");
-            w = w.replace(/ou/g, "au");
-
-            // Final consonant softening for stability
-            w = w.replace(/z$/g, "s");
-            w = w.replace(/d$/g, "t");
-
-            return w;
-        }
-
-        // [DUKE] Smart Levenshtein Comparison for IPA/Pronunciation
-        function getLevenshteinDistance(s1, s2) {
-            const m = s1.length, n = s2.length;
-            if (m === 0) return n; if (n === 0) return m;
-            const d = Array.from({ length: m + 1 }, () => new Uint8Array(n + 1));
-            for (let i = 0; i <= m; i++) d[i][0] = i;
-            for (let j = 0; j <= n; j++) d[0][j] = j;
-            for (let j = 1; j <= n; j++) {
-                for (let i = 1; i <= m; i++) {
-                    const cost = (s1[i - 1] === s2[j - 1]) ? 0 : 1;
-                    d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
-                }
-            }
-            return d[m][n];
-        }
-
-        function getCharSimilarity(s1, s2) {
-            if (!s1 || !s2) return (s1 === s2) ? 1.0 : 0.0;
-
-            const n1 = normalizeForSimilarity(s1);
-            const n2 = normalizeForSimilarity(s2);
-            if (n1 === n2) return 1.0;
-
-            const dist = getLevenshteinDistance(n1, n2);
-            const maxLen = Math.max(n1.length, n2.length);
-            return 1.0 - (dist / maxLen);
-        }
-
-        function lcsMatchIndices(a, b) {
-            // Fuzzy LCS: returns array of { tIdx, sIdx, similarity }
-            const n = a.length;
-            const m = b.length;
-            const dp = Array.from({ length: n + 1 }, () => Array(m + 1).fill(0));
-
-            for (let i = 1; i <= n; i++) {
-                for (let j = 1; j <= m; j++) {
-                    const sim = getCharSimilarity(a[i - 1], b[j - 1]);
-                    if (sim >= 0.6) {
-                        dp[i][j] = dp[i - 1][j - 1] + 1;
-                    } else {
-                        dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
-                    }
-                }
-            }
-
-            const matches = [];
-            let i = n, j = m;
-            while (i > 0 && j > 0) {
-                const sim = getCharSimilarity(a[i - 1], b[j - 1]);
-                if (sim >= 0.6 && dp[i][j] > Math.max(dp[i - 1][j], dp[i][j - 1])) {
-                    matches.push({ tIdx: i - 1, sIdx: j - 1, similarity: sim });
-                    i--; j--;
-                } else if (dp[i - 1][j] >= dp[i][j - 1]) {
-                    i--;
-                } else {
-                    j--;
-                }
-            }
-            return matches;
-        }
-
-        // Các hàm số học cũ đã được thay thế bằng collapseNumericalTokens()
         function hardStopAudio() {
             if ('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
@@ -4996,27 +4608,41 @@ html {
                     const alts = [...accumulatedAlternatives];
                     accumulatedTranscript = "";
                     accumulatedAlternatives = [];
-                    comparePronunciation(finalPhrase, alts);
+                    comparePronunciation(alts[0] || finalPhrase, alts);
                 }
             };
             recognition.onresult = (event) => {
                 resetSilenceTimer();
-                let currentText = "";
-                let currentAlts = [];
+                const rankedCandidates = Array.from({ length: maxAlts }, (_, rank) => ({
+                    parts: [],
+                    confidences: [],
+                    rank
+                }));
                 for (let i = 0; i < event.results.length; i++) {
                     const res = event.results[i];
                     if (res && res[0] && res[0].transcript) {
-                        currentText += " " + res[0].transcript;
-                        for (let j = 0; j < Math.min(res.length, maxAlts); j++) {
-                            if (res[j] && res[j].transcript) {
-                                currentAlts.push(res[j].transcript.trim());
+                        for (let rank = 0; rank < Math.min(res.length, maxAlts); rank++) {
+                            if (res[rank] && res[rank].transcript) {
+                                rankedCandidates[rank].parts.push(res[rank].transcript.trim());
+                                if (Number.isFinite(res[rank].confidence)) {
+                                    rankedCandidates[rank].confidences.push(res[rank].confidence);
+                                }
                             }
                         }
                     }
                 }
-                if (currentText.trim()) {
-                    accumulatedTranscript = currentText.trim();
-                    accumulatedAlternatives = currentAlts;
+                const currentCandidates = rankedCandidates
+                    .map(candidate => ({
+                        transcript: candidate.parts.join(" ").trim(),
+                        confidence: candidate.confidences.length
+                            ? candidate.confidences.reduce((sum, value) => sum + value, 0) / candidate.confidences.length
+                            : null,
+                        rank: candidate.rank
+                    }))
+                    .filter(candidate => candidate.transcript);
+                if (currentCandidates.length) {
+                    accumulatedTranscript = currentCandidates[0].transcript;
+                    accumulatedAlternatives = currentCandidates;
                 }
             };
             recognition.onerror = (event) => {
@@ -5186,166 +4812,6 @@ html {
         }
 
         // Position-aware IPA hints to reduce false positives
-        function getPronunciationHint(target, spoken) {
-            if (!target || !spoken) return "";
-
-            const t = String(target).toLowerCase();
-            const s = String(spoken).toLowerCase();
-
-            // Rule 1: TH sound
-            if (t.includes("th") && !s.includes("th")) {
-                return "Âm /θ/ hoặc /ð/ (đặt lưỡi giữa răng)";
-            }
-
-            // Loop-based for position-aware phonetic errors
-            const minLen = Math.min(t.length, s.length);
-            for (let i = 0; i < minLen; i++) {
-                // Rule 2: R vs L
-                if (t[i] === 'r' && s[i] === 'l') {
-                    return "Phân biệt /r/ (lưỡi cong) và /l/ (chạm lợi)";
-                }
-                // Rule 3: F vs P (ESL error)
-                if (t[i] === 'f' && s[i] === 'p') {
-                    return "Phân biệt /f/ (răng môi) và /p/ (bật hơi)";
-                }
-                // Rule 4: V vs B (ESL error)
-                if (t[i] === 'v' && s[i] === 'b') {
-                    return "Phân biệt /v/ và /b/";
-                }
-            }
-
-            // Rule 5: Final -ed (check for sound)
-            if (t.endsWith("ed")) {
-                if (!s.endsWith("ed") && !s.endsWith("t") && !s.endsWith("d")) {
-                    return "Đuôi -ed: /t/, /d/, hoặc /ɪd/";
-                }
-            }
-
-            // Rule 6: Final -s/-es
-            if (t.endsWith("s") && !s.endsWith("s")) {
-                return "Đuôi -s: /s/ hoặc /z/";
-            }
-        }
-
-        // [DUKE] Double Metaphone Algorithm for ESL Phonetic Matching
-        function doubleMetaphone(word) {
-            if (!word) return ["", ""];
-            let w = String(word).toUpperCase().replace(/[^A-Z]/g, "");
-            if (w.length === 0) return ["", ""];
-            
-            let current = 0;
-            let length = w.length;
-            let primary = "";
-            let alternate = "";
-            
-            function isVowel(ch) {
-                return ["A", "E", "I", "O", "U", "Y"].includes(ch);
-            }
-            
-            while (current < length && primary.length < 4) {
-                let ch = w[current];
-                if (isVowel(ch)) {
-                    if (current === 0) { primary += "A"; alternate += "A"; }
-                    current++;
-                } else if (ch === 'B') {
-                    primary += 'P'; alternate += 'P';
-                    current = (w[current + 1] === 'B') ? current + 2 : current + 1;
-                } else if (ch === 'C') {
-                    if (w[current + 1] === 'H') {
-                        primary += 'X'; alternate += 'X';
-                        current += 2;
-                    } else if (["I", "E", "Y"].includes(w[current + 1])) {
-                        primary += 'S'; alternate += 'S';
-                        current += 2;
-                    } else {
-                        primary += 'K'; alternate += 'K';
-                        current++;
-                    }
-                } else if (ch === 'D') {
-                    if (w[current + 1] === 'G') {
-                        primary += 'J'; alternate += 'J';
-                        current += 2;
-                    } else {
-                        primary += 'T'; alternate += 'T';
-                        current++;
-                    }
-                } else if (ch === 'F' || ch === 'V') {
-                    primary += 'F'; alternate += 'F';
-                    current++;
-                } else if (ch === 'G') {
-                    if (["I", "E", "Y"].includes(w[current + 1])) {
-                        primary += 'J'; alternate += 'J';
-                        current += 2;
-                    } else {
-                        primary += 'K'; alternate += 'K';
-                        current++;
-                    }
-                } else if (ch === 'H') {
-                    if (current === 0 || isVowel(w[current - 1])) {
-                        primary += 'H'; alternate += 'H';
-                    }
-                    current++;
-                } else if (ch === 'J') {
-                    primary += 'J'; alternate += 'J';
-                    current++;
-                } else if (ch === 'K' || ch === 'Q') {
-                    primary += 'K'; alternate += 'K';
-                    current++;
-                } else if (ch === 'L') {
-                    primary += 'L'; alternate += 'L';
-                    current++;
-                } else if (ch === 'M') {
-                    primary += 'M'; alternate += 'M';
-                    current++;
-                } else if (ch === 'N') {
-                    primary += 'N'; alternate += 'N';
-                    current++;
-                } else if (ch === 'P') {
-                    if (w[current + 1] === 'H') {
-                        primary += 'F'; alternate += 'F';
-                        current += 2;
-                    } else {
-                        primary += 'P'; alternate += 'P';
-                        current++;
-                    }
-                } else if (ch === 'R') {
-                    primary += 'R'; alternate += 'R';
-                    current++;
-                } else if (ch === 'S') {
-                    if (w[current + 1] === 'H') {
-                        primary += 'X'; alternate += 'X';
-                        current += 2;
-                    } else {
-                        primary += 'S'; alternate += 'S';
-                        current++;
-                    }
-                } else if (ch === 'T') {
-                    if (w[current + 1] === 'H') {
-                        primary += '0'; alternate += '0';
-                        current += 2;
-                    } else {
-                        primary += 'T'; alternate += 'T';
-                        current++;
-                    }
-                } else if (ch === 'W') {
-                    if (isVowel(w[current + 1])) {
-                        primary += 'A'; alternate += 'A';
-                    }
-                    current++;
-                } else if (ch === 'X') {
-                    primary += 'KS'; alternate += 'KS';
-                    current++;
-                } else if (ch === 'Z') {
-                    primary += 'S'; alternate += 'S';
-                    current++;
-                } else {
-                    current++;
-                }
-            }
-            return [primary, alternate];
-        }
-
-        // [DUKE] Detect Lesson Level dynamically
         function getLessonLevel() {
             if (typeof lessonLevel !== 'undefined' && lessonLevel) return lessonLevel.toUpperCase();
             const title = (document.title || "").toUpperCase();
@@ -5363,35 +4829,44 @@ html {
                 if (data) data.attemptCount = (data.attemptCount || 0) + 1;
 
                 const profile = (LESSON_SCORING_PROFILES && LESSON_SCORING_PROFILES[currentIndex]) ? LESSON_SCORING_PROFILES[currentIndex] : null;
-                if (!profile || (profile.schemaVersion !== "2.0.0" && profile.schemaVersion !== "2.0.1")) {
-                    console.error("[Listening Scoring] Invalid scoring profile v2 at index", currentIndex);
+                if (!profile || profile.schemaVersion !== "3.0.0") {
+                    console.error("[Listening Scoring] Invalid scoring profile v3 at index", currentIndex);
                     alert("Dữ liệu chấm không hợp lệ. Vui lòng tải lại bài học.");
                     return;
                 }
 
-                if (typeof ListeningScoringCore === 'undefined' || typeof ListeningScoringCore.scoreCandidates !== 'function') {
-                    console.error("[Listening Scoring] ListeningScoringCore is missing");
+                if (typeof DukePronunciationEngine === 'undefined' || typeof DukePronunciationEngine.scoreListeningCandidates !== 'function') {
+                    console.error("[Listening Scoring] DukePronunciationEngine is missing");
                     alert("Bộ chấm điểm lõi chưa được nạp. Vui lòng tải lại bài học.");
                     return;
                 }
 
                 const candidates = [];
-                if (spokenText && typeof spokenText === 'string' && spokenText.trim()) {
-                    candidates.push(spokenText.trim());
-                }
-                if (Array.isArray(alternatives)) {
-                    alternatives.forEach(alt => {
-                        if (alt && typeof alt === 'string' && alt.trim() && !candidates.includes(alt.trim())) {
-                            candidates.push(alt.trim());
-                        }
+                const candidateKeys = new Set();
+                const addCandidate = (candidate, fallbackRank) => {
+                    const value = typeof candidate === 'string'
+                        ? { transcript: candidate, confidence: null, rank: fallbackRank }
+                        : candidate;
+                    const transcript = String(value && value.transcript || '').trim();
+                    const key = transcript.toLowerCase();
+                    if (!transcript || candidateKeys.has(key)) return;
+                    candidateKeys.add(key);
+                    candidates.push({
+                        transcript,
+                        confidence: Number.isFinite(value.confidence) ? value.confidence : null,
+                        rank: Number.isInteger(value.rank) ? value.rank : fallbackRank
                     });
+                };
+                addCandidate(spokenText, 0);
+                if (Array.isArray(alternatives)) {
+                    alternatives.forEach((alt, rank) => addCandidate(alt, rank));
                 }
                 if (candidates.length === 0) {
-                    candidates.push("");
+                    candidates.push({ transcript: "", confidence: null, rank: 0 });
                 }
 
                 const lvl = getLessonLevel();
-                const scoreResult = ListeningScoringCore.scoreCandidates(profile, candidates, lvl);
+                const scoreResult = DukePronunciationEngine.scoreListeningCandidates(profile, candidates, lvl);
 
                 const accuracy = scoreResult.finalScore;
                 const isPass = scoreResult.isPass;
@@ -5400,17 +4875,20 @@ html {
                 let htmlResult = '';
                 if (Array.isArray(scoreResult.tokenScores)) {
                     scoreResult.tokenScores.forEach(t => {
+                        const display = escapeHtml(t.display);
                         if (t.status === 'correct') {
-                            htmlResult += `<span class="w-correct" title="Chính xác">${t.display}</span> `;
+                            htmlResult += `<span class="w-correct" title="Chính xác">${display}</span> `;
+                        } else if (t.status === 'accepted') {
+                            htmlResult += `<span class="w-correct" title="Tương đương được chấp nhận">${display}</span> `;
                         } else if (t.status === 'near') {
-                            htmlResult += `<span class="w-close" title="Gần đúng">${t.display}</span> `;
+                            htmlResult += `<span class="w-close" title="Gần đúng">${display}</span> `;
                         } else if (t.status === 'ignored') {
-                            htmlResult += `<span class="w-skip" title="Được tha thứ (không tính điểm)">${t.display}</span> `;
+                            htmlResult += `<span class="w-skip" title="Không tính điểm">${display}</span> `;
                         } else if (t.status === 'incorrect') {
-                            htmlResult += `<span class="w-wrong" title="Phát âm chưa chính xác">${t.display}</span> `;
+                            htmlResult += `<span class="w-wrong" title="Phát âm chưa chính xác">${display}</span> `;
                         } else {
                             reportRuntimeIssue('Unknown token status', { status: t.status, index: currentIndex });
-                            htmlResult += `<span class="w-wrong" title="Trạng thái không xác định">${t.display}</span> `;
+                            htmlResult += `<span class="w-wrong" title="Trạng thái không xác định">${display}</span> `;
                         }
                     });
                 }
@@ -5608,7 +5086,7 @@ html {
         });
 
         renderCard(0);
-    </script>
+</script>
 </body>
 
 </html>

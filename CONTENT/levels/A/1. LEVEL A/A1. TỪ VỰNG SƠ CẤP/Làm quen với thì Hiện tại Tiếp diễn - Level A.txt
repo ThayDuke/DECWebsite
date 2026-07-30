@@ -1,0 +1,1280 @@
+Tệp nguồn: 1. LEVEL A/A1. TỪ VỰNG SƠ CẤP/Làm quen với thì Hiện tại Tiếp diễn - Level A.html
+Tên file HTML: Làm quen với thì Hiện tại Tiếp diễn - Level A.html
+Nguồn dữ liệu: fullQuestionBank
+Cấp độ: A1
+Chủ đề: Làm quen với thì Hiện tại Tiếp diễn - Level A
+Tổng số câu hỏi: 98
+
+Câu 1
+Nội dung: Look! The baby ___ in the cradle.
+A. is sleeping
+B. are sleeping
+C. sleeping
+D. sleeps
+Đáp án đúng: is sleeping
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! 'The baby' là số ít nên đi với 'is sleeping' để chỉ hành động đang diễn ra.
+- B. Sai rồi, 'The baby' là số ít, em phải dùng 'is' nhé.
+- C. Thiếu mất động từ to-be 'is' rồi. Thì tiếp diễn luôn cần be + V-ing.
+- D. Đây là thì hiện tại đơn, nhưng 'Look!' báo hiệu hành động đang diễn ra ngay bây giờ.
+
+Câu 2
+Nội dung: Choose the correct sentence.
+A. Nam is playing football now.
+B. Nam playing football now.
+C. Nam are playing football now.
+D. Nam is play football now.
+Đáp án đúng: Nam is playing football now.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Cấu trúc S + is/am/are + V-ing + now rất chuẩn.
+- B. Câu này bị thiếu động từ to-be 'is' rồi em ơi.
+- C. Nam là một người thôi, nên dùng 'is' thay vì 'are' nhé.
+- D. Thiếu đuôi '-ing' ở động từ 'play' rồi. Nhớ là 'is playing' mới đúng.
+
+Câu 3
+Nội dung: Find the error: 'They is reading books in the library.'
+A. is reading -> are reading
+B. is reading -> reading
+C. reading -> read
+D. books -> book
+Đáp án đúng: is reading -> are reading
+Giải thích gốc từng lựa chọn:
+- A. Giỏi quá! 'They' là số nhiều nên phải đi với 'are'.
+- B. Nếu bỏ 'is' mà không thêm 'are' thì vẫn thiếu to-be đấy.
+- C. Không nên đổi sang 'read' vì câu này đang diễn tả hành động đang xảy ra.
+- D. Từ 'books' không sai, 'is reading' mới là chỗ cần sửa.
+
+Câu 4
+Nội dung: Listen! Someone ___ at the door.
+A. is knocking
+B. are knocking
+C. knocks
+D. knocking
+Đáp án đúng: is knocking
+Giải thích gốc từng lựa chọn:
+- A. Đúng rồi! 'Someone' (ai đó) được tính là số ít, đi với 'is knocking'.
+- B. 'Someone' đi với 'is' chứ không đi với 'are' đâu nhé.
+- C. 'Listen!' là dấu hiệu của hành động đang diễn ra, dùng hiện tại tiếp diễn tốt hơn.
+- D. Em quên chưa thêm 'is' rồi. Cấu trúc đầy đủ là 'is knocking'.
+
+Câu 5
+Nội dung: A: 'Where is Mary?' - B: 'She ___ in the kitchen.'
+A. is cooking
+B. are cooking
+C. cooks
+D. is cook
+Đáp án đúng: is cooking
+Giải thích gốc từng lựa chọn:
+- A. Hợp lý! Mary đang ở bếp nên cô ấy đang nấu ăn (is cooking).
+- B. 'She' là số ít nên phải dùng 'is', không dùng 'are' em nha.
+- C. Đây là câu hỏi về vị trí hiện tại, diễn tả hành động đang làm nên dùng đuôi -ing.
+- D. Sau 'is' phải là 'cooking' mới đúng ngữ pháp thì tiếp diễn.
+
+Câu 6
+Nội dung: Câu nào có nghĩa là: 'Nam đang chạy trong công viên'?
+A. Nam is running in the park.
+B. Nam is run in the park.
+C. Nam are running in the park.
+D. Nam running in the park.
+Đáp án đúng: Nam is running in the park.
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! 'Running' (đang chạy) và 'is' cho chủ ngữ Nam.
+- B. Thiếu đuôi '-ing' ở động từ chạy rồi.
+- C. Nam là số ít, em dùng 'are' là sai mất rồi.
+- D. Câu này thiếu to-be 'is' để làm thành câu hoàn chỉnh.
+
+Câu 7
+Nội dung: I ___ (not) watching TV now. I am doing homework.
+A. am not
+B. is not
+C. are not
+D. not
+Đáp án đúng: am not
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Phủ định của 'I am' là 'I am not'.
+- B. Chủ ngữ là 'I' thì phải đi với 'am', không đi với 'is'.
+- C. 'I' luôn đi với 'am', 'are' chỉ dùng cho số nhiều thôi.
+- D. Em cần cả to-be 'am' đứng trước 'not' nữa nhé.
+
+Câu 8
+Nội dung: ___ the cats playing with the ball?
+A. Are
+B. Is
+C. Am
+D. Do
+Đáp án đúng: Are
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The cats' là số nhiều nên dùng 'Are' ở đầu câu hỏi.
+- B. Vì có nhiều con mèo (cats) nên mình phải dùng 'Are' mới đúng.
+- C. 'Am' chỉ dùng cho 'I' thôi, không dùng cho 'the cats'.
+- D. Đây là thì tiếp diễn (V-ing) nên mình mượn to-be 'Are' làm câu hỏi.
+
+Câu 9
+Nội dung: Be quiet! My grandfather ___.
+A. is sleeping
+B. are sleeping
+C. sleep
+D. sleeping
+Đáp án đúng: is sleeping
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Lời nhắc 'Be quiet!' cho thấy ông đang ngủ ngay lúc này.
+- B. Ông (grandfather) là một người thôi nên dùng 'is' em nhé.
+- C. Dùng hiện tại tiếp diễn 'is sleeping' sẽ hay hơn trong tình huống này.
+- D. Thiếu to-be 'is' rồi, câu chưa hoàn chỉnh đâu.
+
+Câu 10
+Nội dung: Which sentence is correct?
+A. We are learning English at the moment.
+B. We is learning English at the moment.
+C. We learning English at the moment.
+D. We are learn English at the moment.
+Đáp án đúng: We are learning English at the moment.
+Giải thích gốc từng lựa chọn:
+- A. Hoàn hảo! 'We' đi với 'are' và 'learning' có đuôi -ing đúng chuẩn.
+- B. 'We' là chúng tôi (số nhiều), phải đi với 'are' mới đúng.
+- C. Đừng quên chữ 'are' sau 'We' để tạo thành thì tiếp diễn nhé.
+- D. Động từ 'learn' phải thêm '-ing' mới diễn tả được hành động đang làm.
+
+Câu 11
+Nội dung: Find the error: 'Look! The students is swimming.'
+A. is -> are
+B. swimming -> swim
+C. is -> am
+D. Look -> Listen
+Đáp án đúng: is -> are
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! 'The students' là số nhiều nên phải sửa thành 'are'.
+- B. Sau 'is/are' phải dùng 'swimming' để chỉ hành động đang diễn ra.
+- C. 'Am' chỉ đi với 'I', còn đây là các học sinh cơ mà.
+- D. Từ 'Look' dùng ở đây rất hợp lý, không cần thay đổi.
+
+Câu 12
+Nội dung: Don't make noise! I ___ to the radio.
+A. am listening
+B. is listening
+C. listen
+D. listening
+Đáp án đúng: am listening
+Giải thích gốc từng lựa chọn:
+- A. Đúng rồi! 'I' đi với 'am' và thêm '-ing' vào động từ listen.
+- B. 'I' không bao giờ đi với 'is', nhớ nhé: 'I am'.
+- C. Câu này cần dùng thì tiếp diễn vì có lời nhắc đừng làm ồn.
+- D. Em thiếu chữ 'am' mất rồi, thêm vào mới đúng cấu trúc.
+
+Câu 13
+Nội dung: A: 'What are you doing?' - B: 'I ___ a letter.'
+A. am writing
+B. is writing
+C. writing
+D. write
+Đáp án đúng: am writing
+Giải thích gốc từng lựa chọn:
+- A. Tuyệt! 'I' đi với 'am' và 'writing' bỏ đuôi 'e' thêm 'ing'.
+- B. Đừng nhầm lẫn nhé, 'I' thì phải đi với 'am' chứ.
+- C. Vẫn thiếu to-be 'am' nè, em bổ sung cho câu đúng nhé.
+- D. Người ta đang hỏi 'What are you doing?' thì mình trả lời bằng -ing.
+
+Câu 14
+Nội dung: Câu nào đúng với nghĩa: 'Mẹ tôi đang nấu bữa tối'?
+A. My mother is cooking dinner.
+B. My mother are cooking dinner.
+C. My mother cooking dinner.
+D. My mother is cook dinner.
+Đáp án đúng: My mother is cooking dinner.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Mẹ là số ít nên dùng 'is cooking'.
+- B. Mẹ là một người, không dùng 'are' được đâu.
+- C. Câu bị thiếu động từ to-be 'is' mất rồi.
+- D. 'Cook' phải thêm '-ing' thì mới thành 'đang nấu' được.
+
+Câu 15
+Nội dung: It ___ (not) raining at the moment.
+A. is not
+B. are not
+C. am not
+D. not
+Đáp án đúng: is not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Phủ định của 'It is' là 'It is not' hoặc 'It isn't'.
+- B. 'It' là ngôi thứ 3 số ít, nên mình dùng 'is not' nhé.
+- C. 'Am not' chỉ dùng cho 'I' thôi, không dùng cho 'It'.
+- D. Thiếu 'is' rồi, 'not' không đứng một mình được trong câu này.
+
+Câu 16
+Nội dung: ___ your brother working now?
+A. Is
+B. Are
+C. Do
+D. Does
+Đáp án đúng: Is
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! 'Your brother' là một người (số ít) nên dùng 'Is'.
+- B. Anh/em trai của bạn là số ít, em nên chọn 'Is' mới đúng.
+- C. Câu có 'working' (V-ing) nên mình hỏi bằng to-be 'Is' nhé.
+- D. 'Does' dùng cho hiện tại đơn, còn đây là thì tiếp diễn có 'now'.
+
+Câu 17
+Nội dung: Look! The sun ___.
+A. is shining
+B. are shining
+C. shining
+D. shines
+Đáp án đúng: is shining
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The sun' số ít và 'shining' bỏ 'e' thêm 'ing' rât chuẩn.
+- B. Mặt trời chỉ có một, em dùng 'is' nhé.
+- C. Câu còn thiếu 'is' nè, em nhớ kiểm tra cấu trúc be + V-ing.
+- D. 'Look!' báo hiệu sự việc đang diễn ra, dùng 'is shining' mới đúng.
+
+Câu 18
+Nội dung: Which sentence is correct about the children?
+A. The children are playing hide and seek.
+B. The children is playing hide and seek.
+C. The children are play hide and seek.
+D. The children playing hide and seek.
+Đáp án đúng: The children are playing hide and seek.
+Giải thích gốc từng lựa chọn:
+- A. Đúng rồi! 'Children' là số nhiều của 'child' nên đi với 'are'.
+- B. 'Children' là danh từ số nhiều (những đứa trẻ) nên phải dùng 'are'.
+- C. Thiếu đuôi '-ing' ở từ 'play' rồi em ơi.
+- D. Câu này bị thiếu mất to-be 'are' rồi.
+
+Câu 19
+Nội dung: Find the error: 'I am runing in the park right now.'
+A. runing -> running
+B. am -> is
+C. runing -> runs
+D. in -> on
+Đáp án đúng: runing -> running
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! Động từ 'run' khi thêm '-ing' phải gấp đôi chữ 'n'.
+- B. 'I' đi với 'am' là đúng rồi, không cần sửa thành 'is'.
+- C. Có 'right now' nên mình vẫn giữ thì tiếp diễn nhưng phải viết đúng chính tả.
+- D. Dùng 'in the park' là hoàn toàn đúng ngữ pháp.
+
+Câu 20
+Nội dung: Right now, my sisters ___ their dolls.
+A. are washing
+B. is washing
+C. wash
+D. washing
+Đáp án đúng: are washing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'My sisters' (những người chị/em) là số nhiều nên dùng 'are washing'.
+- B. Có nhiều người chị/em (sisters) mà, em dùng 'are' mới đúng.
+- C. Có dấu hiệu 'Right now', em nên dùng thì hiện tại tiếp diễn.
+- D. Bổ sung thêm 'are' vào trước 'washing' để hoàn thành câu nhé.
+
+Câu 21
+Nội dung: A: 'Where are Nam and Ba?' - B: 'They ___ TV.'
+A. are watching
+B. is watching
+C. watches
+D. are watch
+Đáp án đúng: are watching
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Nam và Ba là 2 người nên dùng 'They are watching'.
+- B. Họ là số nhiều nên phải đi với 'are' chứ không phải 'is'.
+- C. Người ta đang hỏi họ đang ở đâu, nên trả lời bằng hành động đang diễn ra.
+- D. Nhớ thêm đuôi '-ing' vào sau 'watch' em nhé.
+
+Câu 22
+Nội dung: Chọn câu tương ứng: 'Họ đang ăn trưa tại nhà hàng.'
+A. They are having lunch at a restaurant.
+B. They is having lunch at a restaurant.
+C. They are have lunch at a restaurant.
+D. They having lunch at a restaurant.
+Đáp án đúng: They are having lunch at a restaurant.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'They are' và 'having' là cách dùng rất tự nhiên.
+- B. 'They' đi với 'are' vì là số nhiều em nha.
+- C. Động từ 'have' cần chuyển thành 'having' trong thì tiếp diễn.
+- D. Em quên chưa cho to-be 'are' vào câu rồi.
+
+Câu 23
+Nội dung: We ___ (not) going to school today.
+A. are not
+B. is not
+C. am not
+D. not
+Đáp án đúng: are not
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! 'We' đi với 'are' và thêm 'not' để phủ định.
+- B. 'We' là số nhiều nên mình không dùng 'is' được.
+- C. 'Am' chỉ dùng với 'I' thôi, không dùng với 'We'.
+- D. Cần to-be 'are' đi kèm với 'not' em nhé.
+
+Câu 24
+Nội dung: ___ you listening to me?
+A. Are
+B. Is
+C. Do
+D. Am
+Đáp án đúng: Are
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Trong câu hỏi, 'Are' đứng trước 'you' và động từ thêm -ing.
+- B. 'You' luôn đi với 'are', kể cả khi hỏi hay khi khẳng định.
+- C. Vì có 'listening' (V-ing) nên mình mượn to-be 'Are' nhé.
+- D. 'Am' chỉ dành riêng cho 'I' thôi em ạ.
+
+Câu 25
+Nội dung: Listen! The bird ___ a song.
+A. is singing
+B. are singing
+C. sing
+D. is sing
+Đáp án đúng: is singing
+Giải thích gốc từng lựa chọn:
+- A. Hay quá! 'The bird' (con chim) số ít nên dùng 'is singing'.
+- B. Chỉ có một con chim thôi, em chọn 'is' là đúng nhất.
+- C. Có 'Listen!' là dấu hiệu, mình dùng thì tiếp diễn nhé.
+- D. Đừng quên thêm '-ing' để biến nó thành 'đang hát' nha.
+
+Câu 26
+Nội dung: Which one is correct?
+A. She is making a cake now.
+B. She is makeing a cake now.
+C. She are making a cake now.
+D. She making a cake now.
+Đáp án đúng: She is making a cake now.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn rồi! Cấu trúc đúng và 'making' bỏ 'e' thêm 'ing' rất tốt.
+- B. Lưu ý: từ 'make' khi thêm '-ing' phải bỏ chữ 'e' đi nhé.
+- C. 'She' là số ít nên phải dùng 'is'.
+- D. Câu này vẫn bị thiếu to-be 'is' nè.
+
+Câu 27
+Nội dung: Find the error: 'My cat are sleeping on the sofa.'
+A. are -> is
+B. sleeping -> sleep
+C. on -> in
+D. are -> am
+Đáp án đúng: are -> is
+Giải thích gốc từng lựa chọn:
+- A. Đúng rồi! 'My cat' là một chú mèo, nên phải dùng 'is'.
+- B. Thì tiếp diễn cần 'sleeping' sau to-be, không nên bỏ -ing.
+- C. Dùng 'on the sofa' là hoàn toàn chính xác.
+- D. 'Am' chỉ đi với 'I', mèo không dùng 'am' được.
+
+Câu 28
+Nội dung: Our teacher ___ on the board at the moment.
+A. is writing
+B. are writing
+C. is writeing
+D. writes
+Đáp án đúng: is writing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'Teacher' số ít dùng 'is' và 'writing' bỏ 'e' thêm 'ing'.
+- B. Giáo viên là số ít, em nên dùng 'is' thay vì 'are'.
+- C. Nhớ bỏ 'e' ở cuối từ 'write' trước khi thêm '-ing' nhé.
+- D. Dấu hiệu 'at the moment' yêu cầu thì hiện tại tiếp diễn.
+
+Câu 29
+Nội dung: A: 'What is your mom doing?' - B: 'She ___ flowers.'
+A. is watering
+B. are watering
+C. waters
+D. is water
+Đáp án đúng: is watering
+Giải thích gốc từng lựa chọn:
+- A. Giỏi! Mẹ đang làm việc nên dùng 'is watering' (đang tưới nước).
+- B. Mẹ là số ít, em hãy dùng 'is' nhé.
+- C. Khi trả lời về việc đang làm, em nên dùng đuôi -ing.
+- D. Phải là 'is watering' mới đúng ngữ pháp nè.
+
+Câu 30
+Nội dung: Câu nào là: 'Anh ấy đang không đạp xe'?
+A. He is not riding a bike.
+B. He is not ride a bike.
+C. He are not riding a bike.
+D. He not riding a bike.
+Đáp án đúng: He is not riding a bike.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'Is not' là phủ định và 'riding' (đạp xe) bỏ 'e' thêm 'ing'.
+- B. Em nhớ thêm '-ing' vào động từ 'ride' nhé.
+- C. 'He' đi với 'is', không đi với 'are'.
+- D. Phải có 'is' đứng trước 'not' thì câu mới đủ.
+
+Câu 31
+Nội dung: She ___ (not) drinking milk right now.
+A. is not
+B. are not
+C. am not
+D. not
+Đáp án đúng: is not
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! Phủ định của 'She is' là 'She is not'.
+- B. 'She' số ít nên dùng 'is not' là chuẩn nhất.
+- C. 'Am not' chỉ đi với 'I', em nhớ nhé.
+- D. Thiếu động từ to-be 'is' rồi em ơi.
+
+Câu 32
+Nội dung: ___ the dog barking outside?
+A. Is
+B. Are
+C. Do
+D. Does
+Đáp án đúng: Is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The dog' là số ít nên mình dùng 'Is' ở đầu câu hỏi.
+- B. Vì chỉ có một con chó (dog) nên mình dùng 'Is' nhé.
+- C. Thì tiếp diễn có 'barking' thì mình hỏi bằng 'Is'.
+- D. 'Does' dùng cho hiện tại đơn, ở đây mình cần to-be.
+
+Câu 33
+Nội dung: Look! A plane ___ in the sky.
+A. is flying
+B. are flying
+C. flying
+D. flies
+Đáp án đúng: is flying
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'A plane' số ít đi với 'is' và 'flying' giữ nguyên 'y' thêm 'ing'.
+- B. Chỉ có một chiếc máy bay, dùng 'is' mới đúng.
+- C. Hãy thêm to-be 'is' vào để câu hoàn chỉnh.
+- D. 'Look!' báo hiệu sự việc đang diễn ra, dùng hiện tại tiếp diễn nhé.
+
+Câu 34
+Nội dung: Identify the correct sentence.
+A. They are dancing together.
+B. They is dancing together.
+C. They are danceing together.
+D. They dancing together.
+Đáp án đúng: They are dancing together.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! 'They' đi với 'are' và 'dancing' bỏ 'e' thêm 'ing' rất đúng.
+- B. 'They' (họ) là số nhiều, phải dùng 'are' mới đúng.
+- C. Lưu ý: từ 'dance' khi thêm '-ing' phải bỏ chữ 'e' đi.
+- D. Thiếu to-be 'are' rồi, em bổ sung nhé.
+
+Câu 35
+Nội dung: Find the error: 'He is swiming at the moment.'
+A. swiming -> swimming
+B. is -> are
+C. at -> in
+D. He -> They
+Đáp án đúng: swiming -> swimming
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Từ 'swim' kết thúc bằng 1 phụ âm có 1 nguyên âm đứng trước, phải gấp đôi 'm'.
+- B. 'He' đi với 'is' là đúng rồi, không cần sửa.
+- C. Cụm 'at the moment' là dấu hiệu chuẩn của thì tiếp diễn.
+- D. Không cần đổi chủ ngữ, chỉ cần sửa lỗi chính tả thôi.
+
+Câu 36
+Nội dung: The children ___ their homework now.
+A. are doing
+B. is doing
+C. do
+D. doing
+Đáp án đúng: are doing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The children' số nhiều nên dùng 'are doing'.
+- B. 'Children' là những đứa trẻ (số nhiều), phải dùng 'are' em nhé.
+- C. Có 'now' ở cuối câu, em hãy dùng thì hiện tại tiếp diễn.
+- D. Thêm 'are' vào trước 'doing' thì mới đúng cấu trúc.
+
+Câu 37
+Nội dung: A: 'Where are your parents?' - B: 'They ___ in the garden.'
+A. are working
+B. is working
+C. work
+D. are work
+Đáp án đúng: are working
+Giải thích gốc từng lựa chọn:
+- A. Hợp lý! Bố mẹ đang làm việc (are working) ngoài vườn.
+- B. Bố mẹ (parents) là số nhiều, em sử dụng 'are' nhé.
+- C. Khi nói về việc đang diễn ra, dùng đuôi -ing sẽ hay hơn.
+- D. Em nhớ thêm '-ing' vào sau 'work' nữa.
+
+Câu 38
+Nội dung: Nghĩa của câu: 'Cô ấy đang đọc sách.' là gì?
+A. She is reading a book.
+B. She are reading a book.
+C. She reading a book.
+D. She is read a book.
+Đáp án đúng: She is reading a book.
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! 'She is' + 'reading' là đang đọc sách.
+- B. 'She' đi với 'is', đừng dùng 'are' nha.
+- C. Câu này vẫn còn thiếu to-be 'is' nè.
+- D. Động từ 'read' phải thêm '-ing' mới đúng thì.
+
+Câu 39
+Nội dung: We ___ (not) playing football. We are playing basketball.
+A. are not
+B. is not
+C. am not
+D. not
+Đáp án đúng: are not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Phủ định của 'We are' là 'We are not'.
+- B. 'We' là số nhiều, không dùng 'is' được đâu.
+- C. 'Am' chỉ dùng cho 'I', em nhớ nhé.
+- D. Cần to-be 'are' đứng trước 'not' em ạ.
+
+Câu 40
+Nội dung: ___ it snowing right now?
+A. Is
+B. Are
+C. Do
+D. Does
+Đáp án đúng: Is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Dùng 'Is' để hỏi cho chủ ngữ 'it'.
+- B. 'It' là số ít nên mình dùng 'Is' chứ không dùng 'Are'.
+- C. Câu có 'snowing' nên mình hỏi bằng to-be 'Is' nhé.
+- D. 'Does' dùng cho hiện tại đơn, không dùng cho 'V-ing'.
+
+Câu 41
+Nội dung: Listen! Someone ___ the piano.
+A. is playing
+B. are playing
+C. play
+D. is play
+Đáp án đúng: is playing
+Giải thích gốc từng lựa chọn:
+- A. Hay quá! 'Someone' đi với 'is playing' để chỉ người đang chơi đàn.
+- B. 'Someone' (ai đó) được tính là số ít, dùng 'is' nhé.
+- C. 'Listen!' báo hiệu hành động đang diễn ra, dùng tiếp diễn sẽ đúng hơn.
+- D. Nhớ thêm đuôi '-ing' vào sau 'play' em nha.
+
+Câu 42
+Nội dung: Which sentence is correct about Nam and Ba?
+A. Nam and Ba are running.
+B. Nam and Ba is running.
+C. Nam and Ba are runing.
+D. Nam and Ba running.
+Đáp án đúng: Nam and Ba are running.
+Giải thích gốc từng lựa chọn:
+- A. Hợp lý! Hai người là số nhiều nên dùng 'are running'.
+- B. Có 2 người nên phải dùng 'are' em nhé.
+- C. Lưu ý: từ 'run' phải gấp đôi chữ 'n' thành 'running'.
+- D. Thiếu to-be 'are' rồi, em bổ sung nhé.
+
+Câu 43
+Nội dung: Find the error: 'What are she doing now?'
+A. are -> is
+B. are -> am
+C. doing -> do
+D. now -> early
+Đáp án đúng: are -> is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Chủ ngữ 'she' số ít nên phải hỏi bằng 'What is she...'.
+- B. 'Am' chỉ đi với 'I', còn đây là 'she' mà.
+- C. Đang hỏi hành động ngay bây giờ nên vẫn giữ 'doing'.
+- D. Dùng 'now' ở cuối câu hỏi là rất chuẩn rồi.
+
+Câu 44
+Nội dung: At the moment, I ___ dinner with my family.
+A. am having
+B. is having
+C. are having
+D. have
+Đáp án đúng: am having
+Giải thích gốc từng lựa chọn:
+- A. Tuyệt! 'I' đi với 'am' và 'having' bỏ 'e' thêm 'ing'.
+- B. Đừng nhầm nhé, 'I' thì phải đi với 'am'.
+- C. 'I' không dùng 'are', em nhớ quy tắc: I am.
+- D. Dấu hiệu 'at the moment' yêu cầu thì hiện tại tiếp diễn.
+
+Câu 45
+Nội dung: A: 'Are you listening?' - B: 'Yes, I ___.'
+A. am
+B. is
+C. are
+D. do
+Đáp án đúng: am
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Trả lời ngắn cho câu hỏi 'Are you' là 'Yes, I am'.
+- B. 'I' không đi với 'is' em nha.
+- C. 'Are' dành cho số nhiều, còn 'I' đi với 'am'.
+- D. Người ta hỏi bằng 'Are', em trả lời bằng 'am' mới đúng cặp.
+
+Câu 46
+Nội dung: Câu nào là: 'Bố tôi đang lái xe đi làm'?
+A. My father is driving to work.
+B. My father are driving to work.
+C. My father is driveing to work.
+D. My father driving to work.
+Đáp án đúng: My father is driving to work.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'My father' số ít đi với 'is driving'.
+- B. Bố là số ít, em dùng 'is' nhé.
+- C. Từ 'drive' bỏ 'e' rồi mới thêm '-ing', em nhớ nhé.
+- D. Câu này còn thiếu to-be 'is' nè.
+
+Câu 47
+Nội dung: They ___ (not) watch TV. They are studying.
+A. are not watching
+B. is not watching
+C. not watching
+D. are not watch
+Đáp án đúng: are not watching
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! Phải có cả to-be 'are' và V-ing 'watching'.
+- B. 'They' là số nhiều, không đi với 'is'.
+- C. Câu bị thiếu động từ to-be 'are' mất rồi.
+- D. Đừng quên thêm đuôi '-ing' vào động từ nha.
+
+Câu 48
+Nội dung: ___ your friends playing in the yard?
+A. Are
+B. Is
+C. Do
+D. Am
+Đáp án đúng: Are
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'Your friends' là số nhiều nên dùng 'Are'.
+- B. Có nhiều người bạn (friends) mà, em dùng 'Are' mới đúng.
+- C. Đây là thì tiếp diễn (V-ing), mình hỏi bằng 'Are'.
+- D. 'Am' chỉ dành riêng cho 'I' thôi em ạ.
+
+Câu 49
+Nội dung: Look! The cat ___ the mouse.
+A. is catching
+B. are catching
+C. catches
+D. catching
+Đáp án đúng: is catching
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The cat' số ít đi với 'is catching'.
+- B. Chỉ có 1 con mèo, em dùng 'is' nhé.
+- C. 'Look!' báo hiệu hành động đang diễn ra, dùng tiếp diễn tốt hơn.
+- D. Thêm 'is' vào trước 'catching' để câu đúng ngữ pháp.
+
+Câu 50
+Nội dung: Find the correct sentence about the weather.
+A. It is raining now.
+B. It are raining now.
+C. It raining now.
+D. It is rain now.
+Đáp án đúng: It is raining now.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! 'It' đi với 'is' và thêm 'ing' vào 'rain'.
+- B. 'It' là số ít, em nên dùng 'is'.
+- C. Hãy bổ sung 'is' vào câu nhé.
+- D. Nhớ thêm '-ing' vào động từ để diễn tả 'đang' nhé.
+
+Câu 51
+Nội dung: Find the error: 'We are watch a movie together.'
+A. watch -> watching
+B. are -> is
+C. together -> each other
+D. movie -> movies
+Đáp án đúng: watch -> watching
+Giải thích gốc từng lựa chọn:
+- A. Đúng rồi! Sau 'are' phải là động từ thêm -ing.
+- B. 'We' là số nhiều nên dùng 'are' là đúng rồi.
+- C. Từ 'together' (cùng nhau) dùng ở đây rất hợp.
+- D. Xem một bộ phim (a movie) là không sai gì cả.
+
+Câu 52
+Nội dung: Listen! The wind ___ through the trees.
+A. is blowing
+B. are blowing
+C. blows
+D. blowing
+Đáp án đúng: is blowing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The wind' (gió) đi với 'is blowing'.
+- B. Gió mình tính là số ít, em dùng 'is' nhé.
+- C. 'Listen!' là dấu hiệu, mình dùng thì tiếp diễn nha.
+- D. Em quên chưa thêm 'is' rồi, bổ sung vào nhé.
+
+Câu 53
+Nội dung: A: 'Is Nam studying?' - B: 'No, he ___.'
+A. isn't
+B. aren't
+C. don't
+D. not
+Đáp án đúng: isn't
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Câu trả lời ngắn phủ định là 'No, he isn't'.
+- B. 'He' đi với 'is', nên phủ định là 'isn't' em nha.
+- C. Hỏi bằng 'Is' thì trả lời bằng 'is' hoặc 'isn't' mới đúng.
+- D. Cần có 'is' đi kèm với 'not' thành 'isn't'.
+
+Câu 54
+Nội dung: Câu này nghĩa là gì: 'Học sinh đang vẽ tranh'?
+A. The students are drawing pictures.
+B. The students is drawing pictures.
+C. The students are draw pictures.
+D. The students drawing pictures.
+Đáp án đúng: The students are drawing pictures.
+Giải thích gốc từng lựa chọn:
+- A. Chính xác! 'The students' số nhiều đi với 'are drawing'.
+- B. Có nhiều học sinh nên phải dùng 'are' em nha.
+- C. Nhớ thêm đuôi '-ing' vào động từ 'draw' nhé.
+- D. Câu này bị thiếu mất to-be 'are' rồi.
+
+Câu 55
+Nội dung: I ___ (not) swimming today. The water is cold.
+A. am not
+B. is not
+C. are not
+D. not
+Đáp án đúng: am not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'I' đi với 'am not'.
+- B. 'I' không đi với 'is', em nhớ nhé.
+- C. 'I' đi với 'am', đừng nhầm với 'are' nha.
+- D. Cần to-be 'am' đứng trước 'not' em ạ.
+
+Câu 56
+Nội dung: ___ the baby crying?
+A. Is
+B. Are
+C. Am
+D. Do
+Đáp án đúng: Is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The baby' số ít nên dùng 'Is'.
+- B. Em bé là số ít, mình dùng 'Is' nhé.
+- C. 'Am' chỉ dùng cho 'I' thôi nè.
+- D. Câu này có 'crying' (V-ing) nên mình hỏi bằng to-be.
+
+Câu 57
+Nội dung: Be quiet! My baby brother ___.
+A. is sleeping
+B. are sleeping
+C. sleeps
+D. sleeping
+Đáp án đúng: is sleeping
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Lời nhắc cho thấy em bé đang ngủ.
+- B. Em trai chỉ có 1 người, dùng 'is' em nhé.
+- C. Dùng thì tiếp diễn 'is sleeping' là hay nhất lúc này.
+- D. Thêm 'is' vào trước 'sleeping' để câu hoàn chỉnh.
+
+Câu 58
+Nội dung: Identify the correct sentence about the bird.
+A. The bird is flying in the sky.
+B. The bird are flying in the sky.
+C. The bird is fly in the sky.
+D. The bird flying in the sky.
+Đáp án đúng: The bird is flying in the sky.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! 'The bird' số ít đi với 'is flying'.
+- B. Chim là số ít nên phải dùng 'is'.
+- C. Đừng quên thêm '-ing' vào sau 'fly'.
+- D. Hãy bổ sung 'is' vào câu em nhé.
+
+Câu 59
+Nội dung: Find the error: 'She are singing a song.'
+A. are -> is
+B. singing -> sing
+C. singing -> sings
+D. a -> an
+Đáp án đúng: are -> is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'She' số ít nên đi với 'is'.
+- B. Đang hát thì mình giữ nguyên 'singing' nhé.
+- C. Nếu có 'are/is' thì phải đi với '-ing'.
+- D. Từ 'song' bắt đầu bằng phụ âm nên dùng 'a' là đúng.
+
+Câu 60
+Nội dung: Look! My mother ___ some flowers.
+A. is buying
+B. are buying
+C. buys
+D. buying
+Đáp án đúng: is buying
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Mẹ số ít nên dùng 'is buying'.
+- B. Mẹ là một người, em chọn 'is' nhé.
+- C. Có 'Look!' mình dùng thì tiếp diễn tốt hơn.
+- D. Nhớ thêm 'is' vào đằng trước 'buying' em nha.
+
+Câu 61
+Nội dung: A: 'Where is Ba?' - B: 'He ___ his bike.'
+A. is riding
+B. are riding
+C. rides
+D. is ride
+Đáp án đúng: is riding
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Ba đang đạp xe nên dùng 'is riding'.
+- B. Ba là một người nên mình dùng 'is' nhé.
+- C. Người ta đang hỏi Ba ở đâu, mình trả lời việc đang làm.
+- D. Nhớ thêm đuôi '-ing' vào động từ.
+
+Câu 62
+Nội dung: Câu nào là: 'Chúng tôi đang ăn táo.'?
+A. We are eating apples.
+B. We is eating apples.
+C. We are eat apples.
+D. We eating apples.
+Đáp án đúng: We are eating apples.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'We are' và 'eating' táo (apples).
+- B. 'We' là số nhiều, dùng 'are' em nha.
+- C. Nhớ thêm '-ing' vào động từ 'eat'.
+- D. Thiếu to-be 'are' trong câu rồi.
+
+Câu 63
+Nội dung: The boys ___ (not) playing football now.
+A. are not
+B. is not
+C. not
+D. am not
+Đáp án đúng: are not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The boys' số nhiều nên dùng 'are not'.
+- B. Có nhiều bạn nam mà, em nên dùng 'are not'.
+- C. Cần to-be 'are' đứng trước 'not'.
+- D. 'Am' chỉ dành cho 'I' thôi em ạ.
+
+Câu 64
+Nội dung: ___ she wearing a red hat?
+A. Is
+B. Are
+C. Do
+D. Does
+Đáp án đúng: Is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Dùng 'Is' để hỏi cho 'she'.
+- B. 'She' số ít nên dùng 'Is' chứ không dùng 'Are'.
+- C. Câu có 'wearing' thì mình hỏi bằng 'Is'.
+- D. 'Does' dùng cho hiện tại đơn, không dùng cho V-ing.
+
+Câu 65
+Nội dung: Listen! Someone ___ at the door.
+A. is knocking
+B. are knocking
+C. knocks
+D. knocking
+Đáp án đúng: is knocking
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'Someone' số ít đi với 'is knocking'.
+- B. 'Someone' đi với 'is' em nhé.
+- C. 'Listen!' là dấu hiệu nên dùng tiếp diễn.
+- D. Thêm 'is' vào đằng trước 'knocking' nè.
+
+Câu 66
+Nội dung: Which sentence is correct about the dog?
+A. The dog is running in the yard.
+B. The dog is runing in the yard.
+C. The dog are running in the yard.
+D. The dog running in the yard.
+Đáp án đúng: The dog is running in the yard.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Chú chó đang chạy, gấp đôi chữ 'n' trong 'running'.
+- B. Lưu ý: 'run' khi thêm '-ing' phải thành 'running' (2 chữ n).
+- C. Chú chó là số ít, dùng 'is' em nhé.
+- D. Bổ sung 'is' vào câu cho đúng nhé.
+
+Câu 67
+Nội dung: Find the error: 'They are writeing letters.'
+A. writeing -> writing
+B. are -> is
+C. letters -> letter
+D. writeing -> writes
+Đáp án đúng: writeing -> writing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Từ 'write' phải bỏ 'e' trước khi thêm 'ing'.
+- B. 'They' số nhiều nên dùng 'are' là đúng rồi.
+- C. Viết những lá thư (letters) là không có gì sai.
+- D. Sau 'are' mình dùng V-ing 'writing' là chuẩn nhất.
+
+Câu 68
+Nội dung: Look! The children ___ to school.
+A. are walking
+B. is walking
+C. walks
+D. walking
+Đáp án đúng: are walking
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'Children' số nhiều nên dùng 'are walking'.
+- B. Những đứa trẻ là số nhiều, em dùng 'are'.
+- C. Có 'Look!' mình dùng thì tiếp diễn nhé.
+- D. Thêm 'are' vào đằng trước 'walking' nữa.
+
+Câu 69
+Nội dung: A: 'Are they playing?' - B: 'Yes, they ___.'
+A. are
+B. is
+C. do
+D. am
+Đáp án đúng: are
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Câu trả lời ngắn là 'Yes, they are'.
+- B. 'They' đi với 'are' chứ không phải 'is'.
+- C. Hỏi bằng 'Are' thì mình trả lời bằng 'are' luôn.
+- D. 'Am' chỉ dành cho 'I' thôi em ơi.
+
+Câu 70
+Nội dung: Câu nào là: 'Họ đang học tiếng Anh.'?
+A. They are studying English.
+B. They is studying English.
+C. They are study English.
+D. They studying English.
+Đáp án đúng: They are studying English.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'They are' và 'studying' (đang học).
+- B. 'They' số nhiều, dùng 'are' em nha.
+- C. Nhớ thêm đuôi '-ing' vào sau 'study'.
+- D. Câu này bị thiếu to-be 'are' rồi.
+
+Câu 71
+Nội dung: We ___ (not) having breakfast now.
+A. are not
+B. is not
+C. not
+D. am not
+Đáp án đúng: are not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'We' đi với 'are not'.
+- B. 'We' số nhiều, dùng 'are not' nhé.
+- C. Thiếu to-be 'are' trong câu phủ định.
+- D. 'Am' chỉ dành cho 'I' thôi nè.
+
+Câu 72
+Nội dung: ___ the cat sitting on the table?
+A. Is
+B. Are
+C. Do
+D. Does
+Đáp án đúng: Is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The cat' số ít dùng 'Is' để hỏi.
+- B. Con mèo là số ít nên dùng 'Is' em nhé.
+- C. Câu có 'sitting' thì mình hỏi bằng 'Is'.
+- D. 'Does' dùng cho hiện tại đơn, không dùng cho V-ing.
+
+Câu 73
+Nội dung: Listen! My sister ___ a beautiful song.
+A. is singing
+B. are singing
+C. sings
+D. singing
+Đáp án đúng: is singing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Chị/em gái số ít nên dùng 'is singing'.
+- B. Chị/em gái là một người, em chọn 'is' nhé.
+- C. Có 'Listen!' mình dùng thì tiếp diễn sẽ hay hơn.
+- D. Nhớ thêm 'is' vào đằng trước 'singing' nha.
+
+Câu 74
+Nội dung: Which sentence is correct about the baby?
+A. The baby is sleeping now.
+B. The baby are sleeping now.
+C. The baby is sleep now.
+D. The baby sleeping now.
+Đáp án đúng: The baby is sleeping now.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Em bé đang ngủ, 'is sleeping' rất đúng.
+- B. Em bé là số ít, dùng 'is' em nhé.
+- C. Đừng quên thêm đuôi '-ing' vào động từ.
+- D. Bổ sung 'is' vào trước 'sleeping' là đúng.
+
+Câu 75
+Nội dung: Find the error: 'I am makeing a sandwich.'
+A. makeing -> making
+B. am -> is
+C. sandwich -> sandwiches
+D. makeing -> makes
+Đáp án đúng: makeing -> making
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Từ 'make' bỏ 'e' rồi mới thêm '-ing'.
+- B. 'I' đi với 'am' là rất đúng, không cần sửa.
+- C. Làm một cái bánh (a sandwich) không hề sai.
+- D. Vẫn giữ thì tiếp diễn nhưng phải viết đúng chính tả.
+
+Câu 76
+Nội dung: Look! The teacher ___ into the classroom.
+A. is coming
+B. are coming
+C. comes
+D. coming
+Đáp án đúng: is coming
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Giáo viên số ít và 'coming' bỏ 'e' thêm 'ing'.
+- B. Thầy/cô là một người, em dùng 'is' nhé.
+- C. Dùng thì tiếp diễn khi có từ 'Look!' báo hiệu.
+- D. Thêm to-be 'is' vào đằng trước 'coming' nè.
+
+Câu 77
+Nội dung: A: 'What are you reading?' - B: 'I ___ a comic book.'
+A. am reading
+B. is reading
+C. read
+D. are reading
+Đáp án đúng: am reading
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! 'I' đi với 'am reading' (đang đọc).
+- B. 'I' luôn đi với 'am', đừng nhầm với 'is' nhé.
+- C. Hỏi về việc đang làm thì mình trả lời có đuôi -ing.
+- D. 'I' không dùng 'are', em nhớ quy tắc: I am.
+
+Câu 78
+Nội dung: Câu nào là: 'Nam đang chơi đồ chơi.'?
+A. Nam is playing with toys.
+B. Nam are playing with toys.
+C. Nam is play with toys.
+D. Nam playing with toys.
+Đáp án đúng: Nam is playing with toys.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'Nam is' và 'playing' (đang chơi).
+- B. Nam là số ít, dùng 'is' em nha.
+- C. Đừng quên thêm đuôi '-ing' vào động từ.
+- D. Câu này bị thiếu to-be 'is' rồi.
+
+Câu 79
+Nội dung: They ___ (not) eating lunch at the canteen.
+A. are not
+B. is not
+C. not
+D. am not
+Đáp án đúng: are not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'They' đi với 'are not'.
+- B. 'They' số nhiều nên dùng 'are not' nhé.
+- C. Cần to-be 'are' đứng trước 'not' em ạ.
+- D. 'Am' chỉ dành cho 'I' thôi em ơi.
+
+Câu 80
+Nội dung: ___ the students listening to the teacher?
+A. Are
+B. Is
+C. Do
+D. Am
+Đáp án đúng: Are
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The students' số nhiều nên dùng 'Are'.
+- B. Có nhiều học sinh mà, em dùng 'Are' mới đúng.
+- C. Câu có 'listening' thì mình hỏi bằng 'Are'.
+- D. 'Am' chỉ dành riêng cho 'I' thôi nè.
+
+Câu 81
+Nội dung: Listen! The baby ___ in the room.
+A. is crying
+B. are crying
+C. cries
+D. crying
+Đáp án đúng: is crying
+Giải thích gốc từng lựa chọn:
+- A. Hay quá! 'The baby' số ít dùng 'is crying'.
+- B. Chỉ có 1 em bé, em chọn 'is' là đúng nhất.
+- C. Dùng thì tiếp diễn khi có dấu hiệu 'Listen!'.
+- D. Nhớ thêm 'is' vào trước 'crying' nha.
+
+Câu 82
+Nội dung: Which sentence is correct about the cat?
+A. The cat is climbing the tree.
+B. The cat are climbing the tree.
+C. The cat is climb the tree.
+D. The cat climbing the tree.
+Đáp án đúng: The cat is climbing the tree.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Con mèo đang leo cây, 'is climbing' rất đúng.
+- B. Con mèo là số ít, dùng 'is' em nhé.
+- C. Nhớ thêm đuôi '-ing' để diễn tả đang leo nhé.
+- D. Bổ sung 'is' trước 'climbing' là đúng.
+
+Câu 83
+Nội dung: Find the error: 'We are eatting dinner now.'
+A. eatting -> eating
+B. are -> is
+C. dinner -> breakfast
+D. now -> later
+Đáp án đúng: eatting -> eating
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Từ 'eat' chỉ có 1 chữ 't' khi thêm 'ing' thôi.
+- B. 'We' số nhiều nên đi với 'are' là đúng rồi.
+- C. Ăn tối (dinner) là một từ đúng, không cần sửa.
+- D. Dùng 'now' cho hành động đang diễn ra là chuẩn rồi.
+
+Câu 84
+Nội dung: Look! My father ___ the car.
+A. is washing
+B. are washing
+C. wash
+D. washing
+Đáp án đúng: is washing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Bố số ít nên dùng 'is washing'.
+- B. Bố là một người, em chọn 'is' nhé.
+- C. Có 'Look!' báo hiệu việc đang làm, dùng tiếp diễn nhé.
+- D. Thêm to-be 'is' vào trước 'washing' nè.
+
+Câu 85
+Nội dung: A: 'Is your mom cooking?' - B: 'Yes, she ___.'
+A. is
+B. are
+C. do
+D. am
+Đáp án đúng: is
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Trả lời ngắn là 'Yes, she is'.
+- B. 'She' đi với 'is' chứ không phải 'are'.
+- C. Hỏi bằng 'Is' thì trả lời bằng 'is' là chuẩn nhất.
+- D. 'Am' chỉ dùng cho 'I' thôi em ơi.
+
+Câu 86
+Nội dung: Câu nào là: 'Họ đang nhảy dây.'?
+A. They are skipping rope.
+B. They is skipping rope.
+C. They are skip rope.
+D. They skipping rope.
+Đáp án đúng: They are skipping rope.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'They are' và 'skipping' (nhảy dây) gấp đôi chữ 'p'.
+- B. 'They' số nhiều, dùng 'are' em nha.
+- C. Đừng quên đuôi '-ing' và gấp đôi chữ 'p' nhé.
+- D. Câu này bị thiếu mất to-be 'are' rồi.
+
+Câu 87
+Nội dung: We ___ (not) watching a movie. We are playing games.
+A. are not
+B. is not
+C. not
+D. am not
+Đáp án đúng: are not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Phủ định của 'We are' là 'We are not'.
+- B. 'We' đi với 'are', đừng nhầm với 'is' nha.
+- C. Trong câu này em cần có thêm 'are' nữa nhé.
+- D. 'Am' chỉ dành cho 'I' thôi em ạ.
+
+Câu 88
+Nội dung: ___ the birds singing in the morning?
+A. Are
+B. Is
+C. Do
+D. Am
+Đáp án đúng: Are
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The birds' số nhiều nên dùng 'Are' để hỏi.
+- B. Có nhiều con chim (birds) nên em dùng 'Are' nhé.
+- C. Đây là thì tiếp diễn (V-ing), mình hỏi bằng 'Are'.
+- D. 'Am' chỉ dành cho 'I' thôi em ơi.
+
+Câu 89
+Nội dung: Listen! My brother ___ a song.
+A. is singing
+B. are singing
+C. sing
+D. singing
+Đáp án đúng: is singing
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Anh/em trai số ít nên dùng 'is singing'.
+- B. Anh/em trai là một người, em dùng 'is' nhé.
+- C. Có 'Listen!' báo hiệu đang hát nên dùng tiếp diễn.
+- D. Thêm 'is' vào đằng trước 'singing' nha.
+
+Câu 90
+Nội dung: Which sentence is correct about the teacher?
+A. The teacher is talking to the class.
+B. The teacher are talking to the class.
+C. The teacher is talk to the class.
+D. The teacher talking to the class.
+Đáp án đúng: The teacher is talking to the class.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Thầy/cô đang nói chuyện, 'is talking' rất chuẩn.
+- B. Giáo viên là số ít, em hãy dùng 'is' nhé.
+- C. Nhớ thêm đuôi '-ing' vào sau 'talk' nha.
+- D. Bổ sung 'is' vào trước 'talking' là đúng.
+
+Câu 91
+Nội dung: Find the error: 'She is runing in the garden.'
+A. runing -> running
+B. is -> are
+C. in -> on
+D. She -> They
+Đáp án đúng: runing -> running
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Từ 'run' phải gấp đôi chữ 'n' thành 'running'.
+- B. 'She' số ít nên dùng 'is' là đúng rồi.
+- C. Dùng 'in the garden' là hoàn toàn chính xác.
+- D. Sửa lỗi chính tả là quan trọng nhất ở đây.
+
+Câu 92
+Nội dung: Look! The baby ___ with a ball.
+A. is playing
+B. are playing
+C. plays
+D. playing
+Đáp án đúng: is playing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Em bé số ít nên dùng 'is playing'.
+- B. Em bé là một người, em dùng 'is' nhé.
+- C. Có 'Look!' báo hiệu việc đang diễn ra nên dùng tiếp diễn.
+- D. Thêm to-be 'is' đằng trước 'playing' nè.
+
+Câu 93
+Nội dung: A: 'Are you doing homework?' - B: 'Yes, I ___.'
+A. am
+B. is
+C. are
+D. do
+Đáp án đúng: am
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Câu trả lời ngắn là 'Yes, I am'.
+- B. 'I' đi với 'am' chứ không phải 'is' em nha.
+- C. 'I' luôn đi với 'am', đừng nhầm nhé.
+- D. Người ta hỏi bằng 'Are', em trả lời bằng 'am' mới đúng cặp.
+
+Câu 94
+Nội dung: Câu nào là: 'Nam đang viết bài.'?
+A. Nam is writing a lesson.
+B. Nam are writing a lesson.
+C. Nam is writeing a lesson.
+D. Nam writing a lesson.
+Đáp án đúng: Nam is writing a lesson.
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'Nam is' và 'writing' (đang viết) bỏ 'e' thêm 'ing'.
+- B. Nam là số ít nên dùng 'is' em nha.
+- C. Nhớ bỏ 'e' trước khi thêm '-ing' vào nhé.
+- D. Câu này bị thiếu mất to-be 'is' rồi.
+
+Câu 95
+Nội dung: They ___ (not) drinking soda now.
+A. are not
+B. is not
+C. not
+D. am not
+Đáp án đúng: are not
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'They' đi với 'are not'.
+- B. 'They' số nhiều nên em dùng 'are not' nhé.
+- C. Cần to-be 'are' đứng trước 'not' em nha.
+- D. 'Am' chỉ dành cho 'I' thôi em ơi.
+
+Câu 96
+Nội dung: ___ the dogs barking outside?
+A. Are
+B. Is
+C. Do
+D. Am
+Đáp án đúng: Are
+Giải thích gốc từng lựa chọn:
+- A. Đúng! 'The dogs' số nhiều nên dùng 'Are' để hỏi.
+- B. Có nhiều con chó (số nhiều) mà, em dùng 'Are' nhé.
+- C. Thì tiếp diễn (V-ing), mình hỏi bằng 'Are'.
+- D. 'Am' chỉ dành cho 'I' thôi nè.
+
+Câu 97
+Nội dung: Listen! The wind ___ softly.
+A. is blowing
+B. are blowing
+C. blowing
+D. blows
+Đáp án đúng: is blowing
+Giải thích gốc từng lựa chọn:
+- A. Đúng! Gió số ít nên dùng 'is blowing'.
+- B. Gió mình tính là số ít, em dùng 'is' nhé.
+- C. Nhớ thêm 'is' đằng trước 'blowing' em nha.
+- D. 'Listen!' báo hiệu đang diễn ra nên dùng tiếp diễn.
+
+Câu 98
+Nội dung: Which sentence is correct about the children?
+A. The children are playing outside.
+B. The children is playing outside.
+C. The children are play outside.
+D. The children playing outside.
+Đáp án đúng: The children are playing outside.
+Giải thích gốc từng lựa chọn:
+- A. Chuẩn! Những đứa trẻ đang chơi, 'are playing' rất đúng.
+- B. 'Children' số nhiều, em dùng 'are' nhé.
+- C. Đừng quên thêm đuôi '-ing' vào động từ.
+- D. Bổ sung 'are' vào trước 'playing' là đúng.
