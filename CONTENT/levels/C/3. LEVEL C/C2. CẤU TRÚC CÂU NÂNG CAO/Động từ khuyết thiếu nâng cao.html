@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "Your dentist recommends brushing twice a day to keep your teeth healthy: you ___ brush your teeth twice a day. (brush: chải, healthy: khỏe mạnh)",
+    "q": "Your dentist recommends brushing twice a day to keep your teeth healthy: you ___ brush your teeth twice a day.",
     "a": [
       {
         "text": "should",
@@ -1566,20 +1566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai. Phương án 'mustn't' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'mustn't' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: brush your teeth twice a day là lời khuyên sức khỏe, không phải việc không thể làm."
+        "explanation": "Sai: brush your teeth twice a day là lời khuyên sức khỏe, không phải việc không thể làm.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: brush twice daily là lời khuyên should, còn may brush chỉ khả năng/cho phép."
+        "explanation": "Sai: brush twice daily là lời khuyên should, còn may brush chỉ khả năng/cho phép.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The school rule forbids running in the hallways because it is dangerous: students ___ run there. (hallways: hành lang, dangerous: nguy hiểm)",
+    "q": "The school rule forbids running in the hallways because it is dangerous: students ___ run there.",
     "a": [
       {
         "text": "mustn't",
@@ -1588,20 +1591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: hallways dangerous là quy định cấm mustn't run, không phải can run."
+        "explanation": "Sai: hallways dangerous là quy định cấm mustn't run, không phải can run.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai mức độ ngăn chặn."
+        "explanation": "Sai mức độ ngăn chặn.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: hallways nguy hiểm là lệnh cấm mustn't run, không phải may run."
+        "explanation": "Sai: hallways nguy hiểm là lệnh cấm mustn't run, không phải may run.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ I borrow your blue pen for a moment? (borrow: mượn, moment: một lát)",
+    "q": "___ I borrow your blue pen for a moment?",
     "a": [
       {
         "text": "Can",
@@ -1610,20 +1616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: Can I borrow your pen? xin phép; Must I borrow your pen? hỏi nghĩa vụ."
+        "explanation": "Sai: Can I borrow your pen? xin phép; Must I borrow your pen? hỏi nghĩa vụ.",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: câu hỏi mượn bút cần Can I..., không dùng lời khuyên shouldn't."
+        "explanation": "Sai: câu hỏi mượn bút cần Can I..., không dùng lời khuyên shouldn't.",
+        "correct": false
       },
       {
         "text": "Has to",
-        "explanation": "Sai: Has to không đứng sau I trong câu hỏi xin phép; dùng Can I borrow...?"
+        "explanation": "Sai: Has to không đứng sau I trong câu hỏi xin phép; dùng Can I borrow...?",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It's cloudy. It ___ rain this afternoon. (cloudy: nhiều mây, rain: mưa)",
+    "q": "It's cloudy. It ___ rain this afternoon.",
     "a": [
       {
         "text": "might",
@@ -1632,20 +1641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: cloudy dự đoán mưa, không phải lệnh cấm mustn't rain."
+        "explanation": "Sai: cloudy dự đoán mưa, không phải lệnh cấm mustn't rain.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: cloudy cho khả năng rain, không đủ căn cứ để khẳng định can't rain."
+        "explanation": "Sai: cloudy cho khả năng rain, không đủ căn cứ để khẳng định can't rain.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: cloudy chỉ khả năng mưa; shouldn't rain không diễn tả dự đoán thời tiết."
+        "explanation": "Sai: cloudy chỉ khả năng mưa; shouldn't rain không diễn tả dự đoán thời tiết.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is very strong. He ___ lift that heavy box easily. (strong: khỏe, lift: nhấc, heavy: nặng)",
+    "q": "He is very strong. He ___ lift that heavy box easily.",
     "a": [
       {
         "text": "can",
@@ -1654,20 +1666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: người khỏe có thể nâng hộp; mustn't lift lại là cấm đoán."
+        "explanation": "Sai: người khỏe có thể nâng hộp; mustn't lift lại là cấm đoán.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: sức mạnh cho phép anh ấy nâng hộp; shouldn't không diễn tả năng lực can."
+        "explanation": "Sai: sức mạnh cho phép anh ấy nâng hộp; shouldn't không diễn tả năng lực can.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: strong and easily lift expresses can, while might not lift would deny that ability."
+        "explanation": "Sai: strong and easily lift expresses can, while might not lift would deny that ability.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Your teacher assigned a rule that homework must be submitted before bedtime: you ___ finish your homework before going to bed. (finish: hoàn thành, homework: bài tập về nhà)",
+    "q": "Your teacher assigned a rule that homework must be submitted before bedtime: you ___ finish your homework before going to bed.",
     "a": [
       {
         "text": "must",
@@ -1676,20 +1691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Sai: quy định nộp bài trước giờ ngủ tạo nghĩa vụ must finish, không phải can't finish."
+        "explanation": "Sai: quy định nộp bài trước giờ ngủ tạo nghĩa vụ must finish, không phải can't finish.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: quy định nộp bài là bắt buộc must finish, không chỉ khả năng may finish."
+        "explanation": "Sai: quy định nộp bài là bắt buộc must finish, không chỉ khả năng may finish.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Sai: teacher's rule makes finish mandatory; might finish is only a possibility."
+        "explanation": "Sai: teacher's rule makes finish mandatory; might finish is only a possibility.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The sign says 'No Parking'. You ___ park here. (sign: biển báo, park: đỗ xe)",
+    "q": "The sign says 'No Parking'. You ___ park here.",
     "a": [
       {
         "text": "mustn't",
@@ -1698,20 +1716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: No Parking cấm đỗ xe, nên mustn't park; can park trái biển báo."
+        "explanation": "Sai: No Parking cấm đỗ xe, nên mustn't park; can park trái biển báo.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: No Parking là lệnh cấm mustn't park, không chỉ lời khuyên should park."
+        "explanation": "Sai: No Parking là lệnh cấm mustn't park, không chỉ lời khuyên should park.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: No Parking cấm đỗ xe; may park sẽ cho phép hành động bị cấm."
+        "explanation": "Sai: No Parking cấm đỗ xe; may park sẽ cho phép hành động bị cấm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ speak three languages fluently. (languages: ngôn ngữ, fluently: trôi chảy)",
+    "q": "She ___ speak three languages fluently.",
     "a": [
       {
         "text": "can",
@@ -1720,42 +1741,48 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: nói ba ngôn ngữ là năng lực can speak, không phải cấm mustn't speak."
+        "explanation": "Sai: nói ba ngôn ngữ là năng lực can speak, không phải cấm mustn't speak.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: shouldn't be at home gives advice about location; the car clue supports must be at home."
+        "explanation": "Sai: shouldn't be at home gives advice about location; the car clue supports must be at home.",
+        "correct": false
       },
       {
         "text": "may not",
-        "explanation": "Sai: speaking three languages is present ability can speak, not uncertain may not speak."
+        "explanation": "Sai: speaking three languages is present ability can speak, not uncertain may not speak.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It's a secret. You ___ tell anyone! (secret: bí mật, tell: kể/nói)",
+    "q": "It's a secret. You ___ tell anyone!",
     "a": [
       {
         "text": "mustn't",
         "correct": true,
-        "explanation": "Cấm tiết lộ bí mật."
+        "explanation": "Cấm tiết lộ bí mật. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "can",
-        "explanation": "Sai: secret yêu cầu mustn't tell anyone; can tell lại cho phép tiết lộ."
+        "explanation": "Sai: secret yêu cầu mustn't tell anyone; can tell lại cho phép tiết lộ.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: bí mật cần mustn't tell anyone, còn should tell lại khuyên tiết lộ."
+        "explanation": "Sai: bí mật cần mustn't tell anyone, còn should tell lại khuyên tiết lộ.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Sai: a secret requires mustn't tell; might tell would merely express possibility."
+        "explanation": "Sai: a secret requires mustn't tell; might tell would merely express possibility.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you feel sick, a doctor advises that you ___ see a doctor. (feel sick: cảm thấy ốm, doctor: bác sĩ)",
+    "q": "If you feel sick, a doctor advises that you ___ see a doctor.",
     "a": [
       {
         "text": "should",
@@ -1764,20 +1791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Sai: đi khám là lời khuyên khi ốm, không phải khẳng định không thể see a doctor."
+        "explanation": "Sai: đi khám là lời khuyên khi ốm, không phải khẳng định không thể see a doctor.",
+        "correct": false
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: khi bị ốm, should see a doctor là lời khuyên; mustn't see là cấm đi khám."
+        "explanation": "Sai: khi bị ốm, should see a doctor là lời khuyên; mustn't see là cấm đi khám.",
+        "correct": false
       },
       {
         "text": "may not",
-        "explanation": "Sai: feeling sick calls for should see a doctor; may not see would mean possibly not going."
+        "explanation": "Sai: feeling sick calls for should see a doctor; may not see would mean possibly not going.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ swim when I was five years old. (swim: bơi, five years old: 5 tuổi)",
+    "q": "I ___ swim when I was five years old.",
     "a": [
       {
         "text": "could",
@@ -1786,20 +1816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: when I was five cần could swim cho khả năng quá khứ; can là hiện tại."
+        "explanation": "Sai: when I was five cần could swim cho khả năng quá khứ; can là hiện tại.",
+        "correct": false
       },
       {
         "text": "must",
-        "explanation": "Sai: mốc when I was five yêu cầu could swim để chỉ khả năng quá khứ, không phải must."
+        "explanation": "Sai: mốc when I was five yêu cầu could swim để chỉ khả năng quá khứ, không phải must.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: could swim at five là khả năng quá khứ; should swim là lời khuyên hiện tại."
+        "explanation": "Sai: could swim at five là khả năng quá khứ; should swim là lời khuyên hiện tại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The school handbook says students must prepare for this final exam, so we ___ study hard. (exam: kỳ thi, important: quan trọng, study hard: học chăm chỉ)",
+    "q": "The school handbook says students must prepare for this final exam, so we ___ study hard.",
     "a": [
       {
         "text": "must",
@@ -1808,20 +1841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "might not",
-        "explanation": "Sai: handbook rule makes study compulsory; might not study contradicts the requirement."
+        "explanation": "Sai: handbook rule makes study compulsory; might not study contradicts the requirement.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: sổ tay yêu cầu học chăm chỉ, nên must study chứ không phải can't study."
+        "explanation": "Sai: sổ tay yêu cầu học chăm chỉ, nên must study chứ không phải can't study.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Ít phổ biến trong ngữ cảnh này."
+        "explanation": "Ít phổ biến trong ngữ cảnh này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ you help me with this math problem? (help: giúp đỡ, math problem: bài toán)",
+    "q": "___ you help me with this math problem?",
     "a": [
       {
         "text": "Can",
@@ -1830,20 +1866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: Must I help? hỏi nghĩa vụ, còn câu xin trợ giúp dùng Can you help me...?"
+        "explanation": "Sai: Must I help? hỏi nghĩa vụ, còn câu xin trợ giúp dùng Can you help me...?",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: Shouldn't I help...? hỏi có nên giúp hay không; câu này cần Can you help me...?"
+        "explanation": "Sai: Shouldn't I help...? hỏi có nên giúp hay không; câu này cần Can you help me...?",
+        "correct": false
       },
       {
         "text": "Mayn't",
-        "explanation": "Không tồn tại dạng này."
+        "explanation": "Không tồn tại dạng này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "To protect your teeth, it would be healthier if you ___ eat too many candies. (candies: kẹo, bad: tệ/xấu)",
+    "q": "To protect your teeth, it would be healthier if you ___ eat too many candies.",
     "a": [
       {
         "text": "shouldn't",
@@ -1852,20 +1891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: candies harm teeth nên shouldn't eat too many, không phải can eat."
+        "explanation": "Sai: candies harm teeth nên shouldn't eat too many, không phải can eat.",
+        "correct": false
       },
       {
         "text": "must",
-        "explanation": "Sai: candies are harmful, so should not eat too many is advice; must eat would reverse the warning."
+        "explanation": "Sai: candies are harmful, so should not eat too many is advice; must eat would reverse the warning.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Sai: candies are harmful, so shouldn't eat is advice; might eat changes the intended warning."
+        "explanation": "Sai: candies are harmful, so shouldn't eat is advice; might eat changes the intended warning.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It ___ be true! I don't believe it. (true: sự thật, believe: tin tưởng)",
+    "q": "It ___ be true! I don't believe it.",
     "a": [
       {
         "text": "can't",
@@ -1874,20 +1916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "must",
-        "explanation": "Sai: I don't believe it signals can't be true; must be true would assert certainty instead."
+        "explanation": "Sai: I don't believe it signals can't be true; must be true would assert certainty instead.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: I don't believe it cần can't be true, không phải lời khuyên should be true."
+        "explanation": "Sai: I don't believe it cần can't be true, không phải lời khuyên should be true.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: can't be true là phủ định chắc chắn; may be true lại cho phép điều người nói không tin."
+        "explanation": "Sai: can't be true là phủ định chắc chắn; may be true lại cho phép điều người nói không tin.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The library is a quiet place. We ___ talk loudly. (library: thư viện, quiet: yên tĩnh, loudly: to/ồn ào)",
+    "q": "The library is a quiet place. We ___ talk loudly.",
     "a": [
       {
         "text": "mustn't",
@@ -1896,20 +1941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: thư viện yêu cầu không nói to; can talk loudly trái quy tắc yên lặng."
+        "explanation": "Sai: thư viện yêu cầu không nói to; can talk loudly trái quy tắc yên lặng.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: trong thư viện phải giữ yên lặng; should talk loudly trái với quy định."
+        "explanation": "Sai: trong thư viện phải giữ yên lặng; should talk loudly trái với quy định.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Sai: quiet library forbids loud talking; might talk does not state the prohibition."
+        "explanation": "Sai: quiet library forbids loud talking; might talk does not state the prohibition.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ I have a glass of water, please? (glass of water: ly nước, please: làm ơn)",
+    "q": "___ I have a glass of water, please?",
     "a": [
       {
         "text": "May",
@@ -1918,42 +1966,48 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: May I have water? là lời xin phép; Must I have water? hỏi bắt buộc."
+        "explanation": "Sai: May I have water? là lời xin phép; Must I have water? hỏi bắt buộc.",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: Shouldn't I have water? asks whether it is advisable; the polite request is May I have...?"
+        "explanation": "Sai: Shouldn't I have water? asks whether it is advisable; the polite request is May I have...?",
+        "correct": false
       },
       {
         "text": "Has to",
-        "explanation": "Sai: Has to không thể mở lời xin nước; mẫu lịch sự là May I have...?"
+        "explanation": "Sai: Has to không thể mở lời xin nước; mẫu lịch sự là May I have...?",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He always parks at home, and his car is in the garage, so he ___ be at home. (home: nhà, garage: nhà để xe)",
+    "q": "I can see him sitting in the living room right now, so he ___ be at home.",
     "a": [
       {
         "text": "must",
         "correct": true,
-        "explanation": "Dùng 'must' để đưa ra suy luận chắc chắn dựa trên bằng chứng."
+        "explanation": "Nhìn thấy anh ấy đang ngồi trong phòng khách là bằng chứng trực tiếp; dùng 'must' để suy luận chắc chắn."
       },
       {
         "text": "can't",
-        "explanation": "Sai: xe trong garage là bằng chứng cho must be at home; can't lại phủ định suy luận đó."
+        "explanation": "Sai: bằng chứng trực tiếp cho thấy anh ấy đang ở nhà, nên không thể dùng 'can't be at home'.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: speak three languages là năng lực thực tế, cần can chứ không phải lời khuyên shouldn't."
+        "explanation": "Sai: câu hỏi yêu cầu suy luận về nơi anh ấy đang ở; 'shouldn't' diễn tả lời khuyên, không phải suy luận.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: car in the garage supports must be at home; might not be avoids the intended inference."
+        "explanation": "Sai: bằng chứng trực tiếp ủng hộ 'must be at home', không phải khả năng phủ định 'might not'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The clinic's hygiene poster instructs every visitor to wash hands before eating: you ___ wash your hands before eating. (wash: rửa, before: trước khi)",
+    "q": "The clinic's hygiene poster instructs every visitor to wash hands before eating: you ___ wash your hands before eating.",
     "a": [
       {
         "text": "must",
@@ -1962,20 +2016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: khách được yêu cầu must wash hands; mustn't wash trái với áp-phích vệ sinh."
+        "explanation": "Sai: khách được yêu cầu must wash hands; mustn't wash trái với áp-phích vệ sinh.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: khách phải rửa tay trước khi ăn; can't wash trái với chỉ dẫn của phòng khám."
+        "explanation": "Sai: khách phải rửa tay trước khi ăn; can't wash trái với chỉ dẫn của phòng khám.",
+        "correct": false
       },
       {
         "text": "may not",
-        "explanation": "Sai: the hygiene poster requires must wash hands; may not wash contradicts it."
+        "explanation": "Sai: the hygiene poster requires must wash hands; may not wash contradicts it.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The tour leader requires everyone to be at the bus at 6 a.m., so we ___ get up early tomorrow for the trip. (get up early: thức dậy sớm, trip: chuyến đi)",
+    "q": "The tour leader requires everyone to be at the bus at 6 a.m., so we ___ get up early tomorrow for the trip.",
     "a": [
       {
         "text": "must",
@@ -1984,20 +2041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Sai: chuyến đi yêu cầu dậy sớm, nên must get up early; can't trái ý bắt buộc."
+        "explanation": "Sai: chuyến đi yêu cầu dậy sớm, nên must get up early; can't trái ý bắt buộc.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: the tour leader's 6 a.m. requirement means must get up early; shouldn't get up denies the need."
+        "explanation": "Sai: the tour leader's 6 a.m. requirement means must get up early; shouldn't get up denies the need.",
+        "correct": false
       },
       {
         "text": "may not",
-        "explanation": "Sai: tomorrow's trip requires must get up early; may not get up fails the requirement."
+        "explanation": "Sai: tomorrow's trip requires must get up early; may not get up fails the requirement.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ride a bike when I was six. (ride a bike: đi xe đạp, six: 6 tuổi)",
+    "q": "I ___ ride a bike when I was six.",
     "a": [
       {
         "text": "could",
@@ -2006,20 +2066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai ngữ cảnh: khả năng hiện tại cần 'can', không dùng quá khứ 'could'."
+        "explanation": "Sai ngữ cảnh: khả năng hiện tại cần 'can', không dùng quá khứ 'could'.",
+        "correct": false
       },
       {
         "text": "must",
-        "explanation": "Sai: at age six the sentence asks past ability could ride, not an obligation expressed by must."
+        "explanation": "Sai: at age six the sentence asks past ability could ride, not an obligation expressed by must.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: could ride a bike at six nói năng lực quá khứ, không phải may ride."
+        "explanation": "Sai: could ride a bike at six nói năng lực quá khứ, không phải may ride.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The house rule posted by the parents says football is forbidden in the living room: you ___ play football there. (living room: phòng khách)",
+    "q": "The house rule posted by the parents says football is forbidden in the living room: you ___ play football there.",
     "a": [
       {
         "text": "mustn't",
@@ -2028,20 +2091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: football bị cấm trong living room, nên mustn't play; can play trái nội quy."
+        "explanation": "Sai: football bị cấm trong living room, nên mustn't play; can play trái nội quy.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: football bị cấm trong phòng khách, nên mustn't play; should play trái nội quy."
+        "explanation": "Sai: football bị cấm trong phòng khách, nên mustn't play; should play trái nội quy.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: football bị cấm ở living room, nên mustn't play; may play trái nội quy."
+        "explanation": "Sai: football bị cấm ở living room, nên mustn't play; may play trái nội quy.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The parents explicitly forbid noise while the baby is sleeping: you ___ make any noise. (sleeping: đang ngủ, noise: tiếng ồn)",
+    "q": "The parents explicitly forbid noise while the baby is sleeping: you ___ make any noise.",
     "a": [
       {
         "text": "mustn't",
@@ -2050,20 +2116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: cha mẹ cấm noise khi em bé ngủ; can make noise trái lệnh cấm."
+        "explanation": "Sai: cha mẹ cấm noise khi em bé ngủ; can make noise trái lệnh cấm.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "'Should' chỉ là lời khuyên, không diễn tả lệnh cấm rõ ràng trong stem."
+        "explanation": "'Should' chỉ là lời khuyên, không diễn tả lệnh cấm rõ ràng trong stem.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: cha mẹ cấm noise khi baby ngủ; may make noise không thể thay cho mustn't."
+        "explanation": "Sai: cha mẹ cấm noise khi baby ngủ; may make noise không thể thay cho mustn't.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It ___ be cold outside. Everyone is wearing a coat. (cold: lạnh, outside: bên ngoài, coat: áo khoác)",
+    "q": "The forecast says it is 2°C and everyone is wearing a coat, so it ___ be cold outside.",
     "a": [
       {
         "text": "must",
@@ -2072,20 +2141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Sai: áo khoác của mọi người là bằng chứng cho must be cold, không phải can't be cold."
+        "explanation": "Sai: áo khoác của mọi người là bằng chứng cho must be cold, không phải can't be cold.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: everyone wearing coats is evidence for must be cold; shouldn't be cold would be a contradictory recommendation."
+        "explanation": "Sai: everyone wearing coats is evidence for must be cold; shouldn't be cold would be a contradictory recommendation.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: coats provide evidence for must be cold; might not be conflicts with that clue."
+        "explanation": "Sai: coats provide evidence for must be cold; might not be conflicts with that clue.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ you play the guitar? (play the guitar: chơi đàn ghi-ta)",
+    "q": "___ you play the guitar?",
     "a": [
       {
         "text": "Can",
@@ -2094,20 +2166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: Can you play the guitar? hỏi khả năng, không phải Must you play...?"
+        "explanation": "Sai: Can you play the guitar? hỏi khả năng, không phải Must you play...?",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: Shouldn't you play...? asks for advice about playing, while Can you play...? asks about ability."
+        "explanation": "Sai: Shouldn't you play...? asks for advice about playing, while Can you play...? asks about ability.",
+        "correct": false
       },
       {
         "text": "May",
-        "explanation": "Ít dùng để hỏi về kỹ năng."
+        "explanation": "Ít dùng để hỏi về kỹ năng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The hiking leader says bringing the map is a safety requirement: we ___ forget to bring it. (forget: quên, bring: mang theo, map: bản đồ)",
+    "q": "The hiking leader says bringing the map is a safety requirement: we ___ forget to bring it.",
     "a": [
       {
         "text": "mustn't",
@@ -2116,20 +2191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: map là yêu cầu an toàn không được quên; can forget không diễn tả mustn't forget."
+        "explanation": "Sai: map là yêu cầu an toàn không được quên; can forget không diễn tả mustn't forget.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: bản đồ là yêu cầu an toàn mustn't forget, không phải should forget."
+        "explanation": "Sai: bản đồ là yêu cầu an toàn mustn't forget, không phải should forget.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: bản đồ là yêu cầu an toàn mustn't forget, còn may forget cho phép quên."
+        "explanation": "Sai: bản đồ là yêu cầu an toàn mustn't forget, còn may forget cho phép quên.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ come to the party, but she isn't sure. (sure: chắc chắn)",
+    "q": "She ___ come to the party, but she isn't sure.",
     "a": [
       {
         "text": "might",
@@ -2138,20 +2216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "must",
-        "explanation": "Sai: she isn't sure nên dùng might come; must come diễn tả chắc chắn trái cue."
+        "explanation": "Sai: she isn't sure nên dùng might come; must come diễn tả chắc chắn trái cue.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: might come diễn tả chưa chắc; can't come lại là không thể đến."
+        "explanation": "Sai: might come diễn tả chưa chắc; can't come lại là không thể đến.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: she is unsure, so might come expresses possibility; shouldn't come advises her not to attend."
+        "explanation": "Sai: she is unsure, so might come expresses possibility; shouldn't come advises her not to attend.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The classroom rule forbids phones during the lesson: you ___ use your phone then. (during: trong khi, lesson: bài học)",
+    "q": "The classroom rule forbids phones during the lesson: you ___ use your phone then.",
     "a": [
       {
         "text": "mustn't",
@@ -2160,20 +2241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: điện thoại bị cấm trong lesson, nên mustn't use; can use trái quy định."
+        "explanation": "Sai: điện thoại bị cấm trong lesson, nên mustn't use; can use trái quy định.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: điện thoại bị cấm trong giờ học; should use không diễn tả lệnh cấm mustn't."
+        "explanation": "Sai: điện thoại bị cấm trong giờ học; should use không diễn tả lệnh cấm mustn't.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: điện thoại bị cấm trong lesson; may use would cho phép điều cấm."
+        "explanation": "Sai: điện thoại bị cấm trong lesson; may use would cho phép điều cấm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ I open the window? It's hot in here. (open: mở, window: cửa sổ, hot: nóng)",
+    "q": "___ I open the window? It's hot in here.",
     "a": [
       {
         "text": "Can",
@@ -2182,20 +2266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: Can I open the window? xin phép, trong khi Must I open...? hỏi nghĩa vụ."
+        "explanation": "Sai: Can I open the window? xin phép, trong khi Must I open...? hỏi nghĩa vụ.",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: Shouldn't I open the window? asks for advice, whereas the hot room calls for Can I open...?"
+        "explanation": "Sai: Shouldn't I open the window? asks for advice, whereas the hot room calls for Can I open...?",
+        "correct": false
       },
       {
         "text": "Has to",
-        "explanation": "Sai: Has to không dùng trong câu hỏi xin mở cửa sổ; dùng Can I open...?"
+        "explanation": "Sai: Has to không dùng trong câu hỏi xin mở cửa sổ; dùng Can I open...?",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Drivers ___ stop when the traffic light is red. (drivers: tài xế, traffic light: đèn giao thông, red: màu đỏ)",
+    "q": "Drivers ___ stop when the traffic light is red.",
     "a": [
       {
         "text": "must",
@@ -2204,20 +2291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "might",
-        "explanation": "Sai mức độ: đèn đỏ là quy định bắt buộc must stop, không chỉ khả năng thấp might stop."
+        "explanation": "Sai mức độ: đèn đỏ là quy định bắt buộc must stop, không chỉ khả năng thấp might stop.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: đèn đỏ buộc phải dừng, vì vậy must stop; can't stop đảo ngược nghĩa."
+        "explanation": "Sai: đèn đỏ buộc phải dừng, vì vậy must stop; can't stop đảo ngược nghĩa.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: red traffic light requires must stop; shouldn't stop would be advice not to stop."
+        "explanation": "Sai: red traffic light requires must stop; shouldn't stop would be advice not to stop.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ drink more water during summer. (drink: uống, summer: mùa hè)",
+    "q": "You ___ drink more water during summer.",
     "a": [
       {
         "text": "should",
@@ -2226,20 +2316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: uống nước mùa hè là should drink more, không phải cấm mustn't drink."
+        "explanation": "Sai: uống nước mùa hè là should drink more, không phải cấm mustn't drink.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: uống thêm nước là lời khuyên mùa hè, không phải không thể drink more water."
+        "explanation": "Sai: uống thêm nước là lời khuyên mùa hè, không phải không thể drink more water.",
+        "correct": false
       },
       {
         "text": "may not",
-        "explanation": "Sai: summer hydration is advice should drink more, not may not drink."
+        "explanation": "Sai: summer hydration is advice should drink more, not may not drink.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ find my keys. Have you seen them? (find: tìm thấy, keys: chìa khóa)",
+    "q": "I ___ find my keys. Have you seen them?",
     "a": [
       {
         "text": "can't",
@@ -2248,20 +2341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "must",
-        "explanation": "Sai: missing keys means can't find them now; must find would express an obligation, not the reported inability."
+        "explanation": "Sai: missing keys means can't find them now; must find would express an obligation, not the reported inability.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: can't find keys mô tả không thể tìm thấy, không phải lời khuyên should find."
+        "explanation": "Sai: can't find keys mô tả không thể tìm thấy, không phải lời khuyên should find.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: can't find keys nói không thể tìm thấy; may find không đúng nội dung hiện tại."
+        "explanation": "Sai: can't find keys nói không thể tìm thấy; may find không đúng nội dung hiện tại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "His teacher has required extra preparation for tomorrow's test, so he ___ study tonight. (tonight: tối nay, test: bài kiểm tra)",
+    "q": "His teacher has required extra preparation for tomorrow's test, so he ___ study tonight.",
     "a": [
       {
         "text": "must",
@@ -2270,20 +2366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Sai: extra preparation for tomorrow's test tạo yêu cầu must study tonight, không phải can't study."
+        "explanation": "Sai: extra preparation for tomorrow's test tạo yêu cầu must study tonight, không phải can't study.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: teacher required study tonight; might not study is not the required action."
+        "explanation": "Sai: teacher required study tonight; might not study is not the required action.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: the teacher required study tonight, so must study is mandatory; shouldn't study reverses that requirement."
+        "explanation": "Sai: the teacher required study tonight, so must study is mandatory; shouldn't study reverses that requirement.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ you pass me the salt, please? (pass: đưa cho, salt: muối)",
+    "q": "___ you pass me the salt, please?",
     "a": [
       {
         "text": "Could",
@@ -2292,20 +2391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Quá nặng nề."
+        "explanation": "Quá nặng nề. Cách dùng phù hợp trong câu này là “Could”.",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: Shouldn't you pass me the salt? is a reproach, not the polite request Could you pass...?"
+        "explanation": "Sai: Shouldn't you pass me the salt? is a reproach, not the polite request Could you pass...?",
+        "correct": false
       },
       {
         "text": "Mayn't",
-        "explanation": "Không tồn tại."
+        "explanation": "Không tồn tại. Cách dùng phù hợp trong câu này là “Could”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She loves teaching children, so I recommend that she ___ consider becoming a teacher. (consider: cân nhắc, teacher: giáo viên)",
+    "q": "She loves teaching children, so I recommend that she ___ consider becoming a teacher.",
     "a": [
       {
         "text": "should",
@@ -2314,20 +2416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: cân nhắc nghề giáo là đề xuất should consider, không phải cấm mustn't consider."
+        "explanation": "Sai: cân nhắc nghề giáo là đề xuất should consider, không phải cấm mustn't consider.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: người yêu thích dạy học có thể cân nhắc nghề giáo; can't consider phủ định khả năng đó."
+        "explanation": "Sai: người yêu thích dạy học có thể cân nhắc nghề giáo; can't consider phủ định khả năng đó.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: love of teaching supports should consider, not uncertain might not consider."
+        "explanation": "Sai: love of teaching supports should consider, not uncertain might not consider.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "To do our part for the environment, we ___ protect it. (protect: bảo vệ, environment: môi trường)",
+    "q": "To do our part for the environment, we ___ protect it.",
     "a": [
       {
         "text": "should",
@@ -2336,20 +2441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: bảo vệ môi trường là lời kêu gọi should protect, không phải cấm mustn't protect."
+        "explanation": "Sai: bảo vệ môi trường là lời kêu gọi should protect, không phải cấm mustn't protect.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: bảo vệ môi trường là lời khuyên chung should protect, không phải can't protect."
+        "explanation": "Sai: bảo vệ môi trường là lời khuyên chung should protect, không phải can't protect.",
+        "correct": false
       },
       {
         "text": "may not",
-        "explanation": "Sai: protecting the environment is recommended with should protect, not may not protect."
+        "explanation": "Sai: protecting the environment is recommended with should protect, not may not protect.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The safety notice forbids touching the live wire because it is dangerous: you ___ touch it. (touch: chạm, wire: dây điện, dangerous: nguy hiểm)",
+    "q": "The safety notice forbids touching the live wire because it is dangerous: you ___ touch it.",
     "a": [
       {
         "text": "mustn't",
@@ -2358,20 +2466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: dangerous wire cần mustn't touch, không phải can touch."
+        "explanation": "Sai: dangerous wire cần mustn't touch, không phải can touch.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: nguy hiểm của dây điện đòi hỏi lệnh cấm mustn't touch, không chỉ lời khuyên should not."
+        "explanation": "Sai: nguy hiểm của dây điện đòi hỏi lệnh cấm mustn't touch, không chỉ lời khuyên should not.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Sai: dangerous wire demands mustn't touch; might touch only says it may happen."
+        "explanation": "Sai: dangerous wire demands mustn't touch; might touch only says it may happen.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have learned English and am able to speak it well now; I ___ speak English well. (speak: nói, well: tốt)",
+    "q": "I have learned English and am able to speak it well now; I ___ speak English well.",
     "a": [
       {
         "text": "can",
@@ -2380,20 +2491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "could",
-        "explanation": "Sai. Phương án 'could' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'could' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: am able to speak now tương đương can speak; mustn't speak lại là không được nói."
+        "explanation": "Sai: am able to speak now tương đương can speak; mustn't speak lại là không được nói.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: the present ability is can speak English well; shouldn't speak would advise against speaking."
+        "explanation": "Sai: the present ability is can speak English well; shouldn't speak would advise against speaking.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The clock has just struck ten, so it ___ be 10 o'clock. (strike: điểm giờ)",
+    "q": "The clock has just struck ten, so it ___ be 10 o'clock.",
     "a": [
       {
         "text": "must",
@@ -2402,20 +2516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Trái với bằng chứng."
+        "explanation": "Trái với bằng chứng.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: the clock striking ten is evidence that it must be 10 o'clock; shouldn't be is not an inference."
+        "explanation": "Sai: the clock striking ten is evidence that it must be 10 o'clock; shouldn't be is not an inference.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Không phù hợp với mức độ chắc chắn."
+        "explanation": "Không phù hợp với mức độ chắc chắn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ I go to the restroom? (restroom: nhà vệ sinh)",
+    "q": "___ I go to the restroom?",
     "a": [
       {
         "text": "May",
@@ -2424,20 +2541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: May I go to the restroom? là xin phép; Must I go...? không đúng ý câu."
+        "explanation": "Sai: May I go to the restroom? là xin phép; Must I go...? không đúng ý câu.",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: xin phép vào nhà vệ sinh cần May I..., không phải Shouldn't I...?"
+        "explanation": "Sai: xin phép vào nhà vệ sinh cần May I..., không phải Shouldn't I...?",
+        "correct": false
       },
       {
         "text": "Can't",
-        "explanation": "Sai: câu xin phép vào restroom cần May I go...?; Can't I...? mang sắc thái phản đối khác."
+        "explanation": "Sai: câu xin phép vào restroom cần May I go...?; Can't I...? mang sắc thái phản đối khác.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dùng 'can' để chỉ một khả năng trong quá khứ là đúng hay sai? (past ability: khả năng quá khứ)",
+    "q": "Trong câu 'I can swim when I was five', dùng 'can' để chỉ khả năng trong quá khứ là đúng hay sai?",
     "a": [
       {
         "text": "Sai",
@@ -2446,12 +2566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai. 'Can' chỉ dùng cho hiện tại."
+        "explanation": "Sai. 'Can' chỉ dùng cho hiện tại.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
   {
-    "q": "Trong câu: 'You must not smoke here', 'must not' chỉ sự cấm đoán. Đúng hay Sai? (smoke: hút thuốc)",
+    "q": "Trong câu: 'You must not smoke here', 'must not' chỉ sự cấm đoán. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
@@ -2460,12 +2591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai. Đây chính xác là nghĩa của nó."
+        "explanation": "Sai. Đây chính xác là nghĩa của nó.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
   {
-    "q": "Có thể dùng 'May I...?' để xin phép một cách lịch sự. Đúng hay Sai? (permission: sự xin phép)",
+    "q": "Có thể dùng 'May I...?' để xin phép một cách lịch sự. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
@@ -2474,7 +2616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: mệnh đề nói May I... xin phép lịch sự là phát biểu đúng, nên lựa chọn Sai không đúng."
+        "explanation": "Sai: mệnh đề nói May I... xin phép lịch sự là phát biểu đúng, nên lựa chọn Sai không đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
@@ -2488,12 +2641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai: sau modal must, động từ không thêm -ing; câu 'must be added ing' là sai."
+        "explanation": "Sai: sau modal must, động từ không thêm -ing; câu 'must be added ing' là sai.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
   {
-    "q": "'Should' thường được dùng để đưa ra lời khuyên. Đúng hay Sai? (advice: lời khuyên)",
+    "q": "'Should' thường được dùng để đưa ra lời khuyên. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
@@ -2502,12 +2666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: should thường đưa lời khuyên, vì vậy phát biểu này là Đúng chứ không phải Sai."
+        "explanation": "Sai: should thường đưa lời khuyên, vì vậy phát biểu này là Đúng chứ không phải Sai.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
   {
-    "q": "'Can't' có thể dùng để kết luận chắc chắn rằng một điều không đúng ở hiện tại. Đúng hay Sai? (certain: chắc chắn)",
+    "q": "'Can't' có thể dùng để kết luận chắc chắn rằng một điều không đúng ở hiện tại. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
@@ -2516,12 +2691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: can't có thể kết luận chắc chắn điều gì đó không đúng hiện tại, nên mệnh đề là Đúng."
+        "explanation": "Sai: can't có thể kết luận chắc chắn điều gì đó không đúng hiện tại, nên mệnh đề là Đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
   {
-    "q": "Câu 'He cans play piano' là đúng ngữ pháp. Đúng hay Sai? (piano: đàn dương cầm)",
+    "q": "Câu 'He cans play piano' là đúng ngữ pháp. Đúng hay Sai?",
     "a": [
       {
         "text": "Sai",
@@ -2530,7 +2716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai: he cans play có phụ tố thừa; modal can giữ nguyên dạng can."
+        "explanation": "Sai: he cans play có phụ tố thừa; modal can giữ nguyên dạng can.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
@@ -2544,7 +2741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai vì phát biểu đã nêu rõ đây là khuynh hướng, không phải quy tắc tuyệt đối."
+        "explanation": "Sai vì phát biểu đã nêu rõ đây là khuynh hướng, không phải quy tắc tuyệt đối.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
@@ -2558,12 +2766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai, chúng có sự khác biệt nhỏ."
+        "explanation": "Sai, chúng có sự khác biệt nhỏ.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
   {
-    "q": "'Could' là dạng quá khứ của 'Can'. Đúng hay Sai? (past form: dạng quá khứ)",
+    "q": "Trong câu 'I could swim when I was five', 'could' dùng để chỉ khả năng trong quá khứ. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
@@ -2572,7 +2791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: could là dạng quá khứ thường dùng của can khi nói khả năng, nên phát biểu là Đúng."
+        "explanation": "Sai: could là dạng quá khứ thường dùng của can khi nói khả năng, nên phát biểu là Đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
@@ -2586,12 +2816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai: should not means positive advice; câu nhận định khuyên làm việc tốt là Sai."
+        "explanation": "Sai: should not means positive advice; câu nhận định khuyên làm việc tốt là Sai.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
   {
-    "q": "Câu 'I must to go now' là đúng ngữ pháp. Đúng hay Sai? (now: bây giờ)",
+    "q": "Câu 'I must to go now' là đúng ngữ pháp. Đúng hay Sai?",
     "a": [
       {
         "text": "Sai",
@@ -2600,12 +2841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai: must to go có to thừa; modal must đi trực tiếp với go, nên mệnh đề là Sai."
+        "explanation": "Sai: must to go có to thừa; modal must đi trực tiếp với go, nên mệnh đề là Sai.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
   {
-    "q": "'May' có thể dùng để dự đoán một sự việc trong tương lai. Đúng hay Sai? (predict: dự đoán)",
+    "q": "'May' có thể dùng để dự đoán một sự việc trong tương lai. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
@@ -2614,12 +2866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: may có thể dự đoán khả năng tương lai; câu nhận định này là Đúng."
+        "explanation": "Sai: may có thể dự đoán khả năng tương lai; câu nhận định này là Đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
   {
-    "q": "'Mustn't' có nghĩa là 'không cần thiết'. Đúng hay Sai? (necessary: cần thiết)",
+    "q": "'Mustn't' có nghĩa là 'không cần thiết'. Đúng hay Sai?",
     "a": [
       {
         "text": "Sai",
@@ -2628,7 +2891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai. Phương án 'Đúng' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'Đúng' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
@@ -2642,7 +2916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: modal đứng trước động từ nguyên mẫu, nên phát biểu về cấu trúc đầy đủ là Đúng."
+        "explanation": "Sai: modal đứng trước động từ nguyên mẫu, nên phát biểu về cấu trúc đầy đủ là Đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
@@ -2656,12 +2941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: can hỏi khả năng, vì vậy mệnh đề 'Can dùng để hỏi ability' là Đúng."
+        "explanation": "Sai: can hỏi khả năng, vì vậy mệnh đề 'Can dùng để hỏi ability' là Đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
   {
-    "q": "Trong câu hỏi, động từ khuyết thiếu đứng sau chủ ngữ. Đúng hay Sai? (subject: chủ ngữ)",
+    "q": "Trong câu hỏi, động từ khuyết thiếu đứng sau chủ ngữ. Đúng hay Sai?",
     "a": [
       {
         "text": "Sai",
@@ -2670,21 +2966,43 @@ const fullQuestionBank = [
       },
       {
         "text": "Đúng",
-        "explanation": "Sai: trong câu hỏi, modal đứng trước chủ ngữ, không đứng sau chủ ngữ."
+        "explanation": "Sai: trong câu hỏi, modal đứng trước chủ ngữ, không đứng sau chủ ngữ.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Sai”."
       }
     ]
   },
   {
-    "q": "'Shall' thường dùng với 'I' và 'We' để đưa ra lời đề nghị. Đúng hay Sai? (offer: lời đề nghị)",
+    "q": "'Shall' thường dùng với 'I' và 'We' để đưa ra lời đề nghị. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
         "correct": true,
-        "explanation": "Ví dụ: Shall we go?"
+        "explanation": "Ví dụ: Shall we go? Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "Sai",
-        "explanation": "Sai: shall với I/We có thể tạo đề nghị; nhận định này là Đúng."
+        "explanation": "Sai: shall với I/We có thể tạo đề nghị; nhận định này là Đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
@@ -2698,12 +3016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: You should study đúng ngữ pháp; lựa chọn Sai phủ định nhầm câu chuẩn."
+        "explanation": "Sai: You should study đúng ngữ pháp; lựa chọn Sai phủ định nhầm câu chuẩn.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
   {
-    "q": "'Must' dùng để chỉ sự bắt buộc mạnh mẽ. Đúng hay Sai? (strong obligation: bắt buộc mạnh)",
+    "q": "'Must' dùng để chỉ sự bắt buộc mạnh mẽ. Đúng hay Sai?",
     "a": [
       {
         "text": "Đúng",
@@ -2712,12 +3041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Sai",
-        "explanation": "Sai: must diễn tả strong obligation, nên phát biểu này là Đúng."
+        "explanation": "Sai: must diễn tả strong obligation, nên phát biểu này là Đúng.",
+        "correct": false
+      },
+      {
+        "text": "Chỉ đúng trong một số trường hợp",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
+      },
+      {
+        "text": "Không đủ thông tin",
+        "correct": false,
+        "explanation": "Chưa phù hợp với kết luận cần chọn. Theo dữ kiện của câu hỏi, đáp án đúng là “Đúng”."
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Bạn nên đi ngủ sớm.' (ngủ sớm: go to bed early)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Bạn nên đi ngủ sớm.'",
     "a": [
       {
         "text": "You should go to bed early.",
@@ -2726,20 +3066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "You must to go to bed early.",
-        "explanation": "Sai: modal must đi trực tiếp với go; to là phần thừa trong must to go."
+        "explanation": "Sai: modal must đi trực tiếp với go; to là phần thừa trong must to go.",
+        "correct": false
       },
       {
         "text": "You can go to bed early.",
-        "explanation": "Sai. Phương án 'You can go to bed early.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'You can go to bed early.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "You should going to bed early.",
-        "explanation": "Sai ngữ pháp (V-ing)."
+        "explanation": "Sai ngữ pháp (V-ing).",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Hiện giờ tôi không thể bơi.' (bơi: swim)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Hiện giờ tôi không thể bơi.'",
     "a": [
       {
         "text": "I can't swim right now.",
@@ -2748,20 +3091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "I don't can swim.",
-        "explanation": "Sai. Phương án 'I don't can swim.' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'I don't can swim.' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       },
       {
         "text": "I couldn't swim when I was younger.",
-        "explanation": "Sai. Phương án 'I couldn't swim.' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'I couldn't swim.' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       },
       {
         "text": "I mustn't swim.",
-        "explanation": "Sai. Phương án 'I mustn't swim.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'I mustn't swim.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Chúng ta phải giúp đỡ bố mẹ.' (giúp đỡ: help, bố mẹ: parents)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Chúng ta phải giúp đỡ bố mẹ.'",
     "a": [
       {
         "text": "We must help our parents.",
@@ -2770,20 +3116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "We should to help our parents.",
-        "explanation": "Sai: should đi trực tiếp với help; không thêm to sau modal."
+        "explanation": "Sai: should đi trực tiếp với help; không thêm to sau modal.",
+        "correct": false
       },
       {
         "text": "We might help our parents.",
-        "explanation": "Sai. Phương án 'We might help our parents.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'We might help our parents.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "We can't help our parents.",
-        "explanation": "Sai. Cấu trúc 'We can't help our parents.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'We can't help our parents.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Trời có thể mưa vào ngày mai, nhưng chưa chắc.' (ngày mai: tomorrow)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Trời có thể mưa vào ngày mai, nhưng chưa chắc.'",
     "a": [
       {
         "text": "It might rain tomorrow.",
@@ -2792,20 +3141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "It must rain tomorrow.",
-        "explanation": "Sai. Phương án 'It must rain tomorrow.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'It must rain tomorrow.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "It should rain tomorrow.",
-        "explanation": "Sai. Phương án 'It should rain tomorrow.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'It should rain tomorrow.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "It can't rain tomorrow.",
-        "explanation": "Sai. Phương án 'It can't rain tomorrow.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'It can't rain tomorrow.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Bạn không được phép làm ồn ở đây.' (làm ồn: make noise, ở đây: here)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Bạn không được phép làm ồn ở đây.'",
     "a": [
       {
         "text": "You mustn't make noise here.",
@@ -2814,20 +3166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "You shouldn't make noise here.",
-        "explanation": "Mức độ khuyên bảo chưa đủ là cấm."
+        "explanation": "Mức độ khuyên bảo chưa đủ là cấm.",
+        "correct": false
       },
       {
         "text": "You can make noise here.",
-        "explanation": "Sai. Cấu trúc 'You can make noise here.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'You can make noise here.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "You may make noise here.",
-        "explanation": "Sai. Cấu trúc 'You may make noise here.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'You may make noise here.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Cô ấy đã học hát, nên hiện giờ có khả năng thực tế hát rất hay.' (hát: sing, hay/tốt: well)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Cô ấy đã học hát, nên hiện giờ có khả năng thực tế hát rất hay.'",
     "a": [
       {
         "text": "She can sing very well now.",
@@ -2836,20 +3191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "She cans sing very well now.",
-        "explanation": "Sai ngữ pháp (thêm s)."
+        "explanation": "Sai ngữ pháp (thêm s).",
+        "correct": false
       },
       {
         "text": "She could sing very well when she was younger.",
-        "explanation": "Sai ngữ cảnh: có từ 'now', nên dùng 'can sing', không dùng khả năng quá khứ 'could'."
+        "explanation": "Sai ngữ cảnh: có từ 'now', nên dùng 'can sing', không dùng khả năng quá khứ 'could'.",
+        "correct": false
       },
       {
         "text": "She should sing very well now.",
-        "explanation": "Sai. Cấu trúc 'She should sing very well.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'She should sing very well.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Tôi có thể mượn bút của bạn không?' (mượn: borrow, bút: pen)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Tôi có thể mượn bút của bạn không?'",
     "a": [
       {
         "text": "Can I borrow your pen?",
@@ -2858,20 +3216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must I borrow your pen?",
-        "explanation": "Sai. Cấu trúc 'Must I borrow your pen?' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Must I borrow your pen?' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Should I borrow your pen?",
-        "explanation": "Sai. Cấu trúc 'Should I borrow your pen?' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Should I borrow your pen?' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "I can borrow your pen?",
-        "explanation": "Thiếu đảo ngữ."
+        "explanation": "Thiếu đảo ngữ. Cách dùng phù hợp trong câu này là “Can I borrow your pen?”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Bạn nên ăn nhiều rau xanh.' (ăn: eat, rau xanh: vegetables)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Bạn nên ăn nhiều rau xanh.'",
     "a": [
       {
         "text": "You should eat more vegetables.",
@@ -2880,20 +3241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "You must to eat more vegetables.",
-        "explanation": "Sai: bản dịch chứa must to eat, nhưng must phải đi thẳng với eat không có to."
+        "explanation": "Sai: bản dịch chứa must to eat, nhưng must phải đi thẳng với eat không có to.",
+        "correct": false
       },
       {
         "text": "You can't eat more vegetables.",
-        "explanation": "Sai. Cấu trúc 'You can't eat more vegetables.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'You can't eat more vegetables.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "You might eat more vegetables.",
-        "explanation": "Sai. Cấu trúc 'You might eat more vegetables.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'You might eat more vegetables.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Anh ấy phải làm bài tập về nhà.' (làm: do, bài tập về nhà: homework)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Anh ấy phải làm bài tập về nhà.'",
     "a": [
       {
         "text": "He must do his homework.",
@@ -2902,20 +3266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "He musts do his homework.",
-        "explanation": "Sai: modal must không nhận đuôi -s; phải là must do his homework."
+        "explanation": "Sai: modal must không nhận đuôi -s; phải là must do his homework.",
+        "correct": false
       },
       {
         "text": "He should to do his homework.",
-        "explanation": "Sai: should đi trực tiếp với do, không thêm to sau should."
+        "explanation": "Sai: should đi trực tiếp với do, không thêm to sau should.",
+        "correct": false
       },
       {
         "text": "He can doing his homework.",
-        "explanation": "Sai: can phải đi với do nguyên thể, không dùng dạng V-ing doing sau modal."
+        "explanation": "Sai: can phải đi với do nguyên thể, không dùng dạng V-ing doing sau modal.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Họ không thể đến đúng giờ.' (đến: come, đúng giờ: on time)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Họ không thể đến đúng giờ.'",
     "a": [
       {
         "text": "They can't come on time.",
@@ -2924,20 +3291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "They mustn't come on time.",
-        "explanation": "Sai. Phương án 'They mustn't come on time.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'They mustn't come on time.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "They shouldn't come on time.",
-        "explanation": "Sai. Cấu trúc 'They shouldn't come on time.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'They shouldn't come on time.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "They don't can come on time.",
-        "explanation": "Sai: phủ định khả năng dùng can't come, không dùng don't can."
+        "explanation": "Sai: phủ định khả năng dùng can't come, không dùng don't can.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'You must wear a helmet.' (wear: đội/mặc, helmet: mũ bảo hiểm)",
+    "q": "Dịch câu sau sang tiếng Việt: 'You must wear a helmet.'",
     "a": [
       {
         "text": "Bạn phải đội mũ bảo hiểm.",
@@ -2946,20 +3316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Bạn nên đội mũ bảo hiểm.",
-        "explanation": "Should mới là nên."
+        "explanation": "Should mới là nên. Cách dùng phù hợp trong câu này là “Bạn phải đội mũ bảo hiểm.”.",
+        "correct": false
       },
       {
         "text": "Bạn có thể đội mũ bảo hiểm.",
-        "explanation": "Can mới là có thể."
+        "explanation": "Can mới là có thể. Cách dùng phù hợp trong câu này là “Bạn phải đội mũ bảo hiểm.”.",
+        "correct": false
       },
       {
         "text": "Bạn không được đội mũ bảo hiểm.",
-        "explanation": "Sai. Cấu trúc 'Bạn không được đội mũ bảo hiểm.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn không được đội mũ bảo hiểm.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'Could you open the door?' (open: mở, door: cửa chính)",
+    "q": "Dịch câu sau sang tiếng Việt: 'Could you open the door?'",
     "a": [
       {
         "text": "Bạn có thể mở cửa giúp tôi không?",
@@ -2968,20 +3341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Bạn phải mở cửa.",
-        "explanation": "Sai. Cấu trúc 'Bạn phải mở cửa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn phải mở cửa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Bạn nên mở cửa.",
-        "explanation": "Sai. Cấu trúc 'Bạn nên mở cửa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn nên mở cửa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Bạn đã mở cửa.",
-        "explanation": "Sai ngữ cảnh: câu nhờ vả lịch sự cần nội dung 'Bạn có thể mở cửa giúp tôi không?', không phải câu kể quá khứ."
+        "explanation": "Sai ngữ cảnh: câu nhờ vả lịch sự cần nội dung 'Bạn có thể mở cửa giúp tôi không?', không phải câu kể quá khứ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'It might be cold tonight.' (cold: lạnh, tonight: tối nay)",
+    "q": "Dịch câu sau sang tiếng Việt: 'It might be cold tonight.'",
     "a": [
       {
         "text": "Trời có thể sẽ lạnh tối nay.",
@@ -2990,20 +3366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Trời phải lạnh tối nay.",
-        "explanation": "Sai. Cấu trúc 'Trời phải lạnh tối nay.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Trời phải lạnh tối nay.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Trời nên lạnh tối nay.",
-        "explanation": "Sai. Cấu trúc 'Trời nên lạnh tối nay.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Trời nên lạnh tối nay.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Trời không thể lạnh tối nay.",
-        "explanation": "Sai. Cấu trúc 'Trời không thể lạnh tối nay.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Trời không thể lạnh tối nay.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'You shouldn't eat fast food.' (fast food: thức ăn nhanh)",
+    "q": "Dịch câu sau sang tiếng Việt: 'You shouldn't eat fast food.'",
     "a": [
       {
         "text": "Bạn không nên ăn thức ăn nhanh.",
@@ -3012,20 +3391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Bạn không thể ăn thức ăn nhanh.",
-        "explanation": "Sai. Cấu trúc 'Bạn không thể ăn thức ăn nhanh.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn không thể ăn thức ăn nhanh.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Bạn phải ăn thức ăn nhanh.",
-        "explanation": "Sai. Cấu trúc 'Bạn phải ăn thức ăn nhanh.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn phải ăn thức ăn nhanh.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Bạn có thể ăn thức ăn nhanh.",
-        "explanation": "Sai. Cấu trúc 'Bạn có thể ăn thức ăn nhanh.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn có thể ăn thức ăn nhanh.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'May I come in?' (come in: đi vào)",
+    "q": "Dịch câu sau sang tiếng Việt: 'May I come in?'",
     "a": [
       {
         "text": "Tôi có thể vào trong không?",
@@ -3034,20 +3416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Tôi phải vào trong.",
-        "explanation": "Sai. Cấu trúc 'Tôi phải vào trong.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Tôi phải vào trong.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Tôi nên vào trong.",
-        "explanation": "Sai. Cấu trúc 'Tôi nên vào trong.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Tôi nên vào trong.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Tôi sẽ vào trong.",
-        "explanation": "Sai. Cấu trúc 'Tôi sẽ vào trong.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Tôi sẽ vào trong.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'She can play chess now.' (play chess: chơi cờ)",
+    "q": "Dịch câu sau sang tiếng Việt: 'She can play chess now.'",
     "a": [
       {
         "text": "Cô ấy có thể chơi cờ bây giờ.",
@@ -3056,20 +3441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Cô ấy phải chơi cờ.",
-        "explanation": "Sai. Cấu trúc 'Cô ấy phải chơi cờ.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Cô ấy phải chơi cờ.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Cô ấy nên chơi cờ.",
-        "explanation": "Sai. Cấu trúc 'Cô ấy nên chơi cờ.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Cô ấy nên chơi cờ.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Cô ấy từng chơi cờ khi còn nhỏ.",
-        "explanation": "Sai. Cấu trúc 'Cô ấy từng chơi cờ.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Cô ấy từng chơi cờ.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'We mustn't pick the flowers.' (pick: hái, flowers: hoa)",
+    "q": "Dịch câu sau sang tiếng Việt: 'We mustn't pick the flowers.'",
     "a": [
       {
         "text": "Chúng ta không được hái hoa.",
@@ -3078,20 +3466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Chúng ta không nên hái hoa.",
-        "explanation": "Chưa đủ mức độ cấm."
+        "explanation": "Chưa đủ mức độ cấm. Cách dùng phù hợp trong câu này là “Chúng ta không được hái hoa.”.",
+        "correct": false
       },
       {
         "text": "Chúng ta có thể hái hoa.",
-        "explanation": "Sai. Cấu trúc 'Chúng ta có thể hái hoa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Chúng ta có thể hái hoa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Chúng ta phải hái hoa.",
-        "explanation": "Sai. Cấu trúc 'Chúng ta phải hái hoa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Chúng ta phải hái hoa.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'He could speak English when he was ten.' (speak: nói, when: khi)",
+    "q": "Dịch câu sau sang tiếng Việt: 'He could speak English when he was ten.'",
     "a": [
       {
         "text": "Anh ấy đã có thể nói tiếng Anh khi lên mười.",
@@ -3100,20 +3491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Anh ấy nên nói tiếng Anh khi lên mười.",
-        "explanation": "Sai. Cấu trúc 'Anh ấy nên nói tiếng Anh khi lên mười.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Anh ấy nên nói tiếng Anh khi lên mười.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Anh ấy phải nói tiếng Anh khi lên mười.",
-        "explanation": "Sai. Cấu trúc 'Anh ấy phải nói tiếng Anh khi lên mười.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Anh ấy phải nói tiếng Anh khi lên mười.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Anh ấy có thể nói tiếng Anh bây giờ.",
-        "explanation": "Sai ngữ cảnh: mốc 'khi lên mười' cần khả năng quá khứ 'đã có thể nói', không dùng hiện tại."
+        "explanation": "Sai ngữ cảnh: mốc 'khi lên mười' cần khả năng quá khứ 'đã có thể nói', không dùng hiện tại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'You must be tired.' (tired: mệt mỏi)",
+    "q": "Dịch câu sau sang tiếng Việt: 'You must be tired.'",
     "a": [
       {
         "text": "Chắc hẳn là bạn mệt lắm.",
@@ -3122,20 +3516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Bạn nên mệt.",
-        "explanation": "Sai. Cấu trúc 'Bạn nên mệt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn nên mệt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Bạn có thể mệt.",
-        "explanation": "Sai. Cấu trúc 'Bạn có thể mệt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn có thể mệt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Bạn không được mệt.",
-        "explanation": "Sai. Cấu trúc 'Bạn không được mệt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn không được mệt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Việt: 'I can help you.' (help: giúp đỡ)",
+    "q": "Dịch câu sau sang tiếng Việt: 'I can help you.'",
     "a": [
       {
         "text": "Tôi có thể giúp bạn.",
@@ -3144,20 +3541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Tôi phải giúp bạn.",
-        "explanation": "Sai. Cấu trúc 'Tôi phải giúp bạn.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Tôi phải giúp bạn.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Tôi nên giúp bạn.",
-        "explanation": "Sai. Cấu trúc 'Tôi nên giúp bạn.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Tôi nên giúp bạn.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Tôi mượn bạn giúp tôi.",
-        "explanation": "Sai hoàn toàn."
+        "explanation": "Sai hoàn toàn. Cách dùng phù hợp trong câu này là “Tôi có thể giúp bạn.”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'It is possible that it will rain.' -> It ___ rain. (possible: có khả năng)",
+    "q": "Viết lại câu: 'It is possible that it will rain.' -> It ___ rain.",
     "a": [
       {
         "text": "might",
@@ -3166,20 +3566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "must",
-        "explanation": "Must là chắc chắn 100%."
+        "explanation": "Must là chắc chắn 100%.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Should là khuyên bảo."
+        "explanation": "Should là khuyên bảo.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Can't là chắc chắn không."
+        "explanation": "Can't là chắc chắn không.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'I advise you to study harder.' -> You ___ study harder. (advise: khuyên, harder: chăm chỉ hơn)",
+    "q": "Viết lại câu: 'I advise you to study harder.' -> You ___ study harder.",
     "a": [
       {
         "text": "should",
@@ -3188,20 +3591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: advise you to study chuyển thành should study, không phải cấm mustn't study."
+        "explanation": "Sai: advise you to study chuyển thành should study, không phải cấm mustn't study.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: advise you to study chuyển thành should study, không phải may study."
+        "explanation": "Sai: advise you to study chuyển thành should study, không phải may study.",
+        "correct": false
       },
       {
         "text": "couldn't",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'couldn't' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'couldn't' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'You are not allowed to park here.' -> You ___ park here. (allowed: cho phép, park: đỗ xe)",
+    "q": "Viết lại câu: 'You are not allowed to park here.' -> You ___ park here.",
     "a": [
       {
         "text": "mustn't",
@@ -3210,20 +3616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: not allowed to park tương đương mustn't park; can park trái điều cấm."
+        "explanation": "Sai: not allowed to park tương đương mustn't park; can park trái điều cấm.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: not allowed to park là điều cấm tuyệt đối mustn't park; should park quá nhẹ và ngược nghĩa."
+        "explanation": "Sai: not allowed to park là điều cấm tuyệt đối mustn't park; should park quá nhẹ và ngược nghĩa.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Sai: not allowed to park is a prohibition, so mustn't park; might park weakens it."
+        "explanation": "Sai: not allowed to park is a prohibition, so mustn't park; might park weakens it.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Hoàn thành câu: 'When I was young, I ___ run very fast.' (young: trẻ/nhỏ, fast: nhanh)",
+    "q": "Hoàn thành câu: 'When I was young, I ___ run very fast.'",
     "a": [
       {
         "text": "could",
@@ -3232,20 +3641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: when I was young yêu cầu could run, không dùng can cho mốc quá khứ."
+        "explanation": "Sai: when I was young yêu cầu could run, không dùng can cho mốc quá khứ.",
+        "correct": false
       },
       {
         "text": "must",
-        "explanation": "Sai: I could ride a bike at six nói năng lực quá khứ, không phải nghĩa vụ must."
+        "explanation": "Sai: I could ride a bike at six nói năng lực quá khứ, không phải nghĩa vụ must.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: could run very fast khi còn nhỏ là năng lực quá khứ, không phải should run."
+        "explanation": "Sai: could run very fast khi còn nhỏ là năng lực quá khứ, không phải should run.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'It is necessary for you to finish this.' -> You ___ finish this. (necessary: cần thiết)",
+    "q": "Viết lại câu: 'It is necessary for you to finish this.' -> You ___ finish this.",
     "a": [
       {
         "text": "must",
@@ -3254,20 +3666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "might",
-        "explanation": "Sai: necessary means must finish, not the low-probability idea might finish."
+        "explanation": "Sai: necessary means must finish, not the low-probability idea might finish.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: necessary to finish tương đương must finish; shouldn't finish lại khuyên không hoàn thành."
+        "explanation": "Sai: necessary to finish tương đương must finish; shouldn't finish lại khuyên không hoàn thành.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: necessary to finish requires must finish, còn can't finish mang nghĩa không thể hoàn thành."
+        "explanation": "Sai: necessary to finish requires must finish, còn can't finish mang nghĩa không thể hoàn thành.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Trong ngữ cảnh xin phép lịch sự, viết lại câu: 'Do you mind if I sit here?' -> ___ I sit here? (sit: ngồi, mind: phiền)",
+    "q": "Trong ngữ cảnh xin phép lịch sự, viết lại câu: 'Do you mind if I sit here?' -> ___ I sit here?",
     "a": [
       {
         "text": "May",
@@ -3276,20 +3691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: Do you mind if I sit here? chuyển thành May I sit here?, không phải Must I sit here?"
+        "explanation": "Sai: Do you mind if I sit here? chuyển thành May I sit here?, không phải Must I sit here?",
+        "correct": false
       },
       {
         "text": "Should",
-        "explanation": "Sai: Do you mind...? chuyển thành May I sit here?; Should I sit here? hỏi ý kiến, không phải xin phép."
+        "explanation": "Sai: Do you mind...? chuyển thành May I sit here?; Should I sit here? hỏi ý kiến, không phải xin phép.",
+        "correct": false
       },
       {
         "text": "Will",
-        "explanation": "Sai. Phương án 'Will' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'Will' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Hoàn thành câu: 'If you want to lose weight, you ___ eat less sugar.' (lose weight: giảm cân, sugar: đường)",
+    "q": "Hoàn thành câu: 'If you want to lose weight, you ___ eat less sugar.'",
     "a": [
       {
         "text": "should",
@@ -3298,20 +3716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: lose weight là mục tiêu nên should eat less sugar; mustn't eat less không đúng nghĩa."
+        "explanation": "Sai: lose weight là mục tiêu nên should eat less sugar; mustn't eat less không đúng nghĩa.",
+        "correct": false
       },
       {
         "text": "can",
-        "explanation": "Sai: lose weight dẫn đến lời khuyên should eat less sugar, không phải can eat less."
+        "explanation": "Sai: lose weight dẫn đến lời khuyên should eat less sugar, không phải can eat less.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Sai: lose weight calls for should eat less sugar; might eat is not advice."
+        "explanation": "Sai: lose weight calls for should eat less sugar; might eat is not advice.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'I am sure that he is rich.' -> He ___ be rich. (sure: chắc chắn, rich: giàu có)",
+    "q": "Viết lại câu: 'I am sure that he is rich.' -> He ___ be rich.",
     "a": [
       {
         "text": "must",
@@ -3320,20 +3741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Dùng cho chắc chắn ở phủ định."
+        "explanation": "Dùng cho chắc chắn ở phủ định.",
+        "correct": false
       },
       {
         "text": "might",
-        "explanation": "Chỉ là có thể thôi."
+        "explanation": "Chỉ là có thể thôi. Cách dùng phù hợp trong câu này là “must”.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: chắc chắn giàu dùng must be rich, còn should be rich chỉ là lời khuyên."
+        "explanation": "Sai: chắc chắn giàu dùng must be rich, còn should be rich chỉ là lời khuyên.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Hoàn thành câu: 'I'm sorry, I ___ help you right now; my hands are full.' (sorry: xin lỗi, right now: ngay bây giờ)",
+    "q": "Hoàn thành câu: 'I'm sorry, I ___ help you right now; my hands are full.'",
     "a": [
       {
         "text": "can't",
@@ -3342,20 +3766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: hands are full khiến can't help now; mustn't help mang nghĩa bị cấm, khác ý."
+        "explanation": "Sai: hands are full khiến can't help now; mustn't help mang nghĩa bị cấm, khác ý.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: hands are full means can't help now; shouldn't help would be advice rather than inability."
+        "explanation": "Sai: hands are full means can't help now; shouldn't help would be advice rather than inability.",
+        "correct": false
       },
       {
         "text": "will",
-        "explanation": "Sai. 'Will help' diễn tả lời hứa hoặc dự định giúp, trái với việc người nói đang không thể giúp vì tay đang bận."
+        "explanation": "Sai. 'Will help' diễn tả lời hứa hoặc dự định giúp, trái với việc người nói đang không thể giúp vì tay đang bận.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'Is it okay if I use your phone?' -> ___ I use your phone? (use: sử dụng)",
+    "q": "Viết lại câu: 'Is it okay if I use your phone?' -> ___ I use your phone?",
     "a": [
       {
         "text": "Can",
@@ -3364,20 +3791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: Is it okay if I use your phone? chuyển thành Can I use...?; Must I use...? đổi nghĩa."
+        "explanation": "Sai: Is it okay if I use your phone? chuyển thành Can I use...?; Must I use...? đổi nghĩa.",
+        "correct": false
       },
       {
         "text": "Should",
-        "explanation": "Sai: Is it okay if I use your phone? tương đương Can I use...?; Should I use...? hỏi nên làm hay không."
+        "explanation": "Sai: Is it okay if I use your phone? tương đương Can I use...?; Should I use...? hỏi nên làm hay không.",
+        "correct": false
       },
       {
         "text": "Will",
-        "explanation": "Sai. 'Will' là trợ động từ chỉ tương lai, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'Will' là trợ động từ chỉ tương lai, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'It's a good idea to wear a coat.' -> You ___ wear a coat. (good idea: ý kiến hay, coat: áo khoác)",
+    "q": "Viết lại câu: 'It's a good idea to wear a coat.' -> You ___ wear a coat.",
     "a": [
       {
         "text": "should",
@@ -3386,20 +3816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: good idea to wear a coat tương đương should wear, không phải mustn't wear."
+        "explanation": "Sai: good idea to wear a coat tương đương should wear, không phải mustn't wear.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: a good idea to wear a coat tương đương should wear, không phải can't wear."
+        "explanation": "Sai: a good idea to wear a coat tương đương should wear, không phải can't wear.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: a good idea is expressed with should wear; might not wear changes the suggestion to uncertainty."
+        "explanation": "Sai: a good idea is expressed with should wear; might not wear changes the suggestion to uncertainty.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Nội quy bệnh viện yêu cầu im lặng: 'You ___ be quiet in the hospital.' (quiet: yên tĩnh, hospital: bệnh viện)",
+    "q": "Nội quy bệnh viện yêu cầu im lặng: 'You ___ be quiet in the hospital.'",
     "a": [
       {
         "text": "must",
@@ -3408,20 +3841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can't",
-        "explanation": "Sai: nội quy bệnh viện yêu cầu must be quiet; can't be quiet lại nói không thể yên lặng."
+        "explanation": "Sai: nội quy bệnh viện yêu cầu must be quiet; can't be quiet lại nói không thể yên lặng.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: hospital requires silence, nên must be quiet; may be quiet chỉ nói khả năng."
+        "explanation": "Sai: hospital requires silence, nên must be quiet; may be quiet chỉ nói khả năng.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: bệnh viện yêu cầu must be quiet; shouldn't be quiet khuyên làm ngược lại."
+        "explanation": "Sai: bệnh viện yêu cầu must be quiet; shouldn't be quiet khuyên làm ngược lại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'I am certain that isn't John.' -> That ___ be John. (certain: chắc chắn, isn't: không phải)",
+    "q": "Viết lại câu: 'I am certain that isn't John.' -> That ___ be John.",
     "a": [
       {
         "text": "can't",
@@ -3430,20 +3866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "must",
-        "explanation": "Sai: I am certain that isn't John cần can't be John; must be khẳng định ngược lại."
+        "explanation": "Sai: I am certain that isn't John cần can't be John; must be khẳng định ngược lại.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: certainty that it isn't John requires can't be John; shouldn't be John is only advice."
+        "explanation": "Sai: certainty that it isn't John requires can't be John; shouldn't be John is only advice.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: certainty that it isn't John requires can't be John; might not be is too weak."
+        "explanation": "Sai: certainty that it isn't John requires can't be John; might not be is too weak.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Hoàn thành câu: 'We ___ buy some milk. We don't have any left.' (milk: sữa, left: còn lại)",
+    "q": "Hoàn thành câu: 'We ___ buy some milk. We don't have any left.'",
     "a": [
       {
         "text": "must",
@@ -3452,20 +3891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: must buy some milk là nghĩa vụ do hết sữa; mustn't buy lại là cấm mua."
+        "explanation": "Sai: must buy some milk là nghĩa vụ do hết sữa; mustn't buy lại là cấm mua.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: hết sữa cần must buy some, không phải can't buy some."
+        "explanation": "Sai: hết sữa cần must buy some, không phải can't buy some.",
+        "correct": false
       },
       {
         "text": "shouldn't",
-        "explanation": "Sai: hết sữa tạo nghĩa vụ must buy some milk; shouldn't buy would advise against buying."
+        "explanation": "Sai: hết sữa tạo nghĩa vụ must buy some milk; shouldn't buy would advise against buying.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'I suggest taking a taxi.' -> We ___ take a taxi. (suggest: gợi ý, taxi: xe tắc-xi)",
+    "q": "Viết lại câu: 'I suggest taking a taxi.' -> We ___ take a taxi.",
     "a": [
       {
         "text": "should",
@@ -3474,20 +3916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Sai: suggest taking a taxi tương đương should take, không phải mustn't take."
+        "explanation": "Sai: suggest taking a taxi tương đương should take, không phải mustn't take.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: suggest taking a taxi tương đương should take, không phải can't take."
+        "explanation": "Sai: suggest taking a taxi tương đương should take, không phải can't take.",
+        "correct": false
       },
       {
         "text": "might not",
-        "explanation": "Sai: suggesting a taxi calls for should take; might not take does not express the suggestion."
+        "explanation": "Sai: suggesting a taxi calls for should take; might not take does not express the suggestion.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Hoàn thành câu: 'You ___ touch the paintings in the museum.' (touch: chạm, paintings: bức tranh, museum: bảo tàng)",
+    "q": "Hoàn thành câu: 'You ___ touch the paintings in the museum.'",
     "a": [
       {
         "text": "mustn't",
@@ -3496,20 +3941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai: museum cấm chạm tranh, nên mustn't touch; can touch đi ngược nội quy."
+        "explanation": "Sai: museum cấm chạm tranh, nên mustn't touch; can touch đi ngược nội quy.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai mức độ: museum cấm chạm tranh bằng mustn't touch, còn should touch lại là lời khuyên ngược nghĩa."
+        "explanation": "Sai mức độ: museum cấm chạm tranh bằng mustn't touch, còn should touch lại là lời khuyên ngược nghĩa.",
+        "correct": false
       },
       {
         "text": "may",
-        "explanation": "Sai: museum cấm chạm tranh; may touch sẽ trái với mustn't touch."
+        "explanation": "Sai: museum cấm chạm tranh; may touch sẽ trái với mustn't touch.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'Maybe she is at the library.' -> She ___ be at the library. (maybe: có lẽ, library: thư viện)",
+    "q": "Viết lại câu: 'Maybe she is at the library.' -> She ___ be at the library.",
     "a": [
       {
         "text": "might",
@@ -3518,20 +3966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "must",
-        "explanation": "Sai: maybe she is at the library calls for might be; must be would assert certainty."
+        "explanation": "Sai: maybe she is at the library calls for might be; must be would assert certainty.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: maybe she is at the library cần might be; should be thể hiện lời khuyên khác nghĩa."
+        "explanation": "Sai: maybe she is at the library cần might be; should be thể hiện lời khuyên khác nghĩa.",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: maybe she is at the library cần might be, không phải can't be."
+        "explanation": "Sai: maybe she is at the library cần might be, không phải can't be.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Hoàn thành câu: 'I ___ swim very well when I was a child.' (swim: bơi, child: đứa trẻ)",
+    "q": "Hoàn thành câu: 'I ___ swim very well when I was a child.'",
     "a": [
       {
         "text": "could",
@@ -3540,20 +3991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai ngữ cảnh: năng lực hiện tại cần 'can', không dùng 'could'."
+        "explanation": "Sai ngữ cảnh: năng lực hiện tại cần 'can', không dùng 'could'.",
+        "correct": false
       },
       {
         "text": "must",
-        "explanation": "Sai: childhood ability needs could swim; must swim would express obligation, not past skill."
+        "explanation": "Sai: childhood ability needs could swim; must swim would express obligation, not past skill.",
+        "correct": false
       },
       {
         "text": "should",
-        "explanation": "Sai: could swim as a child nói khả năng quá khứ; should swim không phù hợp."
+        "explanation": "Sai: could swim as a child nói khả năng quá khứ; should swim không phù hợp.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'It is optional and not required to bring an umbrella.' -> You ___ bring an umbrella. (umbrella: cây dù)",
+    "q": "Viết lại câu: 'It is optional and not required to bring an umbrella.' -> You ___ bring an umbrella.",
     "a": [
       {
         "text": "don't have to",
@@ -3562,20 +4016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mustn't",
-        "explanation": "Mustn't là cấm (không được làm)."
+        "explanation": "Mustn't là cấm (không được làm).",
+        "correct": false
       },
       {
         "text": "can't",
-        "explanation": "Sai: optional and not required nghĩa là don't have to; can't bring lại là không thể mang."
+        "explanation": "Sai: optional and not required nghĩa là don't have to; can't bring lại là không thể mang.",
+        "correct": false
       },
       {
         "text": "have to",
-        "explanation": "Sai. 'Have to bring' nghĩa là bắt buộc phải mang, trái với câu gốc nói việc mang ô là tùy chọn."
+        "explanation": "Sai. 'Have to bring' nghĩa là bắt buộc phải mang, trái với câu gốc nói việc mang ô là tùy chọn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Trong lời nhờ vả thân mật, hoàn thành câu: '___ you speak louder? I can't hear you.' (louder: to hơn, hear: nghe)",
+    "q": "Trong lời nhờ vả thân mật, hoàn thành câu: '___ you speak louder? I can't hear you.'",
     "a": [
       {
         "text": "Can",
@@ -3584,15 +4041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Must",
-        "explanation": "Sai: Can you speak louder? là lời nhờ vả, còn Must you speak louder? là hỏi nghĩa vụ."
+        "explanation": "Sai: Can you speak louder? là lời nhờ vả, còn Must you speak louder? là hỏi nghĩa vụ.",
+        "correct": false
       },
       {
         "text": "Shouldn't",
-        "explanation": "Sai: lời nhờ vả Can you speak louder? hỏi khả năng thực hiện, không dùng shouldn't."
+        "explanation": "Sai: lời nhờ vả Can you speak louder? hỏi khả năng thực hiện, không dùng shouldn't.",
+        "correct": false
       },
       {
         "text": "May",
-        "explanation": "Ít dùng trong ngữ cảnh này."
+        "explanation": "Ít dùng trong ngữ cảnh này.",
+        "correct": false
       }
     ]
   }

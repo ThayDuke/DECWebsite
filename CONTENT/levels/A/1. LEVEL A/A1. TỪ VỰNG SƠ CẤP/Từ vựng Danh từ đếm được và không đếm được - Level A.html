@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "Trong tiếng Anh, từ \"apple\" (quả táo) là danh từ gì?",
+    "q": "In English, what type of noun is \"apple\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
@@ -1566,15 +1566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ không đếm được",
-        "explanation": "Sai. 'Apple' là quả táo, có thể đếm từng quả; vì vậy nó là danh từ đếm được."
+        "explanation": "Sai. 'Apple' là quả táo, có thể đếm từng quả; vì vậy nó là danh từ đếm được.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Apple' là tên của một loại quả, nên là danh từ, không phải động từ."
+        "explanation": "Sai. 'Apple' là tên của một loại quả, nên là danh từ, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Tính từ",
-        "explanation": "Sai. 'Apple' gọi tên sự vật và có số nhiều 'apples', không phải tính từ."
+        "explanation": "Sai. 'Apple' gọi tên sự vật và có số nhiều 'apples', không phải tính từ.",
+        "correct": false
       }
     ]
   },
@@ -1583,11 +1586,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "book",
-        "explanation": "Sai. 'Book' là quyển sách, có thể đếm từng quyển; 'water' mới không đếm trực tiếp."
+        "explanation": "Sai. 'Book' là quyển sách, có thể đếm từng quyển; 'water' mới không đếm trực tiếp.",
+        "correct": false
       },
       {
         "text": "pen",
-        "explanation": "Sai. 'Pen' là cây bút, có thể đếm từng chiếc; đáp án không đếm được là 'water'."
+        "explanation": "Sai. 'Pen' là cây bút, có thể đếm từng chiếc; đáp án không đếm được là 'water'.",
+        "correct": false
       },
       {
         "text": "water",
@@ -1596,16 +1601,18 @@ const fullQuestionBank = [
       },
       {
         "text": "cat",
-        "explanation": "Sai. 'Cat' là con mèo, có thể đếm từng con; 'water' là chất lỏng không đếm trực tiếp."
+        "explanation": "Sai. 'Cat' là con mèo, có thể đếm từng con; 'water' là chất lỏng không đếm trực tiếp.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "\"Milk\" (sữa) thuộc nhóm danh từ nào?",
+    "q": "What type of noun is \"milk\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
-        "explanation": "Sai. 'Milk' là sữa, thường đo theo cốc hoặc chai thay vì đếm từng đơn vị sữa."
+        "explanation": "Sai. 'Milk' là sữa, thường đo theo cốc hoặc chai thay vì đếm từng đơn vị sữa.",
+        "correct": false
       },
       {
         "text": "Danh từ không đếm được",
@@ -1614,11 +1621,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ riêng",
-        "explanation": "Sai. 'Milk' là danh từ chung chỉ chất lỏng, không phải tên riêng."
+        "explanation": "Sai. 'Milk' là danh từ chung chỉ chất lỏng, không phải tên riêng.",
+        "correct": false
       },
       {
         "text": "Trạng từ",
-        "explanation": "Sai. 'Milk' gọi tên một chất, nên là danh từ, không phải trạng từ."
+        "explanation": "Sai. 'Milk' gọi tên một chất, nên là danh từ, không phải trạng từ.",
+        "correct": false
       }
     ]
   },
@@ -1627,11 +1636,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "rice",
-        "explanation": "Sai. 'Rice' là gạo, thường không đếm trực tiếp từng hạt trong ngữ cảnh này."
+        "explanation": "Sai. 'Rice' là gạo, thường không đếm trực tiếp từng hạt trong ngữ cảnh này.",
+        "correct": false
       },
       {
         "text": "bread",
-        "explanation": "Sai. 'Bread' là bánh mì, thường đếm theo ổ hoặc lát, không trực tiếp như quả chuối."
+        "explanation": "Sai. 'Bread' là bánh mì, thường đếm theo ổ hoặc lát, không trực tiếp như quả chuối.",
+        "correct": false
       },
       {
         "text": "banana",
@@ -1640,7 +1651,8 @@ const fullQuestionBank = [
       },
       {
         "text": "sugar",
-        "explanation": "Sai. 'Sugar' là đường, một chất không đếm trực tiếp từng đơn vị."
+        "explanation": "Sai. 'Sugar' là đường, một chất không đếm trực tiếp từng đơn vị.",
+        "correct": false
       }
     ]
   },
@@ -1649,7 +1661,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "Danh từ không đếm được",
-        "explanation": "Sai. Danh từ không đếm được không dùng trực tiếp với 'a' hoặc 'an'."
+        "explanation": "Sai. Danh từ không đếm được không dùng trực tiếp với 'a' hoặc 'an'.",
+        "correct": false
       },
       {
         "text": "Danh từ đếm được số ít",
@@ -1658,20 +1671,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ đếm được số nhiều",
-        "explanation": "Sai. Danh từ số nhiều không đi với 'a' hoặc 'an'; hai mạo từ này chỉ đi với số ít."
+        "explanation": "Sai. Danh từ số nhiều không đi với 'a' hoặc 'an'; hai mạo từ này chỉ đi với số ít.",
+        "correct": false
       },
       {
         "text": "Tính từ",
-        "explanation": "Sai. 'A' và 'an' đứng trước danh từ đếm được số ít, không đứng trước tính từ một mình."
+        "explanation": "Sai. 'A' và 'an' đứng trước danh từ đếm được số ít, không đứng trước tính từ một mình.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ orange. (Con có một quả cam)",
+    "q": "I have ___ orange.",
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. Trước âm nguyên âm đầu của 'orange' phải dùng 'an', không dùng 'a'."
+        "explanation": "Sai. Trước âm nguyên âm đầu của 'orange' phải dùng 'an', không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
@@ -1680,24 +1696,28 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Sai. Gợi ý nói một quả cam số ít; 'some' không tạo cụm 'some orange' trong câu này."
+        "explanation": "Sai. Gợi ý nói một quả cam số ít; 'some' không tạo cụm 'some orange' trong câu này.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' thường dùng trong câu hỏi hoặc phủ định; câu khẳng định này cần 'an'."
+        "explanation": "Sai. 'Any' thường dùng trong câu hỏi hoặc phủ định; câu khẳng định này cần 'an'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ water, please; just a little, not a bottle. (Con muốn một chút nước)",
+    "q": "I want ___ water, please; just a little, not a bottle.",
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. 'Water' không đếm được nên không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Water' không đếm được nên không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' dùng trước danh từ đếm được số ít bắt đầu bằng âm nguyên âm, không dùng cho 'water'."
+        "explanation": "Sai. 'An' dùng trước danh từ đếm được số ít bắt đầu bằng âm nguyên âm, không dùng cho 'water'.",
+        "correct": false
       },
       {
         "text": "some",
@@ -1706,16 +1726,18 @@ const fullQuestionBank = [
       },
       {
         "text": "one",
-        "explanation": "Sai. 'One' yêu cầu một đơn vị đếm được; nước cần lượng từ như 'some'."
+        "explanation": "Sai. 'One' yêu cầu một đơn vị đếm được; nước cần lượng từ như 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Từ \"bread\" (bánh mì) trong tiếng Anh được coi là:",
+    "q": "In English, what type of noun is \"bread\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
-        "explanation": "Sai. 'Bread' thường không đếm trực tiếp; ta nói 'a loaf' hoặc 'a slice' để đếm."
+        "explanation": "Sai. 'Bread' thường không đếm trực tiếp; ta nói 'a loaf' hoặc 'a slice' để đếm.",
+        "correct": false
       },
       {
         "text": "Danh từ không đếm được",
@@ -1724,11 +1746,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Bread' gọi tên thực phẩm, nên là danh từ, không phải động từ."
+        "explanation": "Sai. 'Bread' gọi tên thực phẩm, nên là danh từ, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Số từ",
-        "explanation": "Sai. 'Bread' không phải số từ; đây là danh từ không đếm được."
+        "explanation": "Sai. 'Bread' không phải số từ; đây là danh từ không đếm được.",
+        "correct": false
       }
     ]
   },
@@ -1742,15 +1766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "water",
-        "explanation": "Sai. 'Water' là danh từ không đếm được; không thêm '-s' để chỉ nhiều đơn vị nước."
+        "explanation": "Sai. 'Water' là danh từ không đếm được; không thêm '-s' để chỉ nhiều đơn vị nước.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Sai. 'Milk' là danh từ không đếm được; muốn đếm cần nói chai hoặc cốc sữa."
+        "explanation": "Sai. 'Milk' là danh từ không đếm được; muốn đếm cần nói chai hoặc cốc sữa.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Sai. 'Rice' là danh từ không đếm được; 'book' mới có số nhiều 'books'."
+        "explanation": "Sai. 'Rice' là danh từ không đếm được; 'book' mới có số nhiều 'books'.",
+        "correct": false
       }
     ]
   },
@@ -1759,7 +1786,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "egg",
-        "explanation": "Sai. 'Egg' là quả trứng riêng lẻ và có thể đếm từng quả."
+        "explanation": "Sai. 'Egg' là quả trứng riêng lẻ và có thể đếm từng quả.",
+        "correct": false
       },
       {
         "text": "salt",
@@ -1768,11 +1796,13 @@ const fullQuestionBank = [
       },
       {
         "text": "carrot",
-        "explanation": "Sai. 'Carrot' là củ cà rốt riêng lẻ và có thể đếm từng củ."
+        "explanation": "Sai. 'Carrot' là củ cà rốt riêng lẻ và có thể đếm từng củ.",
+        "correct": false
       },
       {
         "text": "onion",
-        "explanation": "Sai. 'Onion' là củ hành riêng lẻ và có thể đếm từng củ."
+        "explanation": "Sai. 'Onion' là củ hành riêng lẻ và có thể đếm từng củ.",
+        "correct": false
       }
     ]
   },
@@ -1781,11 +1811,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. 'Juice' là chất lỏng không đếm được, không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Juice' là chất lỏng không đếm được, không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít, không dùng trực tiếp cho 'juice'."
+        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít, không dùng trực tiếp cho 'juice'.",
+        "correct": false
       },
       {
         "text": "some",
@@ -1794,7 +1826,8 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều; 'juice' cần 'some' trong câu khẳng định."
+        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều; 'juice' cần 'some' trong câu khẳng định.",
+        "correct": false
       }
     ]
   },
@@ -1803,11 +1836,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "ink",
-        "explanation": "Sai. 'Ink' là mực, thường không đếm trực tiếp từng đơn vị."
+        "explanation": "Sai. 'Ink' là mực, thường không đếm trực tiếp từng đơn vị.",
+        "correct": false
       },
       {
         "text": "paper",
-        "explanation": "Sai. 'Paper' là giấy, thường là danh từ không đếm được khi nói chung về chất liệu."
+        "explanation": "Sai. 'Paper' là giấy, thường là danh từ không đếm được khi nói chung về chất liệu.",
+        "correct": false
       },
       {
         "text": "pencil",
@@ -1816,16 +1851,18 @@ const fullQuestionBank = [
       },
       {
         "text": "music",
-        "explanation": "Sai. 'Music' nghĩa là âm nhạc, không phải đồ dùng học tập có thể đếm từng chiếc."
+        "explanation": "Sai. 'Music' nghĩa là âm nhạc, không phải đồ dùng học tập có thể đếm từng chiếc.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Từ \"money\" (tiền) là danh từ gì?",
+    "q": "What type of noun is \"money\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
-        "explanation": "Sai. 'Money' là danh từ không đếm được; ta đếm tờ tiền hoặc đồng xu cụ thể."
+        "explanation": "Sai. 'Money' là danh từ không đếm được; ta đếm tờ tiền hoặc đồng xu cụ thể.",
+        "correct": false
       },
       {
         "text": "Danh từ không đếm được",
@@ -1834,11 +1871,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ riêng",
-        "explanation": "Sai. 'Money' là danh từ chung chỉ tiền, không phải tên riêng."
+        "explanation": "Sai. 'Money' là danh từ chung chỉ tiền, không phải tên riêng.",
+        "correct": false
       },
       {
         "text": "Số từ",
-        "explanation": "Sai. 'Money' gọi tên một khái niệm/vật chất, không phải số từ."
+        "explanation": "Sai. 'Money' gọi tên một khái niệm/vật chất, không phải số từ.",
+        "correct": false
       }
     ]
   },
@@ -1847,7 +1886,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "much",
-        "explanation": "Sai. 'Much' đi với danh từ không đếm được; 'apples' là danh từ đếm được số nhiều."
+        "explanation": "Sai. 'Much' đi với danh từ không đếm được; 'apples' là danh từ đếm được số nhiều.",
+        "correct": false
       },
       {
         "text": "many",
@@ -1856,11 +1896,13 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Sai. 'Some' không tạo câu hỏi về số lượng cụ thể như 'How many apples'."
+        "explanation": "Sai. 'Some' không tạo câu hỏi về số lượng cụ thể như 'How many apples'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' không hỏi trực tiếp số lượng; với 'apples' phải dùng 'many'."
+        "explanation": "Sai. 'Any' không hỏi trực tiếp số lượng; với 'apples' phải dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -1869,7 +1911,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "many",
-        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều, không phải 'milk'."
+        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều, không phải 'milk'.",
+        "correct": false
       },
       {
         "text": "much",
@@ -1878,11 +1921,13 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Sai. 'Some' chỉ một lượng không xác định, không tạo câu hỏi 'bao nhiêu'."
+        "explanation": "Sai. 'Some' chỉ một lượng không xác định, không tạo câu hỏi 'bao nhiêu'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' không hỏi lượng cụ thể; với 'milk' dùng 'how much'."
+        "explanation": "Sai. 'Any' không hỏi lượng cụ thể; với 'milk' dùng 'how much'.",
+        "correct": false
       }
     ]
   },
@@ -1891,7 +1936,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "egg",
-        "explanation": "'Egg' bắt đầu bằng nguyên âm nên phải dùng 'an egg', không phải 'a egg'."
+        "explanation": "'Egg' bắt đầu bằng nguyên âm nên phải dùng 'an egg', không phải 'a egg'.",
+        "correct": false
       },
       {
         "text": "pen",
@@ -1900,11 +1946,13 @@ const fullQuestionBank = [
       },
       {
         "text": "ice",
-        "explanation": "'Ice' bắt đầu bằng nguyên âm nên dùng 'an ice' khi nói đến một phần/đơn vị phù hợp, không phải 'a ice'."
+        "explanation": "'Ice' bắt đầu bằng nguyên âm nên dùng 'an ice' khi nói đến một phần/đơn vị phù hợp, không phải 'a ice'.",
+        "correct": false
       },
       {
         "text": "orange",
-        "explanation": "'Orange' bắt đầu bằng nguyên âm nên phải dùng 'an orange', không phải 'a orange'."
+        "explanation": "'Orange' bắt đầu bằng nguyên âm nên phải dùng 'an orange', không phải 'a orange'.",
+        "correct": false
       }
     ]
   },
@@ -1918,15 +1966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I have an water.",
-        "explanation": "Sai. 'An' cũng chỉ đứng trước danh từ đếm được số ít; 'water' cần lượng từ 'some'."
+        "explanation": "Sai. 'An' cũng chỉ đứng trước danh từ đếm được số ít; 'water' cần lượng từ 'some'.",
+        "correct": false
       },
       {
         "text": "I has a water.",
-        "explanation": "Sai. 'I' đi với 'have', không phải 'has'; đồng thời 'water' không đi trực tiếp với 'a'."
+        "explanation": "Sai. 'I' đi với 'have', không phải 'has'; đồng thời 'water' không đi trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "I have water some.",
-        "explanation": "Sai. 'Some' phải đứng trước 'water' trong cụm 'some water', không đứng sau danh từ."
+        "explanation": "Sai. 'Some' phải đứng trước 'water' trong cụm 'some water', không đứng sau danh từ.",
+        "correct": false
       }
     ]
   },
@@ -1940,20 +1991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "There is a rice.",
-        "explanation": "Sai. 'Rice' không đếm được nên không dùng trực tiếp với mạo từ 'a'; dùng 'some rice'."
+        "explanation": "Sai. 'Rice' không đếm được nên không dùng trực tiếp với mạo từ 'a'; dùng 'some rice'.",
+        "correct": false
       },
       {
         "text": "There are some rice.",
-        "explanation": "Sai. 'Rice' không đếm được nên dùng động từ số ít 'is', không dùng 'are'."
+        "explanation": "Sai. 'Rice' không đếm được nên dùng động từ số ít 'is', không dùng 'are'.",
+        "correct": false
       },
       {
         "text": "There is an rice.",
-        "explanation": "Sai. 'An' chỉ dùng trước danh từ đếm được số ít; 'rice' cần 'some'."
+        "explanation": "Sai. 'An' chỉ dùng trước danh từ đếm được số ít; 'rice' cần 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Nối: \"A cup of ___\" (Một tách...)",
+    "q": "Complete the phrase: \"A cup of ___.\"",
     "a": [
       {
         "text": "tea",
@@ -1962,15 +2016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "teas",
-        "explanation": "Sai. Sau 'a cup of' dùng danh từ chất liệu số ít 'tea', không dùng số nhiều 'teas'."
+        "explanation": "Sai. Sau 'a cup of' dùng danh từ chất liệu số ít 'tea', không dùng số nhiều 'teas'.",
+        "correct": false
       },
       {
         "text": "a tea",
-        "explanation": "Sai. 'A cup of' đã là đơn vị đếm; không chèn thêm mạo từ 'a' trước 'tea'."
+        "explanation": "Sai. 'A cup of' đã là đơn vị đếm; không chèn thêm mạo từ 'a' trước 'tea'.",
+        "correct": false
       },
       {
         "text": "an tea",
-        "explanation": "Sai. 'An' không dùng trực tiếp với 'tea'; cấu trúc đúng là 'a cup of tea'."
+        "explanation": "Sai. 'An' không dùng trực tiếp với 'tea'; cấu trúc đúng là 'a cup of tea'.",
+        "correct": false
       }
     ]
   },
@@ -1979,7 +2036,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "meat",
-        "explanation": "Sai. 'Meat' là thịt, thường là danh từ không đếm được; con vật đếm được là 'dog'."
+        "explanation": "Sai. 'Meat' là thịt, thường là danh từ không đếm được; con vật đếm được là 'dog'.",
+        "correct": false
       },
       {
         "text": "dog",
@@ -1988,20 +2046,23 @@ const fullQuestionBank = [
       },
       {
         "text": "fur",
-        "explanation": "Sai. 'Fur' là lông thú, chất liệu không đếm từng con; 'dog' mới chỉ con vật riêng lẻ."
+        "explanation": "Sai. 'Fur' là lông thú, chất liệu không đếm từng con; 'dog' mới chỉ con vật riêng lẻ.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Sai. 'Milk' là sữa, danh từ không đếm được; 'dog' là danh từ chỉ con vật đếm được."
+        "explanation": "Sai. 'Milk' là sữa, danh từ không đếm được; 'dog' là danh từ chỉ con vật đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "\"Butter\" (bơ) là danh từ gì?",
+    "q": "What type of noun is \"butter\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
-        "explanation": "Sai. 'Butter' thường chỉ chất bơ nói chung; muốn đếm phải dùng đơn vị như 'a pat' hoặc 'a packet'."
+        "explanation": "Sai. 'Butter' thường chỉ chất bơ nói chung; muốn đếm phải dùng đơn vị như 'a pat' hoặc 'a packet'.",
+        "correct": false
       },
       {
         "text": "Danh từ không đếm được",
@@ -2010,20 +2071,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Tên riêng",
-        "explanation": "Sai. 'Butter' là danh từ chung chỉ thực phẩm, không phải tên riêng của người hay địa điểm."
+        "explanation": "Sai. 'Butter' là danh từ chung chỉ thực phẩm, không phải tên riêng của người hay địa điểm.",
+        "correct": false
       },
       {
         "text": "Cụm từ",
-        "explanation": "Sai. 'Butter' là một danh từ đơn; về cách đếm, nó thuộc nhóm không đếm được."
+        "explanation": "Sai. 'Butter' là một danh từ đơn; về cách đếm, nó thuộc nhóm không đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want to eat ___ egg. (Con muốn ăn một quả trứng)",
+    "q": "I want to eat ___ egg.",
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. 'Egg' bắt đầu bằng âm nguyên âm nên mạo từ đúng là 'an', không phải 'a'."
+        "explanation": "Sai. 'Egg' bắt đầu bằng âm nguyên âm nên mạo từ đúng là 'an', không phải 'a'.",
+        "correct": false
       },
       {
         "text": "an",
@@ -2032,11 +2096,13 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Sai. Câu nói rõ muốn ăn một quả trứng; danh từ số ít cần 'an egg', không dùng 'some'."
+        "explanation": "Sai. Câu nói rõ muốn ăn một quả trứng; danh từ số ít cần 'an egg', không dùng 'some'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' thường dùng trong câu hỏi/phủ định; câu khẳng định này cần 'an egg'."
+        "explanation": "Sai. 'Any' thường dùng trong câu hỏi/phủ định; câu khẳng định này cần 'an egg'.",
+        "correct": false
       }
     ]
   },
@@ -2045,11 +2111,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "a",
-        "explanation": "'A' chỉ một đơn vị đếm được; 'grated cheese' trong câu là phô mai bào nói chung nên dùng 'some'."
+        "explanation": "'A' chỉ một đơn vị đếm được; 'grated cheese' trong câu là phô mai bào nói chung nên dùng 'some'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "'An' cần danh từ đếm được số ít; phô mai bào trên bàn được dùng như chất không đếm được."
+        "explanation": "'An' cần danh từ đếm được số ít; phô mai bào trên bàn được dùng như chất không đếm được.",
+        "correct": false
       },
       {
         "text": "some",
@@ -2058,16 +2126,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "'Many' đi với danh từ đếm được số nhiều; 'grated cheese' là lượng phô mai không đếm được."
+        "explanation": "'Many' đi với danh từ đếm được số nhiều; 'grated cheese' là lượng phô mai không đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Từ \"sugar\" (đường) dịch sang tiếng Việt là gì?",
+    "q": "Which word names the sweet ingredient often added to tea?",
     "a": [
       {
         "text": "muối",
-        "explanation": "Sai. 'Muối' là 'salt'; 'sugar' nghĩa là đường."
+        "explanation": "Sai. 'Muối' là 'salt'; 'sugar' nghĩa là đường.",
+        "correct": false
       },
       {
         "text": "đường",
@@ -2076,11 +2146,13 @@ const fullQuestionBank = [
       },
       {
         "text": "gạo",
-        "explanation": "Sai. 'Gạo' là 'rice'; 'sugar' nghĩa là đường."
+        "explanation": "Sai. 'Gạo' là 'rice'; 'sugar' nghĩa là đường.",
+        "correct": false
       },
       {
         "text": "sữa",
-        "explanation": "Sai. 'Sữa' là 'milk'; 'sugar' nghĩa là đường."
+        "explanation": "Sai. 'Sữa' là 'milk'; 'sugar' nghĩa là đường.",
+        "correct": false
       }
     ]
   },
@@ -2089,7 +2161,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "How much book",
-        "explanation": "Sai. 'Book' là danh từ đếm được; phải dùng 'how many' và số nhiều 'books'."
+        "explanation": "Sai. 'Book' là danh từ đếm được; phải dùng 'how many' và số nhiều 'books'.",
+        "correct": false
       },
       {
         "text": "How many books",
@@ -2098,11 +2171,13 @@ const fullQuestionBank = [
       },
       {
         "text": "How many book",
-        "explanation": "Sai. 'How many' cần danh từ số nhiều, nên phải là 'books'."
+        "explanation": "Sai. 'How many' cần danh từ số nhiều, nên phải là 'books'.",
+        "correct": false
       },
       {
         "text": "How much books",
-        "explanation": "Sai. 'Much' đi với danh từ không đếm được; sách cần 'how many books'."
+        "explanation": "Sai. 'Much' đi với danh từ không đếm được; sách cần 'how many books'.",
+        "correct": false
       }
     ]
   },
@@ -2111,7 +2186,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "How many water",
-        "explanation": "Sai. 'Water' không đếm được nên phải dùng 'how much water'."
+        "explanation": "Sai. 'Water' không đếm được nên phải dùng 'how much water'.",
+        "correct": false
       },
       {
         "text": "How much water",
@@ -2120,11 +2196,13 @@ const fullQuestionBank = [
       },
       {
         "text": "How some water",
-        "explanation": "Sai. 'How some' không phải cấu trúc hỏi lượng; dùng 'how much'."
+        "explanation": "Sai. 'How some' không phải cấu trúc hỏi lượng; dùng 'how much'.",
+        "correct": false
       },
       {
         "text": "How any water",
-        "explanation": "Sai. 'How any' không phải cấu trúc hỏi lượng; dùng 'how much water'."
+        "explanation": "Sai. 'How any' không phải cấu trúc hỏi lượng; dùng 'how much water'.",
+        "correct": false
       }
     ]
   },
@@ -2133,11 +2211,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "Chair",
-        "explanation": "Sai. 'Chair' là cái ghế, danh từ đếm được và có thể nói 'chairs'."
+        "explanation": "Sai. 'Chair' là cái ghế, danh từ đếm được và có thể nói 'chairs'.",
+        "correct": false
       },
       {
         "text": "Table",
-        "explanation": "Sai. 'Table' là cái bàn, danh từ đếm được và có thể nói 'tables'."
+        "explanation": "Sai. 'Table' là cái bàn, danh từ đếm được và có thể nói 'tables'.",
+        "correct": false
       },
       {
         "text": "Juice",
@@ -2146,12 +2226,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Friend",
-        "explanation": "Sai. 'Friend' là một người bạn, danh từ đếm được và có thể nói 'friends'."
+        "explanation": "Sai. 'Friend' là một người bạn, danh từ đếm được và có thể nói 'friends'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ cookie. (Con có một chiếc bánh quy)",
+    "q": "I have ___ cookie.",
     "a": [
       {
         "text": "a",
@@ -2160,15 +2241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Sai. 'Cookie' bắt đầu bằng âm phụ âm /k/, nên dùng 'a', không dùng 'an'."
+        "explanation": "Sai. 'Cookie' bắt đầu bằng âm phụ âm /k/, nên dùng 'a', không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Câu nói một chiếc bánh quy số ít cần 'a cookie', không phải 'some'."
+        "explanation": "Sai. Câu nói một chiếc bánh quy số ít cần 'a cookie', không phải 'some'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' không phù hợp với câu khẳng định nói về một chiếc bánh quy."
+        "explanation": "Sai. 'Any' không phù hợp với câu khẳng định nói về một chiếc bánh quy.",
+        "correct": false
       }
     ]
   },
@@ -2177,11 +2261,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. 'Soup' là chất không đếm được trong câu này, không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Soup' là chất không đếm được trong câu này, không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít bắt đầu bằng âm nguyên âm."
+        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít bắt đầu bằng âm nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
@@ -2190,12 +2276,13 @@ const fullQuestionBank = [
       },
       {
         "text": "one",
-        "explanation": "Sai. 'One' yêu cầu một đơn vị đếm được; soup cần lượng từ 'some'."
+        "explanation": "Sai. 'One' yêu cầu một đơn vị đếm được; soup cần lượng từ 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Từ \"ball\" (quả bóng) là:",
+    "q": "What type of noun is \"ball\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
@@ -2204,15 +2291,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ không đếm được",
-        "explanation": "Sai. 'Ball' là quả bóng riêng lẻ, có thể đếm từng quả nên không phải danh từ không đếm được."
+        "explanation": "Sai. 'Ball' là quả bóng riêng lẻ, có thể đếm từng quả nên không phải danh từ không đếm được.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Ball' gọi tên một vật thể, nên là danh từ, không phải động từ."
+        "explanation": "Sai. 'Ball' gọi tên một vật thể, nên là danh từ, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Màu sắc",
-        "explanation": "Sai. 'Ball' nghĩa là quả bóng, không phải tên màu sắc."
+        "explanation": "Sai. 'Ball' nghĩa là quả bóng, không phải tên màu sắc.",
+        "correct": false
       }
     ]
   },
@@ -2226,24 +2316,28 @@ const fullQuestionBank = [
       },
       {
         "text": "cup",
-        "explanation": "Sai. 'Cup' là cái cốc, vật đếm được; chất đồ uống không đếm được là 'tea'."
+        "explanation": "Sai. 'Cup' là cái cốc, vật đếm được; chất đồ uống không đếm được là 'tea'.",
+        "correct": false
       },
       {
         "text": "glass",
-        "explanation": "Sai. 'Glass' là cái ly, không phải tên chất đồ uống."
+        "explanation": "Sai. 'Glass' là cái ly, không phải tên chất đồ uống.",
+        "correct": false
       },
       {
         "text": "bottle",
-        "explanation": "Sai. 'Bottle' là cái chai, vật đựng có thể đếm, không phải đồ uống."
+        "explanation": "Sai. 'Bottle' là cái chai, vật đựng có thể đếm, không phải đồ uống.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Vàng (gold) là danh từ gì?",
+    "q": "What type of noun is \"gold\"?",
     "a": [
       {
         "text": "Cụm từ",
-        "explanation": "Sai. 'Gold' gọi tên kim loại, nên là danh từ không đếm được, không phải cụm từ."
+        "explanation": "Sai. 'Gold' gọi tên kim loại, nên là danh từ không đếm được, không phải cụm từ.",
+        "correct": false
       },
       {
         "text": "Danh từ không đếm được",
@@ -2252,11 +2346,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ đếm được",
-        "explanation": "Sai. 'Gold' thường tính theo trọng lượng, không đếm trực tiếp từng đơn vị."
+        "explanation": "Sai. 'Gold' thường tính theo trọng lượng, không đếm trực tiếp từng đơn vị.",
+        "correct": false
       },
       {
         "text": "Câu hỏi",
-        "explanation": "Sai. 'Gold' là tên vật chất, không phải một câu hỏi."
+        "explanation": "Sai. 'Gold' là tên vật chất, không phải một câu hỏi.",
+        "correct": false
       }
     ]
   },
@@ -2265,7 +2361,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. 'Ant' bắt đầu bằng âm nguyên âm, nên dùng 'an', không dùng 'a'."
+        "explanation": "Sai. 'Ant' bắt đầu bằng âm nguyên âm, nên dùng 'an', không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
@@ -2274,11 +2371,13 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Sai. Câu nói một con kiến số ít cần 'an ant', không phải 'some'."
+        "explanation": "Sai. Câu nói một con kiến số ít cần 'an ant', không phải 'some'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' cần danh từ số nhiều; câu này nói một con kiến."
+        "explanation": "Sai. 'Many' cần danh từ số nhiều; câu này nói một con kiến.",
+        "correct": false
       }
     ]
   },
@@ -2287,11 +2386,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. 'Honey' không đếm được trong câu này, không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Honey' không đếm được trong câu này, không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' dùng trước danh từ đếm được số ít, không dùng cho 'honey'."
+        "explanation": "Sai. 'An' dùng trước danh từ đếm được số ít, không dùng cho 'honey'.",
+        "correct": false
       },
       {
         "text": "some",
@@ -2300,12 +2401,13 @@ const fullQuestionBank = [
       },
       {
         "text": "one",
-        "explanation": "Sai. 'One' cần một đơn vị đếm được; mật ong cần lượng từ 'some'."
+        "explanation": "Sai. 'One' cần một đơn vị đếm được; mật ong cần lượng từ 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Từ \"student\" (học sinh) là danh từ gì?",
+    "q": "What type of noun is \"student\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
@@ -2314,24 +2416,28 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ không đếm được",
-        "explanation": "Sai. 'Student' chỉ một người học cụ thể, có thể đếm số học sinh."
+        "explanation": "Sai. 'Student' chỉ một người học cụ thể, có thể đếm số học sinh.",
+        "correct": false
       },
       {
         "text": "Tính từ",
-        "explanation": "Sai. 'Student' gọi tên người học, nên là danh từ, không phải tính từ."
+        "explanation": "Sai. 'Student' gọi tên người học, nên là danh từ, không phải tính từ.",
+        "correct": false
       },
       {
         "text": "Tên địa điểm",
-        "explanation": "Sai. 'Student' là người học, không phải tên một địa điểm."
+        "explanation": "Sai. 'Student' là người học, không phải tên một địa điểm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Music (âm nhạc) là danh từ gì?",
+    "q": "What type of noun is \"music\"?",
     "a": [
       {
         "text": "Danh từ đếm được",
-        "explanation": "Sai. 'Music' thường chỉ âm nhạc nói chung, không đếm trực tiếp từng đơn vị."
+        "explanation": "Sai. 'Music' thường chỉ âm nhạc nói chung, không đếm trực tiếp từng đơn vị.",
+        "correct": false
       },
       {
         "text": "Danh từ không đếm được",
@@ -2340,11 +2446,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Music' gọi tên một lĩnh vực/khái niệm, nên là danh từ, không phải động từ."
+        "explanation": "Sai. 'Music' gọi tên một lĩnh vực/khái niệm, nên là danh từ, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Trạng từ",
-        "explanation": "Sai. 'Music' là danh từ chỉ âm nhạc, không phải trạng từ."
+        "explanation": "Sai. 'Music' là danh từ chỉ âm nhạc, không phải trạng từ.",
+        "correct": false
       }
     ]
   },
@@ -2358,15 +2466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "There is some milk.",
-        "explanation": "Đúng về ngữ pháp. 'Some milk' phù hợp với danh từ không đếm được trong câu khẳng định."
+        "explanation": "Chưa đúng khi chọn “There is some milk.”. Đúng về ngữ pháp. 'Some milk' phù hợp với danh từ không đếm được trong câu khẳng định.",
+        "correct": false
       },
       {
         "text": "There is a bottle of milk.",
-        "explanation": "Đúng về ngữ pháp. 'A bottle of milk' đếm cái chai, không đếm trực tiếp sữa."
+        "explanation": "Chưa đúng khi chọn “There is a bottle of milk.”. Đúng về ngữ pháp. 'A bottle of milk' đếm cái chai, không đếm trực tiếp sữa.",
+        "correct": false
       },
       {
         "text": "I drink milk.",
-        "explanation": "Đúng về ngữ pháp. 'Milk' được dùng như danh từ không đếm được sau động từ 'drink'."
+        "explanation": "Chưa đúng khi chọn “I drink milk.”. Đúng về ngữ pháp. 'Milk' được dùng như danh từ không đếm được sau động từ 'drink'.",
+        "correct": false
       }
     ]
   },
@@ -2375,7 +2486,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "Nước",
-        "explanation": "Sai. Nước thường đo bằng chai, cốc hoặc lít; 'bar' dùng cho thanh socola."
+        "explanation": "Sai. Nước thường đo bằng chai, cốc hoặc lít; 'bar' dùng cho thanh socola.",
+        "correct": false
       },
       {
         "text": "Socola",
@@ -2384,11 +2496,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Trứng",
-        "explanation": "Sai. Trứng đếm từng quả hoặc dùng 'a dozen', không gọi là 'a bar'."
+        "explanation": "Sai. Trứng đếm từng quả hoặc dùng 'a dozen', không gọi là 'a bar'.",
+        "correct": false
       },
       {
         "text": "Bút",
-        "explanation": "Sai. Bút là đồ vật đếm từng chiếc, không đo bằng đơn vị 'bar'."
+        "explanation": "Sai. Bút là đồ vật đếm từng chiếc, không đo bằng đơn vị 'bar'.",
+        "correct": false
       }
     ]
   },
@@ -2402,15 +2516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a book",
-        "explanation": "Sai. 'A book' đã có mạo từ riêng; không đặt trực tiếp sau 'some' trong lựa chọn này."
+        "explanation": "Sai. 'A book' đã có mạo từ riêng; không đặt trực tiếp sau 'some' trong lựa chọn này.",
+        "correct": false
       },
       {
         "text": "an apple",
-        "explanation": "Sai. 'An apple' đã là cụm số ít xác định; câu hỏi đang tìm danh từ đi trực tiếp sau 'some'."
+        "explanation": "Sai. 'An apple' đã là cụm số ít xác định; câu hỏi đang tìm danh từ đi trực tiếp sau 'some'.",
+        "correct": false
       },
       {
         "text": "the sun",
-        "explanation": "Sai. 'The sun' là một danh từ xác định, không đi sau 'some' theo cấu trúc hỏi này."
+        "explanation": "Sai. 'The sun' là một danh từ xác định, không đi sau 'some' theo cấu trúc hỏi này.",
+        "correct": false
       }
     ]
   },
@@ -2424,24 +2541,28 @@ const fullQuestionBank = [
       },
       {
         "text": "ink",
-        "explanation": "Sai. 'Ink' là mực, chất lỏng không đếm được; dụng cụ đếm được là 'pen'."
+        "explanation": "Sai. 'Ink' là mực, chất lỏng không đếm được; dụng cụ đếm được là 'pen'.",
+        "correct": false
       },
       {
         "text": "music",
-        "explanation": "Sai. 'Music' là âm nhạc, không phải vật dụng dùng để viết."
+        "explanation": "Sai. 'Music' là âm nhạc, không phải vật dụng dùng để viết.",
+        "correct": false
       },
       {
         "text": "air",
-        "explanation": "Sai. 'Air' là không khí, không phải dụng cụ có thể cầm để viết."
+        "explanation": "Sai. 'Air' là không khí, không phải dụng cụ có thể cầm để viết.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Air (không khí) là danh từ:",
+    "q": "What type of noun is \"air\"?",
     "a": [
       {
         "text": "Đếm được",
-        "explanation": "Sai. 'Air' là không khí, thường đo theo lượng hoặc thể tích, không đếm từng đơn vị."
+        "explanation": "Sai. 'Air' là không khí, thường đo theo lượng hoặc thể tích, không đếm từng đơn vị.",
+        "correct": false
       },
       {
         "text": "Không đếm được",
@@ -2450,11 +2571,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Số nhiều",
-        "explanation": "Sai. 'Air' không phải dạng số nhiều; đây là danh từ không đếm được."
+        "explanation": "Sai. 'Air' không phải dạng số nhiều; đây là danh từ không đếm được.",
+        "correct": false
       },
       {
         "text": "Giới từ",
-        "explanation": "Sai. 'Air' gọi tên một chất, nên là danh từ, không phải giới từ."
+        "explanation": "Sai. 'Air' gọi tên một chất, nên là danh từ, không phải giới từ.",
+        "correct": false
       }
     ]
   },
@@ -2463,7 +2586,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "a",
-        "explanation": "Sai. 'Orange' bắt đầu bằng âm nguyên âm, nên phải dùng 'an orange'."
+        "explanation": "Sai. 'Orange' bắt đầu bằng âm nguyên âm, nên phải dùng 'an orange'.",
+        "correct": false
       },
       {
         "text": "an",
@@ -2472,11 +2596,13 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Sai. Câu nói một quả cam số ít cần 'an', không phải lượng từ 'some'."
+        "explanation": "Sai. Câu nói một quả cam số ít cần 'an', không phải lượng từ 'some'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' không phù hợp với câu khẳng định chỉ một quả cam."
+        "explanation": "Sai. 'Any' không phù hợp với câu khẳng định chỉ một quả cam.",
+        "correct": false
       }
     ]
   },
@@ -2485,7 +2611,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "some",
-        "explanation": "Sai. Trong câu phủ định, 'juice' cần 'any', không dùng 'some' theo mục tiêu bài."
+        "explanation": "Sai. Trong câu phủ định, 'juice' cần 'any', không dùng 'some' theo mục tiêu bài.",
+        "correct": false
       },
       {
         "text": "any",
@@ -2494,20 +2621,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'Juice' không đếm được nên không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Juice' không đếm được nên không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều, không phải 'juice'."
+        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều, không phải 'juice'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "\"Meat\" (thịt) là danh từ gì?",
+    "q": "What type of noun is \"meat\"?",
     "a": [
       {
         "text": "Đếm được",
-        "explanation": "Sai. 'Meat' thường chỉ thịt nói chung, không đếm trực tiếp từng đơn vị."
+        "explanation": "Sai. 'Meat' thường chỉ thịt nói chung, không đếm trực tiếp từng đơn vị.",
+        "correct": false
       },
       {
         "text": "Không đếm được",
@@ -2516,11 +2646,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Meat' gọi tên thực phẩm, nên là danh từ, không phải động từ."
+        "explanation": "Sai. 'Meat' gọi tên thực phẩm, nên là danh từ, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Trạng từ",
-        "explanation": "Sai. 'Meat' là danh từ chỉ thực phẩm, không phải trạng từ."
+        "explanation": "Sai. 'Meat' là danh từ chỉ thực phẩm, không phải trạng từ.",
+        "correct": false
       }
     ]
   },
@@ -2530,19 +2662,22 @@ const fullQuestionBank = [
       {
         "text": "glass",
         "correct": true,
-        "explanation": "Để đếm nước, ta có thể dùng đơn vị là 'ly' (glass)."
+        "explanation": "Sau 'a' cần danh từ đơn vị số ít; 'a glass of water' là cụm đúng."
       },
       {
         "text": "some",
-        "explanation": "Sai. Sau 'a' cần một danh từ đơn vị số ít; 'some' không phải vật chứa."
+        "explanation": "Sai. Sau 'a' cần một danh từ đơn vị số ít; 'some' không phải vật chứa.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' là từ chỉ lượng, không phải đơn vị chứa nước sau 'a'."
+        "explanation": "Sai. 'Any' là từ chỉ lượng, không phải đơn vị chứa nước sau 'a'.",
+        "correct": false
       },
       {
         "text": "apples",
-        "explanation": "Sai. 'Apples' là các quả táo, không phải đơn vị chứa nước."
+        "explanation": "Sai. 'Apples' là các quả táo, không phải đơn vị chứa nước.",
+        "correct": false
       }
     ]
   },
@@ -2556,15 +2691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Thiếu chữ 's' sau milk",
-        "explanation": "Sai. Lỗi chính là dùng đồng thời 'a' và 'some'; không phải thiếu '-s' sau 'milk'."
+        "explanation": "Sai. Lỗi chính là dùng đồng thời 'a' và 'some'; không phải thiếu '-s' sau 'milk'.",
+        "correct": false
       },
       {
         "text": "Sai chữ 'is'",
-        "explanation": "Sai. 'There is' phù hợp với 'milk'; lỗi nằm ở cụm 'a some'."
+        "explanation": "Sai. 'There is' phù hợp với 'milk'; lỗi nằm ở cụm 'a some'.",
+        "correct": false
       },
       {
         "text": "Sai chữ 'some'",
-        "explanation": "Sai. 'Some milk' đúng khi đứng một mình; cần bỏ 'a', không bỏ 'some'."
+        "explanation": "Sai. 'Some milk' đúng khi đứng một mình; cần bỏ 'a', không bỏ 'some'.",
+        "correct": false
       }
     ]
   },
@@ -2578,15 +2716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Do you have some bananas?",
-        "explanation": "Sai theo mục tiêu câu hỏi trung tính. Với câu hỏi hỏi có hay không, dùng 'any bananas'."
+        "explanation": "Sai theo mục tiêu câu hỏi trung tính. Với câu hỏi hỏi có hay không, dùng 'any bananas'.",
+        "correct": false
       },
       {
         "text": "Are you have any bananas?",
-        "explanation": "Sai ngữ pháp. Sau 'Do' dùng động từ nguyên mẫu 'have', không dùng 'Are you have'."
+        "explanation": "Sai ngữ pháp. Sau 'Do' dùng động từ nguyên mẫu 'have', không dùng 'Are you have'.",
+        "correct": false
       },
       {
         "text": "Do you has any bananas?",
-        "explanation": "Sai ngữ pháp. Sau 'Do you' dùng 'have', không dùng 'has'."
+        "explanation": "Sai ngữ pháp. Sau 'Do you' dùng 'have', không dùng 'has'.",
+        "correct": false
       }
     ]
   },
@@ -2600,20 +2741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Do you have a sugar?",
-        "explanation": "Sai. 'Sugar' là danh từ không đếm được trong câu này, không dùng 'a sugar'."
+        "explanation": "Sai. 'Sugar' là danh từ không đếm được trong câu này, không dùng 'a sugar'.",
+        "correct": false
       },
       {
         "text": "Do you have some sugar?",
-        "explanation": "Sai theo mục tiêu câu hỏi có/không trung tính; dùng 'any sugar'."
+        "explanation": "Sai theo mục tiêu câu hỏi có/không trung tính; dùng 'any sugar'.",
+        "correct": false
       },
       {
         "text": "Are you have any sugar?",
-        "explanation": "Sai ngữ pháp. Câu hỏi dùng 'Do you have', không dùng 'Are you have'."
+        "explanation": "Sai ngữ pháp. Câu hỏi dùng 'Do you have', không dùng 'Are you have'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Cà phê (coffee) là danh từ gì?",
+    "q": "What type of noun is \"coffee\"?",
     "a": [
       {
         "text": "Không đếm được",
@@ -2622,20 +2766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đếm được",
-        "explanation": "Sai. 'Coffee' thường chỉ đồ uống nói chung, không đếm trực tiếp từng đơn vị."
+        "explanation": "Sai. 'Coffee' thường chỉ đồ uống nói chung, không đếm trực tiếp từng đơn vị.",
+        "correct": false
       },
       {
         "text": "Số nhiều",
-        "explanation": "Sai. 'Coffee' không phải dạng số nhiều; đây là danh từ không đếm được."
+        "explanation": "Sai. 'Coffee' không phải dạng số nhiều; đây là danh từ không đếm được.",
+        "correct": false
       },
       {
         "text": "Tên riêng",
-        "explanation": "Sai. 'Coffee' là danh từ chung chỉ đồ uống, không phải tên riêng."
+        "explanation": "Sai. 'Coffee' là danh từ chung chỉ đồ uống, không phải tên riêng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "\"Egg\" (trứng) là danh từ gì?",
+    "q": "What type of noun is \"egg\"?",
     "a": [
       {
         "text": "Đếm được",
@@ -2644,15 +2791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Không đếm được",
-        "explanation": "Sai. 'Egg' là quả trứng riêng lẻ, có thể đếm từng quả."
+        "explanation": "Sai. 'Egg' là quả trứng riêng lẻ, có thể đếm từng quả.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Egg' gọi tên một vật thể, nên là danh từ, không phải động từ."
+        "explanation": "Sai. 'Egg' gọi tên một vật thể, nên là danh từ, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Tính từ",
-        "explanation": "Sai. 'Egg' là danh từ chỉ quả trứng, không phải tính từ."
+        "explanation": "Sai. 'Egg' là danh từ chỉ quả trứng, không phải tính từ.",
+        "correct": false
       }
     ]
   },
@@ -2666,15 +2816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Sai. 'Book' bắt đầu bằng âm phụ âm /b/, nên dùng 'a', không dùng 'an'."
+        "explanation": "Sai. 'Book' bắt đầu bằng âm phụ âm /b/, nên dùng 'a', không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Câu nói một quyển sách số ít cần 'a book', không phải 'some'."
+        "explanation": "Sai. Câu nói một quyển sách số ít cần 'a book', không phải 'some'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' không phù hợp với câu khẳng định nói về một quyển sách."
+        "explanation": "Sai. 'Any' không phù hợp với câu khẳng định nói về một quyển sách.",
+        "correct": false
       }
     ]
   },
@@ -2688,15 +2841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'Jam' không đếm được trong câu này, không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Jam' không đếm được trong câu này, không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít bắt đầu bằng âm nguyên âm."
+        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít bắt đầu bằng âm nguyên âm.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều, không phải 'jam'."
+        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều, không phải 'jam'.",
+        "correct": false
       }
     ]
   },
@@ -2710,20 +2866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "furniture",
-        "explanation": "Sai. 'Furniture' là đồ nội thất nói chung, danh từ không đếm được; 'chair' đếm được."
+        "explanation": "Sai. 'Furniture' là đồ nội thất nói chung, danh từ không đếm được; 'chair' đếm được.",
+        "correct": false
       },
       {
         "text": "wood",
-        "explanation": "Sai. 'Wood' là gỗ, chất liệu không đếm trực tiếp; không phải đồ dùng riêng lẻ."
+        "explanation": "Sai. 'Wood' là gỗ, chất liệu không đếm trực tiếp; không phải đồ dùng riêng lẻ.",
+        "correct": false
       },
       {
         "text": "dust",
-        "explanation": "Sai. 'Dust' là bụi, chất không đếm được; 'chair' là vật đếm được."
+        "explanation": "Sai. 'Dust' là bụi, chất không đếm được; 'chair' là vật đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "\"Paper\" (giấy) là danh từ gì?",
+    "q": "What type of noun is \"paper\"?",
     "a": [
       {
         "text": "Không đếm được",
@@ -2732,15 +2891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Đếm được",
-        "explanation": "Sai. 'Paper' nói về chất liệu thường là danh từ không đếm được."
+        "explanation": "Sai. 'Paper' nói về chất liệu thường là danh từ không đếm được.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Paper' gọi tên giấy, nên là danh từ, không phải động từ."
+        "explanation": "Sai. 'Paper' gọi tên giấy, nên là danh từ, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Danh từ riêng",
-        "explanation": "Sai. 'Paper' là danh từ chung chỉ chất liệu, không phải tên riêng."
+        "explanation": "Sai. 'Paper' là danh từ chung chỉ chất liệu, không phải tên riêng.",
+        "correct": false
       }
     ]
   },
@@ -2754,15 +2916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều; 'salt' không đếm được."
+        "explanation": "Sai. 'Many' đi với danh từ đếm được số nhiều; 'salt' không đếm được.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'Some' chỉ một lượng không xác định, không hỏi 'bao nhiêu' như 'how much'."
+        "explanation": "Sai. 'Some' chỉ một lượng không xác định, không hỏi 'bao nhiêu' như 'how much'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' không phải từ hỏi lượng; câu cần 'how much salt'."
+        "explanation": "Sai. 'Any' không phải từ hỏi lượng; câu cần 'how much salt'.",
+        "correct": false
       }
     ]
   },
@@ -2776,15 +2941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sai. 'Much' đi với danh từ không đếm được, còn 'cats' đếm được số nhiều."
+        "explanation": "Sai. 'Much' đi với danh từ không đếm được, còn 'cats' đếm được số nhiều.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'Some' không hỏi số lượng cụ thể; dùng 'how many cats'."
+        "explanation": "Sai. 'Some' không hỏi số lượng cụ thể; dùng 'how many cats'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'Any' không thay thế cấu trúc hỏi số lượng 'how many'."
+        "explanation": "Sai. 'Any' không thay thế cấu trúc hỏi số lượng 'how many'.",
+        "correct": false
       }
     ]
   },
@@ -2798,15 +2966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "cookie",
-        "explanation": "Cookie là một chiếc bánh quy riêng lẻ, nên có thể đếm bằng one cookie, two cookies."
+        "explanation": "Cookie là một chiếc bánh quy riêng lẻ, nên có thể đếm bằng one cookie, two cookies.",
+        "correct": false
       },
       {
         "text": "candy",
-        "explanation": "Candy chỉ kẹo, không phải chất lỏng; lựa chọn này không khớp với mô tả honey."
+        "explanation": "Candy chỉ kẹo, không phải chất lỏng; lựa chọn này không khớp với mô tả honey.",
+        "correct": false
       },
       {
         "text": "cake",
-        "explanation": "Cake chỉ bánh, không phải chất ngọt dạng lỏng được hỏi."
+        "explanation": "Cake chỉ bánh, không phải chất ngọt dạng lỏng được hỏi.",
+        "correct": false
       }
     ]
   },
@@ -2820,20 +2991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "cup",
-        "explanation": "Sai. 'Cup' là cốc, thường dùng đo chất lỏng, không phải ổ bánh mì."
+        "explanation": "Sai. 'Cup' là cốc, thường dùng đo chất lỏng, không phải ổ bánh mì.",
+        "correct": false
       },
       {
         "text": "glass",
-        "explanation": "Sai. 'Glass' là ly hoặc thủy tinh, không phải đơn vị của ổ bánh mì."
+        "explanation": "Sai. 'Glass' là ly hoặc thủy tinh, không phải đơn vị của ổ bánh mì.",
+        "correct": false
       },
       {
         "text": "apple",
-        "explanation": "Sai. 'Apple' là quả táo, không phải đơn vị đo bánh mì."
+        "explanation": "Sai. 'Apple' là quả táo, không phải đơn vị đo bánh mì.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Từ \"information\" (thông tin) là danh từ:",
+    "q": "What type of noun is \"information\"?",
     "a": [
       {
         "text": "Không đếm được",
@@ -2842,15 +3016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Đếm được",
-        "explanation": "Sai. 'Information' không đếm trực tiếp; muốn đếm dùng 'a piece of information'."
+        "explanation": "Sai. 'Information' không đếm trực tiếp; muốn đếm dùng 'a piece of information'.",
+        "correct": false
       },
       {
         "text": "Số nhiều",
-        "explanation": "Sai. 'Information' không có dạng số nhiều thông thường trong tiếng Anh cơ bản."
+        "explanation": "Sai. 'Information' không có dạng số nhiều thông thường trong tiếng Anh cơ bản.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "Sai. 'Information' là danh từ chỉ thông tin, không phải động từ."
+        "explanation": "Sai. 'Information' là danh từ chỉ thông tin, không phải động từ.",
+        "correct": false
       }
     ]
   },
@@ -2859,11 +3036,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "hair",
-        "explanation": "Sai. 'Hair' thường chỉ tóc nói chung; mắt là bộ phận riêng lẻ có thể đếm."
+        "explanation": "Sai. 'Hair' thường chỉ tóc nói chung; mắt là bộ phận riêng lẻ có thể đếm.",
+        "correct": false
       },
       {
         "text": "blood",
-        "explanation": "Sai. 'Blood' là máu, chất không đếm được; bộ phận đếm được là 'eye'."
+        "explanation": "Sai. 'Blood' là máu, chất không đếm được; bộ phận đếm được là 'eye'.",
+        "correct": false
       },
       {
         "text": "eye",
@@ -2872,7 +3051,8 @@ const fullQuestionBank = [
       },
       {
         "text": "skin",
-        "explanation": "Sai. 'Skin' là da, chất liệu/bộ phận nói chung, không phải bộ phận đếm từng chiếc."
+        "explanation": "Sai. 'Skin' là da, chất liệu/bộ phận nói chung, không phải bộ phận đếm từng chiếc.",
+        "correct": false
       }
     ]
   },
@@ -2886,20 +3066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'Juice' không đếm được nên không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Juice' không đếm được nên không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít, không dùng cho 'juice'."
+        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít, không dùng cho 'juice'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sai. 'One' cần một đơn vị đếm được; nước ép cần lượng từ 'some'."
+        "explanation": "Sai. 'One' cần một đơn vị đếm được; nước ép cần lượng từ 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There are four ___ on the table. (cái bút)",
+    "q": "There are four ___ on the table.",
     "a": [
       {
         "text": "pens",
@@ -2908,15 +3091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "pen",
-        "explanation": "Sai. Câu cần số nhiều của 'pen'; lựa chọn này là số ít."
+        "explanation": "Sai. Câu cần số nhiều của 'pen'; lựa chọn này là số ít.",
+        "correct": false
       },
       {
         "text": "pencil",
-        "explanation": "Sai. 'Pencil' nghĩa là bút chì, khác với danh từ 'pen' trong gợi ý."
+        "explanation": "Sai. 'Pencil' nghĩa là bút chì, khác với danh từ 'pen' trong gợi ý.",
+        "correct": false
       },
       {
         "text": "ink",
-        "explanation": "Sai. 'Ink' là mực, danh từ không đếm được, không phù hợp với bốn cái bút."
+        "explanation": "Sai. 'Ink' là mực, danh từ không đếm được, không phù hợp với bốn cái bút.",
+        "correct": false
       }
     ]
   },
@@ -2930,15 +3116,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'Cheese' không đếm được trong câu này, không dùng trực tiếp với 'a'."
+        "explanation": "Sai. 'Cheese' không đếm được trong câu này, không dùng trực tiếp với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít bắt đầu bằng âm nguyên âm."
+        "explanation": "Sai. 'An' dùng cho danh từ đếm được số ít bắt đầu bằng âm nguyên âm.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. Lời mời tích cực thường dùng 'some'; 'any' chủ yếu dùng trong hỏi/phủ định."
+        "explanation": "Sai. Lời mời tích cực thường dùng 'some'; 'any' chủ yếu dùng trong hỏi/phủ định.",
+        "correct": false
       }
     ]
   },
@@ -2952,20 +3141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "soup",
-        "explanation": "Sai. 'Soup' là món ăn/chất không đếm trực tiếp; rau củ đếm được là 'tomato'."
+        "explanation": "Sai. 'Soup' là món ăn/chất không đếm trực tiếp; rau củ đếm được là 'tomato'.",
+        "correct": false
       },
       {
         "text": "oil",
-        "explanation": "Sai. 'Oil' là dầu, chất lỏng không đếm được, không phải rau củ."
+        "explanation": "Sai. 'Oil' là dầu, chất lỏng không đếm được, không phải rau củ.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Sai. 'Rice' là gạo, danh từ không đếm được; 'tomato' là quả đếm được."
+        "explanation": "Sai. 'Rice' là gạo, danh từ không đếm được; 'tomato' là quả đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Oil (dầu ăn) là danh từ gì?",
+    "q": "What type of noun is \"oil\"?",
     "a": [
       {
         "text": "Không đếm được",
@@ -2974,20 +3166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đếm được số ít",
-        "explanation": "Sai. 'Oil' thường không đếm trực tiếp từng đơn vị; có thể đếm chai dầu."
+        "explanation": "Sai. 'Oil' thường không đếm trực tiếp từng đơn vị; có thể đếm chai dầu.",
+        "correct": false
       },
       {
         "text": "Đếm được số nhiều",
-        "explanation": "Sai. 'Oil' không có dạng số nhiều thông thường khi chỉ chất lỏng."
+        "explanation": "Sai. 'Oil' không có dạng số nhiều thông thường khi chỉ chất lỏng.",
+        "correct": false
       },
       {
         "text": "Trạng từ",
-        "explanation": "Sai. 'Oil' gọi tên một chất, nên là danh từ, không phải trạng từ."
+        "explanation": "Sai. 'Oil' gọi tên một chất, nên là danh từ, không phải trạng từ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "A slice of ___ with tomato topping (Một lát...)",
+    "q": "A slice of ___ with tomato topping",
     "a": [
       {
         "text": "pizza",
@@ -2996,15 +3191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "pizzas",
-        "explanation": "'Pizzas' là nhiều chiếc pizza; câu cần một lát nên dùng danh từ không số nhiều sau 'a slice of'."
+        "explanation": "'Pizzas' là nhiều chiếc pizza; câu cần một lát nên dùng danh từ không số nhiều sau 'a slice of'.",
+        "correct": false
       },
       {
         "text": "apple",
-        "explanation": "'Apple' là quả táo; topping cà chua được đặt trên một lát pizza."
+        "explanation": "'Apple' là quả táo; topping cà chua được đặt trên một lát pizza.",
+        "correct": false
       },
       {
         "text": "banana",
-        "explanation": "'Banana' là quả chuối; món có topping cà chua là pizza, không phải chuối."
+        "explanation": "'Banana' là quả chuối; món có topping cà chua là pizza, không phải chuối.",
+        "correct": false
       }
     ]
   },
@@ -3013,7 +3211,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "đường",
-        "explanation": "'Đường' là 'sugar'; 'salt' dịch là muối."
+        "explanation": "'Đường' là 'sugar'; 'salt' dịch là muối.",
+        "correct": false
       },
       {
         "text": "muối",
@@ -3022,11 +3221,13 @@ const fullQuestionBank = [
       },
       {
         "text": "tiêu",
-        "explanation": "'Tiêu' là 'pepper'; từ 'salt' chỉ muối."
+        "explanation": "'Tiêu' là 'pepper'; từ 'salt' chỉ muối.",
+        "correct": false
       },
       {
         "text": "ớt",
-        "explanation": "'Ớt' là 'chili'; 'salt' không có nghĩa là ớt."
+        "explanation": "'Ớt' là 'chili'; 'salt' không có nghĩa là ớt.",
+        "correct": false
       }
     ]
   },
@@ -3040,15 +3241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "An",
-        "explanation": "'An' chỉ đứng trước âm nguyên âm; 'dog' bắt đầu bằng âm /d/ nên cần 'a'."
+        "explanation": "'An' chỉ đứng trước âm nguyên âm; 'dog' bắt đầu bằng âm /d/ nên cần 'a'.",
+        "correct": false
       },
       {
         "text": "Some",
-        "explanation": "'Some dog' không khớp yêu cầu một con chó; câu số ít cần mạo từ 'a'."
+        "explanation": "'Some dog' không khớp yêu cầu một con chó; câu số ít cần mạo từ 'a'.",
+        "correct": false
       },
       {
         "text": "Any",
-        "explanation": "'Any' thường dùng trong phủ định hoặc câu hỏi; câu khẳng định này cần 'a dog'."
+        "explanation": "'Any' thường dùng trong phủ định hoặc câu hỏi; câu khẳng định này cần 'a dog'.",
+        "correct": false
       }
     ]
   },
@@ -3057,7 +3261,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "A",
-        "explanation": "'A' đi trước âm phụ âm; 'egg' bắt đầu bằng âm nguyên âm nên dùng 'an'."
+        "explanation": "'A' đi trước âm phụ âm; 'egg' bắt đầu bằng âm nguyên âm nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "An",
@@ -3066,11 +3271,13 @@ const fullQuestionBank = [
       },
       {
         "text": "Some",
-        "explanation": "'Some egg' không nói một quả trứng số ít; câu cần mạo từ 'an'."
+        "explanation": "'Some egg' không nói một quả trứng số ít; câu cần mạo từ 'an'.",
+        "correct": false
       },
       {
         "text": "Any",
-        "explanation": "'Any' không phù hợp câu khẳng định chỉ một quả trứng; dùng 'an egg'."
+        "explanation": "'Any' không phù hợp câu khẳng định chỉ một quả trứng; dùng 'an egg'.",
+        "correct": false
       }
     ]
   },
@@ -3084,15 +3291,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "'A' cần một danh từ đếm được số ít; trà nói chung là không đếm được."
+        "explanation": "'A' cần một danh từ đếm được số ít; trà nói chung là không đếm được.",
+        "correct": false
       },
       {
         "text": "An",
-        "explanation": "'An' cần danh từ đếm được số ít bắt đầu bằng âm nguyên âm; 'tea' là chất không đếm được."
+        "explanation": "'An' cần danh từ đếm được số ít bắt đầu bằng âm nguyên âm; 'tea' là chất không đếm được.",
+        "correct": false
       },
       {
         "text": "One",
-        "explanation": "'One' đếm một đơn vị; 'a little tea' mới diễn tả một chút trà không đếm được."
+        "explanation": "'One' đếm một đơn vị; 'a little tea' mới diễn tả một chút trà không đếm được.",
+        "correct": false
       }
     ]
   },
@@ -3106,15 +3316,18 @@ const fullQuestionBank = [
       },
       {
         "text": "How much pens do you have?",
-        "explanation": "'How much' đi với danh từ không đếm được; 'pens' đếm được nên phải dùng 'how many pens'."
+        "explanation": "'How much' đi với danh từ không đếm được; 'pens' đếm được nên phải dùng 'how many pens'.",
+        "correct": false
       },
       {
         "text": "How common pens do you have?",
-        "explanation": "'How common' hỏi mức độ phổ biến, không hỏi số lượng; câu cần 'how many pens'."
+        "explanation": "'How common' hỏi mức độ phổ biến, không hỏi số lượng; câu cần 'how many pens'.",
+        "correct": false
       },
       {
         "text": "Do you have any pen?",
-        "explanation": "Đây là câu hỏi có/không, không hỏi bao nhiêu; mẫu đúng cần 'How many pens do you have?'."
+        "explanation": "Đây là câu hỏi có/không, không hỏi bao nhiêu; mẫu đúng cần 'How many pens do you have?'.",
+        "correct": false
       }
     ]
   },
@@ -3128,15 +3341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "How many milk are there?",
-        "explanation": "'How many' cần danh từ đếm được số nhiều; 'milk' không đếm được nên dùng 'how much'."
+        "explanation": "'How many' cần danh từ đếm được số nhiều; 'milk' không đếm được nên dùng 'how much'.",
+        "correct": false
       },
       {
         "text": "How some milk is there?",
-        "explanation": "'How some' không tạo thành câu hỏi số lượng; với 'milk' dùng 'how much milk'."
+        "explanation": "'How some' không tạo thành câu hỏi số lượng; với 'milk' dùng 'how much milk'.",
+        "correct": false
       },
       {
         "text": "How milk is there?",
-        "explanation": "Câu hỏi thiếu từ chỉ lượng; mẫu đúng là 'How much milk is there?'."
+        "explanation": "Câu hỏi thiếu từ chỉ lượng; mẫu đúng là 'How much milk is there?'.",
+        "correct": false
       }
     ]
   },
@@ -3145,11 +3361,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "orange",
-        "explanation": "Orange là một loại quả riêng lẻ và thuộc nhóm danh từ đếm được."
+        "explanation": "Orange là một loại quả riêng lẻ và thuộc nhóm danh từ đếm được.",
+        "correct": false
       },
       {
         "text": "grape",
-        "explanation": "Grape là một quả nho riêng lẻ và có thể đếm bằng số lượng."
+        "explanation": "Grape là một quả nho riêng lẻ và có thể đếm bằng số lượng.",
+        "correct": false
       },
       {
         "text": "juice",
@@ -3158,7 +3376,8 @@ const fullQuestionBank = [
       },
       {
         "text": "pear",
-        "explanation": "Pear là một quả lê riêng lẻ và có dạng số nhiều pears."
+        "explanation": "Pear là một quả lê riêng lẻ và có dạng số nhiều pears.",
+        "correct": false
       }
     ]
   },
@@ -3172,20 +3391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wood",
-        "explanation": "'Wood' là vật liệu không phải danh từ chỉ đồ vật dùng để ngồi."
+        "explanation": "'Wood' là vật liệu không phải danh từ chỉ đồ vật dùng để ngồi.",
+        "correct": false
       },
       {
         "text": "plastic",
-        "explanation": "'Plastic' là vật liệu; câu hỏi cần đồ vật đếm được là 'chair'."
+        "explanation": "'Plastic' là vật liệu; câu hỏi cần đồ vật đếm được là 'chair'.",
+        "correct": false
       },
       {
         "text": "iron",
-        "explanation": "'Iron' là sắt, vật liệu không phải vật dùng để ngồi."
+        "explanation": "'Iron' là sắt, vật liệu không phải vật dùng để ngồi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Rain (mưa) là danh từ:",
+    "q": "What type of noun is \"rain\"?",
     "a": [
       {
         "text": "Không đếm được",
@@ -3194,20 +3416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đếm được",
-        "explanation": "'Rain' được xem là chất không đếm được; không nói từng cơn như các vật đếm được."
+        "explanation": "'Rain' được xem là chất không đếm được; không nói từng cơn như các vật đếm được.",
+        "correct": false
       },
       {
         "text": "Số nhiều",
-        "explanation": "'Số nhiều' là dạng danh từ, không phải phân loại của 'rain' trong câu này."
+        "explanation": "'Số nhiều' là dạng danh từ, không phải phân loại của 'rain' trong câu này.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "'Rain' trong câu hỏi là danh từ chỉ mưa, không phải động từ."
+        "explanation": "'Rain' trong câu hỏi là danh từ chỉ mưa, không phải động từ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "\"Flower\" (bông hoa) là danh từ gì?",
+    "q": "What type of noun is \"flower\"?",
     "a": [
       {
         "text": "Đếm được",
@@ -3216,15 +3441,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Không đếm được",
-        "explanation": "'Flower' chỉ từng bông hoa nên có thể đếm; 'không đếm được' là phân loại ngược."
+        "explanation": "'Flower' chỉ từng bông hoa nên có thể đếm; 'không đếm được' là phân loại ngược.",
+        "correct": false
       },
       {
         "text": "Tính từ",
-        "explanation": "'Flower' là danh từ, không phải tính từ."
+        "explanation": "'Flower' là danh từ, không phải tính từ.",
+        "correct": false
       },
       {
         "text": "Giới từ",
-        "explanation": "'Flower' là danh từ chỉ vật thể, không phải giới từ."
+        "explanation": "'Flower' là danh từ chỉ vật thể, không phải giới từ.",
+        "correct": false
       }
     ]
   },
@@ -3238,15 +3466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "three soda",
-        "explanation": "Không đặt trực tiếp số 'three' trước 'soda'; cần đơn vị đếm 'bottles of soda'."
+        "explanation": "Không đặt trực tiếp số 'three' trước 'soda'; cần đơn vị đếm 'bottles of soda'.",
+        "correct": false
       },
       {
         "text": "three bottle sodas",
-        "explanation": "Cụm này ghép sai trật tự; cần 'three bottles of soda' để nêu rõ ba chai."
+        "explanation": "Cụm này ghép sai trật tự; cần 'three bottles of soda' để nêu rõ ba chai.",
+        "correct": false
       },
       {
         "text": "three bottle of soda",
-        "explanation": "Sau 'three' phải dùng số nhiều 'bottles'; dạng số ít 'bottle' sai."
+        "explanation": "Sau 'three' phải dùng số nhiều 'bottles'; dạng số ít 'bottle' sai.",
+        "correct": false
       }
     ]
   },
@@ -3260,15 +3491,18 @@ const fullQuestionBank = [
       },
       {
         "text": "kẹo",
-        "explanation": "'Candy' là kẹo; 'money' nghĩa là tiền bạc."
+        "explanation": "'Candy' là kẹo; 'money' nghĩa là tiền bạc.",
+        "correct": false
       },
       {
         "text": "thức ăn",
-        "explanation": "'Food' là thức ăn; 'money' chỉ tiền bạc."
+        "explanation": "'Food' là thức ăn; 'money' chỉ tiền bạc.",
+        "correct": false
       },
       {
         "text": "nước",
-        "explanation": "'Water' là nước; 'money' nghĩa là tiền."
+        "explanation": "'Water' là nước; 'money' nghĩa là tiền.",
+        "correct": false
       }
     ]
   },
@@ -3282,15 +3516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a cup of",
-        "explanation": "'A cup of butter' là một cốc bơ, không phải một thỏi bơ."
+        "explanation": "'A cup of butter' là một cốc bơ, không phải một thỏi bơ.",
+        "correct": false
       },
       {
         "text": "a bottle of",
-        "explanation": "'A bottle of butter' là một chai bơ, không phù hợp với 'một thỏi'."
+        "explanation": "'A bottle of butter' là một chai bơ, không phù hợp với 'một thỏi'.",
+        "correct": false
       },
       {
         "text": "a book of",
-        "explanation": "'A book of butter' không phải đơn vị dùng cho bơ."
+        "explanation": "'A book of butter' không phải đơn vị dùng cho bơ.",
+        "correct": false
       }
     ]
   },
@@ -3304,15 +3541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'A' chỉ đi với một danh từ số ít, không đi với 'story books' số nhiều."
+        "explanation": "'A' chỉ đi với một danh từ số ít, không đi với 'story books' số nhiều.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "'An' chỉ đi với một danh từ số ít bắt đầu bằng nguyên âm, không đi với 'story books'."
+        "explanation": "'An' chỉ đi với một danh từ số ít bắt đầu bằng nguyên âm, không đi với 'story books'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' thường dùng trong câu hỏi hoặc phủ định; câu khẳng định này cần 'some'."
+        "explanation": "'Any' thường dùng trong câu hỏi hoặc phủ định; câu khẳng định này cần 'some'.",
+        "correct": false
       }
     ]
   },
@@ -3326,15 +3566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'A' cần danh từ số ít, còn 'cookies' là số nhiều."
+        "explanation": "'A' cần danh từ số ít, còn 'cookies' là số nhiều.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "'An' cần danh từ số ít bắt đầu bằng nguyên âm, không đi với 'cookies'."
+        "explanation": "'An' cần danh từ số ít bắt đầu bằng nguyên âm, không đi với 'cookies'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "'Some' không phù hợp với ý phủ định tuyệt đối 'the box is empty'."
+        "explanation": "'Some' không phù hợp với ý phủ định tuyệt đối 'the box is empty'.",
+        "correct": false
       }
     ]
   },
@@ -3348,20 +3591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "'Some' thường chỉ một lượng tồn tại, trái với thông tin chiếc hộp hoàn toàn rỗng."
+        "explanation": "'Some' thường chỉ một lượng tồn tại, trái với thông tin chiếc hộp hoàn toàn rỗng.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "'A' cần danh từ số ít; 'cookies' là danh từ số nhiều."
+        "explanation": "'A' cần danh từ số ít; 'cookies' là danh từ số nhiều.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' có thể nói số lượng ít, nhưng không diễn đạt 'hoàn toàn không có' như 'any'."
+        "explanation": "'Many' có thể nói số lượng ít, nhưng không diễn đạt 'hoàn toàn không có' như 'any'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "\"Potato\" (khoai tây) là danh từ:",
+    "q": "What type of noun is \"potato\"?",
     "a": [
       {
         "text": "Đếm được",
@@ -3370,15 +3616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Không đếm được",
-        "explanation": "'Potato' chỉ từng củ khoai tây nên là danh từ đếm được, không phải không đếm được."
+        "explanation": "'Potato' chỉ từng củ khoai tây nên là danh từ đếm được, không phải không đếm được.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "'Potato' là danh từ chỉ thực phẩm, không phải động từ."
+        "explanation": "'Potato' là danh từ chỉ thực phẩm, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Trạng từ",
-        "explanation": "'Potato' là danh từ, không phải trạng từ."
+        "explanation": "'Potato' là danh từ, không phải trạng từ.",
+        "correct": false
       }
     ]
   },
@@ -3392,15 +3641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a glass",
-        "explanation": "'A glass' là cái ly; cơm chín trong bát được đếm bằng 'a bowl'."
+        "explanation": "'A glass' là cái ly; cơm chín trong bát được đếm bằng 'a bowl'.",
+        "correct": false
       },
       {
         "text": "a bottle",
-        "explanation": "'A bottle' là một chai; đơn vị phù hợp với cơm trong bát là 'a bowl'."
+        "explanation": "'A bottle' là một chai; đơn vị phù hợp với cơm trong bát là 'a bowl'.",
+        "correct": false
       },
       {
         "text": "a slice",
-        "explanation": "'A slice' là một lát; cơm chín được đựng và đếm bằng bát."
+        "explanation": "'A slice' là một lát; cơm chín được đựng và đếm bằng bát.",
+        "correct": false
       }
     ]
   },
@@ -3414,20 +3666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "soap (bar)",
-        "explanation": "'Soap' là xà phòng; vật không đếm được dùng để tắm trong lựa chọn là 'water'."
+        "explanation": "'Soap' là xà phòng; vật không đếm được dùng để tắm trong lựa chọn là 'water'.",
+        "correct": false
       },
       {
         "text": "shampoo (bottle)",
-        "explanation": "'Shampoo' là dầu gội; câu hỏi đang tìm chất lỏng dùng để tắm là 'water'."
+        "explanation": "'Shampoo' là dầu gội; câu hỏi đang tìm chất lỏng dùng để tắm là 'water'.",
+        "correct": false
       },
       {
         "text": "towel",
-        "explanation": "'Towel' là khăn, vật dụng đếm được; 'water' là chất không đếm được."
+        "explanation": "'Towel' là khăn, vật dụng đếm được; 'water' là chất không đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Soup (súp) là danh từ:",
+    "q": "What type of noun is \"soup\"?",
     "a": [
       {
         "text": "Không đếm được",
@@ -3436,15 +3691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Đếm được",
-        "explanation": "Trong ngữ cảnh cơ bản này soup chỉ chất súp, không phải từng bát súp được đếm riêng."
+        "explanation": "Trong ngữ cảnh cơ bản này soup chỉ chất súp, không phải từng bát súp được đếm riêng.",
+        "correct": false
       },
       {
         "text": "Số nhiều",
-        "explanation": "'Số nhiều' là dạng ngữ pháp, không phải loại danh từ; soup không có dạng số nhiều trong nghĩa chất súp này."
+        "explanation": "'Số nhiều' là dạng ngữ pháp, không phải loại danh từ; soup không có dạng số nhiều trong nghĩa chất súp này.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "Soup gọi tên một món ăn nên là danh từ, không phải động từ."
+        "explanation": "Soup gọi tên một món ăn nên là danh từ, không phải động từ.",
+        "correct": false
       }
     ]
   },
@@ -3458,15 +3716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "pencil",
-        "explanation": "Sai. 'Pencil' bắt đầu bằng âm /p/, nên phải nói 'a pencil', không phải 'an pencil'."
+        "explanation": "Sai. 'Pencil' bắt đầu bằng âm /p/, nên phải nói 'a pencil', không phải 'an pencil'.",
+        "correct": false
       },
       {
         "text": "pen",
-        "explanation": "Sai. 'Pen' bắt đầu bằng âm /p/, nên đi với 'a': 'a pen'."
+        "explanation": "Sai. 'Pen' bắt đầu bằng âm /p/, nên đi với 'a': 'a pen'.",
+        "correct": false
       },
       {
         "text": "book",
-        "explanation": "Sai. 'Book' bắt đầu bằng âm /b/, nên dùng 'a book'."
+        "explanation": "Sai. 'Book' bắt đầu bằng âm /b/, nên dùng 'a book'.",
+        "correct": false
       }
     ]
   },
@@ -3480,20 +3741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "ink",
-        "explanation": "Sai. 'Ink' là chất không đếm được trong ngữ cảnh này và còn bắt đầu bằng nguyên âm; không nói 'a ink'."
+        "explanation": "Sai. 'Ink' là chất không đếm được trong ngữ cảnh này và còn bắt đầu bằng nguyên âm; không nói 'a ink'.",
+        "correct": false
       },
       {
         "text": "ice",
-        "explanation": "Sai. 'Ice' bắt đầu bằng nguyên âm; nếu đếm phải nói 'a piece of ice', không phải 'a ice'."
+        "explanation": "Sai. 'Ice' bắt đầu bằng nguyên âm; nếu đếm phải nói 'a piece of ice', không phải 'a ice'.",
+        "correct": false
       },
       {
         "text": "apple",
-        "explanation": "Sai. 'Apple' bắt đầu bằng nguyên âm nên dùng 'an apple'."
+        "explanation": "Sai. 'Apple' bắt đầu bằng nguyên âm nên dùng 'an apple'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is some ___ on my shirt. (mực)",
+    "q": "There is some ___ on my shirt.",
     "a": [
       {
         "text": "ink",
@@ -3502,15 +3766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "pen",
-        "explanation": "'Pen' là bút; mực bám trên áo được gọi là 'ink'."
+        "explanation": "'Pen' là bút; mực bám trên áo được gọi là 'ink'.",
+        "correct": false
       },
       {
         "text": "pencil",
-        "explanation": "'Pencil' là bút chì; chất mực không đếm được là 'ink'."
+        "explanation": "'Pencil' là bút chì; chất mực không đếm được là 'ink'.",
+        "correct": false
       },
       {
         "text": "paper",
-        "explanation": "'Paper' là giấy; mực trên áo là 'ink'."
+        "explanation": "'Paper' là giấy; mực trên áo là 'ink'.",
+        "correct": false
       }
     ]
   },
@@ -3524,15 +3791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "apple, orange, pen",
-        "explanation": "Apple, orange và pen đều là vật đếm được, không phải nhóm chất không đếm được."
+        "explanation": "Apple, orange và pen đều là vật đếm được, không phải nhóm chất không đếm được.",
+        "correct": false
       },
       {
         "text": "cat, dog, bird",
-        "explanation": "Cat, dog và bird là các con vật đếm được."
+        "explanation": "Cat, dog và bird là các con vật đếm được.",
+        "correct": false
       },
       {
         "text": "table, chair, bed",
-        "explanation": "Table, chair và bed là đồ vật đếm được."
+        "explanation": "Table, chair và bed là đồ vật đếm được.",
+        "correct": false
       }
     ]
   },
@@ -3546,20 +3816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "air, oil, soup",
-        "explanation": "Air, oil và soup đều là các chất không đếm được."
+        "explanation": "Air, oil và soup đều là các chất không đếm được.",
+        "correct": false
       },
       {
         "text": "money, music, art",
-        "explanation": "Money, music và art đều thường là danh từ không đếm được."
+        "explanation": "Money, music và art đều thường là danh từ không đếm được.",
+        "correct": false
       },
       {
         "text": "snow, rain, wind",
-        "explanation": "Snow, rain và wind đều chỉ hiện tượng hoặc chất không đếm được."
+        "explanation": "Snow, rain và wind đều chỉ hiện tượng hoặc chất không đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Ice (băng/đá) là danh từ:",
+    "q": "What type of noun is \"ice\"?",
     "a": [
       {
         "text": "Không đếm được",
@@ -3568,20 +3841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Đếm được",
-        "explanation": "'Đếm được' chỉ từng viên hoặc vật chứa, không phải chất ice nói chung trong stem này."
+        "explanation": "'Đếm được' chỉ từng viên hoặc vật chứa, không phải chất ice nói chung trong stem này.",
+        "correct": false
       },
       {
         "text": "Danh từ riêng",
-        "explanation": "Ice không phải tên riêng; đây là tên một chất."
+        "explanation": "Ice không phải tên riêng; đây là tên một chất.",
+        "correct": false
       },
       {
         "text": "Số từ",
-        "explanation": "Ice gọi tên chất băng, không phải từ chỉ số lượng."
+        "explanation": "Ice gọi tên chất băng, không phải từ chỉ số lượng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Cheese (phô mai nói chung) có đếm được không?",
+    "q": "Is \"cheese\" countable when referring to the food in general?",
     "a": [
       {
         "text": "Không",
@@ -3590,20 +3866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Có",
-        "explanation": "Không đếm trực tiếp cheese trong nghĩa chất thực phẩm của stem; cần dùng đơn vị như a slice of cheese."
+        "explanation": "Không đếm trực tiếp cheese trong nghĩa chất thực phẩm của stem; cần dùng đơn vị như a slice of cheese.",
+        "correct": false
       },
       {
         "text": "Chỉ khi số nhiều",
-        "explanation": "Cheese không chuyển thành số nhiều để đếm từng miếng; dùng đơn vị đo phù hợp thay vì thêm -s."
+        "explanation": "Cheese không chuyển thành số nhiều để đếm từng miếng; dùng đơn vị đo phù hợp thay vì thêm -s.",
+        "correct": false
       },
       {
         "text": "Tùy lúc",
-        "explanation": "Câu hỏi đang xét nghĩa thực phẩm chung, nên không cần lựa chọn 'tùy lúc' theo các nghĩa chuyên ngành khác."
+        "explanation": "Câu hỏi đang xét nghĩa thực phẩm chung, nên không cần lựa chọn 'tùy lúc' theo các nghĩa chuyên ngành khác.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "A lot of ___ (Rất nhiều...)",
+    "q": "A lot of ___",
     "a": [
       {
         "text": "water",
@@ -3612,20 +3891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an apple",
-        "explanation": "Sai. Sau 'a lot of' cần danh từ trực tiếp; không đặt mạo từ 'an' trước 'apple' trong cụm này."
+        "explanation": "Sai. Sau 'a lot of' cần danh từ trực tiếp; không đặt mạo từ 'an' trước 'apple' trong cụm này.",
+        "correct": false
       },
       {
         "text": "a cat",
-        "explanation": "Sai. Không dùng 'a lot of a cat'; nếu nói nhiều con mèo, dùng 'a lot of cats'."
+        "explanation": "Sai. Không dùng 'a lot of a cat'; nếu nói nhiều con mèo, dùng 'a lot of cats'.",
+        "correct": false
       },
       {
         "text": "one pen",
-        "explanation": "Sai. 'One pen' chỉ một cây bút, trái với lượng nhiều trong 'a lot of'."
+        "explanation": "Sai. 'One pen' chỉ một cây bút, trái với lượng nhiều trong 'a lot of'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I use some ___ for my bread. (mứt)",
+    "q": "I use some ___ for my bread.",
     "a": [
       {
         "text": "jam",
@@ -3634,15 +3916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "cookie",
-        "explanation": "'Cookie' là bánh quy đếm được; mứt phết lên bánh mì là 'jam'."
+        "explanation": "'Cookie' là bánh quy đếm được; mứt phết lên bánh mì là 'jam'.",
+        "correct": false
       },
       {
         "text": "egg",
-        "explanation": "'Egg' là quả trứng đếm được; 'jam' mới là mứt không đếm được."
+        "explanation": "'Egg' là quả trứng đếm được; 'jam' mới là mứt không đếm được.",
+        "correct": false
       },
       {
         "text": "carrot",
-        "explanation": "'Carrot' là củ cà rốt đếm được; mứt là 'jam'."
+        "explanation": "'Carrot' là củ cà rốt đếm được; mứt là 'jam'.",
+        "correct": false
       }
     ]
   },
@@ -3656,20 +3941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "love",
-        "explanation": "'Love' là tình yêu, danh từ trừu tượng không đếm được; người có thể đếm là 'teacher'."
+        "explanation": "'Love' là tình yêu, danh từ trừu tượng không đếm được; người có thể đếm là 'teacher'.",
+        "correct": false
       },
       {
         "text": "patience",
-        "explanation": "'Patience' là sự kiên nhẫn, không phải người đếm được như 'teacher'."
+        "explanation": "'Patience' là sự kiên nhẫn, không phải người đếm được như 'teacher'.",
+        "correct": false
       },
       {
         "text": "luck",
-        "explanation": "'Luck' là may mắn, danh từ trừu tượng; 'teacher' chỉ người đếm được."
+        "explanation": "'Luck' là may mắn, danh từ trừu tượng; 'teacher' chỉ người đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Meat (thịt) và Milk (sữa) đều là:",
+    "q": "What do \"meat\" and \"milk\" have in common as nouns?",
     "a": [
       {
         "text": "Danh từ không đếm được",
@@ -3678,20 +3966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Danh từ đếm được",
-        "explanation": "Meat và milk trong nghĩa thực phẩm/chất lỏng nói chung là không đếm được."
+        "explanation": "Meat và milk trong nghĩa thực phẩm/chất lỏng nói chung là không đếm được.",
+        "correct": false
       },
       {
         "text": "Động từ",
-        "explanation": "Meat và milk là danh từ chỉ thực phẩm, không phải động từ."
+        "explanation": "Meat và milk là danh từ chỉ thực phẩm, không phải động từ.",
+        "correct": false
       },
       {
         "text": "Tính từ",
-        "explanation": "Meat và milk là danh từ, không phải tính từ."
+        "explanation": "Meat và milk là danh từ, không phải tính từ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "How many ___ are there? (những quả chuối)",
+    "q": "How many ___ are there?",
     "a": [
       {
         "text": "bananas",
@@ -3700,15 +3991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "banana",
-        "explanation": "'How many' cần danh từ đếm được số nhiều; phải dùng 'bananas'."
+        "explanation": "'How many' cần danh từ đếm được số nhiều; phải dùng 'bananas'.",
+        "correct": false
       },
       {
         "text": "bananas some",
-        "explanation": "'Bananas some' sai trật tự; sau 'how many' chỉ cần 'bananas'."
+        "explanation": "'Bananas some' sai trật tự; sau 'how many' chỉ cần 'bananas'.",
+        "correct": false
       },
       {
         "text": "sugar",
-        "explanation": "'Sugar' không đếm được; câu hỏi 'how many' cần danh từ đếm được số nhiều."
+        "explanation": "'Sugar' không đếm được; câu hỏi 'how many' cần danh từ đếm được số nhiều.",
+        "correct": false
       }
     ]
   },
@@ -3722,20 +4016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "bee",
-        "explanation": "'Bee' là con ong đếm được; 'honey' là mật ong không đếm được."
+        "explanation": "'Bee' là con ong đếm được; 'honey' là mật ong không đếm được.",
+        "correct": false
       },
       {
         "text": "hive",
-        "explanation": "'Hive' là tổ ong đếm được; danh từ không đếm được trong câu là 'honey'."
+        "explanation": "'Hive' là tổ ong đếm được; danh từ không đếm được trong câu là 'honey'.",
+        "correct": false
       },
       {
         "text": "flower",
-        "explanation": "'Flower' là bông hoa đếm được; 'honey' chỉ mật ong không đếm được."
+        "explanation": "'Flower' là bông hoa đếm được; 'honey' chỉ mật ong không đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ apple in my bag. (Mình có một quả táo) 🍎",
+    "q": "I have ___ apple in my bag. 🍎",
     "a": [
       {
         "text": "an",
@@ -3744,20 +4041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'apple' bắt đầu bằng nguyên âm nên không dùng 'a'."
+        "explanation": "Sai rồi, 'apple' bắt đầu bằng nguyên âm nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có một quả táo thôi, không dùng 'some'."
+        "explanation": "Chỉ có một quả táo thôi, không dùng 'some'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Trong hình chỉ có một quả táo thôi nè."
+        "explanation": "Trong hình chỉ có một quả táo thôi nè.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ milk in the glass. (Có một ít sữa) 🥛",
+    "q": "There is ___ milk in the glass. 🥛",
     "a": [
       {
         "text": "some",
@@ -3766,20 +4066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sữa không đếm được từng giọt nên không dùng 'a'."
+        "explanation": "Sữa không đếm được từng giọt nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sữa không dùng 'an' được đâu bé ơi."
+        "explanation": "Sữa không dùng 'an' được đâu bé ơi.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sữa không đếm được 1, 2, 3 nên không dùng 'one'."
+        "explanation": "Sữa không đếm được 1, 2, 3 nên không dùng 'one'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ banana, please. (Mình muốn một quả chuối) 🍌",
+    "q": "I want ___ banana, please. 🍌",
     "a": [
       {
         "text": "a",
@@ -3788,20 +4091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Banana' bắt đầu bằng chữ 'b' nên không dùng 'an'."
+        "explanation": "'Banana' bắt đầu bằng chữ 'b' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Ở đây mình chỉ muốn 1 quả thôi."
+        "explanation": "Ở đây mình chỉ muốn 1 quả thôi.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Mình chỉ xin 1 quả chuối thôi mà."
+        "explanation": "Mình chỉ xin 1 quả chuối thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ orange juice in the glass. (Có một ít nước cam trong cốc) 🍹",
+    "q": "There is ___ orange juice in the glass. 🍹",
     "a": [
       {
         "text": "some",
@@ -3810,20 +4116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước cam không đếm được nên không đi với 'a'."
+        "explanation": "Nước cam không đếm được nên không đi với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước cam nhé."
+        "explanation": "Không dùng 'an' cho nước cam nhé.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Nước cam không đếm được 1, 2 nên không dùng 'one'."
+        "explanation": "Nước cam không đếm được 1, 2 nên không dùng 'one'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I can see ___ birds in the sky. (Mình thấy những chú chim) 🐦",
+    "q": "I can see ___ birds in the sky. 🐦",
     "a": [
       {
         "text": "some",
@@ -3832,20 +4141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Birds' có chữ 's' ở cuối là số nhiều, không dùng 'a'."
+        "explanation": "'Birds' có chữ 's' ở cuối là số nhiều, không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho số nhiều đâu nè."
+        "explanation": "Không dùng 'an' cho số nhiều đâu nè.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai nghĩa rồi, đây là những chú chim mà."
+        "explanation": "Sai nghĩa rồi, đây là những chú chim mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Give me ___ bread, please. (Cho mình ít bánh mì nhé) 🍞",
+    "q": "Give me ___ bread, please. 🍞",
     "a": [
       {
         "text": "some",
@@ -3854,20 +4166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bánh mì không dùng 'a' trực tiếp như vậy."
+        "explanation": "Bánh mì không dùng 'a' trực tiếp như vậy.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho bánh mì nhé."
+        "explanation": "Không dùng 'an' cho bánh mì nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Dùng 'some' sẽ tự nhiên hơn trong câu này."
+        "explanation": "Dùng 'some' sẽ tự nhiên hơn trong câu này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ egg for breakfast. (Cô ấy ăn một quả trứng) 🥚",
+    "q": "She has ___ egg for breakfast. 🥚",
     "a": [
       {
         "text": "an",
@@ -3876,20 +4191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'egg' phải đi với 'an' mới đúng."
+        "explanation": "Sai rồi, 'egg' phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Ở đây chỉ có 1 quả trứng thôi."
+        "explanation": "Ở đây chỉ có 1 quả trứng thôi.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nhiều trứng quá, cô ấy chỉ ăn 1 quả thôi."
+        "explanation": "Nhiều trứng quá, cô ấy chỉ ăn 1 quả thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I need ___ water. I'm thirsty! (Mình cần nước) 💧",
+    "q": "I need ___ water. I'm thirsty! 💧",
     "a": [
       {
         "text": "some",
@@ -3898,20 +4216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước không đếm được nên không dùng 'a'."
+        "explanation": "Nước không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước nhé."
+        "explanation": "Không dùng 'an' cho nước nhé.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Mình không đếm 1 nước, 2 nước được."
+        "explanation": "Mình không đếm 1 nước, 2 nước được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Look! ___ cat is on the table. (Nhìn kìa! Một con mèo) 🐱",
+    "q": "Look! ___ cat is on the table. 🐱",
     "a": [
       {
         "text": "A",
@@ -3920,20 +4241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "An",
-        "explanation": "Chữ 'cat' không bắt đầu bằng nguyên âm nên không dùng 'An'."
+        "explanation": "Chữ 'cat' không bắt đầu bằng nguyên âm nên không dùng 'An'.",
+        "correct": false
       },
       {
         "text": "Some",
-        "explanation": "Chỉ có 1 con mèo thôi mà."
+        "explanation": "Chỉ có 1 con mèo thôi mà.",
+        "correct": false
       },
       {
         "text": "Water",
-        "explanation": "Đây là con mèo, không phải nước đâu."
+        "explanation": "Đây là con mèo, không phải nước đâu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like to eat ___ rice. (Mình thích ăn cơm) 🍚",
+    "q": "I like to eat ___ rice. 🍚",
     "a": [
       {
         "text": "some",
@@ -3942,20 +4266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cơm không đếm được nên không dùng 'a'."
+        "explanation": "Cơm không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho cơm nhé."
+        "explanation": "Không dùng 'an' cho cơm nhé.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không ai nói ăn '1 cơm' cả."
+        "explanation": "Không ai nói ăn '1 cơm' cả.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We have ___ books in the room. (Chúng mình có những cuốn sách) 📚",
+    "q": "We have ___ books in the room. 📚",
     "a": [
       {
         "text": "some",
@@ -3964,20 +4291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Books' là số nhiều, không dùng 'a' nhé."
+        "explanation": "'Books' là số nhiều, không dùng 'a' nhé.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho số nhiều."
+        "explanation": "Không dùng 'an' cho số nhiều.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Có nhiều cuốn sách mà, không phải một."
+        "explanation": "Có nhiều cuốn sách mà, không phải một.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ ice cream from the tub, not one serving. (Mình muốn một ít kem) 🍦",
+    "q": "I want ___ ice cream from the tub, not one serving. 🍦",
     "a": [
       {
         "text": "some",
@@ -3986,20 +4316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Kem thường dùng 'some' vì nó tan chảy, không đếm được."
+        "explanation": "Kem thường dùng 'some' vì nó tan chảy, không đếm được.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' ở đây nhé."
+        "explanation": "Không dùng 'an' ở đây nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Dùng 'some' sẽ hay hơn."
+        "explanation": "Dùng 'some' sẽ hay hơn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ ant on the leaf. (Có một con kiến trên lá) 🐜",
+    "q": "There is ___ ant on the leaf. 🐜",
     "a": [
       {
         "text": "an",
@@ -4008,20 +4341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'ant' phải đi với 'an'."
+        "explanation": "Sai rồi, 'ant' phải đi với 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con kiến thôi nè."
+        "explanation": "Chỉ có 1 con kiến thôi nè.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đây là con kiến mà, không phải sữa."
+        "explanation": "Đây là con kiến mà, không phải sữa.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Can I have ___ sugar? (Cho mình ít đường nhé) 🍬",
+    "q": "Can I have ___ sugar? 🍬",
     "a": [
       {
         "text": "some",
@@ -4030,24 +4366,28 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Đường không đếm từng hạt nhỏ xíu được đâu."
+        "explanation": "Đường không đếm từng hạt nhỏ xíu được đâu.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho đường."
+        "explanation": "Không dùng 'an' cho đường.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không ai nói 'một đường' cả."
+        "explanation": "Không ai nói 'một đường' cả.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ elephant with big ears. (Mình thấy một chú voi có đôi tai lớn) 🐘",
+    "q": "I see ___ elephant with big ears. 🐘",
     "a": [
       {
         "text": "a",
-        "explanation": "'Elephant' bắt đầu bằng nguyên âm nên phải dùng 'an', không dùng 'a'."
+        "explanation": "'Elephant' bắt đầu bằng nguyên âm nên phải dùng 'an', không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
@@ -4056,16 +4396,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "'Some' dùng cho một lượng không xác định hoặc số nhiều; câu này cần mạo từ cho một con voi."
+        "explanation": "'Some' dùng cho một lượng không xác định hoặc số nhiều; câu này cần mạo từ cho một con voi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' chỉ hai con, trái với ý một con voi trong câu."
+        "explanation": "'Two' chỉ hai con, trái với ý một con voi trong câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Let's buy ___ oranges. (Hãy mua những quả cam nào) 🍊",
+    "q": "Let's buy ___ oranges. 🍊",
     "a": [
       {
         "text": "some",
@@ -4074,20 +4416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Số nhiều không dùng 'a'."
+        "explanation": "Số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Mua nhiều quả mà, không phải một."
+        "explanation": "Mua nhiều quả mà, không phải một.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ soup for lunch. (Mình ăn súp buổi trưa) 🥣",
+    "q": "I have ___ soup for lunch. 🥣",
     "a": [
       {
         "text": "some",
@@ -4096,20 +4441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Súp không đếm được nên không dùng 'a'."
+        "explanation": "Súp không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho súp."
+        "explanation": "Không dùng 'an' cho súp.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không đếm 1 súp, 2 súp được."
+        "explanation": "Không đếm 1 súp, 2 súp được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is there ___ dog in the park? (Có con chó nào ở công viên không?) 🐕",
+    "q": "Is there ___ dog in the park? 🐕",
     "a": [
       {
         "text": "a",
@@ -4118,20 +4466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Dog' bắt đầu bằng chữ 'd' nên không dùng 'an'."
+        "explanation": "'Dog' bắt đầu bằng chữ 'd' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Dùng 'a' để hỏi về 1 con chó."
+        "explanation": "Dùng 'a' để hỏi về 1 con chó.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Sai nghĩa rồi, đây là con chó mà."
+        "explanation": "Sai nghĩa rồi, đây là con chó mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I put ___ salt in the food. (Mình cho ít muối vào đồ ăn) 🧂",
+    "q": "I put ___ salt in the food. 🧂",
     "a": [
       {
         "text": "some",
@@ -4140,20 +4491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Muối không đếm được nên không dùng 'a'."
+        "explanation": "Muối không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho muối."
+        "explanation": "Không dùng 'an' cho muối.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Muối không đếm 1, 2 được."
+        "explanation": "Muối không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ umbrella. (Cô ấy có một chiếc ô) ☂️",
+    "q": "She has ___ umbrella. ☂️",
     "a": [
       {
         "text": "an",
@@ -4162,20 +4516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'umbrella' phải đi với 'an'."
+        "explanation": "Sai rồi, 'umbrella' phải đi với 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chiếc ô thôi."
+        "explanation": "Chỉ có 1 chiếc ô thôi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Trong câu chỉ có 1 chiếc ô."
+        "explanation": "Trong câu chỉ có 1 chiếc ô.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We need ___ chairs for the party. (Chúng mình cần ghế) 🪑",
+    "q": "We need ___ chairs for the party. 🪑",
     "a": [
       {
         "text": "some",
@@ -4184,20 +4541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Số nhiều 'chairs' không đi với 'a'."
+        "explanation": "Số nhiều 'chairs' không đi với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho số nhiều."
+        "explanation": "Không dùng 'an' cho số nhiều.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Cần nhiều ghế mà."
+        "explanation": "Cần nhiều ghế mà. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I drink ___ juice every day. (Mình uống nước trái cây mỗi ngày) 🥤",
+    "q": "I drink ___ juice every day. 🥤",
     "a": [
       {
         "text": "some",
@@ -4206,20 +4566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước không đếm được nên không dùng 'a'."
+        "explanation": "Nước không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước trái cây."
+        "explanation": "Không dùng 'an' cho nước trái cây.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Nước không đếm 1, 2 được."
+        "explanation": "Nước không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ ink in the pen. (Có mực trong bút) ✒️",
+    "q": "There is ___ ink in the pen. ✒️",
     "a": [
       {
         "text": "some",
@@ -4228,20 +4591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mực không dùng 'a' được."
+        "explanation": "Mực không dùng 'a' được.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Mực không dùng 'an' được."
+        "explanation": "Mực không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không đếm 1 mực, 2 mực được."
+        "explanation": "Không đếm 1 mực, 2 mực được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ owl on the tree. (Mình thấy một con cú trên cây) 🦉",
+    "q": "I see ___ owl on the tree. 🦉",
     "a": [
       {
         "text": "an",
@@ -4250,20 +4616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'owl' phải đi với 'an'."
+        "explanation": "Sai rồi, 'owl' phải đi với 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con cú thôi."
+        "explanation": "Chỉ có 1 con cú thôi.",
+        "correct": false
       },
       {
         "text": "bread",
-        "explanation": "Đây là con cú, không phải bánh mì."
+        "explanation": "Đây là con cú, không phải bánh mì.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My mom buys ___ fish for dinner, not one whole fish. (Mẹ mình mua một ít cá cho bữa tối) 🐟",
+    "q": "My mom buys ___ fish for dinner, not one whole fish. 🐟",
     "a": [
       {
         "text": "some",
@@ -4272,20 +4641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'A fish' chỉ một con/cá nguyên con, trái với stem yêu cầu một lượng cá làm thức ăn."
+        "explanation": "'A fish' chỉ một con/cá nguyên con, trái với stem yêu cầu một lượng cá làm thức ăn.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "'An' chỉ đi trước âm nguyên âm và cũng không phù hợp với lượng cá không đếm được trong stem."
+        "explanation": "'An' chỉ đi trước âm nguyên âm và cũng không phù hợp với lượng cá không đếm được trong stem.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "'One fish' chỉ một con cá hoặc một đơn vị, trái với yêu cầu không phải một con nguyên con."
+        "explanation": "'One fish' chỉ một con cá hoặc một đơn vị, trái với yêu cầu không phải một con nguyên con.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Can I have ___ honey? (Cho mình ít mật ong nhé) 🍯",
+    "q": "Can I have ___ honey? 🍯",
     "a": [
       {
         "text": "some",
@@ -4294,20 +4666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mật ong không đếm được nên không dùng 'a'."
+        "explanation": "Mật ong không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho mật ong."
+        "explanation": "Không dùng 'an' cho mật ong.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Mật ong không đếm 1, 2 được."
+        "explanation": "Mật ong không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ star in the sky. (Có một ngôi sao trên trời) ⭐",
+    "q": "There is ___ star in the sky. ⭐",
     "a": [
       {
         "text": "a",
@@ -4316,20 +4691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Star' bắt đầu bằng chữ 's' nên không dùng 'an'."
+        "explanation": "'Star' bắt đầu bằng chữ 's' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ nói về 1 ngôi sao thôi nè."
+        "explanation": "Chỉ nói về 1 ngôi sao thôi nè.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đây là ngôi sao mà."
+        "explanation": "Đây là ngôi sao mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ cheese. (Mình muốn phô mai) 🧀",
+    "q": "I want ___ cheese. 🧀",
     "a": [
       {
         "text": "some",
@@ -4338,20 +4716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Phô mai không dùng 'a' trực tiếp."
+        "explanation": "Phô mai không dùng 'a' trực tiếp.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho phô mai."
+        "explanation": "Không dùng 'an' cho phô mai.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Thường dùng 'some' cho phô mai."
+        "explanation": "Thường dùng 'some' cho phô mai.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ new doll. (Cô ấy có một búp bê mới) 🪆",
+    "q": "She has ___ new doll. 🪆",
     "a": [
       {
         "text": "a",
@@ -4360,32 +4741,38 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Doll' bắt đầu bằng chữ 'd' nên không dùng 'an'."
+        "explanation": "'Doll' bắt đầu bằng chữ 'd' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 búp bê thôi."
+        "explanation": "Chỉ có 1 búp bê thôi.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Đây là búp bê, không phải nước."
+        "explanation": "Đây là búp bê, không phải nước.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ is essential for breathing. (Không khí cần thiết cho việc hô hấp) 💨",
+    "q": "___ is essential for breathing. 💨",
     "a": [
       {
         "text": "some",
-        "explanation": "'Some' cần đứng trước danh từ trong cụm 'some air'; không thể đứng một mình làm chủ ngữ ở đây."
+        "explanation": "'Some' cần đứng trước danh từ trong cụm 'some air'; không thể đứng một mình làm chủ ngữ ở đây.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai. Phương án 'water' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'water' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Không khí không đếm được."
+        "explanation": "Không khí không đếm được.",
+        "correct": false
       },
       {
         "text": "air",
@@ -4395,7 +4782,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "I eat ___ candy at a time, not several pieces. (Mình ăn một viên kẹo mỗi lần) 🍬",
+    "q": "I eat ___ candy at a time, not several pieces. 🍬",
     "a": [
       {
         "text": "a",
@@ -4404,20 +4791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Candy' không bắt đầu bằng nguyên âm."
+        "explanation": "'Candy' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "'Some candy' chỉ một lượng hoặc nhiều kẹo, trái với yêu cầu một viên mỗi lần."
+        "explanation": "'Some candy' chỉ một lượng hoặc nhiều kẹo, trái với yêu cầu một viên mỗi lần.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là kẹo mà."
+        "explanation": "Đây là kẹo mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ sand in my shoes. (Có cát trong giày của mình) 🏖️",
+    "q": "There is ___ sand in my shoes. 🏖️",
     "a": [
       {
         "text": "some",
@@ -4426,20 +4816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cát không đếm được nên không dùng 'a'."
+        "explanation": "Cát không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho cát."
+        "explanation": "Không dùng 'an' cho cát.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không ai đếm 1 cát, 2 cát cả."
+        "explanation": "Không ai đếm 1 cát, 2 cát cả.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ airplane. (Mình thấy một chiếc máy bay) ✈️",
+    "q": "I see ___ airplane. ✈️",
     "a": [
       {
         "text": "an",
@@ -4448,20 +4841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chiếc máy bay thôi."
+        "explanation": "Chỉ có 1 chiếc máy bay thôi.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Máy bay không phải sữa đâu."
+        "explanation": "Máy bay không phải sữa đâu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Give me ___ paper, please. (Cho mình ít giấy nhé) 📄",
+    "q": "Give me ___ paper, please. 📄",
     "a": [
       {
         "text": "some",
@@ -4470,20 +4866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Thường dùng 'a piece of paper' chứ không dùng 'a paper' (nghĩa là tờ báo)."
+        "explanation": "Thường dùng 'a piece of paper' chứ không dùng 'a paper' (nghĩa là tờ báo).",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho giấy."
+        "explanation": "Không dùng 'an' cho giấy.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Dùng 'some' sẽ tự nhiên hơn."
+        "explanation": "Dùng 'some' sẽ tự nhiên hơn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ red ball. (Cậu ấy có một quả bóng màu đỏ) 🔴",
+    "q": "He has ___ red ball. 🔴",
     "a": [
       {
         "text": "a",
@@ -4492,20 +4891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Red' bắt đầu bằng 'r' nên không dùng 'an'."
+        "explanation": "'Red' bắt đầu bằng 'r' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 quả bóng thôi."
+        "explanation": "Chỉ có 1 quả bóng thôi.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Đây là quả bóng mà."
+        "explanation": "Đây là quả bóng mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ meat. (Mình muốn thịt) 🥩",
+    "q": "I want ___ meat. 🥩",
     "a": [
       {
         "text": "some",
@@ -4514,20 +4916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Thịt không dùng 'a' trực tiếp."
+        "explanation": "Thịt không dùng 'a' trực tiếp.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho thịt."
+        "explanation": "Không dùng 'an' cho thịt.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Thường dùng 'some' cho thịt."
+        "explanation": "Thường dùng 'some' cho thịt.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Look! ___ insect is on the wall. (Kìa! Một con côn trùng trên tường) 🦟",
+    "q": "Look! ___ insect is on the wall. 🦟",
     "a": [
       {
         "text": "an",
@@ -4536,20 +4941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con thôi."
+        "explanation": "Chỉ có 1 con thôi. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       },
       {
         "text": "juice",
-        "explanation": "Đây là con côn trùng mà."
+        "explanation": "Đây là con côn trùng mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We have ___ fun activities at the park. (Chúng mình có vài hoạt động vui ở công viên) 🎡",
+    "q": "We have ___ fun activities at the park. 🎡",
     "a": [
       {
         "text": "some",
@@ -4558,20 +4966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Niềm vui không đếm được nên không dùng 'a'."
+        "explanation": "Niềm vui không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho niềm vui."
+        "explanation": "Không dùng 'an' cho niềm vui.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không đếm 1 niềm vui, 2 niềm vui được."
+        "explanation": "Không đếm 1 niềm vui, 2 niềm vui được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I eat ___ banana every day. (Mình ăn một quả chuối mỗi ngày) 🍌",
+    "q": "I eat ___ banana every day. 🍌",
     "a": [
       {
         "text": "a",
@@ -4580,20 +4991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Sai rồi, 'banana' đi với 'a'."
+        "explanation": "Sai rồi, 'banana' đi với 'a'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Ở đây chỉ nói 1 quả thôi."
+        "explanation": "Ở đây chỉ nói 1 quả thôi.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Chuối không phải sữa."
+        "explanation": "Chuối không phải sữa.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ oil in the pan. (Có dầu trong chảo) 🍳",
+    "q": "There is ___ oil in the pan. 🍳",
     "a": [
       {
         "text": "some",
@@ -4602,20 +5016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Dầu không đếm được nên không dùng 'a'."
+        "explanation": "Dầu không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho dầu."
+        "explanation": "Không dùng 'an' cho dầu.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không đếm 1 dầu, 2 dầu được."
+        "explanation": "Không đếm 1 dầu, 2 dầu được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ old man. (Mình thấy một ông cụ) 👴",
+    "q": "I see ___ old man. 👴",
     "a": [
       {
         "text": "an",
@@ -4624,20 +5041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'old' đi với 'an'."
+        "explanation": "Sai rồi, 'old' đi với 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 ông cụ thôi."
+        "explanation": "Chỉ có 1 ông cụ thôi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Trong câu chỉ nói 1 ông cụ."
+        "explanation": "Trong câu chỉ nói 1 ông cụ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She drinks ___ milk. (Cô ấy uống sữa) 🥛",
+    "q": "She drinks ___ milk. 🥛",
     "a": [
       {
         "text": "some",
@@ -4646,20 +5066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sữa không đếm được nên không dùng 'a'."
+        "explanation": "Sữa không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho sữa."
+        "explanation": "Không dùng 'an' cho sữa.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sữa không đếm 1, 2 được."
+        "explanation": "Sữa không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ idea! (Mình có một ý tưởng!) 💡",
+    "q": "I have ___ idea! 💡",
     "a": [
       {
         "text": "an",
@@ -4668,20 +5091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'idea' đi với 'an'."
+        "explanation": "Sai rồi, 'idea' đi với 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Thường dùng 'an idea' khi có 1 ý tưởng."
+        "explanation": "Thường dùng 'an idea' khi có 1 ý tưởng.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Ý tưởng không phải nước."
+        "explanation": "Ý tưởng không phải nước.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Give me ___ money, please. (Cho mình ít tiền nhé) 💰",
+    "q": "Give me ___ money, please. 💰",
     "a": [
       {
         "text": "some",
@@ -4690,20 +5116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Không dùng 'a money' nhé bé."
+        "explanation": "Không dùng 'a money' nhé bé.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho tiền."
+        "explanation": "Không dùng 'an' cho tiền.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Người ta không nói 'one money'."
+        "explanation": "Người ta không nói 'one money'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ spider on the wall. (Có một con nhện trên tường) 🕷️",
+    "q": "There is ___ spider on the wall. 🕷️",
     "a": [
       {
         "text": "a",
@@ -4712,20 +5141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Spider' bắt đầu bằng 's' nên không dùng 'an'."
+        "explanation": "'Spider' bắt đầu bằng 's' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con nhện thôi."
+        "explanation": "Chỉ có 1 con nhện thôi.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là con nhện mà."
+        "explanation": "Đây là con nhện mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ chocolate, not one whole bar. (Mình muốn một ít sô-cô-la, không phải cả thanh) 🍫",
+    "q": "I want ___ chocolate, not one whole bar. 🍫",
     "a": [
       {
         "text": "some",
@@ -4734,20 +5166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'A chocolate' thường chỉ một viên/thanh riêng lẻ, trái với stem yêu cầu một lượng không phải cả thanh."
+        "explanation": "'A chocolate' thường chỉ một viên/thanh riêng lẻ, trái với stem yêu cầu một lượng không phải cả thanh.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho sô-cô-la."
+        "explanation": "Không dùng 'an' cho sô-cô-la.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "'One chocolate' chỉ một đơn vị, không khớp với lượng chocolate không phải cả thanh."
+        "explanation": "'One chocolate' chỉ một đơn vị, không khớp với lượng chocolate không phải cả thanh.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ octopus. (Mình thấy một con bạch tuộc) 🐙",
+    "q": "I see ___ octopus. 🐙",
     "a": [
       {
         "text": "an",
@@ -4756,20 +5191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con thôi."
+        "explanation": "Chỉ có 1 con thôi. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Đây là con bạch tuộc mà."
+        "explanation": "Đây là con bạch tuộc mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We need ___ help. (Chúng mình cần sự giúp đỡ) 🤝",
+    "q": "We need ___ help. 🤝",
     "a": [
       {
         "text": "some",
@@ -4778,20 +5216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Không dùng 'a help' nhé."
+        "explanation": "Không dùng 'a help' nhé.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho sự giúp đỡ."
+        "explanation": "Không dùng 'an' cho sự giúp đỡ.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sự giúp đỡ không đếm 1, 2 được."
+        "explanation": "Sự giúp đỡ không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ pencil. (Mình có một chiếc bút chì) ✏️",
+    "q": "I have ___ pencil. ✏️",
     "a": [
       {
         "text": "a",
@@ -4800,20 +5241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Pencil' bắt đầu bằng 'p' nên không dùng 'an'."
+        "explanation": "'Pencil' bắt đầu bằng 'p' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chiếc thôi."
+        "explanation": "Chỉ có 1 chiếc thôi.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đây là bút chì mà."
+        "explanation": "Đây là bút chì mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ rain today. (Hôm nay có mưa) 🌧️",
+    "q": "There is ___ rain today. 🌧️",
     "a": [
       {
         "text": "some",
@@ -4822,20 +5266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mưa không dùng 'a'."
+        "explanation": "Mưa không dùng 'a'. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Mưa không dùng 'an'."
+        "explanation": "Mưa không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Không đếm 1 mưa, 2 mưa được."
+        "explanation": "Không đếm 1 mưa, 2 mưa được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ uniform. (Mình thấy một bộ đồng phục) 🥋",
+    "q": "I see ___ uniform. 🥋",
     "a": [
       {
         "text": "a",
@@ -4844,20 +5291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Dù bắt đầu bằng 'u' nhưng phát âm là /ju/ nên không dùng 'an'."
+        "explanation": "Dù bắt đầu bằng 'u' nhưng phát âm là /ju/ nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 bộ thôi."
+        "explanation": "Chỉ có 1 bộ thôi. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Đây là đồng phục mà."
+        "explanation": "Đây là đồng phục mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do you have ___ eraser? (Bạn có cục tẩy nào không?) 🧼",
+    "q": "Do you have ___ eraser? 🧼",
     "a": [
       {
         "text": "an",
@@ -4866,20 +5316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Ở đây hỏi về 1 cục tẩy."
+        "explanation": "Ở đây hỏi về 1 cục tẩy.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là cục tẩy mà."
+        "explanation": "Đây là cục tẩy mà. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ butter on my bread. (Mình muốn ít bơ trên bánh mì) 🧈",
+    "q": "I want ___ butter on my bread. 🧈",
     "a": [
       {
         "text": "some",
@@ -4888,20 +5341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bơ không đếm được từng miếng nên dùng 'some'."
+        "explanation": "Bơ không đếm được từng miếng nên dùng 'some'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho bơ."
+        "explanation": "Không dùng 'an' cho bơ.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Thường dùng 'some butter'."
+        "explanation": "Thường dùng 'some butter'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ star on the flag. (Có một ngôi sao trên lá cờ) 🇻🇳",
+    "q": "There is ___ star on the flag. 🇻🇳",
     "a": [
       {
         "text": "a",
@@ -4910,20 +5366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Star' không bắt đầu bằng nguyên âm."
+        "explanation": "'Star' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 ngôi sao thôi."
+        "explanation": "Chỉ có 1 ngôi sao thôi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Trong hình chỉ có 1 ngôi sao."
+        "explanation": "Trong hình chỉ có 1 ngôi sao.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I eat ___ jam. (Mình ăn mứt) 🍓",
+    "q": "I eat ___ jam. 🍓",
     "a": [
       {
         "text": "some",
@@ -4932,20 +5391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mứt không dùng 'a'."
+        "explanation": "Mứt không dùng 'a'. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Mứt không dùng 'an'."
+        "explanation": "Mứt không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Mứt không đếm 1, 2 được."
+        "explanation": "Mứt không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Look! ___ eagle is flying. (Nhìn kìa! Một chú đại bàng đang bay) 🦅",
+    "q": "Look! ___ eagle is flying. 🦅",
     "a": [
       {
         "text": "an",
@@ -4954,20 +5416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chú đại bàng thôi."
+        "explanation": "Chỉ có 1 chú đại bàng thôi.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Đây là con đại bàng mà."
+        "explanation": "Đây là con đại bàng mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We need ___ tables. (Chúng mình cần những cái bàn) table",
+    "q": "We need ___ tables. table",
     "a": [
       {
         "text": "some",
@@ -4976,20 +5441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Số nhiều 'tables' không dùng 'a'."
+        "explanation": "Số nhiều 'tables' không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho số nhiều."
+        "explanation": "Không dùng 'an' cho số nhiều.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Cần nhiều bàn mà."
+        "explanation": "Cần nhiều bàn mà. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ tea. (Mình uống trà) 🍵",
+    "q": "I have ___ tea. 🍵",
     "a": [
       {
         "text": "some",
@@ -4998,20 +5466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Trà không đếm được nên không dùng 'a'."
+        "explanation": "Trà không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho trà."
+        "explanation": "Không dùng 'an' cho trà.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Trà không đếm 1, 2 được."
+        "explanation": "Trà không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ onion in the basket. (Có một củ hành trong giỏ) 🧅",
+    "q": "There is ___ onion in the basket. 🧅",
     "a": [
       {
         "text": "an",
@@ -5020,20 +5491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 củ hành thôi."
+        "explanation": "Chỉ có 1 củ hành thôi.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đây là củ hành mà."
+        "explanation": "Đây là củ hành mà. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ Coke to share in a large bottle. (Mình muốn một ít nước ngọt để cùng uống) 🥤",
+    "q": "I want ___ Coke to share in a large bottle. 🥤",
     "a": [
       {
         "text": "some",
@@ -5042,20 +5516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'A Coke' thường được hiểu là một khẩu phần hoặc một lon/chai; stem yêu cầu lượng để chia sẻ."
+        "explanation": "'A Coke' thường được hiểu là một khẩu phần hoặc một lon/chai; stem yêu cầu lượng để chia sẻ.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước ngọt."
+        "explanation": "Không dùng 'an' cho nước ngọt.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "'One Coke' chỉ một khẩu phần hoặc một vật chứa, không phải lượng lớn để chia sẻ."
+        "explanation": "'One Coke' chỉ một khẩu phần hoặc một vật chứa, không phải lượng lớn để chia sẻ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ bird. (Mình thấy một chú chim) 🐦",
+    "q": "I see ___ bird. 🐦",
     "a": [
       {
         "text": "a",
@@ -5064,20 +5541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Bird' bắt đầu bằng 'b' nên không dùng 'an'."
+        "explanation": "'Bird' bắt đầu bằng 'b' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chú chim thôi."
+        "explanation": "Chỉ có 1 chú chim thôi.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là chú chim mà."
+        "explanation": "Đây là chú chim mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Can I have ___ cheese? (Cho mình ít phô mai nhé) 🧀",
+    "q": "Can I have ___ cheese? 🧀",
     "a": [
       {
         "text": "some",
@@ -5086,20 +5566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Phô mai không dùng 'a' trực tiếp."
+        "explanation": "Phô mai không dùng 'a' trực tiếp.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho phô mai."
+        "explanation": "Không dùng 'an' cho phô mai.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Phô mai dùng 'some' nhé."
+        "explanation": "Phô mai dùng 'some' nhé.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ egg on the plate. (Có một quả trứng trên đĩa) 🥚",
+    "q": "There is ___ egg on the plate. 🥚",
     "a": [
       {
         "text": "an",
@@ -5108,20 +5591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 quả trứng thôi."
+        "explanation": "Chỉ có 1 quả trứng thôi.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Đây là quả trứng mà."
+        "explanation": "Đây là quả trứng mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like ___ flowers. (Mình thích những bông hoa) 🌸",
+    "q": "I like ___ flowers. 🌸",
     "a": [
       {
         "text": "some",
@@ -5130,20 +5616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Số nhiều 'flowers' không dùng 'a'."
+        "explanation": "Số nhiều 'flowers' không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho số nhiều."
+        "explanation": "Không dùng 'an' cho số nhiều.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Thích nhiều hoa mà."
+        "explanation": "Thích nhiều hoa mà. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ doll. (Cô ấy có một búp bê) 🪆",
+    "q": "She has ___ doll. 🪆",
     "a": [
       {
         "text": "a",
@@ -5152,20 +5641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Doll' bắt đầu bằng 'd' nên không dùng 'an'."
+        "explanation": "'Doll' bắt đầu bằng 'd' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 búp bê thôi."
+        "explanation": "Chỉ có 1 búp bê thôi.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Đây là búp bê mà."
+        "explanation": "Đây là búp bê mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I drink ___ water. (Mình uống nước) 💧",
+    "q": "I drink ___ water. 💧",
     "a": [
       {
         "text": "some",
@@ -5174,20 +5666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước không đếm được nên không dùng 'a'."
+        "explanation": "Nước không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước."
+        "explanation": "Không dùng 'an' cho nước.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Nước không đếm 1, 2 được."
+        "explanation": "Nước không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ lemon in the kitchen. (Có một quả chanh trong bếp) 🍋",
+    "q": "There is ___ lemon in the kitchen. 🍋",
     "a": [
       {
         "text": "a",
@@ -5196,20 +5691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Lemon' bắt đầu bằng 'l' nên không dùng 'an'."
+        "explanation": "'Lemon' bắt đầu bằng 'l' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 quả chanh thôi."
+        "explanation": "Chỉ có 1 quả chanh thôi.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là quả chanh mà."
+        "explanation": "Đây là quả chanh mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ spaghetti. (Mình muốn mì Ý) 🍝",
+    "q": "I want ___ spaghetti. 🍝",
     "a": [
       {
         "text": "some",
@@ -5218,20 +5716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mì Ý không đếm từng sợi được đâu."
+        "explanation": "Mì Ý không đếm từng sợi được đâu.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho mì Ý."
+        "explanation": "Không dùng 'an' cho mì Ý.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Thường dùng 'some spaghetti'."
+        "explanation": "Thường dùng 'some spaghetti'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ ant. (Mình thấy một con kiến) 🐜",
+    "q": "I see ___ ant. 🐜",
     "a": [
       {
         "text": "an",
@@ -5240,20 +5741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con kiến thôi."
+        "explanation": "Chỉ có 1 con kiến thôi.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đây là con kiến mà."
+        "explanation": "Đây là con kiến mà. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We have ___ bread. (Chúng mình có bánh mì) 🍞",
+    "q": "We have ___ bread. 🍞",
     "a": [
       {
         "text": "some",
@@ -5262,20 +5766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bánh mì không dùng 'a'."
+        "explanation": "Bánh mì không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Bánh mì không dùng 'an'."
+        "explanation": "Bánh mì không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Bánh mì thường dùng 'some'."
+        "explanation": "Bánh mì thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ cup on the desk. (Có một cái cốc trên bàn) ☕",
+    "q": "There is ___ cup on the desk. ☕",
     "a": [
       {
         "text": "a",
@@ -5284,20 +5791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Cup' bắt đầu bằng 'c' nên không dùng 'an'."
+        "explanation": "'Cup' bắt đầu bằng 'c' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 cái cốc thôi."
+        "explanation": "Chỉ có 1 cái cốc thôi.",
+        "correct": false
       },
       {
         "text": "juice",
-        "explanation": "Đây là cái cốc mà."
+        "explanation": "Đây là cái cốc mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ yogurt. (Mình muốn sữa chua) 🥛",
+    "q": "I want ___ yogurt. 🥛",
     "a": [
       {
         "text": "some",
@@ -5306,20 +5816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sữa chua không đếm được nên không dùng 'a'."
+        "explanation": "Sữa chua không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho sữa chua."
+        "explanation": "Không dùng 'an' cho sữa chua.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sữa chua thường dùng 'some'."
+        "explanation": "Sữa chua thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ house. (Mình thấy một ngôi nhà) 🏠",
+    "q": "I see ___ house. 🏠",
     "a": [
       {
         "text": "a",
@@ -5328,20 +5841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'House' bắt đầu bằng 'h' nên không dùng 'an'."
+        "explanation": "'House' bắt đầu bằng 'h' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 ngôi nhà thôi."
+        "explanation": "Chỉ có 1 ngôi nhà thôi.",
+        "correct": false
       },
       {
         "text": "bread",
-        "explanation": "Đây là ngôi nhà mà."
+        "explanation": "Đây là ngôi nhà mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ candy. (Cô ấy có một viên kẹo) 🍬",
+    "q": "She has ___ candy. 🍬",
     "a": [
       {
         "text": "a",
@@ -5350,20 +5866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Candy' bắt đầu bằng 'c' nên không dùng 'an'."
+        "explanation": "'Candy' bắt đầu bằng 'c' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 viên kẹo thôi."
+        "explanation": "Chỉ có 1 viên kẹo thôi.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Đây là kẹo mà."
+        "explanation": "Đây là kẹo mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ salt. (Mình muốn ít muối) 🧂",
+    "q": "I want ___ salt. 🧂",
     "a": [
       {
         "text": "some",
@@ -5372,20 +5891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Muối không dùng 'a'."
+        "explanation": "Muối không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Muối không dùng 'an'."
+        "explanation": "Muối không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Muối không đếm 1, 2 được."
+        "explanation": "Muối không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ elephant at the zoo. (Có một chú voi ở vườn thú) 🐘",
+    "q": "There is ___ elephant at the zoo. 🐘",
     "a": [
       {
         "text": "an",
@@ -5394,20 +5916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chú voi thôi."
+        "explanation": "Chỉ có 1 chú voi thôi.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là chú voi mà."
+        "explanation": "Đây là chú voi mà. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I drink ___ milk every morning. (Mình uống sữa mỗi sáng) 🥛",
+    "q": "I drink ___ milk every morning. 🥛",
     "a": [
       {
         "text": "some",
@@ -5416,20 +5941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sữa không dùng 'a'."
+        "explanation": "Sữa không dùng 'a'. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sữa không dùng 'an'."
+        "explanation": "Sữa không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sữa thường dùng 'some'."
+        "explanation": "Sữa thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ kite. (Mình thấy một chiếc diều) 🪁",
+    "q": "I see ___ kite. 🪁",
     "a": [
       {
         "text": "a",
@@ -5438,20 +5966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Kite' bắt đầu bằng 'k' nên không dùng 'an'."
+        "explanation": "'Kite' bắt đầu bằng 'k' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chiếc diều thôi."
+        "explanation": "Chỉ có 1 chiếc diều thôi.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Đây là chiếc diều mà."
+        "explanation": "Đây là chiếc diều mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We have ___ meat for dinner. (Chúng mình có thịt cho bữa tối) 🥩",
+    "q": "We have ___ meat for dinner. 🥩",
     "a": [
       {
         "text": "some",
@@ -5460,20 +5991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Thịt không dùng 'a'."
+        "explanation": "Thịt không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Thịt không dùng 'an'."
+        "explanation": "Thịt không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Thịt thường dùng 'some'."
+        "explanation": "Thịt thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ pencil in my box. (Có một cái bút chì trong hộp) ✏️",
+    "q": "There is ___ pencil in my box. ✏️",
     "a": [
       {
         "text": "a",
@@ -5482,20 +6016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Pencil' bắt đầu bằng 'p' nên không dùng 'an'."
+        "explanation": "'Pencil' bắt đầu bằng 'p' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chiếc bút chì thôi."
+        "explanation": "Chỉ có 1 chiếc bút chì thôi.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là bút chì mà."
+        "explanation": "Đây là bút chì mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ juice. (Mình muốn nước trái cây) 🍹",
+    "q": "I want ___ juice. 🍹",
     "a": [
       {
         "text": "some",
@@ -5504,20 +6041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước trái cây không đếm được nên không dùng 'a'."
+        "explanation": "Nước trái cây không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước trái cây."
+        "explanation": "Không dùng 'an' cho nước trái cây.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Nước trái cây thường dùng 'some'."
+        "explanation": "Nước trái cây thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ octopus in the sea. (Mình thấy một con bạch tuộc dưới biển) 🐙",
+    "q": "I see ___ octopus in the sea. 🐙",
     "a": [
       {
         "text": "an",
@@ -5526,20 +6066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con thôi."
+        "explanation": "Chỉ có 1 con thôi. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       },
       {
         "text": "bread",
-        "explanation": "Đây là con bạch tuộc mà."
+        "explanation": "Đây là con bạch tuộc mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She eats ___ rice. (Cô ấy ăn cơm) 🍚",
+    "q": "She eats ___ rice. 🍚",
     "a": [
       {
         "text": "some",
@@ -5548,20 +6091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cơm không dùng 'a'."
+        "explanation": "Cơm không dùng 'a'. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Cơm không dùng 'an'."
+        "explanation": "Cơm không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Cơm thường dùng 'some'."
+        "explanation": "Cơm thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ ball on the grass. (Có một quả bóng trên cỏ) ⚽",
+    "q": "There is ___ ball on the grass. ⚽",
     "a": [
       {
         "text": "a",
@@ -5570,20 +6116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Ball' không bắt đầu bằng nguyên âm."
+        "explanation": "'Ball' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 quả bóng thôi."
+        "explanation": "Chỉ có 1 quả bóng thôi.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đây là quả bóng mà."
+        "explanation": "Đây là quả bóng mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ umbrella. (Mình thấy một chiếc ô) ☂️",
+    "q": "I see ___ umbrella. ☂️",
     "a": [
       {
         "text": "an",
@@ -5592,20 +6141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 chiếc ô thôi."
+        "explanation": "Chỉ có 1 chiếc ô thôi.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Đây là chiếc ô mà."
+        "explanation": "Đây là chiếc ô mà. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We need ___ sugar for the cake. (Chúng mình cần đường cho bánh) 🍰",
+    "q": "We need ___ sugar for the cake. 🍰",
     "a": [
       {
         "text": "some",
@@ -5614,20 +6166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Đường không dùng 'a'."
+        "explanation": "Đường không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Đường không dùng 'an'."
+        "explanation": "Đường không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Đường không đếm 1, 2 được."
+        "explanation": "Đường không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ pear in the bag. (Có một quả lê trong túi) 🍐",
+    "q": "There is ___ pear in the bag. 🍐",
     "a": [
       {
         "text": "a",
@@ -5636,20 +6191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Pear' bắt đầu bằng 'p' nên không dùng 'an'."
+        "explanation": "'Pear' bắt đầu bằng 'p' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 quả lê thôi."
+        "explanation": "Chỉ có 1 quả lê thôi.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là quả lê mà."
+        "explanation": "Đây là quả lê mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I drink ___ soup. (Mình uống súp) 🥣",
+    "q": "I drink ___ soup. 🥣",
     "a": [
       {
         "text": "some",
@@ -5658,20 +6216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Súp không dùng 'a'."
+        "explanation": "Súp không dùng 'a'. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Súp không dùng 'an'."
+        "explanation": "Súp không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Súp thường dùng 'some'."
+        "explanation": "Súp thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ insect. (Mình thấy một con côn trùng) 🦟",
+    "q": "I see ___ insect. 🦟",
     "a": [
       {
         "text": "an",
@@ -5680,20 +6241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con côn trùng thôi."
+        "explanation": "Chỉ có 1 con côn trùng thôi.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Đây là con côn trùng mà."
+        "explanation": "Đây là con côn trùng mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ bread for breakfast. (Cô ấy ăn bánh mì bữa sáng) 🍞",
+    "q": "She has ___ bread for breakfast. 🍞",
     "a": [
       {
         "text": "some",
@@ -5702,20 +6266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bánh mì không dùng 'a'."
+        "explanation": "Bánh mì không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Bánh mì không dùng 'an'."
+        "explanation": "Bánh mì không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Bánh mì thường dùng 'some'."
+        "explanation": "Bánh mì thường dùng 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ dog in the garden. (Có một con chó trong vườn) 🐕",
+    "q": "There is ___ dog in the garden. 🐕",
     "a": [
       {
         "text": "a",
@@ -5724,20 +6291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Dog' bắt đầu bằng 'd' nên không dùng 'an'."
+        "explanation": "'Dog' bắt đầu bằng 'd' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 con chó thôi."
+        "explanation": "Chỉ có 1 con chó thôi.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đây là con chó mà."
+        "explanation": "Đây là con chó mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ water. (Mình muốn nước) 💧",
+    "q": "I want ___ water. 💧",
     "a": [
       {
         "text": "some",
@@ -5746,20 +6316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước không dùng 'a'."
+        "explanation": "Nước không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Nước không dùng 'an'."
+        "explanation": "Nước không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Nước không đếm 1, 2 được."
+        "explanation": "Nước không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ orange. (Mình thấy một quả cam) 🍊",
+    "q": "I see ___ orange. 🍊",
     "a": [
       {
         "text": "an",
@@ -5768,20 +6341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 quả cam thôi."
+        "explanation": "Chỉ có 1 quả cam thôi.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Đây là quả cam mà."
+        "explanation": "Đây là quả cam mà. Cách dùng phù hợp trong câu này là “an”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We need ___ oil. (Chúng mình cần dầu ăn) 🍳",
+    "q": "We need ___ oil. 🍳",
     "a": [
       {
         "text": "some",
@@ -5790,20 +6366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Dầu không dùng 'a'."
+        "explanation": "Dầu không dùng 'a'. Cách dùng phù hợp trong câu này là “some”.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Dầu không dùng 'an'."
+        "explanation": "Dầu không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Dầu ăn không đếm 1, 2 được."
+        "explanation": "Dầu ăn không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ hat on the chair. (Có một cái mũ trên ghế) 👒",
+    "q": "There is ___ hat on the chair. 👒",
     "a": [
       {
         "text": "a",
@@ -5812,20 +6391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Hat' bắt đầu bằng 'h' nên không dùng 'an'."
+        "explanation": "'Hat' bắt đầu bằng 'h' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 cái mũ thôi."
+        "explanation": "Chỉ có 1 cái mũ thôi.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Đây là cái mũ mà."
+        "explanation": "Đây là cái mũ mà. Cách dùng phù hợp trong câu này là “a”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ honey. (Mình muốn mật ong) 🍯",
+    "q": "I want ___ honey. 🍯",
     "a": [
       {
         "text": "some",
@@ -5834,20 +6416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mật ong không dùng 'a'."
+        "explanation": "Mật ong không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Mật ong không dùng 'an'."
+        "explanation": "Mật ong không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Mật ong không đếm 1, 2 được."
+        "explanation": "Mật ong không đếm 1, 2 được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ igloo. (Mình thấy một cái lều tuyết) ❄️",
+    "q": "I see ___ igloo. ❄️",
     "a": [
       {
         "text": "an",
@@ -5856,20 +6441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an'."
+        "explanation": "Sai rồi, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có 1 cái lều thôi."
+        "explanation": "Chỉ có 1 cái lều thôi.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Đây là cái lều tuyết mà."
+        "explanation": "Đây là cái lều tuyết mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She eats ___ fruit. (Cô ấy ăn trái cây) 🍎",
+    "q": "She eats ___ fruit. 🍎",
     "a": [
       {
         "text": "some",
@@ -5878,15 +6466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Trái cây thường dùng 'some' khi nói chung chung."
+        "explanation": "Trái cây thường dùng 'some' khi nói chung chung.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Trái cây không dùng 'an'."
+        "explanation": "Trái cây không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Trái cây thường dùng 'some'."
+        "explanation": "Trái cây thường dùng 'some'.",
+        "correct": false
       }
     ]
   }

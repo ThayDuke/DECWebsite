@@ -1566,15 +1566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Apple' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Apple' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'apples'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'apples'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'apples'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'apples'.",
+        "correct": false
       }
     ]
   },
@@ -1584,19 +1587,22 @@ const fullQuestionBank = [
       {
         "text": "This is an orange.",
         "correct": true,
-        "explanation": "Đúng rồi! 'Orange' bắt đầu bằng chữ 'o' nên đi với 'an' là chuẩn."
+        "explanation": "'Orange' bắt đầu bằng âm nguyên âm /ɒ/, nên dùng 'an' trước danh từ số ít này."
       },
       {
         "text": "This is a orange.",
-        "explanation": "Em lưu ý nhé, 'orange' bắt đầu bằng nguyên âm nên phải dùng 'an'."
+        "explanation": "Em lưu ý nhé, 'orange' bắt đầu bằng nguyên âm nên phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "This an orange.",
-        "explanation": "Câu này thiếu động từ 'is' sau 'This'."
+        "explanation": "Câu này thiếu động từ 'is' sau 'This'.",
+        "correct": false
       },
       {
         "text": "This are an orange.",
-        "explanation": "'This' là số ít nên phải đi với 'is' chứ không phải 'are'."
+        "explanation": "'This' là số ít nên phải đi với 'is' chứ không phải 'are'.",
+        "correct": false
       }
     ]
   },
@@ -1606,19 +1612,22 @@ const fullQuestionBank = [
       {
         "text": "a -> an",
         "correct": true,
-        "explanation": "Giỏi quá! 'Elephant' bắt đầu bằng chữ 'e' nên phải sửa 'a' thành 'an'."
+        "explanation": "'Elephant' bắt đầu bằng âm nguyên âm /e/, nên cụm đúng là 'an elephant', không phải 'a elephant'."
       },
       {
         "text": "has -> have",
-        "explanation": "'She' là ngôi thứ 3 số ít nên dùng 'has' là đúng rồi em."
+        "explanation": "'She' là ngôi thứ 3 số ít nên dùng 'has' là đúng rồi em.",
+        "correct": false
       },
       {
         "text": "elephant -> elephants",
-        "explanation": "Câu đang nói về 'một' con voi nên mình giữ nguyên số ít nhé."
+        "explanation": "Câu đang nói về 'một' con voi nên mình giữ nguyên số ít nhé.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "Sửa thành 'an' sẽ đúng ngữ pháp hơn là dùng 'many' ở đây."
+        "explanation": "'Many' cần danh từ số nhiều; thay 'a' bằng 'many' vẫn để lại 'many elephant', nên phải đổi cả danh từ thành 'elephants'.",
+        "correct": false
       }
     ]
   },
@@ -1632,15 +1641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Bird' bắt đầu bằng âm phụ âm, nên không dùng 'an'."
+        "explanation": "'Bird' bắt đầu bằng âm phụ âm, nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       }
     ]
   },
@@ -1654,15 +1666,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Egg' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Egg' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       }
     ]
   },
@@ -1676,15 +1691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I have an cat.",
-        "explanation": "'Cat' bắt đầu bằng phụ âm 'c', nên mình dùng 'a' em nhé."
+        "explanation": "'Cat' bắt đầu bằng phụ âm 'c', nên mình dùng 'a' em nhé.",
+        "correct": false
       },
       {
         "text": "I has a cat.",
-        "explanation": "Chủ ngữ 'I' thì phải đi với 'have', không đi với 'has' đâu."
+        "explanation": "Chủ ngữ 'I' thì phải đi với 'have', không đi với 'has' đâu.",
+        "correct": false
       },
       {
         "text": "I have cat.",
-        "explanation": "Em thiếu mạo từ 'a' để chỉ 'một' con mèo rồi nè."
+        "explanation": "Em thiếu mạo từ 'a' để chỉ 'một' con mèo rồi nè.",
+        "correct": false
       }
     ]
   },
@@ -1698,15 +1716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Umbrella' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Umbrella' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       }
     ]
   },
@@ -1716,19 +1737,22 @@ const fullQuestionBank = [
       {
         "text": "an",
         "correct": true,
-        "explanation": "Tuyệt vời! 'Ant' bắt đầu bằng chữ 'a' nên dùng 'an' là chuẩn."
+        "explanation": "'Ant' bắt đầu bằng âm nguyên âm /æ/, nên dùng 'an' trước danh từ số ít."
       },
       {
         "text": "a",
-        "explanation": "Vì 'ant' bắt đầu bằng nguyên âm, em phải chọn 'an' mới đúng."
+        "explanation": "Vì 'ant' bắt đầu bằng nguyên âm, em phải chọn 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này là câu khẳng định, mình dùng 'an' để nói về một con kiến thôi."
+        "explanation": "Câu này là câu khẳng định, mình dùng 'an' để nói về một con kiến thôi.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nhìn từ 'ant' xem, nó không có 's' nên là số ít, dùng 'an' nhé."
+        "explanation": "Nhìn từ 'ant' xem, nó không có 's' nên là số ít, dùng 'an' nhé.",
+        "correct": false
       }
     ]
   },
@@ -1738,19 +1762,22 @@ const fullQuestionBank = [
       {
         "text": "An ant is small.",
         "correct": true,
-        "explanation": "Đúng! 'Ant' đi với 'an' và câu rất tự nhiên."
+        "explanation": "'Ant' bắt đầu bằng âm nguyên âm /æ/; ở đây 'an ant' là cụm danh từ số ít đúng."
       },
       {
         "text": "A ant is small.",
-        "explanation": "Lưu ý nhé: 'ant' bắt đầu bằng nguyên âm nên phải dùng 'an'."
+        "explanation": "Lưu ý nhé: 'ant' bắt đầu bằng nguyên âm nên phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "An ants is small.",
-        "explanation": "Nếu dùng 'ants' (số nhiều) thì không dùng 'an' và phải đổi 'is' thành 'are'."
+        "explanation": "Nếu dùng 'ants' (số nhiều) thì không dùng 'an' và phải đổi 'is' thành 'are'.",
+        "correct": false
       },
       {
         "text": "Ant is small.",
-        "explanation": "Câu này thiếu mạo từ đứng trước danh từ 'ant' rồi."
+        "explanation": "Câu này thiếu mạo từ đứng trước danh từ 'ant' rồi.",
+        "correct": false
       }
     ]
   },
@@ -1760,19 +1787,22 @@ const fullQuestionBank = [
       {
         "text": "a -> an",
         "correct": true,
-        "explanation": "Chính xác! 'English' bắt đầu bằng nguyên âm 'e' nên phải dùng 'an'."
+        "explanation": "'English' bắt đầu bằng âm nguyên âm /ɪ/, nên cụm đúng là 'an English boy'."
       },
       {
         "text": "is -> are",
-        "explanation": "Ba là một người nên dùng 'is' là đúng rồi, không sửa nhé."
+        "explanation": "Ba là một người nên dùng 'is' là đúng rồi, không sửa nhé.",
+        "correct": false
       },
       {
         "text": "boy -> boys",
-        "explanation": "Ba là một cậu bé thôi, nên để số ít là đúng rồi."
+        "explanation": "Ba là một cậu bé thôi, nên để số ít là đúng rồi.",
+        "correct": false
       },
       {
         "text": "English -> England",
-        "explanation": "Dùng tính từ 'English' để chỉ quốc tịch là hoàn toàn chính xác."
+        "explanation": "Dùng tính từ 'English' để chỉ quốc tịch là hoàn toàn chính xác.",
+        "correct": false
       }
     ]
   },
@@ -1786,15 +1816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Từ 'book' không bắt đầu bằng nguyên âm, nên không dùng 'an' được."
+        "explanation": "Từ 'book' không bắt đầu bằng nguyên âm, nên không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       }
     ]
   },
@@ -1808,15 +1841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "'Ice' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Ice' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "Two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'cones'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'cones'.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'cones'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'cones'.",
+        "correct": false
       }
     ]
   },
@@ -1826,19 +1862,22 @@ const fullQuestionBank = [
       {
         "text": "That is an alligator.",
         "correct": true,
-        "explanation": "Chuẩn! 'Alligator' bắt đầu bằng 'a' nên dùng 'an'."
+        "explanation": "'Alligator' bắt đầu bằng âm nguyên âm /ˈæl-/, nên dùng 'an' trước danh từ số ít."
       },
       {
         "text": "That is a alligator.",
-        "explanation": "Nhớ quy tắc nhé: nguyên âm 'a' phải đi với 'an'."
+        "explanation": "Nhớ quy tắc nhé: nguyên âm 'a' phải đi với 'an'.",
+        "correct": false
       },
       {
         "text": "That are an alligator.",
-        "explanation": "'That' đi với 'is' chứ không đi với 'are' em nha."
+        "explanation": "'That' đi với 'is' chứ không đi với 'are' em nha.",
+        "correct": false
       },
       {
         "text": "That is alligator.",
-        "explanation": "Thiếu mạo từ 'an' rồi, em bổ sung cho đúng nhé."
+        "explanation": "Thiếu mạo từ 'an' rồi, em bổ sung cho đúng nhé.",
+        "correct": false
       }
     ]
   },
@@ -1848,19 +1887,22 @@ const fullQuestionBank = [
       {
         "text": "an",
         "correct": true,
-        "explanation": "Đúng! Mạo từ phụ thuộc vào từ đứng ngay sau nó. 'Old' bắt đầu bằng 'o' nên dùng 'an'."
+        "explanation": "Mạo từ phụ thuộc vào âm đầu của từ đứng ngay sau nó; 'old' bắt đầu bằng âm nguyên âm /əʊ/, nên dùng 'an'."
       },
       {
         "text": "a",
-        "explanation": "Dù danh từ là 'ruler' nhưng từ đứng trước nó là 'old' (vowel), nên dùng 'an' nhé."
+        "explanation": "Dù danh từ là 'ruler' nhưng từ đứng trước nó là 'old' (vowel), nên dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "no",
-        "explanation": "Câu đã có 'not' rồi, mình dùng 'an' để chỉ 'một cái' thôi."
+        "explanation": "Câu đã có 'not' rồi, mình dùng 'an' để chỉ 'một cái' thôi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'rulers'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'rulers'.",
+        "correct": false
       }
     ]
   },
@@ -1870,19 +1912,22 @@ const fullQuestionBank = [
       {
         "text": "a",
         "correct": true,
-        "explanation": "Chính xác! 'Banana' bắt đầu bằng 'b' nên dùng 'a'."
+        "explanation": "'Banana' bắt đầu bằng âm phụ âm /b/, nên dùng 'a' trước danh từ số ít."
       },
       {
         "text": "an",
-        "explanation": "'Banana' không phải nguyên âm, nên mình dùng 'a' thôi."
+        "explanation": "'Banana' không phải nguyên âm, nên mình dùng 'a' thôi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'bananas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'bananas'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Từ 'banana' ở số ít, em dùng 'a' là đúng nhất."
+        "explanation": "Từ 'banana' ở số ít, em dùng 'a' là đúng nhất.",
+        "correct": false
       }
     ]
   },
@@ -1892,19 +1937,22 @@ const fullQuestionBank = [
       {
         "text": "She sees an owl on the roof.",
         "correct": true,
-        "explanation": "Đúng! 'Owl' bắt đầu bằng 'o' nên đi với 'an'."
+        "explanation": "'Owl' bắt đầu bằng âm nguyên âm /aʊ/, nên dùng 'an' trước danh từ số ít."
       },
       {
         "text": "She sees a owl on the roof.",
-        "explanation": "O là nguyên âm, nên phải dùng 'an' mới đúng ngữ pháp."
+        "explanation": "O là nguyên âm, nên phải dùng 'an' mới đúng ngữ pháp.",
+        "correct": false
       },
       {
         "text": "She see an owl on the roof.",
-        "explanation": "'She' số ít nên động từ 'see' phải thêm 's' thành 'sees'."
+        "explanation": "'She' số ít nên động từ 'see' phải thêm 's' thành 'sees'.",
+        "correct": false
       },
       {
         "text": "She sees an owls on the roof.",
-        "explanation": "Đã dùng 'an' thì không dùng 'owls' số nhiều nữa."
+        "explanation": "Đã dùng 'an' thì không dùng 'owls' số nhiều nữa.",
+        "correct": false
       }
     ]
   },
@@ -1914,19 +1962,22 @@ const fullQuestionBank = [
       {
         "text": "a -> an",
         "correct": true,
-        "explanation": "Chính xác! 'Eraser' bắt đầu bằng 'e' nên phải dùng 'an'."
+        "explanation": "'Eraser' bắt đầu bằng âm nguyên âm /ɪ/, nên phải sửa 'a eraser' thành 'an eraser'."
       },
       {
         "text": "want -> wants",
-        "explanation": "Chủ ngữ 'I' đi với 'want' là đúng rồi, không cần thêm 's'."
+        "explanation": "Chủ ngữ 'I' đi với 'want' là đúng rồi, không cần thêm 's'.",
+        "correct": false
       },
       {
         "text": "eraser -> erase",
-        "explanation": "Cục tẩy là 'eraser', còn 'erase' là động từ xóa, dùng 'eraser' mới đúng."
+        "explanation": "Cục tẩy là 'eraser', còn 'erase' là động từ xóa, dùng 'eraser' mới đúng.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "Sửa thành 'an' là cách nhanh nhất để câu đúng ngữ pháp."
+        "explanation": "Sửa thành 'an' là cách nhanh nhất để câu đúng ngữ pháp.",
+        "correct": false
       }
     ]
   },
@@ -1940,15 +1991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "'Octopus' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Octopus' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "Two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'octopuses'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'octopuses'.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'octopuses'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'octopuses'.",
+        "correct": false
       }
     ]
   },
@@ -1958,19 +2012,22 @@ const fullQuestionBank = [
       {
         "text": "an",
         "correct": true,
-        "explanation": "Tuyệt vời! 'Eagle' bắt đầu bằng 'e' nên mình dùng 'an'."
+        "explanation": "'Eagle' bắt đầu bằng âm nguyên âm /ˈiː/, nên dùng 'an' trước danh từ số ít."
       },
       {
         "text": "a",
-        "explanation": "Con đại bàng (eagle) bắt đầu bằng nguyên âm, em dùng 'an' nhé."
+        "explanation": "Con đại bàng (eagle) bắt đầu bằng nguyên âm, em dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Câu này đang nói về một con thôi, không dùng 'many' được."
+        "explanation": "Câu này đang nói về một con thôi, không dùng 'many' được.",
+        "correct": false
       }
     ]
   },
@@ -1980,19 +2037,22 @@ const fullQuestionBank = [
       {
         "text": "This is an igloo.",
         "correct": true,
-        "explanation": "Chính xác! 'Igloo' bắt đầu bằng 'i' nên dùng 'an'."
+        "explanation": "'Igloo' bắt đầu bằng âm nguyên âm /ɪ/, nên dùng 'an' trước danh từ số ít."
       },
       {
         "text": "This is a igloo.",
-        "explanation": "I là nguyên âm, nên mình dùng 'an' em nhé."
+        "explanation": "I là nguyên âm, nên mình dùng 'an' em nhé.",
+        "correct": false
       },
       {
         "text": "This are an igloo.",
-        "explanation": "'This' đi với 'is', không đi với 'are' đâu."
+        "explanation": "'This' đi với 'is', không đi với 'are' đâu.",
+        "correct": false
       },
       {
         "text": "This is igloo.",
-        "explanation": "Em thiếu mạo từ 'an' để chỉ 'một cái' rồi."
+        "explanation": "Em thiếu mạo từ 'an' để chỉ 'một cái' rồi.",
+        "correct": false
       }
     ]
   },
@@ -2002,19 +2062,22 @@ const fullQuestionBank = [
       {
         "text": "An",
         "correct": true,
-        "explanation": "Đúng! 'Ox' (con bò đực) bắt đầu bằng 'o' nên dùng 'An'."
+        "explanation": "'Ox' bắt đầu bằng âm nguyên âm /ɒ/, nên dùng 'An' ở đầu câu trước danh từ số ít."
       },
       {
         "text": "A",
-        "explanation": "Vì 'ox' bắt đầu bằng nguyên âm, em chọn 'an' mới đúng."
+        "explanation": "Vì 'ox' bắt đầu bằng nguyên âm, em chọn 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Động từ là 'is' (số ít) nên không chọn 'many' được."
+        "explanation": "Động từ là 'is' (số ít) nên không chọn 'many' được.",
+        "correct": false
       },
       {
         "text": "Two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'oxen'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'oxen'.",
+        "correct": false
       }
     ]
   },
@@ -2024,19 +2087,22 @@ const fullQuestionBank = [
       {
         "text": "an",
         "correct": true,
-        "explanation": "Chuẩn! 'Expensive' bắt đầu bằng nguyên âm 'e' nên đi với 'an'."
+        "explanation": "'Expensive' bắt đầu bằng âm nguyên âm /ɪ/, nên dùng 'an' trước cụm 'expensive car'."
       },
       {
         "text": "a",
-        "explanation": "Mặc dù danh từ là 'car', nhưng từ đứng ngay sau mạo từ là 'expensive', nên dùng 'an' nhé."
+        "explanation": "Mặc dù danh từ là 'car', nhưng từ đứng ngay sau mạo từ là 'expensive', nên dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'cars'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'cars'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'cars'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'cars'.",
+        "correct": false
       }
     ]
   },
@@ -2046,19 +2112,22 @@ const fullQuestionBank = [
       {
         "text": "I eat an egg every morning.",
         "correct": true,
-        "explanation": "Đúng! 'Egg' đi với 'an' là hoàn toàn chính xác."
+        "explanation": "'Egg' bắt đầu bằng âm nguyên âm /e/, nên dùng 'an' trước danh từ số ít."
       },
       {
         "text": "I eat a egg every morning.",
-        "explanation": "E là nguyên âm, em nhớ dùng 'an' nhé."
+        "explanation": "E là nguyên âm, em nhớ dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "I eats an egg every morning.",
-        "explanation": "Chủ ngữ 'I' thì động từ 'eat' không thêm 's' em nha."
+        "explanation": "Chủ ngữ 'I' thì động từ 'eat' không thêm 's' em nha.",
+        "correct": false
       },
       {
         "text": "I eat an eggs every morning.",
-        "explanation": "Đã có 'an' thì không dùng 'eggs' số nhiều."
+        "explanation": "Đã có 'an' thì không dùng 'eggs' số nhiều.",
+        "correct": false
       }
     ]
   },
@@ -2068,19 +2137,22 @@ const fullQuestionBank = [
       {
         "text": "a -> an",
         "correct": true,
-        "explanation": "Giỏi! 'Onion' bắt đầu bằng 'o' nên phải sửa thành 'an'."
+        "explanation": "'Onion' bắt đầu bằng âm nguyên âm /ʌ/, nên sửa 'a onion' thành 'an onion'."
       },
       {
         "text": "is -> are",
-        "explanation": "Có 1 củ hành thôi nên 'is' là đúng rồi."
+        "explanation": "Có 1 củ hành thôi nên 'is' là đúng rồi.",
+        "correct": false
       },
       {
         "text": "on -> in",
-        "explanation": "Để trên bàn dùng 'on the table' là chuẩn rồi em."
+        "explanation": "Để trên bàn dùng 'on the table' là chuẩn rồi em.",
+        "correct": false
       },
       {
         "text": "onion -> onions",
-        "explanation": "Câu đang dùng 'is' và 'a' nên danh từ để số ít là đúng."
+        "explanation": "Câu đang dùng 'is' và 'a' nên danh từ để số ít là đúng.",
+        "correct": false
       }
     ]
   },
@@ -2094,15 +2166,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Insect' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Insect' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       }
     ]
   },
@@ -2116,15 +2191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Umbrella' bắt đầu bằng âm nguyên âm /ʌ/, nên dùng 'an'."
+        "explanation": "'Umbrella' bắt đầu bằng âm nguyên âm /ʌ/, nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Từ 'umbrella' đang ở số ít, mình chọn 'an' là đúng."
+        "explanation": "Từ 'umbrella' đang ở số ít, mình chọn 'an' là đúng.",
+        "correct": false
       }
     ]
   },
@@ -2138,15 +2216,18 @@ const fullQuestionBank = [
       },
       {
         "text": "My father is an good uncle.",
-        "explanation": "Từ 'good' bắt đầu bằng phụ âm, nên dùng 'a' chứ không dùng 'an'."
+        "explanation": "Từ 'good' bắt đầu bằng phụ âm, nên dùng 'a' chứ không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "My father is a good uncles.",
-        "explanation": "Sau 'a' phải dùng danh từ số ít 'uncle'."
+        "explanation": "Sau 'a' phải dùng danh từ số ít 'uncle'.",
+        "correct": false
       },
       {
         "text": "My father are a good uncle.",
-        "explanation": "Bố là số ít, em dùng 'is' mới đúng."
+        "explanation": "Bố là số ít, em dùng 'is' mới đúng.",
+        "correct": false
       }
     ]
   },
@@ -2160,15 +2241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Dù danh từ là 'bag', nhưng từ đứng sau mạo từ là 'heavy', dùng 'a' nhé."
+        "explanation": "Dù danh từ là 'bag', nhưng từ đứng sau mạo từ là 'heavy', dùng 'a' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'bags'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'bags'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'bags'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'bags'.",
+        "correct": false
       }
     ]
   },
@@ -2178,19 +2262,22 @@ const fullQuestionBank = [
       {
         "text": "an",
         "correct": true,
-        "explanation": "Tuyệt! 'Alligator' (cá sấu) bắt đầu bằng 'a' nên dùng 'an'."
+        "explanation": "'Alligator' bắt đầu bằng âm nguyên âm /ˈæl-/, nên dùng 'an' trước danh từ số ít."
       },
       {
         "text": "a",
-        "explanation": "A là nguyên âm, nên em phải chọn 'an' mới đúng ngữ pháp."
+        "explanation": "A là nguyên âm, nên em phải chọn 'an' mới đúng ngữ pháp.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Từ 'alligator' ở số ít, mình dùng 'an' nhé."
+        "explanation": "Từ 'alligator' ở số ít, mình dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'alligators'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'alligators'.",
+        "correct": false
       }
     ]
   },
@@ -2200,19 +2287,22 @@ const fullQuestionBank = [
       {
         "text": "It is an ink pot.",
         "correct": true,
-        "explanation": "Đúng! 'Ink' bắt đầu bằng 'i' nên đi với 'an'."
+        "explanation": "'Ink' bắt đầu bằng âm nguyên âm /ɪ/, nên cụm đúng là 'an ink pot'."
       },
       {
         "text": "It is a ink pot.",
-        "explanation": "I là nguyên âm, em nhớ dùng 'an' nhé."
+        "explanation": "I là nguyên âm, em nhớ dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "It are an ink pot.",
-        "explanation": "'It' đi với 'is', không đi với 'are' em nha."
+        "explanation": "'It' đi với 'is', không đi với 'are' em nha.",
+        "correct": false
       },
       {
         "text": "It is an ink pots.",
-        "explanation": "Đã dùng 'an' thì không thêm 's' vào đằng sau danh từ."
+        "explanation": "Đã dùng 'an' thì không thêm 's' vào đằng sau danh từ.",
+        "correct": false
       }
     ]
   },
@@ -2222,19 +2312,22 @@ const fullQuestionBank = [
       {
         "text": "a -> an",
         "correct": true,
-        "explanation": "Chính xác! 'Old' bắt đầu bằng nguyên âm 'o' nên phải dùng 'an'."
+        "explanation": "'Old' bắt đầu bằng âm nguyên âm /əʊ/, nên sửa 'a old man' thành 'an old man'."
       },
       {
         "text": "is -> are",
-        "explanation": "Ông ấy là một người thôi nên dùng 'is' là đúng rồi."
+        "explanation": "Ông ấy là một người thôi nên dùng 'is' là đúng rồi.",
+        "correct": false
       },
       {
         "text": "man -> men",
-        "explanation": "Man là 1 người, men là nhiều người. Câu này dùng 'man' là chuẩn."
+        "explanation": "Man là 1 người, men là nhiều người. Câu này dùng 'man' là chuẩn.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'men', nên đây không phải cách sửa đúng."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'men', nên đây không phải cách sửa đúng.",
+        "correct": false
       }
     ]
   },
@@ -2244,19 +2337,22 @@ const fullQuestionBank = [
       {
         "text": "An",
         "correct": true,
-        "explanation": "Đúng! 'Ostrich' (đà điểu) bắt đầu bằng 'o' nên dùng 'An'."
+        "explanation": "'Ostrich' bắt đầu bằng âm nguyên âm /ˈɒs-/, nên dùng 'An' ở đầu câu."
       },
       {
         "text": "A",
-        "explanation": "Vì 'ostrich' bắt đầu bằng nguyên âm, em chọn 'An' nhé."
+        "explanation": "Vì 'ostrich' bắt đầu bằng nguyên âm, em chọn 'An' nhé.",
+        "correct": false
       },
       {
         "text": "Them",
-        "explanation": "Không dùng 'Them' ở đầu câu để làm mạo từ được."
+        "explanation": "Không dùng 'Them' ở đầu câu để làm mạo từ được.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Động từ 'is' cho thấy chỉ có một con đang chạy thôi."
+        "explanation": "Động từ 'is' cho thấy chỉ có một con đang chạy thôi.",
+        "correct": false
       }
     ]
   },
@@ -2270,15 +2366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con voi bắt đầu bằng nguyên âm, em nhớ dùng 'an' nhé."
+        "explanation": "Con voi bắt đầu bằng nguyên âm, em nhớ dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Nếu dùng 'two' thì 'elephant' phải thêm 's' thành 'elephants'."
+        "explanation": "Nếu dùng 'two' thì 'elephant' phải thêm 's' thành 'elephants'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Dùng 'an' để trả lời đây là một con voi."
+        "explanation": "Dùng 'an' để trả lời đây là một con voi.",
+        "correct": false
       }
     ]
   },
@@ -2292,15 +2391,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I need a envelope.",
-        "explanation": "E là nguyên âm, em phải dùng 'an' mới đúng."
+        "explanation": "E là nguyên âm, em phải dùng 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "I needs an envelope.",
-        "explanation": "Chủ ngữ 'I' thì không thêm 's' vào động từ 'need'."
+        "explanation": "Chủ ngữ 'I' thì không thêm 's' vào động từ 'need'.",
+        "correct": false
       },
       {
         "text": "I need envelope.",
-        "explanation": "Em thiếu mạo từ 'an' để chỉ 'một cái' rồi."
+        "explanation": "Em thiếu mạo từ 'an' để chỉ 'một cái' rồi.",
+        "correct": false
       }
     ]
   },
@@ -2314,15 +2416,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "Vì bắt đầu bằng nguyên âm 'a' nên em dùng 'An' nhé."
+        "explanation": "Vì bắt đầu bằng nguyên âm 'a' nên em dùng 'An' nhé.",
+        "correct": false
       },
       {
         "text": "Them",
-        "explanation": "Đầu câu mình dùng mạo từ chứ không dùng 'them'."
+        "explanation": "Đầu câu mình dùng mạo từ chứ không dùng 'them'.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Động từ 'is' cho thấy chỉ có một cái rìu."
+        "explanation": "Động từ 'is' cho thấy chỉ có một cái rìu.",
+        "correct": false
       }
     ]
   },
@@ -2336,15 +2441,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mặc dù là 'book', nhưng từ đứng sau mạo từ là 'interesting', nên dùng 'an'."
+        "explanation": "Mặc dù là 'book', nhưng từ đứng sau mạo từ là 'interesting', nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       }
     ]
   },
@@ -2358,15 +2466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "He is a uncle.",
-        "explanation": "U là nguyên âm, em nhớ dùng 'an' cho chuẩn nhé."
+        "explanation": "U là nguyên âm, em nhớ dùng 'an' cho chuẩn nhé.",
+        "correct": false
       },
       {
         "text": "He are an uncle.",
-        "explanation": "'He' là số ít nên phải đi với 'is' em nha."
+        "explanation": "'He' là số ít nên phải đi với 'is' em nha.",
+        "correct": false
       },
       {
         "text": "He is an uncles.",
-        "explanation": "Đã có 'an' thì không dùng 'uncles' số nhiều."
+        "explanation": "Đã có 'an' thì không dùng 'uncles' số nhiều.",
+        "correct": false
       }
     ]
   },
@@ -2380,15 +2491,18 @@ const fullQuestionBank = [
       },
       {
         "text": "is -> are",
-        "explanation": "Có 1 túp lều tuyết thôi nên 'is' là đúng rồi."
+        "explanation": "Có 1 túp lều tuyết thôi nên 'is' là đúng rồi.",
+        "correct": false
       },
       {
         "text": "in -> on",
-        "explanation": "Trong tuyết dùng 'in the snow' là rất chuẩn."
+        "explanation": "Trong tuyết dùng 'in the snow' là rất chuẩn.",
+        "correct": false
       },
       {
         "text": "igloo -> igloos",
-        "explanation": "Câu đang nói về 'một cái' nên để số ít là đúng."
+        "explanation": "Câu đang nói về 'một cái' nên để số ít là đúng.",
+        "correct": false
       }
     ]
   },
@@ -2402,15 +2516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Iguana' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Iguana' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'iguanas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'iguanas'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'iguanas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'iguanas'.",
+        "correct": false
       }
     ]
   },
@@ -2424,15 +2541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Orange' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Orange' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'oranges'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'oranges'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'oranges'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'oranges'.",
+        "correct": false
       }
     ]
   },
@@ -2446,15 +2566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "My mother has an red umbrella.",
-        "explanation": "Từ ngay sau mạo từ là 'red' (phụ âm), nên dùng 'a' chứ không dùng 'an'."
+        "explanation": "Từ ngay sau mạo từ là 'red' (phụ âm), nên dùng 'a' chứ không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "My mother have a red umbrella.",
-        "explanation": "'Mother' là số ít nên dùng 'has', không dùng 'have' em nhé."
+        "explanation": "'Mother' là số ít nên dùng 'has', không dùng 'have' em nhé.",
+        "correct": false
       },
       {
         "text": "My mother has red umbrella.",
-        "explanation": "Em thiếu mạo từ 'a' trước từ 'red' rồi."
+        "explanation": "Em thiếu mạo từ 'a' trước từ 'red' rồi.",
+        "correct": false
       }
     ]
   },
@@ -2468,15 +2591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mạo từ đi theo từ ngay sau nó, 'ugly' bắt đầu bằng nguyên âm nên dùng 'an'."
+        "explanation": "Mạo từ đi theo từ ngay sau nó, 'ugly' bắt đầu bằng nguyên âm nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Động từ 'is' cho thấy đây là số ít, nên không chọn 'many'."
+        "explanation": "Động từ 'is' cho thấy đây là số ít, nên không chọn 'many'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu khẳng định mô tả đồ vật, dùng 'an' là tốt nhất."
+        "explanation": "Câu khẳng định mô tả đồ vật, dùng 'an' là tốt nhất.",
+        "correct": false
       }
     ]
   },
@@ -2490,15 +2616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'ant' là nguyên âm nên em phải chọn 'an' mới đúng."
+        "explanation": "Vì 'ant' là nguyên âm nên em phải chọn 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       }
     ]
   },
@@ -2512,15 +2641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A egg is on the plate.",
-        "explanation": "E là nguyên âm, em nhớ dùng 'an' nha."
+        "explanation": "E là nguyên âm, em nhớ dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "An eggs are on the plate.",
-        "explanation": "Đã dùng 'an' thì không dùng số nhiều 'eggs' nữa."
+        "explanation": "Đã dùng 'an' thì không dùng số nhiều 'eggs' nữa.",
+        "correct": false
       },
       {
         "text": "Egg is on the plate.",
-        "explanation": "Em quên mạo từ đứng trước danh từ 'egg' rồi."
+        "explanation": "Em quên mạo từ đứng trước danh từ 'egg' rồi.",
+        "correct": false
       }
     ]
   },
@@ -2534,15 +2666,18 @@ const fullQuestionBank = [
       },
       {
         "text": "has -> have",
-        "explanation": "'She' số ít dùng 'has' là đúng ngữ pháp rồi."
+        "explanation": "'She' số ít dùng 'has' là đúng ngữ pháp rồi.",
+        "correct": false
       },
       {
         "text": "arm -> arms",
-        "explanation": "Câu đang dùng 'a' nên để 'arm' số ít là đúng."
+        "explanation": "Câu đang dùng 'a' nên để 'arm' số ít là đúng.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "Sửa thành 'an' là cách sửa đúng nhất ở đây."
+        "explanation": "Sửa thành 'an' là cách sửa đúng nhất ở đây.",
+        "correct": false
       }
     ]
   },
@@ -2556,15 +2691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con đại bàng (eagle) bắt đầu bằng nguyên âm, em dùng 'an' nha."
+        "explanation": "Con đại bàng (eagle) bắt đầu bằng nguyên âm, em dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Đây là câu khẳng định, mình chọn 'an' là đúng nhất."
+        "explanation": "Đây là câu khẳng định, mình chọn 'an' là đúng nhất.",
+        "correct": false
       }
     ]
   },
@@ -2578,15 +2716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cánh tay bắt đầu bằng nguyên âm, em dùng 'an' nhé."
+        "explanation": "Cánh tay bắt đầu bằng nguyên âm, em dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'arms'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'arms'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'arms'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'arms'.",
+        "correct": false
       }
     ]
   },
@@ -2600,15 +2741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "There is a insect on the leaf.",
-        "explanation": "I là nguyên âm, em nên dùng 'an' em nhé."
+        "explanation": "I là nguyên âm, em nên dùng 'an' em nhé.",
+        "correct": false
       },
       {
         "text": "There are an insect on the leaf.",
-        "explanation": "Có một con nên dùng 'is', không dùng 'are' đâu."
+        "explanation": "Có một con nên dùng 'is', không dùng 'are' đâu.",
+        "correct": false
       },
       {
         "text": "There is insect on the leaf.",
-        "explanation": "Em thiếu mạo từ 'an' rồi nè."
+        "explanation": "Em thiếu mạo từ 'an' rồi nè.",
+        "correct": false
       }
     ]
   },
@@ -2622,15 +2766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "Vì bắt đầu bằng nguyên âm 'e' nên em chọn 'An' nhé."
+        "explanation": "Vì bắt đầu bằng nguyên âm 'e' nên em chọn 'An' nhé.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Động từ 'is' cho thấy đây là số ít."
+        "explanation": "Động từ 'is' cho thấy đây là số ít.",
+        "correct": false
       },
       {
         "text": "Them",
-        "explanation": "Dùng 'An' ở đầu câu để nói về con vật."
+        "explanation": "Dùng 'An' ở đầu câu để nói về con vật.",
+        "correct": false
       }
     ]
   },
@@ -2644,15 +2791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Dù là 'truck', nhưng từ đứng ngay sau mạo từ là 'old' nên dùng 'an'."
+        "explanation": "Dù là 'truck', nhưng từ đứng ngay sau mạo từ là 'old' nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'trucks'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'trucks'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'trucks'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'trucks'.",
+        "correct": false
       }
     ]
   },
@@ -2666,15 +2816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I see an zebra.",
-        "explanation": "Z là phụ âm, em dùng 'a' chứ đừng dùng 'an' nhé."
+        "explanation": "Z là phụ âm, em dùng 'a' chứ đừng dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "I sees a zebra.",
-        "explanation": "Chủ ngữ 'I' thì động từ 'see' không thêm 's'."
+        "explanation": "Chủ ngữ 'I' thì động từ 'see' không thêm 's'.",
+        "correct": false
       },
       {
         "text": "I see a zebras.",
-        "explanation": "Đã dùng 'a' thì không dùng số nhiều 'zebras'."
+        "explanation": "Đã dùng 'a' thì không dùng số nhiều 'zebras'.",
+        "correct": false
       }
     ]
   },
@@ -2688,15 +2841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'umbrella' bắt đầu bằng nguyên âm, em dùng 'an' nha."
+        "explanation": "Vì 'umbrella' bắt đầu bằng nguyên âm, em dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       }
     ]
   },
@@ -2710,15 +2866,18 @@ const fullQuestionBank = [
       },
       {
         "text": "She has an ruler.",
-        "explanation": "'Ruler' bắt đầu bằng phụ âm, mình dùng 'a' em nhé."
+        "explanation": "'Ruler' bắt đầu bằng phụ âm, mình dùng 'a' em nhé.",
+        "correct": false
       },
       {
         "text": "She have a ruler.",
-        "explanation": "'She' số ít nên dùng 'has', không dùng 'have'."
+        "explanation": "'She' số ít nên dùng 'has', không dùng 'have'.",
+        "correct": false
       },
       {
         "text": "She has a rulers.",
-        "explanation": "Đã dùng 'a' thì không thêm 's' vào đằng sau nhé."
+        "explanation": "Đã dùng 'a' thì không thêm 's' vào đằng sau nhé.",
+        "correct": false
       }
     ]
   },
@@ -2732,15 +2891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'orange' là nguyên âm nên em chọn 'an' mới đúng."
+        "explanation": "Vì 'orange' là nguyên âm nên em chọn 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'oranges'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'oranges'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Từ 'orange' ở số ít, mình dùng 'an' nhé."
+        "explanation": "Từ 'orange' ở số ít, mình dùng 'an' nhé.",
+        "correct": false
       }
     ]
   },
@@ -2754,15 +2916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "There is a ant in the room.",
-        "explanation": "A là nguyên âm, em nhớ dùng 'an' nha."
+        "explanation": "A là nguyên âm, em nhớ dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "There are an ant in the room.",
-        "explanation": "Có 1 con nên dùng 'is', không dùng 'are'."
+        "explanation": "Có 1 con nên dùng 'is', không dùng 'are'.",
+        "correct": false
       },
       {
         "text": "There is an ants in the room.",
-        "explanation": "Đã có 'an' thì không dùng số nhiều 'ants'."
+        "explanation": "Đã có 'an' thì không dùng số nhiều 'ants'.",
+        "correct": false
       }
     ]
   },
@@ -2776,15 +2941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "want -> wants",
-        "explanation": "Chủ ngữ 'I' đi với 'want' là đúng rồi."
+        "explanation": "Chủ ngữ 'I' đi với 'want' là đúng rồi.",
+        "correct": false
       },
       {
         "text": "eagle -> eagles",
-        "explanation": "Câu đang dùng 'a' nên để 'eagle' số ít là đúng."
+        "explanation": "Câu đang dùng 'a' nên để 'eagle' số ít là đúng.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "Sửa thành 'an' là cách sửa nhanh nhất."
+        "explanation": "Sửa thành 'an' là cách sửa nhanh nhất.",
+        "correct": false
       }
     ]
   },
@@ -2798,15 +2966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "Vì bắt đầu bằng nguyên âm, em dùng 'An' nha."
+        "explanation": "Vì bắt đầu bằng nguyên âm, em dùng 'An' nha.",
+        "correct": false
       },
       {
         "text": "Them",
-        "explanation": "Không dùng 'Them' ở đầu câu để làm mạo từ."
+        "explanation": "Không dùng 'Them' ở đầu câu để làm mạo từ.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Động từ 'is' cho thấy chỉ có một chiếc xe."
+        "explanation": "Động từ 'is' cho thấy chỉ có một chiếc xe.",
+        "correct": false
       }
     ]
   },
@@ -2820,15 +2991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Lều tuyết bắt đầu bằng nguyên âm, em dùng 'an' nhé."
+        "explanation": "Lều tuyết bắt đầu bằng nguyên âm, em dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'igloos'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'igloos'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'igloos'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'igloos'.",
+        "correct": false
       }
     ]
   },
@@ -2842,15 +3016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I see a ox.",
-        "explanation": "O là nguyên âm, em cần dùng 'an' em nhé."
+        "explanation": "O là nguyên âm, em cần dùng 'an' em nhé.",
+        "correct": false
       },
       {
         "text": "I sees an ox.",
-        "explanation": "Chủ ngữ 'I' không thêm 's' vào động từ 'see'."
+        "explanation": "Chủ ngữ 'I' không thêm 's' vào động từ 'see'.",
+        "correct": false
       },
       {
         "text": "I see an oxes.",
-        "explanation": "'Oxes' không phải dạng số nhiều đúng; sau 'an' phải dùng danh từ số ít 'ox'."
+        "explanation": "'Oxes' không phải dạng số nhiều đúng; sau 'an' phải dùng danh từ số ít 'ox'.",
+        "correct": false
       }
     ]
   },
@@ -2864,15 +3041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "Vì là nguyên âm nên em chọn 'An' nhé."
+        "explanation": "Vì là nguyên âm nên em chọn 'An' nhé.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Động từ 'is' cho thấy đây là số ít."
+        "explanation": "Động từ 'is' cho thấy đây là số ít.",
+        "correct": false
       },
       {
         "text": "They",
-        "explanation": "Đầu câu mình cần mạo từ, không dùng 'They' ở đây."
+        "explanation": "Đầu câu mình cần mạo từ, không dùng 'They' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -2886,15 +3066,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mặc dù là 'hobby', nhưng từ ngay sau mạo từ là 'interesting' nên dùng 'an'."
+        "explanation": "Mặc dù là 'hobby', nhưng từ ngay sau mạo từ là 'interesting' nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'hobbies'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'hobbies'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'hobbies'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'hobbies'.",
+        "correct": false
       }
     ]
   },
@@ -2908,15 +3091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "It is a iguana.",
-        "explanation": "I là nguyên âm, em nhớ dùng 'an' nhé."
+        "explanation": "I là nguyên âm, em nhớ dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "It is an iguanas.",
-        "explanation": "Đã có 'an' thì không thêm 's' ở đằng sau."
+        "explanation": "Đã có 'an' thì không thêm 's' ở đằng sau.",
+        "correct": false
       },
       {
         "text": "It are an iguana.",
-        "explanation": "'It' đi với 'is', không đi với 'are'."
+        "explanation": "'It' đi với 'is', không đi với 'are'.",
+        "correct": false
       }
     ]
   },
@@ -2930,15 +3116,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Glass' bắt đầu bằng âm phụ âm, nên không dùng 'an'."
+        "explanation": "'Glass' bắt đầu bằng âm phụ âm, nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       }
     ]
   },
@@ -2952,15 +3141,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'ant' là nguyên âm, em chọn 'an' nha."
+        "explanation": "Vì 'ant' là nguyên âm, em chọn 'an' nha.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       }
     ]
   },
@@ -2974,15 +3166,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì từ ngay sau mạo từ là 'old' (vowel) nên dùng 'an' nhé."
+        "explanation": "Vì từ ngay sau mạo từ là 'old' (vowel) nên dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Từ 'umbrella' đang ở số ít, mình chọn 'an'."
+        "explanation": "Từ 'umbrella' đang ở số ít, mình chọn 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       }
     ]
   },
@@ -2996,15 +3191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "My father has an schoolbag.",
-        "explanation": "'Schoolbag' bắt đầu bằng âm phụ âm, nên không dùng 'an'."
+        "explanation": "'Schoolbag' bắt đầu bằng âm phụ âm, nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "My father have a schoolbag.",
-        "explanation": "'My father' là chủ ngữ số ít, nên dùng 'has'."
+        "explanation": "'My father' là chủ ngữ số ít, nên dùng 'has'.",
+        "correct": false
       },
       {
         "text": "My father has a schoolbags.",
-        "explanation": "Sau 'a' phải dùng danh từ số ít 'schoolbag'."
+        "explanation": "Sau 'a' phải dùng danh từ số ít 'schoolbag'.",
+        "correct": false
       }
     ]
   },
@@ -3018,15 +3216,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'ink' là nguyên âm nên em chọn 'an' mới đúng."
+        "explanation": "Vì 'ink' là nguyên âm nên em chọn 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Từ 'ink pot' ở số ít, mình dùng 'an' nhé."
+        "explanation": "Từ 'ink pot' ở số ít, mình dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ink pots'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ink pots'.",
+        "correct": false
       }
     ]
   },
@@ -3040,15 +3241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "There is a octopus in the water.",
-        "explanation": "O là nguyên âm, em nhớ dùng 'an' nha."
+        "explanation": "O là nguyên âm, em nhớ dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "There are an octopus in the water.",
-        "explanation": "Có 1 con nên dùng 'is', không dùng 'are'."
+        "explanation": "Có 1 con nên dùng 'is', không dùng 'are'.",
+        "correct": false
       },
       {
         "text": "There are two octopus in the water.",
-        "explanation": "Sau 'two' phải dùng danh từ số nhiều 'octopuses'."
+        "explanation": "Sau 'two' phải dùng danh từ số nhiều 'octopuses'.",
+        "correct": false
       }
     ]
   },
@@ -3062,15 +3266,18 @@ const fullQuestionBank = [
       },
       {
         "text": "has -> have",
-        "explanation": "'He' số ít dùng 'has' là đúng rồi."
+        "explanation": "'He' số ít dùng 'has' là đúng rồi.",
+        "correct": false
       },
       {
         "text": "eagle -> eagles",
-        "explanation": "Câu đang dùng 'a' nên để 'eagle' số ít là đúng."
+        "explanation": "Câu đang dùng 'a' nên để 'eagle' số ít là đúng.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "Sửa thành 'an' là cách nhanh nhất."
+        "explanation": "Sửa thành 'an' là cách nhanh nhất.",
+        "correct": false
       }
     ]
   },
@@ -3084,15 +3291,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'egg' là nguyên âm, em chọn 'an' nha."
+        "explanation": "Vì 'egg' là nguyên âm, em chọn 'an' nha.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       }
     ]
   },
@@ -3106,15 +3316,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Elephant' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Elephant' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'elephants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'elephants'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'elephants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'elephants'.",
+        "correct": false
       }
     ]
   },
@@ -3128,15 +3341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "This is an correct answer.",
-        "explanation": "Từ ngay sau mạo từ là 'correct' (phụ âm), nên dùng 'a'."
+        "explanation": "Từ ngay sau mạo từ là 'correct' (phụ âm), nên dùng 'a'.",
+        "correct": false
       },
       {
         "text": "This is correct answer.",
-        "explanation": "Em thiếu mạo từ 'a' rồi nhé."
+        "explanation": "Em thiếu mạo từ 'a' rồi nhé.",
+        "correct": false
       },
       {
         "text": "This are a correct answer.",
-        "explanation": "'This' đi với 'is', không đi với 'are'."
+        "explanation": "'This' đi với 'is', không đi với 'are'.",
+        "correct": false
       }
     ]
   },
@@ -3150,15 +3366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "Vì là nguyên âm nên em chọn 'An' nhé."
+        "explanation": "Vì là nguyên âm nên em chọn 'An' nhé.",
+        "correct": false
       },
       {
         "text": "Two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       }
     ]
   },
@@ -3172,15 +3391,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mặc dù là 'bag', nhưng từ ngay sau mạo từ là 'orange' nên dùng 'an'."
+        "explanation": "Mặc dù là 'bag', nhưng từ ngay sau mạo từ là 'orange' nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'bags'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'bags'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'bags'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'bags'.",
+        "correct": false
       }
     ]
   },
@@ -3194,15 +3416,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I have a ostrich.",
-        "explanation": "O là nguyên âm, em nhớ dùng 'an' nhé."
+        "explanation": "O là nguyên âm, em nhớ dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "I have an ostriches.",
-        "explanation": "Đã có 'an' thì không dùng số nhiều 'ostriches'."
+        "explanation": "Đã có 'an' thì không dùng số nhiều 'ostriches'.",
+        "correct": false
       },
       {
         "text": "I has an ostrich.",
-        "explanation": "'I' đi với 'have', không đi với 'has' em nha."
+        "explanation": "'I' đi với 'have', không đi với 'has' em nha.",
+        "correct": false
       }
     ]
   },
@@ -3216,15 +3441,18 @@ const fullQuestionBank = [
       },
       {
         "text": "sees -> see",
-        "explanation": "'She' số ít nên 'sees' là đúng ngữ pháp."
+        "explanation": "'She' số ít nên 'sees' là đúng ngữ pháp.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "Sửa thành 'an' là cách sửa chuẩn nhất ở đây."
+        "explanation": "Sửa thành 'an' là cách sửa chuẩn nhất ở đây.",
+        "correct": false
       },
       {
         "text": "ant -> ants",
-        "explanation": "Câu đang dùng 'a' nên danh từ để số ít là đúng."
+        "explanation": "Câu đang dùng 'a' nên danh từ để số ít là đúng.",
+        "correct": false
       }
     ]
   },
@@ -3238,15 +3466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'oven' là nguyên âm, em chọn 'an' nha."
+        "explanation": "Vì 'oven' là nguyên âm, em chọn 'an' nha.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ovens'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ovens'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ovens'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ovens'.",
+        "correct": false
       }
     ]
   },
@@ -3260,15 +3491,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Quả táo bắt đầu bằng nguyên âm, em dùng 'an' nhé."
+        "explanation": "Quả táo bắt đầu bằng nguyên âm, em dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'apples'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'apples'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'apples'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'apples'.",
+        "correct": false
       }
     ]
   },
@@ -3282,15 +3516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "The doctor has an white car.",
-        "explanation": "Từ ngay sau mạo từ là 'white' (phụ âm), mình dùng 'a' mới đúng."
+        "explanation": "Từ ngay sau mạo từ là 'white' (phụ âm), mình dùng 'a' mới đúng.",
+        "correct": false
       },
       {
         "text": "The doctor have a white car.",
-        "explanation": "'Doctor' là số ít nên dùng 'has' nhé."
+        "explanation": "'Doctor' là số ít nên dùng 'has' nhé.",
+        "correct": false
       },
       {
         "text": "The doctor has white car.",
-        "explanation": "Em thiếu mạo từ 'a' trước từ 'white' rồi."
+        "explanation": "Em thiếu mạo từ 'a' trước từ 'white' rồi.",
+        "correct": false
       }
     ]
   },
@@ -3304,15 +3541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mạo từ đi theo từ ngay sau nó, 'easy' bắt đầu bằng nguyên âm nên dùng 'an'."
+        "explanation": "Mạo từ đi theo từ ngay sau nó, 'easy' bắt đầu bằng nguyên âm nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Động từ 'is' cho thấy đây là số ít."
+        "explanation": "Động từ 'is' cho thấy đây là số ít.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'questions'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'questions'.",
+        "correct": false
       }
     ]
   },
@@ -3326,15 +3566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'igloo' bắt đầu bằng nguyên âm nên em phải chọn 'an' mới đúng."
+        "explanation": "Vì 'igloo' bắt đầu bằng nguyên âm nên em phải chọn 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'igloos'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'igloos'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'igloos'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'igloos'.",
+        "correct": false
       }
     ]
   },
@@ -3348,15 +3591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A ant is on the table.",
-        "explanation": "A là nguyên âm, em nhớ dùng 'an' nha."
+        "explanation": "A là nguyên âm, em nhớ dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "An ants are on the table.",
-        "explanation": "Đã dùng 'an' thì không dùng số nhiều 'ants'."
+        "explanation": "Đã dùng 'an' thì không dùng số nhiều 'ants'.",
+        "correct": false
       },
       {
         "text": "Ant is on the table.",
-        "explanation": "Câu này thiếu mạo từ rồi."
+        "explanation": "Câu này thiếu mạo từ rồi.",
+        "correct": false
       }
     ]
   },
@@ -3370,15 +3616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "has -> have",
-        "explanation": "'He' số ít dùng 'has' là đúng rồi."
+        "explanation": "'He' số ít dùng 'has' là đúng rồi.",
+        "correct": false
       },
       {
         "text": "elbow -> elbows",
-        "explanation": "Câu đang dùng 'a' nên danh từ để số ít là đúng."
+        "explanation": "Câu đang dùng 'a' nên danh từ để số ít là đúng.",
+        "correct": false
       },
       {
         "text": "a -> many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'elbows', nên đây không phải cách sửa đúng."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'elbows', nên đây không phải cách sửa đúng.",
+        "correct": false
       }
     ]
   },
@@ -3392,15 +3641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con cú bắt đầu bằng nguyên âm, em dùng 'an' nha."
+        "explanation": "Con cú bắt đầu bằng nguyên âm, em dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'owls'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'owls'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'owls'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'owls'.",
+        "correct": false
       }
     ]
   },
@@ -3414,15 +3666,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái ô bắt đầu bằng nguyên âm, em dùng 'an' nhé."
+        "explanation": "Cái ô bắt đầu bằng nguyên âm, em dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       }
     ]
   },
@@ -3436,15 +3691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Nam has an new bed.",
-        "explanation": "Từ ngay sau mạo từ là 'new' (phụ âm), mình dùng 'a' mới đúng."
+        "explanation": "Từ ngay sau mạo từ là 'new' (phụ âm), mình dùng 'a' mới đúng.",
+        "correct": false
       },
       {
         "text": "Nam have a new bed.",
-        "explanation": "Nam là số ít nên dùng 'has', không dùng 'have'."
+        "explanation": "Nam là số ít nên dùng 'has', không dùng 'have'.",
+        "correct": false
       },
       {
         "text": "Nam has a new beds.",
-        "explanation": "Đã dùng 'a' thì không dùng số nhiều ở danh từ nhé."
+        "explanation": "Đã dùng 'a' thì không dùng số nhiều ở danh từ nhé.",
+        "correct": false
       }
     ]
   },
@@ -3458,15 +3716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "Vì là nguyên âm nên em chọn 'An' nhé."
+        "explanation": "Vì là nguyên âm nên em chọn 'An' nhé.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Động từ 'is' cho thấy có 1 con voi thôi."
+        "explanation": "Động từ 'is' cho thấy có 1 con voi thôi.",
+        "correct": false
       },
       {
         "text": "They",
-        "explanation": "Đầu câu mình cần mạo từ, không phải đại từ."
+        "explanation": "Đầu câu mình cần mạo từ, không phải đại từ.",
+        "correct": false
       }
     ]
   },
@@ -3480,15 +3741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Mặc dù là 'family', nhưng từ ngay sau mạo từ là 'happy' (phụ âm), dùng 'a'."
+        "explanation": "Mặc dù là 'family', nhưng từ ngay sau mạo từ là 'happy' (phụ âm), dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'families'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'families'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'families'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'families'.",
+        "correct": false
       }
     ]
   },
@@ -3502,15 +3766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I eat a onion.",
-        "explanation": "O là nguyên âm, em nhớ dùng 'an' nhé."
+        "explanation": "O là nguyên âm, em nhớ dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "I eats an onion.",
-        "explanation": "Chủ ngữ 'I' không thêm 's' vào động từ 'eat'."
+        "explanation": "Chủ ngữ 'I' không thêm 's' vào động từ 'eat'.",
+        "correct": false
       },
       {
         "text": "I eat an onions.",
-        "explanation": "Đã có 'an' thì không dùng số nhiều nữa."
+        "explanation": "Đã có 'an' thì không dùng số nhiều nữa.",
+        "correct": false
       }
     ]
   },
@@ -3524,15 +3791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "has -> have",
-        "explanation": "'He' số ít dùng 'has' là chuẩn rồi."
+        "explanation": "'He' số ít dùng 'has' là chuẩn rồi.",
+        "correct": false
       },
       {
         "text": "ruler -> rulers",
-        "explanation": "Câu đang dùng 'a' nên danh từ để số ít là đúng."
+        "explanation": "Câu đang dùng 'a' nên danh từ để số ít là đúng.",
+        "correct": false
       },
       {
         "text": "orange -> oranges",
-        "explanation": "Ở đây 'orange' là tính từ chỉ màu sắc, không thêm 's'."
+        "explanation": "Ở đây 'orange' là tính từ chỉ màu sắc, không thêm 's'.",
+        "correct": false
       }
     ]
   },
@@ -3546,15 +3816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'eagle' là nguyên âm, em chọn 'an' nha."
+        "explanation": "Vì 'eagle' là nguyên âm, em chọn 'an' nha.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'eagles'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'eagles'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'.",
+        "correct": false
       }
     ]
   },
@@ -3568,15 +3841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con kiến bắt đầu bằng nguyên âm, em dùng 'an' nhé."
+        "explanation": "Con kiến bắt đầu bằng nguyên âm, em dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       }
     ]
   },
@@ -3590,15 +3866,18 @@ const fullQuestionBank = [
       },
       {
         "text": "She is an kind mother.",
-        "explanation": "Từ ngay sau mạo từ là 'kind' (phụ âm), dùng 'a' mới đúng."
+        "explanation": "Từ ngay sau mạo từ là 'kind' (phụ âm), dùng 'a' mới đúng.",
+        "correct": false
       },
       {
         "text": "She are a kind mother.",
-        "explanation": "'She' số ít nên dùng 'is' nhé."
+        "explanation": "'She' số ít nên dùng 'is' nhé.",
+        "correct": false
       },
       {
         "text": "She is kind mother.",
-        "explanation": "Em thiếu mạo từ 'a' trước từ 'kind' rồi."
+        "explanation": "Em thiếu mạo từ 'a' trước từ 'kind' rồi.",
+        "correct": false
       }
     ]
   },
@@ -3612,15 +3891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mạo từ đi theo từ ngay sau nó, 'old' bắt đầu bằng nguyên âm nên dùng 'an'."
+        "explanation": "Mạo từ đi theo từ ngay sau nó, 'old' bắt đầu bằng nguyên âm nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Động từ 'is' cho thấy đây là số ít."
+        "explanation": "Động từ 'is' cho thấy đây là số ít.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'clocks'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'clocks'.",
+        "correct": false
       }
     ]
   },
@@ -3634,15 +3916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì 'ant' bắt đầu bằng nguyên âm nên em phải chọn 'an' mới đúng."
+        "explanation": "Vì 'ant' bắt đầu bằng nguyên âm nên em phải chọn 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       }
     ]
   },
@@ -3656,15 +3941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "He has a aunt.",
-        "explanation": "A là nguyên âm, em nhớ dùng 'an' nha."
+        "explanation": "A là nguyên âm, em nhớ dùng 'an' nha.",
+        "correct": false
       },
       {
         "text": "He has an aunts.",
-        "explanation": "Đã dùng 'an' thì không dùng số nhiều nữa."
+        "explanation": "Đã dùng 'an' thì không dùng số nhiều nữa.",
+        "correct": false
       },
       {
         "text": "He have an aunt.",
-        "explanation": "'He' số ít nên dùng 'has', không dùng 'have'."
+        "explanation": "'He' số ít nên dùng 'has', không dùng 'have'.",
+        "correct": false
       }
     ]
   },
@@ -3678,15 +3966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Bowl' bắt đầu bằng âm phụ âm, nên không dùng 'an'."
+        "explanation": "'Bowl' bắt đầu bằng âm phụ âm, nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'bowls'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'bowls'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'bowls'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'bowls'.",
+        "correct": false
       }
     ]
   },
@@ -3700,15 +3991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Ice' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Ice' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'cones'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'cones'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'cones'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'cones'.",
+        "correct": false
       }
     ]
   },
@@ -3722,15 +4016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "We have an clean room.",
-        "explanation": "Từ ngay sau mạo từ là 'clean' (phụ âm), dùng 'a' mới đúng."
+        "explanation": "Từ ngay sau mạo từ là 'clean' (phụ âm), dùng 'a' mới đúng.",
+        "correct": false
       },
       {
         "text": "We has a clean room.",
-        "explanation": "'We' đi với 'have', không dùng 'has' em nhé."
+        "explanation": "'We' đi với 'have', không dùng 'has' em nhé.",
+        "correct": false
       },
       {
         "text": "We have a clean rooms.",
-        "explanation": "Đã có 'a' thì không dùng số nhiều ở danh từ."
+        "explanation": "Đã có 'a' thì không dùng số nhiều ở danh từ.",
+        "correct": false
       }
     ]
   },
@@ -3744,20 +4041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mạo từ đi theo từ ngay sau nó, 'easy' bắt đầu bằng nguyên âm nên dùng 'an'."
+        "explanation": "Mạo từ đi theo từ ngay sau nó, 'easy' bắt đầu bằng nguyên âm nên dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Động từ 'is' cho thấy đây là số ít."
+        "explanation": "Động từ 'is' cho thấy đây là số ít.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'exercises'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'exercises'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ cat. (Đây là một con mèo) 🐱",
+    "q": "This is ___ cat. 🐱",
     "a": [
       {
         "text": "a",
@@ -3766,20 +4066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'cat' không bắt đầu bằng nguyên âm nên không dùng 'an' được."
+        "explanation": "Chữ 'cat' không bắt đầu bằng nguyên âm nên không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Trong hình chỉ có một con mèo thôi mà."
+        "explanation": "Trong hình chỉ có một con mèo thôi mà.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'cats'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'cats'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ ant on the leaf. (Mình thấy một con kiến trên lá) 🐜",
+    "q": "I see ___ ant on the leaf. 🐜",
     "a": [
       {
         "text": "an",
@@ -3788,20 +4091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con kiến nhỏ xíu này phải đi với 'an' nhé."
+        "explanation": "Con kiến nhỏ xíu này phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Give me ___ banana. (Cho mình một quả chuối) 🍌",
+    "q": "Give me ___ banana. 🍌",
     "a": [
       {
         "text": "a",
@@ -3810,20 +4116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'b' không phải là nguyên âm nên không dùng 'an' nhé."
+        "explanation": "Chữ 'b' không phải là nguyên âm nên không dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'bananas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'bananas'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'bananas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'bananas'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ dog. (Mình có một chú chó) 🐶",
+    "q": "I have ___ dog. 🐶",
     "a": [
       {
         "text": "a",
@@ -3832,20 +4141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'd' không dùng 'an' được đâu bé ơi."
+        "explanation": "Chữ 'd' không dùng 'an' được đâu bé ơi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'dogs'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'dogs'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'dogs'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'dogs'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ ball. (Đây là một quả bóng) ⚽",
+    "q": "This is ___ ball. ⚽",
     "a": [
       {
         "text": "a",
@@ -3854,20 +4166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'b' không dùng với 'an' được nhé."
+        "explanation": "Chữ 'b' không dùng với 'an' được nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'balls'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'balls'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'balls'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'balls'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ owl in the tree. (Mình thấy một con cú trên cây) 🦉",
+    "q": "I see ___ owl in the tree. 🦉",
     "a": [
       {
         "text": "an",
@@ -3876,20 +4191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con cú mèo phải đi với 'an' mới đúng."
+        "explanation": "Con cú mèo phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'owls'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'owls'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Trên cành cây chỉ có một con cú thôi."
+        "explanation": "Trên cành cây chỉ có một con cú thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ umbrella. (Đó là một chiếc ô) ☂️",
+    "q": "It is ___ umbrella. ☂️",
     "a": [
       {
         "text": "an",
@@ -3898,20 +4216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Chiếc ô che mưa phải đi với 'an' nhé bé."
+        "explanation": "Chiếc ô che mưa phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ bird. (Mình thấy một chú chim) 🐦",
+    "q": "I see ___ bird. 🐦",
     "a": [
       {
         "text": "a",
@@ -3920,20 +4241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'b' không phải nguyên âm nên không dùng 'an'."
+        "explanation": "Chữ 'b' không phải nguyên âm nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is it ___ insect? (Đó có phải một con côn trùng không?) 🐜",
+    "q": "Is it ___ insect? 🐜",
     "a": [
       {
         "text": "an",
@@ -3942,20 +4266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con côn trùng nhỏ xíu phải đi với 'an' nhé."
+        "explanation": "Con côn trùng nhỏ xíu phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ doll. (Cô ấy có một búp bê) 🪆",
+    "q": "She has ___ doll. 🪆",
     "a": [
       {
         "text": "a",
@@ -3964,20 +4291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'd' không dùng 'an' được đâu nè."
+        "explanation": "Chữ 'd' không dùng 'an' được đâu nè.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'dolls'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'dolls'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'dolls'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'dolls'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I can see ___ alligator by the river. (Mình có thể thấy một con cá sấu bên sông.) 🐊",
+    "q": "I can see ___ alligator by the river. 🐊",
     "a": [
       {
         "text": "an",
@@ -3986,20 +4316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Alligator' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Alligator' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'alligators'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'alligators'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'alligators'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'alligators'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ lion. (Mình thấy một con sư tử) 🦁",
+    "q": "I see ___ lion. 🦁",
     "a": [
       {
         "text": "a",
@@ -4008,20 +4341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'l' không dùng với 'an' được nhé."
+        "explanation": "Chữ 'l' không dùng với 'an' được nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'lions'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'lions'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'lions'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'lions'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is ___ astronaut. (Chú ấy là một phi hành gia) 👨‍🚀",
+    "q": "He is ___ astronaut. 👨‍🚀",
     "a": [
       {
         "text": "an",
@@ -4030,20 +4366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Phi hành gia bay vào vũ trụ phải đi với 'an' nhé."
+        "explanation": "Phi hành gia bay vào vũ trụ phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'astronauts'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'astronauts'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'astronauts'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'astronauts'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ pear. (Mình muốn một quả lê) 🍐",
+    "q": "I want ___ pear. 🍐",
     "a": [
       {
         "text": "a",
@@ -4052,20 +4391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'p' không dùng được với 'an' đâu."
+        "explanation": "Chữ 'p' không dùng được với 'an' đâu.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'pears'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'pears'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Chỉ có một quả thôi mà."
+        "explanation": "Chỉ có một quả thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She is ___ artist. (Cô ấy là một họa sĩ) 🎨",
+    "q": "She is ___ artist. 🎨",
     "a": [
       {
         "text": "an",
@@ -4074,20 +4416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Họa sĩ vẽ tranh đẹp phải đi với 'an' nhé."
+        "explanation": "Họa sĩ vẽ tranh đẹp phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'artists'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'artists'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'artists'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'artists'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ big box. (Nó là một cái hộp lớn) 📦",
+    "q": "It is ___ big box. 📦",
     "a": [
       {
         "text": "a",
@@ -4096,20 +4441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Mặc dù là 'box' nhưng mình phải tính theo chữ 'big' ở đằng trước nhé."
+        "explanation": "Mặc dù là 'box' nhưng mình phải tính theo chữ 'big' ở đằng trước nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'boxes'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'boxes'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'boxes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'boxes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ igloo. (Mình thấy một cái lều tuyết) ❄️",
+    "q": "I see ___ igloo. ❄️",
     "a": [
       {
         "text": "an",
@@ -4118,20 +4466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Lều tuyết trắng xóa phải đi với 'an' nhé."
+        "explanation": "Lều tuyết trắng xóa phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'igloos'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'igloos'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'igloos'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'igloos'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ red car. (Cậu ấy có một chiếc ô tô màu đỏ) 🚗",
+    "q": "He has ___ red car. 🚗",
     "a": [
       {
         "text": "a",
@@ -4140,20 +4491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'r' không đi với 'an' được đâu."
+        "explanation": "Chữ 'r' không đi với 'an' được đâu.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'cars'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'cars'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Trong hình chỉ có một chiếc xe thôi."
+        "explanation": "Trong hình chỉ có một chiếc xe thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ onion. (Đây là một củ hành) 🧅",
+    "q": "This is ___ onion. 🧅",
     "a": [
       {
         "text": "an",
@@ -4162,20 +4516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Củ hành tím phải đi với 'an' mới đúng."
+        "explanation": "Củ hành tím phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'onions'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'onions'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'onions'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'onions'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ happy boy. (Mình thấy một cậu bé hạnh phúc) 👦",
+    "q": "I see ___ happy boy. 👦",
     "a": [
       {
         "text": "a",
@@ -4184,20 +4541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'h' trong 'happy' không dùng 'an' được nhé."
+        "explanation": "Chữ 'h' trong 'happy' không dùng 'an' được nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'boys'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'boys'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một bạn thôi."
+        "explanation": "Có mỗi một bạn thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is it ___ airplane? (Đó có phải một chiếc máy bay không?) ✈️",
+    "q": "Is it ___ airplane? ✈️",
     "a": [
       {
         "text": "an",
@@ -4206,20 +4566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Máy bay bay cao phải đi với 'an' nhé bé."
+        "explanation": "Máy bay bay cao phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'airplanes'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'airplanes'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'airplanes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'airplanes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ small ant. (Mình thấy một con kiến nhỏ) 🐜",
+    "q": "I see ___ small ant. 🐜",
     "a": [
       {
         "text": "a",
@@ -4228,20 +4591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Tuy là 'ant' nhưng chữ đứng trước nó là 'small' nên phải dùng 'a' nhé."
+        "explanation": "Tuy là 'ant' nhưng chữ đứng trước nó là 'small' nên phải dùng 'a' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ants'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Chỉ có một con duy nhất."
+        "explanation": "Chỉ có một con duy nhất.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ old man. (Có một ông cụ) 👴",
+    "q": "There is ___ old man. 👴",
     "a": [
       {
         "text": "an",
@@ -4250,20 +4616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Chữ 'o' phải đi với 'an' mới đúng quy tắc."
+        "explanation": "Chữ 'o' phải đi với 'an' mới đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'men'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'men'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Chỉ có một người thôi mà."
+        "explanation": "Chỉ có một người thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Give me ___ eraser. (Cho mình một cục tẩy) 🧼",
+    "q": "Give me ___ eraser. 🧼",
     "a": [
       {
         "text": "an",
@@ -4272,20 +4641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cục tẩy trắng phải đi với 'an' nhé bé."
+        "explanation": "Cục tẩy trắng phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'erasers'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'erasers'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'erasers'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'erasers'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is ___ tall man. (Chú ấy là một người đàn ông cao) 👨",
+    "q": "He is ___ tall man. 👨",
     "a": [
       {
         "text": "a",
@@ -4294,20 +4666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 't' không đi với 'an' được đâu."
+        "explanation": "Chữ 't' không đi với 'an' được đâu.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'men'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'men'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'men'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'men'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ ambulance. (Đó là một xe cứu thương) 🚑",
+    "q": "It is ___ ambulance. 🚑",
     "a": [
       {
         "text": "an",
@@ -4316,20 +4691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Xe cứu thương phải đi với 'an' mới đúng."
+        "explanation": "Xe cứu thương phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ambulances'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ambulances'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một chiếc thôi mà."
+        "explanation": "Có mỗi một chiếc thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ flower. (Mình thấy một bông hoa) 🌸",
+    "q": "I see ___ flower. 🌸",
     "a": [
       {
         "text": "a",
@@ -4338,20 +4716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'f' không dùng được với 'an' nhé."
+        "explanation": "Chữ 'f' không dùng được với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'flowers'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'flowers'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'flowers'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'flowers'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She wants ___ apricot. (Cô ấy muốn một quả mơ) 🍑",
+    "q": "She wants ___ apricot. 🍑",
     "a": [
       {
         "text": "an",
@@ -4360,20 +4741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Quả mơ ngon lành phải đi với 'an' nhé."
+        "explanation": "Quả mơ ngon lành phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'apricots'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'apricots'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'apricots'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'apricots'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Look! ___ bird is singing. (Nhìn kìa! Một chú chim đang hót) 🐦",
+    "q": "Look! ___ bird is singing. 🐦",
     "a": [
       {
         "text": "A",
@@ -4382,20 +4766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "An",
-        "explanation": "Chữ 'b' không dùng 'An' được đâu."
+        "explanation": "Chữ 'b' không dùng 'An' được đâu.",
+        "correct": false
       },
       {
         "text": "Two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Có mỗi một chú chim thôi mà."
+        "explanation": "Có mỗi một chú chim thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ green apple. (Mình có một quả táo xanh) 🍏",
+    "q": "I have ___ green apple. 🍏",
     "a": [
       {
         "text": "a",
@@ -4404,20 +4791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Tuy là quả táo nhưng vì có chữ 'green' nên mình phải dùng 'a' nhé."
+        "explanation": "Tuy là quả táo nhưng vì có chữ 'green' nên mình phải dùng 'a' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'apples'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'apples'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Bé chỉ cầm một quả thôi nè."
+        "explanation": "Bé chỉ cầm một quả thôi nè.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ angry cat. (Đó là một con mèo đang giận dữ) 😿",
+    "q": "It is ___ angry cat. 😿",
     "a": [
       {
         "text": "an",
@@ -4426,20 +4816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì bắt đầu bằng 'angry' nên phải đi với 'an' nhé."
+        "explanation": "Vì bắt đầu bằng 'angry' nên phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'cats'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'cats'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một con mèo thôi mà."
+        "explanation": "Có mỗi một con mèo thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ blue bird. (Mình thấy một con chim màu xanh) 🐦",
+    "q": "I see ___ blue bird. 🐦",
     "a": [
       {
         "text": "a",
@@ -4448,20 +4841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'b' không dùng với 'an' được đâu."
+        "explanation": "Chữ 'b' không dùng với 'an' được đâu.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ axe. (Cậu ấy có một cái rìu) 🪓",
+    "q": "He has ___ axe. 🪓",
     "a": [
       {
         "text": "an",
@@ -4470,20 +4866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái rìu gỗ phải đi với 'an' mới đúng."
+        "explanation": "Cái rìu gỗ phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'axes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'axes'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'axes'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'axes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ long snake. (Đây là một con rắn dài) 🐍",
+    "q": "This is ___ long snake. 🐍",
     "a": [
       {
         "text": "a",
@@ -4492,20 +4891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'l' không dùng với 'an' được nhé."
+        "explanation": "Chữ 'l' không dùng với 'an' được nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'snakes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'snakes'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Có mỗi một con rắn thôi mà."
+        "explanation": "Có mỗi một con rắn thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ ugly monster. (Mình thấy một con quái vật xấu xí) 👹",
+    "q": "I see ___ ugly monster. 👹",
     "a": [
       {
         "text": "an",
@@ -4514,20 +4916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì bắt đầu bằng 'ugly' nên phải đi với 'an' nhé."
+        "explanation": "Vì bắt đầu bằng 'ugly' nên phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'monsters'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'monsters'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một con thôi mà."
+        "explanation": "Có mỗi một con thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She wants ___ yellow banana. (Cô ấy muốn một quả chuối vàng) 🍌",
+    "q": "She wants ___ yellow banana. 🍌",
     "a": [
       {
         "text": "a",
@@ -4536,20 +4941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'y' không đi với 'an' được đâu bé ơi."
+        "explanation": "Chữ 'y' không đi với 'an' được đâu bé ơi.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'bananas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'bananas'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'bananas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'bananas'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ interesting book. (Nó là một cuốn sách thú vị) 📖",
+    "q": "It is ___ interesting book. 📖",
     "a": [
       {
         "text": "an",
@@ -4558,20 +4966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì có chữ 'interesting' nên phải đi với 'an' mới đúng."
+        "explanation": "Vì có chữ 'interesting' nên phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ eagle. (Mình thấy một con đại bàng) 🦅",
+    "q": "I see ___ eagle. 🦅",
     "a": [
       {
         "text": "an",
@@ -4580,20 +4991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con đại bàng phải đi với 'an' nhé bé."
+        "explanation": "Con đại bàng phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eagles'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'eagles'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'eagles'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ big engine. (Có một động cơ lớn) 🚂",
+    "q": "There is ___ big engine. 🚂",
     "a": [
       {
         "text": "a",
@@ -4602,20 +5016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Tuy là 'engine' nhưng vì có chữ 'big' nên mình dùng 'a' nhé."
+        "explanation": "Tuy là 'engine' nhưng vì có chữ 'big' nên mình dùng 'a' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'engines'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'engines'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Chỉ có một chiếc xe lửa thôi mà."
+        "explanation": "Chỉ có một chiếc xe lửa thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ iron for pressing clothes. (Cậu ấy có một cái bàn là để là quần áo) 💨",
+    "q": "He has ___ iron for pressing clothes. 💨",
     "a": [
       {
         "text": "an",
@@ -4624,20 +5041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái bàn là phải đi với 'an' mới đúng quy tắc."
+        "explanation": "Cái bàn là phải đi với 'an' mới đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'irons'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'irons'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'irons'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'irons'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ sweet candy. (Đây là một viên kẹo ngọt) 🍬",
+    "q": "This is ___ sweet candy. 🍬",
     "a": [
       {
         "text": "a",
@@ -4646,20 +5066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 's' không dùng được với 'an' đâu."
+        "explanation": "Chữ 's' không dùng được với 'an' đâu.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'candies'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'candies'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một viên kẹo thôi."
+        "explanation": "Có mỗi một viên kẹo thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ insect. (Mình thấy một con côn trùng) 🐞",
+    "q": "I see ___ insect. 🐞",
     "a": [
       {
         "text": "an",
@@ -4668,20 +5091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con bọ nhỏ này phải đi với 'an' nhé."
+        "explanation": "Con bọ nhỏ này phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'insects'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ old bus. (Có một chiếc xe buýt cũ) 🚌",
+    "q": "There is ___ old bus. 🚌",
     "a": [
       {
         "text": "an",
@@ -4690,20 +5116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì có chữ 'old' nên phải đi với 'an' mới đúng."
+        "explanation": "Vì có chữ 'old' nên phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'buses'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'buses'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một chiếc thôi mà."
+        "explanation": "Có mỗi một chiếc thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ umbrella. (Mình muốn một chiếc ô) ☂️",
+    "q": "I want ___ umbrella. ☂️",
     "a": [
       {
         "text": "an",
@@ -4712,20 +5141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Chiếc ô che mưa phải đi với 'an' nhé bé."
+        "explanation": "Chiếc ô che mưa phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'umbrellas'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ new bike. (Cô ấy có một chiếc xe đạp mới) 🚲",
+    "q": "She has ___ new bike. 🚲",
     "a": [
       {
         "text": "a",
@@ -4734,20 +5166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'n' không dùng với 'an' được nhé."
+        "explanation": "Chữ 'n' không dùng với 'an' được nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'bikes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'bikes'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Chỉ có một chiếc xe thôi mà."
+        "explanation": "Chỉ có một chiếc xe thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ empty box. (Mình thấy một cái hộp rỗng) 📦",
+    "q": "I see ___ empty box. 📦",
     "a": [
       {
         "text": "an",
@@ -4756,20 +5191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì có chữ 'empty' nên phải dùng 'an' mới đúng quy tắc."
+        "explanation": "Vì có chữ 'empty' nên phải dùng 'an' mới đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'boxes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'boxes'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'boxes'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'boxes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is ___ actor. (Chú ấy là một diễn viên) 🎭",
+    "q": "He is ___ actor. 🎭",
     "a": [
       {
         "text": "an",
@@ -4778,20 +5216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Diễn viên trên sân khấu phải đi với 'an' nhé."
+        "explanation": "Diễn viên trên sân khấu phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'actors'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'actors'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'actors'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'actors'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ amazing toy. (Có một món đồ chơi tuyệt vời) 🤖",
+    "q": "There is ___ amazing toy. 🤖",
     "a": [
       {
         "text": "an",
@@ -4800,20 +5241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì có chữ 'amazing' nên phải đi với 'an' mới đúng."
+        "explanation": "Vì có chữ 'amazing' nên phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'toys'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'toys'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Chỉ có một con rô bốt thôi mà."
+        "explanation": "Chỉ có một con rô bốt thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ ink pot. (Mình có một lọ mực) 🖋️",
+    "q": "I have ___ ink pot. 🖋️",
     "a": [
       {
         "text": "an",
@@ -4822,20 +5266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Lọ mực màu xanh phải đi với 'an' nhé bé."
+        "explanation": "Lọ mực màu xanh phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ink pots'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ink pots'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ink pots'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ink pots'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ elephant. (Đây là một con voi) 🐘",
+    "q": "This is ___ elephant. 🐘",
     "a": [
       {
         "text": "an",
@@ -4844,20 +5291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Con voi tai to phải đi với 'an' mới đúng."
+        "explanation": "Con voi tai to phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'elephants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'elephants'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'elephants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'elephants'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ island. (Mình thấy một hòn đảo) 🏝️",
+    "q": "I see ___ island. 🏝️",
     "a": [
       {
         "text": "an",
@@ -4866,20 +5316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Hòn đảo giữa biển phải đi với 'an' nhé."
+        "explanation": "Hòn đảo giữa biển phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'islands'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'islands'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'islands'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'islands'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ expensive pen. (Cậu ấy có một chiếc bút đắt tiền) 🖊️",
+    "q": "He has ___ expensive pen. 🖊️",
     "a": [
       {
         "text": "an",
@@ -4888,20 +5341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì có chữ 'expensive' nên mình phải dùng 'an' nhé."
+        "explanation": "Vì có chữ 'expensive' nên mình phải dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'pens'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'pens'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'pens'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'pens'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ orange chair. (Nó là một cái ghế màu cam) 🪑",
+    "q": "It is ___ orange chair. 🪑",
     "a": [
       {
         "text": "an",
@@ -4910,20 +5366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì là cái ghế màu cam nên phải đi với 'an' nhé."
+        "explanation": "Vì là cái ghế màu cam nên phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'chairs'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'chairs'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Có mỗi một cái ghế thôi mà."
+        "explanation": "Có mỗi một cái ghế thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ ice cube. (Mình muốn một viên đá) 🧊",
+    "q": "I want ___ ice cube. 🧊",
     "a": [
       {
         "text": "an",
@@ -4932,20 +5391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Viên đá lạnh phải đi với 'an' mới đúng."
+        "explanation": "Viên đá lạnh phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ice cubes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ice cubes'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ice cubes'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ice cubes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Look! ___ airplane is in the sky. (Nhìn kìa! Một chiếc máy bay trên trời) ✈️",
+    "q": "Look! ___ airplane is in the sky. ✈️",
     "a": [
       {
         "text": "An",
@@ -4954,20 +5416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "A",
-        "explanation": "Máy bay bay cao phải đi với 'An' nhé bé."
+        "explanation": "Máy bay bay cao phải đi với 'An' nhé bé.",
+        "correct": false
       },
       {
         "text": "Two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'airplanes'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'airplanes'.",
+        "correct": false
       },
       {
         "text": "Many",
-        "explanation": "Có mỗi một chiếc đang bay thôi."
+        "explanation": "Có mỗi một chiếc đang bay thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ arrow. (Cô ấy có một mũi tên) 🏹",
+    "q": "She has ___ arrow. 🏹",
     "a": [
       {
         "text": "an",
@@ -4976,20 +5441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mũi tên nhọn phải đi với 'an' mới đúng quy tắc."
+        "explanation": "Mũi tên nhọn phải đi với 'an' mới đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'arrows'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'arrows'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'arrows'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'arrows'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ open window. (Có một cái cửa sổ đang mở) 🪟",
+    "q": "There is ___ open window. 🪟",
     "a": [
       {
         "text": "an",
@@ -4998,20 +5466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì cửa sổ đang 'open' nên mình phải dùng 'an' nhé."
+        "explanation": "Vì cửa sổ đang 'open' nên mình phải dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'windows'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'windows'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'windows'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'windows'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ insect box. (Mình thấy một hộp trưng bày côn trùng) 📦🐞",
+    "q": "I see ___ insect box. 📦🐞",
     "a": [
       {
         "text": "an",
@@ -5020,20 +5491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Hộp côn trùng phải đi với 'an' mới đúng."
+        "explanation": "Hộp côn trùng phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'boxes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'boxes'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'boxes'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'boxes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ old hat. (Cậu ấy có một cái mũ cũ) 🤠",
+    "q": "He has ___ old hat. 🤠",
     "a": [
       {
         "text": "an",
@@ -5042,20 +5516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái mũ cũ phải đi với 'an' mới đúng."
+        "explanation": "Cái mũ cũ phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'hats'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'hats'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'hats'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'hats'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ interesting toy. (Đây là một món đồ chơi thú vị) 🧩",
+    "q": "This is ___ interesting toy. 🧩",
     "a": [
       {
         "text": "an",
@@ -5064,20 +5541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì là đồ chơi thú vị nên phải đi với 'an' nhé."
+        "explanation": "Vì là đồ chơi thú vị nên phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'toys'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'toys'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Có mỗi một món thôi mà."
+        "explanation": "Có mỗi một món thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ apple pie. (Mình muốn một cái bánh táo) 🥧",
+    "q": "I want ___ apple pie. 🥧",
     "a": [
       {
         "text": "an",
@@ -5086,20 +5566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bánh táo thơm ngon phải đi với 'an' mới đúng."
+        "explanation": "Bánh táo thơm ngon phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'apple pies'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'apple pies'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'apple pies'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'apple pies'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ oven. (Cô ấy có một cái lò nướng) 🍞",
+    "q": "She has ___ oven. 🍞",
     "a": [
       {
         "text": "an",
@@ -5108,20 +5591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái lò nướng bánh phải đi với 'an' nhé bé."
+        "explanation": "Cái lò nướng bánh phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ovens'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ovens'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ovens'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ovens'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ honest boy. (Có một cậu bé trung thực) 👦",
+    "q": "There is ___ honest boy. 👦",
     "a": [
       {
         "text": "an",
@@ -5130,20 +5616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì âm đầu là 'o' nên mình phải dùng 'an' mới đúng."
+        "explanation": "Vì âm đầu là 'o' nên mình phải dùng 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'boys'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'boys'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'boys'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'boys'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is ___ ugly duck. (Nó là một chú vịt xấu xí) 🦆",
+    "q": "He is ___ ugly duck. 🦆",
     "a": [
       {
         "text": "an",
@@ -5152,20 +5641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì bắt đầu bằng 'ugly' nên phải dùng 'an' mới đúng."
+        "explanation": "Vì bắt đầu bằng 'ugly' nên phải dùng 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ducks'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ducks'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một chú vịt thôi mà."
+        "explanation": "Có mỗi một chú vịt thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ exciting game. (Đây là một trò chơi hấp dẫn) 🎮",
+    "q": "This is ___ exciting game. 🎮",
     "a": [
       {
         "text": "an",
@@ -5174,20 +5666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Trò chơi vui nhộn phải đi với 'an' nhé bé."
+        "explanation": "Trò chơi vui nhộn phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'games'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'games'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'games'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'games'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ avocado. (Mình muốn một quả bơ) 🥑",
+    "q": "I want ___ avocado. 🥑",
     "a": [
       {
         "text": "an",
@@ -5196,20 +5691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Quả bơ xanh ngắt phải đi với 'an' nhé."
+        "explanation": "Quả bơ xanh ngắt phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'avocados'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'avocados'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Chỉ có một quả thôi mà."
+        "explanation": "Chỉ có một quả thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ enormous cake. (Có một cái bánh khổng lồ) 🎂",
+    "q": "There is ___ enormous cake. 🎂",
     "a": [
       {
         "text": "an",
@@ -5218,20 +5716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái bánh khổng lồ phải đi với 'an' mới đúng quy tắc."
+        "explanation": "Cái bánh khổng lồ phải đi với 'an' mới đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'cakes'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'cakes'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Chỉ có một cái bánh to thôi."
+        "explanation": "Chỉ có một cái bánh to thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ anthill. (Mình thấy một tổ kiến.) 🐜",
+    "q": "I see ___ anthill. 🐜",
     "a": [
       {
         "text": "an",
@@ -5240,20 +5741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Anthill' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Anthill' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'anthills'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'anthills'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'anthills'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'anthills'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ old doll. (Cô ấy có một búp bê cũ) 🪆",
+    "q": "She has ___ old doll. 🪆",
     "a": [
       {
         "text": "an",
@@ -5262,20 +5766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Búp bê cũ phải đi với 'an' mới đúng bé ơi."
+        "explanation": "Búp bê cũ phải đi với 'an' mới đúng bé ơi.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'dolls'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'dolls'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'dolls'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'dolls'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ ink pen. (Nó là một cái bút mực) 🖋️",
+    "q": "It is ___ ink pen. 🖋️",
     "a": [
       {
         "text": "an",
@@ -5284,20 +5791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái bút mực phải đi với 'an' nhé bé."
+        "explanation": "Cái bút mực phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'pens'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'pens'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'pens'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'pens'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ active dog. (Mình thấy một chú chó năng động) 🐶",
+    "q": "I see ___ active dog. 🐶",
     "a": [
       {
         "text": "an",
@@ -5306,20 +5816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Chú chó ham chạy nhảy phải đi với 'an' mới đúng."
+        "explanation": "Chú chó ham chạy nhảy phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'dogs'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'dogs'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một chú chó thôi mà."
+        "explanation": "Có mỗi một chú chó thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ orange bird. (Có một chú chim màu cam) 🐦",
+    "q": "There is ___ orange bird. 🐦",
     "a": [
       {
         "text": "an",
@@ -5328,20 +5841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vì chú chim màu cam nên phải đi với 'an' nhé."
+        "explanation": "Vì chú chim màu cam nên phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'birds'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Có mỗi một chú chim thôi mà."
+        "explanation": "Có mỗi một chú chim thôi mà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ onion ring. (Mình muốn một vòng hành tây) 🧅",
+    "q": "I want ___ onion ring. 🧅",
     "a": [
       {
         "text": "an",
@@ -5350,20 +5866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Vòng hành tây chiên xù phải đi với 'an' nhé."
+        "explanation": "Vòng hành tây chiên xù phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'onion rings'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'onion rings'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'onion rings'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'onion rings'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ toy eagle. (Cô ấy có một con đại bàng đồ chơi.) 🦅",
+    "q": "She has ___ toy eagle. 🦅",
     "a": [
       {
         "text": "a",
@@ -5372,20 +5891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'toy', không phụ thuộc vào 'eagle'."
+        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'toy', không phụ thuộc vào 'eagle'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'toy eagles'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'toy eagles'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'toy eagles'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'toy eagles'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ empty glass. (Nó là một cái ly rỗng) 🥛",
+    "q": "It is ___ empty glass. 🥛",
     "a": [
       {
         "text": "an",
@@ -5394,20 +5916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái ly rỗng không có nước phải đi với 'an' nhé."
+        "explanation": "Cái ly rỗng không có nước phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ ostrich egg. (Mình thấy một quả trứng đà điểu) 🥚",
+    "q": "I see ___ ostrich egg. 🥚",
     "a": [
       {
         "text": "an",
@@ -5416,20 +5941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Quả trứng to đùng phải đi với 'an' mới đúng."
+        "explanation": "Quả trứng to đùng phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ old car. (Có một chiếc ô tô cũ) 🚗",
+    "q": "There is ___ old car. 🚗",
     "a": [
       {
         "text": "an",
@@ -5438,20 +5966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Chiếc xe cũ kĩ phải đi với 'an' mới đúng."
+        "explanation": "Chiếc xe cũ kĩ phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'cars'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'cars'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một chiếc thôi."
+        "explanation": "Có mỗi một chiếc thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ glass of orange juice. (Mình có một ly nước cam.) 🍹",
+    "q": "I have ___ glass of orange juice. 🍹",
     "a": [
       {
         "text": "a",
@@ -5460,20 +5991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'glass', không phụ thuộc vào 'orange'."
+        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'glass', không phụ thuộc vào 'orange'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is ___ toy elephant. (Đây là một con voi đồ chơi.) 🐘",
+    "q": "This is ___ toy elephant. 🐘",
     "a": [
       {
         "text": "a",
@@ -5482,20 +6016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'toy', không phụ thuộc vào 'elephant'."
+        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'toy', không phụ thuộc vào 'elephant'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'toy elephants'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'toy elephants'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'toy elephants'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'toy elephants'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ insect net. (Mình thấy một cái vợt côn trùng) 🕸️",
+    "q": "I see ___ insect net. 🕸️",
     "a": [
       {
         "text": "an",
@@ -5504,20 +6041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái vợt bắt côn trùng phải đi với 'an' nhé bé."
+        "explanation": "Cái vợt bắt côn trùng phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'nets'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'nets'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'nets'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'nets'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ amazing book. (Cậu ấy có một cuốn sách tuyệt vời) 📖",
+    "q": "He has ___ amazing book. 📖",
     "a": [
       {
         "text": "an",
@@ -5526,20 +6066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cuốn sách tuyệt vời phải đi với 'an' mới đúng quy tắc."
+        "explanation": "Cuốn sách tuyệt vời phải đi với 'an' mới đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'books'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'books'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ oval table. (Nó là một cái bàn hình trái xoan) 🏷️",
+    "q": "It is ___ oval table. 🏷️",
     "a": [
       {
         "text": "an",
@@ -5548,20 +6091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái bàn hình bầu dục phải đi với 'an' nhé bé."
+        "explanation": "Cái bàn hình bầu dục phải đi với 'an' nhé bé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'tables'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'tables'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'tables'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'tables'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ old tree. (Mình thấy một cái cây già) 🌳",
+    "q": "I see ___ old tree. 🌳",
     "a": [
       {
         "text": "an",
@@ -5570,20 +6116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái cây to già nua phải đi với 'an' mới đúng."
+        "explanation": "Cái cây to già nua phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'trees'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'trees'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một cái cây thôi."
+        "explanation": "Có mỗi một cái cây thôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ octopus-shaped ride at the park. (Có một trò chơi hình bạch tuộc trong công viên.) 🐙🎡",
+    "q": "There is ___ octopus-shaped ride at the park. 🐙🎡",
     "a": [
       {
         "text": "an",
@@ -5592,20 +6141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Octopus-shaped' bắt đầu bằng âm nguyên âm, nên không dùng 'a'."
+        "explanation": "'Octopus-shaped' bắt đầu bằng âm nguyên âm, nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'rides'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'rides'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'rides'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'rides'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want ___ glass of apple juice. (Mình muốn một ly nước táo.) 🧃",
+    "q": "I want ___ glass of apple juice. 🧃",
     "a": [
       {
         "text": "a",
@@ -5614,20 +6166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'glass', không phụ thuộc vào 'apple'."
+        "explanation": "Mạo từ phụ thuộc vào âm đầu của 'glass', không phụ thuộc vào 'apple'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'glasses'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is ___ enormous egg. (Nó là một quả trứng khổng lồ) 🥚",
+    "q": "It is ___ enormous egg. 🥚",
     "a": [
       {
         "text": "an",
@@ -5636,20 +6191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Quả trứng to đùng phải đi với 'an' mới đúng quy tắc."
+        "explanation": "Quả trứng to đùng phải đi với 'an' mới đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'eggs'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see ___ ant farm. (Mình thấy một trang trại kiến) 🐜🏡",
+    "q": "I see ___ ant farm. 🐜🏡",
     "a": [
       {
         "text": "an",
@@ -5658,20 +6216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nhà của các bạn kiến phải đi với 'an' mới đúng."
+        "explanation": "Nhà của các bạn kiến phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'ant farms'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'ant farms'.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'ant farms'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'ant farms'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has ___ amazing hat. (Cậu ấy có một cái mũ tuyệt vời) 🤠",
+    "q": "He has ___ amazing hat. 🤠",
     "a": [
       {
         "text": "an",
@@ -5680,15 +6241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Cái mũ tuyệt đẹp phải đi với 'an' mới đúng."
+        "explanation": "Cái mũ tuyệt đẹp phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "'Two' phải đi với danh từ số nhiều 'hats'."
+        "explanation": "'Two' phải đi với danh từ số nhiều 'hats'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "'Many' phải đi với danh từ số nhiều 'hats'."
+        "explanation": "'Many' phải đi với danh từ số nhiều 'hats'.",
+        "correct": false
       }
     ]
   }

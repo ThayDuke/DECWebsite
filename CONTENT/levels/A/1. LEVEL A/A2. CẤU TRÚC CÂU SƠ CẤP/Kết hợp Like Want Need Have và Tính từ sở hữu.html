@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "I ___ my new toy car. (thích) 🚗",
+    "q": "I ___ my new toy car because it is my favorite. 🚗",
     "a": [
       {
         "text": "like",
@@ -1566,20 +1566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. 'Likes' dùng cho ngôi thứ 3 số ít (He/She/It)."
+        "explanation": "Sai. 'Likes' dùng cho ngôi thứ 3 số ít (He/She/It).",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai nghĩa. Câu yêu cầu từ 'thích'."
+        "explanation": "Sai nghĩa. Câu yêu cầu từ 'thích'.",
+        "correct": false
       },
       {
         "text": "needs",
-        "explanation": "'Needs' diễn tả sự cần thiết, không phải sở thích của người nói."
+        "explanation": "'Needs' diễn tả sự cần thiết, không phải sở thích của người nói.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ her pink dress. (thích) 👗",
+    "q": "She ___ her pink dress because it is her favorite. 👗",
     "a": [
       {
         "text": "likes",
@@ -1588,20 +1591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like",
-        "explanation": "Sai. Thiếu 's'."
+        "explanation": "Sai. Thiếu 's'. Cách dùng phù hợp trong câu này là “likes”.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ his blue cap. (muốn) 🧢",
+    "q": "He ___ his blue cap for his birthday. 🧢",
     "a": [
       {
         "text": "wants",
@@ -1610,20 +1616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want",
-        "explanation": "Sai. Thiếu 's'."
+        "explanation": "Sai. Thiếu 's'. Cách dùng phù hợp trong câu này là “wants”.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ our big house. (thích) 🏠",
+    "q": "We ___ our big house because it has a sunny garden. 🏠",
     "a": [
       {
         "text": "like",
@@ -1632,20 +1641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Phương án 'likes' không hòa hợp về ngôi và số với chủ ngữ 'We'."
+        "explanation": "Sai. Phương án 'likes' không hòa hợp về ngôi và số với chủ ngữ 'We'.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ their heavy bags. (có) 🎒",
+    "q": "They ___ their heavy bags to school every day. 🎒",
     "a": [
       {
         "text": "have",
@@ -1654,20 +1666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. Phương án 'has' không hòa hợp về ngôi và số với chủ ngữ 'They'."
+        "explanation": "Sai. Phương án 'has' không hòa hợp về ngôi và số với chủ ngữ 'They'.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The cat ___ its food. (cần) 🐟",
+    "q": "The cat ___ its food when it is hungry. 🐟",
     "a": [
       {
         "text": "needs",
@@ -1676,20 +1691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need",
-        "explanation": "Sai. Thiếu 's'."
+        "explanation": "Sai. Thiếu 's'. Cách dùng phù hợp trong câu này là “needs”.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My mom ___ her hot coffee. (muốn) ☕",
+    "q": "My mom ___ her hot coffee before work each morning. ☕",
     "a": [
       {
         "text": "wants",
@@ -1698,20 +1716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want",
-        "explanation": "Sai. Thiếu 's'."
+        "explanation": "Sai. Thiếu 's'. Cách dùng phù hợp trong câu này là “wants”.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ your dirty hands. (cần rửa) 🖐️",
+    "q": "You ___ your dirty hands. 🖐️",
     "a": [
       {
         "text": "need to wash",
@@ -1720,20 +1741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs to wash",
-        "explanation": "Sai cấu trúc. Phương án 'needs to wash' sử dụng sai dạng thức động từ hoặc từ vựng."
+        "explanation": "Sai cấu trúc. Phương án 'needs to wash' sử dụng sai dạng thức động từ hoặc từ vựng.",
+        "correct": false
       },
       {
         "text": "likes to wash",
-        "explanation": "Sai. Phương án 'likes to wash' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'likes to wash' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "has wash",
-        "explanation": "Sai cấu trúc; với 'has' phải có 'to' trước động từ nguyên thể."
+        "explanation": "Sai cấu trúc; với 'has' phải có 'to' trước động từ nguyên thể.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The students ___ their books. (có) 📚",
+    "q": "The students ___ their books in their backpacks. 📚",
     "a": [
       {
         "text": "have",
@@ -1742,20 +1766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. Phương án 'has' không hòa hợp về ngôi và số với chủ ngữ 'The students'."
+        "explanation": "Sai. Phương án 'has' không hòa hợp về ngôi và số với chủ ngữ 'The students'.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It ___ its long tail. (thích) 🐈",
+    "q": "The cat ___ its long tail and keeps it clean. 🐈",
     "a": [
       {
         "text": "likes",
@@ -1764,20 +1791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like",
-        "explanation": "Sai. Thiếu 's'."
+        "explanation": "Sai. Thiếu 's'. Cách dùng phù hợp trong câu này là “likes”.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ my yummy pizza. (muốn) 🍕",
+    "q": "I ___ my yummy pizza because I am hungry. 🍕",
     "a": [
       {
         "text": "want",
@@ -1786,20 +1816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants",
-        "explanation": "Sai. Phương án 'wants' không hòa hợp chủ vị với chủ ngữ trong câu."
+        "explanation": "Sai. Phương án 'wants' không hòa hợp chủ vị với chủ ngữ trong câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My brother ___ his red ball. (có) ⚽",
+    "q": "My brother ___ his red ball for the game. ⚽",
     "a": [
       {
         "text": "has",
@@ -1808,20 +1841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have",
-        "explanation": "Sai. Phương án 'have' không hòa hợp về ngôi và số với chủ ngữ 'My brother'."
+        "explanation": "Sai. Phương án 'have' không hòa hợp về ngôi và số với chủ ngữ 'My brother'.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ her warm coat. (cần) 🧥",
+    "q": "She ___ her warm coat because snow is falling. 🧥",
     "a": [
       {
         "text": "needs",
@@ -1830,20 +1866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ our funny teacher. (thích) 👩‍🏫",
+    "q": "We ___ our funny teacher because she makes us laugh. 👩‍🏫",
     "a": [
       {
         "text": "like",
@@ -1852,20 +1891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ their colorful kites. (muốn) 🪁",
+    "q": "They ___ their colorful kites for the festival this weekend. 🪁",
     "a": [
       {
         "text": "want",
@@ -1874,20 +1916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The dog ___ its bone. (thích) 🦴",
+    "q": "The dog ___ its bone and wags its tail. 🦴",
     "a": [
       {
         "text": "likes",
@@ -1896,20 +1941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ your umbrella. It is raining. (cần) ☔",
+    "q": "You ___ your umbrella. It is raining. ☔",
     "a": [
       {
         "text": "need",
@@ -1918,20 +1966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ his new computer. (có) 💻",
+    "q": "He ___ his new computer for online class. 💻",
     "a": [
       {
         "text": "has",
@@ -1940,20 +1991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ my sweet candy. (thích) 🍬",
+    "q": "I ___ my sweet candy as a special treat. 🍬",
     "a": [
       {
         "text": "like",
@@ -1962,20 +2016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The bird ___ its small nest. (có) 🐦",
+    "q": "The bird ___ its small nest in the tree. 🐦",
     "a": [
       {
         "text": "has",
@@ -1984,20 +2041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ our homework now. (cần làm) 📝",
+    "q": "We ___ our homework now. 📝",
     "a": [
       {
         "text": "need to do",
@@ -2006,20 +2066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs to do",
-        "explanation": "Sai cấu trúc. Phương án 'needs to do' sử dụng sai dạng thức động từ hoặc từ vựng."
+        "explanation": "Sai cấu trúc. Phương án 'needs to do' sử dụng sai dạng thức động từ hoặc từ vựng.",
+        "correct": false
       },
       {
         "text": "like to do",
-        "explanation": "Sai. Cấu trúc 'like to do' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'like to do' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "want to do",
-        "explanation": "Sai. Cấu trúc 'want to do' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'want to do' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ her teddy bear. (muốn) 🧸",
+    "q": "She ___ her teddy bear for her birthday. 🧸",
     "a": [
       {
         "text": "wants",
@@ -2028,20 +2091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ their breakfast. (có/ăn) 🍳",
+    "q": "They ___ their breakfast at seven every morning. 🍳",
     "a": [
       {
         "text": "have",
@@ -2050,20 +2116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My dad ___ his old car. (thích) 🚙",
+    "q": "My dad ___ his old car because it is reliable. 🚙",
     "a": [
       {
         "text": "likes",
@@ -2072,20 +2141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ your cool sunglasses. (thích) 🕶️",
+    "q": "You ___ your cool sunglasses because they protect your eyes. 🕶️",
     "a": [
       {
         "text": "like",
@@ -2094,20 +2166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ his teeth every day. (cần chải) 🦷",
+    "q": "He ___ his teeth every day. 🦷",
     "a": [
       {
         "text": "needs to brush",
@@ -2116,20 +2191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need to brush",
-        "explanation": "Sai cấu trúc. Phương án 'need to brush' sử dụng sai dạng thức động từ hoặc từ vựng."
+        "explanation": "Sai cấu trúc. Phương án 'need to brush' sử dụng sai dạng thức động từ hoặc từ vựng.",
+        "correct": false
       },
       {
         "text": "likes to brush",
-        "explanation": "Sai. Cấu trúc 'likes to brush' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'likes to brush' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "has brush",
-        "explanation": "Sai cấu trúc; sau 'has to' mới dùng động từ nguyên thể."
+        "explanation": "Sai cấu trúc; sau 'has to' mới dùng động từ nguyên thể.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ my soft pillow. (cần) 🛌",
+    "q": "I ___ my soft pillow when I go to bed. 🛌",
     "a": [
       {
         "text": "need",
@@ -2138,20 +2216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The girls ___ their pretty dolls. (thích) 👭",
+    "q": "The girls ___ their pretty dolls and play with them. 👭",
     "a": [
       {
         "text": "like",
@@ -2160,20 +2241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It ___ its shiny ball. (muốn) 🔮",
+    "q": "The puppy ___ its shiny ball as a birthday gift. 🔮",
     "a": [
       {
         "text": "wants",
@@ -2182,20 +2266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ our delicious cake. (muốn) 🎂",
+    "q": "We ___ our delicious cake for the birthday party. 🎂",
     "a": [
       {
         "text": "want",
@@ -2204,20 +2291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ her long hair. (thích) 💇‍♀️",
+    "q": "She ___ her long hair and brushes it every morning. 💇‍♀️",
     "a": [
       {
         "text": "likes",
@@ -2226,20 +2316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ their soccer match. (thích) ⚽",
+    "q": "They ___ their soccer match because their team is winning. ⚽",
     "a": [
       {
         "text": "like",
@@ -2248,20 +2341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My friend ___ his comic book. (cần) 📖",
+    "q": "My friend ___ his comic book to read on the bus. 📖",
     "a": [
       {
         "text": "needs",
@@ -2270,20 +2366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ my warm soup. (có/ăn) 🍲",
+    "q": "I ___ my warm soup for lunch every day. 🍲",
     "a": [
       {
         "text": "have",
@@ -2292,20 +2391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ your strong shoes. (cần) 👟",
+    "q": "You ___ your strong shoes for the mountain hike. 👟",
     "a": [
       {
         "text": "need",
@@ -2314,20 +2416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The baby ___ his milk bottle. (muốn) 🍼",
+    "q": "The baby ___ his milk bottle when he is hungry. 🍼",
     "a": [
       {
         "text": "wants",
@@ -2336,20 +2441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ our green garden. (có) 🌳",
+    "q": "We ___ our green garden behind the house. 🌳",
     "a": [
       {
         "text": "have",
@@ -2358,20 +2466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ his cute puppy. (thích) 🐕",
+    "q": "He ___ his cute puppy because it is friendly. 🐕",
     "a": [
       {
         "text": "likes",
@@ -2380,20 +2491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ their old house. (cần bán) 🏚️",
+    "q": "They ___ their old house. 🏚️",
     "a": [
       {
         "text": "need to sell",
@@ -2402,20 +2516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs to sell",
-        "explanation": "Sai cấu trúc. Phương án 'needs to sell' sử dụng sai dạng thức động từ hoặc từ vựng."
+        "explanation": "Sai cấu trúc. Phương án 'needs to sell' sử dụng sai dạng thức động từ hoặc từ vựng.",
+        "correct": false
       },
       {
         "text": "like to sell",
-        "explanation": "Sai. Cấu trúc 'like to sell' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'like to sell' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "want to sell",
-        "explanation": "Sai. Cấu trúc 'want to sell' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'want to sell' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ her big hat. (có) 👒",
+    "q": "She ___ her big hat on the hook by the door. 👒",
     "a": [
       {
         "text": "has",
@@ -2424,20 +2541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ my favorite song. (thích) 🎵",
+    "q": "I ___ my favorite song and listen to it often. 🎵",
     "a": [
       {
         "text": "like",
@@ -2446,20 +2566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The rabbit ___ its carrot. (muốn) 🥕",
+    "q": "The rabbit ___ its carrot and reaches for it. 🥕",
     "a": [
       {
         "text": "wants",
@@ -2468,20 +2591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ our new bikes. (thích) 🚲",
+    "q": "We ___ our new bikes and ride them with friends. 🚲",
     "a": [
       {
         "text": "like",
@@ -2490,20 +2616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ his medicine. (cần uống) 💊",
+    "q": "He ___ his medicine. 💊",
     "a": [
       {
         "text": "needs to take",
@@ -2512,20 +2641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need to take",
-        "explanation": "Sai cấu trúc. Phương án 'need to take' sử dụng sai dạng thức động từ hoặc từ vựng."
+        "explanation": "Sai cấu trúc. Phương án 'need to take' sử dụng sai dạng thức động từ hoặc từ vựng.",
+        "correct": false
       },
       {
         "text": "likes to take",
-        "explanation": "Sai. Cấu trúc 'likes to take' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'likes to take' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "wants to take",
-        "explanation": "Sai. Cấu trúc 'wants to take' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'wants to take' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ your smart phone. (có) 📱",
+    "q": "You ___ your smart phone in your backpack. 📱",
     "a": [
       {
         "text": "have",
@@ -2534,20 +2666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ their swimming pool. (thích) 🏊",
+    "q": "They ___ their swimming pool and swim there each summer. 🏊",
     "a": [
       {
         "text": "like",
@@ -2556,20 +2691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My sister ___ her purple bag. (muốn) 👜",
+    "q": "My sister ___ her purple bag for school. 👜",
     "a": [
       {
         "text": "wants",
@@ -2578,20 +2716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "has",
-        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'has' là động từ/trợ động từ dùng cho ngôi thứ 3 số ít, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ my cozy blanket. (cần) 🛌",
+    "q": "I ___ my cozy blanket when I feel cold. 🛌",
     "a": [
       {
         "text": "need",
@@ -2600,20 +2741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'needs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The monkeys ___ their bananas. (thích) 🍌",
+    "q": "The monkeys ___ their bananas and eat them quickly. 🍌",
     "a": [
       {
         "text": "like",
@@ -2622,20 +2766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "want",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'want' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ her glasses to read. (cần) 👓",
+    "q": "She ___ her glasses to read. 👓",
     "a": [
       {
         "text": "needs",
@@ -2644,20 +2791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'need' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wants",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wants' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ teacher. (Chúng tôi thích giáo viên của chúng tôi) 👩‍🏫",
+    "q": "We enjoy our teacher. We ___ ___ teacher. 👩‍🏫",
     "a": [
       {
         "text": "like our",
@@ -2666,20 +2816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like our”.",
+        "correct": false
       },
       {
         "text": "like my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like our”.",
+        "correct": false
       },
       {
         "text": "likes my",
-        "explanation": "'Likes' không đi với chủ ngữ 'We', còn 'my' không chỉ giáo viên của chúng tôi."
+        "explanation": "'Likes' không đi với chủ ngữ 'We', còn 'my' không chỉ giáo viên của chúng tôi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ___ mom. (Tôi yêu mẹ của tôi) ❤️",
+    "q": "I love my mom. I ___ ___ mom. ❤️",
     "a": [
       {
         "text": "love my",
@@ -2688,20 +2841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "loves my",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “love my”.",
+        "correct": false
       },
       {
         "text": "love his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “love my”.",
+        "correct": false
       },
       {
         "text": "loves her",
-        "explanation": "Với 'I' dùng 'love'; 'her' cũng không thể hiện mẹ của người nói."
+        "explanation": "Với 'I' dùng 'love'; 'her' cũng không thể hiện mẹ của người nói.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ ___ bike. (Anh ấy có xe đạp của anh ấy) 🚲",
+    "q": "The bike belongs to him. He ___ ___ bike. 🚲",
     "a": [
       {
         "text": "has his",
@@ -2710,20 +2866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have his",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “has his”.",
+        "correct": false
       },
       {
         "text": "has her",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “has his”.",
+        "correct": false
       },
       {
         "text": "have my",
-        "explanation": "'He' cần 'has', và xe đạp của anh ấy phải dùng 'his'."
+        "explanation": "'He' cần 'has', và xe đạp của anh ấy phải dùng 'his'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ ___ dinner. (Cô ấy cần bữa tối của cô ấy) 🍽️",
+    "q": "She needs dinner. She ___ ___ dinner. 🍽️",
     "a": [
       {
         "text": "needs her",
@@ -2732,20 +2891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need her",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “needs her”.",
+        "correct": false
       },
       {
         "text": "needs his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “needs her”.",
+        "correct": false
       },
       {
         "text": "need my",
-        "explanation": "'She' cần 'needs'; tính từ sở hữu phù hợp là 'her', không phải 'my'."
+        "explanation": "'She' cần 'needs'; tính từ sở hữu phù hợp là 'her', không phải 'my'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ ___ toys. (Họ muốn đồ chơi của họ) 🧸",
+    "q": "They want toys. They ___ ___ toys. 🧸",
     "a": [
       {
         "text": "want their",
@@ -2754,20 +2916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants their",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “want their”.",
+        "correct": false
       },
       {
         "text": "want our",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “want their”.",
+        "correct": false
       },
       {
         "text": "wants his",
-        "explanation": "'They' dùng 'want', còn đồ chơi của họ cần 'their'."
+        "explanation": "'They' dùng 'want', còn đồ chơi của họ cần 'their'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ ___ pen. (Bạn thích cái bút của bạn) 🖊️",
+    "q": "You like your pen. You ___ ___ pen. 🖊️",
     "a": [
       {
         "text": "like your",
@@ -2776,20 +2941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes your",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like your”.",
+        "correct": false
       },
       {
         "text": "like my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like your”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "'You' dùng 'like'; cây bút của bạn phải là 'your pen'."
+        "explanation": "'You' dùng 'like'; cây bút của bạn phải là 'your pen'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The cat ___ ___ tail. (Con mèo thích cái đuôi của nó) 🐈",
+    "q": "The cat ___ ___ tail. 🐈",
     "a": [
       {
         "text": "likes its",
@@ -2798,20 +2966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like its",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “likes its”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "Sai tính từ sở hữu (dùng cho người)."
+        "explanation": "Sai tính từ sở hữu (dùng cho người).",
+        "correct": false
       },
       {
         "text": "like her",
-        "explanation": "'The cat' là số ít nên dùng 'likes'; vật nuôi cần tính từ sở hữu 'its'."
+        "explanation": "'The cat' là số ít nên dùng 'likes'; vật nuôi cần tính từ sở hữu 'its'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ school. (Chúng tôi có trường học của chúng tôi) 🏫",
+    "q": "The school belongs to us. We ___ ___ school. 🏫",
     "a": [
       {
         "text": "have our",
@@ -2820,20 +2991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have our”.",
+        "correct": false
       },
       {
         "text": "have their",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have our”.",
+        "correct": false
       },
       {
         "text": "has my",
-        "explanation": "'We' dùng 'have'; trường học của chúng tôi phải là 'our school'."
+        "explanation": "'We' dùng 'have'; trường học của chúng tôi phải là 'our school'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ___ water. (Tôi cần nước của tôi) 💧",
+    "q": "I need water. I ___ ___ water. 💧",
     "a": [
       {
         "text": "need my",
@@ -2842,20 +3016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs my",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “need my”.",
+        "correct": false
       },
       {
         "text": "need your",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “need my”.",
+        "correct": false
       },
       {
         "text": "needs her",
-        "explanation": "'I' dùng 'need'; nước của người nói cần tính từ sở hữu 'my'."
+        "explanation": "'I' dùng 'need'; nước của người nói cần tính từ sở hữu 'my'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ ___ shoes. (Anh ấy muốn đôi giày của anh ấy) 👟",
+    "q": "He wants shoes. He ___ ___ shoes. 👟",
     "a": [
       {
         "text": "wants his",
@@ -2864,20 +3041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want his",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “wants his”.",
+        "correct": false
       },
       {
         "text": "wants her",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “wants his”.",
+        "correct": false
       },
       {
         "text": "want my",
-        "explanation": "'He' cần dạng 'wants'; đôi giày của anh ấy dùng 'his'."
+        "explanation": "'He' cần dạng 'wants'; đôi giày của anh ấy dùng 'his'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ ___ apple. (Cô ấy thích quả táo của cô ấy) 🍎",
+    "q": "She likes her apple. She ___ ___ apple. 🍎",
     "a": [
       {
         "text": "likes her",
@@ -2886,20 +3066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like her",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “likes her”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “likes her”.",
+        "correct": false
       },
       {
         "text": "like my",
-        "explanation": "'She' phải dùng 'likes'; quả táo của cô ấy là 'her apple'."
+        "explanation": "'She' phải dùng 'likes'; quả táo của cô ấy là 'her apple'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ ___ car. (Họ có cái xe của họ) 🚗",
+    "q": "The car belongs to them. They ___ ___ car. 🚗",
     "a": [
       {
         "text": "have their",
@@ -2908,20 +3091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has their",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have their”.",
+        "correct": false
       },
       {
         "text": "have our",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have their”.",
+        "correct": false
       },
       {
         "text": "has his",
-        "explanation": "'They' dùng 'have'; chiếc xe của họ phải dùng 'their'."
+        "explanation": "'They' dùng 'have'; chiếc xe của họ phải dùng 'their'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ ___ keys. (Bạn cần chìa khóa của bạn) 🔑",
+    "q": "You need keys. You ___ ___ keys. 🔑",
     "a": [
       {
         "text": "need your",
@@ -2930,20 +3116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs your",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “need your”.",
+        "correct": false
       },
       {
         "text": "need my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “need your”.",
+        "correct": false
       },
       {
         "text": "needs his",
-        "explanation": "'You' dùng 'need'; chìa khóa của bạn cần 'your'."
+        "explanation": "'You' dùng 'need'; chìa khóa của bạn cần 'your'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It ___ ___ bed. (Nó muốn cái giường của nó) 🛏️",
+    "q": "The pet wants its bed. It ___ ___ bed. 🛏️",
     "a": [
       {
         "text": "wants its",
@@ -2952,20 +3141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want its",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “wants its”.",
+        "correct": false
       },
       {
         "text": "wants my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “wants its”.",
+        "correct": false
       },
       {
         "text": "want her",
-        "explanation": "'It' là số ít nên dùng 'wants'; vật đó cần tính từ sở hữu 'its'."
+        "explanation": "'It' là số ít nên dùng 'wants'; vật đó cần tính từ sở hữu 'its'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ friends. (Chúng tôi thích bạn của chúng tôi) 👫",
+    "q": "We like our friends. We ___ ___ friends. 👫",
     "a": [
       {
         "text": "like our",
@@ -2974,20 +3166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like our”.",
+        "correct": false
       },
       {
         "text": "like their",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like our”.",
+        "correct": false
       },
       {
         "text": "likes my",
-        "explanation": "'We' dùng 'like'; bạn bè của chúng tôi phải là 'our friends'."
+        "explanation": "'We' dùng 'like'; bạn bè của chúng tôi phải là 'our friends'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ___ hat. (Tôi có cái mũ của tôi) 🎩",
+    "q": "The hat belongs to me. I ___ ___ hat. 🎩",
     "a": [
       {
         "text": "have my",
@@ -2996,20 +3191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has my",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have my”.",
+        "correct": false
       },
       {
         "text": "have his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have my”.",
+        "correct": false
       },
       {
         "text": "has her",
-        "explanation": "'I' dùng 'have'; cái mũ của người nói là 'my hat'."
+        "explanation": "'I' dùng 'have'; cái mũ của người nói là 'my hat'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ ___ phone. (Anh ấy cần điện thoại của anh ấy) 📱",
+    "q": "He needs a phone. He ___ ___ phone. 📱",
     "a": [
       {
         "text": "needs his",
@@ -3018,20 +3216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need his",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “needs his”.",
+        "correct": false
       },
       {
         "text": "needs her",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “needs his”.",
+        "correct": false
       },
       {
         "text": "need my",
-        "explanation": "'He' cần 'needs'; điện thoại của anh ấy là 'his phone'."
+        "explanation": "'He' cần 'needs'; điện thoại của anh ấy là 'his phone'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ ___ dress. (Cô ấy muốn cái váy của cô ấy) 👗",
+    "q": "She wants a dress. She ___ ___ dress. 👗",
     "a": [
       {
         "text": "wants her",
@@ -3040,20 +3241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want her",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “wants her”.",
+        "correct": false
       },
       {
         "text": "wants his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “wants her”.",
+        "correct": false
       },
       {
         "text": "want my",
-        "explanation": "'She' dùng 'wants'; chiếc váy của cô ấy cần 'her'."
+        "explanation": "'She' dùng 'wants'; chiếc váy của cô ấy cần 'her'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ ___ dog. (Họ thích con chó của họ) 🐕",
+    "q": "They like their dog. They ___ ___ dog. 🐕",
     "a": [
       {
         "text": "like their",
@@ -3062,20 +3266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes their",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like their”.",
+        "correct": false
       },
       {
         "text": "like our",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like their”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "'They' dùng 'like'; con chó của họ phải là 'their dog'."
+        "explanation": "'They' dùng 'like'; con chó của họ phải là 'their dog'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ ___ lunch. (Bạn có bữa trưa của bạn) 🍱",
+    "q": "The lunch belongs to you. You ___ ___ lunch. 🍱",
     "a": [
       {
         "text": "have your",
@@ -3084,20 +3291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has your",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have your”.",
+        "correct": false
       },
       {
         "text": "have my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have your”.",
+        "correct": false
       },
       {
         "text": "has her",
-        "explanation": "'You' dùng 'have'; bữa trưa của bạn cần 'your lunch'."
+        "explanation": "'You' dùng 'have'; bữa trưa của bạn cần 'your lunch'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The bird ___ ___ wings. (Con chim cần đôi cánh của nó) 🕊️",
+    "q": "The bird ___ ___ wings. 🕊️",
     "a": [
       {
         "text": "needs its",
@@ -3106,20 +3316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need its",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “needs its”.",
+        "correct": false
       },
       {
         "text": "needs his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “needs its”.",
+        "correct": false
       },
       {
         "text": "need my",
-        "explanation": "'The bird' là số ít nên dùng 'needs'; đôi cánh của nó là 'its wings'."
+        "explanation": "'The bird' là số ít nên dùng 'needs'; đôi cánh của nó là 'its wings'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ garden. (Chúng tôi muốn khu vườn của chúng tôi) 🌻",
+    "q": "We want a garden. We ___ ___ garden. 🌻",
     "a": [
       {
         "text": "want our",
@@ -3128,20 +3341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “want our”.",
+        "correct": false
       },
       {
         "text": "want their",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “want our”.",
+        "correct": false
       },
       {
         "text": "wants my",
-        "explanation": "'We' dùng 'want'; khu vườn của chúng tôi là 'our garden'."
+        "explanation": "'We' dùng 'want'; khu vườn của chúng tôi là 'our garden'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ___ book. (Tôi thích cuốn sách của tôi) 📖",
+    "q": "I like my book. I ___ ___ book. 📖",
     "a": [
       {
         "text": "like my",
@@ -3150,20 +3366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes my",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like my”.",
+        "correct": false
       },
       {
         "text": "like his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like my”.",
+        "correct": false
       },
       {
         "text": "likes her",
-        "explanation": "'I' dùng 'like'; cuốn sách của người nói phải dùng 'my'."
+        "explanation": "'I' dùng 'like'; cuốn sách của người nói phải dùng 'my'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ ___ ball. (Anh ấy có quả bóng của anh ấy) ⚽",
+    "q": "The ball belongs to him. He ___ ___ ball. ⚽",
     "a": [
       {
         "text": "has his",
@@ -3172,20 +3391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have his",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “has his”.",
+        "correct": false
       },
       {
         "text": "has her",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “has his”.",
+        "correct": false
       },
       {
         "text": "have my",
-        "explanation": "'He' dùng 'has'; quả bóng của anh ấy là 'his ball'."
+        "explanation": "'He' dùng 'has'; quả bóng của anh ấy là 'his ball'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ ___ coat. (Cô ấy cần cái áo khoác của cô ấy) 🧥",
+    "q": "She needs a coat. She ___ ___ coat. 🧥",
     "a": [
       {
         "text": "needs her",
@@ -3194,20 +3416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need her",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “needs her”.",
+        "correct": false
       },
       {
         "text": "needs his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “needs her”.",
+        "correct": false
       },
       {
         "text": "need my",
-        "explanation": "'She' dùng 'needs'; áo khoác của cô ấy cần tính từ sở hữu 'her'."
+        "explanation": "'She' dùng 'needs'; áo khoác của cô ấy cần tính từ sở hữu 'her'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ ___ cat. (Họ muốn con mèo của họ) 🐈",
+    "q": "They want a cat. They ___ ___ cat. 🐈",
     "a": [
       {
         "text": "want their",
@@ -3216,20 +3441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants their",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “want their”.",
+        "correct": false
       },
       {
         "text": "want our",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “want their”.",
+        "correct": false
       },
       {
         "text": "wants his",
-        "explanation": "'They' dùng 'want'; con mèo của họ phải là 'their cat'."
+        "explanation": "'They' dùng 'want'; con mèo của họ phải là 'their cat'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ ___ ice cream. (Bạn thích kem của bạn) 🍦",
+    "q": "You ___ ___ ice cream. 🍦",
     "a": [
       {
         "text": "like your",
@@ -3238,20 +3466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes your",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like your”.",
+        "correct": false
       },
       {
         "text": "like my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like your”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "'You' dùng 'like'; kem của bạn cần tính từ sở hữu 'your'."
+        "explanation": "'You' dùng 'like'; kem của bạn cần tính từ sở hữu 'your'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It ___ ___ toy. (Nó có đồ chơi của nó) 🧩",
+    "q": "The toy belongs to the child. It ___ ___ toy. 🧩",
     "a": [
       {
         "text": "has its",
@@ -3260,20 +3491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have its",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “has its”.",
+        "correct": false
       },
       {
         "text": "has my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “has its”.",
+        "correct": false
       },
       {
         "text": "have her",
-        "explanation": "'It' dùng 'has'; đồ chơi của vật đó phải là 'its toy'."
+        "explanation": "'It' dùng 'has'; đồ chơi của vật đó phải là 'its toy'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ money. (Chúng tôi cần tiền của chúng tôi) 💵",
+    "q": "We need money. We ___ ___ money. 💵",
     "a": [
       {
         "text": "need our",
@@ -3282,20 +3516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “need our”.",
+        "correct": false
       },
       {
         "text": "need their",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “need our”.",
+        "correct": false
       },
       {
         "text": "needs my",
-        "explanation": "'We' dùng 'need'; tiền của chúng tôi là 'our money'."
+        "explanation": "'We' dùng 'need'; tiền của chúng tôi là 'our money'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ___ orange juice. (Tôi muốn nước cam của tôi) 🍹",
+    "q": "I ___ ___ orange juice. 🍹",
     "a": [
       {
         "text": "want my",
@@ -3304,20 +3541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants my",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “want my”.",
+        "correct": false
       },
       {
         "text": "want your",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “want my”.",
+        "correct": false
       },
       {
         "text": "wants her",
-        "explanation": "'I' dùng 'want'; nước cam của người nói cần 'my'."
+        "explanation": "'I' dùng 'want'; nước cam của người nói cần 'my'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ ___ music. (Anh ấy thích nhạc của anh ấy) 🎶",
+    "q": "He likes his music. He ___ ___ music. 🎶",
     "a": [
       {
         "text": "likes his",
@@ -3326,20 +3566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like his",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “likes his”.",
+        "correct": false
       },
       {
         "text": "likes her",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “likes his”.",
+        "correct": false
       },
       {
         "text": "like my",
-        "explanation": "'He' cần 'likes'; nhạc của anh ấy phải là 'his music'."
+        "explanation": "'He' cần 'likes'; nhạc của anh ấy phải là 'his music'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ ___ umbrella. (Cô ấy có cái ô của cô ấy) ☔",
+    "q": "The umbrella belongs to her. She ___ ___ umbrella. ☔",
     "a": [
       {
         "text": "has her",
@@ -3348,20 +3591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have her",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “has her”.",
+        "correct": false
       },
       {
         "text": "has his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “has her”.",
+        "correct": false
       },
       {
         "text": "have my",
-        "explanation": "'She' dùng 'has'; cái ô của cô ấy là 'her umbrella'."
+        "explanation": "'She' dùng 'has'; cái ô của cô ấy là 'her umbrella'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ ___ ticket. (Họ cần vé của họ) 🎫",
+    "q": "They need tickets. They ___ ___ ticket. 🎫",
     "a": [
       {
         "text": "need their",
@@ -3370,20 +3616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs their",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “need their”.",
+        "correct": false
       },
       {
         "text": "need our",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “need their”.",
+        "correct": false
       },
       {
         "text": "needs his",
-        "explanation": "'They' dùng 'need'; vé của họ cần 'their ticket'."
+        "explanation": "'They' dùng 'need'; vé của họ cần 'their ticket'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ ___ gift. (Bạn muốn quà của bạn) 🎁",
+    "q": "You want a gift. You ___ ___ gift. 🎁",
     "a": [
       {
         "text": "want your",
@@ -3392,20 +3641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wants your",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “want your”.",
+        "correct": false
       },
       {
         "text": "want my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “want your”.",
+        "correct": false
       },
       {
         "text": "wants his",
-        "explanation": "'You' dùng 'want'; quà của bạn phải là 'your gift'."
+        "explanation": "'You' dùng 'want'; quà của bạn phải là 'your gift'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My dog ___ ___ bone. (Chó của tôi thích xương của nó) 🦴",
+    "q": "My dog ___ ___ bone. 🦴",
     "a": [
       {
         "text": "likes its",
@@ -3414,20 +3666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like its",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “likes its”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "Sai tính từ sở hữu (thường dùng its cho vật)."
+        "explanation": "Sai tính từ sở hữu (thường dùng its cho vật).",
+        "correct": false
       },
       {
         "text": "like her",
-        "explanation": "'My dog' là số ít nên dùng 'likes'; xương của nó là 'its bone'."
+        "explanation": "'My dog' là số ít nên dùng 'likes'; xương của nó là 'its bone'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ family. (Chúng tôi có gia đình của chúng tôi) 👨‍👩‍👧‍👦",
+    "q": "The family belongs to us. We ___ ___ family. 👨‍👩‍👧‍👦",
     "a": [
       {
         "text": "have our",
@@ -3436,20 +3691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have our”.",
+        "correct": false
       },
       {
         "text": "have their",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have our”.",
+        "correct": false
       },
       {
         "text": "has my",
-        "explanation": "'We' dùng 'have'; gia đình của chúng tôi cần 'our family'."
+        "explanation": "'We' dùng 'have'; gia đình của chúng tôi cần 'our family'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ___ new shoes. (Tôi cần giày mới của tôi) 👟",
+    "q": "I ___ ___ new shoes. 👟",
     "a": [
       {
         "text": "need my",
@@ -3458,20 +3716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs my",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “need my”.",
+        "correct": false
       },
       {
         "text": "need your",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “need my”.",
+        "correct": false
       },
       {
         "text": "needs her",
-        "explanation": "'I' dùng 'need'; giày của người nói phải là 'my new shoes'."
+        "explanation": "'I' dùng 'need'; giày của người nói phải là 'my new shoes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ ___ laptop. (Anh ấy muốn máy tính xách tay của anh ấy) 💻",
+    "q": "He wants a laptop. He ___ ___ laptop. 💻",
     "a": [
       {
         "text": "wants his",
@@ -3480,20 +3741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want his",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “wants his”.",
+        "correct": false
       },
       {
         "text": "wants her",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “wants his”.",
+        "correct": false
       },
       {
         "text": "want my",
-        "explanation": "'He' dùng 'wants'; máy tính của anh ấy là 'his laptop'."
+        "explanation": "'He' dùng 'wants'; máy tính của anh ấy là 'his laptop'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ ___ flowers. (Cô ấy thích hoa của cô ấy) 💐",
+    "q": "She likes her flowers. She ___ ___ flowers. 💐",
     "a": [
       {
         "text": "likes her",
@@ -3502,20 +3766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like her",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “likes her”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “likes her”.",
+        "correct": false
       },
       {
         "text": "like my",
-        "explanation": "'She' cần 'likes'; hoa của cô ấy phải dùng 'her'."
+        "explanation": "'She' cần 'likes'; hoa của cô ấy phải dùng 'her'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ ___ homework. (Họ có bài tập về nhà của họ) 📝",
+    "q": "The homework belongs to them. They ___ ___ homework. 📝",
     "a": [
       {
         "text": "have their",
@@ -3524,20 +3791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has their",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have their”.",
+        "correct": false
       },
       {
         "text": "have our",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have their”.",
+        "correct": false
       },
       {
         "text": "has his",
-        "explanation": "'They' dùng 'have'; bài tập của họ là 'their homework'."
+        "explanation": "'They' dùng 'have'; bài tập của họ là 'their homework'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ ___ glasses. (Bạn cần kính của bạn) 👓",
+    "q": "You need glasses. You ___ ___ glasses. 👓",
     "a": [
       {
         "text": "need your",
@@ -3546,20 +3816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "needs your",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “need your”.",
+        "correct": false
       },
       {
         "text": "need my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “need your”.",
+        "correct": false
       },
       {
         "text": "needs his",
-        "explanation": "'You' dùng 'need'; kính của bạn cần 'your glasses'."
+        "explanation": "'You' dùng 'need'; kính của bạn cần 'your glasses'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The fish ___ ___ water. (Con cá muốn nước của nó) 🐠",
+    "q": "The fish ___ ___ water. 🐠",
     "a": [
       {
         "text": "wants its",
@@ -3568,20 +3841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want its",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “wants its”.",
+        "correct": false
       },
       {
         "text": "wants my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “wants its”.",
+        "correct": false
       },
       {
         "text": "want her",
-        "explanation": "'The fish' là số ít nên dùng 'wants'; nước của nó là 'its water'."
+        "explanation": "'The fish' là số ít nên dùng 'wants'; nước của nó là 'its water'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ photos. (Chúng tôi thích ảnh của chúng tôi) 📸",
+    "q": "We like our photos. We ___ ___ photos. 📸",
     "a": [
       {
         "text": "like our",
@@ -3590,20 +3866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like our”.",
+        "correct": false
       },
       {
         "text": "like their",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like our”.",
+        "correct": false
       },
       {
         "text": "likes my",
-        "explanation": "'We' dùng 'like'; ảnh của chúng tôi phải là 'our photos'."
+        "explanation": "'We' dùng 'like'; ảnh của chúng tôi phải là 'our photos'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ ___ backpack. (Tôi có ba lô của tôi) 🎒",
+    "q": "The backpack belongs to me. I ___ ___ backpack. 🎒",
     "a": [
       {
         "text": "have my",
@@ -3612,20 +3891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has my",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have my”.",
+        "correct": false
       },
       {
         "text": "have his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have my”.",
+        "correct": false
       },
       {
         "text": "has her",
-        "explanation": "'I' dùng 'have'; ba lô của người nói là 'my backpack'."
+        "explanation": "'I' dùng 'have'; ba lô của người nói là 'my backpack'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ ___ key. (Anh ấy cần chìa khóa của anh ấy) 🗝️",
+    "q": "He needs a key. He ___ ___ key. 🗝️",
     "a": [
       {
         "text": "needs his",
@@ -3634,20 +3916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need his",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “needs his”.",
+        "correct": false
       },
       {
         "text": "needs her",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “needs his”.",
+        "correct": false
       },
       {
         "text": "need my",
-        "explanation": "'He' dùng 'needs'; chìa khóa của anh ấy phải là 'his key'."
+        "explanation": "'He' dùng 'needs'; chìa khóa của anh ấy phải là 'his key'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ ___ ring. (Cô ấy muốn cái nhẫn của cô ấy) 💍",
+    "q": "She wants a ring. She ___ ___ ring. 💍",
     "a": [
       {
         "text": "wants her",
@@ -3656,20 +3941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want her",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “wants her”.",
+        "correct": false
       },
       {
         "text": "wants his",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “wants her”.",
+        "correct": false
       },
       {
         "text": "want my",
-        "explanation": "'She' dùng 'wants'; nhẫn của cô ấy cần 'her ring'."
+        "explanation": "'She' dùng 'wants'; nhẫn của cô ấy cần 'her ring'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ ___ room. (Họ thích phòng của họ) 🚪",
+    "q": "They like their room. They ___ ___ room. 🚪",
     "a": [
       {
         "text": "like their",
@@ -3678,20 +3966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "likes their",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “like their”.",
+        "correct": false
       },
       {
         "text": "like our",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “like their”.",
+        "correct": false
       },
       {
         "text": "likes his",
-        "explanation": "'They' dùng 'like'; phòng của họ là 'their room'."
+        "explanation": "'They' dùng 'like'; phòng của họ là 'their room'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ ___ camera. (Bạn có máy ảnh của bạn) 📷",
+    "q": "The camera belongs to you. You ___ ___ camera. 📷",
     "a": [
       {
         "text": "have your",
@@ -3700,20 +3991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has your",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “have your”.",
+        "correct": false
       },
       {
         "text": "have my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “have your”.",
+        "correct": false
       },
       {
         "text": "has her",
-        "explanation": "'You' dùng 'have'; máy ảnh của bạn là 'your camera'."
+        "explanation": "'You' dùng 'have'; máy ảnh của bạn là 'your camera'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The baby ___ ___ milk. (Em bé cần sữa của nó) 🍼",
+    "q": "The baby ___ ___ milk. 🍼",
     "a": [
       {
         "text": "needs its",
@@ -3722,20 +4016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "need its",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “needs its”.",
+        "correct": false
       },
       {
         "text": "needs my",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “needs its”.",
+        "correct": false
       },
       {
         "text": "need his",
-        "explanation": "'The baby' là số ít nên dùng 'needs'; khi chưa rõ giới tính dùng 'its milk'."
+        "explanation": "'The baby' là số ít nên dùng 'needs'; khi chưa rõ giới tính dùng 'its milk'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We ___ ___ picnic. (Chúng tôi muốn buổi dã ngoại của chúng tôi) 🧺",
+    "q": "We want a picnic. We ___ ___ picnic. 🧺",
     "a": [
       {
         "text": "want our",
@@ -3744,15 +4041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "wants our",
-        "explanation": "Sai động từ."
+        "explanation": "Sai động từ. Cách dùng phù hợp trong câu này là “want our”.",
+        "correct": false
       },
       {
         "text": "want their",
-        "explanation": "Sai tính từ sở hữu."
+        "explanation": "Sai tính từ sở hữu. Cách dùng phù hợp trong câu này là “want our”.",
+        "correct": false
       },
       {
         "text": "wants my",
-        "explanation": "'We' dùng 'want'; buổi dã ngoại của chúng tôi phải là 'our picnic'."
+        "explanation": "'We' dùng 'want'; buổi dã ngoại của chúng tôi phải là 'our picnic'.",
+        "correct": false
       }
     ]
   }

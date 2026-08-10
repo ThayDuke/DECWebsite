@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "If we ___ to Paris, we would see the Eiffel Tower. (move: chuyển đến) 🗼",
+    "q": "If we ___ to Paris, we would see the Eiffel Tower. 🗼",
     "a": [
       {
         "text": "moved",
@@ -1568,6 +1568,495 @@ const fullQuestionBank = [
         "text": "move",
         "correct": false,
         "explanation": "Sau If của loại 2 phải dùng quá khứ đơn; hiện tại đơn 'move' không phù hợp với 'would see'."
+      },
+      {
+        "text": "moves",
+        "correct": false,
+        "explanation": "Chủ ngữ 'we' không đi với 'moves', và câu giả định cần dạng quá khứ 'moved'."
+      },
+      {
+        "text": "moving",
+        "correct": false,
+        "explanation": "Sai cấu trúc câu điều kiện loại 2. Trái với thực tế hiện tại."
+      }
+    ]
+  },
+  {
+    "q": "If he ___ taller, he could be a basketball player. 🏀",
+    "a": [
+      {
+        "text": "were",
+        "correct": true,
+        "explanation": "Giả định về ngoại hình."
+      },
+      {
+        "text": "is",
+        "correct": false,
+        "explanation": "'Is' là hiện tại đơn, không thể đứng trong mệnh đề giả định loại 2 với 'could be'."
+      },
+      {
+        "text": "has been",
+        "correct": false,
+        "explanation": "'Has been' là hiện tại hoàn thành, không phải dạng quá khứ hoàn thành/giả định cần sau If."
+      },
+      {
+        "text": "be",
+        "correct": false,
+        "explanation": "Sau If cần một động từ đã chia; nguyên mẫu 'be' không thể đứng một mình ở đây."
+      }
+    ]
+  },
+  {
+    "q": "Dịch sang tiếng Anh: 'Nếu anh ấy không ăn sáng, anh ấy sẽ thấy đói.'",
+    "a": [
+      {
+        "text": "If he doesn't eat breakfast, he will feel hungry.",
+        "correct": true,
+        "explanation": "Đúng cấu trúc loại 1."
+      },
+      {
+        "text": "If he don't eat breakfast, he will feel hungry.",
+        "correct": false,
+        "explanation": "Sai trợ động từ 'don't'."
+      },
+      {
+        "text": "If he doesn't eat breakfast, he feels hungry.",
+        "correct": false,
+        "explanation": "Đề nói kết quả sẽ xảy ra, nên mệnh đề chính cần 'will feel', không dùng hiện tại đơn 'feels'."
+      },
+      {
+        "text": "If he not eat breakfast, he will be hungry.",
+        "correct": false,
+        "explanation": "Thiếu trợ động từ 'does'."
+      }
+    ]
+  },
+  {
+    "q": "If I ___ a bird then, I would have flown to you. 🕊️",
+    "a": [
+      {
+        "text": "had been",
+        "correct": true,
+        "explanation": "Giả thuyết trái ngược quá khứ: If I had been."
+      },
+      {
+        "text": "have been",
+        "correct": false,
+        "explanation": "'Have been' là hiện tại hoàn thành; kết quả 'would have flown' yêu cầu giả định quá khứ 'had been'."
+      },
+      {
+        "text": "has been",
+        "correct": false,
+        "explanation": "'Has been' không hòa hợp với chủ ngữ 'I' và cũng không tạo Past Perfect 'had been'."
+      },
+      {
+        "text": "am",
+        "correct": false,
+        "explanation": "'Am' là hiện tại đơn, trong khi mệnh đề chính dùng 'would have flown' cho một giả định đã qua."
+      }
+    ]
+  },
+  {
+    "q": "If I ___ the President, I would help the poor. 🏛️",
+    "a": [
+      {
+        "text": "were",
+        "correct": true,
+        "explanation": "Giả định không thể xảy ra: Tôi là Tổng thống."
+      },
+      {
+        "text": "am",
+        "correct": false,
+        "explanation": "'Am' không tạo được câu điều kiện loại 2; với 'would help' cần dạng giả định 'were'."
+      },
+      {
+        "text": "has been",
+        "correct": false,
+        "explanation": "'Has been' không hòa hợp với chủ ngữ 'I' và không phải dạng quá khứ đơn giả định."
+      },
+      {
+        "text": "become",
+        "correct": false,
+        "explanation": "'Become' là động từ nguyên mẫu, cần có trợ động từ hoặc phải đổi thành 'were'."
+      }
+    ]
+  },
+  {
+    "q": "If you had listened to me yesterday, you ___ in this mess last night. 🤷",
+    "a": [
+      {
+        "text": "wouldn't have been",
+        "correct": true,
+        "explanation": "Mệnh đề chính loại 3: wouldn't have + V3."
+      },
+      {
+        "text": "weren't",
+        "correct": false,
+        "explanation": "'Weren't' diễn tả hiện tại giả định, không khớp với kết quả quá khứ 'wouldn't have been'."
+      },
+      {
+        "text": "wouldn't be",
+        "correct": false,
+        "explanation": "Sai (trừ khi là câu hỗn hợp chỉ hiện tại, nhưng câu này ám chỉ kết quả quá khứ)."
+      },
+      {
+        "text": "won't be",
+        "correct": false,
+        "explanation": "'Won't be' là tương lai đơn; câu đã chốt kết quả không xảy ra trong quá khứ bằng 'had listened'."
+      }
+    ]
+  },
+  {
+    "q": "If you ___ the door, the thief wouldn't have got in. 🔒",
+    "a": [
+      {
+        "text": "had locked",
+        "correct": true,
+        "explanation": "Điều kiện loại 3 dùng 'had locked' cho hành động khóa cửa đã xảy ra trước kết quả quá khứ."
+      },
+      {
+        "text": "had lock",
+        "correct": false,
+        "explanation": "'Had lock' thiếu phân từ hai 'locked' sau 'had'."
+      },
+      {
+        "text": "lock",
+        "correct": false,
+        "explanation": "'Lock' là hiện tại đơn, không diễn tả điều kiện trái với quá khứ trước khi tên trộm vào."
+      },
+      {
+        "text": "have locked",
+        "correct": false,
+        "explanation": "'Have locked' là hiện tại hoàn thành; sau 'If' của điều kiện loại 3 phải dùng quá khứ hoàn thành 'had locked'."
+      }
+    ]
+  },
+  {
+    "q": "If she ___ the question, she will raise her hand.",
+    "a": [
+      {
+        "text": "knows",
+        "correct": true,
+        "explanation": "She là ngôi thứ 3 số ít; ở hiện tại đơn, động từ know phải chia thêm -s: knows."
+      },
+      {
+        "text": "know",
+        "correct": false,
+        "explanation": "Sau 'she' ở mệnh đề điều kiện loại 1, động từ hiện tại đơn phải thêm -s: 'knows'."
+      },
+      {
+        "text": "will know",
+        "correct": false,
+        "explanation": "Không dùng 'will' trong mệnh đề If; 'will' chỉ đứng ở mệnh đề kết quả."
+      },
+      {
+        "text": "knowing",
+        "correct": false,
+        "explanation": "'Knowing' là V-ing, không thể làm động từ chia chính sau chủ ngữ 'she'."
+      }
+    ]
+  },
+  {
+    "q": "If dogs ___ talk, what would they say? 🐕",
+    "a": [
+      {
+        "text": "could",
+        "correct": true,
+        "explanation": "Dùng 'could' trong mệnh đề If để chỉ khả năng."
+      },
+      {
+        "text": "can",
+        "correct": false,
+        "explanation": "'Can' diễn tả khả năng hiện tại, không tạo giả định trái thực tế về chó biết nói."
+      },
+      {
+        "text": "will",
+        "correct": false,
+        "explanation": "'Will' không phù hợp với câu hỏi giả định; đáp án cần 'could' để chỉ khả năng tưởng tượng."
+      },
+      {
+        "text": "may",
+        "correct": false,
+        "explanation": "'May' chỉ khả năng có thể xảy ra, không diễn tả năng lực giả định mà câu đang hỏi."
+      }
+    ]
+  },
+  {
+    "q": "You ___ the puzzle if you had looked at the instructions. 🧩",
+    "a": [
+      {
+        "text": "could have solved",
+        "correct": true,
+        "explanation": "Could have V3: Lẽ ra đã có thể làm được."
+      },
+      {
+        "text": "solve",
+        "correct": false,
+        "explanation": "Sau 'would have' phải dùng phân từ hai; 'solve' là nguyên mẫu không hoàn chỉnh."
+      },
+      {
+        "text": "can solve",
+        "correct": false,
+        "explanation": "'Can solve' là hiện tại, không thể hiện khả năng đã bị bỏ lỡ trước thời điểm nói."
+      },
+      {
+        "text": "could solve",
+        "correct": false,
+        "explanation": "'Could solve' thiếu 'have + V3' để diễn tả một khả năng không xảy ra trong quá khứ."
+      }
+    ]
+  },
+  {
+    "q": "Dịch sang tiếng Anh: 'Nếu con chó sủa, tôi sẽ sợ hãi.'",
+    "a": [
+      {
+        "text": "If the dog barks, I will be scared.",
+        "correct": true,
+        "explanation": "Đúng chia động từ và mệnh đề chính."
+      },
+      {
+        "text": "If the dog bark, I will be scared.",
+        "correct": false,
+        "explanation": "Thiếu 's' ở 'bark'. Cách dùng phù hợp trong câu này là “If the dog barks, I will be scared.”."
+      },
+      {
+        "text": "If the dog barks, I am scared.",
+        "correct": false,
+        "explanation": "Kết quả tương lai cần 'will be scared'; 'am scared' không khớp bản dịch 'sẽ sợ hãi'."
+      },
+      {
+        "text": "If the dog will bark, I am scared.",
+        "correct": false,
+        "explanation": "Sai vị trí 'will'. Cách dùng phù hợp trong câu này là “If the dog barks, I will be scared.”."
+      }
+    ]
+  },
+  {
+    "q": "If you ___ the instruction manual, you would have known how to use it. 📖",
+    "a": [
+      {
+        "text": "had read",
+        "correct": true,
+        "explanation": "If + Past Perfect. V3 của 'read' là 'read' (đọc là /red/)."
+      },
+      {
+        "text": "read",
+        "correct": false,
+        "explanation": "Dù viết giống nhau, 'read' không có trợ động từ 'had' nên không tạo Past Perfect."
+      },
+      {
+        "text": "reading",
+        "correct": false,
+        "explanation": "Sau 'If' của loại 3 cần 'had + V3'; V-ing 'reading' không đúng dạng."
+      },
+      {
+        "text": "reads",
+        "correct": false,
+        "explanation": "'Reads' là hiện tại đơn ngôi thứ ba, không phù hợp với mốc giả định đã qua."
+      }
+    ]
+  },
+  {
+    "q": "If I ___ the answer, I would tell you. 💡",
+    "a": [
+      {
+        "text": "knew",
+        "correct": true,
+        "explanation": "Động từ 'know' chia quá khứ là 'knew' trong mệnh đề If."
+      },
+      {
+        "text": "know",
+        "correct": false,
+        "explanation": "Loại 2 cần quá khứ đơn 'knew', không dùng hiện tại 'know' sau If."
+      },
+      {
+        "text": "known",
+        "correct": false,
+        "explanation": "'Known' là phân từ hai và phải đi với 'have/had'; nó không đứng một mình sau If."
+      },
+      {
+        "text": "knowing",
+        "correct": false,
+        "explanation": "'Knowing' là V-ing, trong khi sau If của loại 2 cần động từ quá khứ đơn 'knew'."
+      }
+    ]
+  },
+  {
+    "q": "Dịch sang tiếng Anh bằng điều kiện loại 1 cho khả năng thực tế: 'Nếu tôi có thời gian, tôi sẽ giúp bạn.'",
+    "a": [
+      {
+        "text": "If I have time, I will help you.",
+        "correct": true,
+        "explanation": "Cấu trúc đúng của câu điều kiện loại 1."
+      },
+      {
+        "text": "If I will have time, I help you.",
+        "correct": false,
+        "explanation": "Trong điều kiện loại 1, không đặt 'will' sau 'if'; mệnh đề chính mới dùng 'will help'."
+      },
+      {
+        "text": "If I had time, I would help you.",
+        "correct": false,
+        "explanation": "Đây là loại 2. Cách dùng phù hợp trong câu này là “If I have time, I will help you.”."
+      },
+      {
+        "text": "If I have time, I help you.",
+        "correct": false,
+        "explanation": "Thiếu 'will' ở mệnh đề chính."
+      }
+    ]
+  },
+  {
+    "q": "If she ___ makeup, she would look different. 💄",
+    "a": [
+      {
+        "text": "wore",
+        "correct": true,
+        "explanation": "Quá khứ của 'wear' là 'wore'."
+      },
+      {
+        "text": "wear",
+        "correct": false,
+        "explanation": "'Wear' là hiện tại/nguyên mẫu, còn giả định với 'would look' cần quá khứ 'wore'."
+      },
+      {
+        "text": "wears",
+        "correct": false,
+        "explanation": "'Wears' là hiện tại đơn ngôi thứ ba; câu đang mô tả giả định không có thật."
+      },
+      {
+        "text": "wearing",
+        "correct": false,
+        "explanation": "'Wearing' là V-ing; mệnh đề If loại 2 cần quá khứ đơn 'wore'."
+      }
+    ]
+  },
+  {
+    "q": "He would come if he ___ busy. ⌚",
+    "a": [
+      {
+        "text": "weren't",
+        "correct": true,
+        "explanation": "Giả định: Nếu anh ấy không bận (thực tế là bận)."
+      },
+      {
+        "text": "isn't",
+        "correct": false,
+        "explanation": "Sai. Dấu hiệu hoặc ngữ cảnh trong câu ở quá khứ, không dùng thì Hiện tại."
+      },
+      {
+        "text": "hasn't been",
+        "correct": false,
+        "explanation": "Nên dùng 'weren't' chuẩn ngữ pháp hơn."
+      },
+      {
+        "text": "not",
+        "correct": false,
+        "explanation": "'Not' đứng riêng không tạo thành động từ; cần dạng chia 'weren't' sau chủ ngữ 'he'."
+      }
+    ]
+  },
+  {
+    "q": "If they ___ the tickets earlier, they would have got better seats. 🎫",
+    "a": [
+      {
+        "text": "had booked",
+        "correct": true,
+        "explanation": "'Had booked' diễn tả việc đặt vé xảy ra trước kết quả đã qua, đúng điều kiện loại 3."
+      },
+      {
+        "text": "booked",
+        "correct": false,
+        "explanation": "Quá khứ đơn 'booked' không đủ để diễn tả việc đặt vé trước một kết quả đã qua."
+      },
+      {
+        "text": "book",
+        "correct": false,
+        "explanation": "'Book' là nguyên mẫu/hiện tại, không phù hợp với điều kiện loại 3."
+      },
+      {
+        "text": "have booked",
+        "correct": false,
+        "explanation": "'Have booked' không phải dạng quá khứ hoàn thành; loại 3 cần 'had booked' trước 'would have got'."
+      }
+    ]
+  },
+  {
+    "q": "Viết lại câu dùng điều kiện loại 1: 'Don't touch the cat or it will bite you.'",
+    "a": [
+      {
+        "text": "If you touch the cat, it will bite you.",
+        "correct": true,
+        "explanation": "Nếu chạm vào mèo, nó sẽ cắn."
+      },
+      {
+        "text": "If you don't touch the cat, it will bite you.",
+        "correct": false,
+        "explanation": "Sai nghĩa: câu gốc cảnh báo rằng việc chạm vào mèo sẽ khiến nó cắn; thêm don't đảo ngược điều kiện."
+      },
+      {
+        "text": "Unless you touch the cat, it will bite you.",
+        "correct": false,
+        "explanation": "Sai nghĩa: unless you touch the cat có nghĩa 'nếu bạn không chạm vào mèo', trái với cảnh báo của câu gốc."
+      },
+      {
+        "text": "If you touch the cat, it bites you.",
+        "correct": false,
+        "explanation": "Yêu cầu điều kiện loại 1 cho kết quả tương lai, nên dùng 'it will bite you', không dùng 'bites'."
+      }
+    ]
+  },
+  {
+    "q": "Dùng điều kiện loại 1: The car ___ if you don't use the key.",
+    "a": [
+      {
+        "text": "will not start",
+        "correct": true,
+        "explanation": "Mệnh đề chính phủ định dùng 'will not' hoặc 'won't'."
+      },
+      {
+        "text": "doesn't start",
+        "correct": false,
+        "explanation": "Đề yêu cầu điều kiện loại 1 nên mệnh đề chính dùng 'will not start', không phải hiện tại đơn."
+      },
+      {
+        "text": "not start",
+        "correct": false,
+        "explanation": "'Not start' thiếu trợ động từ 'will' trong mệnh đề chính."
+      },
+      {
+        "text": "don't start",
+        "correct": false,
+        "explanation": "'Don't start' dùng chủ ngữ số nhiều/you; chủ ngữ 'the car' cần 'will not start'."
+      }
+    ]
+  },
+  {
+    "q": "Dịch sang tiếng Anh dùng điều kiện loại 1: 'Nếu cô ấy mệt, cô ấy sẽ đi ngủ sớm.'",
+    "a": [
+      {
+        "text": "If she is tired, she will go to bed early.",
+        "correct": true,
+        "explanation": "Đúng cấu trúc 'be' + adj."
+      },
+      {
+        "text": "If she tired, she will go to bed early.",
+        "correct": false,
+        "explanation": "Thiếu 'is'. Cách dùng phù hợp trong câu này là “If she is tired, she will go to bed early.”."
+      },
+      {
+        "text": "If she will be tired, she goes to bed early.",
+        "correct": false,
+        "explanation": "'Will' không đứng trong mệnh đề 'if'; viết 'If she is tired' rồi dùng 'will go' ở mệnh đề chính."
+      },
+      {
+        "text": "If she is tired, she goes to bed early.",
+        "correct": false,
+        "explanation": "Kết quả được dự đoán trong tương lai nên cần 'will go', không phải hiện tại đơn 'goes'."
+      }
+    ]
+  }
+]; hiện tại đơn 'move' không phù hợp với 'would see'."
       },
       {
         "text": "moves",
@@ -1607,7 +2096,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu anh ấy không ăn sáng, anh ấy sẽ thấy đói.' (eat breakfast: ăn sáng, hungry: đói)",
+    "q": "Dịch sang tiếng Anh: 'Nếu anh ấy không ăn sáng, anh ấy sẽ thấy đói.'",
     "a": [
       {
         "text": "If he doesn't eat breakfast, he will feel hungry.",
@@ -1657,7 +2146,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If I ___ the President, I would help the poor. (President: Tổng thống, poor: người nghèo) 🏛️",
+    "q": "If I ___ the President, I would help the poor. 🏛️",
     "a": [
       {
         "text": "were",
@@ -1682,7 +2171,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If you had listened to me, you ___ in this mess. (mess: mớ hỗn độn) 🤷",
+    "q": "If you had listened to me, you ___ in this mess. 🤷",
     "a": [
       {
         "text": "wouldn't have been",
@@ -1707,7 +2196,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If you ___ the door, the thief wouldn't have got in. (lock: khóa, thief: tên trộm) 🔒",
+    "q": "If you ___ the door, the thief wouldn't have got in. 🔒",
     "a": [
       {
         "text": "had locked",
@@ -1732,7 +2221,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If she ___ the question, she will raise her hand. (know: biết, question: câu hỏi, raise hand: giơ tay)",
+    "q": "If she ___ the question, she will raise her hand.",
     "a": [
       {
         "text": "knows",
@@ -1757,7 +2246,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If dogs ___ talk, what would they say? (talk: nói chuyện) 🐕",
+    "q": "If dogs ___ talk, what would they say? 🐕",
     "a": [
       {
         "text": "could",
@@ -1782,7 +2271,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You ___ the puzzle if you had looked at the instructions. (solve: giải, puzzle: câu đố, instructions: hướng dẫn) 🧩",
+    "q": "You ___ the puzzle if you had looked at the instructions. 🧩",
     "a": [
       {
         "text": "could have solved",
@@ -1807,7 +2296,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu con chó sủa, tôi sẽ sợ hãi.' (dog: con chó, bark: sủa, scared: sợ hãi)",
+    "q": "Dịch sang tiếng Anh: 'Nếu con chó sủa, tôi sẽ sợ hãi.'",
     "a": [
       {
         "text": "If the dog barks, I will be scared.",
@@ -1817,7 +2306,7 @@ const fullQuestionBank = [
       {
         "text": "If the dog bark, I will be scared.",
         "correct": false,
-        "explanation": "Thiếu 's' ở 'bark'."
+        "explanation": "Thiếu 's' ở 'bark'. Cách dùng phù hợp trong câu này là “If the dog barks, I will be scared.”."
       },
       {
         "text": "If the dog barks, I am scared.",
@@ -1827,12 +2316,12 @@ const fullQuestionBank = [
       {
         "text": "If the dog will bark, I am scared.",
         "correct": false,
-        "explanation": "Sai vị trí 'will'."
+        "explanation": "Sai vị trí 'will'. Cách dùng phù hợp trong câu này là “If the dog barks, I will be scared.”."
       }
     ]
   },
   {
-    "q": "If you ___ the instruction manual, you would have known how to use it. (manual: sách hướng dẫn) 📖",
+    "q": "If you ___ the instruction manual, you would have known how to use it. 📖",
     "a": [
       {
         "text": "had read",
@@ -1857,7 +2346,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If I ___ the answer, I would tell you. (answer: câu trả lời) 💡",
+    "q": "If I ___ the answer, I would tell you. 💡",
     "a": [
       {
         "text": "knew",
@@ -1897,7 +2386,7 @@ const fullQuestionBank = [
       {
         "text": "If I had time, I would help you.",
         "correct": false,
-        "explanation": "Đây là loại 2."
+        "explanation": "Đây là loại 2. Cách dùng phù hợp trong câu này là “If I have time, I will help you.”."
       },
       {
         "text": "If I have time, I help you.",
@@ -1907,7 +2396,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If she ___ makeup, she would look different. (wear: trang điểm) 💄",
+    "q": "If she ___ makeup, she would look different. 💄",
     "a": [
       {
         "text": "wore",
@@ -1932,7 +2421,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "He would come if he ___ busy. (busy: bận rộn) ⌚",
+    "q": "He would come if he ___ busy. ⌚",
     "a": [
       {
         "text": "weren't",
@@ -1957,7 +2446,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "If they ___ the tickets earlier, they would have got better seats. (book: đặt vé, seat: chỗ ngồi) 🎫",
+    "q": "If they ___ the tickets earlier, they would have got better seats. 🎫",
     "a": [
       {
         "text": "had booked",
@@ -1982,7 +2471,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Viết lại câu dùng điều kiện loại 1: 'Don't touch the cat or it will bite you.' (touch: chạm, cat: con mèo, bite: cắn)",
+    "q": "Viết lại câu dùng điều kiện loại 1: 'Don't touch the cat or it will bite you.'",
     "a": [
       {
         "text": "If you touch the cat, it will bite you.",
@@ -2007,7 +2496,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Dùng điều kiện loại 1: The car ___ (not/start) if you don't use the key. (car: xe hơi, start: khởi động, key: chìa khóa)",
+    "q": "Dùng điều kiện loại 1: The car ___ (not/start) if you don't use the key.",
     "a": [
       {
         "text": "will not start",
@@ -2032,7 +2521,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh dùng điều kiện loại 1: 'Nếu cô ấy mệt, cô ấy sẽ đi ngủ sớm.' (tired: mệt, go to bed: đi ngủ, early: sớm)",
+    "q": "Dịch sang tiếng Anh dùng điều kiện loại 1: 'Nếu cô ấy mệt, cô ấy sẽ đi ngủ sớm.'",
     "a": [
       {
         "text": "If she is tired, she will go to bed early.",
@@ -2042,7 +2531,7 @@ const fullQuestionBank = [
       {
         "text": "If she tired, she will go to bed early.",
         "correct": false,
-        "explanation": "Thiếu 'is'."
+        "explanation": "Thiếu 'is'. Cách dùng phù hợp trong câu này là “If she is tired, she will go to bed early.”."
       },
       {
         "text": "If she will be tired, she goes to bed early.",

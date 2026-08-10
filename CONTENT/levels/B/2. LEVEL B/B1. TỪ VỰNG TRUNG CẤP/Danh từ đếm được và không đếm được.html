@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "There is ___ milk in the fridge. (fridge: tủ lạnh) 🥛",
+    "q": "There is ___ milk in the fridge. 🥛",
     "a": [
       {
         "text": "some",
@@ -1566,20 +1566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'A' cần một danh từ đếm được số ít hoặc một đơn vị như 'a glass of milk'."
+        "explanation": "Sai. 'A' cần một danh từ đếm được số ít hoặc một đơn vị như 'a glass of milk'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'An' cũng không đứng trực tiếp trước danh từ không đếm được 'milk'."
+        "explanation": "Sai. 'An' cũng không đứng trực tiếp trước danh từ không đếm được 'milk'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' dùng cho danh từ đếm được số nhiều."
+        "explanation": "Sai. 'Many' dùng cho danh từ đếm được số nhiều.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ apple for lunch. (lunch: bữa trưa) 🍎",
+    "q": "I have ___ apple for lunch. 🍎",
     "a": [
       {
         "text": "an",
@@ -1588,15 +1591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'Apple' bắt đầu bằng nguyên âm."
+        "explanation": "Sai. 'Apple' bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Phương án 'some' không hòa hợp về ngôi và số với chủ ngữ 'I have'."
+        "explanation": "Sai. Phương án 'some' không hòa hợp về ngôi và số với chủ ngữ 'I have'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. Dùng trong câu phủ định hoặc nghi vấn."
+        "explanation": "Sai. Dùng trong câu phủ định hoặc nghi vấn.",
+        "correct": false
       }
     ]
   },
@@ -1610,20 +1616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sai. 'Much' dùng cho danh từ không đếm được."
+        "explanation": "Sai. 'Much' dùng cho danh từ không đếm được.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Phương án 'some' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'some' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. Phương án 'any' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'any' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She drinks ___ water every day. (drink: uống) 💧",
+    "q": "She drinks ___ water every day. 💧",
     "a": [
       {
         "text": "a lot of",
@@ -1632,42 +1641,48 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' chỉ đi với danh từ đếm được số nhiều, không đi trực tiếp với 'water'."
+        "explanation": "Sai. 'Many' chỉ đi với danh từ đếm được số nhiều, không đi trực tiếp với 'water'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. Muốn dùng 'a' phải thêm đơn vị, chẳng hạn 'a bottle of water'."
+        "explanation": "Sai. Muốn dùng 'a' phải thêm đơn vị, chẳng hạn 'a bottle of water'.",
+        "correct": false
       },
       {
         "text": "few",
-        "explanation": "Sai. 'Few' dùng cho danh từ đếm được."
+        "explanation": "Sai. 'Few' dùng cho danh từ đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do you need ___ sugar for the cake? (sugar: đường) 🍰",
+    "q": "Do you need ___ sugar at all for the cake? 🍰",
     "a": [
       {
         "text": "any",
         "correct": true,
-        "explanation": "Dùng 'any' trong câu nghi vấn với danh từ không đếm được 'sugar'."
+        "explanation": "Cụm phủ định phạm vi 'at all' khóa câu hỏi về bất kỳ lượng đường nào, nên dùng 'any'."
       },
       {
         "text": "a",
-        "explanation": "Sai. 'A' không đứng trước 'sugar' nếu không có đơn vị như 'a spoonful'."
+        "explanation": "Sai. 'A' không đứng trước 'sugar' nếu không có đơn vị như 'a spoonful'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'Many' dùng cho vật đếm được số nhiều, không dùng cho đường."
+        "explanation": "Sai. 'Many' dùng cho vật đếm được số nhiều, không dùng cho đường.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There are two ___ in the garden. (garden: khu vườn) 🐱",
+    "q": "There are two ___ in the garden. 🐱",
     "a": [
       {
         "text": "cats",
@@ -1676,15 +1691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "cat",
-        "explanation": "Sai. Thiếu 's'."
+        "explanation": "Sai. Thiếu 's'. Cách dùng phù hợp trong câu này là “cats”.",
+        "correct": false
       },
       {
         "text": "cates",
-        "explanation": "Sai. Phương án 'cates' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'cates' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       },
       {
         "text": "cat's",
-        "explanation": "Sai. Đây là sở hữu cách."
+        "explanation": "Sai. Đây là sở hữu cách.",
+        "correct": false
       }
     ]
   },
@@ -1698,20 +1716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "rices",
-        "explanation": "Sai. 'Rice' không có dạng số nhiều."
+        "explanation": "Sai. 'Rice' không có dạng số nhiều.",
+        "correct": false
       },
       {
         "text": "a rice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'a rice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'a rice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "an rice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'an rice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'an rice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My mother has long ___. 👩",
+    "q": "My mother has long ___ overall, as a hairstyle. 👩",
     "a": [
       {
         "text": "hair",
@@ -1720,20 +1741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "hairs",
-        "explanation": "Sai. Chỉ dùng 'hairs' khi đếm từng sợi tóc cụ thể."
+        "explanation": "Sai. Chỉ dùng 'hairs' khi đếm từng sợi tóc cụ thể.",
+        "correct": false
       },
       {
         "text": "a hair",
-        "explanation": "Sai. Phương án 'a hair' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'a hair' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "an hair",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'an hair' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'an hair' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Can I have a ___ of bread? (bread: bánh mì) 🍞",
+    "q": "Can I have a ___ of bread? 🍞",
     "a": [
       {
         "text": "loaf",
@@ -1742,20 +1766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "bar",
-        "explanation": "Sai. Thường dùng 'bar of chocolate'."
+        "explanation": "Sai. Thường dùng 'bar of chocolate'.",
+        "correct": false
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Dùng cho chất lỏng."
+        "explanation": "Sai. Dùng cho chất lỏng.",
+        "correct": false
       },
       {
         "text": "bowl",
-        "explanation": "Sai. Dùng cho món ăn trong bát."
+        "explanation": "Sai. Dùng cho món ăn trong bát.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "How ___ money do you need? (money: tiền) 💵",
+    "q": "How ___ money do you need? 💵",
     "a": [
       {
         "text": "much",
@@ -1764,42 +1791,48 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We don't have ___ bananas left. 🍌",
+    "q": "We don't have ___ bananas left—not even one. 🍌",
     "a": [
       {
         "text": "any",
         "correct": true,
-        "explanation": "Câu phủ định dùng 'any'."
+        "explanation": "Cụm 'not even one' khẳng định không còn một quả nào, nên dùng 'any'."
       },
       {
         "text": "some",
-        "explanation": "Sai. 'Some' thường dùng trong câu khẳng định."
+        "explanation": "Sai. 'Some' thường dùng trong câu khẳng định.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. Phương án 'a' không hòa hợp chủ vị với chủ ngữ trong câu."
+        "explanation": "Sai. Phương án 'a' không hòa hợp chủ vị với chủ ngữ trong câu.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Sai. 'Bananas' đếm được."
+        "explanation": "Sai. 'Bananas' đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Look! There is a ___ in the sky. (sky: bầu trời) 🐦",
+    "q": "Look! There is a ___ in the sky. 🐦",
     "a": [
       {
         "text": "bird",
@@ -1808,15 +1841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "birds",
-        "explanation": "Sai. Phương án 'birds' không hòa hợp chủ vị với chủ ngữ trong câu."
+        "explanation": "Sai. Phương án 'birds' không hòa hợp chủ vị với chủ ngữ trong câu.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai. 'Water' là chất lỏng, không phải một con vật xuất hiện trên trời."
+        "explanation": "Sai. 'Water' là chất lỏng, không phải một con vật xuất hiện trên trời.",
+        "correct": false
       },
       {
         "text": "rain",
-        "explanation": "Sai. 'Rain' là mưa; câu đang cần một danh từ chỉ con vật số ít."
+        "explanation": "Sai. 'Rain' là mưa; câu đang cần một danh từ chỉ con vật số ít.",
+        "correct": false
       }
     ]
   },
@@ -1830,24 +1866,28 @@ const fullQuestionBank = [
       },
       {
         "text": "piece",
-        "explanation": "Sai. Dùng cho bánh, giấy..."
+        "explanation": "Sai. Dùng cho bánh, giấy...",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Dùng cho bánh mì, thịt..."
+        "explanation": "Sai. Dùng cho bánh mì, thịt...",
+        "correct": false
       },
       {
         "text": "kilo",
-        "explanation": "Không tự nhiên trong ngữ cảnh này."
+        "explanation": "Không tự nhiên trong ngữ cảnh này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He eats a ___ every morning, made with two slices of bread and a filling. (morning: buổi sáng) 🥪",
+    "q": "He eats a ___ every morning, made with two slices of bread and a filling. 🥪",
     "a": [
       {
         "text": "egg",
-        "explanation": "Sai. 'Egg' bắt đầu bằng nguyên âm, phải dùng 'an'."
+        "explanation": "Sai. 'Egg' bắt đầu bằng nguyên âm, phải dùng 'an'.",
+        "correct": false
       },
       {
         "text": "sandwich",
@@ -1856,16 +1896,18 @@ const fullQuestionBank = [
       },
       {
         "text": "rice",
-        "explanation": "Sai. 'Rice' là ngũ cốc không đếm được, không phải món kẹp giữa hai lát bánh mì."
+        "explanation": "Sai. 'Rice' là ngũ cốc không đếm được, không phải món kẹp giữa hai lát bánh mì.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Sai. 'Soup' là món lỏng không đếm được, không khớp mô tả hai lát bánh mì và nhân."
+        "explanation": "Sai. 'Soup' là món lỏng không đếm được, không khớp mô tả hai lát bánh mì và nhân.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is there ___ cheese in the burger? (cheese: phô mai) 🧀",
+    "q": "Is there ___ cheese in the burger? 🧀",
     "a": [
       {
         "text": "any",
@@ -1874,20 +1916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. Cheese không đếm được."
+        "explanation": "Sai. Cheese không đếm được.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see three ___ on the street. (street: đường phố) 🚌",
+    "q": "I see three ___ on the street. 🚌",
     "a": [
       {
         "text": "buses",
@@ -1896,15 +1941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "bus",
-        "explanation": "Sai. Phương án 'bus' không hòa hợp về ngôi và số với chủ ngữ 'I see three'."
+        "explanation": "Sai. Phương án 'bus' không hòa hợp về ngôi và số với chủ ngữ 'I see three'.",
+        "correct": false
       },
       {
         "text": "buss",
-        "explanation": "Sai. Phương án 'buss' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'buss' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       },
       {
         "text": "bus's",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bus's' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bus's' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -1918,15 +1966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "can",
-        "explanation": "Sai. Dùng cho đồ uống."
+        "explanation": "Sai. Dùng cho đồ uống.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Dùng cho bánh mì."
+        "explanation": "Sai. Dùng cho bánh mì.",
+        "correct": false
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -1940,20 +1991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "pizzas",
-        "explanation": "Sai. 'Pizzas' chỉ nhiều chiếc hoặc nhiều loại pizza, trái với câu hỏi món ăn nói chung."
+        "explanation": "Sai. 'Pizzas' chỉ nhiều chiếc hoặc nhiều loại pizza, trái với câu hỏi món ăn nói chung.",
+        "correct": false
       },
       {
         "text": "a pizza",
-        "explanation": "Sai trong ngữ cảnh hỏi sở thích chung."
+        "explanation": "Sai trong ngữ cảnh hỏi sở thích chung.",
+        "correct": false
       },
       {
         "text": "pizze",
-        "explanation": "Sai. Phương án 'pizze' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'pizze' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There are not ___ chairs in the room. (room: phòng) 🪑",
+    "q": "There are not ___ chairs in the room. 🪑",
     "a": [
       {
         "text": "many",
@@ -1962,20 +2016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sai. Dùng cho không đếm được."
+        "explanation": "Sai. Dùng cho không đếm được.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Please give me a ___ of paper from the printer: one flat page. (paper: giấy) 📄",
+    "q": "Please give me a ___ of paper from the printer: one flat page. 📄",
     "a": [
       {
         "text": "sheet",
@@ -1984,15 +2041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "slice",
-        "explanation": "Sai. Dùng cho thức ăn."
+        "explanation": "Sai. Dùng cho thức ăn.",
+        "correct": false
       },
       {
         "text": "cup",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'cup' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'cup' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2001,7 +2061,8 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "orange",
-        "explanation": "Sai. 'Orange' bắt đầu bằng nguyên âm, phải đi với 'an'."
+        "explanation": "Sai. 'Orange' bắt đầu bằng nguyên âm, phải đi với 'an'.",
+        "correct": false
       },
       {
         "text": "melon",
@@ -2010,11 +2071,13 @@ const fullQuestionBank = [
       },
       {
         "text": "water",
-        "explanation": "Sai. 'Water' không thể là quả lớn có vỏ xanh dạng lưới nặng 2 kg."
+        "explanation": "Sai. 'Water' không thể là quả lớn có vỏ xanh dạng lưới nặng 2 kg.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Sai. 'Milk' là chất lỏng, không có vỏ xanh dạng lưới như mô tả."
+        "explanation": "Sai. 'Milk' là chất lỏng, không có vỏ xanh dạng lưới như mô tả.",
+        "correct": false
       }
     ]
   },
@@ -2028,20 +2091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is some ___ on the floor. (floor: sàn nhà) 🧂",
+    "q": "There is some ___ on the floor. 🧂",
     "a": [
       {
         "text": "salt",
@@ -2050,15 +2116,18 @@ const fullQuestionBank = [
       },
       {
         "text": "toys",
-        "explanation": "Sai. 'Toys' số nhiều phải đi với 'are'."
+        "explanation": "Sai. 'Toys' số nhiều phải đi với 'are'.",
+        "correct": false
       },
       {
         "text": "books",
-        "explanation": "Sai. Phải đi với 'are'."
+        "explanation": "Sai. Phải đi với 'are'.",
+        "correct": false
       },
       {
         "text": "pen",
-        "explanation": "Sai. Đếm được số ít phải có 'a' hoặc 'the'."
+        "explanation": "Sai. Đếm được số ít phải có 'a' hoặc 'the'.",
+        "correct": false
       }
     ]
   },
@@ -2072,15 +2141,18 @@ const fullQuestionBank = [
       },
       {
         "text": "childs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'childs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'childs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "child",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'child' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'child' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "childrens",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'childrens' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'childrens' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2094,64 +2166,73 @@ const fullQuestionBank = [
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do we have ___ tomatoes? 🍅",
+    "q": "Do we have ___ tomatoes at all? 🍅",
     "a": [
       {
         "text": "any",
         "correct": true,
-        "explanation": "Câu nghi vấn dùng 'any'."
+        "explanation": "Cụm 'at all' yêu cầu hỏi về bất kỳ quả cà chua nào, nên dùng 'any'."
       },
       {
         "text": "some",
-        "explanation": "Thường dùng trong lời mời/đề nghị hơn."
+        "explanation": "Thường dùng trong lời mời/đề nghị hơn.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Sai. Tomatoes đếm được."
+        "explanation": "Sai. Tomatoes đếm được.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Put some ___ in the soup. (soup: món súp) 🌶️",
+    "q": "Put some ___ in the soup as a seasoning. 🌶️",
     "a": [
       {
         "text": "pepper",
         "correct": true,
-        "explanation": "'Pepper' (hạt tiêu) là danh từ không đếm được."
+        "explanation": "Trong vai trò gia vị, 'pepper' là danh từ không đếm được; cụm 'as a seasoning' loại cách hiểu quả ớt đếm được."
       },
       {
         "text": "peppers",
-        "explanation": "Nếu là quả ớt chuông thì đếm được, nhưng ngữ cảnh nêm nếm thường là tiêu bột."
+        "explanation": "Nếu là quả ớt chuông thì đếm được, nhưng ngữ cảnh nêm nếm thường là tiêu bột.",
+        "correct": false
       },
       {
         "text": "peper",
-        "explanation": "Sai. Phương án 'peper' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'peper' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       },
       {
         "text": "a pepper",
-        "explanation": "Sai ngữ pháp với 'some'."
+        "explanation": "Sai ngữ pháp với 'some'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "A ___ has four legs. (leg: chân) 🐎",
+    "q": "A ___ has four legs. 🐎",
     "a": [
       {
         "text": "horse",
@@ -2160,15 +2241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "horses",
-        "explanation": "Sai. Có 'A' ở đầu."
+        "explanation": "Sai. Có 'A' ở đầu. Cách dùng phù hợp trong câu này là “horse”.",
+        "correct": false
       },
       {
         "text": "meat",
-        "explanation": "Sai. Không đếm được."
+        "explanation": "Sai. Không đếm được.",
+        "correct": false
       },
       {
         "text": "rain",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'rain' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'rain' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2182,20 +2266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "piece",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "sheet",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheet' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheet' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There are many ___ in the city. (city: thành phố) 🏢",
+    "q": "There are many ___ in the city. 🏢",
     "a": [
       {
         "text": "buildings",
@@ -2204,20 +2291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "building",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'building' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'building' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "traffic",
-        "explanation": "Sai. 'Traffic' không đếm được."
+        "explanation": "Sai. 'Traffic' không đếm được.",
+        "correct": false
       },
       {
         "text": "pollution",
-        "explanation": "Sai. Không đếm được."
+        "explanation": "Sai. Không đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want to buy a ___ of jam. (jam: mứt) 🍯",
+    "q": "I want to buy a ___ of jam. 🍯",
     "a": [
       {
         "text": "jar",
@@ -2226,20 +2316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "piece",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is a tasty ___ with chocolate chips, baked as a small snack. (tasty: ngon) 🍪",
+    "q": "This is a tasty ___ with chocolate chips, baked as a small snack. 🍪",
     "a": [
       {
         "text": "cookie",
@@ -2248,15 +2341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "cookies",
-        "explanation": "Sai. Có 'a'."
+        "explanation": "Sai. Có 'a'. Cách dùng phù hợp trong câu này là “cookie”.",
+        "correct": false
       },
       {
         "text": "bread",
-        "explanation": "Sai. Không đếm được."
+        "explanation": "Sai. Không đếm được.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2270,15 +2366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -2292,15 +2391,18 @@ const fullQuestionBank = [
       },
       {
         "text": "tooths",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'tooths' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'tooths' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "tooth",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'tooth' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'tooth' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "teeths",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'teeths' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'teeths' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2314,15 +2416,18 @@ const fullQuestionBank = [
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "can",
-        "explanation": "Sai. 'can' là động từ khuyết thiếu chỉ khả năng, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'can' là động từ khuyết thiếu chỉ khả năng, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "jar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2336,15 +2441,18 @@ const fullQuestionBank = [
       },
       {
         "text": "apples",
-        "explanation": "Sai. Đếm được dùng 'a few'."
+        "explanation": "Sai. Đếm được dùng 'a few'.",
+        "correct": false
       },
       {
         "text": "cookies",
-        "explanation": "Sai. Đếm được."
+        "explanation": "Sai. Đếm được. Cách dùng phù hợp trong câu này là “milk”.",
+        "correct": false
       },
       {
         "text": "pens",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'pens' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'pens' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2358,15 +2466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sai. 'much' là lượng từ dùng cho danh từ không đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'much' là lượng từ dùng cho danh từ không đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sai ngữ pháp với 'are'."
+        "explanation": "Sai ngữ pháp với 'are'.",
+        "correct": false
       }
     ]
   },
@@ -2380,15 +2491,18 @@ const fullQuestionBank = [
       },
       {
         "text": "soup",
-        "explanation": "Sai. Không đếm được."
+        "explanation": "Sai. Không đếm được.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "juice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'juice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'juice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2402,20 +2516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "knife",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'knife' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'knife' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "knifes",
-        "explanation": "Sai. Phương án 'knifes' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'knifes' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       },
       {
         "text": "knive",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'knive' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'knive' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We need a ___ of soap. (soap: xà phòng) 🧼",
+    "q": "We need a ___ of soap. 🧼",
     "a": [
       {
         "text": "bar",
@@ -2424,15 +2541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "sheet",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheet' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheet' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Nếu là xà phòng lỏng mới dùng bottle."
+        "explanation": "Sai. Nếu là xà phòng lỏng mới dùng bottle.",
+        "correct": false
       }
     ]
   },
@@ -2446,15 +2566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "sugar",
-        "explanation": "Sai. Không đếm được."
+        "explanation": "Sai. Không đếm được.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "soup",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'soup' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'soup' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2468,15 +2591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "ink",
-        "explanation": "Sai. Mực thường không đếm được."
+        "explanation": "Sai. Mực thường không đếm được.",
+        "correct": false
       },
       {
         "text": "pencils",
-        "explanation": "Sai. Có 'a'."
+        "explanation": "Sai. Có 'a'. Cách dùng phù hợp trong câu này là “pencil”.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2490,20 +2616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a few",
-        "explanation": "Sai. Dùng cho đếm được."
+        "explanation": "Sai. Dùng cho đếm được.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "few",
-        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I see a flock of ___. (flock: bầy) 🐑",
+    "q": "I see a flock of ___. 🐑",
     "a": [
       {
         "text": "sheep",
@@ -2512,15 +2641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "sheeps",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheeps' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheeps' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "sheepes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheepes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheepes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "shoop",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'shoop' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'shoop' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2534,20 +2666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "ice cream's",
-        "explanation": "Sai; dấu sở hữu không tạo dạng số nhiều."
+        "explanation": "Sai; dấu sở hữu không tạo dạng số nhiều.",
+        "correct": false
       },
       {
         "text": "an ice cream",
-        "explanation": "Sai ngữ pháp với 'some'."
+        "explanation": "Sai ngữ pháp với 'some'.",
+        "correct": false
       },
       {
         "text": "ice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'ice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'ice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Buy a ___ of toothpaste, please. (toothpaste: kem đánh răng) 🦷",
+    "q": "Buy a ___ of toothpaste, please. 🦷",
     "a": [
       {
         "text": "tube",
@@ -2556,20 +2691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is still a little butter, but there isn't ___ left for another cake. (butter: bơ) 🧈",
+    "q": "There is still a little butter, but there isn't ___ left for another cake. 🧈",
     "a": [
       {
         "text": "much",
@@ -2578,20 +2716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have two ___ for the concert. (concert: buổi hòa nhạc) 🎫",
+    "q": "I have two ___ for the concert. 🎫",
     "a": [
       {
         "text": "tickets",
@@ -2600,15 +2741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "ticket",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'ticket' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'ticket' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "money",
-        "explanation": "Sai. 'Money' là tiền, không phải vật dùng để vào buổi hòa nhạc."
+        "explanation": "Sai. 'Money' là tiền, không phải vật dùng để vào buổi hòa nhạc.",
+        "correct": false
       },
       {
         "text": "time",
-        "explanation": "Sai. 'Time' là thời gian; câu cần hai vật đếm được để dự buổi hòa nhạc."
+        "explanation": "Sai. 'Time' là thời gian; câu cần hai vật đếm được để dự buổi hòa nhạc.",
+        "correct": false
       }
     ]
   },
@@ -2622,15 +2766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Dùng nếu chỉ 'candies' (những viên kẹo)."
+        "explanation": "Dùng nếu chỉ 'candies' (những viên kẹo).",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -2640,19 +2787,22 @@ const fullQuestionBank = [
       {
         "text": "glass",
         "correct": true,
-        "explanation": "Một ly nước."
+        "explanation": "Một ly nước. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "piece",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2666,15 +2816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "potatos",
-        "explanation": "Sai. Phương án 'potatos' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'potatos' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       },
       {
         "text": "potato",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'potato' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'potato' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "potatoes's",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'potatoes's' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'potatoes's' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2688,15 +2841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. Từ 'a' có phần gạch chân phát âm khác với từ được yêu cầu trong nhóm."
+        "explanation": "Sai. Từ 'a' có phần gạch chân phát âm khác với từ được yêu cầu trong nhóm.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Không đi với danh từ số ít 'idea'."
+        "explanation": "Không đi với danh từ số ít 'idea'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không đi với danh từ đếm được."
+        "explanation": "Không đi với danh từ đếm được.",
+        "correct": false
       }
     ]
   },
@@ -2710,15 +2866,18 @@ const fullQuestionBank = [
       },
       {
         "text": "glass",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'glass' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'glass' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "glasse",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'glasse' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'glasse' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "glass's",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'glass's' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'glass's' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2732,20 +2891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "cloth",
-        "explanation": "Sai. Phương án 'cloth' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'cloth' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "clothe",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'clothe' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'clothe' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "clothings",
-        "explanation": "Sai. 'Clothings' không phải dạng số nhiều chuẩn; các món quần áo dùng 'clothes'."
+        "explanation": "Sai. 'Clothings' không phải dạng số nhiều chuẩn; các món quần áo dùng 'clothes'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Put ___ oil in the pan. (oil: dầu ăn) 🍳",
+    "q": "Put ___ oil in the pan. 🍳",
     "a": [
       {
         "text": "some",
@@ -2754,20 +2916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "few",
-        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I saw a ___ of bees. (bee: con ong) 🐝",
+    "q": "I saw a ___ of bees. 🐝",
     "a": [
       {
         "text": "swarm",
@@ -2776,37 +2941,43 @@ const fullQuestionBank = [
       },
       {
         "text": "flock",
-        "explanation": "Sai. Dùng cho cừu/chim."
+        "explanation": "Sai. Dùng cho cừu/chim.",
+        "correct": false
       },
       {
         "text": "school",
-        "explanation": "Sai. Dùng cho cá."
+        "explanation": "Sai. Dùng cho cá. Cách dùng phù hợp trong câu này là “swarm”.",
+        "correct": false
       },
       {
         "text": "pack",
-        "explanation": "Sai. Dùng cho chó sói."
+        "explanation": "Sai. Dùng cho chó sói.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "How many ___ are there? 🧍",
+    "q": "How many individual ___ are there? 🧍",
     "a": [
       {
         "text": "people",
         "correct": true,
-        "explanation": "'People' là dạng số nhiều của 'person'."
+        "explanation": "'Individual' khóa nghĩa người riêng lẻ; 'people' là dạng số nhiều phù hợp của 'person'."
       },
       {
         "text": "person's",
-        "explanation": "Sai. 'Person's' là dạng sở hữu, không phải danh từ số nhiều sau 'How many'."
+        "explanation": "Sai. 'Person's' là dạng sở hữu, không phải danh từ số nhiều sau 'How many'.",
+        "correct": false
       },
       {
         "text": "peoples",
-        "explanation": "Sai (trừ khi nói về các dân tộc)."
+        "explanation": "Sai (trừ khi nói về các dân tộc).",
+        "correct": false
       },
       {
         "text": "person",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'person' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'person' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2820,15 +2991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "jar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2842,15 +3016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2864,20 +3041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "furnitures",
-        "explanation": "Sai. Không thêm 's'."
+        "explanation": "Sai. Không thêm 's'.",
+        "correct": false
       },
       {
         "text": "chair",
-        "explanation": "Sai. Phải là 'chairs'."
+        "explanation": "Sai. Phải là 'chairs'.",
+        "correct": false
       },
       {
         "text": "table",
-        "explanation": "Sai. Phải là 'tables'."
+        "explanation": "Sai. Phải là 'tables'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ sand in my shoes. (sand: cát) 🏖️",
+    "q": "There is ___ sand in my shoes. 🏖️",
     "a": [
       {
         "text": "some",
@@ -2886,15 +3066,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "few",
-        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -2908,15 +3091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "mouses",
-        "explanation": "Sai (trừ khi là chuột máy tính)."
+        "explanation": "Sai (trừ khi là chuột máy tính).",
+        "correct": false
       },
       {
         "text": "mouse",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'mouse' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'mouse' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "mices",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'mices' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'mices' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2930,20 +3116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "shoe",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'shoe' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'shoe' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "shoeses",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'shoeses' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'shoeses' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "shose",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'shose' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'shose' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do you want a ___ of grapes? (grape: nho) 🍇",
+    "q": "Do you want a ___ of grapes? 🍇",
     "a": [
       {
         "text": "bunch",
@@ -2952,20 +3141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Pass me the ___ of cereal. (cereal: ngũ cốc) 🥣",
+    "q": "Pass me the ___ of cereal. 🥣",
     "a": [
       {
         "text": "box",
@@ -2974,15 +3166,18 @@ const fullQuestionBank = [
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "piece",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -2996,15 +3191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "homeworks",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'homeworks' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'homeworks' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "job",
-        "explanation": "Sai. Phải là 'jobs'."
+        "explanation": "Sai. Phải là 'jobs'.",
+        "correct": false
       },
       {
         "text": "task",
-        "explanation": "Sai. Phải là 'tasks'."
+        "explanation": "Sai. Phải là 'tasks'.",
+        "correct": false
       }
     ]
   },
@@ -3018,15 +3216,18 @@ const fullQuestionBank = [
       },
       {
         "text": "informations",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'informations' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'informations' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "idea",
-        "explanation": "Sai. Phải là 'ideas'."
+        "explanation": "Sai. Phải là 'ideas'.",
+        "correct": false
       },
       {
         "text": "tip",
-        "explanation": "Sai. Phải là 'tips'."
+        "explanation": "Sai. Phải là 'tips'.",
+        "correct": false
       }
     ]
   },
@@ -3040,20 +3241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "oxes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'oxes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'oxes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "ox",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'ox' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'ox' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "oxs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'oxs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'oxs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ experience. (experience: kinh nghiệm) 🧠",
+    "q": "She has ___ experience. 🧠",
     "a": [
       {
         "text": "no",
@@ -3062,15 +3266,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Sai. Không đếm được."
+        "explanation": "Sai. Không đếm được.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "few",
-        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -3080,19 +3287,22 @@ const fullQuestionBank = [
       {
         "text": "can",
         "correct": true,
-        "explanation": "Một lon soda."
+        "explanation": "Một lon soda. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3106,20 +3316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "sandwich",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'sandwich' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'sandwich' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "sandwichs",
-        "explanation": "Sai. Phương án 'sandwichs' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'sandwichs' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       },
       {
         "text": "bread",
-        "explanation": "Sai. Bread không đếm được."
+        "explanation": "Sai. Bread không đếm được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This ___ is very heavy; it refers to all three suitcases together. (luggage: hành lý) 🧳",
+    "q": "This ___ is very heavy; it refers to all three suitcases together. 🧳",
     "a": [
       {
         "text": "luggage",
@@ -3128,15 +3341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "luggages",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'luggages' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'luggages' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "suitcases",
-        "explanation": "Sai. 'Suitcases' chỉ các vali riêng lẻ; với 'this' phải dùng số ít, không diễn tả cả khối hành lý."
+        "explanation": "Sai. 'Suitcases' chỉ các vali riêng lẻ; với 'this' phải dùng số ít, không diễn tả cả khối hành lý.",
+        "correct": false
       },
       {
         "text": "cases",
-        "explanation": "Sai. Phải dùng 'are'."
+        "explanation": "Sai. Phải dùng 'are'.",
+        "correct": false
       }
     ]
   },
@@ -3150,15 +3366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "egg",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'egg' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'egg' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "milk",
-        "explanation": "Đúng ngữ pháp nhưng 'are' yêu cầu số nhiều. Milk đi với 'is'."
+        "explanation": "Sai: 'milk' là danh từ không đếm được nên phải đi với 'is'; sau 'are' cần danh từ số nhiều như 'eggs'.",
+        "correct": false
       },
       {
         "text": "butter",
-        "explanation": "Sai. Butter đi với 'is'."
+        "explanation": "Sai. Butter đi với 'is'.",
+        "correct": false
       }
     ]
   },
@@ -3168,24 +3387,27 @@ const fullQuestionBank = [
       {
         "text": "leg",
         "correct": true,
-        "explanation": "Một cái đùi gà."
+        "explanation": "Một cái đùi gà. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "soup",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'soup' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'soup' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "rice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'rice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'rice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "A ___ of advice. (advice: lời khuyên) 🗣️",
+    "q": "A ___ of advice. 🗣️",
     "a": [
       {
         "text": "piece",
@@ -3194,15 +3416,18 @@ const fullQuestionBank = [
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "can",
-        "explanation": "Sai. 'can' là động từ khuyết thiếu chỉ khả năng, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'can' là động từ khuyết thiếu chỉ khả năng, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -3216,20 +3441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "deers",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'deers' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'deers' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "doer",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'doer' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'doer' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "deeres",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'deeres' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'deeres' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I need ___ envelope. (envelope: phong bì) ✉️",
+    "q": "I need ___ envelope. ✉️",
     "a": [
       {
         "text": "an",
@@ -3238,15 +3466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "two",
-        "explanation": "Sai (chỉ có 'envelope' số ít)."
+        "explanation": "Sai (chỉ có 'envelope' số ít).",
+        "correct": false
       }
     ]
   },
@@ -3260,20 +3491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "leafs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'leafs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'leafs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "leaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'leaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'leaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "leaveses",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'leaveses' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'leaveses' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She gives me a ___ of gum. (gum: kẹo cao su) 🍬",
+    "q": "She gives me a ___ of gum. 🍬",
     "a": [
       {
         "text": "stick",
@@ -3282,15 +3516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "glass",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'glass' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'glass' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3304,15 +3541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a little",
-        "explanation": "Sai. Dùng cho không đếm được."
+        "explanation": "Sai. Dùng cho không đếm được.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Sai. 'much' là lượng từ dùng cho danh từ không đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'much' là lượng từ dùng cho danh từ không đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "one",
-        "explanation": "Sai ngữ pháp với 'friends'."
+        "explanation": "Sai ngữ pháp với 'friends'.",
+        "correct": false
       }
     ]
   },
@@ -3326,15 +3566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3348,15 +3591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "key",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'key' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'key' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "money",
-        "explanation": "Sai. 'Money' là danh từ không đếm được và thường đi với 'is', không phải chìa khóa số nhiều."
+        "explanation": "Sai. 'Money' là danh từ không đếm được và thường đi với 'is', không phải chìa khóa số nhiều.",
+        "correct": false
       },
       {
         "text": "information",
-        "explanation": "Sai. 'Information' là thông tin không đếm được và đi với 'is', không phải vật số nhiều."
+        "explanation": "Sai. 'Information' là thông tin không đếm được và đi với 'is', không phải vật số nhiều.",
+        "correct": false
       }
     ]
   },
@@ -3366,24 +3612,27 @@ const fullQuestionBank = [
       {
         "text": "cup",
         "correct": true,
-        "explanation": "Một tách cà phê."
+        "explanation": "Một tách cà phê. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "piece",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We need ___ flour to make bread. (flour: bột mì) 🌾",
+    "q": "We need ___ flour to make bread. 🌾",
     "a": [
       {
         "text": "some",
@@ -3392,15 +3641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "few",
-        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -3414,15 +3666,18 @@ const fullQuestionBank = [
       },
       {
         "text": "water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "waters",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'waters' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'waters' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3436,15 +3691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "fishes",
-        "explanation": "Sai. 'Fishes' dùng khi nói nhiều loài khác nhau; stem chỉ ba con cùng một loài."
+        "explanation": "Sai. 'Fishes' dùng khi nói nhiều loài khác nhau; stem chỉ ba con cùng một loài.",
+        "correct": false
       },
       {
         "text": "fishs",
-        "explanation": "Sai. Phương án 'fishs' bị viết sai chính tả hoặc sai dạng từ gốc."
+        "explanation": "Sai. Phương án 'fishs' bị viết sai chính tả hoặc sai dạng từ gốc.",
+        "correct": false
       },
       {
         "text": "fishing",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'fishing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'fishing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3454,19 +3712,22 @@ const fullQuestionBank = [
       {
         "text": "slice",
         "correct": true,
-        "explanation": "Một lát bánh."
+        "explanation": "Một lát bánh. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "jar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "can",
-        "explanation": "Sai. 'can' là động từ khuyết thiếu chỉ khả năng, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'can' là động từ khuyết thiếu chỉ khả năng, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -3480,15 +3741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'some' là lượng từ dùng trong câu khẳng định hoặc lời mời, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -3502,15 +3766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "kilo of apple",
-        "explanation": "Sai. Cấu trúc 'kilo of apple' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'kilo of apple' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "apple",
-        "explanation": "Sai cấu trúc. Phương án 'apple' sử dụng sai dạng thức động từ hoặc từ vựng."
+        "explanation": "Sai cấu trúc. Phương án 'apple' sử dụng sai dạng thức động từ hoặc từ vựng.",
+        "correct": false
       },
       {
         "text": "much apple",
-        "explanation": "Sai cấu trúc. Phương án 'much apple' sử dụng sai dạng thức động từ hoặc từ vựng."
+        "explanation": "Sai cấu trúc. Phương án 'much apple' sử dụng sai dạng thức động từ hoặc từ vựng.",
+        "correct": false
       }
     ]
   },
@@ -3520,24 +3787,27 @@ const fullQuestionBank = [
       {
         "text": "bowl",
         "correct": true,
-        "explanation": "Một bát súp."
+        "explanation": "Một bát súp. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "piece",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'piece' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There is ___ news today. (news: tin tức) 📰",
+    "q": "There is ___ news today. 📰",
     "a": [
       {
         "text": "good",
@@ -3546,37 +3816,43 @@ const fullQuestionBank = [
       },
       {
         "text": "a good",
-        "explanation": "Sai. News không dùng 'a'."
+        "explanation": "Sai. News không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "these",
-        "explanation": "Sai. 'these' là đại từ chỉ định số nhiều, ở gần, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'these' là đại từ chỉ định số nhiều, ở gần, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She eats two ___ of toast. (toast: bánh mì nướng) 🍞",
+    "q": "She eats two ___ of toast. 🍞",
     "a": [
       {
         "text": "slices",
         "correct": true,
-        "explanation": "Hai lát bánh mì."
+        "explanation": "Hai lát bánh mì. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "toasts",
-        "explanation": "Sai. Toast thường không đếm được."
+        "explanation": "Sai. Toast thường không đếm được.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3590,20 +3866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'an' là mạo từ không xác định dùng trước nguyên âm (u, e, o, a, i), không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai (phải là questions)."
+        "explanation": "Sai (phải là questions).",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'any' là lượng từ dùng trong câu phủ định hoặc nghi vấn, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Don't make so ___ noise! (noise: tiếng ồn) 🔊",
+    "q": "Don't make so ___ noise! 🔊",
     "a": [
       {
         "text": "much",
@@ -3612,64 +3891,73 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Phương án 'some' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'some' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He has three ___ of land. (land: đất) 🏞️",
+    "q": "He has three ___ of land. 🏞️",
     "a": [
       {
         "text": "plots",
         "correct": true,
-        "explanation": "Ba mảnh đất."
+        "explanation": "Ba mảnh đất. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "piece",
-        "explanation": "Sai. Phương án 'piece' không hòa hợp về ngôi và số với chủ ngữ 'He has three'."
+        "explanation": "Sai. Phương án 'piece' không hòa hợp về ngôi và số với chủ ngữ 'He has three'.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "A single garlic segment with its own papery skin is a ___. (garlic: tỏi) 🧄",
+    "q": "A single garlic segment with its own papery skin is a ___. 🧄",
     "a": [
       {
         "text": "clove",
         "correct": true,
-        "explanation": "Một tép tỏi."
+        "explanation": "Một tép tỏi. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "sheet",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheet' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'sheet' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want a ___ of honey. (honey: mật ong) 🍯",
+    "q": "I want a ___ of honey. 🍯",
     "a": [
       {
         "text": "spoonful",
@@ -3678,15 +3966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3700,15 +3991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "leaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'leaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'leaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "leafs",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'leafs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'leafs' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "levies",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'levies' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'levies' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3718,24 +4012,27 @@ const fullQuestionBank = [
       {
         "text": "bag",
         "correct": true,
-        "explanation": "Một bao/túi gạo."
+        "explanation": "Một bao/túi gạo. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "slice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'slice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I need ___ time to finish. (time: thời gian) ⏳",
+    "q": "I need ___ time to finish. ⏳",
     "a": [
       {
         "text": "more",
@@ -3744,15 +4041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'many' là lượng từ dùng cho danh từ đếm được số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'a' là mạo từ không xác định dùng trước phụ âm, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "few",
-        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'few' là lượng từ mang nghĩa phủ định (rất ít), dùng với danh từ đếm được, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
@@ -3766,15 +4066,18 @@ const fullQuestionBank = [
       },
       {
         "text": "bottle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bottle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "jar",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'jar' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "loaf",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'loaf' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   }

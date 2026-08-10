@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "If it ___ (rain) tomorrow, we will stay at home. (rain: mưa, stay at home: ở nhà)",
+    "q": "If it ___ tomorrow, we will stay at home.",
     "a": [
       {
         "text": "rains",
@@ -1566,20 +1566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "rain",
-        "explanation": "Sai. Thiếu 's' cho ngôi thứ 3 số ít."
+        "explanation": "Sai. Thiếu 's' cho ngôi thứ 3 số ít.",
+        "correct": false
       },
       {
         "text": "will rain",
-        "explanation": "Sai. Với 'if it rains', mệnh đề điều kiện dùng hiện tại đơn; 'will rain' đặt sai vị trí."
+        "explanation": "Sai. Với 'if it rains', mệnh đề điều kiện dùng hiện tại đơn; 'will rain' đặt sai vị trí.",
+        "correct": false
       },
       {
         "text": "rained",
-        "explanation": "Sai. Dấu hiệu 'tomorrow' không phù hợp với thì/cấu trúc của phương án 'rained'."
+        "explanation": "Sai. Dấu hiệu 'tomorrow' không phù hợp với thì/cấu trúc của phương án 'rained'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You will feel better if you ___ (eat) some healthy food. (feel: cảm thấy, healthy food: thức ăn lành mạnh)",
+    "q": "You will feel better if you ___ some healthy food.",
     "a": [
       {
         "text": "eat",
@@ -1588,20 +1591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "eats",
-        "explanation": "Sai. 'Eats' chỉ dùng cho số ít."
+        "explanation": "Sai. 'Eats' chỉ dùng cho số ít.",
+        "correct": false
       },
       {
         "text": "will eat",
-        "explanation": "Sai. Sau 'if you' dùng hiện tại đơn 'eat'; 'will eat' không đứng trong mệnh đề điều kiện."
+        "explanation": "Sai. Sau 'if you' dùng hiện tại đơn 'eat'; 'will eat' không đứng trong mệnh đề điều kiện.",
+        "correct": false
       },
       {
         "text": "ate",
-        "explanation": "Sai cấu trúc điều kiện loại 1: mệnh đề If dùng hiện tại đơn 'eat', không dùng quá khứ 'ate'."
+        "explanation": "Sai cấu trúc điều kiện loại 1: mệnh đề If dùng hiện tại đơn 'eat', không dùng quá khứ 'ate'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If she ___ (study) hard, she will pass the exam easily. (study hard: học chăm chỉ, pass the exam: vượt qua kỳ thi)",
+    "q": "If she ___ hard, she will pass the exam easily.",
     "a": [
       {
         "text": "studies",
@@ -1610,20 +1616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "study",
-        "explanation": "Sai. Thiếu chia động từ số ít."
+        "explanation": "Sai. Thiếu chia động từ số ít.",
+        "correct": false
       },
       {
         "text": "will study",
-        "explanation": "Sai. Mệnh đề If loại 1 dùng hiện tại đơn 'studies', không dùng 'will study'."
+        "explanation": "Sai. Mệnh đề If loại 1 dùng hiện tại đơn 'studies', không dùng 'will study'.",
+        "correct": false
       },
       {
         "text": "studying",
-        "explanation": "Sai. Sau chủ ngữ 'she' cần động từ hiện tại đơn 'studies', không dùng dạng V-ing."
+        "explanation": "Sai. Sau chủ ngữ 'she' cần động từ hiện tại đơn 'studies', không dùng dạng V-ing.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The teacher ___ (be) angry tomorrow if we don't finish our homework tonight. (angry: tức giận, finish: hoàn thành)",
+    "q": "The teacher ___ angry tomorrow if we don't finish our homework tonight.",
     "a": [
       {
         "text": "will be",
@@ -1632,20 +1641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "is",
-        "explanation": "Sai. Mệnh đề chính cần dùng tương lai đơn."
+        "explanation": "Sai. Mệnh đề chính cần dùng tương lai đơn.",
+        "correct": false
       },
       {
         "text": "be",
-        "explanation": "Thiếu 'will'."
+        "explanation": "Thiếu 'will'. Cách dùng phù hợp trong câu này là “will be”.",
+        "correct": false
       },
       {
         "text": "was",
-        "explanation": "Sai cấu trúc: mệnh đề kết quả tương lai cần 'will be', không dùng quá khứ 'was'."
+        "explanation": "Sai cấu trúc: mệnh đề kết quả tương lai cần 'will be', không dùng quá khứ 'was'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If they ___ (not/hurry), they will miss the last bus. (hurry: nhanh lên, miss: lỡ, last bus: chuyến xe buýt cuối)",
+    "q": "If they ___, they will miss the last bus.",
     "a": [
       {
         "text": "don't hurry",
@@ -1654,20 +1666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "doesn't hurry",
-        "explanation": "Sai. 'Doesn't' dùng cho số ít."
+        "explanation": "Sai. 'Doesn't' dùng cho số ít.",
+        "correct": false
       },
       {
         "text": "won't hurry",
-        "explanation": "Sai. Mệnh đề If loại 1 dùng hiện tại đơn 'don't hurry'; 'won't hurry' không dùng trong mệnh đề If."
+        "explanation": "Sai. Mệnh đề If loại 1 dùng hiện tại đơn 'don't hurry'; 'won't hurry' không dùng trong mệnh đề If.",
+        "correct": false
       },
       {
         "text": "not hurry",
-        "explanation": "Sai. Phủ định trong mệnh đề If phải có trợ động từ 'do': 'don't hurry'."
+        "explanation": "Sai. Phủ định trong mệnh đề If phải có trợ động từ 'do': 'don't hurry'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We will go to the park if the weather ___ (be) sunny. (park: công viên, weather: thời tiết, sunny: có nắng)",
+    "q": "We will go to the park if the weather ___ sunny.",
     "a": [
       {
         "text": "is",
@@ -1676,20 +1691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "will be",
-        "explanation": "Sai. Sau 'if the weather' cần 'is' hiện tại đơn, không dùng 'will be'."
+        "explanation": "Sai. Sau 'if the weather' cần 'is' hiện tại đơn, không dùng 'will be'.",
+        "correct": false
       },
       {
         "text": "are",
-        "explanation": "Sai. 'Weather' không đi với 'are'."
+        "explanation": "Sai. 'Weather' không đi với 'are'.",
+        "correct": false
       },
       {
         "text": "am",
-        "explanation": "Sai. 'Weather' số ít dùng 'is sunny'; 'am' chỉ đi với chủ ngữ 'I'."
+        "explanation": "Sai. 'Weather' số ít dùng 'is sunny'; 'am' chỉ đi với chủ ngữ 'I'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If I ___ (find) your wallet, I will tell you immediately. (find: tìm thấy, wallet: ví, immediately: ngay lập tức)",
+    "q": "If I ___ your wallet, I will tell you immediately.",
     "a": [
       {
         "text": "find",
@@ -1698,20 +1716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "finds",
-        "explanation": "Sai. Phương án 'finds' không hòa hợp về ngôi và số với chủ ngữ 'If I'."
+        "explanation": "Sai. Phương án 'finds' không hòa hợp về ngôi và số với chủ ngữ 'If I'.",
+        "correct": false
       },
       {
         "text": "will find",
-        "explanation": "Sai. Sau 'if I' dùng hiện tại đơn 'find'; không đặt 'will find' trong mệnh đề If."
+        "explanation": "Sai. Sau 'if I' dùng hiện tại đơn 'find'; không đặt 'will find' trong mệnh đề If.",
+        "correct": false
       },
       {
         "text": "found",
-        "explanation": "Sai cấu trúc: mệnh đề If loại 1 dùng hiện tại 'find', không dùng quá khứ 'found'."
+        "explanation": "Sai cấu trúc: mệnh đề If loại 1 dùng hiện tại 'find', không dùng quá khứ 'found'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My mom ___ (bake) a chocolate cake this weekend if I help her. (bake: nướng, chocolate cake: bánh sô-cô-la)",
+    "q": "My mom ___ a chocolate cake this weekend if I help her.",
     "a": [
       {
         "text": "will bake",
@@ -1720,20 +1741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "bakes",
-        "explanation": "Sai cấu trúc: sau 'will' dùng nguyên mẫu 'bake', không dùng 'bakes'."
+        "explanation": "Sai cấu trúc: sau 'will' dùng nguyên mẫu 'bake', không dùng 'bakes'.",
+        "correct": false
       },
       {
         "text": "baked",
-        "explanation": "Sai. 'Baked' là quá khứ; kế hoạch cuối tuần cần kết quả tương lai 'will bake'."
+        "explanation": "Sai. 'Baked' là quá khứ; kế hoạch cuối tuần cần kết quả tương lai 'will bake'.",
+        "correct": false
       },
       {
         "text": "bake",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bake' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bake' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ (drink) too much soda, you will have a toothache. (soda: nước ngọt, toothache: đau răng)",
+    "q": "If you ___ too much soda, you will have a toothache.",
     "a": [
       {
         "text": "drink",
@@ -1742,20 +1766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "drinks",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'drinks' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'drinks' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will drink",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will drink' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will drink' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "drank",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'drank' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'drank' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The plants will die if you ___ (not/water) them. (plants: cây cối, die: chết, water: tưới nước)",
+    "q": "The plants will die if you ___ them.",
     "a": [
       {
         "text": "don't water",
@@ -1764,20 +1791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "doesn't water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "won't water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "not water",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not water' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If he ___ (arrive) late, the doctor won't see him. (arrive: đến, late: muộn, doctor: bác sĩ)",
+    "q": "If he ___ late, the doctor won't see him.",
     "a": [
       {
         "text": "arrives",
@@ -1786,20 +1816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "arrive",
-        "explanation": "Sai hòa hợp: chủ ngữ 'he' cần 'arrives' trong mệnh đề If."
+        "explanation": "Sai hòa hợp: chủ ngữ 'he' cần 'arrives' trong mệnh đề If.",
+        "correct": false
       },
       {
         "text": "will arrive",
-        "explanation": "Sai. Mệnh đề If của câu 11 dùng hiện tại đơn 'arrives', không dùng tương lai 'will arrive'."
+        "explanation": "Sai. Mệnh đề If của câu 11 dùng hiện tại đơn 'arrives', không dùng tương lai 'will arrive'.",
+        "correct": false
       },
       {
         "text": "arrived",
-        "explanation": "Sai. Điều kiện loại 1 cần hiện tại đơn 'arrives'; quá khứ 'arrived' không phù hợp với 'won't see'."
+        "explanation": "Sai. Điều kiện loại 1 cần hiện tại đơn 'arrives'; quá khứ 'arrived' không phù hợp với 'won't see'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ (buy) a new bicycle this year if I have enough money. (buy: mua, bicycle: xe đạp, enough: đủ)",
+    "q": "I ___ a new bicycle this year if I have enough money.",
     "a": [
       {
         "text": "will buy",
@@ -1808,20 +1841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "buy",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'buy' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'buy' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "buyed",
-        "explanation": "Sai. 'Buyed' không phải dạng động từ tiếng Anh; kết quả tương lai cần 'will buy'."
+        "explanation": "Sai. 'Buyed' không phải dạng động từ tiếng Anh; kết quả tương lai cần 'will buy'.",
+        "correct": false
       },
       {
         "text": "bought",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bought' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bought' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If the dog ___ (bark) loudly, the baby will wake up. (bark: sủa, loudly: ồn ào, wake up: tỉnh giấc)",
+    "q": "If the dog ___ loudly, the baby will wake up.",
     "a": [
       {
         "text": "barks",
@@ -1830,20 +1866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "bark",
-        "explanation": "Sai hòa hợp: 'the dog' là số ít, nên động từ phải là 'barks'."
+        "explanation": "Sai hòa hợp: 'the dog' là số ít, nên động từ phải là 'barks'.",
+        "correct": false
       },
       {
         "text": "will bark",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will bark' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will bark' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "barking",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'barking' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'barking' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You won't understand the lesson if you ___ (not/listen). (understand: hiểu, lesson: bài học, listen: lắng nghe)",
+    "q": "You won't understand the lesson if you ___.",
     "a": [
       {
         "text": "don't listen",
@@ -1852,20 +1891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "doesn't listen",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't listen' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't listen' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "not listen",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not listen' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not listen' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "won't listen",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't listen' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't listen' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If we ___ (recycle) paper, we will save many trees. (recycle: tái chế, paper: giấy, save: cứu/bảo vệ)",
+    "q": "If we ___ paper, we will save many trees.",
     "a": [
       {
         "text": "recycle",
@@ -1874,20 +1916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "recycles",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'recycles' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'recycles' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will recycle",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will recycle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will recycle' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "recycled",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'recycled' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'recycled' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ (get) a promotion this year if he works hard. (get: nhận được, promotion: sự thăng chức, work hard: làm việc chăm chỉ)",
+    "q": "He ___ a promotion this year if he works hard.",
     "a": [
       {
         "text": "will get",
@@ -1896,20 +1941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "gets",
-        "explanation": "Sai. Mệnh đề chính đã có 'will'; không dùng hiện tại 'gets' cho kết quả thăng chức tương lai."
+        "explanation": "Sai. Mệnh đề chính đã có 'will'; không dùng hiện tại 'gets' cho kết quả thăng chức tương lai.",
+        "correct": false
       },
       {
         "text": "got",
-        "explanation": "Sai. 'Got' là quá khứ, trái với kết quả có thể xảy ra trong năm nay sau điều kiện 'if he works'."
+        "explanation": "Sai. 'Got' là quá khứ, trái với kết quả có thể xảy ra trong năm nay sau điều kiện 'if he works'.",
+        "correct": false
       },
       {
         "text": "is getting",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'is getting' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'is getting' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ (touch) the stove, you will get burned. (touch: chạm vào, stove: bếp, burned: bị bỏng)",
+    "q": "If you ___ the stove, you will get burned.",
     "a": [
       {
         "text": "touch",
@@ -1918,20 +1966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "touches",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'touches' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'touches' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will touch",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will touch' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will touch' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "touched",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'touched' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'touched' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The cat ___ (catch) the mouse tonight if it runs fast. (catch: bắt, mouse: con chuột, fast: nhanh)",
+    "q": "The cat ___ the mouse tonight if it runs fast.",
     "a": [
       {
         "text": "will catch",
@@ -1940,20 +1991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "catches",
-        "explanation": "Sai. Sau 'will' phải là động từ nguyên mẫu 'catch'; 'catches' không thể đứng ở mệnh đề kết quả."
+        "explanation": "Sai. Sau 'will' phải là động từ nguyên mẫu 'catch'; 'catches' không thể đứng ở mệnh đề kết quả.",
+        "correct": false
       },
       {
         "text": "catch",
-        "explanation": "Sai. Mệnh đề kết quả cần 'will catch'; chỉ dùng 'catch' sẽ thiếu trợ động từ tương lai."
+        "explanation": "Sai. Mệnh đề kết quả cần 'will catch'; chỉ dùng 'catch' sẽ thiếu trợ động từ tương lai.",
+        "correct": false
       },
       {
         "text": "caught",
-        "explanation": "Sai. 'Caught' là quá khứ, không phù hợp với kết quả tương lai 'tonight' trong câu điều kiện loại 1."
+        "explanation": "Sai. 'Caught' là quá khứ, không phù hợp với kết quả tương lai 'tonight' trong câu điều kiện loại 1.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If they ___ (win) the game, they will be very happy. (win: thắng, game: trận đấu, happy: hạnh phúc)",
+    "q": "If they ___ the game, they will be very happy.",
     "a": [
       {
         "text": "win",
@@ -1962,20 +2016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wins",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wins' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wins' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will win",
-        "explanation": "Sai. Sau 'if they' cần hiện tại đơn 'win'; 'will win' không đứng trong mệnh đề điều kiện."
+        "explanation": "Sai. Sau 'if they' cần hiện tại đơn 'win'; 'will win' không đứng trong mệnh đề điều kiện.",
+        "correct": false
       },
       {
         "text": "won",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will call you if I ___ (have) free time. (call: gọi điện, free time: thời gian rảnh)",
+    "q": "I will call you if I ___ free time.",
     "a": [
       {
         "text": "have",
@@ -1984,20 +2041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. Chủ ngữ 'I' đi với 'have', không phải 'has' của ngôi thứ 3 số ít."
+        "explanation": "Sai. Chủ ngữ 'I' đi với 'have', không phải 'has' của ngôi thứ 3 số ít.",
+        "correct": false
       },
       {
         "text": "will have",
-        "explanation": "Sai. Sau 'if I' dùng 'have' hiện tại đơn; 'will have' không đứng trong mệnh đề điều kiện."
+        "explanation": "Sai. Sau 'if I' dùng 'have' hiện tại đơn; 'will have' không đứng trong mệnh đề điều kiện.",
+        "correct": false
       },
       {
         "text": "had",
-        "explanation": "Sai. 'had' là dạng quá khứ của have/has, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'had' là dạng quá khứ của have/has, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If it ___ (be) cold, I will wear a heavy coat. (cold: lạnh, wear: mặc, heavy coat: áo khoác dày)",
+    "q": "If it ___ cold, I will wear a heavy coat.",
     "a": [
       {
         "text": "is",
@@ -2006,20 +2066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "are",
-        "explanation": "Sai. 'Weather' số ít nên dùng 'is', không dùng 'are'."
+        "explanation": "Sai. 'Weather' số ít nên dùng 'is', không dùng 'are'.",
+        "correct": false
       },
       {
         "text": "will be",
-        "explanation": "Sai. Sau 'if it' dùng hiện tại đơn 'is'; 'will be' chỉ dành cho mệnh đề kết quả."
+        "explanation": "Sai. Sau 'if it' dùng hiện tại đơn 'is'; 'will be' chỉ dành cho mệnh đề kết quả.",
+        "correct": false
       },
       {
         "text": "was",
-        "explanation": "Sai. Sau 'if it' của điều kiện loại 1 dùng hiện tại 'is'; 'was' là quá khứ."
+        "explanation": "Sai. Sau 'if it' của điều kiện loại 1 dùng hiện tại 'is'; 'was' là quá khứ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ (miss) the train if you don't leave now. (miss: lỡ, train: tàu hỏa, leave: rời đi)",
+    "q": "You ___ the train if you don't leave now.",
     "a": [
       {
         "text": "will miss",
@@ -2028,20 +2091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "miss",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'miss' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'miss' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "missed",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'missed' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'missed' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "are missing",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'are missing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'are missing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If she ___ (not/wear) a hat, she will get sunburnt. (hat: mũ, sunburnt: cháy nắng)",
+    "q": "If she ___ a hat, she will get sunburnt.",
     "a": [
       {
         "text": "doesn't wear",
@@ -2050,20 +2116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "don't wear",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'don't wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'don't wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "not wear",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "won't wear",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The ocean ___ (become) dirty by next year if we keep throwing trash into it. (ocean: đại dương, dirty: bẩn, throw trash: vứt rác)",
+    "q": "The ocean ___ dirty by next year if we keep throwing trash into it.",
     "a": [
       {
         "text": "will become",
@@ -2072,20 +2141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "becomes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'becomes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'becomes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "become",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'become' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'become' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "became",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'became' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'became' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ (exercise) every day, you will be fit. (exercise: tập thể dục, fit: khỏe mạnh/cân đối)",
+    "q": "If you ___ every day, you will be fit.",
     "a": [
       {
         "text": "exercise",
@@ -2094,20 +2166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "exercises",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'exercises' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'exercises' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will exercise",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will exercise' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will exercise' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "exercised",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'exercised' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'exercised' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If he ___ (forget) his umbrella, he will get wet. (forget: quên, umbrella: cái ô, wet: ướt)",
+    "q": "If he ___ his umbrella, he will get wet.",
     "a": [
       {
         "text": "forgets",
@@ -2116,20 +2191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "forget",
-        "explanation": "Sai hòa hợp: 'he' cần dạng hiện tại đơn 'forgets', không phải 'forget'."
+        "explanation": "Sai hòa hợp: 'he' cần dạng hiện tại đơn 'forgets', không phải 'forget'.",
+        "correct": false
       },
       {
         "text": "will forget",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will forget' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will forget' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "forgotten",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'forgotten' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'forgotten' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ (bring) some snacks tonight if we go to the cinema. (bring: mang theo, snacks: đồ ăn vặt, cinema: rạp phim)",
+    "q": "I ___ some snacks tonight if we go to the cinema.",
     "a": [
       {
         "text": "will bring",
@@ -2138,20 +2216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "bring",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'bring' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'bring' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "brought",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'brought' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'brought' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "bringed",
-        "explanation": "Sai. 'Bringed' sai V2/V3; kế hoạch đi xem phim cần 'will bring'."
+        "explanation": "Sai. 'Bringed' sai V2/V3; kế hoạch đi xem phim cần 'will bring'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If the students ___ (talk) too much, they will not understand. (students: học sinh, talk: nói chuyện, understand: hiểu)",
+    "q": "If the students ___ too much, they will not understand.",
     "a": [
       {
         "text": "talk",
@@ -2160,20 +2241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "talks",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'talks' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'talks' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will talk",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will talk' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will talk' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "talked",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'talked' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'talked' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ (add) sugar, the tea will taste better. (add: thêm vào, sugar: đường, taste: có vị)",
+    "q": "If you ___ sugar, the tea will taste better.",
     "a": [
       {
         "text": "add",
@@ -2182,42 +2266,48 @@ const fullQuestionBank = [
       },
       {
         "text": "adds",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'adds' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'adds' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will add",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will add' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will add' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "added",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'added' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'added' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He ___ (fail) tomorrow's test if he doesn't read the instructions. (fail: trượt, test: bài kiểm tra, instructions: hướng dẫn)",
+    "q": "He ___ tomorrow's test if he doesn't read the instructions.",
     "a": [
       {
         "text": "will fail",
         "correct": true,
-        "explanation": "Kết quả tương lai."
+        "explanation": "Kết quả tương lai. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "fails",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'fails' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'fails' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "fail",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'fail' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'fail' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "failed",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'failed' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'failed' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If we ___ (not/protect) tigers, they will become extinct. (protect: bảo vệ, tigers: hổ, extinct: tuyệt chủng)",
+    "q": "If we ___ tigers, they will become extinct.",
     "a": [
       {
         "text": "don't protect",
@@ -2226,20 +2316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "doesn't protect",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't protect' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't protect' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "not protect",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not protect' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not protect' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "won't protect",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't protect' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't protect' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If she ___ (give) me a present, I will be very surprised. (give: tặng, present: món quà, surprised: ngạc nhiên)",
+    "q": "If she ___ me a present, I will be very surprised.",
     "a": [
       {
         "text": "gives",
@@ -2248,20 +2341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "give",
-        "explanation": "Sai. Chủ ngữ 'she' trong mệnh đề If cần hiện tại đơn 'gives', không dùng nguyên mẫu 'give'."
+        "explanation": "Sai. Chủ ngữ 'she' trong mệnh đề If cần hiện tại đơn 'gives', không dùng nguyên mẫu 'give'.",
+        "correct": false
       },
       {
         "text": "will give",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will give' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will give' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "gave",
-        "explanation": "Sai. 'Gave' là quá khứ, trong khi điều kiện loại 1 ở mệnh đề If cần hiện tại 'gives'."
+        "explanation": "Sai. 'Gave' là quá khứ, trong khi điều kiện loại 1 ở mệnh đề If cần hiện tại 'gives'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The car ___ (not/start) this morning if you don't use the key. (car: xe hơi, start: khởi động, key: chìa khóa)",
+    "q": "The car ___ tomorrow morning if you don't use the key.",
     "a": [
       {
         "text": "will not start",
@@ -2270,20 +2366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "didn't start",
-        "explanation": "Sai thì: câu nói về kết quả sắp xảy ra, không dùng quá khứ 'didn't start'."
+        "explanation": "Sai thì: câu nói về kết quả sắp xảy ra, không dùng quá khứ 'didn't start'.",
+        "correct": false
       },
       {
         "text": "not start",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not start' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not start' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "don't start",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'don't start' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'don't start' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ (mix) red and blue, you will get purple. (mix: trộn, red: đỏ, blue: xanh dương, purple: tím)",
+    "q": "If you ___ red and blue, you will get purple.",
     "a": [
       {
         "text": "mix",
@@ -2292,20 +2391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "mixes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'mixes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'mixes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will mix",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will mix' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will mix' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "mixed",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'mixed' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'mixed' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If the sun ___ (shine), we will go swimming. (sun: mặt trời, shine: tỏa sáng, swimming: đi bơi)",
+    "q": "If the sun ___, we will go swimming.",
     "a": [
       {
         "text": "shines",
@@ -2314,20 +2416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "shine",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'shine' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'shine' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will shine",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will shine' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will shine' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "shining",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'shining' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'shining' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You ___ (get) high marks on the next exam if you follow the rules. (high marks: điểm cao, follow: tuân theo, rules: quy tắc)",
+    "q": "You ___ high marks on the next exam if you follow the rules.",
     "a": [
       {
         "text": "will get",
@@ -2336,20 +2441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "get",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'get' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'get' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "gets",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'gets' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'gets' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "got",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'got' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'got' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If he ___ (tell) the truth, everyone will forgive him. (tell the truth: nói sự thật, forgive: tha thứ)",
+    "q": "If he ___ the truth, everyone will forgive him.",
     "a": [
       {
         "text": "tells",
@@ -2358,20 +2466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "tell",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'tell' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'tell' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will tell",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will tell' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will tell' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "told",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'told' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'told' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If we ___ (not/leave) now, we will be late for the movie. (leave: rời đi, late: muộn, movie: bộ phim)",
+    "q": "If we ___ now, we will be late for the movie.",
     "a": [
       {
         "text": "don't leave",
@@ -2380,20 +2491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "doesn't leave",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't leave' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't leave' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "won't leave",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't leave' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't leave' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "not leave",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not leave' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not leave' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ (eat) an apple every day, you will stay healthy. (apple: quả táo, healthy: khỏe mạnh)",
+    "q": "If you ___ an apple every day, you will stay healthy.",
     "a": [
       {
         "text": "eat",
@@ -2402,20 +2516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "eats",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'eats' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'eats' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will eat",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will eat' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will eat' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "ate",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'ate' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'ate' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She ___ (travel) to Paris if she wins the lottery. (travel: du lịch, lottery: xổ số)",
+    "q": "She ___ to Paris if she wins the lottery.",
     "a": [
       {
         "text": "will travel",
@@ -2424,20 +2541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "travels",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'travels' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'travels' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "travel",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'travel' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'travel' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "traveled",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'traveled' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'traveled' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ you go to the party if they invite you? (party: bữa tiệc, invite: mời)",
+    "q": "___ you go to the party if they invite you?",
     "a": [
       {
         "text": "Will",
@@ -2446,20 +2566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Do",
-        "explanation": "Sai. Đây là câu hỏi tương lai nên dùng 'Will you go', không phải trợ động từ hiện tại 'Do'."
+        "explanation": "Sai. Đây là câu hỏi tương lai nên dùng 'Will you go', không phải trợ động từ hiện tại 'Do'.",
+        "correct": false
       },
       {
         "text": "Does",
-        "explanation": "Sai. Câu hỏi tương lai dùng 'Will you go', không dùng 'Does you go'."
+        "explanation": "Sai. Câu hỏi tương lai dùng 'Will you go', không dùng 'Does you go'.",
+        "correct": false
       },
       {
         "text": "Are",
-        "explanation": "Sai. Đây là câu hỏi loại 1 nên cần trợ động từ 'Will', không phải 'Are'."
+        "explanation": "Sai. Đây là câu hỏi loại 1 nên cần trợ động từ 'Will', không phải 'Are'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If she ___ enough time, she will visit us. (time: thời gian, visit: thăm)",
+    "q": "If she ___ enough time, she will visit us.",
     "a": [
       {
         "text": "has",
@@ -2468,42 +2591,48 @@ const fullQuestionBank = [
       },
       {
         "text": "have",
-        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'have' là động từ/trợ động từ dùng cho số nhiều hoặc I/you, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "having",
-        "explanation": "Sai. Sau 'if she' cần động từ hiện tại đơn 'has'; dạng V-ing 'having' không tạo thành mệnh đề điều kiện."
+        "explanation": "Sai. Sau 'if she' cần động từ hiện tại đơn 'has'; dạng V-ing 'having' không tạo thành mệnh đề điều kiện.",
+        "correct": false
       },
       {
         "text": "will have",
-        "explanation": "Sai. Sau 'if she' cần 'has enough time'; không đặt 'will have' sau 'if'."
+        "explanation": "Sai. Sau 'if she' cần 'has enough time'; không đặt 'will have' sau 'if'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We won't go outside ___ it stops raining. (outside: ra ngoài, stop: dừng, raining: mưa)",
+    "q": "We plan to stay inside while the rain continues and go outside once it stops: We won't go outside ___ it stops raining.",
     "a": [
       {
         "text": "unless",
         "correct": true,
-        "explanation": "Unless = If...not (trừ khi)."
+        "explanation": "Unless = if ... not (trừ khi); với kế hoạch này, chúng ta chỉ ra ngoài khi mưa dừng."
       },
       {
         "text": "if",
-        "explanation": "Sai. Câu đã dùng 'unless' (= if not); thêm 'if' sẽ làm sai nghĩa điều kiện phủ định."
+        "explanation": "Sai. Câu đã dùng 'unless' (= if not); thêm 'if' sẽ làm sai nghĩa điều kiện phủ định.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai. Câu cần liên từ điều kiện 'unless'; 'when' chỉ thời điểm và không diễn tả điều kiện phủ định này."
+        "explanation": "Sai. Câu cần liên từ điều kiện 'unless'; 'when' chỉ thời điểm và không diễn tả điều kiện phủ định này.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "Sai. 'But' là liên từ tương phản, không thể thay cho 'if' để mở mệnh đề điều kiện."
+        "explanation": "Sai. 'But' là liên từ tương phản, không thể thay cho 'if' để mở mệnh đề điều kiện.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ early, you can get a good seat. (early: sớm, good seat: chỗ ngồi tốt)",
+    "q": "If you ___ early, you can get a good seat.",
     "a": [
       {
         "text": "arrive",
@@ -2512,20 +2641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "arrives",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'arrives' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'arrives' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will arrive",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will arrive' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will arrive' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "arrived",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'arrived' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'arrived' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ he studies, he will fail the exam. (fail: trượt, exam: kỳ thi)",
+    "q": "___ he studies, he will fail the exam.",
     "a": [
       {
         "text": "Unless",
@@ -2534,20 +2666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "If",
-        "explanation": "Sai. Với nghĩa 'trừ khi anh ấy học', đáp án phải là 'Unless'; 'If he studies' đảo ngược ý."
+        "explanation": "Sai. Với nghĩa 'trừ khi anh ấy học', đáp án phải là 'Unless'; 'If he studies' đảo ngược ý.",
+        "correct": false
       },
       {
         "text": "When",
-        "explanation": "Sai. 'When he studies' nghĩa là 'khi anh ấy học', không tương đương 'unless he studies' trong câu này."
+        "explanation": "Sai. 'When he studies' nghĩa là 'khi anh ấy học', không tương đương 'unless he studies' trong câu này.",
+        "correct": false
       },
       {
         "text": "Because",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'Because' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'Because' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If I see him later today, I ___ him your message. (see: thấy, message: tin nhắn)",
+    "q": "If I see him later today, I ___ him your message.",
     "a": [
       {
         "text": "will give",
@@ -2556,20 +2691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "give",
-        "explanation": "Sai. Sau chủ ngữ 'I' trong mệnh đề kết quả phải có 'will give'; 'give' bị thiếu trợ động từ."
+        "explanation": "Sai. Sau chủ ngữ 'I' trong mệnh đề kết quả phải có 'will give'; 'give' bị thiếu trợ động từ.",
+        "correct": false
       },
       {
         "text": "gives",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'gives' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'gives' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "gave",
-        "explanation": "Sai. Kết quả sau 'I' phải là 'will give' để diễn tả tương lai, không dùng quá khứ 'gave'."
+        "explanation": "Sai. Kết quả sau 'I' phải là 'will give' để diễn tả tương lai, không dùng quá khứ 'gave'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If the library ___ open, I will borrow a book. (library: thư viện, open: mở cửa, borrow: mượn)",
+    "q": "If the library ___ open, I will borrow a book.",
     "a": [
       {
         "text": "is",
@@ -2578,20 +2716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "are",
-        "explanation": "Sai. 'Library' số ít cần 'is open', không phải 'are open'."
+        "explanation": "Sai. 'Library' số ít cần 'is open', không phải 'are open'.",
+        "correct": false
       },
       {
         "text": "am",
-        "explanation": "Sai. 'Library' số ít cần 'is open', không dùng 'am'."
+        "explanation": "Sai. 'Library' số ít cần 'is open', không dùng 'am'.",
+        "correct": false
       },
       {
         "text": "will be",
-        "explanation": "Sai. Sau 'if the library' cần 'is open', không đặt 'will be' trong mệnh đề điều kiện."
+        "explanation": "Sai. Sau 'if the library' cần 'is open', không đặt 'will be' trong mệnh đề điều kiện.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "What ___ you do if it rains this weekend? (weekend: cuối tuần)",
+    "q": "What ___ you do if it rains this weekend?",
     "a": [
       {
         "text": "will",
@@ -2600,20 +2741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "do",
-        "explanation": "Sai. Mẫu hỏi là 'What will you do'; chỗ trống cần 'will', không phải 'do'."
+        "explanation": "Sai. Mẫu hỏi là 'What will you do'; chỗ trống cần 'will', không phải 'do'.",
+        "correct": false
       },
       {
         "text": "does",
-        "explanation": "Sai. Chủ ngữ 'you' không đi với 'does'; mẫu đúng là 'What will you do'."
+        "explanation": "Sai. Chủ ngữ 'you' không đi với 'does'; mẫu đúng là 'What will you do'.",
+        "correct": false
       },
       {
         "text": "are",
-        "explanation": "Sai. Chỗ trống hỏi kết quả tương lai, nên là 'will you do', không phải 'are you do'."
+        "explanation": "Sai. Chỗ trống hỏi kết quả tương lai, nên là 'will you do', không phải 'are you do'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If we don't protect the environment, the world ___ in danger by 2050. (protect: bảo vệ, environment: môi trường, danger: nguy hiểm)",
+    "q": "If we don't protect the environment, the world ___ in danger by 2050.",
     "a": [
       {
         "text": "will be",
@@ -2622,20 +2766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "is",
-        "explanation": "Sai. Sau 'the world' dùng 'will be' vì kết quả thuộc tương lai đến năm 2050."
+        "explanation": "Sai. Sau 'the world' dùng 'will be' vì kết quả thuộc tương lai đến năm 2050.",
+        "correct": false
       },
       {
         "text": "be",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'be' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'be' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "was",
-        "explanation": "Sai. Kết quả đến năm 2050 cần 'will be'; quá khứ 'was' không phù hợp với mốc tương lai."
+        "explanation": "Sai. Kết quả đến năm 2050 cần 'will be'; quá khứ 'was' không phù hợp với mốc tương lai.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You will be tired tomorrow if you ___ to bed late. (tired: mệt, tomorrow: ngày mai, bed: đi ngủ, late: muộn)",
+    "q": "You will be tired tomorrow if you ___ to bed late.",
     "a": [
       {
         "text": "go",
@@ -2644,20 +2791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "goes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'goes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'goes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will go",
-        "explanation": "Sai. Sau 'if you' dùng hiện tại đơn 'go'; 'will go' không đặt trong mệnh đề điều kiện."
+        "explanation": "Sai. Sau 'if you' dùng hiện tại đơn 'go'; 'will go' không đặt trong mệnh đề điều kiện.",
+        "correct": false
       },
       {
         "text": "went",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'went' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'went' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ the button now, the machine will start. (button: nút bấm, now: bây giờ, start: khởi động)",
+    "q": "If you ___ the button now, the machine will start.",
     "a": [
       {
         "text": "press",
@@ -2666,20 +2816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "presses",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'presses' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'presses' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "pressing",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'pressing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'pressing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will press",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will press' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will press' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If my father ___ home early, we will have dinner together. (dinner: bữa tối, together: cùng nhau)",
+    "q": "If my father ___ home early, we will have dinner together.",
     "a": [
       {
         "text": "comes",
@@ -2688,20 +2841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "come",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will come",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "coming",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'coming' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'coming' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ you help me tonight if I have a problem? (help: giúp đỡ, problem: vấn đề)",
+    "q": "___ you help me tonight if I have a problem?",
     "a": [
       {
         "text": "Will",
@@ -2710,20 +2866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Do",
-        "explanation": "Sai. Hỏi lời giúp tối nay dùng 'Will you help', không dùng 'Do'."
+        "explanation": "Sai. Hỏi lời giúp tối nay dùng 'Will you help', không dùng 'Do'.",
+        "correct": false
       },
       {
         "text": "Did",
-        "explanation": "Sai. 'Did' là trợ động từ thì quá khứ đơn, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'Did' là trợ động từ thì quá khứ đơn, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "Are",
-        "explanation": "Sai. Câu hỏi giúp đỡ tối nay dùng 'Will you help', không dùng 'Are'."
+        "explanation": "Sai. Câu hỏi giúp đỡ tối nay dùng 'Will you help', không dùng 'Are'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If the bus ___ soon, I will take a taxi. (soon: sớm, take a taxi: đi taxi)",
+    "q": "If the bus ___ soon, I will take a taxi.",
     "a": [
       {
         "text": "doesn't come",
@@ -2732,20 +2891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "don't come",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'don't come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'don't come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "won't come",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "not come",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not come' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you are helpful at tomorrow's event, people ___ you. (helpful: hay giúp đỡ, event: sự kiện)",
+    "q": "If you are helpful at tomorrow's event, people ___ you.",
     "a": [
       {
         "text": "will like",
@@ -2754,20 +2916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "like",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'like' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "likes",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'likes' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "liked",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'liked' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'liked' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If she ___ the red dress, she will look beautiful. (red dress: váy đỏ, look beautiful: trông xinh đẹp)",
+    "q": "If she ___ the red dress, she will look beautiful.",
     "a": [
       {
         "text": "wears",
@@ -2776,20 +2941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "wear",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will wear",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will wear' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wearing",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wearing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'wearing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We will miss the flight if we ___ late. (miss the flight: lỡ chuyến bay, late: muộn)",
+    "q": "We will miss the flight if we ___ late.",
     "a": [
       {
         "text": "are",
@@ -2798,20 +2966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "is",
-        "explanation": "Sai. Chủ ngữ ngầm 'we' cần 'are late', không phải 'is late'."
+        "explanation": "Sai. Chủ ngữ ngầm 'we' cần 'are late', không phải 'is late'.",
+        "correct": false
       },
       {
         "text": "will be",
-        "explanation": "Sai. Sau 'if we' dùng 'are late' hiện tại đơn; kết quả 'will miss' đã có ở vế chính."
+        "explanation": "Sai. Sau 'if we' dùng 'are late' hiện tại đơn; kết quả 'will miss' đã có ở vế chính.",
+        "correct": false
       },
       {
         "text": "were",
-        "explanation": "Sai. 'were' là động từ 'to be' quá khứ dùng cho ngôi số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'were' là động từ 'to be' quá khứ dùng cho ngôi số nhiều, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If the team ___ the match, they will celebrate. (team: đội, match: trận đấu, celebrate: ăn mừng)",
+    "q": "If the team ___ the match, they will celebrate.",
     "a": [
       {
         "text": "wins",
@@ -2820,20 +2991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "win",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'win' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'win' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "winning",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'winning' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'winning' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will win",
-        "explanation": "Sai. Câu dùng điều kiện loại 1: sau 'if the team' phải là hiện tại 'wins', không phải 'will win'."
+        "explanation": "Sai. Câu dùng điều kiện loại 1: sau 'if the team' phải là hiện tại 'wins', không phải 'will win'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you don't wear a coat tonight, you ___ a cold tomorrow. (coat: áo khoác, catch a cold: bị cảm lạnh)",
+    "q": "If you don't wear a coat tonight, you ___ a cold tomorrow.",
     "a": [
       {
         "text": "will catch",
@@ -2842,20 +3016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "catch",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'catch' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'catch' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "catches",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'catches' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'catches' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "caught",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'caught' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'caught' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you eat too much candy tonight, you ___ a toothache tomorrow. (candy: kẹo, toothache: đau răng)",
+    "q": "If you eat too much candy tonight, you ___ a toothache tomorrow.",
     "a": [
       {
         "text": "will get",
@@ -2864,20 +3041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "gets",
-        "explanation": "Sai chia động từ."
+        "explanation": "Sai chia động từ. Cách dùng phù hợp trong câu này là “will get”.",
+        "correct": false
       },
       {
         "text": "got",
-        "explanation": "Sai cấu trúc loại 1: If dùng hiện tại 'get', không dùng quá khứ 'got'."
+        "explanation": "Sai cấu trúc loại 1: If dùng hiện tại 'get', không dùng quá khứ 'got'.",
+        "correct": false
       },
       {
         "text": "getting",
-        "explanation": "Thiếu trợ động từ."
+        "explanation": "Thiếu trợ động từ. Cách dùng phù hợp trong câu này là “will get”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ it is sunny, we will go to the beach. (sunny: có nắng, beach: bãi biển)",
+    "q": "___ it is sunny, we will go to the beach.",
     "a": [
       {
         "text": "If",
@@ -2886,20 +3066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Unless",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'Unless' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'Unless' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "But",
-        "explanation": "Sai. Đầu câu cần 'If' để nêu điều kiện; 'But' không tạo được cấu trúc điều kiện."
+        "explanation": "Sai. Đầu câu cần 'If' để nêu điều kiện; 'But' không tạo được cấu trúc điều kiện.",
+        "correct": false
       },
       {
         "text": "Or",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'Or' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'Or' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ your room, your mom will be happy. (clean: dọn dẹp, room: phòng, happy: vui vẻ)",
+    "q": "If you ___ your room, your mom will be happy.",
     "a": [
       {
         "text": "clean",
@@ -2908,20 +3091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "cleans",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'cleans' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'cleans' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will clean",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will clean' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will clean' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "cleaned",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'cleaned' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'cleaned' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They ___ stay at home today if it is too hot. (stay at home: ở nhà, hot: nóng)",
+    "q": "They ___ stay at home today if it is too hot.",
     "a": [
       {
         "text": "will",
@@ -2930,20 +3116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "do",
-        "explanation": "Sai. Chỗ trống là kết quả tương lai 'will stay', không phải trợ động từ 'do'."
+        "explanation": "Sai. Chỗ trống là kết quả tương lai 'will stay', không phải trợ động từ 'do'.",
+        "correct": false
       },
       {
         "text": "are",
-        "explanation": "Sai. Kết quả ở mệnh đề chính cần 'will stay', không phải 'are stay'."
+        "explanation": "Sai. Kết quả ở mệnh đề chính cần 'will stay', không phải 'are stay'.",
+        "correct": false
       },
       {
         "text": "does",
-        "explanation": "Sai. 'They' đi với 'will stay' trong mệnh đề chính, không dùng 'does'."
+        "explanation": "Sai. 'They' đi với 'will stay' trong mệnh đề chính, không dùng 'does'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If he ___ to the gym, he will be stronger. (gym: phòng tập, stronger: mạnh hơn)",
+    "q": "If he ___ to the gym, he will be stronger.",
     "a": [
       {
         "text": "goes",
@@ -2952,20 +3141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "go",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'go' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'go' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will go",
-        "explanation": "Sai. Sau 'if he' cần hiện tại đơn 'goes'; tương lai 'will go' sai vị trí và còn thiếu 's'."
+        "explanation": "Sai. Sau 'if he' cần hiện tại đơn 'goes'; tương lai 'will go' sai vị trí và còn thiếu 's'.",
+        "correct": false
       },
       {
         "text": "going",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'going' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'going' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ slow, you will not finish the race. (slow: chậm chạp, finish: hoàn thành, race: cuộc đua)",
+    "q": "If you ___ slow, you will not finish the race.",
     "a": [
       {
         "text": "are",
@@ -2974,20 +3166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "is",
-        "explanation": "Sai. Với chủ ngữ 'you', dùng 'are slow'; 'am' chỉ dành cho 'I'."
+        "explanation": "Sai. Với chủ ngữ 'you', dùng 'are slow'; 'am' chỉ dành cho 'I'.",
+        "correct": false
       },
       {
         "text": "am",
-        "explanation": "Sai. 'am' là động từ 'to be' dành riêng cho ngôi 'I', không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'am' là động từ 'to be' dành riêng cho ngôi 'I', không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "will be",
-        "explanation": "Sai. Sau 'if you' cần 'are slow'; không dùng 'will be' trong điều kiện loại 1."
+        "explanation": "Sai. Sau 'if you' cần 'are slow'; không dùng 'will be' trong điều kiện loại 1.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We will bake cookies if we ___ enough flour. (bake: nướng, cookies: bánh quy, flour: bột mì)",
+    "q": "We will bake cookies if we ___ enough flour.",
     "a": [
       {
         "text": "have",
@@ -2996,20 +3191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "has",
-        "explanation": "Sai. Chủ ngữ 'we' cần 'have enough flour'; 'has' chỉ đi với ngôi thứ 3 số ít."
+        "explanation": "Sai. Chủ ngữ 'we' cần 'have enough flour'; 'has' chỉ đi với ngôi thứ 3 số ít.",
+        "correct": false
       },
       {
         "text": "will have",
-        "explanation": "Sai. Sau 'if we' dùng 'have enough flour' hiện tại đơn, không dùng 'will have'."
+        "explanation": "Sai. Sau 'if we' dùng 'have enough flour' hiện tại đơn, không dùng 'will have'.",
+        "correct": false
       },
       {
         "text": "having",
-        "explanation": "Sai. Sau 'if we' cần động từ hiện tại đơn 'have', không dùng dạng V-ing 'having'."
+        "explanation": "Sai. Sau 'if we' cần động từ hiện tại đơn 'have', không dùng dạng V-ing 'having'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If the phone ___, I will answer it. (phone: điện thoại, ring: kêu/reo, answer: trả lời)",
+    "q": "If the phone ___, I will answer it.",
     "a": [
       {
         "text": "rings",
@@ -3018,20 +3216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "ring",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'ring' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'ring' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will ring",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will ring' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will ring' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "ringing",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'ringing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'ringing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If you ___ hard on this project, you will succeed. (work: làm việc, succeed: thành công)",
+    "q": "If you ___ hard on this project, you will succeed.",
     "a": [
       {
         "text": "work",
@@ -3040,20 +3241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "works",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'works' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'works' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will work",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will work' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will work' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "worked",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'worked' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'worked' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will be sad if you ___ come to my party. (sad: buồn, party: bữa tiệc)",
+    "q": "I will be sad if you ___ come to my party.",
     "a": [
       {
         "text": "don't",
@@ -3062,20 +3266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "doesn't",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'doesn't' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "won't",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'won't' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "not",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'not' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'not' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "If she ___ the answer, she will raise her hand. (know: biết, answer: câu trả lời, raise hand: giơ tay)",
+    "q": "If she ___ the answer, she will raise her hand.",
     "a": [
       {
         "text": "knows",
@@ -3084,59 +3291,68 @@ const fullQuestionBank = [
       },
       {
         "text": "know",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'know' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'know' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will know",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will know' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will know' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "knowing",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'knowing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'knowing' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu tôi có thời gian, tôi sẽ giúp bạn.' (time: thời gian, help: giúp đỡ)",
+    "q": "Dịch sang tiếng Anh, nói về một khả năng thực tế chiều nay: 'Nếu chiều nay tôi có thời gian, tôi sẽ giúp bạn.'",
     "a": [
       {
         "text": "If I have time, I will help you.",
         "correct": true,
-        "explanation": "Cấu trúc đúng của câu điều kiện loại 1."
+        "explanation": "Đây là điều kiện loại 1 cho một khả năng thực tế trong tương lai: mệnh đề if dùng hiện tại đơn, mệnh đề kết quả dùng will."
       },
       {
         "text": "If I will have time, I help you.",
-        "explanation": "Sai. Sau 'if I' dùng hiện tại đơn 'have'; 'will' chỉ đứng ở mệnh đề kết quả."
+        "explanation": "Sai. Sau 'if I' dùng hiện tại đơn 'have'; 'will' chỉ đứng ở mệnh đề kết quả.",
+        "correct": false
       },
       {
         "text": "If I had time, I would help you.",
-        "explanation": "Đây là loại 2."
+        "explanation": "Sai ngữ cảnh: 'If I had time, I would help you' là điều kiện loại 2, diễn tả tình huống giả định/không có thật; stem đã khóa khả năng thực tế chiều nay.",
+        "correct": false
       },
       {
         "text": "If I have time, I helped you.",
-        "explanation": "Sai thì kết quả: bản dịch tương lai cần 'will help', không phải quá khứ 'helped'."
+        "explanation": "Sai thì kết quả: bản dịch tương lai cần 'will help', không phải quá khứ 'helped'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu trời nắng, chúng tôi sẽ đi dã ngoại.' (sunny: nắng, go for a picnic: đi dã ngoại)",
+    "q": "Dịch sang tiếng Anh: 'Nếu trời nắng, chúng tôi sẽ đi dã ngoại.'",
     "a": [
       {
         "text": "If it is sunny, we will go for a picnic.",
         "correct": true,
-        "explanation": "Câu đúng ngữ pháp."
+        "explanation": "Câu đúng ngữ pháp. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "If it sunny, we will go for a picnic.",
-        "explanation": "Thiếu động từ 'is'."
+        "explanation": "Thiếu động từ 'is'. Cách dùng phù hợp trong câu này là “If it is sunny, we will go for a picnic.”.",
+        "correct": false
       },
       {
         "text": "If it is sunny, we went for a picnic.",
-        "explanation": "Sai thì ở mệnh đề chính: bản dịch nói kết quả tương lai, không dùng quá khứ 'went'."
+        "explanation": "Sai thì ở mệnh đề chính: bản dịch nói kết quả tương lai, không dùng quá khứ 'went'.",
+        "correct": false
       },
       {
         "text": "If it was sunny, we go for a picnic.",
-        "explanation": "Sai. Dấu hiệu hoặc ngữ cảnh trong câu ở hiện tại, không dùng thì Quá khứ."
+        "explanation": "Sai. Dấu hiệu hoặc ngữ cảnh trong câu ở hiện tại, không dùng thì Quá khứ.",
+        "correct": false
       }
     ]
   },
@@ -3150,20 +3366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Nếu bạn học chăm chỉ, bạn đã vượt qua kỳ thi.",
-        "explanation": "Sai. Phương án 'Nếu bạn học chăm chỉ, bạn đã vượt qua kỳ thi.' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'Nếu bạn học chăm chỉ, bạn đã vượt qua kỳ thi.' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       },
       {
         "text": "Nếu bạn học, bạn vượt qua kỳ thi.",
-        "explanation": "Thiếu từ 'chăm chỉ' và 'sẽ'."
+        "explanation": "Thiếu từ 'chăm chỉ' và 'sẽ'.",
+        "correct": false
       },
       {
         "text": "Bạn sẽ học chăm chỉ nếu bạn vượt qua kỳ thi.",
-        "explanation": "Sai chiều quan hệ: câu gốc nói học chăm chỉ dẫn đến đỗ, không phải đỗ rồi mới học."
+        "explanation": "Sai chiều quan hệ: câu gốc nói học chăm chỉ dẫn đến đỗ, không phải đỗ rồi mới học.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu anh ấy không ăn sáng, anh ấy sẽ thấy đói.' (eat breakfast: ăn sáng, hungry: đói)",
+    "q": "Dịch sang tiếng Anh: 'Nếu anh ấy không ăn sáng, anh ấy sẽ thấy đói.'",
     "a": [
       {
         "text": "If he doesn't eat breakfast, he will feel hungry.",
@@ -3172,20 +3391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "If he don't eat breakfast, he will feel hungry.",
-        "explanation": "Sai trợ động từ 'don't'."
+        "explanation": "Sai trợ động từ 'don't'.",
+        "correct": false
       },
       {
         "text": "If he doesn't eat breakfast, he felt hungry.",
-        "explanation": "Sai thì kết quả: câu yêu cầu tương lai 'will feel', không phải quá khứ 'felt'."
+        "explanation": "Sai thì kết quả: câu yêu cầu tương lai 'will feel', không phải quá khứ 'felt'.",
+        "correct": false
       },
       {
         "text": "If he not eat breakfast, he will be hungry.",
-        "explanation": "Thiếu trợ động từ 'does'."
+        "explanation": "Thiếu trợ động từ 'does'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu bạn làm việc chăm chỉ, bạn sẽ giàu có.' (work hard: làm việc chăm chỉ, rich: giàu có)",
+    "q": "Dịch sang tiếng Anh: 'Nếu bạn làm việc chăm chỉ, bạn sẽ giàu có.'",
     "a": [
       {
         "text": "If you work hard, you will be rich.",
@@ -3194,42 +3416,48 @@ const fullQuestionBank = [
       },
       {
         "text": "If you work hard, you will rich.",
-        "explanation": "Thiếu động từ 'be' sau 'will'."
+        "explanation": "Thiếu động từ 'be' sau 'will'.",
+        "correct": false
       },
       {
         "text": "If you working hard, you be rich.",
-        "explanation": "Sai dạng động từ."
+        "explanation": "Sai dạng động từ. Cách dùng phù hợp trong câu này là “If you work hard, you will be rich.”.",
+        "correct": false
       },
       {
         "text": "If you will work hard, you are rich.",
-        "explanation": "Sai. Điều kiện của 'work hard' dùng hiện tại đơn 'work', không đặt 'will' sau 'if'."
+        "explanation": "Sai. Điều kiện của 'work hard' dùng hiện tại đơn 'work', không đặt 'will' sau 'if'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Việt: 'If it rains, the ground will be wet.' (ground: mặt đất, wet: ướt)",
+    "q": "Dịch sang tiếng Việt: 'If it rains, the ground will be wet.'",
     "a": [
       {
         "text": "Nếu trời mưa, mặt đất sẽ bị ướt.",
         "correct": true,
-        "explanation": "Dịch đúng nghĩa."
+        "explanation": "Dịch đúng nghĩa. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "Nếu trời mưa, mặt đất đã ướt.",
-        "explanation": "Sai thời điểm: bản gốc dùng kết quả tương lai 'sẽ bị ướt', không phải 'đã ướt'."
+        "explanation": "Sai thời điểm: bản gốc dùng kết quả tương lai 'sẽ bị ướt', không phải 'đã ướt'.",
+        "correct": false
       },
       {
         "text": "Nếu trời không mưa, mặt đất sẽ ướt.",
-        "explanation": "Sai. Phương án 'Nếu trời không mưa, mặt đất sẽ ướt.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'Nếu trời không mưa, mặt đất sẽ ướt.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "Mặt đất sẽ ướt nếu trời nắng.",
-        "explanation": "Sai. Phương án 'Mặt đất sẽ ướt nếu trời nắng.' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'Mặt đất sẽ ướt nếu trời nắng.' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu họ đến muộn, họ sẽ lỡ bộ phim.' (arrive late: đến muộn, miss the movie: lỡ bộ phim)",
+    "q": "Dịch sang tiếng Anh: 'Nếu họ đến muộn, họ sẽ lỡ bộ phim.'",
     "a": [
       {
         "text": "If they arrive late, they will miss the movie.",
@@ -3238,20 +3466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "If they arrive late, they missed the movie.",
-        "explanation": "Sai thì kết quả: bản dịch nói họ sẽ lỡ phim, không phải đã lỡ phim."
+        "explanation": "Sai thì kết quả: bản dịch nói họ sẽ lỡ phim, không phải đã lỡ phim.",
+        "correct": false
       },
       {
         "text": "If they will arrive late, they miss the movie.",
-        "explanation": "Sai. Sau 'if they' cần 'arrive' hiện tại đơn; kết quả mới dùng 'will miss'."
+        "explanation": "Sai. Sau 'if they' cần 'arrive' hiện tại đơn; kết quả mới dùng 'will miss'.",
+        "correct": false
       },
       {
         "text": "If they arrives late, they will miss the movie.",
-        "explanation": "Sai chia động từ 'arrives'."
+        "explanation": "Sai chia động từ 'arrives'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh và bắt đầu bằng 'If': 'Nếu bạn không nhanh lên, bạn sẽ muộn học.' (hurry up: nhanh lên, late for school: muộn học)",
+    "q": "Dịch sang tiếng Anh và bắt đầu bằng 'If': 'Nếu bạn không nhanh lên, bạn sẽ muộn học.'",
     "a": [
       {
         "text": "If you don't hurry up, you will be late for school.",
@@ -3260,64 +3491,73 @@ const fullQuestionBank = [
       },
       {
         "text": "If you not hurry up, you will be late.",
-        "explanation": "Thiếu 'don't'."
+        "explanation": "Thiếu 'don't'. Cách dùng phù hợp trong câu này là “If you don't hurry up, you will be late for school.”.",
+        "correct": false
       },
       {
         "text": "If you won't hurry up, you are late.",
-        "explanation": "Sai cấu trúc: mệnh đề If không dùng 'won't'; phải là 'don't hurry up'."
+        "explanation": "Sai cấu trúc: mệnh đề If không dùng 'won't'; phải là 'don't hurry up'.",
+        "correct": false
       },
       {
         "text": "Unless you hurry up, you will be late for school.",
-        "explanation": "Đúng nghĩa nhưng không bắt đầu bằng 'If' như yêu cầu."
+        "explanation": "Chưa đúng khi chọn “Unless you hurry up, you will be late for school.”. Đúng nghĩa nhưng không bắt đầu bằng 'If' như yêu cầu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Việt: 'If you exercise, you will feel healthy.' (exercise: tập thể dục, healthy: khỏe mạnh)",
+    "q": "Dịch sang tiếng Việt: 'If you exercise, you will feel healthy.'",
     "a": [
       {
         "text": "Nếu bạn tập thể dục, bạn sẽ cảm thấy khỏe mạnh.",
         "correct": true,
-        "explanation": "Dịch chính xác."
+        "explanation": "Dịch chính xác. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "Nếu bạn tập thể dục, bạn đã thấy khỏe mạnh.",
-        "explanation": "Sai thời điểm: bản gốc dùng kết quả tương lai 'sẽ cảm thấy', không phải quá khứ 'đã thấy'."
+        "explanation": "Sai thời điểm: bản gốc dùng kết quả tương lai 'sẽ cảm thấy', không phải quá khứ 'đã thấy'.",
+        "correct": false
       },
       {
         "text": "Bạn sẽ cảm thấy khỏe mạnh nếu bạn không tập thể dục.",
-        "explanation": "Sai. Cấu trúc 'Bạn sẽ cảm thấy khỏe mạnh nếu bạn không tập thể dục.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn sẽ cảm thấy khỏe mạnh nếu bạn không tập thể dục.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Nếu bạn đã tập thể dục, bạn sẽ khỏe.",
-        "explanation": "Sai cấu trúc loại 1: điều kiện hiện tại dùng 'Nếu bạn tập thể dục', không dùng quá khứ hoàn thành."
+        "explanation": "Sai cấu trúc loại 1: điều kiện hiện tại dùng 'Nếu bạn tập thể dục', không dùng quá khứ hoàn thành.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu tôi tìm thấy chìa khóa, tôi sẽ đưa nó cho bạn.' (find: tìm thấy, key: chìa khóa, give: đưa)",
+    "q": "Dịch sang tiếng Anh: 'Nếu tôi tìm thấy chìa khóa, tôi sẽ đưa nó cho bạn.'",
     "a": [
       {
         "text": "If I find the key, I will give it to you.",
         "correct": true,
-        "explanation": "Đúng ngữ pháp."
+        "explanation": "Đúng ngữ pháp. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "If I find the key, I gave it to you.",
-        "explanation": "Sai thì kết quả: lời hứa tương lai cần 'will give', không phải quá khứ 'gave'."
+        "explanation": "Sai thì kết quả: lời hứa tương lai cần 'will give', không phải quá khứ 'gave'.",
+        "correct": false
       },
       {
         "text": "If I finds the key, I will give it to you.",
-        "explanation": "Sai chia 'finds'."
+        "explanation": "Sai chia 'finds'. Cách dùng phù hợp trong câu này là “If I find the key, I will give it to you.”.",
+        "correct": false
       },
       {
         "text": "If I found the key, I would give it to you.",
-        "explanation": "Loại 2."
+        "explanation": "Loại 2. Cách dùng phù hợp trong câu này là “If I find the key, I will give it to you.”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu cô ấy mệt, cô ấy sẽ đi ngủ sớm.' (tired: mệt, go to bed: đi ngủ, early: sớm)",
+    "q": "Dịch sang tiếng Anh: 'Nếu cô ấy mệt, cô ấy sẽ đi ngủ sớm.'",
     "a": [
       {
         "text": "If she is tired, she will go to bed early.",
@@ -3326,20 +3566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "If she tired, she will go to bed early.",
-        "explanation": "Thiếu 'is'."
+        "explanation": "Thiếu 'is'. Cách dùng phù hợp trong câu này là “If she is tired, she will go to bed early.”.",
+        "correct": false
       },
       {
         "text": "If she will be tired, she goes to bed early.",
-        "explanation": "Sai. 'If she' phải đi với 'is' ở mệnh đề điều kiện; 'will go' mới là kết quả."
+        "explanation": "Sai. 'If she' phải đi với 'is' ở mệnh đề điều kiện; 'will go' mới là kết quả.",
+        "correct": false
       },
       {
         "text": "If she is tired, she went to bed early.",
-        "explanation": "Sai thì kết quả: bản dịch nói cô ấy sẽ đi ngủ, không phải đã đi ngủ."
+        "explanation": "Sai thì kết quả: bản dịch nói cô ấy sẽ đi ngủ, không phải đã đi ngủ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Việt: 'If we save water, we will protect the earth.' (save: tiết kiệm, protect: bảo vệ, earth: trái đất)",
+    "q": "Dịch sang tiếng Việt: 'If we save water, we will protect the earth.'",
     "a": [
       {
         "text": "Nếu chúng ta tiết kiệm nước, chúng ta sẽ bảo vệ trái đất.",
@@ -3348,20 +3591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Nếu chúng ta tiết kiệm nước, chúng ta bảo vệ trái đất.",
-        "explanation": "Thiếu 'sẽ'."
+        "explanation": "Thiếu 'sẽ'. Cách dùng phù hợp trong câu này là “Nếu chúng ta tiết kiệm nước, chúng ta sẽ bảo vệ trái đất.”.",
+        "correct": false
       },
       {
         "text": "Chúng ta sẽ bảo vệ trái đất nếu chúng ta không tiết kiệm nước.",
-        "explanation": "Sai chiều quan hệ: tiết kiệm nước là điều kiện để bảo vệ trái đất, không phải không tiết kiệm."
+        "explanation": "Sai chiều quan hệ: tiết kiệm nước là điều kiện để bảo vệ trái đất, không phải không tiết kiệm.",
+        "correct": false
       },
       {
         "text": "Nếu chúng ta đã tiết kiệm nước, trái đất được bảo vệ.",
-        "explanation": "Sai cấu trúc loại 1: hai vế dùng hiện tại đơn và tương lai, không dùng quá khứ."
+        "explanation": "Sai cấu trúc loại 1: hai vế dùng hiện tại đơn và tương lai, không dùng quá khứ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu con chó sủa, tôi sẽ sợ hãi.' (dog: con chó, bark: sủa, scared: sợ hãi)",
+    "q": "Dịch sang tiếng Anh: 'Nếu con chó sủa, tôi sẽ sợ hãi.'",
     "a": [
       {
         "text": "If the dog barks, I will be scared.",
@@ -3370,20 +3616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "If the dog bark, I will be scared.",
-        "explanation": "Thiếu 's' ở 'bark'."
+        "explanation": "Thiếu 's' ở 'bark'. Cách dùng phù hợp trong câu này là “If the dog barks, I will be scared.”.",
+        "correct": false
       },
       {
         "text": "If the dog barks, I was scared.",
-        "explanation": "Sai thì kết quả: bản dịch yêu cầu 'will be scared', không phải quá khứ 'was scared'."
+        "explanation": "Sai thì kết quả: bản dịch yêu cầu 'will be scared', không phải quá khứ 'was scared'.",
+        "correct": false
       },
       {
         "text": "If the dog will bark, I am scared.",
-        "explanation": "Sai. Sau 'if the dog' dùng 'barks'; 'will be scared' nằm ở mệnh đề chính."
+        "explanation": "Sai. Sau 'if the dog' dùng 'barks'; 'will be scared' nằm ở mệnh đề chính.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Việt: 'If they play well, they will win the game.' (play well: chơi tốt, win: thắng)",
+    "q": "Dịch sang tiếng Việt: 'If they play well, they will win the game.'",
     "a": [
       {
         "text": "Nếu họ chơi tốt, họ sẽ thắng trận đấu.",
@@ -3392,20 +3641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Nếu họ chơi tốt, họ đã thắng.",
-        "explanation": "Sai thời điểm: bản gốc nói kết quả tương lai 'sẽ thắng', không phải quá khứ 'đã thắng'."
+        "explanation": "Sai thời điểm: bản gốc nói kết quả tương lai 'sẽ thắng', không phải quá khứ 'đã thắng'.",
+        "correct": false
       },
       {
         "text": "Họ sẽ thắng nếu họ chơi không tốt.",
-        "explanation": "Sai. Cấu trúc 'Họ sẽ thắng nếu họ chơi không tốt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Họ sẽ thắng nếu họ chơi không tốt.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Nếu họ đã chơi tốt, họ thắng trận đấu.",
-        "explanation": "Sai cấu trúc loại 1: If dùng hiện tại 'chơi tốt', kết quả dùng 'sẽ thắng', không dùng quá khứ."
+        "explanation": "Sai cấu trúc loại 1: If dùng hiện tại 'chơi tốt', kết quả dùng 'sẽ thắng', không dùng quá khứ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Anh: 'Nếu bạn tập thể dục đều đặn, bạn sẽ khỏe hơn.' (exercise regularly: tập thể dục đều đặn, fitter: khỏe hơn)",
+    "q": "Dịch sang tiếng Anh: 'Nếu bạn tập thể dục đều đặn, bạn sẽ khỏe hơn.'",
     "a": [
       {
         "text": "If you exercise regularly, you will become fitter.",
@@ -3414,20 +3666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "If you exercise regularly, you became fitter.",
-        "explanation": "Sai thì kết quả: bản dịch nói 'sẽ khỏe hơn', không phải quá khứ 'became'."
+        "explanation": "Sai thì kết quả: bản dịch nói 'sẽ khỏe hơn', không phải quá khứ 'became'.",
+        "correct": false
       },
       {
         "text": "If you exercises regularly, you will become fitter.",
-        "explanation": "Sai chia động từ với 'you'."
+        "explanation": "Sai chia động từ với 'you'.",
+        "correct": false
       },
       {
         "text": "If you will exercise regularly, you become fitter.",
-        "explanation": "Sai. Điều kiện 'exercise regularly' dùng hiện tại đơn; không dùng 'will' sau 'if'."
+        "explanation": "Sai. Điều kiện 'exercise regularly' dùng hiện tại đơn; không dùng 'will' sau 'if'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu dùng 'If': 'Hurry up or you will be late.' (Hurry up: nhanh lên, late: muộn)",
+    "q": "Viết lại câu dùng 'If': 'Hurry up or you will be late.'",
     "a": [
       {
         "text": "If you don't hurry up, you will be late.",
@@ -3436,15 +3691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "If you hurry up, you will be late.",
-        "explanation": "Sai. Cấu trúc 'If you hurry up, you will be late.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'If you hurry up, you will be late.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "If you don't hurry up, you were late.",
-        "explanation": "Sai thì kết quả: câu gốc cảnh báo tương lai, không dùng quá khứ 'were late'."
+        "explanation": "Sai thì kết quả: câu gốc cảnh báo tương lai, không dùng quá khứ 'were late'.",
+        "correct": false
       },
       {
         "text": "If you will hurry up, you won't be late.",
-        "explanation": "Sai. Câu đúng là 'If you don't hurry up, you will be late'; phương án đảo ngược nghĩa."
+        "explanation": "Sai. Câu đúng là 'If you don't hurry up, you will be late'; phương án đảo ngược nghĩa.",
+        "correct": false
       }
     ]
   },
@@ -3458,37 +3716,43 @@ const fullQuestionBank = [
       },
       {
         "text": "he",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'he' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'he' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "pass",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'pass' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'pass' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the test",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the test' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the test' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu dùng 'Unless': 'If it doesn't rain, we will go out.' (rain: mưa, go out: đi chơi)",
+    "q": "Viết lại câu dùng 'Unless': 'If it doesn't rain, we will go out.'",
     "a": [
       {
         "text": "Unless it rains, we will go out.",
         "correct": true,
-        "explanation": "Unless = If...not."
+        "explanation": "Unless = If...not. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "Unless it doesn't rain, we will go out.",
-        "explanation": "Sai. 'Unless' đã mang nghĩa 'if not', nên không thêm 'doesn't' sau nó."
+        "explanation": "Sai. 'Unless' đã mang nghĩa 'if not', nên không thêm 'doesn't' sau nó.",
+        "correct": false
       },
       {
         "text": "Unless it rain, we will go out.",
-        "explanation": "Thiếu 's' ở 'rains'."
+        "explanation": "Thiếu 's' ở 'rains'.",
+        "correct": false
       },
       {
         "text": "Unless it rains, we won't go out.",
-        "explanation": "Sai nghĩa của 'unless': nếu không mưa thì phải đi ra ngoài, không phải ở nhà."
+        "explanation": "Sai nghĩa của 'unless': nếu không mưa thì phải đi ra ngoài, không phải ở nhà.",
+        "correct": false
       }
     ]
   },
@@ -3502,15 +3766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "eat",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'eat' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'eat' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will",
-        "explanation": "Sai. Trong câu 89, lỗi nằm ở 'doesn't'; 'will' vẫn đúng để tạo 'will be hungry'."
+        "explanation": "Không phải lỗi: 'will be hungry' là mệnh đề chính đúng; lỗi duy nhất là 'doesn't' phải đổi thành 'don't' sau 'you'.",
+        "correct": false
       },
       {
         "text": "hungry",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'hungry' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'hungry' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3524,15 +3791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "If you eating an apple, you stay healthy.",
-        "explanation": "Sai. 'If you eating' thiếu trợ động từ; cấu trúc cần 'If you eat ... you will stay'."
+        "explanation": "Sai. 'If you eating' thiếu trợ động từ; cấu trúc cần 'If you eat ... you will stay'.",
+        "correct": false
       },
       {
         "text": "Unless you eat an apple, you will be healthy.",
-        "explanation": "Sai. Cấu trúc 'Unless you eat an apple, you will be healthy.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Unless you eat an apple, you will be healthy.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "If you will eat an apple, you stay healthy.",
-        "explanation": "Sai. Sau 'if you' dùng 'eat' hiện tại đơn; kết quả 'will stay' mới mang tương lai."
+        "explanation": "Sai. Sau 'if you' dùng 'eat' hiện tại đơn; kết quả 'will stay' mới mang tương lai.",
+        "correct": false
       }
     ]
   },
@@ -3546,20 +3816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "me",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'me' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'me' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will",
-        "explanation": "Sai. Ở câu 91, 'will tell' là mệnh đề kết quả đúng; lỗi cần tìm là động từ 'call' chưa thêm 's'."
+        "explanation": "Sai. Ở câu 91, 'will tell' là mệnh đề kết quả đúng; lỗi cần tìm là động từ 'call' chưa thêm 's'.",
+        "correct": false
       },
       {
         "text": "news",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'news' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'news' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'Don't shout or the baby will cry.' (shout: hét lên, baby: em bé, cry: khóc)",
+    "q": "Viết lại câu: 'Don't shout or the baby will cry.'",
     "a": [
       {
         "text": "If you shout, the baby will cry.",
@@ -3568,15 +3841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "If you don't shout, the baby will cry.",
-        "explanation": "Sai. Cấu trúc 'If you don't shout, the baby will cry.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'If you don't shout, the baby will cry.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Unless you shout, the baby will cry.",
-        "explanation": "Sai. Cấu trúc 'Unless you shout, the baby will cry.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Unless you shout, the baby will cry.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "If you will shout, the baby cries.",
-        "explanation": "Sai. Không đặt 'will' sau 'if'; kết quả đúng là 'the baby will cry'."
+        "explanation": "Sai. Không đặt 'will' sau 'if'; kết quả đúng là 'the baby will cry'.",
+        "correct": false
       }
     ]
   },
@@ -3590,20 +3866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "is",
-        "explanation": "Không phải lỗi. 'The weather is nice' đúng; lỗi của câu là mệnh đề chính dùng 'go' thay vì 'will go'."
+        "explanation": "Không phải lỗi. 'The weather is nice' đúng; lỗi của câu là mệnh đề chính dùng 'go' thay vì 'will go'.",
+        "correct": false
       },
       {
         "text": "nice",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'nice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'nice' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the beach",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the beach' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the beach' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu dùng 'If': 'Be careful or you will fall.' (careful: cẩn thận, fall: ngã)",
+    "q": "Viết lại câu dùng 'If': 'Be careful or you will fall.'",
     "a": [
       {
         "text": "If you aren't careful, you will fall.",
@@ -3612,15 +3891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "If you are careful, you will fall.",
-        "explanation": "Sai. Cấu trúc 'If you are careful, you will fall.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'If you are careful, you will fall.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Unless you aren't careful, you will fall.",
-        "explanation": "Sai. 'Unless you are careful' đã là điều kiện phủ định; không dùng thêm 'aren't'."
+        "explanation": "Sai. 'Unless you are careful' đã là điều kiện phủ định; không dùng thêm 'aren't'.",
+        "correct": false
       },
       {
         "text": "If you won't be careful, you fall.",
-        "explanation": "Sai. Phủ định điều kiện cần 'aren't careful', còn kết quả phải là 'will fall'."
+        "explanation": "Sai. Phủ định điều kiện cần 'aren't careful', còn kết quả phải là 'will fall'.",
+        "correct": false
       }
     ]
   },
@@ -3634,15 +3916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "will buy",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will buy' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will buy' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "phone",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'phone' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'phone' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "money",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'money' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'money' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3656,15 +3941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Unless you don't study, you won't pass.",
-        "explanation": "Sai. 'Unless you study' đã tương đương 'if you don't study'; không thêm 'don't'."
+        "explanation": "Sai. 'Unless you study' đã tương đương 'if you don't study'; không thêm 'don't'.",
+        "correct": false
       },
       {
         "text": "Unless you study, you will pass.",
-        "explanation": "Sai. Cấu trúc 'Unless you study, you will pass.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Unless you study, you will pass.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Unless you will study, you won't pass.",
-        "explanation": "Sai 'will' sau Unless."
+        "explanation": "Sai 'will' sau Unless.",
+        "correct": false
       }
     ]
   },
@@ -3678,15 +3966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "on time",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'on time' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'on time' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "will see",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'will see' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'will see' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "show",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'show' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'show' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
@@ -3700,15 +3991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "If you will give me the book, I read it.",
-        "explanation": "Sai. Sau 'if you' dùng 'give' hiện tại đơn; mệnh đề chính cần 'will read'."
+        "explanation": "Sai. Sau 'if you' dùng 'give' hiện tại đơn; mệnh đề chính cần 'will read'.",
+        "correct": false
       },
       {
         "text": "Unless you give me the book, I will read it.",
-        "explanation": "Sai. Cấu trúc 'Unless you give me the book, I will read it.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Unless you give me the book, I will read it.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "If you gives me the book, I will read it.",
-        "explanation": "Sai chia 'gives'."
+        "explanation": "Sai chia 'gives'. Cách dùng phù hợp trong câu này là “If you give me the book, I will read it.”.",
+        "correct": false
       }
     ]
   },
@@ -3722,20 +4016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "are",
-        "explanation": "Không phải lỗi. 'You are late' đúng; lỗi của câu nằm ở kết quả 'is angry', cần 'will be angry'."
+        "explanation": "Không phải lỗi. 'You are late' đúng; lỗi của câu nằm ở kết quả 'is angry', cần 'will be angry'.",
+        "correct": false
       },
       {
         "text": "late",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'late' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Không phải lỗi. 'Late' là tính từ đúng trong cụm 'be late'.",
+        "correct": false
       },
       {
         "text": "the boss",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the boss' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Không phải lỗi. 'The boss' là chủ ngữ đúng của mệnh đề kết quả; chỉ cần sửa động từ 'is' thành 'will be'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Viết lại câu: 'Don't touch the cat or it will bite you.' (touch: chạm, cat: con mèo, bite: cắn)",
+    "q": "Viết lại câu: 'Don't touch the cat or it will bite you.'",
     "a": [
       {
         "text": "If you touch the cat, it will bite you.",
@@ -3744,15 +4041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "If you don't touch the cat, it will bite you.",
-        "explanation": "Sai. Cấu trúc 'If you don't touch the cat, it will bite you.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'If you don't touch the cat, it will bite you.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Unless you touch the cat, it will bite you.",
-        "explanation": "Sai. Cấu trúc 'Unless you touch the cat, it will bite you.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Unless you touch the cat, it will bite you.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "If you touch the cat, it bit you.",
-        "explanation": "Sai thì kết quả: lời cảnh báo tương lai cần 'will bite', không phải quá khứ 'bit'."
+        "explanation": "Sai thì kết quả: lời cảnh báo tương lai cần 'will bite', không phải quá khứ 'bit'.",
+        "correct": false
       }
     ]
   }

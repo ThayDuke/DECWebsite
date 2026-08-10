@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "This house is ___ that one. (ngôi nhà này gấp đôi ngôi nhà kia) 🏠",
+    "q": "This house is ___ that one. 🏠",
     "a": [
       {
         "text": "twice as big as",
@@ -1566,20 +1566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as bigger than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as big as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as big as'.",
+        "correct": false
       },
       {
         "text": "as twice big as",
-        "explanation": "Sai vị trí 'twice'."
+        "explanation": "Sai vị trí 'twice'. Cách dùng phù hợp trong câu này là “twice as big as”.",
+        "correct": false
       },
       {
         "text": "two times big as",
-        "explanation": "Thiếu 'as' thứ nhất."
+        "explanation": "Thiếu 'as' thứ nhất.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My laptop costs ___ yours. (đắt gấp 3 lần) 💻",
+    "q": "My laptop costs ___ yours. 💻",
     "a": [
       {
         "text": "three times as much as",
@@ -1588,20 +1591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times expensive as",
-        "explanation": "Sai. Thiếu 'as' trước tính từ trong cấu trúc so sánh bội."
+        "explanation": "Cấu trúc này thiếu “as” trước tính từ; mẫu đúng cần “three times as much as”.",
+        "correct": false
       },
       {
         "text": "three times as much than",
-        "explanation": "Sai. So sánh bội phải dùng 'times + as + ... + as', không dùng 'as ... than'."
+        "explanation": "Sai. So sánh bội phải dùng 'times + as + ... + as', không dùng 'as ... than'.",
+        "correct": false
       },
       {
         "text": "as three times much as",
-        "explanation": "Sai vị trí 'three times'."
+        "explanation": "Sai vị trí 'three times'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The blue car runs ___ the red one. (nhanh gấp 3 lần) 🏎️",
+    "q": "The blue car runs ___ the red one. 🏎️",
     "a": [
       {
         "text": "three times as fast as",
@@ -1610,20 +1616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as fast than",
-        "explanation": "Sai. So sánh bội phải dùng 'three times as fast as'."
+        "explanation": "Sai. So sánh bội phải dùng 'three times as fast as'.",
+        "correct": false
       },
       {
         "text": "as fast as three times",
-        "explanation": "Sai trật tự từ."
+        "explanation": "Sai trật tự từ. Cách dùng phù hợp trong câu này là “three times as fast as”.",
+        "correct": false
       },
       {
         "text": "three times fast as",
-        "explanation": "Thiếu 'as' trước tính từ."
+        "explanation": "Thiếu 'as' trước tính từ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The elephant is ___ the horse. (nặng gấp 5 lần) 🐘",
+    "q": "The elephant is ___ the horse. 🐘",
     "a": [
       {
         "text": "five times as heavy as",
@@ -1632,20 +1641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "five times as heavy than",
-        "explanation": "Sai. Cấu trúc đúng là 'five times as heavy as'."
+        "explanation": "Sai. Cấu trúc đúng là 'five times as heavy as'.",
+        "correct": false
       },
       {
         "text": "as heavy as five times",
-        "explanation": "Sai vị trí số lần."
+        "explanation": "Sai vị trí số lần. Cách dùng phù hợp trong câu này là “five times as heavy as”.",
+        "correct": false
       },
       {
         "text": "five times as heavily as",
-        "explanation": "Sai loại từ, cần tính từ."
+        "explanation": "Sai loại từ, cần tính từ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This bag is ___ that one. (nặng gấp đôi) 🎒",
+    "q": "This bag is ___ that one. 🎒",
     "a": [
       {
         "text": "twice as heavy as",
@@ -1654,20 +1666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "two times heavy as",
-        "explanation": "Sai. Thiếu 'as' trước tính từ; cấu trúc đúng là 'twice as heavy as'."
+        "explanation": "Sai. Thiếu 'as' trước tính từ; cấu trúc đúng là 'twice as heavy as'.",
+        "correct": false
       },
       {
         "text": "twice as heavier than",
-        "explanation": "Sai cấu trúc so sánh bằng. Cần dùng 'as ... as'."
+        "explanation": "Sai cấu trúc so sánh bằng. Cần dùng 'as ... as'.",
+        "correct": false
       },
       {
         "text": "as twice heavy as",
-        "explanation": "Sai trật tự."
+        "explanation": "Sai trật tự. Cách dùng phù hợp trong câu này là “twice as heavy as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She has ___ books ___ I do. (nhiều gấp 4 lần) 📚",
+    "q": "She has ___ books ___ I do. 📚",
     "a": [
       {
         "text": "four times as many / as",
@@ -1676,20 +1691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "four times as much / as",
-        "explanation": "Sai vì 'much' dùng cho không đếm được."
+        "explanation": "Sai vì 'much' dùng cho không đếm được.",
+        "correct": false
       },
       {
         "text": "four times many as / as",
-        "explanation": "Thiếu 'as' đầu tiên."
+        "explanation": "Thiếu 'as' đầu tiên.",
+        "correct": false
       },
       {
         "text": "as four times many / as",
-        "explanation": "Sai vị trí."
+        "explanation": "Sai vị trí. Cách dùng phù hợp trong câu này là “four times as many / as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The river is ___ it was last year. (sâu gấp 3 lần) 🌊",
+    "q": "The river is ___ it was last year. 🌊",
     "a": [
       {
         "text": "three times as deep as",
@@ -1698,20 +1716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as deep than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as deep as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as deep as'.",
+        "correct": false
       },
       {
         "text": "three times as depth as",
-        "explanation": "Sai vì depth là danh từ."
+        "explanation": "Sai vì depth là danh từ.",
+        "correct": false
       },
       {
         "text": "as deep as three times",
-        "explanation": "Sai trật tự."
+        "explanation": "Sai trật tự. Cách dùng phù hợp trong câu này là “three times as deep as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Petronas Twin Towers are ___ the Eiffel Tower. (cao gần gấp đôi) 🗼",
+    "q": "Petronas Twin Towers are ___ the Eiffel Tower. 🗼",
     "a": [
       {
         "text": "nearly twice as tall as",
@@ -1720,20 +1741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twice nearly as tall as",
-        "explanation": "Sai vị trí 'nearly'."
+        "explanation": "Sai vị trí 'nearly'.",
+        "correct": false
       },
       {
         "text": "nearly twice as taller than",
-        "explanation": "Sai cấu trúc so sánh bằng. Cần dùng 'as ... as'."
+        "explanation": "Sai cấu trúc so sánh bằng. Cần dùng 'as ... as'.",
+        "correct": false
       },
       {
         "text": "as nearly twice tall as",
-        "explanation": "Sai trật tự."
+        "explanation": "Sai trật tự. Cách dùng phù hợp trong câu này là “nearly twice as tall as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He earns ___ his wife. (kiếm tiền gấp 3 lần) 💵",
+    "q": "He earns ___ his wife. 💵",
     "a": [
       {
         "text": "three times as much as",
@@ -1742,20 +1766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as many as",
-        "explanation": "Sai vì tiền không đếm được."
+        "explanation": "Sai vì tiền không đếm được.",
+        "correct": false
       },
       {
         "text": "three times as much than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as much as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as much as'.",
+        "correct": false
       },
       {
         "text": "as much as three times",
-        "explanation": "Sai trật tự."
+        "explanation": "Sai trật tự. Cách dùng phù hợp trong câu này là “three times as much as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The new stadium is ___ the old one. (to gấp 10 lần) 🏟️",
+    "q": "The new stadium is ___ the old one. 🏟️",
     "a": [
       {
         "text": "ten times as large as",
@@ -1764,20 +1791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "ten times as large than",
-        "explanation": "Sai. Cấu trúc đúng là 'ten times as large as'."
+        "explanation": "Sai. Cấu trúc đúng là 'ten times as large as'.",
+        "correct": false
       },
       {
         "text": "as large as ten times",
-        "explanation": "Sai trật tự."
+        "explanation": "Sai trật tự. Cách dùng phù hợp trong câu này là “ten times as large as”.",
+        "correct": false
       },
       {
         "text": "ten times so large as",
-        "explanation": "Trong so sánh khẳng định không dùng 'so...as'."
+        "explanation": "Trong so sánh khẳng định không dùng 'so...as'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This cake is ___ that one. (ngọt gấp đôi) 🍰",
+    "q": "This cake is ___ that one. 🍰",
     "a": [
       {
         "text": "twice as sweet as",
@@ -1786,42 +1816,48 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as sweeter than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as sweet as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as sweet as'.",
+        "correct": false
       },
       {
         "text": "two times sweet as",
-        "explanation": "Sai. Thiếu 'as' trước tính từ; cấu trúc đúng là 'twice as sweet as'."
+        "explanation": "Sai. Thiếu 'as' trước tính từ; cấu trúc đúng là 'twice as sweet as'.",
+        "correct": false
       },
       {
         "text": "sweet twice as",
-        "explanation": "Sai. Cấu trúc 'sweet twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'sweet twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The tree is ___ the fence. (cao gấp 5 lần) 🌳",
+    "q": "The tree is ___ the fence. 🌳",
     "a": [
       {
         "text": "five times as high as",
         "correct": true,
-        "explanation": "Cấu trúc chuẩn."
+        "explanation": "Cấu trúc chuẩn. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "five times as high than",
-        "explanation": "Sai. Cấu trúc đúng là 'five times as high as'."
+        "explanation": "Sai. Cấu trúc đúng là 'five times as high as'.",
+        "correct": false
       },
       {
         "text": "as high as five times",
-        "explanation": "Sai. Cấu trúc 'as high as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as high as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "five times high as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “five times as high as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My brother has ___ toys ___ I do. (ít hơn 3 lần - 1/3) 🤖",
+    "q": "My brother has ___ toys ___ I do. 🤖",
     "a": [
       {
         "text": "one-third as many / as",
@@ -1830,64 +1866,73 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as few than",
-        "explanation": "Sai. Cấu trúc phân số đúng là 'one-third as many as'."
+        "explanation": "Sai. Cấu trúc phân số đúng là 'one-third as many as'.",
+        "correct": false
       },
       {
         "text": "as many as one-third",
-        "explanation": "Sai. Cấu trúc 'as many as one-third' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as many as one-third' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "one-third many as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “one-third as many / as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The room is ___ the kitchen. (rộng gấp 4 lần) 🚪",
+    "q": "The room is ___ the kitchen. 🚪",
     "a": [
       {
         "text": "four times as wide as",
         "correct": true,
-        "explanation": "Dùng tính từ wide."
+        "explanation": "Dùng tính từ wide. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "four times as wide than",
-        "explanation": "Sai. Cấu trúc đúng là 'four times as wide as'."
+        "explanation": "Sai. Cấu trúc đúng là 'four times as wide as'.",
+        "correct": false
       },
       {
         "text": "four times as width as",
-        "explanation": "Sai vì width là danh từ."
+        "explanation": "Sai vì width là danh từ.",
+        "correct": false
       },
       {
         "text": "as wide as four times",
-        "explanation": "Sai. Cấu trúc 'as wide as four times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as wide as four times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This rope is ___ that one. (dài gấp 3 lần) 🧶",
+    "q": "This rope is ___ that one. 🧶",
     "a": [
       {
         "text": "three times as long as",
         "correct": true,
-        "explanation": "Dùng tính từ long."
+        "explanation": "Dùng tính từ long. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "three times as long than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as long as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as long as'.",
+        "correct": false
       },
       {
         "text": "three times as length as",
-        "explanation": "Sai vì length là danh từ."
+        "explanation": "Sai vì length là danh từ.",
+        "correct": false
       },
       {
         "text": "as long as three times",
-        "explanation": "Sai. Cấu trúc 'as long as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as long as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He can run ___ I can. (nhanh gấp đôi) 🏃",
+    "q": "He can run ___ I can. 🏃",
     "a": [
       {
         "text": "twice as fast as",
@@ -1896,20 +1941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as faster than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as fast as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as fast as'.",
+        "correct": false
       },
       {
         "text": "two times fast as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as fast as”.",
+        "correct": false
       },
       {
         "text": "as fast as twice",
-        "explanation": "Sai. Cấu trúc 'as fast as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as fast as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The box is ___ the small one. (nặng gấp 6 lần) 📦",
+    "q": "The box is ___ the small one. 📦",
     "a": [
       {
         "text": "six times as heavy as",
@@ -1918,20 +1966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "six times as heavy than",
-        "explanation": "Sai. Cấu trúc đúng là 'six times as heavy as'."
+        "explanation": "Sai. Cấu trúc đúng là 'six times as heavy as'.",
+        "correct": false
       },
       {
         "text": "as heavy as six times",
-        "explanation": "Sai. Cấu trúc 'as heavy as six times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as heavy as six times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "six times so heavy as",
-        "explanation": "Sai. Cấu trúc 'six times so heavy as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'six times so heavy as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The movie lasts ___ the cartoon. (lâu gấp đôi) 🎬",
+    "q": "The movie lasts ___ the cartoon. 🎬",
     "a": [
       {
         "text": "twice as long as",
@@ -1940,20 +1991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as long",
-        "explanation": "Thiếu 'as' ở cuối để so sánh với vế sau."
+        "explanation": "Thiếu 'as' ở cuối để so sánh với vế sau.",
+        "correct": false
       },
       {
         "text": "two times long as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as long as”.",
+        "correct": false
       },
       {
         "text": "twice as longer than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as long as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as long as'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There are ___ students in class A ___ in class B. (nhiều gấp 2 lần) 🏫",
+    "q": "There are ___ students in class A ___ in class B. 🏫",
     "a": [
       {
         "text": "twice as many / as",
@@ -1962,20 +2016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as much / as",
-        "explanation": "Sai vì much dùng cho không đếm được."
+        "explanation": "Sai vì much dùng cho không đếm được.",
+        "correct": false
       },
       {
         "text": "two times many as / as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as many / as”.",
+        "correct": false
       },
       {
         "text": "as many twice / as",
-        "explanation": "Sai trật tự."
+        "explanation": "Sai trật tự. Cách dùng phù hợp trong câu này là “twice as many / as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This pond has ___ fish ___ that one. (nhiều gấp 5 lần) 🐟",
+    "q": "This pond has ___ fish ___ that one. 🐟",
     "a": [
       {
         "text": "five times as many / as",
@@ -1984,20 +2041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "five times as much / as",
-        "explanation": "Sai. Cấu trúc 'five times as much / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'five times as much / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "five times many as / as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “five times as many / as”.",
+        "correct": false
       },
       {
         "text": "as many five times / as",
-        "explanation": "Sai. Cấu trúc 'as many five times / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as many five times / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The mountain is ___ the hill. (cao gấp 10 lần) ⛰️",
+    "q": "The mountain is ___ the hill. ⛰️",
     "a": [
       {
         "text": "ten times as high as",
@@ -2006,20 +2066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "ten times as high than",
-        "explanation": "Sai. Cấu trúc đúng là 'ten times as high as'."
+        "explanation": "Sai. Cấu trúc đúng là 'ten times as high as'.",
+        "correct": false
       },
       {
         "text": "ten times as height as",
-        "explanation": "Sai vì height là danh từ."
+        "explanation": "Sai vì height là danh từ.",
+        "correct": false
       },
       {
         "text": "as high as ten times",
-        "explanation": "Sai. Cấu trúc 'as high as ten times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as high as ten times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Her hair is ___ mine. (dài gấp đôi) 👱‍♀️",
+    "q": "Her hair is ___ mine. 👱‍♀️",
     "a": [
       {
         "text": "twice as long as",
@@ -2028,20 +2091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as longer than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as long as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as long as'.",
+        "correct": false
       },
       {
         "text": "two times long as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as long as”.",
+        "correct": false
       },
       {
         "text": "as long as twice",
-        "explanation": "Sai. Cấu trúc 'as long as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as long as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The soup is ___ the tea. (nóng gấp 3 lần) 🥣",
+    "q": "The soup is ___ the tea. 🥣",
     "a": [
       {
         "text": "three times as hot as",
@@ -2050,20 +2116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as hot than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as hot as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as hot as'.",
+        "correct": false
       },
       {
         "text": "as hot as three times",
-        "explanation": "Sai. Cấu trúc 'as hot as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as hot as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "three times hot as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “three times as hot as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This garden has ___ flowers ___ yours. (nhiều gấp 4 lần) 🌻",
+    "q": "This garden has ___ flowers ___ yours. 🌻",
     "a": [
       {
         "text": "four times as many / as",
@@ -2072,42 +2141,48 @@ const fullQuestionBank = [
       },
       {
         "text": "four times as much / as",
-        "explanation": "Sai. Cấu trúc 'four times as much / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'four times as much / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "four times many / as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “four times as many / as”.",
+        "correct": false
       },
       {
         "text": "as many four times / as",
-        "explanation": "Sai. Cấu trúc 'as many four times / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as many four times / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The dictionary is ___ the comic book. (dày gấp 5 lần) 📕",
+    "q": "The dictionary is ___ the comic book. 📕",
     "a": [
       {
         "text": "five times as thick as",
         "correct": true,
-        "explanation": "Thick là dày."
+        "explanation": "Thick là dày. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "five times as thick than",
-        "explanation": "Sai. Cấu trúc đúng là 'five times as thick as'."
+        "explanation": "Sai. Cấu trúc đúng là 'five times as thick as'.",
+        "correct": false
       },
       {
         "text": "as thick as five times",
-        "explanation": "Sai. Cấu trúc 'as thick as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as thick as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "five times thick as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “five times as thick as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This bottle holds ___ water ___ that one. (nhiều gấp 3 lần) 💧",
+    "q": "This bottle holds ___ water ___ that one. 💧",
     "a": [
       {
         "text": "three times as much / as",
@@ -2116,20 +2191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as many / as",
-        "explanation": "Sai. Cấu trúc 'three times as many / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'three times as many / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "three times much as / as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “three times as much / as”.",
+        "correct": false
       },
       {
         "text": "as much three times / as",
-        "explanation": "Sai. Cấu trúc 'as much three times / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as much three times / as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The plane flies ___ the bird. (nhanh gấp 20 lần) ✈️",
+    "q": "The plane flies ___ the bird. ✈️",
     "a": [
       {
         "text": "twenty times as fast as",
@@ -2138,20 +2216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twenty times as fast than",
-        "explanation": "Sai. Cấu trúc đúng là 'twenty times as fast as'."
+        "explanation": "Sai. Cấu trúc đúng là 'twenty times as fast as'.",
+        "correct": false
       },
       {
         "text": "as fast as twenty times",
-        "explanation": "Sai. Cấu trúc 'as fast as twenty times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as fast as twenty times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "twenty times fast as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twenty times as fast as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The elephant eats ___ the tiger. (nhiều gấp 8 lần) 🐘",
+    "q": "The elephant eats ___ the tiger. 🐘",
     "a": [
       {
         "text": "eight times as much as",
@@ -2160,42 +2241,48 @@ const fullQuestionBank = [
       },
       {
         "text": "eight times as many as",
-        "explanation": "Sai. Cấu trúc 'eight times as many as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'eight times as many as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "eight times as much than",
-        "explanation": "Sai. Cấu trúc đúng là 'eight times as much as'."
+        "explanation": "Sai. Cấu trúc đúng là 'eight times as much as'.",
+        "correct": false
       },
       {
         "text": "as much as eight times",
-        "explanation": "Sai. Cấu trúc 'as much as eight times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as much as eight times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This road is ___ the street. (rộng gấp đôi) 🛣️",
+    "q": "This road is ___ the street. 🛣️",
     "a": [
       {
         "text": "twice as wide as",
         "correct": true,
-        "explanation": "Gấp đôi chiều rộng."
+        "explanation": "Gấp đôi chiều rộng. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "twice as wider than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as wide as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as wide as'.",
+        "correct": false
       },
       {
         "text": "two times wide as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as wide as”.",
+        "correct": false
       },
       {
         "text": "as wide twice as",
-        "explanation": "Sai. Cấu trúc 'as wide twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as wide twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The table is ___ the chair. (nặng gấp 3 lần) 🪑",
+    "q": "The table is ___ the chair. 🪑",
     "a": [
       {
         "text": "three times as heavy as",
@@ -2204,20 +2291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as heavy than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as heavy as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as heavy as'.",
+        "correct": false
       },
       {
         "text": "three times as weight as",
-        "explanation": "Weight là danh từ."
+        "explanation": "Weight là danh từ. Cách dùng phù hợp trong câu này là “three times as heavy as”.",
+        "correct": false
       },
       {
         "text": "as heavy as three times",
-        "explanation": "Sai. Cấu trúc 'as heavy as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as heavy as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He can jump ___ I can. (cao gấp 3 lần) 🤸",
+    "q": "He can jump ___ I can. 🤸",
     "a": [
       {
         "text": "three times as high as",
@@ -2226,20 +2316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as high than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as high as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as high as'.",
+        "correct": false
       },
       {
         "text": "three times as height as",
-        "explanation": "Sai. Cấu trúc 'three times as height as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'three times as height as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "as high as three times",
-        "explanation": "Sai. Cấu trúc 'as high as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as high as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The city is ___ the village. (đông đúc gấp 10 lần) 🏙️",
+    "q": "The city is ___ the village. 🏙️",
     "a": [
       {
         "text": "ten times as crowded as",
@@ -2248,42 +2341,48 @@ const fullQuestionBank = [
       },
       {
         "text": "ten times as crowded than",
-        "explanation": "Sai. Cấu trúc đúng là 'ten times as crowded as'."
+        "explanation": "Sai. Cấu trúc đúng là 'ten times as crowded as'.",
+        "correct": false
       },
       {
         "text": "as crowded as ten times",
-        "explanation": "Sai. Cấu trúc 'as crowded as ten times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as crowded as ten times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "ten times so crowded as",
-        "explanation": "Sai. Cấu trúc 'ten times so crowded as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'ten times so crowded as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This phone is ___ the old one. (mỏng gấp đôi) 📱",
+    "q": "This phone is ___ the old one. 📱",
     "a": [
       {
         "text": "twice as thin as",
         "correct": true,
-        "explanation": "Thin là mỏng."
+        "explanation": "Thin là mỏng. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "twice as thinner than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as thin as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as thin as'.",
+        "correct": false
       },
       {
         "text": "two times thin as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as thin as”.",
+        "correct": false
       },
       {
         "text": "as thin twice as",
-        "explanation": "Sai. Cấu trúc 'as thin twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as thin twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The sun is ___ the moon. (to gấp nhiều lần) ☀️",
+    "q": "The sun is ___ the moon. ☀️",
     "a": [
       {
         "text": "many times as large as",
@@ -2292,20 +2391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "many times as large than",
-        "explanation": "Sai. Cấu trúc đúng là 'many times as large as'."
+        "explanation": "Sai. Cấu trúc đúng là 'many times as large as'.",
+        "correct": false
       },
       {
         "text": "as large as many times",
-        "explanation": "Sai. Cấu trúc 'as large as many times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as large as many times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "many times large as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “many times as large as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The truck is ___ the bicycle. (nặng gấp 50 lần) 🚚",
+    "q": "The truck is ___ the bicycle. 🚚",
     "a": [
       {
         "text": "fifty times as heavy as",
@@ -2314,108 +2416,123 @@ const fullQuestionBank = [
       },
       {
         "text": "fifty times as heavy than",
-        "explanation": "Sai. Cấu trúc đúng là 'fifty times as heavy as'."
+        "explanation": "Sai. Cấu trúc đúng là 'fifty times as heavy as'.",
+        "correct": false
       },
       {
         "text": "as heavy as fifty times",
-        "explanation": "Sai. Cấu trúc 'as heavy as fifty times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as heavy as fifty times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "fifty times heavy as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “fifty times as heavy as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The king's castle is ___ my house. (lộng lẫy gấp 100 lần) 🏰",
+    "q": "The king's castle is ___ my house. 🏰",
     "a": [
       {
         "text": "a hundred times as splendid as",
         "correct": true,
-        "explanation": "Splendid: lộng lẫy."
+        "explanation": "Splendid: lộng lẫy. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "a hundred times as splendid than",
-        "explanation": "Sai. Cấu trúc đúng là 'a hundred times as splendid as'."
+        "explanation": "Sai. Cấu trúc đúng là 'a hundred times as splendid as'.",
+        "correct": false
       },
       {
         "text": "as splendid as a hundred times",
-        "explanation": "Sai. Cấu trúc 'as splendid as a hundred times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as splendid as a hundred times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "hundred times as splendid as",
-        "explanation": "Thiếu 'a'."
+        "explanation": "Thiếu 'a'. Cách dùng phù hợp trong câu này là “a hundred times as splendid as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My coffee is ___ yours. (đắng gấp đôi) ☕",
+    "q": "My coffee is ___ yours. ☕",
     "a": [
       {
         "text": "twice as bitter as",
         "correct": true,
-        "explanation": "Bitter: đắng."
+        "explanation": "Bitter: đắng. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "twice bitter than",
-        "explanation": "Sai. Cấu trúc 'twice bitter than' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'twice bitter than' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "two times bitter as",
-        "explanation": "Sai. Thiếu 'as' trước tính từ; cấu trúc đúng là 'twice as bitter as'."
+        "explanation": "Sai. Thiếu 'as' trước tính từ; cấu trúc đúng là 'twice as bitter as'.",
+        "correct": false
       },
       {
         "text": "as bitter twice as",
-        "explanation": "Sai. Cấu trúc 'as bitter twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as bitter twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The ocean is ___ the lake. (rộng lớn gấp nghìn lần) 🌊",
+    "q": "The ocean is ___ the lake. 🌊",
     "a": [
       {
         "text": "a thousand times as vast as",
         "correct": true,
-        "explanation": "Vast: rộng lớn."
+        "explanation": "Vast: rộng lớn. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "a thousand times as vast than",
-        "explanation": "Sai. Cấu trúc đúng là 'a thousand times as vast as'."
+        "explanation": "Sai. Cấu trúc đúng là 'a thousand times as vast as'.",
+        "correct": false
       },
       {
         "text": "as vast as a thousand times",
-        "explanation": "Sai. Cấu trúc 'as vast as a thousand times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as vast as a thousand times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "thousand times as vast as",
-        "explanation": "Thiếu 'a'."
+        "explanation": "Thiếu 'a'. Cách dùng phù hợp trong câu này là “a thousand times as vast as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This bulb is ___ that one. (sáng gấp 3 lần) 💡",
+    "q": "This bulb is ___ that one. 💡",
     "a": [
       {
         "text": "three times as bright as",
         "correct": true,
-        "explanation": "Bright: sáng."
+        "explanation": "Bright: sáng. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "three times as bright than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as bright as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as bright as'.",
+        "correct": false
       },
       {
         "text": "as bright as three times",
-        "explanation": "Sai. Cấu trúc 'as bright as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as bright as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "three times bright as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “three times as bright as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The teacher speaks ___ the student. (chậm gấp đôi; dùng trạng từ) 👩‍🏫",
+    "q": "The teacher speaks ___ the student. 👩‍🏫",
     "a": [
       {
         "text": "twice as slowly as",
@@ -2424,64 +2541,73 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as slowly than",
-        "explanation": "Thường dùng trạng từ 'slowly' sẽ chuẩn hơn."
+        "explanation": "Thường dùng trạng từ 'slowly' sẽ chuẩn hơn.",
+        "correct": false
       },
       {
         "text": "twice as slower than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as slowly as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as slowly as'.",
+        "correct": false
       },
       {
         "text": "as slowly twice as",
-        "explanation": "Sai. Cấu trúc 'as slowly twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as slowly twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The gold ring is ___ the silver one. (giá trị gấp 5 lần) 💍",
+    "q": "The gold ring is ___ the silver one. 💍",
     "a": [
       {
         "text": "five times as valuable as",
         "correct": true,
-        "explanation": "Valuable: giá trị."
+        "explanation": "Valuable: giá trị. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "five times as valuable than",
-        "explanation": "Sai. Cấu trúc đúng là 'five times as valuable as'."
+        "explanation": "Sai. Cấu trúc đúng là 'five times as valuable as'.",
+        "correct": false
       },
       {
         "text": "as valuable as five times",
-        "explanation": "Sai. Cấu trúc 'as valuable as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as valuable as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "five times valuable as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “five times as valuable as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This athlete jumps ___ the others. (xa gấp đôi) 🏃‍♂️",
+    "q": "This athlete jumps ___ the others. 🏃‍♂️",
     "a": [
       {
         "text": "twice as far as",
         "correct": true,
-        "explanation": "Far: xa."
+        "explanation": "Far: xa. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "twice as farther than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as far as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as far as'.",
+        "correct": false
       },
       {
         "text": "two times far as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as far as”.",
+        "correct": false
       },
       {
         "text": "as far as twice",
-        "explanation": "Sai. Cấu trúc 'as far as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as far as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The music is ___ before. (to gấp 3 lần) 🔊",
+    "q": "The music is ___ before. 🔊",
     "a": [
       {
         "text": "three times as loud as",
@@ -2490,42 +2616,48 @@ const fullQuestionBank = [
       },
       {
         "text": "three times as loud than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as loud as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as loud as'.",
+        "correct": false
       },
       {
         "text": "as loud as three times",
-        "explanation": "Sai. Cấu trúc 'as loud as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as loud as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "three times loud as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “three times as loud as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The ice is ___ the water. (lạnh gấp đôi) 🧊",
+    "q": "The ice is ___ the water. 🧊",
     "a": [
       {
         "text": "twice as cold as",
         "correct": true,
-        "explanation": "Cold: lạnh."
+        "explanation": "Cold: lạnh. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "twice as colder than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as cold as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as cold as'.",
+        "correct": false
       },
       {
         "text": "two times cold as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as cold as”.",
+        "correct": false
       },
       {
         "text": "as cold twice as",
-        "explanation": "Sai. Cấu trúc 'as cold twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as cold twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The exam was ___ I thought. (khó gấp 4 lần) 📝",
+    "q": "The exam was ___ I thought. 📝",
     "a": [
       {
         "text": "four times as difficult as",
@@ -2534,64 +2666,73 @@ const fullQuestionBank = [
       },
       {
         "text": "four times as difficult than",
-        "explanation": "Sai. Cấu trúc đúng là 'four times as difficult as'."
+        "explanation": "Sai. Cấu trúc đúng là 'four times as difficult as'.",
+        "correct": false
       },
       {
         "text": "as difficult as four times",
-        "explanation": "Sai. Cấu trúc 'as difficult as four times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as difficult as four times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "four times difficult as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “four times as difficult as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My cat is ___ yours. (lười gấp đôi) 🐱",
+    "q": "My cat is ___ yours. 🐱",
     "a": [
       {
         "text": "twice as lazy as",
         "correct": true,
-        "explanation": "Lazy: lười."
+        "explanation": "Lazy: lười. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "twice as lazier than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as lazy as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as lazy as'.",
+        "correct": false
       },
       {
         "text": "two times lazy as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as lazy as”.",
+        "correct": false
       },
       {
         "text": "as lazy twice as",
-        "explanation": "Sai. Cấu trúc 'as lazy twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as lazy twice as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The fruit is ___ the vegetable. (ngon gấp 3 lần) 🍎",
+    "q": "The fruit is ___ the vegetable. 🍎",
     "a": [
       {
         "text": "three times as delicious as",
         "correct": true,
-        "explanation": "Delicious: ngon."
+        "explanation": "Delicious: ngon. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "three times as delicious than",
-        "explanation": "Sai. Cấu trúc đúng là 'three times as delicious as'."
+        "explanation": "Sai. Cấu trúc đúng là 'three times as delicious as'.",
+        "correct": false
       },
       {
         "text": "as delicious as three times",
-        "explanation": "Sai. Cấu trúc 'as delicious as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as delicious as three times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "three times delicious as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “three times as delicious as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This story is ___ that one. (thú vị gấp 5 lần) 📖",
+    "q": "This story is ___ that one. 📖",
     "a": [
       {
         "text": "five times as interesting as",
@@ -2600,42 +2741,48 @@ const fullQuestionBank = [
       },
       {
         "text": "five times as interesting than",
-        "explanation": "Sai. Cấu trúc đúng là 'five times as interesting as'."
+        "explanation": "Sai. Cấu trúc đúng là 'five times as interesting as'.",
+        "correct": false
       },
       {
         "text": "as interesting as five times",
-        "explanation": "Sai. Cấu trúc 'as interesting as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as interesting as five times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "five times interesting as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “five times as interesting as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The star is ___ the planet. (sáng gấp triệu lần) ✨",
+    "q": "The star is ___ the planet. ✨",
     "a": [
       {
         "text": "a million times as bright as",
         "correct": true,
-        "explanation": "Million: triệu."
+        "explanation": "Million: triệu. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "a million times as bright than",
-        "explanation": "Sai. Cấu trúc đúng là 'a million times as bright as'."
+        "explanation": "Sai. Cấu trúc đúng là 'a million times as bright as'.",
+        "correct": false
       },
       {
         "text": "as bright as a million times",
-        "explanation": "Sai. Cấu trúc 'as bright as a million times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as bright as a million times' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "million times bright as",
-        "explanation": "Thiếu 'a'."
+        "explanation": "Thiếu 'a'. Cách dùng phù hợp trong câu này là “a million times as bright as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The bird's wings are ___ its body. (dài gấp đôi) 🐦",
+    "q": "The bird's wings are ___ its body. 🐦",
     "a": [
       {
         "text": "twice as long as",
@@ -2644,20 +2791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "twice as longer than",
-        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as long as'."
+        "explanation": "Sai. Không ghép 'twice as' với tính từ so sánh và 'than'; dùng 'twice as long as'.",
+        "correct": false
       },
       {
         "text": "two times long as",
-        "explanation": "Thiếu 'as'."
+        "explanation": "Thiếu 'as'. Cách dùng phù hợp trong câu này là “twice as long as”.",
+        "correct": false
       },
       {
         "text": "as long as twice",
-        "explanation": "Sai. Cấu trúc 'as long as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as long as twice' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The harder you study, ___ your marks will be. (bạn càng học chăm, điểm càng cao) 🎓",
+    "q": "The harder you study, ___ your marks will be. 🎓",
     "a": [
       {
         "text": "the higher",
@@ -2666,20 +2816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the highest marks",
-        "explanation": "Phải dùng so sánh hơn."
+        "explanation": "Phải dùng so sánh hơn.",
+        "correct": false
       },
       {
         "text": "higher marks",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the higher”.",
+        "correct": false
       },
       {
         "text": "the more high than marks",
-        "explanation": "Sai. Cấu trúc so sánh kép cần 'the higher marks', không chèn 'than' giữa cụm."
+        "explanation": "Sai. Cấu trúc so sánh kép cần 'the higher marks', không chèn 'than' giữa cụm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ you work, the more tired you feel. (bạn càng làm việc nhiều, càng mệt) 😫",
+    "q": "___ you work, the more tired you feel. 😫",
     "a": [
       {
         "text": "The more",
@@ -2688,20 +2841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "More",
-        "explanation": "Thiếu 'The'."
+        "explanation": "Thiếu 'The'. Cách dùng phù hợp trong câu này là “The more”.",
+        "correct": false
       },
       {
         "text": "The most",
-        "explanation": "Sai vì phải dùng so sánh hơn."
+        "explanation": "Sai vì phải dùng so sánh hơn.",
+        "correct": false
       },
       {
         "text": "The much",
-        "explanation": "Sai vì much không phải so sánh hơn."
+        "explanation": "Sai vì much không phải so sánh hơn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more you practice, ___ you speak. (bạn càng luyện tập, nói càng trôi chảy) 🗣️",
+    "q": "The more you practice, ___ you speak. 🗣️",
     "a": [
       {
         "text": "the more fluently",
@@ -2710,64 +2866,73 @@ const fullQuestionBank = [
       },
       {
         "text": "the fluently",
-        "explanation": "Thiếu 'more'."
+        "explanation": "Thiếu 'more'. Cách dùng phù hợp trong câu này là “the more fluently”.",
+        "correct": false
       },
       {
         "text": "the most fluently",
-        "explanation": "Sai. Cấu trúc 'the most fluently' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most fluently' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "the more fluent than",
-        "explanation": "Sai. Sau động từ 'speak' cần trạng từ 'the more fluently'."
+        "explanation": "Sai. Sau động từ 'speak' cần trạng từ 'the more fluently'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The older he gets, ___ he becomes. (càng già càng yếu) 👴",
+    "q": "The older he gets, ___ he becomes. 👴",
     "a": [
       {
         "text": "the weaker",
         "correct": true,
-        "explanation": "Weak -> weaker."
+        "explanation": "Weak -> weaker. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the more weak than",
-        "explanation": "Sai. Cấu trúc đúng là 'the weaker'."
+        "explanation": "Sai. Cấu trúc đúng là 'the weaker'.",
+        "correct": false
       },
       {
         "text": "weaker",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the weaker”.",
+        "correct": false
       },
       {
         "text": "the more weaker",
-        "explanation": "Thừa 'more'."
+        "explanation": "Thừa 'more'. Cách dùng phù hợp trong câu này là “the weaker”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the weather is, the more people go to the beach. (thời tiết càng đẹp...) 🏖️",
+    "q": "___ the weather is, the more people go to the beach. 🏖️",
     "a": [
       {
         "text": "The nicer",
         "correct": true,
-        "explanation": "Nice -> nicer."
+        "explanation": "Nice -> nicer. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "The more nice than",
-        "explanation": "Sai. Cấu trúc đúng là 'The nicer'."
+        "explanation": "Sai. Cấu trúc đúng là 'The nicer'.",
+        "correct": false
       },
       {
         "text": "Nicer",
-        "explanation": "Thiếu 'The'."
+        "explanation": "Thiếu 'The'. Cách dùng phù hợp trong câu này là “The nicer”.",
+        "correct": false
       },
       {
         "text": "The nice",
-        "explanation": "Thiếu so sánh hơn."
+        "explanation": "Thiếu so sánh hơn. Cách dùng phù hợp trong câu này là “The nicer”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more money he has, ___ things he buys. (càng nhiều tiền càng mua nhiều đồ) 💰",
+    "q": "The more money he has, ___ things he buys. 💰",
     "a": [
       {
         "text": "the more",
@@ -2776,20 +2941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the many",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the many' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the many' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The faster you drive, ___ it is. (càng lái nhanh càng nguy hiểm) ⚠️",
+    "q": "The faster you drive, ___ it is. ⚠️",
     "a": [
       {
         "text": "the more dangerous",
@@ -2798,42 +2966,48 @@ const fullQuestionBank = [
       },
       {
         "text": "the dangerouser",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the dangerouser' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the dangerouser' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more dangerous",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more dangerous”.",
+        "correct": false
       },
       {
         "text": "the most dangerous",
-        "explanation": "Sai. Cấu trúc 'the most dangerous' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most dangerous' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The smaller the room is, ___ the furniture should be. (phòng càng nhỏ, đồ đạc càng nên nhỏ) 🛋️",
+    "q": "The smaller the room is, ___ the furniture should be. 🛋️",
     "a": [
       {
         "text": "the smaller",
         "correct": true,
-        "explanation": "Small -> smaller."
+        "explanation": "Small -> smaller. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the smallest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the smallest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the smallest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "smaller",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the smaller”.",
+        "correct": false
       },
       {
         "text": "the more small than",
-        "explanation": "Sai. Cấu trúc đúng là 'the smaller'."
+        "explanation": "Sai. Cấu trúc đúng là 'the smaller'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more I know her, ___ I like her. (càng biết rõ càng thích) ❤️",
+    "q": "The more I know her, ___ I like her. ❤️",
     "a": [
       {
         "text": "the more",
@@ -2842,20 +3016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the much",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more”.",
+        "correct": false
       },
       {
         "text": "the most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ you eat, the fatter you become. (càng ăn nhiều càng béo) 🍔",
+    "q": "___ you eat, the fatter you become. 🍔",
     "a": [
       {
         "text": "The more",
@@ -2864,42 +3041,48 @@ const fullQuestionBank = [
       },
       {
         "text": "More",
-        "explanation": "Thiếu 'The'."
+        "explanation": "Thiếu 'The'. Cách dùng phù hợp trong câu này là “The more”.",
+        "correct": false
       },
       {
         "text": "The most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'The most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'The most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "The much",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'The much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'The much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The earlier you leave, ___ you will arrive. (đi càng sớm đến càng sớm) 🕒",
+    "q": "The earlier you leave, ___ you will arrive. 🕒",
     "a": [
       {
         "text": "the sooner",
         "correct": true,
-        "explanation": "Soon -> sooner."
+        "explanation": "Soon -> sooner. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the soonest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the soonest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the soonest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "sooner",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the sooner”.",
+        "correct": false
       },
       {
         "text": "the more soon",
-        "explanation": "Sai. Cấu trúc 'the more soon' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the more soon' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more beautiful the garden is, ___ compliments it receives. (khu vườn càng đẹp càng nhận nhiều lời khen) 🌸",
+    "q": "The more beautiful the garden is, ___ compliments it receives. 🌸",
     "a": [
       {
         "text": "the more compliments",
@@ -2908,42 +3091,48 @@ const fullQuestionBank = [
       },
       {
         "text": "more compliments",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more compliments”.",
+        "correct": false
       },
       {
         "text": "the many compliments",
-        "explanation": "Sai. Cấu trúc 'the many boyfriends' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the many boyfriends' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "the most compliments",
-        "explanation": "Sai. Cấu trúc 'the most boyfriends' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most boyfriends' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ we look at the picture, the more we like it. (càng nhìn lâu càng thích) 🖼️",
+    "q": "___ we look at the picture, the more we like it. 🖼️",
     "a": [
       {
         "text": "The longer",
         "correct": true,
-        "explanation": "Long -> longer."
+        "explanation": "Long -> longer. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "Longer",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “The longer”.",
+        "correct": false
       },
       {
         "text": "The more long than",
-        "explanation": "Sai. Cấu trúc đúng là 'The longer'."
+        "explanation": "Sai. Cấu trúc đúng là 'The longer'.",
+        "correct": false
       },
       {
         "text": "The longest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'The longest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'The longest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The better the service is, ___ the hotel is. (dịch vụ càng tốt khách sạn càng đắt) 🏨",
+    "q": "The better the service is, ___ the hotel is. 🏨",
     "a": [
       {
         "text": "the more expensive",
@@ -2952,20 +3141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the expensiver",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the expensiver' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the expensiver' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more expensive",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more expensive”.",
+        "correct": false
       },
       {
         "text": "the most expensive",
-        "explanation": "Sai. Cấu trúc 'the most expensive' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most expensive' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more electricity you use, ___ your bill will be. (dùng càng nhiều điện hoá đơn càng cao) ⚡",
+    "q": "The more electricity you use, ___ your bill will be. ⚡",
     "a": [
       {
         "text": "the higher",
@@ -2974,20 +3166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the more high than",
-        "explanation": "Sai. Cấu trúc đúng là 'the higher'."
+        "explanation": "Sai. Cấu trúc đúng là 'the higher'.",
+        "correct": false
       },
       {
         "text": "higher",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the higher”.",
+        "correct": false
       },
       {
         "text": "the highest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the highest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the highest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The less you sleep, ___ you feel. (càng ngủ ít càng mệt) 😴",
+    "q": "The less you sleep, ___ you feel. 😴",
     "a": [
       {
         "text": "the more tired",
@@ -2996,42 +3191,48 @@ const fullQuestionBank = [
       },
       {
         "text": "the tireder",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the tireder' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the tireder' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more tired",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more tired”.",
+        "correct": false
       },
       {
         "text": "the most tired",
-        "explanation": "Sai. Cấu trúc 'the most tired' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most tired' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more books you read, ___ you are. (đọc càng nhiều sách càng thông thái) 📚",
+    "q": "The more books you read, ___ you are. 📚",
     "a": [
       {
         "text": "the wiser",
         "correct": true,
-        "explanation": "Wise -> wiser."
+        "explanation": "Wise -> wiser. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the more wise than",
-        "explanation": "Sai. Cấu trúc đúng là 'the wiser'."
+        "explanation": "Sai. Cấu trúc đúng là 'the wiser'.",
+        "correct": false
       },
       {
         "text": "the wisest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the wisest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the wisest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "wiser",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the wiser”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The further you go, ___ you feel. (càng đi xa càng thấy nhớ nhà) 🌍",
+    "q": "The further you go, ___ you feel. 🌍",
     "a": [
       {
         "text": "the more homesick",
@@ -3040,20 +3241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the homesicker",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the homesicker' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the homesicker' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more homesick",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more homesick”.",
+        "correct": false
       },
       {
         "text": "the most homesick",
-        "explanation": "Sai. Cấu trúc 'the most homesick' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most homesick' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more carefully you drive, ___ accidents will happen. (lái càng cẩn thận càng ít tai nạn) 🚗",
+    "q": "The more carefully you drive, ___ accidents will happen. 🚗",
     "a": [
       {
         "text": "the fewer",
@@ -3062,20 +3266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the least",
-        "explanation": "Sai. Cấu trúc so sánh kép cần 'the fewer', không dùng so sánh nhất 'the least'."
+        "explanation": "Sai. Cấu trúc so sánh kép cần 'the fewer', không dùng so sánh nhất 'the least'.",
+        "correct": false
       },
       {
         "text": "fewer",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the fewer”.",
+        "correct": false
       },
       {
         "text": "the more few",
-        "explanation": "Sai. Cấu trúc 'the more few' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the more few' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The hotter it is, ___ I feel. (càng nóng càng khó chịu) 🌡️",
+    "q": "The hotter it is, ___ I feel. 🌡️",
     "a": [
       {
         "text": "the more uncomfortable",
@@ -3084,20 +3291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the uncomfortabler",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the uncomfortabler' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the uncomfortabler' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more uncomfortable",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more uncomfortable”.",
+        "correct": false
       },
       {
         "text": "the most uncomfortable",
-        "explanation": "Sai. Cấu trúc 'the most uncomfortable' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most uncomfortable' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more gifts he gives her, ___ she is. (tặng càng nhiều quà càng hạnh phúc) 🎁",
+    "q": "The more gifts he gives her, ___ she is. 🎁",
     "a": [
       {
         "text": "the happier",
@@ -3106,42 +3316,48 @@ const fullQuestionBank = [
       },
       {
         "text": "the more happy than",
-        "explanation": "Sai. Cấu trúc đúng là 'the happier'."
+        "explanation": "Sai. Cấu trúc đúng là 'the happier'.",
+        "correct": false
       },
       {
         "text": "happier",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the happier”.",
+        "correct": false
       },
       {
         "text": "the happiest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the happiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the happiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the music is, the more I enjoy it. (nhạc càng to càng thích) 🎵",
+    "q": "___ the music is, the more I enjoy it. 🎵",
     "a": [
       {
         "text": "The louder",
         "correct": true,
-        "explanation": "Loud -> louder."
+        "explanation": "Loud -> louder. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "The more loud than",
-        "explanation": "Sai. Cấu trúc đúng là 'The louder'."
+        "explanation": "Sai. Cấu trúc đúng là 'The louder'.",
+        "correct": false
       },
       {
         "text": "Louder",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “The louder”.",
+        "correct": false
       },
       {
         "text": "The loudest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'The loudest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'The loudest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The older the wine is, ___ it tastes. (rượu càng lâu năm vị càng ngon) 🍷",
+    "q": "The older the wine is, ___ it tastes. 🍷",
     "a": [
       {
         "text": "the better",
@@ -3150,20 +3366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the gooder",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the gooder' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the gooder' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "better",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the better”.",
+        "correct": false
       },
       {
         "text": "the best",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the best' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the best' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more you talk, ___ attention people pay. (càng nói nhiều, người ta càng ít chú ý) 🤐",
+    "q": "The more you talk, ___ attention people pay. 🤐",
     "a": [
       {
         "text": "the less",
@@ -3172,42 +3391,48 @@ const fullQuestionBank = [
       },
       {
         "text": "the fewer",
-        "explanation": "'Fewer' chỉ dùng với danh từ đếm được; 'attention' là không đếm được."
+        "explanation": "'Fewer' chỉ dùng với danh từ đếm được; 'attention' là không đếm được.",
+        "correct": false
       },
       {
         "text": "less",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the less”.",
+        "correct": false
       },
       {
         "text": "the least",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the least' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the least' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The harder the wind blows, ___ it gets. (gió thổi càng mạnh càng lạnh) 🌬️",
+    "q": "The harder the wind blows, ___ it gets. 🌬️",
     "a": [
       {
         "text": "the colder",
         "correct": true,
-        "explanation": "Cold -> colder."
+        "explanation": "Cold -> colder. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the more cold than",
-        "explanation": "Sai. Cấu trúc đúng là 'the colder'."
+        "explanation": "Sai. Cấu trúc đúng là 'the colder'.",
+        "correct": false
       },
       {
         "text": "colder",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the colder”.",
+        "correct": false
       },
       {
         "text": "the coldest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the coldest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the coldest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more time I spend with you, ___ I love you. (càng ở bên nhau càng yêu) 💞",
+    "q": "The more time I spend with you, ___ I love you. 💞",
     "a": [
       {
         "text": "the more",
@@ -3216,20 +3441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the much",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more”.",
+        "correct": false
       },
       {
         "text": "the most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The darker it gets, ___ it becomes. (trời càng tối càng sợ) 🌑",
+    "q": "The darker it gets, ___ it becomes. 🌑",
     "a": [
       {
         "text": "the more frightening",
@@ -3238,20 +3466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the frighteninger",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the frighteninger' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the frighteninger' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the most frightening",
-        "explanation": "Sai. Cấu trúc 'the most frightening' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most frightening' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "more frightening",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more frightening”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the mountain is, the thinner the air becomes. (núi càng cao không khí càng loãng) 🏔️",
+    "q": "___ the mountain is, the thinner the air becomes. 🏔️",
     "a": [
       {
         "text": "The higher",
@@ -3260,86 +3491,98 @@ const fullQuestionBank = [
       },
       {
         "text": "Higher",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “The higher”.",
+        "correct": false
       },
       {
         "text": "The more high than",
-        "explanation": "Sai. Cấu trúc đúng là 'The higher'."
+        "explanation": "Sai. Cấu trúc đúng là 'The higher'.",
+        "correct": false
       },
       {
         "text": "The highest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'The highest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'The highest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more chocolate you eat, ___ your skin will be. (ăn càng nhiều socola da càng xấu) 🍫",
+    "q": "The more chocolate you eat, ___ your skin will be. 🍫",
     "a": [
       {
         "text": "the worse",
         "correct": true,
-        "explanation": "Bad -> worse."
+        "explanation": "Bad -> worse. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the badder",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the badder' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the badder' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the worst",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the worst' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the worst' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "worse",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the worse”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more exercises you do, ___ you will be. (làm càng nhiều bài tập càng khỏe/giỏi) 💪",
+    "q": "The more exercises you do, ___ you will be. 💪",
     "a": [
       {
         "text": "the stronger",
         "correct": true,
-        "explanation": "Strong -> stronger."
+        "explanation": "Strong -> stronger. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the more strong than",
-        "explanation": "Sai. Cấu trúc đúng là 'the stronger'."
+        "explanation": "Sai. Cấu trúc đúng là 'the stronger'.",
+        "correct": false
       },
       {
         "text": "stronger",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the stronger”.",
+        "correct": false
       },
       {
         "text": "the strongest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the strongest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the strongest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more patients the doctor has, ___ he is. (càng nhiều bệnh nhân càng bận) 👨‍⚕️",
+    "q": "The more patients the doctor has, ___ he is. 👨‍⚕️",
     "a": [
       {
         "text": "the busier",
         "correct": true,
-        "explanation": "Busy -> busier."
+        "explanation": "Busy -> busier. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the more busy than",
-        "explanation": "Sai. Cấu trúc đúng là 'the busier'."
+        "explanation": "Sai. Cấu trúc đúng là 'the busier'.",
+        "correct": false
       },
       {
         "text": "busier",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the busier”.",
+        "correct": false
       },
       {
         "text": "the busiest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the busiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the busiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more I study history, ___ I find it. (càng học sử càng thấy thú vị) 🏛️",
+    "q": "The more I study history, ___ I find it. 🏛️",
     "a": [
       {
         "text": "the more interesting",
@@ -3348,20 +3591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the most interesting",
-        "explanation": "Sai. Cấu trúc 'the most interesting' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most interesting' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "the interestinger",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the interestinger' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the interestinger' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more interesting",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more interesting”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The longer the queue is, ___ I get. (hàng đợi càng dài tôi càng mất kiên nhẫn) 🚶‍♂️🚶‍♀️",
+    "q": "The longer the queue is, ___ I get. 🚶‍♂️🚶‍♀️",
     "a": [
       {
         "text": "the more impatient",
@@ -3370,20 +3616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the impatinter",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the impatinter' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the impatinter' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more impatient",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more impatient”.",
+        "correct": false
       },
       {
         "text": "the most impatient",
-        "explanation": "Sai. Cấu trúc 'the most impatient' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most impatient' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more questions you ask, ___ you will learn. (càng hỏi nhiều học càng nhiều) ❓",
+    "q": "The more questions you ask, ___ you will learn. ❓",
     "a": [
       {
         "text": "the more",
@@ -3392,42 +3641,48 @@ const fullQuestionBank = [
       },
       {
         "text": "the much",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more pollution there is, ___ the world becomes. (càng ô nhiễm thế giới càng bẩn) 🏭",
+    "q": "The more pollution there is, ___ the world becomes. 🏭",
     "a": [
       {
         "text": "the dirtier",
         "correct": true,
-        "explanation": "Dirty -> dirtier."
+        "explanation": "Dirty -> dirtier. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the more dirty than",
-        "explanation": "Sai. Cấu trúc đúng là 'the dirtier'."
+        "explanation": "Sai. Cấu trúc đúng là 'the dirtier'.",
+        "correct": false
       },
       {
         "text": "the dirtiest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the dirtiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the dirtiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "dirtier",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the dirtier”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ we save, the more we have for the future. (tiết kiệm càng nhiều...) 🐷",
+    "q": "___ we save, the more we have for the future. 🐷",
     "a": [
       {
         "text": "The more",
@@ -3436,42 +3691,48 @@ const fullQuestionBank = [
       },
       {
         "text": "More",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “The more”.",
+        "correct": false
       },
       {
         "text": "The much",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'The much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'The much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "The most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'The most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'The most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more flowers she plants, ___ her garden looks. (trồng càng nhiều hoa vườn càng xinh) 🌸",
+    "q": "The more flowers she plants, ___ her garden looks. 🌸",
     "a": [
       {
         "text": "the prettier",
         "correct": true,
-        "explanation": "Pretty -> prettier."
+        "explanation": "Pretty -> prettier. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the more pretty than",
-        "explanation": "Sai. Cấu trúc đúng là 'the prettier'."
+        "explanation": "Sai. Cấu trúc đúng là 'the prettier'.",
+        "correct": false
       },
       {
         "text": "prettier",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the prettier”.",
+        "correct": false
       },
       {
         "text": "the prettiest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the prettiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the prettiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more fruits you eat, ___ you are. (ăn càng nhiều trái cây càng khỏe) 🍎",
+    "q": "The more fruits you eat, ___ you are. 🍎",
     "a": [
       {
         "text": "the healthier",
@@ -3480,20 +3741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the healthyer",
-        "explanation": "Sai chính tả; 'healthy' đổi 'y' thành 'i'."
+        "explanation": "Sai chính tả; 'healthy' đổi 'y' thành 'i'.",
+        "correct": false
       },
       {
         "text": "healthier",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the healthier”.",
+        "correct": false
       },
       {
         "text": "the healthiest",
-        "explanation": "Sai. Đây là so sánh nhất."
+        "explanation": "Sai. Đây là so sánh nhất.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more friends you have, ___ you feel. (càng nhiều bạn càng thấy vui) 👫",
+    "q": "The more friends you have, ___ you feel. 👫",
     "a": [
       {
         "text": "the happier",
@@ -3502,20 +3766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the more happy than",
-        "explanation": "Sai. Cấu trúc đúng là 'the happier'."
+        "explanation": "Sai. Cấu trúc đúng là 'the happier'.",
+        "correct": false
       },
       {
         "text": "the happiest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the happiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the happiest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "happier",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the happier”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Within this model range, the more expensive the car is, ___ it is. (xe càng đắt càng hiện đại) 🏎️",
+    "q": "Within this model range, the more expensive the car is, ___ it is. 🏎️",
     "a": [
       {
         "text": "the more modern",
@@ -3524,20 +3791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the moderner",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the moderner' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the moderner' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more modern",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more modern”.",
+        "correct": false
       },
       {
         "text": "the most modern",
-        "explanation": "Sai. Cấu trúc 'the most modern' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most modern' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more careful you are, ___ mistakes you make. (càng cẩn thận càng ít lỗi) ✍️",
+    "q": "The more careful you are, ___ mistakes you make. ✍️",
     "a": [
       {
         "text": "the fewer",
@@ -3546,20 +3816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the less",
-        "explanation": "Sai vì dùng cho không đếm được."
+        "explanation": "Sai vì dùng cho không đếm được.",
+        "correct": false
       },
       {
         "text": "fewer",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the fewer”.",
+        "correct": false
       },
       {
         "text": "the least",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the least' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the least' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more I watch this film, ___ I like it. (càng xem phim này càng thấy chán) 🎞️",
+    "q": "The more I watch this film, ___ I like it. 🎞️",
     "a": [
       {
         "text": "the less",
@@ -3568,20 +3841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the more",
-        "explanation": "Ngược nghĩa yêu cầu."
+        "explanation": "Ngược nghĩa yêu cầu.",
+        "correct": false
       },
       {
         "text": "the least",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the least' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the least' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "less",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the less”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more you study English, ___ your grammar will be. (càng học tiếng Anh ngữ pháp càng tốt) 🇬🇧",
+    "q": "The more you study English, ___ your grammar will be. 🇬🇧",
     "a": [
       {
         "text": "the better",
@@ -3590,42 +3866,48 @@ const fullQuestionBank = [
       },
       {
         "text": "the more good than",
-        "explanation": "Sai. Cấu trúc đúng là 'the better'."
+        "explanation": "Sai. Cấu trúc đúng là 'the better'.",
+        "correct": false
       },
       {
         "text": "better",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the better”.",
+        "correct": false
       },
       {
         "text": "the best",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the best' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the best' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ it is, the more I like to stay home. (trời càng mưa nhiều...) 🌧️",
+    "q": "___ it is, the more I like to stay home. 🌧️",
     "a": [
       {
         "text": "The more it rains",
         "correct": true,
-        "explanation": "The more + S + V."
+        "explanation": "The more + S + V. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "The more rain",
-        "explanation": "Nếu dùng rain là danh từ thì được, nhưng ở đây cần động từ."
+        "explanation": "Nếu dùng rain là danh từ thì được, nhưng ở đây cần động từ.",
+        "correct": false
       },
       {
         "text": "More it rains",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “The more it rains”.",
+        "correct": false
       },
       {
         "text": "The most it rains",
-        "explanation": "Sai. Cấu trúc 'The most it rains' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'The most it rains' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more languages you know, ___ you can travel. (biết càng nhiều thứ tiếng đi du lịch càng dễ) 🗺️",
+    "q": "The more languages you know, ___ you can travel. 🗺️",
     "a": [
       {
         "text": "the more easily",
@@ -3634,42 +3916,48 @@ const fullQuestionBank = [
       },
       {
         "text": "the easier than",
-        "explanation": "Sau động từ 'travel' cần trạng từ; đáp án này thiếu cấu trúc đúng 'the easier it is to travel'."
+        "explanation": "Sau động từ 'travel' cần trạng từ; đáp án này thiếu cấu trúc đúng 'the easier it is to travel'.",
+        "correct": false
       },
       {
         "text": "the more easy",
-        "explanation": "Sai. Cấu trúc 'the more easy' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the more easy' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "more easily",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more easily”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more I use the computer, ___ I understand it. (càng dùng máy tính càng hiểu rõ) 💻",
+    "q": "The more I use the computer, ___ I understand it. 💻",
     "a": [
       {
         "text": "the more",
         "correct": true,
-        "explanation": "Hiểu nhiều hơn."
+        "explanation": "Hiểu nhiều hơn. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "the much",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The older the children are, ___ they become. (trẻ càng lớn càng độc lập) 🧒",
+    "q": "The older the children are, ___ they become. 🧒",
     "a": [
       {
         "text": "the more independent",
@@ -3678,20 +3966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the independenter",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the independenter' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the independenter' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more independent",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more independent”.",
+        "correct": false
       },
       {
         "text": "the most independent",
-        "explanation": "Sai. Cấu trúc 'the most independent' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most independent' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more people come, ___ it is. (càng đông càng vui) 🥳",
+    "q": "The more people come, ___ it is. 🥳",
     "a": [
       {
         "text": "the merrier",
@@ -3700,20 +3991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the much merrier",
-        "explanation": "Sai. Không đặt 'much' trước tính từ so sánh trong thành ngữ 'the more..., the merrier'."
+        "explanation": "Sai. Không đặt 'much' trước tính từ so sánh trong thành ngữ 'the more..., the merrier'.",
+        "correct": false
       },
       {
         "text": "the merriest",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the merriest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the merriest' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "merrier",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the merrier”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The more you listen, ___ you will hear. (càng nghe kỹ càng thấy nhiều) 👂",
+    "q": "The more you listen, ___ you will hear. 👂",
     "a": [
       {
         "text": "the more",
@@ -3722,20 +4016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "the much",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the much' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "more",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more”.",
+        "correct": false
       },
       {
         "text": "the most",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the most' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "After regular vocal training, the more she practices singing, ___ her voice becomes. (luyện thanh càng nhiều giọng càng hay) 🎤",
+    "q": "After regular vocal training, the more she practices singing, ___ her voice becomes. 🎤",
     "a": [
       {
         "text": "the more beautiful",
@@ -3744,15 +4041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "the beautifuler",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'the beautifuler' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'the beautifuler' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "the most beautiful",
-        "explanation": "Sai. Cấu trúc 'the most beautiful' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'the most beautiful' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "more beautiful",
-        "explanation": "Thiếu 'the'."
+        "explanation": "Thiếu 'the'. Cách dùng phù hợp trong câu này là “the more beautiful”.",
+        "correct": false
       }
     ]
   }

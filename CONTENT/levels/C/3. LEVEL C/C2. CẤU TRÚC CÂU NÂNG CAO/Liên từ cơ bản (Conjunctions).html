@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "I like both apples ___ bananas. (like: thích) 🍎🍌",
+    "q": "I like both apples ___ bananas. 🍎🍌",
     "a": [
       {
         "text": "and",
@@ -1566,20 +1566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản, trong khi câu chỉ bổ sung thêm bananas vào danh sách yêu thích."
+        "explanation": "'But' tạo tương phản, trong khi câu chỉ bổ sung thêm bananas vào danh sách yêu thích.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' buộc phải chọn một loại, trái với từ 'both' cho biết thích cả hai."
+        "explanation": "'Or' buộc phải chọn một loại, trái với từ 'both' cho biết thích cả hai.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai danh từ ngang hàng trong câu này."
+        "explanation": "'So' chỉ kết quả, không nối hai danh từ ngang hàng trong câu này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want to play football, ___ it is raining. (want: muốn, rain: mưa) ⚽🌧️",
+    "q": "I want to play football, ___ it is raining. ⚽🌧️",
     "a": [
       {
         "text": "but",
@@ -1588,20 +1591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ phép cộng thông tin, không thể hiện mâu thuẫn giữa muốn chơi và trời mưa."
+        "explanation": "'And' chỉ phép cộng thông tin, không thể hiện mâu thuẫn giữa muốn chơi và trời mưa.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ nêu kết quả, nhưng mệnh đề sau đang là trở ngại chứ không phải hệ quả."
+        "explanation": "'So' sẽ nêu kết quả, nhưng mệnh đề sau đang là trở ngại chứ không phải hệ quả.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần giới thiệu lý do cho một hành động, không phù hợp sau mong muốn đối lập ở đây."
+        "explanation": "'Because' cần giới thiệu lý do cho một hành động, không phù hợp sau mong muốn đối lập ở đây.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Choose one drink: do you like tea ___ coffee? (tea: trà, coffee: cà phê) ☕🍵",
+    "q": "Choose one drink: do you like tea ___ coffee? ☕🍵",
     "a": [
       {
         "text": "or",
@@ -1610,20 +1616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi người nghe thích cả trà lẫn cà phê, trái với yêu cầu chọn một."
+        "explanation": "'And' sẽ hỏi người nghe thích cả trà lẫn cà phê, trái với yêu cầu chọn một.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' biểu thị tương phản, không nối hai lựa chọn đồ uống."
+        "explanation": "'But' biểu thị tương phản, không nối hai lựa chọn đồ uống.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả và không thể đứng giữa tea và coffee như một lựa chọn."
+        "explanation": "'So' chỉ kết quả và không thể đứng giữa tea và coffee như một lựa chọn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is hungry, ___ he eats a hamburger. (hungry: đói, eat: ăn) 🍔",
+    "q": "He is hungry, ___ he eats a hamburger. 🍔",
     "a": [
       {
         "text": "so",
@@ -1632,20 +1641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ làm mệnh đề ăn hamburger thành lý do, ngược với quan hệ nguyên nhân–kết quả."
+        "explanation": "'Because' sẽ làm mệnh đề ăn hamburger thành lý do, ngược với quan hệ nguyên nhân–kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' cần một ý đối lập, nhưng ăn hamburger là hệ quả tự nhiên của đói."
+        "explanation": "'But' cần một ý đối lập, nhưng ăn hamburger là hệ quả tự nhiên của đói.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' diễn tả lựa chọn, không nối trạng thái đói với hành động ăn."
+        "explanation": "'Or' diễn tả lựa chọn, không nối trạng thái đói với hành động ăn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She goes to sleep ___ she is tired. (tired: mệt) 😴",
+    "q": "She goes to sleep ___ she is tired. 😴",
     "a": [
       {
         "text": "because",
@@ -1654,20 +1666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ cần mệnh đề kết quả ở sau; ở đây mệnh đề sau là lý do."
+        "explanation": "'So' sẽ cần mệnh đề kết quả ở sau; ở đây mệnh đề sau là lý do.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ bổ sung, không giải thích vì sao cô ấy đi ngủ."
+        "explanation": "'And' chỉ bổ sung, không giải thích vì sao cô ấy đi ngủ.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có trong quan hệ mệt nên đi ngủ."
+        "explanation": "'But' tạo tương phản không có trong quan hệ mệt nên đi ngủ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My dog is small ___ cute. (small: nhỏ, cute: dễ thương) 🐶",
+    "q": "My dog is small ___ cute. 🐶",
     "a": [
       {
         "text": "and",
@@ -1676,20 +1691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' hàm ý nhỏ trái với dễ thương, trong khi câu không nêu sự đối lập."
+        "explanation": "'But' hàm ý nhỏ trái với dễ thương, trong khi câu không nêu sự đối lập.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai tính từ thành lựa chọn loại trừ, không đúng với việc mô tả cả hai."
+        "explanation": "'Or' biến hai tính từ thành lựa chọn loại trừ, không đúng với việc mô tả cả hai.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần một mệnh đề lý do, không thể nối hai tính từ song song ở đây."
+        "explanation": "'Because' cần một mệnh đề lý do, không thể nối hai tính từ song song ở đây.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I can swim, ___ I cannot fly. (swim: bơi, fly: bay) 🏊‍♂️🧚",
+    "q": "I can swim, ___ I cannot fly. 🏊‍♂️🧚",
     "a": [
       {
         "text": "but",
@@ -1698,20 +1716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng thêm thông tin, không làm nổi bật hai khả năng trái ngược."
+        "explanation": "'And' chỉ cộng thêm thông tin, không làm nổi bật hai khả năng trái ngược.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' cần quan hệ kết quả, trong khi không bay không phải kết quả của biết bơi."
+        "explanation": "'So' cần quan hệ kết quả, trong khi không bay không phải kết quả của biết bơi.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ biến việc không bay thành lý do, trái với ý tương phản của hai khả năng."
+        "explanation": "'Because' sẽ biến việc không bay thành lý do, trái với ý tương phản của hai khả năng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Which single item is this: a pen ___ a pencil? (pen: bút mực, pencil: bút chì) 🖊️✏️",
+    "q": "Which single item is this: a pen ___ a pencil? 🖊️✏️",
     "a": [
       {
         "text": "or",
@@ -1720,20 +1741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ gộp pen và pencil thành một vật, trái với từ 'single item'."
+        "explanation": "'And' sẽ gộp pen và pencil thành một vật, trái với từ 'single item'.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' biểu thị tương phản, không đặt hai vật thành lựa chọn nhận diện."
+        "explanation": "'But' biểu thị tương phản, không đặt hai vật thành lựa chọn nhận diện.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không hoàn thành câu hỏi chọn pen hoặc pencil."
+        "explanation": "'So' chỉ kết quả, không hoàn thành câu hỏi chọn pen hoặc pencil.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is sunny, ___ let's go to the park! (sunny: nắng, park: công viên) ☀️🌳",
+    "q": "It is sunny, ___ let's go to the park! ☀️🌳",
     "a": [
       {
         "text": "so",
@@ -1742,20 +1766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ biến trời nắng thành lý do đã biết, trong khi câu đang nêu kết quả/đề nghị."
+        "explanation": "'Because' sẽ biến trời nắng thành lý do đã biết, trong khi câu đang nêu kết quả/đề nghị.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' cần sự tương phản, không có đối lập giữa trời nắng và đi công viên."
+        "explanation": "'But' cần sự tương phản, không có đối lập giữa trời nắng và đi công viên.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' mở ra lựa chọn, không nối nguyên nhân thuận lợi với lời rủ đi chơi."
+        "explanation": "'Or' mở ra lựa chọn, không nối nguyên nhân thuận lợi với lời rủ đi chơi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He studies hard ___ he wants good marks. (study: học, mark: điểm) 📚💯",
+    "q": "He studies hard ___ he wants good marks. 📚💯",
     "a": [
       {
         "text": "because",
@@ -1764,20 +1791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ đặt việc muốn điểm cao thành kết quả sau việc học, trái với ý lý do."
+        "explanation": "'So' sẽ đặt việc muốn điểm cao thành kết quả sau việc học, trái với ý lý do.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai sự việc, không giải thích vì sao anh ấy học chăm."
+        "explanation": "'And' chỉ nối hai sự việc, không giải thích vì sao anh ấy học chăm.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có giữa học chăm và muốn điểm tốt."
+        "explanation": "'But' tạo tương phản không có giữa học chăm và muốn điểm tốt.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have a brother ___ a sister. (brother: anh em trai, sister: chị em gái) 👦👧",
+    "q": "I have a brother ___ a sister. 👦👧",
     "a": [
       {
         "text": "and",
@@ -1786,20 +1816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không phù hợp vì anh/em trai và chị/em gái không tạo tương phản."
+        "explanation": "'But' không phù hợp vì anh/em trai và chị/em gái không tạo tương phản.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không liệt kê hai người thân trong một câu."
+        "explanation": "'So' chỉ hệ quả, không liệt kê hai người thân trong một câu.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần một mệnh đề lý do, không nối hai danh từ chỉ người thân."
+        "explanation": "'Because' cần một mệnh đề lý do, không nối hai danh từ chỉ người thân.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This car is old, ___ it is very fast. (old: cũ, fast: nhanh) 🚗💨",
+    "q": "This car is old, ___ it is very fast. 🚗💨",
     "a": [
       {
         "text": "but",
@@ -1808,20 +1841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai đặc điểm, không nhấn mạnh sự trái ngược cũ–nhanh."
+        "explanation": "'And' chỉ cộng hai đặc điểm, không nhấn mạnh sự trái ngược cũ–nhanh.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến old và fast thành hai lựa chọn, không phải hai đặc điểm cùng đúng."
+        "explanation": "'Or' biến old và fast thành hai lựa chọn, không phải hai đặc điểm cùng đúng.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không chỉ quan hệ kết quả giữa tuổi của xe và tốc độ của nó."
+        "explanation": "'So' không chỉ quan hệ kết quả giữa tuổi của xe và tốc độ của nó.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You can have cake ___ ice cream. You cannot have both. (both: cả hai) 🍰🍦",
+    "q": "You can have cake ___ ice cream. You cannot have both. 🍰🍦",
     "a": [
       {
         "text": "or",
@@ -1830,20 +1866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ cho phép lấy cả bánh và kem, trái với giới hạn chọn một món."
+        "explanation": "'And' sẽ cho phép lấy cả bánh và kem, trái với giới hạn chọn một món.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không biểu thị hai món thay thế nhau trong câu hỏi lựa chọn này."
+        "explanation": "'But' không biểu thị hai món thay thế nhau trong câu hỏi lựa chọn này.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai món tráng miệng để chọn một."
+        "explanation": "'So' chỉ kết quả, không nối hai món tráng miệng để chọn một.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I forgot my umbrella, ___ I got wet. (forgot: quên, wet: ướt) ☔💧",
+    "q": "I forgot my umbrella, ___ I got wet as a result. ☔💧",
     "a": [
       {
         "text": "so",
@@ -1852,20 +1891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần đảo quan hệ thành 'I got wet because I forgot...' hoặc đổi vị trí mệnh đề."
+        "explanation": "'Because' sẽ cần đảo quan hệ thành 'I got wet because I forgot...' hoặc đổi vị trí mệnh đề.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản; bị ướt là hệ quả trực tiếp của quên ô."
+        "explanation": "'But' không có tương phản; bị ướt là hệ quả trực tiếp của quên ô.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn, không diễn tả kết quả của việc quên ô."
+        "explanation": "'Or' đưa ra lựa chọn, không diễn tả kết quả của việc quên ô.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We stay at home ___ it is raining. (stay: ở lại, rain: mưa) 🏠🌧️",
+    "q": "We stay at home ___ it is raining. 🏠🌧️",
     "a": [
       {
         "text": "because",
@@ -1874,20 +1916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ cần mệnh đề trước là nguyên nhân và sau là kết quả; ở đây mưa nằm sau vị trí liên từ."
+        "explanation": "'So' sẽ cần mệnh đề trước là nguyên nhân và sau là kết quả; ở đây mưa nằm sau vị trí liên từ.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có giữa ở nhà và trời mưa."
+        "explanation": "'But' tạo tương phản không có giữa ở nhà và trời mưa.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ thêm thông tin, không nêu nguyên nhân phải ở nhà."
+        "explanation": "'And' chỉ thêm thông tin, không nêu nguyên nhân phải ở nhà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Elephants are big, ___ mice are small. (big: to, small: nhỏ) 🐘🐁",
+    "q": "Elephants are big, ___ mice are small. 🐘🐁",
     "a": [
       {
         "text": "but",
@@ -1895,21 +1940,24 @@ const fullQuestionBank = [
         "explanation": "'But' đối chiếu kích thước lớn của voi với kích thước nhỏ của chuột."
       },
       {
-        "text": "and",
-        "explanation": "'And' chỉ đặt hai mệnh đề cạnh nhau, không thể hiện rõ sự đối lập về kích thước."
+        "text": "or",
+        "explanation": "“Or” diễn tả lựa chọn, không thể hiện quan hệ tương phản giữa “big” và “small”.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nêu kết quả giữa kích thước của voi và chuột."
+        "explanation": "'So' không nêu kết quả giữa kích thước của voi và chuột.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần quan hệ lý do, không phù hợp với phép so sánh hai con vật."
+        "explanation": "'Because' cần quan hệ lý do, không phù hợp với phép so sánh hai con vật.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like red, ___ I don't like blue. (like: thích) 🔴🔵",
+    "q": "I like red, ___ I don't like blue. 🔴🔵",
     "a": [
       {
         "text": "but",
@@ -1918,20 +1966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ bổ sung, không thể hiện sự đối lập giữa thích và không thích."
+        "explanation": "'And' chỉ bổ sung, không thể hiện sự đối lập giữa thích và không thích.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' sẽ hỏi chọn màu nào, nhưng câu đang khẳng định thích đỏ và không thích xanh."
+        "explanation": "'Or' sẽ hỏi chọn màu nào, nhưng câu đang khẳng định thích đỏ và không thích xanh.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không diễn tả quan hệ kết quả giữa việc thích đỏ và không thích xanh."
+        "explanation": "'So' không diễn tả quan hệ kết quả giữa việc thích đỏ và không thích xanh.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "For this trip, choose one: do you go to school by bus ___ by bike? (bus: xe buýt, bike: xe đạp) 🚌🚲",
+    "q": "For this trip, choose one: do you go to school by bus ___ by bike? 🚌🚲",
     "a": [
       {
         "text": "or",
@@ -1940,20 +1991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ gợi đi bằng cả hai phương tiện, trái với yêu cầu chọn một."
+        "explanation": "'And' sẽ gợi đi bằng cả hai phương tiện, trái với yêu cầu chọn một.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' biểu thị đối lập, không nối hai phương tiện để lựa chọn."
+        "explanation": "'But' biểu thị đối lập, không nối hai phương tiện để lựa chọn.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không dùng để đặt hai phương tiện thành lựa chọn."
+        "explanation": "'So' không dùng để đặt hai phương tiện thành lựa chọn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She is smart ___ kind. (smart: thông minh, kind: tốt bụng) 🧠❤️",
+    "q": "She is smart ___ kind. 🧠❤️",
     "a": [
       {
         "text": "and",
@@ -1962,20 +2016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không phù hợp vì smart và kind bổ sung cho nhau, không tương phản."
+        "explanation": "'But' không phù hợp vì smart và kind bổ sung cho nhau, không tương phản.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' sẽ biến smart và kind thành hai khả năng loại trừ, trái với việc cô ấy có cả hai phẩm chất."
+        "explanation": "'Or' sẽ biến smart và kind thành hai khả năng loại trừ, trái với việc cô ấy có cả hai phẩm chất.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai tính từ mô tả người."
+        "explanation": "'So' chỉ kết quả, không nối hai tính từ mô tả người.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I don't have money, ___ I cannot buy the toy. (money: tiền, buy: mua) 💰🧸",
+    "q": "I don't have money, ___ I cannot buy the toy. 💰🧸",
     "a": [
       {
         "text": "so",
@@ -1984,20 +2041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần mệnh đề sau là nguyên nhân, nhưng 'cannot buy' là kết quả."
+        "explanation": "'Because' sẽ cần mệnh đề sau là nguyên nhân, nhưng 'cannot buy' là kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không nêu tương phản giữa thiếu tiền và không mua được đồ chơi."
+        "explanation": "'But' không nêu tương phản giữa thiếu tiền và không mua được đồ chơi.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' mở lựa chọn, không biểu thị hệ quả của việc không có tiền."
+        "explanation": "'Or' mở lựa chọn, không biểu thị hệ quả của việc không có tiền.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is happy ___ he passed the exam. (passed: đỗ, exam: bài thi) 😄📝",
+    "q": "He is happy ___ he passed the exam. 😄📝",
     "a": [
       {
         "text": "because",
@@ -2006,20 +2066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ biến việc đỗ kỳ thi thành kết quả của việc vui, trái với quan hệ lý do."
+        "explanation": "'So' sẽ biến việc đỗ kỳ thi thành kết quả của việc vui, trái với quan hệ lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có giữa hạnh phúc và việc đỗ thi."
+        "explanation": "'But' tạo tương phản không có giữa hạnh phúc và việc đỗ thi.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai thông tin, không nêu nguyên nhân khiến anh ấy vui."
+        "explanation": "'And' chỉ nối hai thông tin, không nêu nguyên nhân khiến anh ấy vui.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I wash my hands ___ my face. (wash: rửa, face: mặt) 🖐️😊",
+    "q": "I wash my hands ___ my face. 🖐️😊",
     "a": [
       {
         "text": "and",
@@ -2028,15 +2091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa hai việc rửa tay và rửa mặt."
+        "explanation": "'But' không tạo tương phản giữa hai việc rửa tay và rửa mặt.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai bộ phận thành lựa chọn, trong khi câu nêu làm cả hai."
+        "explanation": "'Or' biến hai bộ phận thành lựa chọn, trong khi câu nêu làm cả hai.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không nối hai bộ phận cơ thể được rửa."
+        "explanation": "'So' chỉ hệ quả, không nối hai bộ phận cơ thể được rửa.",
+        "correct": false
       }
     ]
   },
@@ -2050,20 +2116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ bổ sung, không thể hiện mâu thuẫn nóng–ngon mà câu yêu cầu."
+        "explanation": "'And' chỉ bổ sung, không thể hiện mâu thuẫn nóng–ngon mà câu yêu cầu.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn giữa hai ý, không diễn tả hai đặc điểm cùng nói về súp."
+        "explanation": "'Or' tạo lựa chọn giữa hai ý, không diễn tả hai đặc điểm cùng nói về súp.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần mệnh đề sau làm lý do, nhưng 'it is delicious' là ý đối lập về đánh giá."
+        "explanation": "'Because' cần mệnh đề sau làm lý do, nhưng 'it is delicious' là ý đối lập về đánh giá.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Choose one main dish: would you like chicken ___ fish for dinner? (chicken: gà, fish: cá) 🍗🐟",
+    "q": "Choose one main dish: would you like chicken ___ fish for dinner? 🍗🐟",
     "a": [
       {
         "text": "or",
@@ -2072,20 +2141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi muốn cả gà lẫn cá, trái với dạng câu hỏi chọn một món."
+        "explanation": "'And' sẽ hỏi muốn cả gà lẫn cá, trái với dạng câu hỏi chọn một món.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo quan hệ tương phản giữa hai món được đưa ra."
+        "explanation": "'But' không tạo quan hệ tương phản giữa hai món được đưa ra.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai lựa chọn bữa tối."
+        "explanation": "'So' chỉ kết quả, không nối hai lựa chọn bữa tối.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It was cold, ___ I wore a coat. (cold: lạnh, coat: áo khoác) ❄️🧥",
+    "q": "It was cold, ___ I wore a coat. ❄️🧥",
     "a": [
       {
         "text": "so",
@@ -2094,20 +2166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần câu đổi thành 'I wore a coat because it was cold'; vị trí hiện tại nêu kết quả."
+        "explanation": "'Because' sẽ cần câu đổi thành 'I wore a coat because it was cold'; vị trí hiện tại nêu kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không thể hiện quan hệ lạnh nên mặc áo, vì hai mệnh đề không đối lập."
+        "explanation": "'But' không thể hiện quan hệ lạnh nên mặc áo, vì hai mệnh đề không đối lập.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn thay vì diễn tả kết quả của thời tiết lạnh."
+        "explanation": "'Or' đưa ra lựa chọn thay vì diễn tả kết quả của thời tiết lạnh.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like him ___ he is very funny; his humor is the reason I like him. (funny: hài hước) 😂",
+    "q": "I like him ___ he is very funny; his humor is the reason I like him. 😂",
     "a": [
       {
         "text": "because",
@@ -2116,20 +2191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ làm sự hài hước thành kết quả của việc thích, trái với ý giải thích."
+        "explanation": "'So' sẽ làm sự hài hước thành kết quả của việc thích, trái với ý giải thích.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có giữa thích một người và việc người đó hài hước."
+        "explanation": "'But' tạo tương phản không có giữa thích một người và việc người đó hài hước.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo hai khả năng, không nêu lý do cho cảm xúc thích."
+        "explanation": "'Or' tạo hai khả năng, không nêu lý do cho cảm xúc thích.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My father is a doctor, ___ my mother is a teacher. (doctor: bác sĩ, teacher: giáo viên) 👨‍⚕️👩‍🏫",
+    "q": "My father is a doctor, ___ my mother is a teacher. 👨‍⚕️👩‍🏫",
     "a": [
       {
         "text": "and",
@@ -2138,20 +2216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không cần thiết vì nghề bác sĩ và giáo viên chỉ là hai thông tin song song."
+        "explanation": "'But' không cần thiết vì nghề bác sĩ và giáo viên chỉ là hai thông tin song song.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến nghề của cha mẹ thành lựa chọn loại trừ, trái với việc nêu cả hai."
+        "explanation": "'Or' biến nghề của cha mẹ thành lựa chọn loại trừ, trái với việc nêu cả hai.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần mệnh đề lý do, không nối hai thông tin nghề nghiệp."
+        "explanation": "'Because' cần mệnh đề lý do, không nối hai thông tin nghề nghiệp.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want to watch TV, ___ I have to do homework. (watch: xem, homework: bài tập) 📺📝",
+    "q": "I want to watch TV, ___ I have to do homework. 📺📝",
     "a": [
       {
         "text": "but",
@@ -2160,20 +2241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai việc, không thể hiện việc làm bài ngăn mong muốn xem TV."
+        "explanation": "'And' chỉ cộng hai việc, không thể hiện việc làm bài ngăn mong muốn xem TV.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nêu kết quả rõ ràng; mệnh đề sau là nghĩa vụ đối lập."
+        "explanation": "'So' không nêu kết quả rõ ràng; mệnh đề sau là nghĩa vụ đối lập.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, trong khi người nói nêu hai mong muốn/trách nhiệm xung đột."
+        "explanation": "'Or' tạo lựa chọn, trong khi người nói nêu hai mong muốn/trách nhiệm xung đột.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is the giraffe tall ___ short? (giraffe: hươu cao cổ) 🦒",
+    "q": "Is the giraffe tall ___ short? 🦒",
     "a": [
       {
         "text": "or",
@@ -2182,20 +2266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi hươu cao cổ vừa cao vừa thấp, không phải lựa chọn."
+        "explanation": "'And' sẽ hỏi hươu cao cổ vừa cao vừa thấp, không phải lựa chọn.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không phù hợp với câu hỏi yêu cầu chọn một tính chất."
+        "explanation": "'But' không phù hợp với câu hỏi yêu cầu chọn một tính chất.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không tạo cặp lựa chọn tall/short."
+        "explanation": "'So' chỉ kết quả, không tạo cặp lựa chọn tall/short.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I drink water ___ I am thirsty. (thirsty: khát) 🥤😓",
+    "q": "I drink water ___ I am thirsty. 🥤😓",
     "a": [
       {
         "text": "because",
@@ -2204,20 +2291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ phù hợp với 'I am thirsty, so I drink water'; vị trí hiện tại cần nêu lý do."
+        "explanation": "'So' sẽ phù hợp với 'I am thirsty, so I drink water'; vị trí hiện tại cần nêu lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có giữa khát và uống nước."
+        "explanation": "'But' tạo tương phản không có giữa khát và uống nước.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai sự việc, không giải thích động cơ uống nước."
+        "explanation": "'And' chỉ nối hai sự việc, không giải thích động cơ uống nước.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The room is messy, ___ I will clean it. (messy: bừa bộn, clean: dọn dẹp) 🧹",
+    "q": "The room is messy, ___ I will clean it. 🧹",
     "a": [
       {
         "text": "so",
@@ -2226,20 +2316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "Sai quan hệ nguyên nhân."
+        "explanation": "Sai quan hệ nguyên nhân.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không phù hợp vì căn phòng bừa bộn dẫn thẳng đến quyết định dọn, không đối lập."
+        "explanation": "'But' không phù hợp vì căn phòng bừa bộn dẫn thẳng đến quyết định dọn, không đối lập.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' không mở lựa chọn; người nói đã quyết định sẽ dọn căn phòng."
+        "explanation": "'Or' không mở lựa chọn; người nói đã quyết định sẽ dọn căn phòng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He runs fast, ___ he cannot catch the bus. (run: chạy, catch: bắt xe) 🏃‍♂️🚌",
+    "q": "He runs fast, ___ he cannot catch the bus. 🏃‍♂️🚌",
     "a": [
       {
         "text": "but",
@@ -2248,20 +2341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối chạy nhanh với bắt xe, nhưng câu cần nhấn mạnh kết quả trái kỳ vọng là vẫn không bắt được."
+        "explanation": "'And' chỉ nối chạy nhanh với bắt xe, nhưng câu cần nhấn mạnh kết quả trái kỳ vọng là vẫn không bắt được.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' gợi chạy nhanh dẫn đến bắt được xe, trái với mệnh đề phủ định sau."
+        "explanation": "'So' gợi chạy nhanh dẫn đến bắt được xe, trái với mệnh đề phủ định sau.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn giữa chạy và bắt xe, không thể hiện hai sự việc trong cùng tình huống."
+        "explanation": "'Or' tạo lựa chọn giữa chạy và bắt xe, không thể hiện hai sự việc trong cùng tình huống.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We can go to the zoo ___ the park, but not both today. (zoo: sở thú) 🦁🎢",
+    "q": "We can go to the zoo ___ the park, but not both today. 🦁🎢",
     "a": [
       {
         "text": "or",
@@ -2270,20 +2366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không biểu thị hai địa điểm thay thế nhau trong kế hoạch hôm nay."
+        "explanation": "'But' không biểu thị hai địa điểm thay thế nhau trong kế hoạch hôm nay.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không tạo lựa chọn giữa sở thú và công viên."
+        "explanation": "'So' chỉ kết quả, không tạo lựa chọn giữa sở thú và công viên.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần mệnh đề lý do, không nối hai địa điểm được chọn."
+        "explanation": "'Because' cần mệnh đề lý do, không nối hai địa điểm được chọn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like both math ___ English. (math: toán) ➕🔤",
+    "q": "I like both math ___ English. ➕🔤",
     "a": [
       {
         "text": "and",
@@ -2292,20 +2391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa hai môn học."
+        "explanation": "'But' không có tương phản giữa hai môn học.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' sẽ biến hai môn thành lựa chọn, trái với từ 'both' ngầm hiểu người nói thích cả hai."
+        "explanation": "'Or' sẽ biến hai môn thành lựa chọn, trái với từ 'both' ngầm hiểu người nói thích cả hai.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai môn học trong danh sách."
+        "explanation": "'So' chỉ kết quả, không nối hai môn học trong danh sách.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He didn't study, ___ he failed the test. (fail: trượt) 📉",
+    "q": "He didn't study, ___ he failed the test. 📉",
     "a": [
       {
         "text": "so",
@@ -2314,20 +2416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' cần đảo thành 'He failed because he didn't study'; vị trí hiện tại nêu kết quả."
+        "explanation": "'Because' cần đảo thành 'He failed because he didn't study'; vị trí hiện tại nêu kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa không học và trượt bài."
+        "explanation": "'But' không tạo tương phản giữa không học và trượt bài.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không diễn tả hậu quả học tập."
+        "explanation": "'Or' tạo lựa chọn, không diễn tả hậu quả học tập.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I wear a hat ___ it is sunny. (hat: mũ, sunny: nắng) 👒☀️",
+    "q": "I wear a hat ___ it is sunny. 👒☀️",
     "a": [
       {
         "text": "because",
@@ -2336,20 +2441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ phù hợp với 'It is sunny, so I wear a hat'; hiện tại mệnh đề sau là lý do."
+        "explanation": "'So' sẽ phù hợp với 'It is sunny, so I wear a hat'; hiện tại mệnh đề sau là lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa nắng và đội mũ."
+        "explanation": "'But' không có tương phản giữa nắng và đội mũ.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai sự việc, không nêu nguyên nhân đội mũ."
+        "explanation": "'And' chỉ nối hai sự việc, không nêu nguyên nhân đội mũ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Tom is sad ___ he lost his toy. (sad: buồn, lost: mất) 😢🧸",
+    "q": "Tom is sad ___ he lost his toy. 😢🧸",
     "a": [
       {
         "text": "because",
@@ -2358,20 +2466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ đặt mất đồ chơi thành kết quả của buồn, trái với quan hệ lý do."
+        "explanation": "'So' sẽ đặt mất đồ chơi thành kết quả của buồn, trái với quan hệ lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa buồn và mất đồ chơi."
+        "explanation": "'But' không tạo tương phản giữa buồn và mất đồ chơi.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không giải thích nguyên nhân cảm xúc của Tom."
+        "explanation": "'Or' tạo lựa chọn, không giải thích nguyên nhân cảm xúc của Tom.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have a pen, ___ I don't have paper. (paper: giấy) 🖊️📄",
+    "q": "I have a pen, ___ I don't have paper. 🖊️📄",
     "a": [
       {
         "text": "but",
@@ -2380,20 +2491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ gợi có cả bút và giấy, trái với phủ định ở mệnh đề sau."
+        "explanation": "'And' sẽ gợi có cả bút và giấy, trái với phủ định ở mệnh đề sau.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không biểu thị sự tương phản giữa có và thiếu đồ dùng."
+        "explanation": "'So' không biểu thị sự tương phản giữa có và thiếu đồ dùng.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến pen và paper thành lựa chọn, không nêu hai sự thật trái chiều."
+        "explanation": "'Or' biến pen và paper thành lựa chọn, không nêu hai sự thật trái chiều.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Choose one hobby: do you like playing games ___ reading books? (games: trò chơi, reading: đọc) 🎮📖",
+    "q": "Choose one hobby: do you like playing games ___ reading books? 🎮📖",
     "a": [
       {
         "text": "or",
@@ -2402,20 +2516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi người nghe thích cả chơi game lẫn đọc sách, trái với 'choose one'."
+        "explanation": "'And' sẽ hỏi người nghe thích cả chơi game lẫn đọc sách, trái với 'choose one'.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa hai sở thích được hỏi."
+        "explanation": "'But' không tạo tương phản giữa hai sở thích được hỏi.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai lựa chọn hobby."
+        "explanation": "'So' chỉ kết quả, không nối hai lựa chọn hobby.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The music is loud ___ nice. (loud: to, nice: hay) 🔊🎶",
+    "q": "The music is loud ___ nice. 🔊🎶",
     "a": [
       {
         "text": "and",
@@ -2424,20 +2541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' sẽ tạo tương phản không được câu gợi ý; loud và nice đang được nêu như hai đặc điểm cùng đúng."
+        "explanation": "'But' sẽ tạo tương phản không được câu gợi ý; loud và nice đang được nêu như hai đặc điểm cùng đúng.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai đặc điểm của bản nhạc thành lựa chọn loại trừ."
+        "explanation": "'Or' biến hai đặc điểm của bản nhạc thành lựa chọn loại trừ.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai tính từ mô tả âm nhạc."
+        "explanation": "'So' chỉ kết quả, không nối hai tính từ mô tả âm nhạc.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I brush my teeth, ___ I go to bed. (brush: chải, bed: giường) 🦷🛏️",
+    "q": "I brush my teeth, ___ I go to bed. 🦷🛏️",
     "a": [
       {
         "text": "and",
@@ -2446,20 +2566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa đánh răng và đi ngủ."
+        "explanation": "'But' không có tương phản giữa đánh răng và đi ngủ.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ giải thích lý do đi ngủ, nhưng câu chỉ nêu hai bước liên tiếp."
+        "explanation": "'Because' sẽ giải thích lý do đi ngủ, nhưng câu chỉ nêu hai bước liên tiếp.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, trong khi người nói thực hiện cả hai hành động."
+        "explanation": "'Or' tạo lựa chọn, trong khi người nói thực hiện cả hai hành động.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is rich, ___ he is not happy. (rich: giàu, happy: hạnh phúc) 💰☹️",
+    "q": "He is rich, ___ he is not happy. 💰☹️",
     "a": [
       {
         "text": "but",
@@ -2468,20 +2591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai đặc điểm, không làm rõ sự trái ngược giàu–không vui."
+        "explanation": "'And' chỉ cộng hai đặc điểm, không làm rõ sự trái ngược giàu–không vui.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không biểu thị kết quả giữa giàu có và hạnh phúc."
+        "explanation": "'So' không biểu thị kết quả giữa giàu có và hạnh phúc.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến rich và happy thành hai lựa chọn, không đúng với mô tả người này."
+        "explanation": "'Or' biến rich và happy thành hai lựa chọn, không đúng với mô tả người này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Put on your shoes, ___ we will be late! (shoes: giày, late: muộn) 👟⏰",
+    "q": "Put on your shoes, ___ we will be late! 👟⏰",
     "a": [
       {
         "text": "or",
@@ -2490,20 +2616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ yêu cầu cả đi giày và sẽ muộn, không tạo điều kiện cảnh báo."
+        "explanation": "'And' chỉ yêu cầu cả đi giày và sẽ muộn, không tạo điều kiện cảnh báo.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' cần tương phản, trong khi câu đưa ra hậu quả nếu không hành động."
+        "explanation": "'But' cần tương phản, trong khi câu đưa ra hậu quả nếu không hành động.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ diễn tả kết quả trực tiếp, không phải cảnh báo kiểu 'làm đi hoặc...'."
+        "explanation": "'So' sẽ diễn tả kết quả trực tiếp, không phải cảnh báo kiểu 'làm đi hoặc...'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The boy is crying ___ he fell down. (cry: khóc, fell: ngã) 😭📉",
+    "q": "The boy is crying ___ he fell down. 😭📉",
     "a": [
       {
         "text": "because",
@@ -2512,20 +2641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ phù hợp nếu đảo thành 'He fell down, so he is crying'; vị trí hiện tại cần lý do."
+        "explanation": "'So' sẽ phù hợp nếu đảo thành 'He fell down, so he is crying'; vị trí hiện tại cần lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa khóc và bị ngã."
+        "explanation": "'But' không tạo tương phản giữa khóc và bị ngã.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai sự việc, không nêu nguyên nhân của tiếng khóc."
+        "explanation": "'And' chỉ nối hai sự việc, không nêu nguyên nhân của tiếng khóc.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like carrots, potatoes, ___ tomatoes. (carrots: cà rốt) 🥕🥔🍅",
+    "q": "I like carrots, potatoes, ___ tomatoes. 🥕🥔🍅",
     "a": [
       {
         "text": "and",
@@ -2534,20 +2666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không thể hiện tương phản giữa các loại rau củ trong danh sách."
+        "explanation": "'But' không thể hiện tương phản giữa các loại rau củ trong danh sách.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến danh sách thành lựa chọn, trái với ý thích/nêu đủ ba loại."
+        "explanation": "'Or' biến danh sách thành lựa chọn, trái với ý thích/nêu đủ ba loại.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nối các mục trong một chuỗi liệt kê."
+        "explanation": "'So' không nối các mục trong một chuỗi liệt kê.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It's raining. Choose one: do you want to stay home ___ go out? (stay: ở, go: đi) 🏠🚶",
+    "q": "It's raining. Choose one: do you want to stay home ___ go out? 🏠🚶",
     "a": [
       {
         "text": "or",
@@ -2556,20 +2691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ yêu cầu vừa ở nhà vừa đi ra ngoài, không phải chọn một hành động."
+        "explanation": "'And' sẽ yêu cầu vừa ở nhà vừa đi ra ngoài, không phải chọn một hành động.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' biểu thị tương phản, không nối hai phương án hành động."
+        "explanation": "'But' biểu thị tương phản, không nối hai phương án hành động.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả và không tạo câu hỏi lựa chọn."
+        "explanation": "'So' chỉ kết quả và không tạo câu hỏi lựa chọn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My bike is broken, ___ I walk to school. (broken: hỏng, walk: đi bộ) 🚲🚶",
+    "q": "My bike is broken, ___ I walk to school. 🚲🚶",
     "a": [
       {
         "text": "so",
@@ -2578,20 +2716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần đổi trật tự thành 'I walk because my bike is broken'; vị trí hiện tại nêu kết quả."
+        "explanation": "'Because' sẽ cần đổi trật tự thành 'I walk because my bike is broken'; vị trí hiện tại nêu kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không đối lập xe hỏng với đi bộ; đi bộ là giải pháp do xe hỏng."
+        "explanation": "'But' không đối lập xe hỏng với đi bộ; đi bộ là giải pháp do xe hỏng.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra hai lựa chọn, không diễn tả hậu quả của chiếc xe bị hỏng."
+        "explanation": "'Or' đưa ra hai lựa chọn, không diễn tả hậu quả của chiếc xe bị hỏng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She can dance, ___ she can't sing. (dance: múa, sing: hát) 💃🎤",
+    "q": "She can dance, ___ she can't sing. 💃🎤",
     "a": [
       {
         "text": "but",
@@ -2600,20 +2741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai khả năng, không thể hiện sự trái ngược giữa dance và sing."
+        "explanation": "'And' chỉ cộng hai khả năng, không thể hiện sự trái ngược giữa dance và sing.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không biểu thị kết quả giữa biết nhảy và không biết hát."
+        "explanation": "'So' không biểu thị kết quả giữa biết nhảy và không biết hát.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai khả năng thành lựa chọn, không nêu cả hai sự thật đối lập."
+        "explanation": "'Or' biến hai khả năng thành lựa chọn, không nêu cả hai sự thật đối lập.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I am happy ___ it is my birthday. (birthday: sinh nhật) 🎂🎉",
+    "q": "I am happy ___ it is my birthday. 🎂🎉",
     "a": [
       {
         "text": "because",
@@ -2622,20 +2766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ biến sinh nhật thành kết quả của việc vui, trái với ý lý do."
+        "explanation": "'So' sẽ biến sinh nhật thành kết quả của việc vui, trái với ý lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa vui và sinh nhật."
+        "explanation": "'But' không tạo tương phản giữa vui và sinh nhật.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai thông tin, không giải thích lý do hạnh phúc."
+        "explanation": "'And' chỉ nối hai thông tin, không giải thích lý do hạnh phúc.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do you have a cat ___ a dog? Choose one pet; I hear a 'Meow'. (hear: nghe) 🐈🐕",
+    "q": "Do you have a cat ___ a dog? Choose one pet; I hear a 'Meow'. 🐈🐕",
     "a": [
       {
         "text": "or",
@@ -2644,20 +2791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi có cả mèo lẫn chó, trái với chỉ dẫn chọn một thú cưng."
+        "explanation": "'And' sẽ hỏi có cả mèo lẫn chó, trái với chỉ dẫn chọn một thú cưng.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản trong câu hỏi xác định một con vật."
+        "explanation": "'But' không tạo tương phản trong câu hỏi xác định một con vật.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không thể nối hai đáp án lựa chọn của câu hỏi đoán."
+        "explanation": "'So' không thể nối hai đáp án lựa chọn của câu hỏi đoán.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My phone is old, ___ it works well. (works well: hoạt động tốt) 📱👍",
+    "q": "My phone is old, ___ it works well. 📱👍",
     "a": [
       {
         "text": "but",
@@ -2666,20 +2816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng old và works well, không nhấn mạnh sự tương phản mong muốn."
+        "explanation": "'And' chỉ cộng old và works well, không nhấn mạnh sự tương phản mong muốn.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không biểu thị kết quả từ tuổi của điện thoại đến việc nó hoạt động tốt."
+        "explanation": "'So' không biểu thị kết quả từ tuổi của điện thoại đến việc nó hoạt động tốt.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần lý do cho việc hoạt động tốt, không phải ý tương phản cũ nhưng vẫn dùng được."
+        "explanation": "'Because' sẽ cần lý do cho việc hoạt động tốt, không phải ý tương phản cũ nhưng vẫn dùng được.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "It is late, ___ I must go home. (late: muộn, go home: về nhà) 🌙🏠",
+    "q": "It is late, ___ I must go home. 🌙🏠",
     "a": [
       {
         "text": "so",
@@ -2688,20 +2841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' cần đặt lý do sau một kết quả hoặc đảo câu; ở đây mệnh đề sau là kết quả."
+        "explanation": "'Because' cần đặt lý do sau một kết quả hoặc đảo câu; ở đây mệnh đề sau là kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa muộn và phải về nhà."
+        "explanation": "'But' không tạo tương phản giữa muộn và phải về nhà.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không nối thời điểm muộn với quyết định về nhà."
+        "explanation": "'Or' tạo lựa chọn, không nối thời điểm muộn với quyết định về nhà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We eat pizza ___ drink coke. (drink: uống) 🍕🥤",
+    "q": "We eat pizza ___ drink coke. 🍕🥤",
     "a": [
       {
         "text": "and",
@@ -2710,20 +2866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa ăn pizza và uống coke."
+        "explanation": "'But' không có tương phản giữa ăn pizza và uống coke.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' sẽ biến pizza và coke thành lựa chọn, trái với ý dùng cả hai."
+        "explanation": "'Or' sẽ biến pizza và coke thành lựa chọn, trái với ý dùng cả hai.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai hành động ăn/uống."
+        "explanation": "'So' chỉ kết quả, không nối hai hành động ăn/uống.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The test was hard, ___ I got an A. (hard: khó) 📝🅰️",
+    "q": "The test was hard, ___ I got an A. 📝🅰️",
     "a": [
       {
         "text": "but",
@@ -2732,20 +2891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai sự kiện, không diễn tả kết quả trái kỳ vọng."
+        "explanation": "'And' chỉ cộng hai sự kiện, không diễn tả kết quả trái kỳ vọng.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ gợi bài khó dẫn đến đạt A, không thể hiện sự bất ngờ đối lập."
+        "explanation": "'So' sẽ gợi bài khó dẫn đến đạt A, không thể hiện sự bất ngờ đối lập.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' giải thích lý do, không phù hợp với quan hệ nhượng bộ khó nhưng vẫn đạt điểm cao."
+        "explanation": "'Because' giải thích lý do, không phù hợp với quan hệ nhượng bộ khó nhưng vẫn đạt điểm cao.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like summer ___ I can go swimming. (summer: mùa hè) ☀️🏊",
+    "q": "I like summer ___ I can go swimming. ☀️🏊",
     "a": [
       {
         "text": "because",
@@ -2754,20 +2916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ đặt đi bơi làm kết quả của thích mùa hè, trái với ý giải thích."
+        "explanation": "'So' sẽ đặt đi bơi làm kết quả của thích mùa hè, trái với ý giải thích.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa mùa hè và việc đi bơi."
+        "explanation": "'But' không tạo tương phản giữa mùa hè và việc đi bơi.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn, không nêu nguyên nhân yêu thích mùa hè."
+        "explanation": "'Or' đưa ra lựa chọn, không nêu nguyên nhân yêu thích mùa hè.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is your shirt green ___ blue? (green: xanh lá, blue: xanh dương) 👕",
+    "q": "Is your shirt green ___ blue? 👕",
     "a": [
       {
         "text": "or",
@@ -2776,20 +2941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' hỏi áo vừa xanh lá vừa xanh dương, không phải câu hỏi lựa chọn."
+        "explanation": "'And' hỏi áo vừa xanh lá vừa xanh dương, không phải câu hỏi lựa chọn.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không nối hai màu thành lựa chọn và không có ý tương phản."
+        "explanation": "'But' không nối hai màu thành lựa chọn và không có ý tương phản.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không thể đứng giữa hai màu áo để hỏi chọn một."
+        "explanation": "'So' chỉ kết quả, không thể đứng giữa hai màu áo để hỏi chọn một.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He woke up late, ___ he missed the bus. (woke up: thức dậy, missed: lỡ) ⏰🚌",
+    "q": "He woke up late, ___ he missed the bus. ⏰🚌",
     "a": [
       {
         "text": "so",
@@ -2798,20 +2966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần đảo thành 'He missed the bus because he woke up late'; vị trí hiện tại nêu kết quả."
+        "explanation": "'Because' sẽ cần đảo thành 'He missed the bus because he woke up late'; vị trí hiện tại nêu kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không đối lập việc dậy muộn với việc lỡ xe; đây là quan hệ nguyên nhân–kết quả."
+        "explanation": "'But' không đối lập việc dậy muộn với việc lỡ xe; đây là quan hệ nguyên nhân–kết quả.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không diễn tả hậu quả của dậy muộn."
+        "explanation": "'Or' tạo lựa chọn, không diễn tả hậu quả của dậy muộn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have a ball, ___ I don't have a bat. (bat: gậy bóng chày) ⚾🏏",
+    "q": "I have a ball, ___ I don't have a bat. ⚾🏏",
     "a": [
       {
         "text": "but",
@@ -2820,20 +2991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ cho biết có cả bóng và gậy, trái với phủ định ở mệnh đề sau."
+        "explanation": "'And' sẽ cho biết có cả bóng và gậy, trái với phủ định ở mệnh đề sau.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không biểu thị sự tương phản giữa có và không có đồ dùng."
+        "explanation": "'So' không biểu thị sự tương phản giữa có và không có đồ dùng.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến ball và bat thành lựa chọn, không nêu hai sự thật cùng lúc."
+        "explanation": "'Or' biến ball và bat thành lựa chọn, không nêu hai sự thật cùng lúc.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The apple is red ___ sweet. (sweet: ngọt) 🍎😋",
+    "q": "The apple is red ___ sweet. 🍎😋",
     "a": [
       {
         "text": "and",
@@ -2842,15 +3016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không có sự tương phản giữa màu đỏ và vị ngọt."
+        "explanation": "'But' không có sự tương phản giữa màu đỏ và vị ngọt.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai đặc điểm thành lựa chọn, trái với việc mô tả cả quả táo."
+        "explanation": "'Or' biến hai đặc điểm thành lựa chọn, trái với việc mô tả cả quả táo.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không nối hai tính chất của quả táo."
+        "explanation": "'So' chỉ hệ quả, không nối hai tính chất của quả táo.",
+        "correct": false
       }
     ]
   },
@@ -2864,20 +3041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ cho biết mua cả búp bê lẫn robot, trái với giới hạn ngân sách."
+        "explanation": "'And' sẽ cho biết mua cả búp bê lẫn robot, trái với giới hạn ngân sách.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản; câu chỉ cần nêu hai món thay thế nhau."
+        "explanation": "'But' không tạo tương phản; câu chỉ cần nêu hai món thay thế nhau.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả và không thể hiện lựa chọn giữa doll và robot."
+        "explanation": "'So' chỉ kết quả và không thể hiện lựa chọn giữa doll và robot.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She didn't go to school ___ she was sick. (sick: ốm) 🤒🏫",
+    "q": "She didn't go to school ___ she was sick. 🤒🏫",
     "a": [
       {
         "text": "because",
@@ -2886,20 +3066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ đặt việc ốm thành kết quả của nghỉ học, trái với quan hệ lý do."
+        "explanation": "'So' sẽ đặt việc ốm thành kết quả của nghỉ học, trái với quan hệ lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa nghỉ học và bị ốm."
+        "explanation": "'But' không có tương phản giữa nghỉ học và bị ốm.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai việc, không nêu nguyên nhân nghỉ học."
+        "explanation": "'And' chỉ nối hai việc, không nêu nguyên nhân nghỉ học.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is strong ___ brave. (strong: khỏe, brave: dũng cảm) 💪🦸",
+    "q": "He is strong ___ brave. 💪🦸",
     "a": [
       {
         "text": "and",
@@ -2908,20 +3091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo đối lập giữa mạnh và dũng cảm."
+        "explanation": "'But' không tạo đối lập giữa mạnh và dũng cảm.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai phẩm chất thành lựa chọn loại trừ, trái với ý mô tả cả hai."
+        "explanation": "'Or' biến hai phẩm chất thành lựa chọn loại trừ, trái với ý mô tả cả hai.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không nối hai tính từ mô tả người."
+        "explanation": "'So' chỉ hệ quả, không nối hai tính từ mô tả người.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The movie was sad, ___ I cried. (sad: buồn, cried: khóc) 🎬😭",
+    "q": "The movie was sad, ___ I cried. 🎬😭",
     "a": [
       {
         "text": "so",
@@ -2930,20 +3116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần nêu lý do cho việc khóc, còn câu đang đặt khóc là kết quả."
+        "explanation": "'Because' sẽ cần nêu lý do cho việc khóc, còn câu đang đặt khóc là kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa nỗi buồn của phim và việc khóc."
+        "explanation": "'But' không có tương phản giữa nỗi buồn của phim và việc khóc.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn, không diễn tả hậu quả cảm xúc của bộ phim."
+        "explanation": "'Or' đưa ra lựa chọn, không diễn tả hậu quả cảm xúc của bộ phim.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Choose one time: do you want to play now ___ later? (now: bây giờ, later: lát nữa) ⏱️",
+    "q": "Choose one time: do you want to play now ___ later? ⏱️",
     "a": [
       {
         "text": "or",
@@ -2952,20 +3141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ yêu cầu chơi cả bây giờ lẫn sau, không phải chọn một thời điểm."
+        "explanation": "'And' sẽ yêu cầu chơi cả bây giờ lẫn sau, không phải chọn một thời điểm.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' biểu thị đối lập, không nối hai mốc thời gian để chọn."
+        "explanation": "'But' biểu thị đối lập, không nối hai mốc thời gian để chọn.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không tạo câu hỏi lựa chọn now/later."
+        "explanation": "'So' không tạo câu hỏi lựa chọn now/later.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I am tired, ___ I keep working. (keep: tiếp tục) 😓💼",
+    "q": "I am tired, ___ I keep working. 😓💼",
     "a": [
       {
         "text": "but",
@@ -2974,20 +3166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng mệt và làm việc, không nhấn mạnh sự trái kỳ vọng."
+        "explanation": "'And' chỉ cộng mệt và làm việc, không nhấn mạnh sự trái kỳ vọng.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ gợi mệt dẫn đến ngừng làm, trái với thông tin vẫn tiếp tục."
+        "explanation": "'So' sẽ gợi mệt dẫn đến ngừng làm, trái với thông tin vẫn tiếp tục.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' giải thích lý do, không biểu thị sự đối lập giữa mệt và tiếp tục làm."
+        "explanation": "'Because' giải thích lý do, không biểu thị sự đối lập giữa mệt và tiếp tục làm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He likes football, ___ he plays every day as a daily hobby. (plays: chơi) ⚽📅",
+    "q": "He likes football, ___ he plays every day as a consequence of that preference. ⚽📅",
     "a": [
       {
         "text": "so",
@@ -2996,20 +3191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ nêu lý do cho việc chơi, nhưng câu đang nêu hệ quả của sở thích."
+        "explanation": "'Because' sẽ nêu lý do cho việc chơi, nhưng câu đang nêu hệ quả của sở thích.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa thích bóng đá và chơi thường xuyên."
+        "explanation": "'But' không có tương phản giữa thích bóng đá và chơi thường xuyên.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn, không nối sở thích với thói quen hằng ngày."
+        "explanation": "'Or' đưa ra lựa chọn, không nối sở thích với thói quen hằng ngày.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I don't like either snakes ___ spiders. (spiders: nhện) 🐍🕷️",
+    "q": "I don't like either snakes ___ spiders. 🐍🕷️",
     "a": [
       {
         "text": "or",
@@ -3018,20 +3216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' không theo mẫu 'either...or' và sẽ làm lệch cấu trúc phủ định lựa chọn."
+        "explanation": "'And' không theo mẫu 'either...or' và sẽ làm lệch cấu trúc phủ định lựa chọn.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản, không liệt kê hai loài vật đều không được thích."
+        "explanation": "'But' tạo tương phản, không liệt kê hai loài vật đều không được thích.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không hoàn thành cấu trúc 'either...or'."
+        "explanation": "'So' chỉ kết quả, không hoàn thành cấu trúc 'either...or'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The sky is blue, ___ the grass is green. (sky: trời, grass: cỏ) ☁️🌱",
+    "q": "The sky is blue, ___ the grass is green. ☁️🌱",
     "a": [
       {
         "text": "and",
@@ -3040,20 +3241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa màu của bầu trời và màu của cỏ."
+        "explanation": "'But' không có tương phản giữa màu của bầu trời và màu của cỏ.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai sự thật thành lựa chọn, không đúng với mô tả cảnh vật."
+        "explanation": "'Or' biến hai sự thật thành lựa chọn, không đúng với mô tả cảnh vật.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không chỉ kết quả giữa màu trời và màu cỏ."
+        "explanation": "'So' không chỉ kết quả giữa màu trời và màu cỏ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I am full, ___ I can't eat more. (full: no bụng) 🤰🚫",
+    "q": "I am full, ___ I can't eat more. 🤰🚫",
     "a": [
       {
         "text": "so",
@@ -3062,20 +3266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ biến 'can't eat more' thành lý do của việc no, trái với quan hệ kết quả."
+        "explanation": "'Because' sẽ biến 'can't eat more' thành lý do của việc no, trái với quan hệ kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa no và không ăn thêm."
+        "explanation": "'But' không có tương phản giữa no và không ăn thêm.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' mở lựa chọn, không diễn tả hậu quả của việc đã no."
+        "explanation": "'Or' mở lựa chọn, không diễn tả hậu quả của việc đã no.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We can walk ___ take a taxi. (walk: đi bộ) 🚶🚕",
+    "q": "We can walk ___ take a taxi. 🚶🚕",
     "a": [
       {
         "text": "or",
@@ -3084,20 +3291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ yêu cầu vừa đi bộ vừa bắt taxi, không phải lựa chọn."
+        "explanation": "'And' sẽ yêu cầu vừa đi bộ vừa bắt taxi, không phải lựa chọn.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa hai phương tiện di chuyển."
+        "explanation": "'But' không tạo tương phản giữa hai phương tiện di chuyển.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không nối hai lựa chọn đi lại."
+        "explanation": "'So' chỉ hệ quả, không nối hai lựa chọn đi lại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She speaks English ___ French. (speaks: nói) 🇬🇧🇫🇷",
+    "q": "She speaks English ___ French. 🇬🇧🇫🇷",
     "a": [
       {
         "text": "and",
@@ -3106,20 +3316,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không có đối lập giữa hai ngôn ngữ cô ấy sử dụng."
+        "explanation": "'But' không có đối lập giữa hai ngôn ngữ cô ấy sử dụng.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' sẽ giới hạn cô ấy chỉ nói một ngôn ngữ, trái với ý cả hai."
+        "explanation": "'Or' sẽ giới hạn cô ấy chỉ nói một ngôn ngữ, trái với ý cả hai.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nối hai ngôn ngữ trong một danh sách khả năng."
+        "explanation": "'So' không nối hai ngôn ngữ trong một danh sách khả năng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The coffee is bitter, ___ I like it. (bitter: đắng) ☕👍",
+    "q": "The coffee is bitter, ___ I like it. ☕👍",
     "a": [
       {
         "text": "but",
@@ -3128,20 +3341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng bitter và like, không nhấn mạnh sự trái kỳ vọng."
+        "explanation": "'And' chỉ cộng bitter và like, không nhấn mạnh sự trái kỳ vọng.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ gợi vị đắng dẫn đến thích cà phê, không đúng quan hệ đối lập."
+        "explanation": "'So' sẽ gợi vị đắng dẫn đến thích cà phê, không đúng quan hệ đối lập.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ giải thích việc thích bằng vị đắng, trái với ý nhượng bộ."
+        "explanation": "'Because' sẽ giải thích việc thích bằng vị đắng, trái với ý nhượng bộ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I need both a spoon ___ a fork. (spoon: thìa, fork: nĩa) 🥄🍴",
+    "q": "I need both a spoon ___ a fork. 🥄🍴",
     "a": [
       {
         "text": "and",
@@ -3150,15 +3366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản, không hoàn thành cặp tương liên 'both...and...'."
+        "explanation": "'But' tạo tương phản, không hoàn thành cặp tương liên 'both...and...'.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai danh từ sau 'both'."
+        "explanation": "'So' chỉ kết quả, không nối hai danh từ sau 'both'.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "'Because' cần mệnh đề lý do, không thể kết hợp với 'both' để liệt kê dụng cụ."
+        "explanation": "'Because' cần mệnh đề lý do, không thể kết hợp với 'both' để liệt kê dụng cụ.",
+        "correct": false
       }
     ]
   },
@@ -3172,20 +3391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' biểu thị tương phản, trong khi hai mệnh đề thời tiết bổ sung cho nhau."
+        "explanation": "'But' biểu thị tương phản, trong khi hai mệnh đề thời tiết bổ sung cho nhau.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn, không nối hai sự thật xảy ra đồng thời."
+        "explanation": "'Or' đưa ra lựa chọn, không nối hai sự thật xảy ra đồng thời.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, nhưng câu đang yêu cầu liên từ bổ sung giữa tuyết và lạnh."
+        "explanation": "'So' chỉ kết quả, nhưng câu đang yêu cầu liên từ bổ sung giữa tuyết và lạnh.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Choose your dominant feeling: are you happy ___ sad? (happy: vui, sad: buồn) 😊😢",
+    "q": "Choose your dominant feeling: are you happy ___ sad? 😊😢",
     "a": [
       {
         "text": "or",
@@ -3194,20 +3416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi cả vui lẫn buồn, không phù hợp với lựa chọn một cảm xúc trội."
+        "explanation": "'And' sẽ hỏi cả vui lẫn buồn, không phù hợp với lựa chọn một cảm xúc trội.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản trong câu hỏi chọn trạng thái."
+        "explanation": "'But' không tạo tương phản trong câu hỏi chọn trạng thái.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không tạo cặp lựa chọn happy/sad."
+        "explanation": "'So' chỉ kết quả, không tạo cặp lựa chọn happy/sad.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I studied hard, ___ I passed the test. (passed: đỗ) 📚✅",
+    "q": "I studied hard, ___ I passed the test. 📚✅",
     "a": [
       {
         "text": "so",
@@ -3216,20 +3441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần đảo mệnh đề để nói đỗ vì học chăm; vị trí này nêu kết quả."
+        "explanation": "'Because' sẽ cần đảo mệnh đề để nói đỗ vì học chăm; vị trí này nêu kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa học chăm và đỗ bài kiểm tra."
+        "explanation": "'But' không có tương phản giữa học chăm và đỗ bài kiểm tra.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không diễn tả kết quả học tập."
+        "explanation": "'Or' tạo lựa chọn, không diễn tả kết quả học tập.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is small, ___ he plays basketball well. (small: thấp/nhỏ) 🏀",
+    "q": "He is small, ___ he plays basketball well. 🏀",
     "a": [
       {
         "text": "but",
@@ -3238,20 +3466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng kích thước và kỹ năng, không nhấn mạnh sự trái kỳ vọng."
+        "explanation": "'And' chỉ cộng kích thước và kỹ năng, không nhấn mạnh sự trái kỳ vọng.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nêu kết quả giữa nhỏ và chơi bóng rổ giỏi."
+        "explanation": "'So' không nêu kết quả giữa nhỏ và chơi bóng rổ giỏi.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến small và plays well thành hai lựa chọn, trái với việc cả hai cùng đúng."
+        "explanation": "'Or' biến small và plays well thành hai lựa chọn, trái với việc cả hai cùng đúng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We went home ___ watched a movie. (went: đã về, watched: đã xem) 🏠🎬",
+    "q": "We went home ___ watched a movie. 🏠🎬",
     "a": [
       {
         "text": "and",
@@ -3260,20 +3491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa về nhà và xem phim."
+        "explanation": "'But' không tạo tương phản giữa về nhà và xem phim.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' sẽ biến hai hành động thành lựa chọn, trái với chuỗi đã thực hiện."
+        "explanation": "'Or' sẽ biến hai hành động thành lựa chọn, trái với chuỗi đã thực hiện.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không nối hai hành động trong chuỗi quá khứ."
+        "explanation": "'So' chỉ hệ quả, không nối hai hành động trong chuỗi quá khứ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The baby is sleeping, ___ please be quiet. (quiet: im lặng) 👶🤫",
+    "q": "The baby is sleeping, ___ please be quiet. 👶🤫",
     "a": [
       {
         "text": "so",
@@ -3282,20 +3516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ giải thích vì sao em bé ngủ, không phải đưa ra lời nhắc giữ yên lặng."
+        "explanation": "'Because' sẽ giải thích vì sao em bé ngủ, không phải đưa ra lời nhắc giữ yên lặng.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có giữa em bé ngủ và yêu cầu yên lặng."
+        "explanation": "'But' tạo tương phản không có giữa em bé ngủ và yêu cầu yên lặng.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không nối tình trạng ngủ với chỉ dẫn."
+        "explanation": "'Or' tạo lựa chọn, không nối tình trạng ngủ với chỉ dẫn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She likes cats, ___ she hates dogs. (hates: ghét) 🐱🐕",
+    "q": "She likes cats, ___ she hates dogs. 🐱🐕",
     "a": [
       {
         "text": "but",
@@ -3304,20 +3541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai sở thích, không diễn tả thích–ghét trái chiều."
+        "explanation": "'And' chỉ cộng hai sở thích, không diễn tả thích–ghét trái chiều.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không biểu thị kết quả giữa thích mèo và ghét chó."
+        "explanation": "'So' không biểu thị kết quả giữa thích mèo và ghét chó.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến cats và dogs thành lựa chọn, trái với việc nêu hai cảm xúc khác nhau."
+        "explanation": "'Or' biến cats và dogs thành lựa chọn, trái với việc nêu hai cảm xúc khác nhau.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I like him ___ he is kind. (kind: tốt bụng) ❤️",
+    "q": "I like him ___ he is kind. ❤️",
     "a": [
       {
         "text": "because",
@@ -3326,20 +3566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ đặt tính tốt thành kết quả của việc thích, trái với ý lý do."
+        "explanation": "'So' sẽ đặt tính tốt thành kết quả của việc thích, trái với ý lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa thích anh ấy và việc anh ấy tử tế."
+        "explanation": "'But' không có tương phản giữa thích anh ấy và việc anh ấy tử tế.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không giải thích cảm xúc thích."
+        "explanation": "'Or' tạo lựa chọn, không giải thích cảm xúc thích.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My mom is cooking, ___ my dad is reading. (cooking: nấu ăn) 🍳📖",
+    "q": "My mom is cooking, ___ my dad is reading. 🍳📖",
     "a": [
       {
         "text": "and",
@@ -3348,20 +3591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa hai hoạt động gia đình."
+        "explanation": "'But' không tạo tương phản giữa hai hoạt động gia đình.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai hoạt động thành lựa chọn, không đúng với việc cả hai đang diễn ra."
+        "explanation": "'Or' biến hai hoạt động thành lựa chọn, không đúng với việc cả hai đang diễn ra.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai hoạt động song song."
+        "explanation": "'So' chỉ kết quả, không nối hai hoạt động song song.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do you want juice, water, ___ milk? (juice: nước ép) 🧃🥛",
+    "q": "Do you want juice, water, ___ milk? 🧃🥛",
     "a": [
       {
         "text": "or",
@@ -3370,20 +3616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi có cả juice, water và milk, không phải liệt kê lựa chọn."
+        "explanation": "'And' sẽ hỏi có cả juice, water và milk, không phải liệt kê lựa chọn.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không biểu thị các phương án đồ uống trong câu hỏi."
+        "explanation": "'But' không biểu thị các phương án đồ uống trong câu hỏi.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không nối các lựa chọn juice/water/milk."
+        "explanation": "'So' chỉ hệ quả, không nối các lựa chọn juice/water/milk.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The light is red, ___ stop! (red: đỏ, stop: dừng) 🔴🛑",
+    "q": "The light is red, ___ stop! 🔴🛑",
     "a": [
       {
         "text": "so",
@@ -3392,20 +3641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' cần mệnh đề nêu lý do, không phù hợp trước mệnh lệnh dừng."
+        "explanation": "'Because' cần mệnh đề nêu lý do, không phù hợp trước mệnh lệnh dừng.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa đèn đỏ và việc dừng lại."
+        "explanation": "'But' không tạo tương phản giữa đèn đỏ và việc dừng lại.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không nêu hành động bắt buộc khi đèn đỏ."
+        "explanation": "'Or' tạo lựa chọn, không nêu hành động bắt buộc khi đèn đỏ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I am hungry, ___ I don't have food. (food: đồ ăn) 🤤🚫",
+    "q": "I am hungry, ___ I don't have food. 🤤🚫",
     "a": [
       {
         "text": "but",
@@ -3414,20 +3666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng đói và thiếu đồ ăn, không nhấn mạnh tình huống trái ngược."
+        "explanation": "'And' chỉ cộng đói và thiếu đồ ăn, không nhấn mạnh tình huống trái ngược.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nối được trạng thái đói với việc không có thức ăn như một kết quả rõ ràng."
+        "explanation": "'So' không nối được trạng thái đói với việc không có thức ăn như một kết quả rõ ràng.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn, không diễn tả hai sự thật đối lập về cơn đói."
+        "explanation": "'Or' đưa ra lựa chọn, không diễn tả hai sự thật đối lập về cơn đói.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She sings ___ dances well. (well: giỏi) 🎤💃",
+    "q": "She sings ___ dances well. 🎤💃",
     "a": [
       {
         "text": "and",
@@ -3436,20 +3691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa hát giỏi và nhảy giỏi."
+        "explanation": "'But' không có tương phản giữa hát giỏi và nhảy giỏi.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai kỹ năng thành lựa chọn, trái với ý cả hai đều tốt."
+        "explanation": "'Or' biến hai kỹ năng thành lựa chọn, trái với ý cả hai đều tốt.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nối hai kỹ năng đồng thời của cô ấy."
+        "explanation": "'So' không nối hai kỹ năng đồng thời của cô ấy.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is it hot ___ cold outside? (outside: bên ngoài) 🌡️",
+    "q": "Is it hot ___ cold outside? 🌡️",
     "a": [
       {
         "text": "or",
@@ -3458,20 +3716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ hỏi ngoài trời vừa nóng vừa lạnh, không phải câu hỏi chọn một trạng thái."
+        "explanation": "'And' sẽ hỏi ngoài trời vừa nóng vừa lạnh, không phải câu hỏi chọn một trạng thái.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản trong câu hỏi lựa chọn nhiệt độ."
+        "explanation": "'But' không tạo tương phản trong câu hỏi lựa chọn nhiệt độ.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hot và cold thành hai đáp án."
+        "explanation": "'So' chỉ kết quả, không nối hot và cold thành hai đáp án.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have a headache ___ I take medicine. (headache: đau đầu, medicine: thuốc) 🤕💊",
+    "q": "I have a headache ___ I take medicine. 🤕💊",
     "a": [
       {
         "text": "so",
@@ -3480,20 +3741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ đặt uống thuốc làm lý do của đau đầu, trái với quan hệ kết quả."
+        "explanation": "'Because' sẽ đặt uống thuốc làm lý do của đau đầu, trái với quan hệ kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa đau đầu và uống thuốc."
+        "explanation": "'But' không có tương phản giữa đau đầu và uống thuốc.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không nối triệu chứng với hành động xử lý."
+        "explanation": "'Or' tạo lựa chọn, không nối triệu chứng với hành động xử lý.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is famous, ___ he is very humble. (famous: nổi tiếng, humble: khiêm tốn) 🌟🙇",
+    "q": "He is famous, ___ he is very humble. 🌟🙇",
     "a": [
       {
         "text": "but",
@@ -3502,20 +3766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai tính chất, không nhấn mạnh sự trái kỳ vọng."
+        "explanation": "'And' chỉ cộng hai tính chất, không nhấn mạnh sự trái kỳ vọng.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không chỉ kết quả giữa nổi tiếng và khiêm tốn."
+        "explanation": "'So' không chỉ kết quả giữa nổi tiếng và khiêm tốn.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến famous và humble thành lựa chọn, trái với việc cả hai cùng đúng."
+        "explanation": "'Or' biến famous và humble thành lựa chọn, trái với việc cả hai cùng đúng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We can play cards ___ watch TV. (play cards: chơi bài) 🃏📺",
+    "q": "We can play cards ___ watch TV. 🃏📺",
     "a": [
       {
         "text": "or",
@@ -3524,20 +3791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ gợi làm cả hai hoạt động, không phải lựa chọn."
+        "explanation": "'And' sẽ gợi làm cả hai hoạt động, không phải lựa chọn.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa hai hoạt động giải trí."
+        "explanation": "'But' không tạo tương phản giữa hai hoạt động giải trí.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ hệ quả, không nối hai phương án vui chơi."
+        "explanation": "'So' chỉ hệ quả, không nối hai phương án vui chơi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I don't go out ___ it is dark. (dark: tối) 🌃",
+    "q": "I don't go out ___ it is dark. 🌃",
     "a": [
       {
         "text": "because",
@@ -3546,20 +3816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ phù hợp nếu câu bắt đầu 'It is dark, so I don't go out'; vị trí hiện tại cần lý do."
+        "explanation": "'So' sẽ phù hợp nếu câu bắt đầu 'It is dark, so I don't go out'; vị trí hiện tại cần lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa không ra ngoài và trời tối."
+        "explanation": "'But' không có tương phản giữa không ra ngoài và trời tối.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai thông tin, không nêu lý do ở nhà."
+        "explanation": "'And' chỉ nối hai thông tin, không nêu lý do ở nhà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The questions were easy, ___ I finished quickly. (easy: dễ, quickly: nhanh) ✅⚡",
+    "q": "The questions were easy, ___ I finished quickly. ✅⚡",
     "a": [
       {
         "text": "so",
@@ -3568,20 +3841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần đảo thành 'I finished quickly because...'; vị trí này nêu kết quả."
+        "explanation": "'Because' sẽ cần đảo thành 'I finished quickly because...'; vị trí này nêu kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa câu hỏi dễ và làm xong nhanh."
+        "explanation": "'But' không tạo tương phản giữa câu hỏi dễ và làm xong nhanh.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' đưa ra lựa chọn, không diễn tả tốc độ hoàn thành."
+        "explanation": "'Or' đưa ra lựa chọn, không diễn tả tốc độ hoàn thành.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He likes apples, ___ he doesn't like oranges. (oranges: cam) 🍎🍊",
+    "q": "He likes apples, ___ he doesn't like oranges. 🍎🍊",
     "a": [
       {
         "text": "but",
@@ -3590,20 +3866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng hai sở thích, không thể hiện một sở thích bị phủ định."
+        "explanation": "'And' chỉ cộng hai sở thích, không thể hiện một sở thích bị phủ định.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không chỉ kết quả giữa thích táo và không thích cam."
+        "explanation": "'So' không chỉ kết quả giữa thích táo và không thích cam.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, trong khi câu nêu đồng thời hai sở thích trái chiều."
+        "explanation": "'Or' tạo lựa chọn, trong khi câu nêu đồng thời hai sở thích trái chiều.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You can sit here ___ there. (here: ở đây, there: ở kia) 🪑",
+    "q": "You can sit here ___ there. 🪑",
     "a": [
       {
         "text": "or",
@@ -3612,20 +3891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' sẽ yêu cầu ngồi cả hai chỗ, trái với ý cho phép chọn một."
+        "explanation": "'And' sẽ yêu cầu ngồi cả hai chỗ, trái với ý cho phép chọn một.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không tạo tương phản giữa hai vị trí ngồi."
+        "explanation": "'But' không tạo tương phản giữa hai vị trí ngồi.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai lựa chọn vị trí."
+        "explanation": "'So' chỉ kết quả, không nối hai lựa chọn vị trí.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I dropped the glass, ___ it broke. (dropped: làm rơi, broke: vỡ) 🥛💔",
+    "q": "I dropped the glass, ___ it broke. 🥛💔",
     "a": [
       {
         "text": "so",
@@ -3634,20 +3916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "'Because' sẽ cần đổi thành 'It broke because I dropped it'; vị trí hiện tại nêu kết quả."
+        "explanation": "'Because' sẽ cần đổi thành 'It broke because I dropped it'; vị trí hiện tại nêu kết quả.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa làm rơi và vỡ."
+        "explanation": "'But' không có tương phản giữa làm rơi và vỡ.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không diễn tả hậu quả chiếc ly bị vỡ."
+        "explanation": "'Or' tạo lựa chọn, không diễn tả hậu quả chiếc ly bị vỡ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The movie is long ___ boring. (long: dài, boring: chán) 🥱",
+    "q": "The movie is long ___ boring. 🥱",
     "a": [
       {
         "text": "and",
@@ -3656,20 +3941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "but",
-        "explanation": "'But' tạo tương phản không có giữa dài và buồn chán trong mô tả này."
+        "explanation": "'But' tạo tương phản không có giữa dài và buồn chán trong mô tả này.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến hai tính chất thành lựa chọn, trái với việc cả hai cùng mô tả phim."
+        "explanation": "'Or' biến hai tính chất thành lựa chọn, trái với việc cả hai cùng mô tả phim.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' chỉ kết quả, không nối hai tính từ của bộ phim."
+        "explanation": "'So' chỉ kết quả, không nối hai tính từ của bộ phim.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He didn't eat ___ he wasn't hungry. (wasn't: không) 🍽️❌",
+    "q": "He didn't eat ___ he wasn't hungry. 🍽️❌",
     "a": [
       {
         "text": "because",
@@ -3678,20 +3966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ cần câu 'He wasn't hungry, so he didn't eat'; vị trí hiện tại cần lý do."
+        "explanation": "'So' sẽ cần câu 'He wasn't hungry, so he didn't eat'; vị trí hiện tại cần lý do.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa không ăn và không đói."
+        "explanation": "'But' không có tương phản giữa không ăn và không đói.",
+        "correct": false
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối hai mệnh đề, không nêu lý do nhịn ăn."
+        "explanation": "'And' chỉ nối hai mệnh đề, không nêu lý do nhịn ăn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I wanted to buy it, ___ it was too expensive. (expensive: đắt) 💸",
+    "q": "I wanted to buy it, ___ it was too expensive. 💸",
     "a": [
       {
         "text": "but",
@@ -3700,20 +3991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ cộng mong muốn và giá cả, không nêu trở ngại đối lập."
+        "explanation": "'And' chỉ cộng mong muốn và giá cả, không nêu trở ngại đối lập.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ gợi giá đắt là kết quả của muốn mua, không đúng quan hệ."
+        "explanation": "'So' sẽ gợi giá đắt là kết quả của muốn mua, không đúng quan hệ.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' tạo lựa chọn, không nối mong muốn mua với giá quá cao."
+        "explanation": "'Or' tạo lựa chọn, không nối mong muốn mua với giá quá cao.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Close the door, ___ the cat will go out. (door: cửa) 🚪🐈",
+    "q": "Close the door, ___ the cat will otherwise go out. 🚪🐈",
     "a": [
       {
         "text": "or",
@@ -3722,20 +4016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ nối mệnh lệnh với kết quả, không tạo cảnh báo điều kiện."
+        "explanation": "'And' chỉ nối mệnh lệnh với kết quả, không tạo cảnh báo điều kiện.",
+        "correct": false
       },
       {
         "text": "but",
-        "explanation": "'But' không có tương phản giữa đóng cửa và mèo đi ra."
+        "explanation": "'But' không có tương phản giữa đóng cửa và mèo đi ra.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' sẽ diễn tả kết quả trực tiếp, không phải lời cảnh báo 'hoặc...'."
+        "explanation": "'So' sẽ diễn tả kết quả trực tiếp, không phải lời cảnh báo 'hoặc...'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is tall, ___ his brother is short. (tall: cao, short: thấp) 📏",
+    "q": "He is tall, ___ his brother is short. 📏",
     "a": [
       {
         "text": "but",
@@ -3744,15 +4041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "and",
-        "explanation": "'And' chỉ đặt hai chiều cao cạnh nhau, không nhấn mạnh sự trái ngược."
+        "explanation": "'And' chỉ đặt hai chiều cao cạnh nhau, không nhấn mạnh sự trái ngược.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "'So' không nêu kết quả giữa hai chiều cao."
+        "explanation": "'So' không nêu kết quả giữa hai chiều cao.",
+        "correct": false
       },
       {
         "text": "or",
-        "explanation": "'Or' biến tall và short thành lựa chọn, không mô tả hai anh em."
+        "explanation": "'Or' biến tall và short thành lựa chọn, không mô tả hai anh em.",
+        "correct": false
       }
     ]
   }

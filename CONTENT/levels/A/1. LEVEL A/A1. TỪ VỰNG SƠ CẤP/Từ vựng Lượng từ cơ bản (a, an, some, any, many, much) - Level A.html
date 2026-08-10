@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "I have ___ single orange in my bag. (Chính xác một quả cam)",
+    "q": "I have ___ single orange in my bag.",
     "a": [
       {
         "text": "an",
@@ -1566,15 +1566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, \"orange\" bắt đầu bằng nguyên âm, phải dùng \"an\" mới đúng."
+        "explanation": "Sai rồi, \"orange\" bắt đầu bằng nguyên âm, phải dùng \"an\" mới đúng.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có \"một\" quả cam thôi, dùng \"an\" hay hơn \"some\" nè."
+        "explanation": "Chỉ có \"một\" quả cam thôi, dùng \"an\" hay hơn \"some\" nè.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "\"Orange\" là số ít, mình không dùng \"many\" được."
+        "explanation": "\"Orange\" là số ít, mình không dùng \"many\" được.",
+        "correct": false
       }
     ]
   },
@@ -1588,20 +1591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "\"Birds\" là số nhiều, không dùng \"a\" được đâu em."
+        "explanation": "\"Birds\" là số nhiều, không dùng \"a\" được đâu em.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không đi với \"an\" em nhé."
+        "explanation": "Số nhiều không đi với \"an\" em nhé.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này là khẳng định, mình dùng \"some\" thay vì \"any\" nhé."
+        "explanation": "Câu này là khẳng định, mình dùng \"some\" thay vì \"any\" nhé.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do you have ___ pencils at all? (Hỏi trung tính xem có cây nào hay không)",
+    "q": "Do you have ___ pencils at all?",
     "a": [
       {
         "text": "any",
@@ -1610,15 +1616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Thường thì \"any\" dùng cho câu hỏi nghe sẽ tự nhiên hơn \"some\"."
+        "explanation": "Thường thì \"any\" dùng cho câu hỏi nghe sẽ tự nhiên hơn \"some\".",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "\"Pencils\" là số nhiều, không dùng \"a\" được."
+        "explanation": "\"Pencils\" là số nhiều, không dùng \"a\" được.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng \"an\" em nha."
+        "explanation": "Số nhiều không dùng \"an\" em nha.",
+        "correct": false
       }
     ]
   },
@@ -1632,15 +1641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "\"Much\" thường dùng cho danh từ không đếm được (như sữa, nước)."
+        "explanation": "\"Much\" thường dùng cho danh từ không đếm được (như sữa, nước).",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "\"Friends\" là số nhiều, không dùng \"a\" em nhé."
+        "explanation": "\"Friends\" là số nhiều, không dùng \"a\" em nhé.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không đi với \"an\" đâu."
+        "explanation": "Số nhiều không đi với \"an\" đâu.",
+        "correct": false
       }
     ]
   },
@@ -1654,15 +1666,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "\"Many\" chỉ dùng cho những thứ đếm được (như quả táo, cái bút)."
+        "explanation": "\"Many\" chỉ dùng cho những thứ đếm được (như quả táo, cái bút).",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "\"Milk\" không đếm được nên không dùng \"a milk\" em nhé."
+        "explanation": "\"Milk\" không đếm được nên không dùng \"a milk\" em nhé.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng \"an\" trước danh từ không đếm được."
+        "explanation": "Không dùng \"an\" trước danh từ không đếm được.",
+        "correct": false
       }
     ]
   },
@@ -1676,15 +1691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I have an apples.",
-        "explanation": "Đã là số nhiều \"apples\" thì không dùng \"an\" đứng trước."
+        "explanation": "Đã là số nhiều \"apples\" thì không dùng \"an\" đứng trước.",
+        "correct": false
       },
       {
         "text": "I have much apples.",
-        "explanation": "\"Much\" dùng cho vật không đếm được, còn táo đếm được em ơi."
+        "explanation": "\"Much\" dùng cho vật không đếm được, còn táo đếm được em ơi.",
+        "correct": false
       },
       {
         "text": "I have a apples.",
-        "explanation": "Số nhiều không dùng \"a\", em nhớ nhé."
+        "explanation": "Số nhiều không dùng \"a\", em nhớ nhé.",
+        "correct": false
       }
     ]
   },
@@ -1698,15 +1716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Sai. Cụm \"even a drop\" loại trừ cả một ít nước, nên phải dùng \"any water\"."
+        "explanation": "Sai. Cụm \"even a drop\" loại trừ cả một ít nước, nên phải dùng \"any water\".",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "\"Water\" là danh từ không đếm được, không dùng \"many\" nè."
+        "explanation": "\"Water\" là danh từ không đếm được, không dùng \"many\" nè.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "\"Water\" không đếm được, không dùng \"a water\" em nhé."
+        "explanation": "\"Water\" không đếm được, không dùng \"a water\" em nhé.",
+        "correct": false
       }
     ]
   },
@@ -1720,20 +1741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "have -> has",
-        "explanation": "Chủ ngữ \"I\" luôn đi với \"have\", không cần sửa."
+        "explanation": "Chủ ngữ \"I\" luôn đi với \"have\", không cần sửa.",
+        "correct": false
       },
       {
         "text": "animals -> animalses",
-        "explanation": "Cách sửa này tạo ra một từ sai chính tả và không sửa được lượng từ."
+        "explanation": "Cách sửa này tạo ra một từ sai chính tả và không sửa được lượng từ.",
+        "correct": false
       },
       {
         "text": "I -> Me",
-        "explanation": "Chủ ngữ phải là \"I\", dùng \"Me\" ở đây là sai."
+        "explanation": "Chủ ngữ phải là \"I\", dùng \"Me\" ở đây là sai.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have ___ cake ready for you. (một ít bánh đã sẵn sàng)",
+    "q": "I have ___ cake ready for you.",
     "a": [
       {
         "text": "some",
@@ -1742,15 +1766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Trong lời mời/yêu cầu, \"some\" nghe sẽ hay hơn \"any\"."
+        "explanation": "Trong lời mời/yêu cầu, \"some\" nghe sẽ hay hơn \"any\".",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Bánh ở đây mang nghĩa một ít, không dùng \"many\" em nhé."
+        "explanation": "Bánh ở đây mang nghĩa một ít, không dùng \"many\" em nhé.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Dùng \"some\" là cách nói lịch sự nhất trong trường hợp này."
+        "explanation": "Dùng \"some\" là cách nói lịch sự nhất trong trường hợp này.",
+        "correct": false
       }
     ]
   },
@@ -1764,15 +1791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Do you have much toys?",
-        "explanation": "\"Much\" chỉ dùng cho vật không đếm được (như sữa, tiền)."
+        "explanation": "\"Much\" chỉ dùng cho vật không đếm được (như sữa, tiền).",
+        "correct": false
       },
       {
         "text": "Do you have a toys?",
-        "explanation": "Số nhiều không dùng \"a\" đứng trước đâu em."
+        "explanation": "Số nhiều không dùng \"a\" đứng trước đâu em.",
+        "correct": false
       },
       {
         "text": "Do you have some toy?",
-        "explanation": "Câu đang muốn hỏi \"nhiều\", \"some\" chỉ có nghĩa là \"một ít\"."
+        "explanation": "Câu đang muốn hỏi \"nhiều\", \"some\" chỉ có nghĩa là \"một ít\".",
+        "correct": false
       }
     ]
   },
@@ -1786,15 +1816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mạo từ đi theo từ ngay sau nó, \"old\" là nguyên âm nên dùng \"an\"."
+        "explanation": "Mạo từ đi theo từ ngay sau nó, \"old\" là nguyên âm nên dùng \"an\".",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"his only bicycle\" chỉ một xe đạp số ít; dùng \"an old bike\"."
+        "explanation": "Sai. Cue \"his only bicycle\" chỉ một xe đạp số ít; dùng \"an old bike\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Không dùng \"any\" trong câu khẳng định giới thiệu đồ vật này."
+        "explanation": "Không dùng \"any\" trong câu khẳng định giới thiệu đồ vật này.",
+        "correct": false
       }
     ]
   },
@@ -1808,15 +1841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước ép không đếm được, mình không dùng \"a juice\" nhé."
+        "explanation": "Nước ép không đếm được, mình không dùng \"a juice\" nhé.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Đây là lời yêu cầu lịch sự, dùng \"some\" là chuẩn nhất."
+        "explanation": "Đây là lời yêu cầu lịch sự, dùng \"some\" là chuẩn nhất.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Juice không đếm được nên không dùng \"many\"."
+        "explanation": "Juice không đếm được nên không dùng \"many\".",
+        "correct": false
       }
     ]
   },
@@ -1830,15 +1866,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng \"any\" cho câu hỏi là quy tắc cơ bản đấy em."
+        "explanation": "Dùng \"any\" cho câu hỏi là quy tắc cơ bản đấy em.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "\"Sweets\" đếm được số nhiều, không dùng \"much\"."
+        "explanation": "\"Sweets\" đếm được số nhiều, không dùng \"much\".",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Số nhiều không đi với \"a\" em nhé."
+        "explanation": "Số nhiều không đi với \"a\" em nhé.",
+        "correct": false
       }
     ]
   },
@@ -1852,15 +1891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "\"Much\" chỉ dành cho vật không đếm được như nước, sữa."
+        "explanation": "\"Much\" chỉ dành cho vật không đếm được như nước, sữa.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Đã là số nhiều \"eggs\" thì không dùng \"a\" đứng trước."
+        "explanation": "Đã là số nhiều \"eggs\" thì không dùng \"a\" đứng trước.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. \"Some eggs\" không diễn tả lượng lớn cần cho cả lớp; cue \"a few, but not many\" khóa \"many\"."
+        "explanation": "Sai. \"Some eggs\" không diễn tả lượng lớn cần cho cả lớp; cue \"a few, but not many\" khóa \"many\".",
+        "correct": false
       }
     ]
   },
@@ -1874,15 +1916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Tiền không đếm từng \"một tiền, hai tiền\" nên không dùng \"many\"."
+        "explanation": "Tiền không đếm từng \"một tiền, hai tiền\" nên không dùng \"many\".",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Trong câu hỏi \"How...?\", mình chọn \"much\" hoặc \"many\" thôi."
+        "explanation": "Trong câu hỏi \"How...?\", mình chọn \"much\" hoặc \"many\" thôi.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Hỏi về số lượng thì dùng \"much\" cho tiền em nhé."
+        "explanation": "Hỏi về số lượng thì dùng \"much\" cho tiền em nhé.",
+        "correct": false
       }
     ]
   },
@@ -1896,15 +1941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some / a",
-        "explanation": "\"Cat\" số ít dùng \"a\", \"kittens\" số nhiều khẳng định dùng \"some\"."
+        "explanation": "\"Cat\" số ít dùng \"a\", \"kittens\" số nhiều khẳng định dùng \"some\".",
+        "correct": false
       },
       {
         "text": "an / some",
-        "explanation": "\"Cat\" bắt đầu bằng phụ âm, không dùng \"an\"."
+        "explanation": "\"Cat\" bắt đầu bằng phụ âm, không dùng \"an\".",
+        "correct": false
       },
       {
         "text": "a / any",
-        "explanation": "Câu khẳng định mình dùng \"some\" cho số nhiều nhé."
+        "explanation": "Câu khẳng định mình dùng \"some\" cho số nhiều nhé.",
+        "correct": false
       }
     ]
   },
@@ -1918,15 +1966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "are -> is",
-        "explanation": "Chủ ngữ số nhiều dùng \"are\" là đúng ngữ pháp rồi."
+        "explanation": "Chủ ngữ số nhiều dùng \"are\" là đúng ngữ pháp rồi.",
+        "correct": false
       },
       {
         "text": "books -> book",
-        "explanation": "Hãy giữ số nhiều để phù hợp với từ \"are\" nhé."
+        "explanation": "Hãy giữ số nhiều để phù hợp với từ \"are\" nhé.",
+        "correct": false
       },
       {
         "text": "the -> a",
-        "explanation": "Dùng \"the table\" để chỉ cái bàn đã biết là chuẩn rồi."
+        "explanation": "Dùng \"the table\" để chỉ cái bàn đã biết là chuẩn rồi.",
+        "correct": false
       }
     ]
   },
@@ -1935,11 +1986,13 @@ const fullQuestionBank = [
     "a": [
       {
         "text": "He needs any help.",
-        "explanation": "Trong câu khẳng định thông thường, dùng some help; any chỉ phù hợp trong phủ định hoặc nghi vấn."
+        "explanation": "Trong câu khẳng định thông thường, dùng some help; any chỉ phù hợp trong phủ định hoặc nghi vấn.",
+        "correct": false
       },
       {
         "text": "He needs much help.",
-        "explanation": "Câu khẳng định không dùng \"any help\" em nhé."
+        "explanation": "Câu khẳng định không dùng \"any help\" em nhé.",
+        "correct": false
       },
       {
         "text": "He needs some help.",
@@ -1948,7 +2001,8 @@ const fullQuestionBank = [
       },
       {
         "text": "He needs many help.",
-        "explanation": "\"Help\" không đếm được nên không dùng \"many\"."
+        "explanation": "\"Help\" không đếm được nên không dùng \"many\".",
+        "correct": false
       }
     ]
   },
@@ -1962,15 +2016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some / some",
-        "explanation": "Nhớ nhé: câu hỏi và phủ định đi chung với \"any\"."
+        "explanation": "Nhớ nhé: câu hỏi và phủ định đi chung với \"any\".",
+        "correct": false
       },
       {
         "text": "any / some",
-        "explanation": "Vế đầu là câu hỏi, dùng \"any\" là đúng quy tắc."
+        "explanation": "Vế đầu là câu hỏi, dùng \"any\" là đúng quy tắc.",
+        "correct": false
       },
       {
         "text": "some / any",
-        "explanation": "Vế sau là phủ định (isn't), cũng phải dùng \"any\"."
+        "explanation": "Vế sau là phủ định (isn't), cũng phải dùng \"any\".",
+        "correct": false
       }
     ]
   },
@@ -1984,15 +2041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "My mother buys an eggs.",
-        "explanation": "Số nhiều không dùng \"an\", em nhớ nhé."
+        "explanation": "Số nhiều không dùng \"an\", em nhớ nhé.",
+        "correct": false
       },
       {
         "text": "My mother buys any eggs.",
-        "explanation": "Câu khẳng định không dùng \"any\"."
+        "explanation": "Câu khẳng định không dùng \"any\".",
+        "correct": false
       },
       {
         "text": "My mother buys much eggs.",
-        "explanation": "\"Eggs\" là vật đếm được, không dùng \"much\"."
+        "explanation": "\"Eggs\" là vật đếm được, không dùng \"much\".",
+        "correct": false
       }
     ]
   },
@@ -2006,15 +2066,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an / a",
-        "explanation": "\"Banana\" làm sao mà đi với \"an\" được, đúng không nè?"
+        "explanation": "\"Banana\" làm sao mà đi với \"an\" được, đúng không nè?",
+        "correct": false
       },
       {
         "text": "some / any",
-        "explanation": "Mỗi ngày ăn một quả, dùng \"a\" và \"an\" là chuẩn nhất."
+        "explanation": "Mỗi ngày ăn một quả, dùng \"a\" và \"an\" là chuẩn nhất.",
+        "correct": false
       },
       {
         "text": "many / much",
-        "explanation": "Đây là số lượng ít (một quả), không dùng many/much."
+        "explanation": "Đây là số lượng ít (một quả), không dùng many/much.",
+        "correct": false
       }
     ]
   },
@@ -2028,15 +2091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Câu khẳng định chúng mình dùng \"some\" em nhé."
+        "explanation": "Câu khẳng định chúng mình dùng \"some\" em nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Số nhiều không dùng \"a\"."
+        "explanation": "Số nhiều không dùng \"a\".",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Con tem là vật đếm được, không dùng \"much\"."
+        "explanation": "Con tem là vật đếm được, không dùng \"much\".",
+        "correct": false
       }
     ]
   },
@@ -2050,15 +2116,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Nếu dùng \"some\" trong câu phủ định sẽ không đúng ngữ pháp."
+        "explanation": "Nếu dùng \"some\" trong câu phủ định sẽ không đúng ngữ pháp.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "\"Children\" số nhiều, đếm được nên không dùng \"much\"."
+        "explanation": "\"Children\" số nhiều, đếm được nên không dùng \"much\".",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng \"an\" em nha."
+        "explanation": "Số nhiều không dùng \"an\" em nha.",
+        "correct": false
       }
     ]
   },
@@ -2072,15 +2141,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "\"Much\" chỉ dùng cho những thứ như nước, đường, tiền."
+        "explanation": "\"Much\" chỉ dùng cho những thứ như nước, đường, tiền.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Khi hỏi số lượng mang ý nghĩa \"bao nhiêu\", dùng \"many\" cho vật đếm được."
+        "explanation": "Khi hỏi số lượng mang ý nghĩa \"bao nhiêu\", dùng \"many\" cho vật đếm được.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi bao nhiêu (How...) đi với many mới đúng."
+        "explanation": "Câu hỏi bao nhiêu (How...) đi với many mới đúng.",
+        "correct": false
       }
     ]
   },
@@ -2094,20 +2166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Đường không đếm từng hột được nên không dùng \"many\" nhé."
+        "explanation": "Đường không đếm từng hột được nên không dùng \"many\" nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Không dùng \"a sugar\" vì nó không đếm được."
+        "explanation": "Không dùng \"a sugar\" vì nó không đếm được.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Đường không đi với \"an\" đâu em."
+        "explanation": "Đường không đi với \"an\" đâu em.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is there ___ milk in the cup? (Hỏi trung tính xem có chút sữa nào không)",
+    "q": "Is there ___ milk in the cup?",
     "a": [
       {
         "text": "any",
@@ -2116,15 +2191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Sữa không đếm được, mình không dùng \"many\"."
+        "explanation": "Sữa không đếm được, mình không dùng \"many\".",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sữa là vật không đếm được, không thể nói \"một sữa\"."
+        "explanation": "Sữa là vật không đếm được, không thể nói \"một sữa\".",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Càng không thể dùng \"an\" trước sữa được rồi."
+        "explanation": "Càng không thể dùng \"an\" trước sữa được rồi.",
+        "correct": false
       }
     ]
   },
@@ -2138,15 +2216,18 @@ const fullQuestionBank = [
       },
       {
         "text": "has -> have",
-        "explanation": "Chủ ngữ số ít \"She\" dùng \"has\" là chuẩn rồi."
+        "explanation": "Chủ ngữ số ít \"She\" dùng \"has\" là chuẩn rồi.",
+        "correct": false
       },
       {
         "text": "water -> waters",
-        "explanation": "Nước là không đếm được, đừng thêm \"s\" vào em nhé."
+        "explanation": "Nước là không đếm được, đừng thêm \"s\" vào em nhé.",
+        "correct": false
       },
       {
         "text": "many -> a lot of",
-        "explanation": "Sau How trong câu hỏi định lượng phải dùng much, không dùng a lot of."
+        "explanation": "Sau How trong câu hỏi định lượng phải dùng much, không dùng a lot of.",
+        "correct": false
       }
     ]
   },
@@ -2160,15 +2241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "I don't have some sweets.",
-        "explanation": "Phủ định thì dùng \"any\" sẽ đúng ngữ pháp hơn \"some\"."
+        "explanation": "Phủ định thì dùng \"any\" sẽ đúng ngữ pháp hơn \"some\".",
+        "correct": false
       },
       {
         "text": "I don't have many sweet.",
-        "explanation": "Nếu dùng \"many\" thì \"sweet\" phải thêm \"s\" thành số nhiều."
+        "explanation": "Nếu dùng \"many\" thì \"sweet\" phải thêm \"s\" thành số nhiều.",
+        "correct": false
       },
       {
         "text": "I don't have much sweets.",
-        "explanation": "Kẹo đếm được (sweets), mình không dùng \"much\"."
+        "explanation": "Kẹo đếm được (sweets), mình không dùng \"much\".",
+        "correct": false
       }
     ]
   },
@@ -2182,15 +2266,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Dù là câu hỏi nhưng đây là lời mời nên dùng \"some\" sẽ hay hơn \"any\"."
+        "explanation": "Dù là câu hỏi nhưng đây là lời mời nên dùng \"some\" sẽ hay hơn \"any\".",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Bánh quy đếm được số nhiều, không dùng \"much\"."
+        "explanation": "Bánh quy đếm được số nhiều, không dùng \"much\".",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng \"an\" em nhé."
+        "explanation": "Số nhiều không dùng \"an\" em nhé.",
+        "correct": false
       }
     ]
   },
@@ -2204,15 +2291,18 @@ const fullQuestionBank = [
       },
       {
         "text": "There is many books on the table.",
-        "explanation": "Sách số nhiều \"books\" nên động từ phải là \"are\", không dùng \"is\"."
+        "explanation": "Sách số nhiều \"books\" nên động từ phải là \"are\", không dùng \"is\".",
+        "correct": false
       },
       {
         "text": "There are much books on the table.",
-        "explanation": "Sách đếm được, em dùng \"many\" nhé, đừng dùng \"much\"."
+        "explanation": "Sách đếm được, em dùng \"many\" nhé, đừng dùng \"much\".",
+        "correct": false
       },
       {
         "text": "There are some book on the table.",
-        "explanation": "Câu đang nói là \"nhiều\", \"some\" chỉ là \"một vài\"."
+        "explanation": "Câu đang nói là \"nhiều\", \"some\" chỉ là \"một vài\".",
+        "correct": false
       }
     ]
   },
@@ -2226,15 +2316,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "I là nguyên âm nên phải đi với \"an\" em nha."
+        "explanation": "I là nguyên âm nên phải đi với \"an\" em nha.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có \"một\" con thôi, \"an\" là chuẩn nhất."
+        "explanation": "Chỉ có \"một\" con thôi, \"an\" là chuẩn nhất.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Dùng \"an\" để giới thiệu đồ vật lần đầu trong câu khẳng định."
+        "explanation": "Dùng \"an\" để giới thiệu đồ vật lần đầu trong câu khẳng định.",
+        "correct": false
       }
     ]
   },
@@ -2248,15 +2341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Câu khẳng định chúng mình ưu tiên dùng \"some\" nhé."
+        "explanation": "Câu khẳng định chúng mình ưu tiên dùng \"some\" nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Bột đếm không được nên không dùng \"many\"."
+        "explanation": "Bột đếm không được nên không dùng \"many\".",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Không thể đếm \"một bột\" nên không dùng \"a\"."
+        "explanation": "Không thể đếm \"một bột\" nên không dùng \"a\".",
+        "correct": false
       }
     ]
   },
@@ -2270,15 +2366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Câu phủ định (doesn't) đi với \"any\" là quy tắc chuẩn."
+        "explanation": "Câu phủ định (doesn't) đi với \"any\" là quy tắc chuẩn.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Tiền không đếm bằng số (một tiền, hai tiền) nên không dùng \"many\"."
+        "explanation": "Tiền không đếm bằng số (một tiền, hai tiền) nên không dùng \"many\".",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Không dùng \"a money\" em nhé."
+        "explanation": "Không dùng \"a money\" em nhé.",
+        "correct": false
       }
     ]
   },
@@ -2292,15 +2391,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Bài hát đếm được từng bài, dùng \"many\" mới đúng."
+        "explanation": "Bài hát đếm được từng bài, dùng \"many\" mới đúng.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu khẳng định nói về số lượng nhiều, dùng \"many\" nhé."
+        "explanation": "Câu khẳng định nói về số lượng nhiều, dùng \"many\" nhé.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng \"an\" đâu nè."
+        "explanation": "Số nhiều không dùng \"an\" đâu nè.",
+        "correct": false
       }
     ]
   },
@@ -2314,15 +2416,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Đừng nhầm nhé, nước chỉ dùng \"much\" thôi."
+        "explanation": "Đừng nhầm nhé, nước chỉ dùng \"much\" thôi.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Khi hỏi số lượng \"bao nhiêu\", \"How much\" là bộ đôi chuẩn."
+        "explanation": "Khi hỏi số lượng \"bao nhiêu\", \"How much\" là bộ đôi chuẩn.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi bao nhiêu nước phải dùng \"much\"."
+        "explanation": "Câu hỏi bao nhiêu nước phải dùng \"much\".",
+        "correct": false
       }
     ]
   },
@@ -2336,20 +2441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "không đếm được",
-        "explanation": "Vật không đếm được (nước, tiền) thì dùng \"much\" em nhé."
+        "explanation": "Vật không đếm được (nước, tiền) thì dùng \"much\" em nhé.",
+        "correct": false
       },
       {
         "text": "số ít",
-        "explanation": "\"Many\" chỉ đi sau từ ở số nhiều (có s)."
+        "explanation": "\"Many\" chỉ đi sau từ ở số nhiều (có s).",
+        "correct": false
       },
       {
         "text": "tất cả các loại",
-        "explanation": "Nhớ phân biệt đếm được (many) và không đếm được (much) nha."
+        "explanation": "Nhớ phân biệt đếm được (many) và không đếm được (much) nha.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Tìm lỗi: \"I want any juice.\"",
+    "q": "Tìm lỗi trong câu diễn tả mong muốn một ít nước ép cho bữa sáng: \"I want any juice for breakfast.\"",
     "a": [
       {
         "text": "any -> some",
@@ -2358,20 +2466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "want -> wants",
-        "explanation": "Chủ ngữ \"I\" đi với \"want\" là đúng ngữ pháp rồi."
+        "explanation": "Chủ ngữ \"I\" đi với \"want\" là đúng ngữ pháp rồi.",
+        "correct": false
       },
       {
         "text": "juice -> juices",
-        "explanation": "Nước ép không thêm \"s\" đằng sau em nhé."
+        "explanation": "Nước ép không thêm \"s\" đằng sau em nhé.",
+        "correct": false
       },
       {
         "text": "any -> many",
-        "explanation": "Dùng \"some\" để nói về một ít nước ép là hay nhất."
+        "explanation": "Dùng \"some\" để nói về một ít nước ép là hay nhất.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "A: \"Are there ___ children?\" - B: \"No, there aren't ___.\"",
+    "q": "A: \"Are there ___ children at all?\" - B: \"No, there aren't ___.\"",
     "a": [
       {
         "text": "any / any",
@@ -2380,15 +2491,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some / some",
-        "explanation": "Nhớ bộ đôi \"số nhiều + câu hỏi/phủ định = any\" nhé."
+        "explanation": "Nhớ bộ đôi \"số nhiều + câu hỏi/phủ định = any\" nhé.",
+        "correct": false
       },
       {
         "text": "any / some",
-        "explanation": "Vế đầu là câu hỏi, vế sau là \"aren't\" nên đều dùng \"any\"."
+        "explanation": "Vế đầu là câu hỏi, vế sau là \"aren't\" nên đều dùng \"any\".",
+        "correct": false
       },
       {
         "text": "some / any",
-        "explanation": "Dùng \"any\" cho cả hai vế là cách nói chuẩn nhất."
+        "explanation": "Dùng \"any\" cho cả hai vế là cách nói chuẩn nhất.",
+        "correct": false
       }
     ]
   },
@@ -2402,15 +2516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "There aren't much clouds.",
-        "explanation": "Mây đếm được số nhiều nên không dùng \"much\"."
+        "explanation": "Mây đếm được số nhiều nên không dùng \"much\".",
+        "correct": false
       },
       {
         "text": "There are many cloud.",
-        "explanation": "Dùng \"are\" thì mây phải có \"s\" thành số nhiều nhé."
+        "explanation": "Dùng \"are\" thì mây phải có \"s\" thành số nhiều nhé.",
+        "correct": false
       },
       {
         "text": "There isn't many clouds.",
-        "explanation": "\"Clouds\" là số nhiều, em phải dùng \"aren't\" thay vì \"isn't\"."
+        "explanation": "\"Clouds\" là số nhiều, em phải dùng \"aren't\" thay vì \"isn't\".",
+        "correct": false
       }
     ]
   },
@@ -2424,15 +2541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Trong câu đề nghị lịch sự, mình dùng \"some\" em nhé."
+        "explanation": "Trong câu đề nghị lịch sự, mình dùng \"some\" em nhé.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sữa không đếm được, bỏ qua \"many\" đi."
+        "explanation": "Sữa không đếm được, bỏ qua \"many\" đi.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Chúng mình không gọi là \"a milk\" vì nó không đếm được."
+        "explanation": "Chúng mình không gọi là \"a milk\" vì nó không đếm được.",
+        "correct": false
       }
     ]
   },
@@ -2446,15 +2566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some / a",
-        "explanation": "Computer bắt đầu bằng phụ âm, đi với \"a\" là chuẩn."
+        "explanation": "Computer bắt đầu bằng phụ âm, đi với \"a\" là chuẩn.",
+        "correct": false
       },
       {
         "text": "an / any",
-        "explanation": "Câu khẳng định liệt kê đồ vật, dùng \"a\" và \"some\" nhé."
+        "explanation": "Câu khẳng định liệt kê đồ vật, dùng \"a\" và \"some\" nhé.",
+        "correct": false
       },
       {
         "text": "a / any",
-        "explanation": "Cẩn thận với từ \"any\" trong câu này em nha."
+        "explanation": "Cẩn thận với từ \"any\" trong câu này em nha.",
+        "correct": false
       }
     ]
   },
@@ -2468,15 +2591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Bướm đếm được từng con nên không dùng \"much\"."
+        "explanation": "Bướm đếm được từng con nên không dùng \"much\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu khẳng định mô tả cảnh vật, chọn \"many\" để chỉ số lượng."
+        "explanation": "Câu khẳng định mô tả cảnh vật, chọn \"many\" để chỉ số lượng.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không đi với \"an\" em nhé."
+        "explanation": "Số nhiều không đi với \"an\" em nhé.",
+        "correct": false
       }
     ]
   },
@@ -2490,15 +2616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Muối không đếm từng hạt được, mình dùng \"much\" nhé."
+        "explanation": "Muối không đếm từng hạt được, mình dùng \"much\" nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Không dùng \"a salt\" em nha."
+        "explanation": "Không dùng \"a salt\" em nha.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này nói về lượng muối thừa, dùng \"much\" là tốt nhất."
+        "explanation": "Câu này nói về lượng muối thừa, dùng \"much\" là tốt nhất.",
+        "correct": false
       }
     ]
   },
@@ -2512,15 +2641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Quy tắc chuẩn: phủ định + số nhiều = any."
+        "explanation": "Quy tắc chuẩn: phủ định + số nhiều = any.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "\"Books\" đếm được, bỏ qua \"much\" em nhé."
+        "explanation": "\"Books\" đếm được, bỏ qua \"much\" em nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Số nhiều không đi với \"a\" đâu nè."
+        "explanation": "Số nhiều không đi với \"a\" đâu nè.",
+        "correct": false
       }
     ]
   },
@@ -2534,20 +2666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Câu khẳng định dùng \"some\" cho đồ ăn là chuẩn."
+        "explanation": "Câu khẳng định dùng \"some\" cho đồ ăn là chuẩn.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Không đếm \"một cơm, một thịt\" bằng \"a\" em nha."
+        "explanation": "Không đếm \"một cơm, một thịt\" bằng \"a\" em nha.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Dùng \"some\" là hay nhất cho câu mô tả mong muốn này."
+        "explanation": "Dùng \"some\" là hay nhất cho câu mô tả mong muốn này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "A: \"Are there ___ cars?\" - B: \"Yes, there are ___.\"",
+    "q": "A: \"Are there ___ cars at all?\" - B: \"Yes, there are ___.\"",
     "a": [
       {
         "text": "any / some",
@@ -2556,15 +2691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some / any",
-        "explanation": "Vế đầu hỏi \"any\", vế sau trả lời có \"some\" là bộ đôi hoàn hảo."
+        "explanation": "Vế đầu hỏi \"any\", vế sau trả lời có \"some\" là bộ đôi hoàn hảo.",
+        "correct": false
       },
       {
         "text": "any / any",
-        "explanation": "Vế khẳng định (Yes) thì mình dùng \"some\" em nhé."
+        "explanation": "Vế khẳng định (Yes) thì mình dùng \"some\" em nhé.",
+        "correct": false
       },
       {
         "text": "some / some",
-        "explanation": "Cẩn thận kẻo nhầm giữa any và some nhé."
+        "explanation": "Cẩn thận kẻo nhầm giữa any và some nhé.",
+        "correct": false
       }
     ]
   },
@@ -2578,15 +2716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "is -> are",
-        "explanation": "Sữa là danh từ không đếm được nên dùng \"is\" là đúng ngữ pháp."
+        "explanation": "Sữa là danh từ không đếm được nên dùng \"is\" là đúng ngữ pháp.",
+        "correct": false
       },
       {
         "text": "there -> they",
-        "explanation": "Dùng \"there\" để chỉ sự tồn tại là chuẩn rồi."
+        "explanation": "Dùng \"there\" để chỉ sự tồn tại là chuẩn rồi.",
+        "correct": false
       },
       {
         "text": "milk -> milks",
-        "explanation": "Đừng thêm \"s\" vào sữa \"milk\" em nhé."
+        "explanation": "Đừng thêm \"s\" vào sữa \"milk\" em nhé.",
+        "correct": false
       }
     ]
   },
@@ -2600,15 +2741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "We have any friends.",
-        "explanation": "Câu khẳng định không dùng \"any\"."
+        "explanation": "Câu khẳng định không dùng \"any\".",
+        "correct": false
       },
       {
         "text": "We have many friend.",
-        "explanation": "Nếu dùng \"many\" (nhiều) thì nghĩa hơi khác một chút."
+        "explanation": "Nếu dùng \"many\" (nhiều) thì nghĩa hơi khác một chút.",
+        "correct": false
       },
       {
         "text": "We have much friends.",
-        "explanation": "\"Friends\" đếm được, mình không dùng \"much\"."
+        "explanation": "\"Friends\" đếm được, mình không dùng \"much\".",
+        "correct": false
       }
     ]
   },
@@ -2622,15 +2766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "\"Homework\" không đếm được nên không dùng \"many\"."
+        "explanation": "\"Homework\" không đếm được nên không dùng \"many\".",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Bỏ qua \"a homework\" vì nó không đúng quy tắc nhé."
+        "explanation": "Bỏ qua \"a homework\" vì nó không đúng quy tắc nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Dùng \"much\" để nhấn mạnh việc không có nhiều bài tập."
+        "explanation": "Dùng \"much\" để nhấn mạnh việc không có nhiều bài tập.",
+        "correct": false
       }
     ]
   },
@@ -2644,15 +2791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a / many",
-        "explanation": "'Apple' bắt đầu bằng nguyên âm nên không dùng 'a'; 'many' không đi với 'juice' không đếm được."
+        "explanation": "'Apple' bắt đầu bằng nguyên âm nên không dùng 'a'; 'many' không đi với 'juice' không đếm được.",
+        "correct": false
       },
       {
         "text": "some / an",
-        "explanation": "Hãy nhớ thật kỹ các quy tắc của a, an, some, any, many và much nhé!"
+        "explanation": "Hãy nhớ thật kỹ các quy tắc của a, an, some, any, many và much nhé!",
+        "correct": false
       },
       {
         "text": "many / much",
-        "explanation": "Chúc mừng em đã hoàn thành bài luyện tập tuyệt vời này!"
+        "explanation": "Chúc mừng em đã hoàn thành bài luyện tập tuyệt vời này!",
+        "correct": false
       }
     ]
   },
@@ -2666,15 +2816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'apple' phải đi với 'an' mới đúng."
+        "explanation": "Sai rồi, 'apple' phải đi với 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Trong hình chỉ có một quả táo thôi."
+        "explanation": "Trong hình chỉ có một quả táo thôi.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Chỉ có một quả thôi, không phải nhiều đâu."
+        "explanation": "Chỉ có một quả thôi, không phải nhiều đâu.",
+        "correct": false
       }
     ]
   },
@@ -2688,15 +2841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'cat' không bắt đầu bằng nguyên âm nên không dùng 'an'."
+        "explanation": "Chữ 'cat' không bắt đầu bằng nguyên âm nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Ở đây chỉ có một chú mèo thôi nè."
+        "explanation": "Ở đây chỉ có một chú mèo thôi nè.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any' được bé ơi."
+        "explanation": "Câu này không dùng 'any' được bé ơi.",
+        "correct": false
       }
     ]
   },
@@ -2710,15 +2866,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sữa không đếm được 1, 2 nên không dùng 'a'."
+        "explanation": "Sữa không đếm được 1, 2 nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sữa không dùng 'an' được đâu."
+        "explanation": "Sữa không dùng 'an' được đâu.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sữa không dùng 'many' vì không đếm được từng giọt."
+        "explanation": "Sữa không dùng 'many' vì không đếm được từng giọt.",
+        "correct": false
       }
     ]
   },
@@ -2732,15 +2891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Pens' là số nhiều nên không dùng 'a'."
+        "explanation": "'Pens' là số nhiều nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an' được."
+        "explanation": "Số nhiều không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Bút đếm được nên mình dùng 'many' chứ không dùng 'much'."
+        "explanation": "Bút đếm được nên mình dùng 'many' chứ không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -2754,15 +2916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Chim đếm được 1, 2, 3 nên không dùng 'much'."
+        "explanation": "Chim đếm được 1, 2, 3 nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Nhiều chú chim không dùng 'an' được."
+        "explanation": "Nhiều chú chim không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Có nhiều chú chim mà, không phải một."
+        "explanation": "Có nhiều chú chim mà, không phải một.",
+        "correct": false
       }
     ]
   },
@@ -2776,15 +2941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Trong câu phủ định mình ưu tiên dùng 'any' hơn."
+        "explanation": "Trong câu phủ định mình ưu tiên dùng 'any' hơn.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Nước không đếm được nên không dùng 'a'."
+        "explanation": "Nước không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nước không dùng 'many' vì không đếm được."
+        "explanation": "Nước không dùng 'many' vì không đếm được.",
+        "correct": false
       }
     ]
   },
@@ -2798,15 +2966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'orange' phải đi với 'an' nhé."
+        "explanation": "Sai rồi, 'orange' phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only fruit\" chỉ một quả cam số ít; dùng \"an orange\"."
+        "explanation": "Sai. Cue \"the only fruit\" chỉ một quả cam số ít; dùng \"an orange\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any' đâu nè."
+        "explanation": "Câu này không dùng 'any' đâu nè.",
+        "correct": false
       }
     ]
   },
@@ -2820,15 +2991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Eggs' là số nhiều nên không dùng 'a'."
+        "explanation": "'Eggs' là số nhiều nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an' được."
+        "explanation": "Số nhiều không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Trứng đếm được nên không dùng 'much'."
+        "explanation": "Trứng đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -2842,15 +3016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Đường không đếm được từng hạt nhỏ xíu nên không dùng 'many'."
+        "explanation": "Đường không đếm được từng hạt nhỏ xíu nên không dùng 'many'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Khi hỏi số lượng mình dùng 'How much' hoặc 'How many'."
+        "explanation": "Khi hỏi số lượng mình dùng 'How much' hoặc 'How many'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi số lượng bắt đầu bằng 'How much/many'."
+        "explanation": "Câu hỏi số lượng bắt đầu bằng 'How much/many'.",
+        "correct": false
       }
     ]
   },
@@ -2864,15 +3041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Người đếm được nên không dùng 'much'."
+        "explanation": "Người đếm được nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Khi hỏi số lượng dùng 'How many' nhé."
+        "explanation": "Khi hỏi số lượng dùng 'How many' nhé.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi số lượng bắt đầu bằng 'How many'."
+        "explanation": "Câu hỏi số lượng bắt đầu bằng 'How many'.",
+        "correct": false
       }
     ]
   },
@@ -2886,15 +3066,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Phải dùng 'an' cho từ bắt đầu bằng 'u' như umbrella."
+        "explanation": "Phải dùng 'an' cho từ bắt đầu bằng 'u' như umbrella.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only one\" chỉ một chiếc ô đếm được số ít; dùng \"an umbrella\"."
+        "explanation": "Sai. Cue \"the only one\" chỉ một chiếc ô đếm được số ít; dùng \"an umbrella\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any' được."
+        "explanation": "Câu này không dùng 'any' được.",
+        "correct": false
       }
     ]
   },
@@ -2908,15 +3091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Hoa số nhiều không dùng 'a'."
+        "explanation": "Hoa số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Hoa số nhiều không dùng 'an'."
+        "explanation": "Hoa số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Hoa đếm được nên không dùng 'much'."
+        "explanation": "Hoa đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -2930,15 +3116,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Câu phủ định mình dùng 'any' sẽ hay hơn."
+        "explanation": "Câu phủ định mình dùng 'any' sẽ hay hơn.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Tiền (money) trong tiếng Anh không đi với 'a'."
+        "explanation": "Tiền (money) trong tiếng Anh không đi với 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Tiền (money) là danh từ không đếm được nên không dùng 'many'."
+        "explanation": "Tiền (money) là danh từ không đếm được nên không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -2952,15 +3141,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "Chữ 'b' không phải nguyên âm nên không dùng 'an'."
+        "explanation": "Chữ 'b' không phải nguyên âm nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Cậu ấy chỉ ăn một quả thôi."
+        "explanation": "Cậu ấy chỉ ăn một quả thôi.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Chỉ có một quả chuối thôi nè."
+        "explanation": "Chỉ có một quả chuối thôi nè.",
+        "correct": false
       }
     ]
   },
@@ -2974,15 +3166,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bánh mì (bread) trong tiếng Anh thường không dùng 'a' trực tiếp."
+        "explanation": "Bánh mì (bread) trong tiếng Anh thường không dùng 'a' trực tiếp.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Bánh mì không dùng 'an' được."
+        "explanation": "Bánh mì không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Bánh mì không dùng 'many' vì nó không đếm được trực tiếp."
+        "explanation": "Bánh mì không dùng 'many' vì nó không đếm được trực tiếp.",
+        "correct": false
       }
     ]
   },
@@ -2996,15 +3191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Cookies' số nhiều không dùng 'a'."
+        "explanation": "'Cookies' số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Bánh quy đếm được nên không dùng 'much'."
+        "explanation": "Bánh quy đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3018,15 +3216,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Phải dùng 'an' mới đúng quy tắc nè."
+        "explanation": "Phải dùng 'an' mới đúng quy tắc nè.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"exactly one\" yêu cầu mạo từ số ít \"an\", không dùng \"some\"."
+        "explanation": "Sai. Cue \"exactly one\" yêu cầu mạo từ số ít \"an\", không dùng \"some\".",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một con kiến thôi mà."
+        "explanation": "Có mỗi một con kiến thôi mà.",
+        "correct": false
       }
     ]
   },
@@ -3040,15 +3241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sách đếm được 1, 2, 3 nên không dùng 'much'."
+        "explanation": "Sách đếm được 1, 2, 3 nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không đi với 'an'."
+        "explanation": "Số nhiều không đi với 'an'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Có nhiều cuốn sách mà."
+        "explanation": "Có nhiều cuốn sách mà.",
+        "correct": false
       }
     ]
   },
@@ -3062,15 +3266,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước trái cây không đếm được nên không dùng 'a'."
+        "explanation": "Nước trái cây không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước trái cây."
+        "explanation": "Không dùng 'an' cho nước trái cây.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nước trái cây không dùng 'many'."
+        "explanation": "Nước trái cây không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3084,15 +3291,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Kem tan chảy không đếm được nên thường không dùng 'a'."
+        "explanation": "Kem tan chảy không đếm được nên thường không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sai. Đề nói kem dạng khối/lượng, không phải một khẩu phần; dùng \"some ice cream\"."
+        "explanation": "Sai. Đề nói kem dạng khối/lượng, không phải một khẩu phần; dùng \"some ice cream\".",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Kem không dùng 'many' được."
+        "explanation": "Kem không dùng 'many' được.",
+        "correct": false
       }
     ]
   },
@@ -3106,15 +3316,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an' cho chú voi nhé."
+        "explanation": "Sai rồi, phải dùng 'an' cho chú voi nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có một chú voi thôi."
+        "explanation": "Chỉ có một chú voi thôi.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any' được."
+        "explanation": "Câu này không dùng 'any' được.",
+        "correct": false
       }
     ]
   },
@@ -3128,15 +3341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Đồ chơi số nhiều không dùng 'a'."
+        "explanation": "Đồ chơi số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho số nhiều."
+        "explanation": "Không dùng 'an' cho số nhiều.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Đồ chơi đếm được nên không dùng 'much'."
+        "explanation": "Đồ chơi đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3150,15 +3366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Dùng 'some' khi mời mọc sẽ hay hơn 'any' đấy."
+        "explanation": "Dùng 'some' khi mời mọc sẽ hay hơn 'any' đấy.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Nước không đếm được nên không dùng 'a'."
+        "explanation": "Nước không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nước không dùng 'many'."
+        "explanation": "Nước không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3172,15 +3391,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Câu phủ định (aren't) đi với 'any' nhé."
+        "explanation": "Câu phủ định (aren't) đi với 'any' nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Cây số nhiều không dùng 'a'."
+        "explanation": "Cây số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Cây đếm được nên không dùng 'much'."
+        "explanation": "Cây đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3194,15 +3416,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. Đề nói vật liệu giấy để vẽ, không phải \"a paper\" nghĩa là bài viết; dùng \"some paper\"."
+        "explanation": "Sai. Đề nói vật liệu giấy để vẽ, không phải \"a paper\" nghĩa là bài viết; dùng \"some paper\".",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Giấy không dùng 'an'."
+        "explanation": "Giấy không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Thường dùng 'some' cho giấy vẽ."
+        "explanation": "Thường dùng 'some' cho giấy vẽ.",
+        "correct": false
       }
     ]
   },
@@ -3216,15 +3441,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sao đếm được 1, 2, 3 nên không dùng 'much'."
+        "explanation": "Sao đếm được 1, 2, 3 nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Câu hỏi số lượng dùng 'How many' nhé."
+        "explanation": "Câu hỏi số lượng dùng 'How many' nhé.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi số lượng dùng 'How many'."
+        "explanation": "Câu hỏi số lượng dùng 'How many'.",
+        "correct": false
       }
     ]
   },
@@ -3238,15 +3466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mực không đếm được nên không dùng 'a'."
+        "explanation": "Mực không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Mực không dùng 'an' được."
+        "explanation": "Mực không dùng 'an' được.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Mực không dùng 'many'."
+        "explanation": "Mực không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3260,15 +3491,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định (don't) nhé."
+        "explanation": "Dùng 'any' cho câu phủ định (don't) nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Ô tô số nhiều không dùng 'a'."
+        "explanation": "Ô tô số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Ô tô đếm được nên không dùng 'much'."
+        "explanation": "Ô tô đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3282,15 +3516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'old' đi với 'an' nhé."
+        "explanation": "Sai rồi, 'old' đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"his only bicycle\" chỉ một xe đạp số ít; dùng \"an old bike\"."
+        "explanation": "Sai. Cue \"his only bicycle\" chỉ một xe đạp số ít; dùng \"an old bike\".",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Chỉ có một cái xe thôi mà."
+        "explanation": "Chỉ có một cái xe thôi mà.",
+        "correct": false
       }
     ]
   },
@@ -3304,15 +3541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Trong lời mời hoặc xin xỏ, 'some' nghe hay hơn."
+        "explanation": "Trong lời mời hoặc xin xỏ, 'some' nghe hay hơn.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Bánh không dùng 'an' ở đây."
+        "explanation": "Bánh không dùng 'an' ở đây.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Thường dùng 'some' cho miếng bánh."
+        "explanation": "Thường dùng 'some' cho miếng bánh.",
+        "correct": false
       }
     ]
   },
@@ -3326,15 +3566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Táo đếm được nên không dùng 'much'."
+        "explanation": "Táo đếm được nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Táo số nhiều không dùng 'a'."
+        "explanation": "Táo số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       }
     ]
   },
@@ -3348,15 +3591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Câu hỏi bình thường mình dùng 'any' nhé."
+        "explanation": "Câu hỏi bình thường mình dùng 'any' nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Cơm không đếm được nên không dùng 'a'."
+        "explanation": "Cơm không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Cơm không dùng 'many' được."
+        "explanation": "Cơm không dùng 'many' được.",
+        "correct": false
       }
     ]
   },
@@ -3370,15 +3616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'idea' đi với 'an' nhé."
+        "explanation": "Sai rồi, 'idea' đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Câu nói về một ý tưởng duy nhất; danh từ đếm được số ít cần 'an idea'."
+        "explanation": "Sai. Câu nói về một ý tưởng duy nhất; danh từ đếm được số ít cần 'an idea'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không dùng 'much' ở đây."
+        "explanation": "Không dùng 'much' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -3392,15 +3641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "'Many' đi với danh từ đếm được số nhiều; 'honey' là chất không đếm được."
+        "explanation": "'Many' đi với danh từ đếm được số nhiều; 'honey' là chất không đếm được.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "'A' cần danh từ đếm được số ít; không thể nói 'a honey' khi hỏi lượng mật ong."
+        "explanation": "'A' cần danh từ đếm được số ít; không thể nói 'a honey' khi hỏi lượng mật ong.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' không phải từ hỏi lượng; cấu trúc đúng là 'how much honey'."
+        "explanation": "'Any' không phải từ hỏi lượng; cấu trúc đúng là 'how much honey'.",
+        "correct": false
       }
     ]
   },
@@ -3414,15 +3666,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Câu phủ định đi với 'any' nhé bé."
+        "explanation": "Câu phủ định đi với 'any' nhé bé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "'Pets' số nhiều không dùng 'a'."
+        "explanation": "'Pets' số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       }
     ]
   },
@@ -3436,15 +3691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Bird' không bắt đầu bằng nguyên âm."
+        "explanation": "'Bird' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"exactly one\" yêu cầu một danh từ số ít cụ thể: \"a bird\"."
+        "explanation": "Sai. Cue \"exactly one\" yêu cầu một danh từ số ít cụ thể: \"a bird\".",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một chú chim mà."
+        "explanation": "Có mỗi một chú chim mà.",
+        "correct": false
       }
     ]
   },
@@ -3458,15 +3716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Muối không dùng 'a' được."
+        "explanation": "Muối không dùng 'a' được.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Muối không dùng 'an'."
+        "explanation": "Muối không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Muối không dùng 'many'."
+        "explanation": "Muối không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3480,15 +3741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Voi số nhiều không dùng 'a'."
+        "explanation": "Voi số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Voi đếm được nên không dùng 'much'."
+        "explanation": "Voi đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3502,15 +3766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Yellow' bắt đầu bằng 'y' nên không dùng 'an'."
+        "explanation": "'Yellow' bắt đầu bằng 'y' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có một cái thôi."
+        "explanation": "Chỉ có một cái thôi.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -3524,15 +3791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bút chì số nhiều không dùng 'a'."
+        "explanation": "Bút chì số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Bút chì đếm được nên không dùng 'much'."
+        "explanation": "Bút chì đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3546,15 +3816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "'Many' cần danh từ đếm được số nhiều; 'water' không đếm được."
+        "explanation": "'Many' cần danh từ đếm được số nhiều; 'water' không đếm được.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "'Some' nêu lượng nước không xác định, không phải từ hỏi 'bao nhiêu'."
+        "explanation": "'Some' nêu lượng nước không xác định, không phải từ hỏi 'bao nhiêu'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' thường dùng hỏi có hay không; câu này hỏi lượng bằng 'how much'."
+        "explanation": "'Any' thường dùng hỏi có hay không; câu này hỏi lượng bằng 'how much'.",
+        "correct": false
       }
     ]
   },
@@ -3568,15 +3841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé bé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé bé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Bài tập (homework) không đếm được nên không đi với 'a'."
+        "explanation": "Bài tập (homework) không đếm được nên không đi với 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Bài tập không dùng 'many'."
+        "explanation": "Bài tập không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3590,15 +3866,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an' cho chú bạch tuộc."
+        "explanation": "Sai rồi, phải dùng 'an' cho chú bạch tuộc.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only animal\" chỉ một con bạch tuộc; cần \"an octopus\"."
+        "explanation": "Sai. Cue \"the only animal\" chỉ một con bạch tuộc; cần \"an octopus\".",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không dùng 'much' ở đây."
+        "explanation": "Không dùng 'much' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -3612,15 +3891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Súp không đếm được từng giọt nên không dùng 'a'."
+        "explanation": "Súp không đếm được từng giọt nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Súp không dùng 'an'."
+        "explanation": "Súp không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Súp không dùng 'many'."
+        "explanation": "Súp không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3634,15 +3916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Trẻ em (children) là số nhiều nên không dùng 'a'."
+        "explanation": "Trẻ em (children) là số nhiều nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Người đếm được nên không dùng 'much'."
+        "explanation": "Người đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3656,15 +3941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Phải dùng 'an' mới đúng nè."
+        "explanation": "Phải dùng 'an' mới đúng nè.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có một quả trứng thôi."
+        "explanation": "Chỉ có một quả trứng thôi.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Có mỗi một quả trứng thôi mà."
+        "explanation": "Có mỗi một quả trứng thôi mà.",
+        "correct": false
       }
     ]
   },
@@ -3678,15 +3966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "Niềm vui không đếm được nên không dùng 'many'."
+        "explanation": "Niềm vui không đếm được nên không dùng 'many'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Niềm vui không đi với 'a'."
+        "explanation": "Niềm vui không đi với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Niềm vui không đi với 'an'."
+        "explanation": "Niềm vui không đi với 'an'.",
+        "correct": false
       }
     ]
   },
@@ -3700,15 +3991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Phô mai (cheese) thường không đi với 'a' trực tiếp."
+        "explanation": "Phô mai (cheese) thường không đi với 'a' trực tiếp.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Phô mai không dùng 'many'."
+        "explanation": "Phô mai không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3722,15 +4016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Green' bắt đầu bằng 'g' nên không dùng 'an'."
+        "explanation": "'Green' bắt đầu bằng 'g' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only pear\" chỉ một quả lê số ít; dùng \"a green pear\"."
+        "explanation": "Sai. Cue \"the only pear\" chỉ một quả lê số ít; dùng \"a green pear\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -3744,15 +4041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sao đếm được nên không dùng 'much'."
+        "explanation": "Sao đếm được nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Số nhiều không dùng 'a'."
+        "explanation": "Số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       }
     ]
   },
@@ -3766,15 +4066,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "'Questions' số nhiều không dùng 'a'."
+        "explanation": "'Questions' số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Câu hỏi đếm được nên không dùng 'much'."
+        "explanation": "Câu hỏi đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3788,15 +4091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước không đếm được nên không dùng 'a'."
+        "explanation": "Nước không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước trái cây."
+        "explanation": "Không dùng 'an' cho nước trái cây.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nước trái cây không dùng 'many'."
+        "explanation": "Nước trái cây không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3810,15 +4116,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an' nhé."
+        "explanation": "Sai rồi, phải dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Chỉ có một cuốn sách thôi."
+        "explanation": "Chỉ có một cuốn sách thôi.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -3832,15 +4141,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Người đếm được nên không dùng 'much'."
+        "explanation": "Người đếm được nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Câu hỏi số lượng dùng 'How many' nhé."
+        "explanation": "Câu hỏi số lượng dùng 'How many' nhé.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi số lượng dùng 'How many'."
+        "explanation": "Câu hỏi số lượng dùng 'How many'.",
+        "correct": false
       }
     ]
   },
@@ -3854,15 +4166,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé bé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé bé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Nhện số nhiều không dùng 'a'."
+        "explanation": "Nhện số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Nhện đếm được nên không dùng 'much'."
+        "explanation": "Nhện đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3876,15 +4191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Red' không bắt đầu bằng nguyên âm."
+        "explanation": "'Red' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue 'exactly one' yêu cầu 'a red ball', không phải lượng không xác định 'some'."
+        "explanation": "Sai. Cue 'exactly one' yêu cầu 'a red ball', không phải lượng không xác định 'some'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -3898,15 +4216,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Khỉ số nhiều không dùng 'a'."
+        "explanation": "Khỉ số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Khỉ đếm được nên không dùng 'much'."
+        "explanation": "Khỉ đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -3920,15 +4241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Trà không đếm được nên không dùng 'a'."
+        "explanation": "Trà không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Trà không đi với 'an'."
+        "explanation": "Trà không đi với 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Trà không dùng 'many'."
+        "explanation": "Trà không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3942,15 +4266,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bơ không đếm được từng miếng nhỏ nên không đi với 'a'."
+        "explanation": "Bơ không đếm được từng miếng nhỏ nên không đi với 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Bơ không đi với 'an'."
+        "explanation": "Bơ không đi với 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Bơ không dùng 'many'."
+        "explanation": "Bơ không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -3964,15 +4291,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "'Many' đi với danh từ đếm được số nhiều; 'rain' là hiện tượng không đếm được."
+        "explanation": "'Many' đi với danh từ đếm được số nhiều; 'rain' là hiện tượng không đếm được.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "'Some rain' nêu một lượng mưa, không phải từ hỏi số lượng sau 'How'."
+        "explanation": "'Some rain' nêu một lượng mưa, không phải từ hỏi số lượng sau 'How'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' không tạo mẫu hỏi lượng mưa; dùng 'how much rain'."
+        "explanation": "'Any' không tạo mẫu hỏi lượng mưa; dùng 'how much rain'.",
+        "correct": false
       }
     ]
   },
@@ -3986,15 +4316,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an' mới đúng."
+        "explanation": "Sai rồi, phải dùng 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue 'exactly one' loại lượng từ 'some'; cần 'an igloo'."
+        "explanation": "Sai. Cue 'exactly one' loại lượng từ 'some'; cần 'an igloo'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không dùng 'much' ở đây."
+        "explanation": "Không dùng 'much' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -4008,15 +4341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Đồ chơi đếm được nên không dùng 'much'."
+        "explanation": "Đồ chơi đếm được nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Đồ chơi số nhiều không dùng 'a'."
+        "explanation": "Đồ chơi số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       }
     ]
   },
@@ -4030,15 +4366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sữa không đếm được nên không dùng 'a'."
+        "explanation": "Sữa không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Sữa không dùng 'an'."
+        "explanation": "Sữa không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sữa không dùng 'many'."
+        "explanation": "Sữa không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4052,15 +4391,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an' nhé."
+        "explanation": "Sai rồi, phải dùng 'an' nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"one whole fruit\" yêu cầu một quả cam đếm được số ít: \"an orange\"."
+        "explanation": "Sai. Cue \"one whole fruit\" yêu cầu một quả cam đếm được số ít: \"an orange\".",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không dùng 'much' ở đây."
+        "explanation": "Không dùng 'much' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -4074,15 +4416,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mật ong không đếm được nên không dùng 'a'."
+        "explanation": "Mật ong không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Mật ong không dùng 'an'."
+        "explanation": "Mật ong không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Mật ong không dùng 'many'."
+        "explanation": "Mật ong không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4096,15 +4441,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Táo đếm được 1, 2 nên không dùng 'much'."
+        "explanation": "Táo đếm được 1, 2 nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Câu hỏi số lượng dùng 'How many' nhé."
+        "explanation": "Câu hỏi số lượng dùng 'How many' nhé.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi số lượng dùng 'How many'."
+        "explanation": "Câu hỏi số lượng dùng 'How many'.",
+        "correct": false
       }
     ]
   },
@@ -4118,15 +4466,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé bé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé bé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Kẹo số nhiều không dùng 'a'."
+        "explanation": "Kẹo số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       }
     ]
   },
@@ -4140,15 +4491,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an' mới đúng."
+        "explanation": "Sai rồi, phải dùng 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only insect\" chỉ một con côn trùng số ít; dùng \"an insect\"."
+        "explanation": "Sai. Cue \"the only insect\" chỉ một con côn trùng số ít; dùng \"an insect\".",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không dùng 'much' ở đây."
+        "explanation": "Không dùng 'much' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -4162,15 +4516,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bánh mì thường không dùng 'a' trực tiếp."
+        "explanation": "Bánh mì thường không dùng 'a' trực tiếp.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Bánh mì không dùng 'an'."
+        "explanation": "Bánh mì không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Bánh mì không dùng 'many'."
+        "explanation": "Bánh mì không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4184,15 +4541,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Câu hỏi bình thường dùng 'any' sẽ chuẩn hơn."
+        "explanation": "Câu hỏi bình thường dùng 'any' sẽ chuẩn hơn.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Đường không đếm được nên không dùng 'a'."
+        "explanation": "Đường không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Đường không dùng 'many'."
+        "explanation": "Đường không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4206,15 +4566,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Small' bắt đầu bằng 's' nên không dùng 'an'."
+        "explanation": "'Small' bắt đầu bằng 's' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Câu xác định chỉ một con chim duy nhất; cần mạo từ số ít \"a small bird\"."
+        "explanation": "Sai. Câu xác định chỉ một con chim duy nhất; cần mạo từ số ít \"a small bird\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -4228,15 +4591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Cá đếm được 1, 2 chú nên không dùng 'much'."
+        "explanation": "Cá đếm được 1, 2 chú nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Câu hỏi số lượng dùng 'How many' nhé."
+        "explanation": "Câu hỏi số lượng dùng 'How many' nhé.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu hỏi số lượng dùng 'How many'."
+        "explanation": "Câu hỏi số lượng dùng 'How many'.",
+        "correct": false
       }
     ]
   },
@@ -4250,15 +4616,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé bé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé bé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Mực không đếm được nên không dùng 'a'."
+        "explanation": "Mực không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Mực không dùng 'many'."
+        "explanation": "Mực không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4272,15 +4641,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'New' bắt đầu bằng 'n' nên không dùng 'an'."
+        "explanation": "'New' bắt đầu bằng 'n' nên không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only dress\" xác định một chiếc váy số ít; dùng \"a new dress\"."
+        "explanation": "Sai. Cue \"the only dress\" xác định một chiếc váy số ít; dùng \"a new dress\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -4294,15 +4666,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Bút chì số nhiều không dùng 'a'."
+        "explanation": "Bút chì số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Bút chì đếm được nên không dùng 'much'."
+        "explanation": "Bút chì đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -4316,15 +4691,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Sai. Đây là lời đề nghị cụ thể, nên dùng \"some help\" thay vì câu hỏi trung tính \"any help\"."
+        "explanation": "Sai. Đây là lời đề nghị cụ thể, nên dùng \"some help\" thay vì câu hỏi trung tính \"any help\".",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sự giúp đỡ không đếm được nên không dùng 'a'."
+        "explanation": "Sự giúp đỡ không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Không dùng 'many' ở đây."
+        "explanation": "Không dùng 'many' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -4338,15 +4716,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, phải dùng 'an' mới đúng."
+        "explanation": "Sai rồi, phải dùng 'an' mới đúng.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only one\" chỉ một cục tẩy đếm được số ít; dùng \"an eraser\"."
+        "explanation": "Sai. Cue \"the only one\" chỉ một cục tẩy đếm được số ít; dùng \"an eraser\".",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không dùng 'much' ở đây."
+        "explanation": "Không dùng 'much' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -4360,15 +4741,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Sách đếm được nên không dùng 'much'."
+        "explanation": "Sách đếm được nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Sách số nhiều không dùng 'a'."
+        "explanation": "Sách số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       }
     ]
   },
@@ -4382,15 +4766,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Ghế số nhiều không dùng 'a'."
+        "explanation": "Ghế số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Ghế đếm được nên không dùng 'much'."
+        "explanation": "Ghế đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -4404,15 +4791,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. Đề nói chất lỏng nói chung, không phải một chai; dùng \"some water\"."
+        "explanation": "Sai. Đề nói chất lỏng nói chung, không phải một chai; dùng \"some water\".",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Nước không dùng 'an'."
+        "explanation": "Nước không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nước không dùng 'many'."
+        "explanation": "Nước không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4426,15 +4816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Phải dùng 'an' cho chú bạch tuộc nhé."
+        "explanation": "Phải dùng 'an' cho chú bạch tuộc nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only animal\" chỉ một con bạch tuộc; cần mạo từ \"an\"."
+        "explanation": "Sai. Cue \"the only animal\" chỉ một con bạch tuộc; cần mạo từ \"an\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -4448,15 +4841,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "'Many' dùng cho đơn vị đếm được số nhiều, không dùng trực tiếp với 'salt'."
+        "explanation": "'Many' dùng cho đơn vị đếm được số nhiều, không dùng trực tiếp với 'salt'.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "'Some salt' là lượng muối không xác định, không phải từ hỏi 'bao nhiêu'."
+        "explanation": "'Some salt' là lượng muối không xác định, không phải từ hỏi 'bao nhiêu'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' không thay thế từ hỏi lượng; câu cần 'how much salt'."
+        "explanation": "'Any' không thay thế từ hỏi lượng; câu cần 'how much salt'.",
+        "correct": false
       }
     ]
   },
@@ -4470,15 +4866,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé bé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé bé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Chim số nhiều không dùng 'a'."
+        "explanation": "Chim số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Chim đếm được nên không dùng 'much'."
+        "explanation": "Chim đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -4492,15 +4891,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'uncle' đi với 'an' nhé."
+        "explanation": "Sai rồi, 'uncle' đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"my only uncle\" chỉ một người bác; dùng \"an uncle\"."
+        "explanation": "Sai. Cue \"my only uncle\" chỉ một người bác; dùng \"an uncle\".",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Chỉ có một người mà."
+        "explanation": "Chỉ có một người mà.",
+        "correct": false
       }
     ]
   },
@@ -4514,15 +4916,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "Động vật đếm được nên không dùng 'much'."
+        "explanation": "Động vật đếm được nên không dùng 'much'.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Số nhiều không dùng 'a'."
+        "explanation": "Số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       }
     ]
   },
@@ -4536,15 +4941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "any",
-        "explanation": "Mời mọc thì dùng 'some' nghe sẽ ngon hơn đấy."
+        "explanation": "Mời mọc thì dùng 'some' nghe sẽ ngon hơn đấy.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Bánh quy số nhiều không dùng 'a'."
+        "explanation": "Bánh quy số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Bánh quy đếm được nên không dùng 'much'."
+        "explanation": "Bánh quy đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -4558,15 +4966,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Mực không đếm được nên không dùng 'a'."
+        "explanation": "Mực không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Mực không đi với 'an'."
+        "explanation": "Mực không đi với 'an'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Mực không dùng 'many'."
+        "explanation": "Mực không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4580,15 +4991,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "'Many' cần danh từ đếm được số nhiều; 'milk' là chất không đếm được."
+        "explanation": "'Many' cần danh từ đếm được số nhiều; 'milk' là chất không đếm được.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "'Some milk' nêu lượng sữa, không phải từ hỏi lượng trong câu này."
+        "explanation": "'Some milk' nêu lượng sữa, không phải từ hỏi lượng trong câu này.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' không hỏi bao nhiêu; cấu trúc đúng là 'how much milk'."
+        "explanation": "'Any' không hỏi bao nhiêu; cấu trúc đúng là 'how much milk'.",
+        "correct": false
       }
     ]
   },
@@ -4602,15 +5016,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Window' không bắt đầu bằng nguyên âm."
+        "explanation": "'Window' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Từ \"single\" chỉ đúng một cửa sổ số ít; dùng mạo từ \"a\"."
+        "explanation": "Sai. Từ \"single\" chỉ đúng một cửa sổ số ít; dùng mạo từ \"a\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Sai. \"Any\" không dùng trong câu khẳng định này; \"a single window\" mới đúng."
+        "explanation": "Sai. \"Any\" không dùng trong câu khẳng định này; \"a single window\" mới đúng.",
+        "correct": false
       }
     ]
   },
@@ -4624,15 +5041,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Táo số nhiều không dùng 'a'."
+        "explanation": "Táo số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Táo đếm được nên không dùng 'much'."
+        "explanation": "Táo đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -4646,15 +5066,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai rồi, 'owl' phải đi với 'an' nhé."
+        "explanation": "Sai rồi, 'owl' phải đi với 'an' nhé.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only owl\" chỉ một con cú số ít; cần \"an owl\"."
+        "explanation": "Sai. Cue \"the only owl\" chỉ một con cú số ít; cần \"an owl\".",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Không dùng 'much' ở đây."
+        "explanation": "Không dùng 'much' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -4668,15 +5091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "many",
-        "explanation": "'Many' cần danh từ đếm được; 'money' là danh từ không đếm được."
+        "explanation": "'Many' cần danh từ đếm được; 'money' là danh từ không đếm được.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "'A' cần một danh từ đếm được số ít; không nói 'a money'."
+        "explanation": "'A' cần một danh từ đếm được số ít; không nói 'a money'.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' hỏi có hay không, không hỏi lượng tiền cụ thể như 'how much'."
+        "explanation": "'Any' hỏi có hay không, không hỏi lượng tiền cụ thể như 'how much'.",
+        "correct": false
       }
     ]
   },
@@ -4690,15 +5116,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Bánh số nhiều không dùng 'a'."
+        "explanation": "Bánh số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Bánh đếm được nên không dùng 'much'."
+        "explanation": "Bánh đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -4712,15 +5141,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Beautiful' không bắt đầu bằng nguyên âm."
+        "explanation": "'Beautiful' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only flower\" xác định một bông hoa số ít; dùng \"a beautiful flower\"."
+        "explanation": "Sai. Cue \"the only flower\" xác định một bông hoa số ít; dùng \"a beautiful flower\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   },
@@ -4734,15 +5166,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sao số nhiều không dùng 'a'."
+        "explanation": "Sao số nhiều không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Số nhiều không dùng 'an'."
+        "explanation": "Số nhiều không dùng 'an'.",
+        "correct": false
       },
       {
         "text": "much",
-        "explanation": "Sao đếm được nên không dùng 'much'."
+        "explanation": "Sao đếm được nên không dùng 'much'.",
+        "correct": false
       }
     ]
   },
@@ -4756,15 +5191,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Nước không đếm được nên không dùng 'a'."
+        "explanation": "Nước không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho nước trái cây."
+        "explanation": "Không dùng 'an' cho nước trái cây.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Nước không dùng 'many'."
+        "explanation": "Nước không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4778,15 +5216,18 @@ const fullQuestionBank = [
       },
       {
         "text": "a",
-        "explanation": "Sai. \"Chocolate spread\" là chất không đếm được; không nói \"a chocolate spread\" ở đây."
+        "explanation": "Sai. \"Chocolate spread\" là chất không đếm được; không nói \"a chocolate spread\" ở đây.",
+        "correct": false
       },
       {
         "text": "an",
-        "explanation": "Không dùng 'an' cho sô-cô-la."
+        "explanation": "Không dùng 'an' cho sô-cô-la.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Sô-cô-la không dùng 'many' ở đây."
+        "explanation": "Sô-cô-la không dùng 'many' ở đây.",
+        "correct": false
       }
     ]
   },
@@ -4800,15 +5241,18 @@ const fullQuestionBank = [
       },
       {
         "text": "much",
-        "explanation": "'Much' đi với danh từ không đếm được; 'sweets' là các viên kẹo đếm được."
+        "explanation": "'Much' đi với danh từ không đếm được; 'sweets' là các viên kẹo đếm được.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "'Some sweets' nêu một số kẹo, không hỏi số lượng cụ thể."
+        "explanation": "'Some sweets' nêu một số kẹo, không hỏi số lượng cụ thể.",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "'Any' dùng cho câu hỏi có/không; mẫu hỏi số lượng cần 'how many'."
+        "explanation": "'Any' dùng cho câu hỏi có/không; mẫu hỏi số lượng cần 'how many'.",
+        "correct": false
       }
     ]
   },
@@ -4822,15 +5266,18 @@ const fullQuestionBank = [
       },
       {
         "text": "some",
-        "explanation": "Dùng 'any' cho câu phủ định nhé bé."
+        "explanation": "Dùng 'any' cho câu phủ định nhé bé.",
+        "correct": false
       },
       {
         "text": "a",
-        "explanation": "Súp không đếm được nên không dùng 'a'."
+        "explanation": "Súp không đếm được nên không dùng 'a'.",
+        "correct": false
       },
       {
         "text": "many",
-        "explanation": "Súp không dùng 'many'."
+        "explanation": "Súp không dùng 'many'.",
+        "correct": false
       }
     ]
   },
@@ -4844,15 +5291,18 @@ const fullQuestionBank = [
       },
       {
         "text": "an",
-        "explanation": "'Big' không bắt đầu bằng nguyên âm."
+        "explanation": "'Big' không bắt đầu bằng nguyên âm.",
+        "correct": false
       },
       {
         "text": "some",
-        "explanation": "Sai. Cue \"the only house\" yêu cầu một danh từ số ít với \"a\", không dùng \"some\"."
+        "explanation": "Sai. Cue \"the only house\" yêu cầu một danh từ số ít với \"a\", không dùng \"some\".",
+        "correct": false
       },
       {
         "text": "any",
-        "explanation": "Câu này không dùng 'any'."
+        "explanation": "Câu này không dùng 'any'.",
+        "correct": false
       }
     ]
   }

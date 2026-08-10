@@ -1557,7 +1557,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         // --- DUKEGEM QUESTION BANK
 const fullQuestionBank = [
   {
-    "q": "___ the weather was very cold, we went swimming in the sea. (weather: thời tiết, cold: lạnh, swimming: bơi lội)",
+    "q": "___ the weather was very cold, we went swimming in the sea.",
     "a": [
       {
         "text": "Although",
@@ -1566,20 +1566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Despite",
-        "explanation": "Sai. 'Despite' đi với danh từ hoặc V-ing."
+        "explanation": "Sai. 'Despite' đi với danh từ hoặc V-ing.",
+        "correct": false
       },
       {
         "text": "Because",
-        "explanation": "Sai: cái lạnh là hoàn cảnh tương phản với việc đi bơi, không phải nguyên nhân của hành động này."
+        "explanation": "Sai: cái lạnh là hoàn cảnh tương phản với việc đi bơi, không phải nguyên nhân của hành động này.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai cấu trúc ngữ pháp ở vị trí này."
+        "explanation": "Sai cấu trúc ngữ pháp ở vị trí này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I enjoyed the film ___ the ending was very sad. (enjoyed: thích, ending: kết thúc, sad: buồn)",
+    "q": "I enjoyed the film ___ the ending was very sad.",
     "a": [
       {
         "text": "even though",
@@ -1588,20 +1591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "Sai: đoạn ending was very sad đối lập với việc thích phim, không giải thích lý do thích phim."
+        "explanation": "Sai: đoạn ending was very sad đối lập với việc thích phim, không giải thích lý do thích phim.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sai. Phương án 'despite' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'despite' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       },
       {
         "text": "however",
-        "explanation": "'However' là trạng từ nối; muốn dùng phải có dấu câu phù hợp, không điền trực tiếp vào vị trí liên từ trước mệnh đề này."
+        "explanation": "'However' là trạng từ nối; muốn dùng phải có dấu câu phù hợp, không điền trực tiếp vào vị trí liên từ trước mệnh đề này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ having a broken leg, he still tried to finish the race. (broken leg: gãy chân, finish: hoàn thành, race: cuộc đua)",
+    "q": "___ having a broken leg, he still tried to finish the race.",
     "a": [
       {
         "text": "Despite",
@@ -1609,21 +1615,24 @@ const fullQuestionBank = [
         "explanation": "'Despite' đi với cụm danh từ hoặc V-ing."
       },
       {
-        "text": "Although",
-        "explanation": "Sai. 'Although' phải đi với một mệnh đề (S+V)."
+        "text": "However",
+        "explanation": "Sai: 'However' là trạng từ nối, không mở mệnh đề ở vị trí này.",
+        "correct": false
       },
       {
-        "text": "Though",
-        "explanation": "Sai. 'Though' đi với mệnh đề."
+        "text": "Nevertheless",
+        "explanation": "Sai: 'Nevertheless' là trạng từ nối, không đứng trước cụm V-ing ở vị trí này.",
+        "correct": false
       },
       {
         "text": "In spite",
-        "explanation": "Thiếu 'of'."
+        "explanation": "Thiếu 'of'. Cách dùng phù hợp trong câu này là “Despite”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She went to school ___ she had a high fever. (high fever: sốt cao)",
+    "q": "She went to school ___ she had a high fever.",
     "a": [
       {
         "text": "though",
@@ -1632,20 +1641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "in spite of",
-        "explanation": "Sai: in spite of phải có of viết liền trong cụm; đáp án này không khớp mẫu liên từ cần điền."
+        "explanation": "Sai: in spite of phải có of viết liền trong cụm; đáp án này không khớp mẫu liên từ cần điền.",
+        "correct": false
       },
       {
         "text": "because of",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'because of' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'because of' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "nevertheless",
-        "explanation": "'Nevertheless' là trạng từ nối; không thể đứng trực tiếp giữa hai mệnh đề ở vị trí này như một liên từ."
+        "explanation": "'Nevertheless' là trạng từ nối; không thể đứng trực tiếp giữa hai mệnh đề ở vị trí này như một liên từ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The cake was delicious. ___, I couldn't eat any more. (delicious: ngon, eat: ăn)",
+    "q": "The cake was delicious. ___, I couldn't eat any more.",
     "a": [
       {
         "text": "However",
@@ -1654,20 +1666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Despite",
-        "explanation": "'Despite' phải đi với danh từ hoặc V-ing; không thể đứng một mình ở đầu câu này."
+        "explanation": "'Despite' phải đi với danh từ hoặc V-ing; không thể đứng một mình ở đầu câu này.",
+        "correct": false
       },
       {
         "text": "Although",
-        "explanation": "Sai: Although không đứng sau dấu chấm để nối câu độc lập theo vị trí này; cần trạng từ However."
+        "explanation": "Sai: Although không đứng sau dấu chấm để nối câu độc lập theo vị trí này; cần trạng từ However.",
+        "correct": false
       },
       {
         "text": "Because",
-        "explanation": "Sai: bánh ngon không phải lý do khiến người nói không thể ăn thêm; ý sau dấu chấm là tương phản."
+        "explanation": "Sai: bánh ngon không phải lý do khiến người nói không thể ăn thêm; ý sau dấu chấm là tương phản.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ her poverty, she always helps other people. (poverty: sự nghèo khó, helps: giúp đỡ)",
+    "q": "___ her poverty, she always helps other people.",
     "a": [
       {
         "text": "In spite of",
@@ -1676,20 +1691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Although",
-        "explanation": "Sai: sau Although cần một mệnh đề, còn her poverty chỉ là cụm danh từ."
+        "explanation": "Sai: sau Although cần một mệnh đề, còn her poverty chỉ là cụm danh từ.",
+        "correct": false
       },
       {
         "text": "Even though",
-        "explanation": "Sai: Even though cũng cần mệnh đề đầy đủ; vị trí này chỉ nhận cụm danh từ her poverty."
+        "explanation": "Sai: Even though cũng cần mệnh đề đầy đủ; vị trí này chỉ nhận cụm danh từ her poverty.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However là trạng từ nối hai mệnh đề độc lập, không đi trước cụm danh từ her poverty."
+        "explanation": "Sai: However là trạng từ nối hai mệnh đề độc lập, không đi trước cụm danh từ her poverty.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I stayed up late ___ I was very tired. (stayed up late: thức khuya, tired: mệt)",
+    "q": "I stayed up late ___ I was very tired.",
     "a": [
       {
         "text": "even though",
@@ -1698,20 +1716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "Sai: mệt thường không giải thích việc thức khuya trong câu này; cấu trúc nhấn mạnh kết quả trái dự đoán."
+        "explanation": "Sai: mệt thường không giải thích việc thức khuya trong câu này; cấu trúc nhấn mạnh kết quả trái dự đoán.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sai: despite không đứng trước mệnh đề I was very tired; nó phải đi với danh từ hoặc V-ing."
+        "explanation": "Sai: despite không đứng trước mệnh đề I was very tired; nó phải đi với danh từ hoặc V-ing.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "Sai: so diễn tả kết quả, nhưng thức khuya không được trình bày như kết quả của việc mệt."
+        "explanation": "Sai: so diễn tả kết quả, nhưng thức khuya không được trình bày như kết quả của việc mệt.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ he is a famous singer, he is very humble. (famous: nổi tiếng, humble: khiêm tốn)",
+    "q": "___ he is a famous singer, he is very humble.",
     "a": [
       {
         "text": "Although",
@@ -1720,20 +1741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần his fame hoặc being famous, không nhận mệnh đề he is a famous singer."
+        "explanation": "Sai: Despite cần his fame hoặc being famous, không nhận mệnh đề he is a famous singer.",
+        "correct": false
       },
       {
         "text": "But",
-        "explanation": "Sai: But không mở trực tiếp mệnh đề ở vị trí đầu câu theo mẫu này; Although mới phù hợp."
+        "explanation": "Sai: But không mở trực tiếp mệnh đề ở vị trí đầu câu theo mẫu này; Although mới phù hợp.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However là trạng từ liên kết và cần dấu câu riêng, không thay cho liên từ Although."
+        "explanation": "Sai: However là trạng từ liên kết và cần dấu câu riêng, không thay cho liên từ Although.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We lost the football match ___ we played extremely well. (lost: thua, match: trận đấu, extremely: cực kỳ)",
+    "q": "We lost the football match ___ we played extremely well.",
     "a": [
       {
         "text": "although",
@@ -1742,24 +1766,28 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "Sai: chơi tốt không giải thích việc thua trận; hai ý được đặt ở quan hệ tương phản."
+        "explanation": "Sai: chơi tốt không giải thích việc thua trận; hai ý được đặt ở quan hệ tương phản.",
+        "correct": false
       },
       {
         "text": "therefore",
-        "explanation": "'Therefore' chỉ kết quả, trái với quan hệ tương phản giữa việc thua trận và chơi tốt."
+        "explanation": "'Therefore' chỉ kết quả, trái với quan hệ tương phản giữa việc thua trận và chơi tốt.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sai: despite không đi trước mệnh đề we played extremely well; dùng although/even though."
+        "explanation": "Sai: despite không đi trước mệnh đề we played extremely well; dùng although/even though.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The restaurant was expensive, so I expected excellent food. ___, the food was terrible, contrary to what I expected for the price. (expensive: đắt, terrible: tồi tệ)",
+    "q": "The restaurant was expensive, so I expected excellent food. ___, the food was terrible, contrary to what I expected for the price.",
     "a": [
       {
         "text": "Moreover",
-        "explanation": "Sai. Phương án 'Moreover' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'Moreover' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "However",
@@ -1768,16 +1796,18 @@ const fullQuestionBank = [
       },
       {
         "text": "Because",
-        "explanation": "Sai: Because không mở được câu mới sau dấu chấm và cũng không diễn tả sự trái ngược với giá tiền."
+        "explanation": "Sai: Because không mở được câu mới sau dấu chấm và cũng không diễn tả sự trái ngược với giá tiền.",
+        "correct": false
       },
       {
         "text": "So",
-        "explanation": "Sai: So tiếp tục quan hệ nguyên nhân–kết quả, trái với việc đồ ăn tệ dù nhà hàng đắt."
+        "explanation": "Sai: So tiếp tục quan hệ nguyên nhân–kết quả, trái với việc đồ ăn tệ dù nhà hàng đắt.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will call you ___ I arrive at the airport. (call: gọi điện, arrive: đến, airport: sân bay)",
+    "q": "I will call you ___ I arrive at the airport.",
     "a": [
       {
         "text": "as soon as",
@@ -1786,20 +1816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "until",
-        "explanation": "Sai: cuộc gọi xảy ra tại thời điểm đến sân bay, nên cần as soon as/when chứ không phải kéo dài đến đó."
+        "explanation": "Sai: cuộc gọi xảy ra tại thời điểm đến sân bay, nên cần as soon as/when chứ không phải kéo dài đến đó.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: arrive là mốc tức thời; while không phù hợp với một thời điểm đến cụ thể."
+        "explanation": "Sai: arrive là mốc tức thời; while không phù hợp với một thời điểm đến cụ thể.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Không hợp logic."
+        "explanation": "Không hợp logic. Cách dùng phù hợp trong câu này là “as soon as”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Please remain here continuously and do not leave ___ the rain stops. (wait: đợi, rain stops: tạnh mưa)",
+    "q": "Please remain here continuously and do not leave ___ the rain stops.",
     "a": [
       {
         "text": "until",
@@ -1808,20 +1841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai. 'When' chỉ thời điểm xảy ra, còn câu yêu cầu ở lại liên tục và không rời đi cho đến mốc kết thúc nên phải dùng 'until'."
+        "explanation": "Sai. 'When' chỉ thời điểm xảy ra, còn câu yêu cầu ở lại liên tục và không rời đi cho đến mốc kết thúc nên phải dùng 'until'.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before sẽ cho phép rời đi trước khi mưa tạnh, trái với remain here continuously."
+        "explanation": "Sai: before sẽ cho phép rời đi trước khi mưa tạnh, trái với remain here continuously.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: while diễn tả hai hành động đồng thời, còn remain here kéo dài đến khi mưa tạnh."
+        "explanation": "Sai: while diễn tả hai hành động đồng thời, còn remain here kéo dài đến khi mưa tạnh.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I always brush my teeth ___ I go to bed. (brush teeth: đánh răng, go to bed: đi ngủ)",
+    "q": "I always brush my teeth ___ I go to bed.",
     "a": [
       {
         "text": "before",
@@ -1830,20 +1866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Sai: đánh răng được thực hiện trước khi đi ngủ; after đảo ngược trình tự."
+        "explanation": "Sai: đánh răng được thực hiện trước khi đi ngủ; after đảo ngược trình tự.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Không thể làm hai việc cùng lúc."
+        "explanation": "Không thể làm hai việc cùng lúc.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until không diễn tả một hành động chuẩn bị xảy ra trước mốc đi ngủ."
+        "explanation": "Sai: until không diễn tả một hành động chuẩn bị xảy ra trước mốc đi ngủ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ I was walking home, I saw a beautiful rainbow. (walking home: đi bộ về nhà, rainbow: cầu vồng)",
+    "q": "___ I was walking home, I saw a beautiful rainbow.",
     "a": [
       {
         "text": "While",
@@ -1852,20 +1891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Before",
-        "explanation": "Sai: cầu vồng được nhìn thấy trong lúc đang đi bộ, không phải trước khi bắt đầu đi bộ."
+        "explanation": "Sai: cầu vồng được nhìn thấy trong lúc đang đi bộ, không phải trước khi bắt đầu đi bộ.",
+        "correct": false
       },
       {
         "text": "After",
-        "explanation": "Sai: hành động nhìn thấy cầu vồng không xảy ra sau khi đã đi bộ xong; nó diễn ra đồng thời."
+        "explanation": "Sai: hành động nhìn thấy cầu vồng không xảy ra sau khi đã đi bộ xong; nó diễn ra đồng thời.",
+        "correct": false
       },
       {
         "text": "Until",
-        "explanation": "Sai: Until diễn tả kéo dài đến một mốc, không nối được hành động đang xảy ra while I was walking."
+        "explanation": "Sai: Until diễn tả kéo dài đến một mốc, không nối được hành động đang xảy ra while I was walking.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The students stood up at the moment ___ the teacher entered the classroom. (stood up: đứng dậy, entered: bước vào)",
+    "q": "The students stood up at the moment ___ the teacher entered the classroom.",
     "a": [
       {
         "text": "when",
@@ -1874,20 +1916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Hành động 'bước vào' là tức thời, không dùng while."
+        "explanation": "Hành động 'bước vào' là tức thời, không dùng while.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai logic; học sinh đứng dậy khi giáo viên bước vào."
+        "explanation": "Sai logic; học sinh đứng dậy khi giáo viên bước vào.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: uống thuốc là nguyên nhân trước khi thấy khỏe hơn; until không diễn tả mốc hoàn tất này."
+        "explanation": "Sai: uống thuốc là nguyên nhân trước khi thấy khỏe hơn; until không diễn tả mốc hoàn tất này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Don't leave ___ I come back. (leave: rời đi, come back: quay lại)",
+    "q": "Don't leave ___ I come back.",
     "a": [
       {
         "text": "until",
@@ -1896,20 +1941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Sai: after sẽ bảo không rời đi sau khi tôi quay lại, trái với ý chờ đến lúc tôi về."
+        "explanation": "Sai: after sẽ bảo không rời đi sau khi tôi quay lại, trái với ý chờ đến lúc tôi về.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Không phù hợp bằng until."
+        "explanation": "Không phù hợp bằng until.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: while chỉ khoảng thời gian đồng thời, còn leave bị cấm cho đến mốc tôi quay lại."
+        "explanation": "Sai: while chỉ khoảng thời gian đồng thời, còn leave bị cấm cho đến mốc tôi quay lại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I felt much better ___ I took the medicine. (felt better: cảm thấy tốt hơn, medicine: thuốc)",
+    "q": "I felt much better ___ I took the medicine.",
     "a": [
       {
         "text": "after",
@@ -1918,20 +1966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: cảm thấy khỏe hơn xảy ra sau khi uống thuốc, không phải trước đó."
+        "explanation": "Sai: cảm thấy khỏe hơn xảy ra sau khi uống thuốc, không phải trước đó.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Uống thuốc là hành động ngắn."
+        "explanation": "Uống thuốc là hành động ngắn.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: cảm thấy khỏe hơn là kết quả sau khi uống thuốc, không phải mốc kéo dài đến đó theo until."
+        "explanation": "Sai: cảm thấy khỏe hơn là kết quả sau khi uống thuốc, không phải mốc kéo dài đến đó theo until.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We will start the party ___ everyone arrives. (start: bắt đầu, everyone: mọi người, arrives: đến)",
+    "q": "We will start the party ___ everyone arrives.",
     "a": [
       {
         "text": "once",
@@ -1940,20 +1991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: bữa tiệc bắt đầu sau khi mọi người đến đủ, không diễn ra trong lúc họ còn đến."
+        "explanation": "Sai: bữa tiệc bắt đầu sau khi mọi người đến đủ, không diễn ra trong lúc họ còn đến.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: mọi người phải đến trước rồi bữa tiệc mới bắt đầu; before đảo trình tự."
+        "explanation": "Sai: mọi người phải đến trước rồi bữa tiệc mới bắt đầu; before đảo trình tự.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Phải là 'not... until'."
+        "explanation": "Phải là 'not... until'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I want to finish my homework first: I'll do it ___ I watch TV. (homework: bài tập về nhà, watch TV: xem tivi)",
+    "q": "I want to finish my homework first: I'll do it ___ I watch TV.",
     "a": [
       {
         "text": "before",
@@ -1962,20 +2016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Khó làm cả hai cùng lúc."
+        "explanation": "Khó làm cả hai cùng lúc.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: câu đã nêu rõ làm bài trước rồi xem TV; until không biểu thị trình tự đó."
+        "explanation": "Sai: câu đã nêu rõ làm bài trước rồi xem TV; until không biểu thị trình tự đó.",
+        "correct": false
       },
       {
         "text": "as",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'as' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'as' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Keep silent ___ the doctor is speaking. (silent: im lặng, speaking: đang nói)",
+    "q": "Keep silent ___ the doctor is speaking.",
     "a": [
       {
         "text": "while",
@@ -1984,20 +2041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: im lặng phải duy trì trong lúc bác sĩ đang nói, không chỉ xảy ra trước thời điểm đó."
+        "explanation": "Sai: im lặng phải duy trì trong lúc bác sĩ đang nói, không chỉ xảy ra trước thời điểm đó.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: giữ im lặng sau khi bác sĩ nói xong không đúng yêu cầu của câu, vốn nhấn mạnh thời gian đang nói."
+        "explanation": "Sai: giữ im lặng sau khi bác sĩ nói xong không đúng yêu cầu của câu, vốn nhấn mạnh thời gian đang nói.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until yêu cầu một mốc kết thúc; ở đây hành động nói đang diễn ra nên dùng while."
+        "explanation": "Sai: until yêu cầu một mốc kết thúc; ở đây hành động nói đang diễn ra nên dùng while.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is the hospital ___ I was born. (hospital: bệnh viện, born: sinh ra)",
+    "q": "This is the hospital ___ I was born.",
     "a": [
       {
         "text": "where",
@@ -2006,20 +2066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: hospital là nơi chốn; when chỉ thời điểm nên không thay cho where."
+        "explanation": "Sai: hospital là nơi chốn; when chỉ thời điểm nên không thay cho where.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Cần giới từ (in which)."
+        "explanation": "Cần giới từ (in which).",
+        "correct": false
       },
       {
         "text": "there",
-        "explanation": "Sai. Phương án 'there' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu."
+        "explanation": "Sai. Phương án 'there' chia sai thì hoặc không đúng cấu trúc ngữ pháp theo ngữ cảnh câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You can sit ___ you like; there are no restricted seats. (sit: ngồi, like: thích)",
+    "q": "You can sit ___ you like; there are no restricted seats.",
     "a": [
       {
         "text": "wherever",
@@ -2028,15 +2091,18 @@ const fullQuestionBank = [
       },
       {
         "text": "which",
-        "explanation": "Sai. 'Which' không làm liên từ chỉ nơi chốn trước mệnh đề 'you like' trong cấu trúc này."
+        "explanation": "Sai. 'Which' không làm liên từ chỉ nơi chốn trước mệnh đề 'you like' trong cấu trúc này.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: người nói được tự do chọn chỗ ngồi, tức là địa điểm bất kỳ, không phải thời điểm bất kỳ."
+        "explanation": "Sai: người nói được tự do chọn chỗ ngồi, tức là địa điểm bất kỳ, không phải thời điểm bất kỳ.",
+        "correct": false
       },
       {
         "text": "everywhere",
-        "explanation": "Sai: everywhere là trạng từ, không nối trực tiếp với you like; wherever mới có mệnh đề theo sau."
+        "explanation": "Sai: everywhere là trạng từ, không nối trực tiếp với you like; wherever mới có mệnh đề theo sau.",
+        "correct": false
       }
     ]
   },
@@ -2050,20 +2116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "anywhere",
-        "explanation": "Không dùng làm liên từ trước mệnh đề 'you go'."
+        "explanation": "Không dùng làm liên từ trước mệnh đề 'you go'.",
+        "correct": false
       },
       {
         "text": "whenever",
-        "explanation": "Chỉ thời gian, không chỉ nơi chốn."
+        "explanation": "Chỉ thời gian, không chỉ nơi chốn.",
+        "correct": false
       },
       {
         "text": "there",
-        "explanation": "Sai: there chỉ một địa điểm cụ thể, không thể theo sau dấu phẩy để mang nghĩa mọi nơi bạn đi."
+        "explanation": "Sai: there chỉ một địa điểm cụ thể, không thể theo sau dấu phẩy để mang nghĩa mọi nơi bạn đi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The village ___ my grandparents live is very peaceful. (village: ngôi làng, grandparents: ông bà, peaceful: yên bình)",
+    "q": "The village ___ my grandparents live is very peaceful.",
     "a": [
       {
         "text": "where",
@@ -2072,20 +2141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "which",
-        "explanation": "Sai: phải dùng in which hoặc where vì ông bà sống in the village."
+        "explanation": "Sai: phải dùng in which hoặc where vì ông bà sống in the village.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: village là nơi chốn, không phải mốc thời gian để dùng when."
+        "explanation": "Sai: village là nơi chốn, không phải mốc thời gian để dùng when.",
+        "correct": false
       },
       {
         "text": "there",
-        "explanation": "Sai: there không làm đại từ quan hệ sau danh từ village; where mới nối mệnh đề."
+        "explanation": "Sai: there không làm đại từ quan hệ sau danh từ village; where mới nối mệnh đề.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Put the books back ___ they belong. (put back: để lại chỗ cũ, belong: thuộc về)",
+    "q": "Put the books back ___ they belong.",
     "a": [
       {
         "text": "where",
@@ -2094,20 +2166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: books belong ở một nơi, không phải vào một thời điểm; cần where."
+        "explanation": "Sai: books belong ở một nơi, không phải vào một thời điểm; cần where.",
+        "correct": false
       },
       {
         "text": "everywhere",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'everywhere' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'everywhere' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
-        "text": "wherever",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'wherever' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "text": "why",
+        "explanation": "Sai: 'why' hỏi nguyên nhân, không nối mệnh đề chỉ nơi chốn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Do you remember the park ___ we first met? (remember: nhớ, park: công viên, first met: gặp lần đầu)",
+    "q": "Do you remember the park ___ we first met?",
     "a": [
       {
         "text": "where",
@@ -2116,20 +2191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: park là địa điểm hai người gặp, nên when (chỉ thời gian) không phù hợp."
+        "explanation": "Sai: park là địa điểm hai người gặp, nên when (chỉ thời gian) không phù hợp.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which cần giới từ in (the park in which...), còn câu đã có cấu trúc where hoàn chỉnh."
+        "explanation": "Sai: which cần giới từ in (the park in which...), còn câu đã có cấu trúc where hoàn chỉnh.",
+        "correct": false
       },
       {
         "text": "that",
-        "explanation": "Thường dùng cho vật."
+        "explanation": "Thường dùng cho vật.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ I look, I cannot find my keys. (find: tìm thấy, keys: chìa khóa, look: nhìn/tìm)",
+    "q": "___ I look, I cannot find my keys.",
     "a": [
       {
         "text": "Wherever",
@@ -2137,38 +2215,44 @@ const fullQuestionBank = [
         "explanation": "Mệnh đề nhượng bộ nơi chốn mang nghĩa 'dù tìm ở bất cứ đâu'."
       },
       {
-        "text": "Where",
-        "explanation": "Không diễn tả nghĩa 'bất cứ đâu'."
+        "text": "When",
+        "explanation": "Sai: 'when' chỉ thời gian, còn câu hỏi nơi chốn cần 'wherever'.",
+        "correct": false
       },
       {
-        "text": "Everywhere",
-        "explanation": "Sai: everywhere không làm liên từ; cần Wherever I look để nghĩa là nhìn ở bất cứ đâu."
+        "text": "Because",
+        "explanation": "Sai: 'because' chỉ nguyên nhân, không diễn tả nơi chốn.",
+        "correct": false
       },
       {
-        "text": "Anywhere",
-        "explanation": "Sai: anywhere không đứng đầu mệnh đề theo mẫu này; câu cần Wherever để nối I look."
+        "text": "That",
+        "explanation": "Sai: 'that' không thể nối mệnh đề nơi chốn trong mẫu này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "There are many trees ___ I live. (trees: cây cối, live: sống)",
+    "q": "There are many trees ___ I live.",
     "a": [
       {
         "text": "where",
         "correct": true,
-        "explanation": "Nơi mà tôi sống."
+        "explanation": "Nơi mà tôi sống. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "which",
-        "explanation": "Sai: trees là vật nhưng mệnh đề I live cần quan hệ nơi chốn where, không phải which."
+        "explanation": "Sai: trees là vật nhưng mệnh đề I live cần quan hệ nơi chốn where, không phải which.",
+        "correct": false
       },
       {
         "text": "wherever",
-        "explanation": "Không hợp ngữ cảnh."
+        "explanation": "Không hợp ngữ cảnh. Cách dùng phù hợp trong câu này là “where”.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: I live trả lời câu hỏi ở đâu, không phải khi nào."
+        "explanation": "Sai: I live trả lời câu hỏi ở đâu, không phải khi nào.",
+        "correct": false
       }
     ]
   },
@@ -2182,20 +2266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "somewhere",
-        "explanation": "Không nối được với mệnh đề 'you want'."
+        "explanation": "Không nối được với mệnh đề 'you want'.",
+        "correct": false
       },
       {
         "text": "whenever",
-        "explanation": "Sai: whenever nghĩa là bất cứ khi nào, còn go ___ you want yêu cầu địa điểm."
+        "explanation": "Sai: whenever nghĩa là bất cứ khi nào, còn go ___ you want yêu cầu địa điểm.",
+        "correct": false
       },
       {
         "text": "what",
-        "explanation": "'Go what you want' sai; 'what' không có nghĩa địa điểm trong mệnh đề này."
+        "explanation": "'Go what you want' sai; 'what' không có nghĩa địa điểm trong mệnh đề này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Is this the street ___ the accident happened? (street: con đường, accident: tai nạn, happened: xảy ra)",
+    "q": "Is this the street ___ the accident happened?",
     "a": [
       {
         "text": "where",
@@ -2204,20 +2291,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai. 'when' là đại từ quan hệ/trạng từ chỉ thời gian, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'when' là đại từ quan hệ/trạng từ chỉ thời gian, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: street là nơi xảy ra tai nạn; dùng which ở đây phải có in/on, nên where mới phù hợp."
+        "explanation": "Sai: street là nơi xảy ra tai nạn; dùng which ở đây phải có in/on, nên where mới phù hợp.",
+        "correct": false
       },
       {
         "text": "what",
-        "explanation": "Sai: what không làm trạng từ quan hệ chỉ địa điểm trong câu hỏi về street."
+        "explanation": "Sai: what không làm trạng từ quan hệ chỉ địa điểm trong câu hỏi về street.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the traffic was heavy, he arrived on time. (traffic: giao thông, heavy: tắc đường, on time: đúng giờ)",
+    "q": "___ the traffic was heavy, he arrived on time.",
     "a": [
       {
         "text": "Although",
@@ -2225,21 +2315,24 @@ const fullQuestionBank = [
         "explanation": "Dù tắc đường nhưng vẫn đến đúng giờ (tương phản)."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: giao thông nặng là trở ngại nhưng kết quả vẫn đến đúng giờ, nên cần quan hệ nhượng bộ."
+        "text": "So",
+        "explanation": "Sai: 'so' không mở mệnh đề nhượng bộ trước dấu phẩy; câu cần 'Although'.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However không mở trực tiếp mệnh đề trước dấu phẩy; vị trí này cần liên từ Although."
+        "explanation": "Sai: However không mở trực tiếp mệnh đề trước dấu phẩy; vị trí này cần liên từ Although.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite phải đi với heavy traffic (cụm danh từ), không đi trực tiếp với mệnh đề traffic was heavy."
+        "explanation": "Sai: Despite phải đi với heavy traffic (cụm danh từ), không đi trực tiếp với mệnh đề traffic was heavy.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will keep waiting for you and won't leave ___ it gets dark. (dark: tối)",
+    "q": "I will keep waiting for you and won't leave ___ it gets dark.",
     "a": [
       {
         "text": "until",
@@ -2248,15 +2341,18 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: while chỉ thời gian đồng thời, còn câu nhấn mạnh chờ kéo dài đến mốc trời tối."
+        "explanation": "Sai: while chỉ thời gian đồng thời, còn câu nhấn mạnh chờ kéo dài đến mốc trời tối.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before would mean leaving happens earlier than darkness, trái với won't leave until it gets dark."
+        "explanation": "Sai: before would mean leaving happens earlier than darkness, trái với won't leave until it gets dark.",
+        "correct": false
       },
       {
         "text": "as soon as",
-        "explanation": "Sai. Cấu trúc 'as soon as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'as soon as' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
@@ -2270,15 +2366,18 @@ const fullQuestionBank = [
       },
       {
         "text": "although",
-        "explanation": "Đây là liên từ nhượng bộ."
+        "explanation": "Đây là liên từ nhượng bộ.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Đây là liên từ thời gian hoặc tương phản."
+        "explanation": "Đây là liên từ thời gian hoặc tương phản.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sau 'despite' không dùng một mệnh đề đầy đủ theo cách này."
+        "explanation": "Sau 'despite' không dùng một mệnh đề đầy đủ theo cách này.",
+        "correct": false
       }
     ]
   },
@@ -2292,20 +2391,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: when chỉ thời điểm bạn thích, không phải nơi bạn muốn đi."
+        "explanation": "Sai: when chỉ thời điểm bạn thích, không phải nơi bạn muốn đi.",
+        "correct": false
       },
       {
         "text": "whenever",
-        "explanation": "Chỉ thời gian, không chỉ địa điểm."
+        "explanation": "Chỉ thời gian, không chỉ địa điểm.",
+        "correct": false
       },
       {
         "text": "who",
-        "explanation": "Chỉ người."
+        "explanation": "Chỉ người. Cách dùng phù hợp trong câu này là “wherever”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He passed the exam ___ he didn't study hard. (passed: đỗ, exam: kỳ thi, study hard: học chăm)",
+    "q": "He passed the exam ___ he didn't study hard.",
     "a": [
       {
         "text": "even though",
@@ -2314,20 +2416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "Sai: không học chăm không phải nguyên nhân hợp lý của việc đỗ; đây là quan hệ trái ngược."
+        "explanation": "Sai: không học chăm không phải nguyên nhân hợp lý của việc đỗ; đây là quan hệ trái ngược.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "Sai: so cần một kết quả, trong khi hai mệnh đề ở đây đối lập nhau."
+        "explanation": "Sai: so cần một kết quả, trong khi hai mệnh đề ở đây đối lập nhau.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sai: despite không nhận mệnh đề he didn't study hard; dùng even though + S-V mới đúng."
+        "explanation": "Sai: despite không nhận mệnh đề he didn't study hard; dùng even though + S-V mới đúng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Turn off the lights ___ you leave the room. (turn off: tắt, lights: đèn, leave: rời khỏi)",
+    "q": "Turn off the lights ___ you leave the room.",
     "a": [
       {
         "text": "before",
@@ -2336,20 +2441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Rời đi rồi thì không tắt được."
+        "explanation": "Rời đi rồi thì không tắt được.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Vừa đi vừa tắt không logic bằng."
+        "explanation": "Vừa đi vừa tắt không logic bằng.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: tắt đèn phải hoàn tất trước lúc rời phòng, không chờ đến một mốc kéo dài."
+        "explanation": "Sai: tắt đèn phải hoàn tất trước lúc rời phòng, không chờ đến một mốc kéo dài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They found a small cat ___ they were playing in the garden. (found: tìm thấy, garden: khu vườn)",
+    "q": "They found a small cat ___ they were playing in the garden.",
     "a": [
       {
         "text": "while",
@@ -2358,20 +2466,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Không hợp lý."
+        "explanation": "Không hợp lý. Cách dùng phù hợp trong câu này là “while”.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: việc tìm thấy xảy ra trong lúc chơi, không phải sau khi thời gian chơi kết thúc."
+        "explanation": "Sai: việc tìm thấy xảy ra trong lúc chơi, không phải sau khi thời gian chơi kết thúc.",
+        "correct": false
       },
       {
         "text": "though",
-        "explanation": "Sai: câu không có ý tương phản; cần while để chỉ hai hành động cùng thời điểm."
+        "explanation": "Sai: câu không có ý tương phản; cần while để chỉ hai hành động cùng thời điểm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ his wealth, he is very unhappy. (wealth: sự giàu có, unhappy: không hạnh phúc)",
+    "q": "___ his wealth, he is very unhappy.",
     "a": [
       {
         "text": "In spite of",
@@ -2380,20 +2491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Although",
-        "explanation": "Sau 'although' cần một mệnh đề."
+        "explanation": "Sau 'although' cần một mệnh đề.",
+        "correct": false
       },
       {
         "text": "Because of",
-        "explanation": "Sai. Phương án 'Because of' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'Because of' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However không thể đứng trước cụm danh từ his wealth trong mẫu này."
+        "explanation": "Sai: However không thể đứng trước cụm danh từ his wealth trong mẫu này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "My father used to take me to the park ___ I was a child. (used to: đã từng, child: đứa trẻ)",
+    "q": "My father used to take me to the park ___ I was a child.",
     "a": [
       {
         "text": "when",
@@ -2402,20 +2516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Ít dùng cho cả một giai đoạn dài như 'a child'."
+        "explanation": "Ít dùng cho cả một giai đoạn dài như 'a child'.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: việc đưa đi công viên diễn ra khi còn là trẻ, không phải sau giai đoạn đó."
+        "explanation": "Sai: việc đưa đi công viên diễn ra khi còn là trẻ, không phải sau giai đoạn đó.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before không diễn tả toàn bộ giai đoạn I was a child như when."
+        "explanation": "Sai: before không diễn tả toàn bộ giai đoạn I was a child như when.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will find you ___ you hide. (hide: trốn)",
+    "q": "I will find you ___ you hide.",
     "a": [
       {
         "text": "wherever",
@@ -2424,42 +2541,48 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: when hỏi thời điểm bạn trốn, còn câu khẳng định sẽ tìm ở bất cứ địa điểm nào."
+        "explanation": "Sai: when hỏi thời điểm bạn trốn, còn câu khẳng định sẽ tìm ở bất cứ địa điểm nào.",
+        "correct": false
       },
       {
         "text": "somewhere",
-        "explanation": "Sai: somewhere chỉ một nơi không xác định, không mang nghĩa mọi nơi bạn có thể trốn."
+        "explanation": "Sai: somewhere chỉ một nơi không xác định, không mang nghĩa mọi nơi bạn có thể trốn.",
+        "correct": false
       },
       {
         "text": "anywhere",
-        "explanation": "Sai: anywhere đứng một mình không nối được mệnh đề you hide; cần wherever."
+        "explanation": "Sai: anywhere đứng một mình không nối được mệnh đề you hide; cần wherever.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ she was very tired, she finished her homework. (tired: mệt, finished: hoàn thành)",
+    "q": "___ she was very tired, she finished her homework.",
     "a": [
       {
         "text": "Although",
         "correct": true,
-        "explanation": "Mệnh đề tương phản."
+        "explanation": "Mệnh đề tương phản. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: sự mệt mỏi đối lập với việc hoàn thành bài, không phải quan hệ nguyên nhân cần because."
+        "text": "So",
+        "explanation": "Sai: 'so' diễn tả kết quả, không mở mệnh đề nhượng bộ trước dấu phẩy.",
+        "correct": false
       },
       {
-        "text": "Since",
-        "explanation": "Sai: Since sẽ biến she was tired thành nguyên nhân, trong khi câu muốn nhấn mạnh sự trái ngược."
+        "text": "However",
+        "explanation": "Sai: 'However' là trạng từ nối, không mở trực tiếp mệnh đề ở vị trí này.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite không đi trực tiếp với mệnh đề she was very tired; phải đổi thành despite being tired."
+        "explanation": "Sai: Despite không đi trực tiếp với mệnh đề she was very tired; phải đổi thành despite being tired.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We will go for a walk ___ the rain stops. (go for a walk: đi dạo)",
+    "q": "We will go for a walk ___ the rain stops.",
     "a": [
       {
         "text": "as soon as",
@@ -2468,64 +2591,73 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Không đi dạo lúc đang mưa."
+        "explanation": "Không đi dạo lúc đang mưa.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: không thể đi dạo trước khi mưa tạnh trong ngữ cảnh này; thời điểm khởi hành là sau đó."
+        "explanation": "Sai: không thể đi dạo trước khi mưa tạnh trong ngữ cảnh này; thời điểm khởi hành là sau đó.",
+        "correct": false
       },
       {
         "text": "though",
-        "explanation": "Sai: though diễn tả tương phản, còn câu chỉ thời điểm đi dạo ngay sau khi mưa tạnh."
+        "explanation": "Sai: though diễn tả tương phản, còn câu chỉ thời điểm đi dạo ngay sau khi mưa tạnh.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ her age, she is very active. (age: tuổi tác, active: năng động)",
+    "q": "___ her age, she is very active.",
     "a": [
       {
         "text": "Despite",
         "correct": true,
-        "explanation": "Bất chấp tuổi tác."
+        "explanation": "Bất chấp tuổi tác. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "Though",
-        "explanation": "Sai: Though cần mệnh đề có chủ ngữ và động từ; her age chỉ là cụm danh từ."
+        "explanation": "Sai: Though cần mệnh đề có chủ ngữ và động từ; her age chỉ là cụm danh từ.",
+        "correct": false
       },
       {
         "text": "Because",
-        "explanation": "Sai: tuổi tác không được nêu là nguyên nhân của sự năng động; ý câu là bất chấp tuổi tác."
+        "explanation": "Sai: tuổi tác không được nêu là nguyên nhân của sự năng động; ý câu là bất chấp tuổi tác.",
+        "correct": false
       },
       {
         "text": "But",
-        "explanation": "Sai: But không đứng trước cụm danh từ her age trong cấu trúc đầu câu này."
+        "explanation": "Sai: But không đứng trước cụm danh từ her age trong cấu trúc đầu câu này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I'll give you a gift ___ you come home. (gift: món quà)",
+    "q": "I'll give you a gift ___ you come home.",
     "a": [
       {
         "text": "when",
         "correct": true,
-        "explanation": "Khi bạn về nhà."
+        "explanation": "Khi bạn về nhà. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "until",
-        "explanation": "Sai: món quà được trao tại lúc bạn về, không phải hành động kéo dài cho tới lúc đó."
+        "explanation": "Sai: món quà được trao tại lúc bạn về, không phải hành động kéo dài cho tới lúc đó.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: come home là mốc xảy ra một lần, không phải khoảng thời gian để dùng while."
+        "explanation": "Sai: come home là mốc xảy ra một lần, không phải khoảng thời gian để dùng while.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before would give the gift before you come home, trái với ý chờ bạn về rồi tặng."
+        "explanation": "Sai: before would give the gift before you come home, trái với ý chờ bạn về rồi tặng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She chooses the library ___ she studies every afternoon. (library: thư viện, study: học)",
+    "q": "She chooses the library ___ she studies every afternoon.",
     "a": [
       {
         "text": "where",
@@ -2534,20 +2666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: library là địa điểm, không phải thời điểm; mệnh đề quan hệ cần where."
+        "explanation": "Sai: library là địa điểm, không phải thời điểm; mệnh đề quan hệ cần where.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which chỉ đúng nếu có giới từ in (the library in which...), nên where tự nhiên hơn ở đây."
+        "explanation": "Sai: sau 'which' phải có giới từ phù hợp, chẳng hạn 'the library in which she studies' hoặc 'the library which she studies in'; câu đã cho không có giới từ nên dùng 'where'.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: while chỉ thời gian đồng thời, không thay thế đại từ quan hệ chỉ nơi chốn."
+        "explanation": "Sai: while chỉ thời gian đồng thời, không thay thế đại từ quan hệ chỉ nơi chốn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He didn't get the job ___ having all the qualifications. (job: công việc, qualifications: bằng cấp)",
+    "q": "He didn't get the job ___ having all the qualifications.",
     "a": [
       {
         "text": "despite",
@@ -2556,20 +2691,23 @@ const fullQuestionBank = [
       },
       {
         "text": "although",
-        "explanation": "Sai: although cần mệnh đề, còn having all the qualifications là V-ing; despite mới nhận dạng này."
+        "explanation": "Sai: although cần mệnh đề, còn having all the qualifications là V-ing; despite mới nhận dạng này.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "Sai: có đủ bằng cấp không phải nguyên nhân khiến không được nhận; đó là hoàn cảnh tương phản."
+        "explanation": "Sai: có đủ bằng cấp không phải nguyên nhân khiến không được nhận; đó là hoàn cảnh tương phản.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "Sai: so diễn tả kết quả, không kết hợp với V-ing để nêu sự nhượng bộ."
+        "explanation": "Sai: so diễn tả kết quả, không kết hợp với V-ing để nêu sự nhượng bộ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Please call me ___ you get any news. (news: tin tức)",
+    "q": "Please call me ___ you get any news.",
     "a": [
       {
         "text": "as soon as",
@@ -2578,20 +2716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "until",
-        "explanation": "Sai: until khiến cuộc gọi bị trì hoãn đến một thời điểm, không diễn tả gọi ngay khi có tin."
+        "explanation": "Sai: until khiến cuộc gọi bị trì hoãn đến một thời điểm, không diễn tả gọi ngay khi có tin.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: get any news là sự kiện tức thời, không phải khoảng thời gian cho while."
+        "explanation": "Sai: get any news là sự kiện tức thời, không phải khoảng thời gian cho while.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "'Before' chỉ gọi trước khi có tin, trái với yêu cầu gọi ngay khi nhận được tin mới."
+        "explanation": "'Before' chỉ gọi trước khi có tin, trái với yêu cầu gọi ngay khi nhận được tin mới.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I put my phone ___ I can see it. (put: đặt/để)",
+    "q": "I put my phone ___ I can see it.",
     "a": [
       {
         "text": "where",
@@ -2600,20 +2741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: can see it mô tả vị trí đặt điện thoại, không phải thời điểm."
+        "explanation": "Sai: can see it mô tả vị trí đặt điện thoại, không phải thời điểm.",
+        "correct": false
       },
       {
         "text": "wherever",
-        "explanation": "Không cần thiết trong ngữ cảnh này."
+        "explanation": "Không cần thiết trong ngữ cảnh này.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which cần danh từ tiền ngữ rõ ràng; where nối với vị trí tôi có thể nhìn thấy."
+        "explanation": "Sai: which cần danh từ tiền ngữ rõ ràng; where nối với vị trí tôi có thể nhìn thấy.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The kids went outside to play soccer ___ it was very hot; their coach had told them to stay indoors. (outside: ra ngoài, hot: nóng)",
+    "q": "The kids went outside to play soccer ___ it was very hot; their coach had told them to stay indoors.",
     "a": [
       {
         "text": "even though",
@@ -2622,20 +2766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "because",
-        "explanation": "Sai quan hệ ý nghĩa: câu nêu rõ các em vẫn ra ngoài dù nóng và còn bị dặn ở trong nhà, không phải đi ra vì trời nóng."
+        "explanation": "Sai quan hệ ý nghĩa: câu nêu rõ các em vẫn ra ngoài dù nóng và còn bị dặn ở trong nhà, không phải đi ra vì trời nóng.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'so' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'so' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sai: despite không đi trước mệnh đề it was very hot; cần despite the heat hoặc even though."
+        "explanation": "Sai: despite không đi trước mệnh đề it was very hot; cần despite the heat hoặc even though.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I fell asleep ___ I was watching a movie. (fell asleep: ngủ thiếp đi, watching: đang xem)",
+    "q": "I fell asleep ___ I was watching a movie.",
     "a": [
       {
         "text": "while",
@@ -2644,20 +2791,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: ngủ thiếp đi xảy ra trong lúc xem phim, không phải trước khi xem."
+        "explanation": "Sai: ngủ thiếp đi xảy ra trong lúc xem phim, không phải trước khi xem.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: câu không nói xem phim đã kết thúc rồi mới ngủ; hai hành động chồng lấn về thời gian."
+        "explanation": "Sai: câu không nói xem phim đã kết thúc rồi mới ngủ; hai hành động chồng lấn về thời gian.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until cần một mốc kết thúc, trong khi watching a movie là hành động đang diễn ra."
+        "explanation": "Sai: until cần một mốc kết thúc, trong khi watching a movie là hành động đang diễn ra.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "They will remain in London continuously ___ next Monday, when they fly home. (stay: ở lại)",
+    "q": "They will remain in London continuously ___ next Monday, when they fly home.",
     "a": [
       {
         "text": "until",
@@ -2666,20 +2816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: next Monday là mốc kết thúc việc ở lại, không phải một khoảng thời gian để dùng while."
+        "explanation": "Sai: next Monday là mốc kết thúc việc ở lại, không phải một khoảng thời gian để dùng while.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: when chỉ thời điểm, nhưng remain continuously cần giới từ chỉ kéo dài đến mốc đó."
+        "explanation": "Sai: when chỉ thời điểm, nhưng remain continuously cần giới từ chỉ kéo dài đến mốc đó.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "'Until' chỉ rõ họ ở liên tục và chỉ rời London vào thứ Hai tới; 'after' diễn tả thời điểm bắt đầu sau đó, không đúng timeline."
+        "explanation": "'Until' chỉ rõ họ ở liên tục và chỉ rời London vào thứ Hai tới; 'after' diễn tả thời điểm bắt đầu sau đó, không đúng timeline.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the book was expensive, I bought it anyway. (expensive: đắt, bought: đã mua)",
+    "q": "___ the book was expensive, I bought it anyway.",
     "a": [
       {
         "text": "Although",
@@ -2687,21 +2840,24 @@ const fullQuestionBank = [
         "explanation": "Dù đắt nhưng vẫn mua."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: giá đắt không phải lý do mua; việc vẫn mua dù đắt tạo quan hệ tương phản."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' là trạng từ chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However không đứng trước mệnh đề ở vị trí liên từ đầu câu này."
+        "explanation": "Sai: However không đứng trước mệnh đề ở vị trí liên từ đầu câu này.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần cụm danh từ (despite the high price), không nhận mệnh đề the book was expensive."
+        "explanation": "Sai: Despite cần cụm danh từ (despite the high price), không nhận mệnh đề the book was expensive.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You should check your answers ___ you hand in the paper. (check: kiểm tra, hand in: nộp bài)",
+    "q": "You should check your answers ___ you hand in the paper.",
     "a": [
       {
         "text": "before",
@@ -2710,20 +2866,23 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Nộp rồi không kiểm tra được."
+        "explanation": "Nộp rồi không kiểm tra được.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: kiểm tra là việc hoàn tất trước lúc nộp, không kéo dài tới một mốc theo until."
+        "explanation": "Sai: kiểm tra là việc hoàn tất trước lúc nộp, không kéo dài tới một mốc theo until.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: hai việc được xếp theo trình tự kiểm tra rồi mới nộp, không làm đồng thời."
+        "explanation": "Sai: hai việc được xếp theo trình tự kiểm tra rồi mới nộp, không làm đồng thời.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I don't know ___ she is going; she told me the day but not the destination. (know: biết)",
+    "q": "I don't know ___ she is going; she told me the day but not the destination.",
     "a": [
       {
         "text": "where",
@@ -2732,20 +2891,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai. Câu đã cho biết ngày nhưng chưa biết điểm đến, nên cần từ hỏi nơi chốn 'where', không phải thời gian 'when'."
+        "explanation": "Sai. Câu đã cho biết ngày nhưng chưa biết điểm đến, nên cần từ hỏi nơi chốn 'where', không phải thời gian 'when'.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai. 'which' là đại từ quan hệ thay thế cho vật, không đúng với cấu trúc và ngữ cảnh đang xét."
+        "explanation": "Sai. 'which' là đại từ quan hệ thay thế cho vật, không đúng với cấu trúc và ngữ cảnh đang xét.",
+        "correct": false
       },
       {
         "text": "what",
-        "explanation": "Sai: what hỏi sự vật, không hỏi điểm đến trong mệnh đề gián tiếp này; where mới chỉ nơi chốn."
+        "explanation": "Sai: what hỏi sự vật, không hỏi điểm đến trong mệnh đề gián tiếp này; where mới chỉ nơi chốn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ it was raining hard, they played football anyway. (raining hard: mưa to)",
+    "q": "___ it was raining hard, they played football anyway.",
     "a": [
       {
         "text": "Though",
@@ -2754,20 +2916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "In spite of",
-        "explanation": "Sai: In spite of cần danh từ/V-ing, còn it was raining hard là mệnh đề; dùng Though/Although."
+        "explanation": "Sai: In spite of cần danh từ/V-ing, còn it was raining hard là mệnh đề; dùng Though/Although.",
+        "correct": false
       },
       {
         "text": "Because",
-        "explanation": "Sai: mưa to không giải thích việc vẫn đá bóng; câu nêu hành động bất chấp thời tiết."
+        "explanation": "Sai: mưa to không giải thích việc vẫn đá bóng; câu nêu hành động bất chấp thời tiết.",
+        "correct": false
       },
       {
         "text": "So",
-        "explanation": "Sai: So biểu thị kết quả, không diễn tả sự nhượng bộ trong it was raining hard ... anyway."
+        "explanation": "Sai: So biểu thị kết quả, không diễn tả sự nhượng bộ trong it was raining hard ... anyway.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Wait here ___ I return. (wait: chờ, return: quay lại)",
+    "q": "Wait here ___ I return.",
     "a": [
       {
         "text": "until",
@@ -2776,15 +2941,18 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: when chỉ thời điểm quay lại, còn mệnh lệnh yêu cầu chờ liên tục cho đến mốc đó."
+        "explanation": "Sai: when chỉ thời điểm quay lại, còn mệnh lệnh yêu cầu chờ liên tục cho đến mốc đó.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: return là mốc hoàn tất chờ, không phải khoảng thời gian để dùng while."
+        "explanation": "Sai: return là mốc hoàn tất chờ, không phải khoảng thời gian để dùng while.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before sẽ yêu cầu chờ trước khi tôi quay lại, trái với ý chờ đến lúc tôi về."
+        "explanation": "Sai: before sẽ yêu cầu chờ trước khi tôi quay lại, trái với ý chờ đến lúc tôi về.",
+        "correct": false
       }
     ]
   },
@@ -2798,20 +2966,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "'When' chỉ thời gian, không thay cho 'places'."
+        "explanation": "'When' chỉ thời gian, không thay cho 'places'.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Thiếu giới từ 'in' nếu dùng 'which'."
+        "explanation": "Thiếu giới từ 'in' nếu dùng 'which'.",
+        "correct": false
       },
       {
         "text": "although",
-        "explanation": "Sai: although nối ý tương phản, không giới thiệu địa điểm nơi tôi gặp người mới."
+        "explanation": "Sai: although nối ý tương phản, không giới thiệu địa điểm nơi tôi gặp người mới.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is very healthy ___ his age. (healthy: khỏe mạnh, age: tuổi tác)",
+    "q": "He is very healthy ___ his age.",
     "a": [
       {
         "text": "despite",
@@ -2820,20 +2991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "although",
-        "explanation": "Sai: although cần mệnh đề, còn his age là cụm danh từ phù hợp với despite."
+        "explanation": "Sai: although cần mệnh đề, còn his age là cụm danh từ phù hợp với despite.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "Sai: tuổi tác không được nêu như nguyên nhân của sức khỏe; đây là ý tương phản."
+        "explanation": "Sai: tuổi tác không được nêu như nguyên nhân của sức khỏe; đây là ý tương phản.",
+        "correct": false
       },
       {
         "text": "however",
-        "explanation": "Sai: however là trạng từ nối, không đứng trực tiếp trước cụm danh từ his age."
+        "explanation": "Sai: however là trạng từ nối, không đứng trực tiếp trước cụm danh từ his age.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The lights went out ___ we were having dinner. (lights went out: mất điện, having dinner: ăn tối)",
+    "q": "The lights went out ___ we were having dinner.",
     "a": [
       {
         "text": "while",
@@ -2842,20 +3016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: mất điện xảy ra trong bữa tối, không được đặt trước khi bữa tối bắt đầu."
+        "explanation": "Sai: mất điện xảy ra trong bữa tối, không được đặt trước khi bữa tối bắt đầu.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: câu không nói bữa tối đã kết thúc; hai sự việc xảy ra chồng lấn."
+        "explanation": "Sai: câu không nói bữa tối đã kết thúc; hai sự việc xảy ra chồng lấn.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until diễn tả kéo dài đến mốc, không phù hợp với sự kiện mất điện đột ngột."
+        "explanation": "Sai: until diễn tả kéo dài đến mốc, không phù hợp với sự kiện mất điện đột ngột.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will love you ___ I live. (live: còn sống)",
+    "q": "I will love you ___ I live.",
     "a": [
       {
         "text": "as long as",
@@ -2864,20 +3041,23 @@ const fullQuestionBank = [
       },
       {
         "text": "until",
-        "explanation": "Hơi tiêu cực."
+        "explanation": "Hơi tiêu cực. Cách dùng phù hợp trong câu này là “as long as”.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Ít dùng."
+        "explanation": "Ít dùng. Cách dùng phù hợp trong câu này là “as long as”.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before chỉ một mốc sớm hơn, không diễn tả thời gian tình yêu kéo dài trong suốt cuộc đời."
+        "explanation": "Sai: before chỉ một mốc sớm hơn, không diễn tả thời gian tình yêu kéo dài trong suốt cuộc đời.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ I'm not a fan of horror movies, I liked this one. (horror movies: phim kinh dị)",
+    "q": "___ I'm not a fan of horror movies, I liked this one.",
     "a": [
       {
         "text": "Although",
@@ -2885,21 +3065,24 @@ const fullQuestionBank = [
         "explanation": "`Although` mở mệnh đề nhượng bộ: không thích phim kinh dị nhưng vẫn thích bộ phim này."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: không thích phim kinh dị là hoàn cảnh đối lập với việc thích riêng bộ phim này."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ trước dấu phẩy.",
+        "correct": false
       },
       {
-        "text": "Since",
-        "explanation": "Sai: Since biến việc không thích phim kinh dị thành nguyên nhân, trái với ý nhượng bộ."
+        "text": "So",
+        "explanation": "Sai: 'so' không thể mở mệnh đề nhượng bộ ở vị trí này.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite không đi trực tiếp với mệnh đề I'm not a fan; cần despite not being a fan."
+        "explanation": "Sai: Despite không đi trực tiếp với mệnh đề I'm not a fan; cần despite not being a fan.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You can find this flower ___ in the mountains. (flower: hoa, mountains: núi)",
+    "q": "You can find this flower ___ in the mountains.",
     "a": [
       {
         "text": "anywhere",
@@ -2908,42 +3091,48 @@ const fullQuestionBank = [
       },
       {
         "text": "where",
-        "explanation": "Sai: where phải mở mệnh đề địa điểm (where it grows); sau chỗ trống ở đây đã có in the mountains."
+        "explanation": "Sai: where phải mở mệnh đề địa điểm (where it grows); sau chỗ trống ở đây đã có in the mountains.",
+        "correct": false
       },
       {
         "text": "wherever",
-        "explanation": "Sai: wherever nghĩa là bất cứ nơi nào, nhưng câu xác định địa điểm cụ thể là in the mountains."
+        "explanation": "Sai: wherever nghĩa là bất cứ nơi nào, nhưng câu xác định địa điểm cụ thể là in the mountains.",
+        "correct": false
       },
       {
         "text": "what",
-        "explanation": "Sai: what không làm trạng từ chỉ nơi chốn và không đứng trước cụm in the mountains."
+        "explanation": "Sai: what không làm trạng từ chỉ nơi chốn và không đứng trước cụm in the mountains.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I visited the house ___ my father grew up. (visited: thăm, grew up: lớn lên)",
+    "q": "I visited the house ___ my father grew up.",
     "a": [
       {
         "text": "where",
         "correct": true,
-        "explanation": "Nơi bố tôi lớn lên."
+        "explanation": "Nơi bố tôi lớn lên. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "which",
-        "explanation": "Sai: phải viết the house in which my father grew up; where đã bao hàm giới từ in."
+        "explanation": "Sai: phải viết the house in which my father grew up; where đã bao hàm giới từ in.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: grew up xảy ra ở ngôi nhà nào, không phải vào thời điểm nào."
+        "explanation": "Sai: grew up xảy ra ở ngôi nhà nào, không phải vào thời điểm nào.",
+        "correct": false
       },
       {
         "text": "that",
-        "explanation": "Sai: that không thể thay cho in which nếu vẫn giữ động từ grew up (grow up in a house)."
+        "explanation": "Sai: that không thể thay cho in which nếu vẫn giữ động từ grew up (grow up in a house).",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He remained optimistic ___ he failed the test. (optimistic: lạc quan, failed: trượt)",
+    "q": "He remained optimistic ___ he failed the test.",
     "a": [
       {
         "text": "even though",
@@ -2951,21 +3140,24 @@ const fullQuestionBank = [
         "explanation": "Việc giữ tinh thần lạc quan tương phản hợp lý với kết quả thi không tốt."
       },
       {
-        "text": "because",
-        "explanation": "Không phù hợp với quan hệ tương phản."
+        "text": "because of",
+        "explanation": "Sai: 'because of' phải đi với danh từ/V-ing, không đi trực tiếp với mệnh đề he failed the test.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "Sai cấu trúc và quan hệ nghĩa."
+        "explanation": "Sai cấu trúc và quan hệ nghĩa.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sau 'despite' không dùng trực tiếp một mệnh đề."
+        "explanation": "Sau 'despite' không dùng trực tiếp một mệnh đề.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Think carefully ___ you make a decision to avoid regret. (carefully: cẩn thận, decision: quyết định)",
+    "q": "Think carefully ___ you make a decision to avoid regret.",
     "a": [
       {
         "text": "before",
@@ -2974,20 +3166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Quyết định rồi mới nghĩ thì muộn."
+        "explanation": "Quyết định rồi mới nghĩ thì muộn.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: quyết định là mốc sau quá trình suy nghĩ; câu yêu cầu nghĩ trước khi quyết định."
+        "explanation": "Sai: quyết định là mốc sau quá trình suy nghĩ; câu yêu cầu nghĩ trước khi quyết định.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until nhấn mạnh kéo dài tới mốc, không diễn tả thứ tự think rồi make a decision."
+        "explanation": "Sai: until nhấn mạnh kéo dài tới mốc, không diễn tả thứ tự think rồi make a decision.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I have lived here ___ I was ten years old. (lived: đã sống)",
+    "q": "I have lived here ___ I was ten years old.",
     "a": [
       {
         "text": "since",
@@ -2996,20 +3191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: when chỉ thời điểm, còn since đánh dấu điểm bắt đầu của khoảng thời gian kéo dài đến nay."
+        "explanation": "Sai: when chỉ thời điểm, còn since đánh dấu điểm bắt đầu của khoảng thời gian kéo dài đến nay.",
+        "correct": false
       },
       {
         "text": "for",
-        "explanation": "Đi với khoảng thời gian."
+        "explanation": "Đi với khoảng thời gian.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until sẽ kết thúc việc sống ở đây lúc mười tuổi, trái với have lived đến hiện tại."
+        "explanation": "Sai: until sẽ kết thúc việc sống ở đây lúc mười tuổi, trái với have lived đến hiện tại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Put the key ___ you can find it again. (key: chìa khóa, find: tìm thấy)",
+    "q": "Put the key ___ you can find it again.",
     "a": [
       {
         "text": "where",
@@ -3018,20 +3216,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: can find it again mô tả vị trí cất chìa khóa, không phải thời điểm."
+        "explanation": "Sai: can find it again mô tả vị trí cất chìa khóa, không phải thời điểm.",
+        "correct": false
       },
       {
         "text": "wherever",
-        "explanation": "Không cần thiết."
+        "explanation": "Không cần thiết. Cách dùng phù hợp trong câu này là “where”.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which cần tiền ngữ và không tự nối với mệnh đề chỉ nơi cất chìa khóa."
+        "explanation": "Sai: which cần tiền ngữ và không tự nối với mệnh đề chỉ nơi cất chìa khóa.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ he had no money, he gave me some. (money: tiền, gave: đã cho)",
+    "q": "___ he had no money, he gave me some.",
     "a": [
       {
         "text": "Although",
@@ -3039,21 +3240,24 @@ const fullQuestionBank = [
         "explanation": "Dù không có tiền nhưng vẫn cho."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: không có tiền không giải thích việc cho tiền; đây là hành động trái ngược, đầy hào phóng."
+        "text": "So",
+        "explanation": "Sai: 'so' diễn tả kết quả, không mở mệnh đề nhượng bộ trước dấu phẩy.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần cụm danh từ/V-ing, không nhận mệnh đề he had no money."
+        "explanation": "Sai: Despite cần cụm danh từ/V-ing, không nhận mệnh đề he had no money.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However là trạng từ nối và không mở trực tiếp mệnh đề ở vị trí này."
+        "explanation": "Sai: However là trạng từ nối và không mở trực tiếp mệnh đề ở vị trí này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will stay here ___ you come back. (stay: ở lại, come back: quay lại)",
+    "q": "I will stay here ___ you come back.",
     "a": [
       {
         "text": "until",
@@ -3062,20 +3266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Sai: after would mean I stay only after you return, trái với việc chờ trong thời gian bạn vắng mặt."
+        "explanation": "Sai: after would mean I stay only after you return, trái với việc chờ trong thời gian bạn vắng mặt.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: while không nhấn mạnh điểm kết thúc việc ở lại là lúc bạn quay lại."
+        "explanation": "Sai: while không nhấn mạnh điểm kết thúc việc ở lại là lúc bạn quay lại.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: when chỉ thời điểm quay lại, còn stay here cần kéo dài cho đến mốc đó."
+        "explanation": "Sai: when chỉ thời điểm quay lại, còn stay here cần kéo dài cho đến mốc đó.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She is smart. ___, she is very lazy. (smart: thông minh, lazy: lười)",
+    "q": "She is smart. ___, she is very lazy.",
     "a": [
       {
         "text": "However",
@@ -3083,43 +3290,49 @@ const fullQuestionBank = [
         "explanation": "Thông minh nhưng lại lười (tương phản)."
       },
       {
-        "text": "Therefore",
-        "explanation": "Sai. Phương án 'Therefore' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "text": "Because",
+        "explanation": "Sai: 'because' không đứng sau dấu chấm và dấu phẩy để nối hai mệnh đề độc lập.",
+        "correct": false
       },
       {
-        "text": "Moreover",
-        "explanation": "Sai: Moreover thêm thông tin cùng chiều, trong khi lazy đối lập với smart trong ngữ cảnh này."
+        "text": "Although",
+        "explanation": "Sai: 'although' phải mở một mệnh đề đầy đủ, không đứng một mình sau dấu chấm.",
+        "correct": false
       },
       {
-        "text": "So",
-        "explanation": "Sai: So sẽ tạo quan hệ kết quả, nhưng thông tin sau là sự tương phản."
+        "text": "Despite",
+        "explanation": "Sai: 'despite' phải đi với danh từ/V-ing, không đứng một mình sau dấu chấm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He cried ___ he heard the news. (cried: đã khóc, heard: đã nghe)",
+    "q": "He cried ___ he heard the news.",
     "a": [
       {
         "text": "when",
         "correct": true,
-        "explanation": "Khóc khi nghe tin."
+        "explanation": "Khóc khi nghe tin. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "while",
-        "explanation": "Nghe tin là hành động tức thời."
+        "explanation": "Nghe tin là hành động tức thời.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Chưa nghe đã khóc thì vô lý."
+        "explanation": "Chưa nghe đã khóc thì vô lý.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: khóc xảy ra ngay khi nghe tin, không phải kéo dài cho tới một thời điểm kết thúc."
+        "explanation": "Sai: khóc xảy ra ngay khi nghe tin, không phải kéo dài cho tới một thời điểm kết thúc.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The museum is ___ the old church used to be. (museum: bảo tàng, church: nhà thờ)",
+    "q": "The museum is ___ the old church used to be.",
     "a": [
       {
         "text": "where",
@@ -3128,20 +3341,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: used to be mô tả vị trí cũ của nhà thờ, không phải thời điểm."
+        "explanation": "Sai: used to be mô tả vị trí cũ của nhà thờ, không phải thời điểm.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which không làm trạng từ chỉ nơi chốn trong mẫu The museum is ___ ..."
+        "explanation": "Sai: which không làm trạng từ chỉ nơi chốn trong mẫu The museum is ___ ...",
+        "correct": false
       },
       {
         "text": "there",
-        "explanation": "Sai: there cần đi sau giới từ hoặc chỉ nơi đã nêu, không nối trực tiếp mệnh đề dùng to be."
+        "explanation": "Sai: there cần đi sau giới từ hoặc chỉ nơi đã nêu, không nối trực tiếp mệnh đề dùng to be.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ it was a long way, he walked to the station. (long way: đường dài, station: nhà ga)",
+    "q": "___ it was a long way, he walked to the station.",
     "a": [
       {
         "text": "Even though",
@@ -3150,20 +3366,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite không nhận mệnh đề it was a long way; phải dùng despite the long distance hoặc Although."
+        "explanation": "Sai: Despite không nhận mệnh đề it was a long way; phải dùng despite the long distance hoặc Although.",
+        "correct": false
       },
       {
-        "text": "Because",
-        "explanation": "Sai: đường xa không giải thích việc đi bộ; câu nhấn mạnh vẫn đi bộ dù bất tiện."
+        "text": "However",
+        "explanation": "Sai: 'however' là trạng từ nối, không mở mệnh đề ở đầu câu này.",
+        "correct": false
       },
       {
-        "text": "So",
-        "explanation": "Sai: So sẽ diễn tả đường xa dẫn đến đi bộ, trái với quan hệ nhượng bộ cần có."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' là trạng từ chỉ kết quả, không mở mệnh đề nhượng bộ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Wash your hands ___ you eat. (wash hands: rửa tay, eat: ăn)",
+    "q": "Wash your hands ___ you eat.",
     "a": [
       {
         "text": "before",
@@ -3172,15 +3391,18 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Ăn xong cũng nên rửa nhưng trước khi ăn là quan trọng nhất."
+        "explanation": "Ăn xong cũng nên rửa nhưng trước khi ăn là quan trọng nhất.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: vệ sinh tay phải hoàn tất trước bữa ăn, không thực hiện đồng thời với eat."
+        "explanation": "Sai: vệ sinh tay phải hoàn tất trước bữa ăn, không thực hiện đồng thời với eat.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until không diễn tả bước chuẩn bị xảy ra trước một hành động kế tiếp."
+        "explanation": "Sai: until không diễn tả bước chuẩn bị xảy ra trước một hành động kế tiếp.",
+        "correct": false
       }
     ]
   },
@@ -3194,20 +3416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: a place là địa điểm nên cần where; when chỉ thời gian yên tĩnh."
+        "explanation": "Sai: a place là địa điểm nên cần where; when chỉ thời gian yên tĩnh.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which cần giới từ in (a place in which...), còn where đã bao hàm quan hệ nơi chốn."
+        "explanation": "Sai: which cần giới từ in (a place in which...), còn where đã bao hàm quan hệ nơi chốn.",
+        "correct": false
       },
       {
         "text": "whenever",
-        "explanation": "Sai: whenever nghĩa là bất cứ khi nào, không chỉ địa điểm để ngồi."
+        "explanation": "Sai: whenever nghĩa là bất cứ khi nào, không chỉ địa điểm để ngồi.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He went to bed ___ he finished his work. (went to bed: đi ngủ, finished: hoàn thành)",
+    "q": "He went to bed ___ he finished his work.",
     "a": [
       {
         "text": "after",
@@ -3216,20 +3441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: đi ngủ xảy ra sau khi hoàn thành công việc, không phải trước đó."
+        "explanation": "Sai: đi ngủ xảy ra sau khi hoàn thành công việc, không phải trước đó.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: hoàn thành công việc là mốc trước khi đi ngủ, không phải khoảng thời gian đồng thời."
+        "explanation": "Sai: hoàn thành công việc là mốc trước khi đi ngủ, không phải khoảng thời gian đồng thời.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until nhấn mạnh kéo dài, còn câu chỉ cần liên từ chỉ trình tự after."
+        "explanation": "Sai: until nhấn mạnh kéo dài, còn câu chỉ cần liên từ chỉ trình tự after.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ he is rich, he lives in a small house rather than a mansion. (rich: giàu, small house: nhà nhỏ)",
+    "q": "___ he is rich, he lives in a small house rather than a mansion.",
     "a": [
       {
         "text": "Although",
@@ -3237,21 +3465,24 @@ const fullQuestionBank = [
         "explanation": "Dù giàu nhưng sống ở nhà nhỏ."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: giàu không phải nguyên nhân được nêu cho việc sống trong nhà nhỏ; đây là sự tương phản."
+        "text": "However",
+        "explanation": "Sai: 'however' không mở trực tiếp mệnh đề he is rich ở đầu câu.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần cụm danh từ/V-ing, không nhận mệnh đề he is rich."
+        "explanation": "Sai: Despite cần cụm danh từ/V-ing, không nhận mệnh đề he is rich.",
+        "correct": false
       },
       {
-        "text": "So",
-        "explanation": "Sai: So tạo quan hệ kết quả, trong khi nhà nhỏ là lựa chọn trái dự đoán từ việc giàu."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Wait ___ the green light is on. (green light: đèn xanh)",
+    "q": "Wait ___ the green light is on.",
     "a": [
       {
         "text": "until",
@@ -3260,20 +3491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Đèn xanh đang bật thì đi chứ không chờ."
+        "explanation": "Đèn xanh đang bật thì đi chứ không chờ.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: cần chờ đến khi đèn xanh bật, không chờ trước một mốc chưa xảy ra theo before."
+        "explanation": "Sai: cần chờ đến khi đèn xanh bật, không chờ trước một mốc chưa xảy ra theo before.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: after sẽ bảo chờ sau khi đèn đã xanh, trái với thời điểm kết thúc chờ."
+        "explanation": "Sai: after sẽ bảo chờ sau khi đèn đã xanh, trái với thời điểm kết thúc chờ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will find my cat ___ it is hiding, no matter which room it chose. (find: tìm thấy, hiding: đang trốn)",
+    "q": "I will find my cat ___ it is hiding, no matter which room it chose.",
     "a": [
       {
         "text": "wherever",
@@ -3282,20 +3516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: câu nói tìm mèo ở bất kỳ căn phòng nào, không hỏi thời điểm nó trốn."
+        "explanation": "Sai: câu nói tìm mèo ở bất kỳ căn phòng nào, không hỏi thời điểm nó trốn.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which không thay cho trạng từ nơi chốn trong mệnh đề it is hiding."
+        "explanation": "Sai: which không thay cho trạng từ nơi chốn trong mệnh đề it is hiding.",
+        "correct": false
       },
       {
         "text": "there",
-        "explanation": "Sai: there chỉ địa điểm đã xác định, không mang nghĩa bất cứ phòng nào."
+        "explanation": "Sai: there chỉ địa điểm đã xác định, không mang nghĩa bất cứ phòng nào.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She felt tired. ___, she continued working. (felt tired: thấy mệt, continued: tiếp tục)",
+    "q": "She felt tired. ___, she continued working.",
     "a": [
       {
         "text": "Nevertheless",
@@ -3304,20 +3541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Because",
-        "explanation": "Sai: mệt không phải nguyên nhân khiến cô tiếp tục làm; đây là hành động trái dự đoán."
+        "explanation": "Sai: mệt không phải nguyên nhân khiến cô tiếp tục làm; đây là hành động trái dự đoán.",
+        "correct": false
       },
       {
         "text": "Therefore",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'Therefore' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'Therefore' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       },
       {
         "text": "Moreover",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'Moreover' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'Moreover' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He had breakfast first ___ he went to school. (breakfast: bữa sáng)",
+    "q": "He had breakfast first ___ he went to school.",
     "a": [
       {
         "text": "before",
@@ -3326,20 +3566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "after",
-        "explanation": "Sai: theo câu, ăn sáng xảy ra trước khi đi học; after đảo ngược trình tự."
+        "explanation": "Sai: theo câu, ăn sáng xảy ra trước khi đi học; after đảo ngược trình tự.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Vừa đi vừa ăn không tốt."
+        "explanation": "Vừa đi vừa ăn không tốt.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until không nối hai hành động theo trình tự first ... then ... như câu này."
+        "explanation": "Sai: until không nối hai hành động theo trình tự first ... then ... như câu này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I saw him ___ I was waiting for the bus. (saw: đã thấy, waiting: đang đợi)",
+    "q": "I saw him ___ I was waiting for the bus.",
     "a": [
       {
         "text": "while",
@@ -3348,15 +3591,18 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: nhìn thấy anh ấy xảy ra trong lúc đang đợi xe, không phải trước khoảng đợi."
+        "explanation": "Sai: nhìn thấy anh ấy xảy ra trong lúc đang đợi xe, không phải trước khoảng đợi.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until không diễn tả một sự kiện ngắn xảy ra giữa lúc chờ xe."
+        "explanation": "Sai: until không diễn tả một sự kiện ngắn xảy ra giữa lúc chờ xe.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: saw him được đặt trong khoảng thời gian waiting, không phải sau khi đã ngừng đợi."
+        "explanation": "Sai: saw him được đặt trong khoảng thời gian waiting, không phải sau khi đã ngừng đợi.",
+        "correct": false
       }
     ]
   },
@@ -3370,20 +3616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "'When' chỉ thời gian, không chỉ địa điểm."
+        "explanation": "'When' chỉ thời gian, không chỉ địa điểm.",
+        "correct": false
       },
       {
         "text": "what",
-        "explanation": "Sai: what chỉ sự vật, không nối mệnh đề chỉ địa điểm you go."
+        "explanation": "Sai: what chỉ sự vật, không nối mệnh đề chỉ địa điểm you go.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which cần tiền ngữ và giới từ phù hợp; wherever mới có nghĩa bất cứ nơi nào."
+        "explanation": "Sai: which cần tiền ngữ và giới từ phù hợp; wherever mới có nghĩa bất cứ nơi nào.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the book was short, it was very interesting. (short: ngắn, interesting: thú vị)",
+    "q": "___ the book was short, it was very interesting.",
     "a": [
       {
         "text": "Although",
@@ -3391,21 +3640,24 @@ const fullQuestionBank = [
         "explanation": "Dù ngắn nhưng rất hay."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: sách ngắn không giải thích việc thú vị; câu nhấn mạnh sự trái ngược giữa độ dài và chất lượng."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần cụm danh từ (despite its short length), không nhận mệnh đề the book was short."
+        "explanation": "Sai: Despite cần cụm danh từ (despite its short length), không nhận mệnh đề the book was short.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However không thể thay cho liên từ mở đầu trực tiếp mệnh đề này."
+        "explanation": "Sai: However không thể thay cho liên từ mở đầu trực tiếp mệnh đề này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I haven't seen her at all ___ we graduated, and the gap continues to today. (graduated: tốt nghiệp)",
+    "q": "I haven't seen her at all ___ we graduated, and the gap continues to today.",
     "a": [
       {
         "text": "since",
@@ -3414,42 +3666,48 @@ const fullQuestionBank = [
       },
       {
         "text": "for",
-        "explanation": "Sai: for đi với khoảng thời lượng, còn we graduated là mốc bắt đầu cần since."
+        "explanation": "Sai: for đi với khoảng thời lượng, còn we graduated là mốc bắt đầu cần since.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai. 'When' chỉ một thời điểm, còn câu diễn tả khoảng thời gian kéo dài từ lúc tốt nghiệp đến hiện tại nên phải dùng 'since'."
+        "explanation": "Sai. 'When' chỉ một thời điểm, còn câu diễn tả khoảng thời gian kéo dài từ lúc tốt nghiệp đến hiện tại nên phải dùng 'since'.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until đặt điểm kết thúc, nhưng câu nói khoảng cách kéo dài từ tốt nghiệp đến hiện tại."
+        "explanation": "Sai: until đặt điểm kết thúc, nhưng câu nói khoảng cách kéo dài từ tốt nghiệp đến hiện tại.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Sit ___ you want; every seat is available. (sit: ngồi, want: muốn)",
+    "q": "Sit ___ you want; every seat is available.",
     "a": [
       {
         "text": "wherever",
         "correct": true,
-        "explanation": "Ngồi bất cứ đâu."
+        "explanation": "Ngồi bất cứ đâu. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "everywhere",
-        "explanation": "Sai: everywhere không nối trực tiếp với mệnh đề you want; cần wherever."
+        "explanation": "Sai: everywhere không nối trực tiếp với mệnh đề you want; cần wherever.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai. 'When' chỉ thời gian, không thể làm liên từ chỉ nơi chốn trong câu này."
+        "explanation": "Sai. 'When' chỉ thời gian, không thể làm liên từ chỉ nơi chốn trong câu này.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai. 'Which' không đứng một mình trước mệnh đề 'you want' để chỉ nơi chốn."
+        "explanation": "Sai. 'Which' không đứng một mình trước mệnh đề 'you want' để chỉ nơi chốn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He won the race ___ his injury. (won: thắng, race: cuộc đua, injury: chấn thương)",
+    "q": "He won the race ___ his injury.",
     "a": [
       {
         "text": "despite",
@@ -3458,20 +3716,23 @@ const fullQuestionBank = [
       },
       {
         "text": "although",
-        "explanation": "Sai: although cần mệnh đề, còn his injury là cụm danh từ phù hợp với despite."
+        "explanation": "Sai: although cần mệnh đề, còn his injury là cụm danh từ phù hợp với despite.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "Sai: chấn thương không phải nguyên nhân của chiến thắng; nó là trở ngại bị vượt qua."
+        "explanation": "Sai: chấn thương không phải nguyên nhân của chiến thắng; nó là trở ngại bị vượt qua.",
+        "correct": false
       },
       {
         "text": "however",
-        "explanation": "Sai: however là trạng từ nối, không đi trực tiếp trước cụm danh từ his injury."
+        "explanation": "Sai: however là trạng từ nối, không đi trực tiếp trước cụm danh từ his injury.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The phone rang ___ I was taking a shower. (rang: đã reo, taking a shower: đang tắm)",
+    "q": "The phone rang ___ I was taking a shower.",
     "a": [
       {
         "text": "while",
@@ -3480,20 +3741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: điện thoại reo trong lúc đang tắm, không phải trước khi bắt đầu tắm."
+        "explanation": "Sai: điện thoại reo trong lúc đang tắm, không phải trước khi bắt đầu tắm.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: tiếng chuông là sự kiện tức thời, không kéo dài đến một mốc theo until."
+        "explanation": "Sai: tiếng chuông là sự kiện tức thời, không kéo dài đến một mốc theo until.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: chuông reo khi đang tắm, không có thông tin cho thấy nó reo sau khi tắm xong."
+        "explanation": "Sai: chuông reo khi đang tắm, không có thông tin cho thấy nó reo sau khi tắm xong.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You can see this sign ___ you go. (sign: biển báo)",
+    "q": "You can see this sign ___ you go.",
     "a": [
       {
         "text": "wherever",
@@ -3502,20 +3766,23 @@ const fullQuestionBank = [
       },
       {
         "text": "somewhere",
-        "explanation": "Sai: somewhere chỉ một nơi không xác định, không diễn tả mọi nơi bạn đi qua."
+        "explanation": "Sai: somewhere chỉ một nơi không xác định, không diễn tả mọi nơi bạn đi qua.",
+        "correct": false
       },
       {
         "text": "where",
-        "explanation": "Sai: where cần một địa điểm cụ thể làm tiền ngữ; wherever mới bao quát mọi nơi."
+        "explanation": "Sai: where cần một địa điểm cụ thể làm tiền ngữ; wherever mới bao quát mọi nơi.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: câu nói nơi có thể nhìn thấy biển báo, không nói thời điểm."
+        "explanation": "Sai: câu nói nơi có thể nhìn thấy biển báo, không nói thời điểm.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ he practiced a lot, he couldn't play the guitar well. (practiced: luyện tập, well: tốt)",
+    "q": "___ he practiced a lot, he couldn't play the guitar well.",
     "a": [
       {
         "text": "Even though",
@@ -3523,21 +3790,24 @@ const fullQuestionBank = [
         "explanation": "Dù tập nhiều nhưng vẫn không chơi tốt."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: luyện tập nhiều không giải thích việc chơi kém; câu nêu kết quả trái dự đoán."
+        "text": "Because of",
+        "explanation": "Sai: 'because of' cần danh từ/V-ing, không đi với mệnh đề he practiced a lot.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite không nhận mệnh đề he practiced a lot; cần Although/Even though."
+        "explanation": "Sai: Despite không nhận mệnh đề he practiced a lot; cần Although/Even though.",
+        "correct": false
       },
       {
         "text": "So",
-        "explanation": "Sai: So tạo quan hệ nguyên nhân–kết quả thuận chiều, trái với ý nhượng bộ."
+        "explanation": "Sai: So tạo quan hệ nguyên nhân–kết quả thuận chiều, trái với ý nhượng bộ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I'll stay in the office ___ 6 PM. (office: văn phòng)",
+    "q": "I'll stay in the office ___ 6 PM.",
     "a": [
       {
         "text": "until",
@@ -3546,20 +3816,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: 6 PM là mốc kết thúc, không phải khoảng thời gian để dùng while."
+        "explanation": "Sai: 6 PM là mốc kết thúc, không phải khoảng thời gian để dùng while.",
+        "correct": false
       },
       {
         "text": "since",
-        "explanation": "Dùng cho quá khứ."
+        "explanation": "Dùng cho quá khứ. Cách dùng phù hợp trong câu này là “until”.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Có thể nhưng 'until' đúng nhất."
+        "explanation": "Có thể nhưng 'until' đúng nhất.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is the spot ___ we had a picnic. (spot: địa điểm, picnic: dã ngoại)",
+    "q": "This is the spot ___ we had a picnic.",
     "a": [
       {
         "text": "where",
@@ -3568,20 +3841,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: spot là địa điểm diễn ra picnic, nên when (chỉ thời gian) không phù hợp."
+        "explanation": "Sai: spot là địa điểm diễn ra picnic, nên when (chỉ thời gian) không phù hợp.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Thiếu giới từ."
+        "explanation": "Thiếu giới từ. Cách dùng phù hợp trong câu này là “where”.",
+        "correct": false
       },
       {
         "text": "what",
-        "explanation": "Sai: what không thay cho địa điểm trong mệnh đề quan hệ; where mới nối với spot."
+        "explanation": "Sai: what không thay cho địa điểm trong mệnh đề quan hệ; where mới nối với spot.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ his hard work, he failed the exam. (hard work: sự chăm chỉ, failed: trượt)",
+    "q": "___ his hard work, he failed the exam.",
     "a": [
       {
         "text": "In spite of",
@@ -3590,42 +3866,48 @@ const fullQuestionBank = [
       },
       {
         "text": "Although",
-        "explanation": "Sai: Although cần mệnh đề, còn his hard work là cụm danh từ; despite mới phù hợp."
+        "explanation": "Sai: Although cần mệnh đề, còn his hard work là cụm danh từ; despite mới phù hợp.",
+        "correct": false
       },
       {
-        "text": "Because of",
-        "explanation": "Sai: hard work không phải nguyên nhân khiến trượt; nó tạo hoàn cảnh trái với kết quả."
+        "text": "Because",
+        "explanation": "Sai: 'because' phải đi với mệnh đề, không đi trực tiếp với cụm danh từ his hard work.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However là trạng từ liên kết, không đứng trước cụm danh từ his hard work."
+        "explanation": "Sai: However là trạng từ liên kết, không đứng trước cụm danh từ his hard work.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will call you immediately ___ I get home. (call: gọi điện, get home: về nhà)",
+    "q": "I will call you immediately ___ I get home.",
     "a": [
       {
         "text": "as soon as",
         "correct": true,
-        "explanation": "Ngay khi về nhà."
+        "explanation": "Ngay khi về nhà. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "while",
-        "explanation": "Sai: get home là mốc tức thời; while không diễn tả cuộc gọi ngay tại mốc đó."
+        "explanation": "Sai: get home là mốc tức thời; while không diễn tả cuộc gọi ngay tại mốc đó.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until nói chờ đến khi về, trong khi immediately yêu cầu hành động ngay khi về."
+        "explanation": "Sai: until nói chờ đến khi về, trong khi immediately yêu cầu hành động ngay khi về.",
+        "correct": false
       },
       {
         "text": "during",
-        "explanation": "'During' đi với danh từ/cụm danh từ, không đi trực tiếp với mệnh đề 'I get home'."
+        "explanation": "'During' đi với danh từ/cụm danh từ, không đi trực tiếp với mệnh đề 'I get home'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "In this city, you can find a bank ___ you go; every neighborhood has one. (bank: ngân hàng)",
+    "q": "In this city, you can find a bank ___ you go; every neighborhood has one.",
     "a": [
       {
         "text": "wherever",
@@ -3634,20 +3916,23 @@ const fullQuestionBank = [
       },
       {
         "text": "which",
-        "explanation": "Sai. 'Which' không làm liên từ chỉ nơi chốn trước mệnh đề 'you go'."
+        "explanation": "Sai. 'Which' không làm liên từ chỉ nơi chốn trước mệnh đề 'you go'.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai. 'When' chỉ thời gian, không chỉ nơi chốn trong câu này."
+        "explanation": "Sai. 'When' chỉ thời gian, không chỉ nơi chốn trong câu này.",
+        "correct": false
       },
       {
         "text": "somewhere",
-        "explanation": "Sai. Từ vựng hoặc dạng từ 'somewhere' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu."
+        "explanation": "Sai. Từ vựng hoặc dạng từ 'somewhere' không phù hợp với cấu trúc ngữ pháp và ngữ cảnh của câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "The children played continuously and did not come inside ___ it was dark. (played: chơi, dark: tối)",
+    "q": "The children played continuously and did not come inside ___ it was dark.",
     "a": [
       {
         "text": "until",
@@ -3656,20 +3941,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: câu mô tả chơi liên tục cho tới mốc trời tối, không phải chơi đồng thời với một khoảng thời gian."
+        "explanation": "Sai: câu mô tả chơi liên tục cho tới mốc trời tối, không phải chơi đồng thời với một khoảng thời gian.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai. 'Before' chỉ việc kết thúc trước khi trời tối, trái với yêu cầu chơi liên tục và chưa vào nhà cho đến mốc trời tối."
+        "explanation": "Sai. 'Before' chỉ việc kết thúc trước khi trời tối, trái với yêu cầu chơi liên tục và chưa vào nhà cho đến mốc trời tối.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Trời tối rồi thường vào nhà."
+        "explanation": "Trời tối rồi thường vào nhà.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ it was a small gift, she loved it. (small gift: quà nhỏ)",
+    "q": "___ it was a small gift, she loved it.",
     "a": [
       {
         "text": "Although",
@@ -3677,21 +3965,24 @@ const fullQuestionBank = [
         "explanation": "Dù quà nhỏ nhưng cô ấy vẫn thích."
       },
       {
-        "text": "Because",
-        "explanation": "Có thể nhưng Although làm nổi bật sự tương phản."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' là trạng từ chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite không nhận mệnh đề it was a small gift; cần despite its small size hoặc Although."
+        "explanation": "Sai: Despite không nhận mệnh đề it was a small gift; cần despite its small size hoặc Although.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However không thể mở trực tiếp mệnh đề it was a small gift ở vị trí này."
+        "explanation": "Sai: However không thể mở trực tiếp mệnh đề it was a small gift ở vị trí này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I found my lost pen ___ I was cleaning the room. (lost pen: bút bị mất, cleaning: đang dọn dẹp)",
+    "q": "I found my lost pen ___ I was cleaning the room.",
     "a": [
       {
         "text": "while",
@@ -3700,20 +3991,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: tìm thấy bút xảy ra trong lúc dọn phòng, không phải trước khi bắt đầu dọn."
+        "explanation": "Sai: tìm thấy bút xảy ra trong lúc dọn phòng, không phải trước khi bắt đầu dọn.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until không diễn tả sự kiện ngắn xảy ra giữa lúc cleaning."
+        "explanation": "Sai: until không diễn tả sự kiện ngắn xảy ra giữa lúc cleaning.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: câu đặt việc tìm thấy trong lúc dọn phòng, không nói sau khi đã dọn xong."
+        "explanation": "Sai: câu đặt việc tìm thấy trong lúc dọn phòng, không nói sau khi đã dọn xong.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Let's go to a place ___ it is quiet. (quiet: yên tĩnh)",
+    "q": "Let's go to a place ___ it is quiet.",
     "a": [
       {
         "text": "where",
@@ -3722,20 +4016,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Đi khi nào yên tĩnh."
+        "explanation": "Đi khi nào yên tĩnh.",
+        "correct": false
       },
       {
         "text": "wherever",
-        "explanation": "Đi bất cứ đâu yên tĩnh."
+        "explanation": "Đi bất cứ đâu yên tĩnh.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which không thay trực tiếp cho nơi chốn trong a place ___ it is quiet; cần where."
+        "explanation": "Sai: which không thay trực tiếp cho nơi chốn trong a place ___ it is quiet; cần where.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He is unhappy ___ he has a lot of money. (unhappy: không hạnh phúc)",
+    "q": "He is unhappy ___ he has a lot of money.",
     "a": [
       {
         "text": "although",
@@ -3743,21 +4040,24 @@ const fullQuestionBank = [
         "explanation": "Dù có nhiều tiền nhưng không hạnh phúc."
       },
       {
-        "text": "because",
-        "explanation": "Sai: nhiều tiền không được nêu là nguyên nhân của việc unhappy; ý câu là tương phản."
+        "text": "therefore",
+        "explanation": "Sai: 'therefore' là trạng từ chỉ kết quả, không nối trực tiếp mệnh đề ở vị trí này.",
+        "correct": false
       },
       {
         "text": "despite",
-        "explanation": "Sai: despite phải đi với having a lot of money/the money, không nhận mệnh đề he has."
+        "explanation": "Sai: despite phải đi với having a lot of money/the money, không nhận mệnh đề he has.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "Sai: So sẽ nói nhiều tiền dẫn đến unhappy, trong khi câu cần nêu sự tương phản."
+        "explanation": "Sai: So sẽ nói nhiều tiền dẫn đến unhappy, trong khi câu cần nêu sự tương phản.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I ___ (wait) for you until you come back tomorrow. (wait: chờ đợi, tomorrow: ngày mai)",
+    "q": "I ___ for you until you come back tomorrow.",
     "a": [
       {
         "text": "will wait",
@@ -3766,20 +4066,23 @@ const fullQuestionBank = [
       },
       {
         "text": "waited",
-        "explanation": "Sai. Câu diễn tả sự việc ở tương lai, không dùng thì quá khứ hoặc would."
+        "explanation": "Sai. Câu diễn tả sự việc ở tương lai, không dùng thì quá khứ hoặc would.",
+        "correct": false
       },
       {
         "text": "am waiting",
-        "explanation": "Sai. Câu không chia ở thì Tiếp diễn."
+        "explanation": "Sai. Câu không chia ở thì Tiếp diễn.",
+        "correct": false
       },
       {
         "text": "wait",
-        "explanation": "Sai cấu trúc: mệnh đề chính nêu tương lai cần 'will wait', không dùng hiện tại 'wait'."
+        "explanation": "Sai cấu trúc: mệnh đề chính nêu tương lai cần 'will wait', không dùng hiện tại 'wait'.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "While I ___ (walk) to school, I met my old friend. (met: đã gặp, friend: bạn)",
+    "q": "While I ___ to school, I met my old friend.",
     "a": [
       {
         "text": "was walking",
@@ -3788,20 +4091,23 @@ const fullQuestionBank = [
       },
       {
         "text": "walked",
-        "explanation": "Sai. Động từ không chia ở thì Quá khứ đơn."
+        "explanation": "Sai. Động từ không chia ở thì Quá khứ đơn.",
+        "correct": false
       },
       {
         "text": "am walking",
-        "explanation": "Sai thì: met là quá khứ, nên mệnh đề while cũng cần was walking, không phải am walking."
+        "explanation": "Sai thì: met là quá khứ, nên mệnh đề while cũng cần was walking, không phải am walking.",
+        "correct": false
       },
       {
         "text": "will walk",
-        "explanation": "Sai thì: sự việc gặp bạn đã xảy ra, nên không dùng tương lai will walk."
+        "explanation": "Sai thì: sự việc gặp bạn đã xảy ra, nên không dùng tương lai will walk.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Choose the correct word: '___ it was raining, the football match continued.' (match: trận đấu, continued: tiếp tục)",
+    "q": "Choose the correct word: '___ it was raining, the football match continued.'",
     "a": [
       {
         "text": "Although",
@@ -3810,20 +4116,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần cụm danh từ/V-ing, còn it was raining là mệnh đề đầy đủ."
+        "explanation": "Sai: Despite cần cụm danh từ/V-ing, còn it was raining là mệnh đề đầy đủ.",
+        "correct": false
       },
       {
-        "text": "Because",
-        "explanation": "Sai: mưa không phải nguyên nhân khiến trận đấu tiếp tục; đây là quan hệ nhượng bộ."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However là trạng từ nối, không thay cho liên từ đứng trước mệnh đề này."
+        "explanation": "Sai: However là trạng từ nối, không thay cho liên từ đứng trước mệnh đề này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "In the sentence 'I'll stay here until you finish', 'until' means: (finish: hoàn thành)",
+    "q": "In the sentence 'I'll stay here until you finish', 'until' means:",
     "a": [
       {
         "text": "Up to the time",
@@ -3832,20 +4141,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Before",
-        "explanation": "Trước khi (không chính xác bằng)."
+        "explanation": "Trước khi (không chính xác bằng).",
+        "correct": false
       },
       {
         "text": "After",
-        "explanation": "Sau khi."
+        "explanation": "Sau khi. Cách dùng phù hợp trong câu này là “Up to the time”.",
+        "correct": false
       },
       {
         "text": "During",
-        "explanation": "Trong khi."
+        "explanation": "Trong khi. Cách dùng phù hợp trong câu này là “Up to the time”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Mặc dù trời mưa, chúng tôi vẫn đi cắm trại.' (camping: đi cắm trại)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Mặc dù trời mưa, chúng tôi vẫn đi cắm trại.'",
     "a": [
       {
         "text": "Although it rained, we went camping.",
@@ -3854,20 +4166,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Despite it rained, we went camping.",
-        "explanation": "Sai: Despite phải đi với the rain/raining; nếu giữ mệnh đề it rained thì dùng Although."
+        "explanation": "Sai: Despite phải đi với the rain/raining; nếu giữ mệnh đề it rained thì dùng Although.",
+        "correct": false
       },
       {
         "text": "Because it rained, we went camping.",
-        "explanation": "Sai nghĩa: câu này nói đi cắm trại vì trời mưa, không phải vẫn đi dù trời mưa."
+        "explanation": "Sai nghĩa: câu này nói đi cắm trại vì trời mưa, không phải vẫn đi dù trời mưa.",
+        "correct": false
       },
       {
         "text": "It rained so we went camping.",
-        "explanation": "Sai nghĩa: so diễn tả kết quả thuận chiều, không truyền tải ý mặc dù."
+        "explanation": "Sai nghĩa: so diễn tả kết quả thuận chiều, không truyền tải ý mặc dù.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch câu sau sang tiếng Anh: 'Tôi sẽ làm bài tập sau khi tôi ăn tối.' (homework: bài tập, dinner: bữa tối)",
+    "q": "Dịch câu sau sang tiếng Anh: 'Tôi sẽ làm bài tập sau khi tôi ăn tối.'",
     "a": [
       {
         "text": "I will do my homework after I have dinner.",
@@ -3876,20 +4191,23 @@ const fullQuestionBank = [
       },
       {
         "text": "I do homework before I have dinner.",
-        "explanation": "Sai nghĩa và thì: phương án đặt làm bài trước bữa tối, trong khi đề yêu cầu after dinner ở tương lai."
+        "explanation": "Sai nghĩa và thì: phương án đặt làm bài trước bữa tối, trong khi đề yêu cầu after dinner ở tương lai.",
+        "correct": false
       },
       {
         "text": "I will do homework while I have dinner.",
-        "explanation": "Sai: đề yêu cầu làm bài sau khi ăn tối, không làm hai việc đồng thời."
+        "explanation": "Sai: đề yêu cầu làm bài sau khi ăn tối, không làm hai việc đồng thời.",
+        "correct": false
       },
       {
         "text": "I did homework after dinner.",
-        "explanation": "Sai. Dấu hiệu hoặc ngữ cảnh trong câu ở hiện tại, không dùng thì Quá khứ."
+        "explanation": "Sai. Dấu hiệu hoặc ngữ cảnh trong câu ở hiện tại, không dùng thì Quá khứ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Dịch sang tiếng Việt: 'You can stay wherever you want.' (stay: ở lại, want: muốn)",
+    "q": "Dịch sang tiếng Việt: 'You can stay wherever you want.'",
     "a": [
       {
         "text": "Bạn có thể ở lại bất cứ nơi nào bạn muốn.",
@@ -3897,21 +4215,24 @@ const fullQuestionBank = [
         "explanation": "Dịch đúng nghĩa 'wherever'."
       },
       {
-        "text": "Bạn có thể ở lại nơi bạn muốn.",
-        "explanation": "Thiếu sắc thái 'bất cứ'."
+        "text": "Bạn có thể ở lại bất cứ khi nào bạn muốn.",
+        "explanation": "Sai: 'khi nào' chỉ thời gian, trong khi 'wherever' chỉ mọi địa điểm.",
+        "correct": false
       },
       {
         "text": "Bạn nên ở lại chỗ này.",
-        "explanation": "Sai. Cấu trúc 'Bạn nên ở lại chỗ này.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn nên ở lại chỗ này.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Bạn không được đi đâu cả.",
-        "explanation": "Sai. Cấu trúc 'Bạn không được đi đâu cả.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Bạn không được đi đâu cả.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Rewrite: 'He is poor, but he is honest.' (poor: nghèo, honest: thật thà)",
+    "q": "Rewrite: 'He is poor, but he is honest.'",
     "a": [
       {
         "text": "Although he is poor, he is honest.",
@@ -3920,20 +4241,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Because he is poor, he is honest.",
-        "explanation": "Sai. Cấu trúc 'Because he is poor, he is honest.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Because he is poor, he is honest.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Despite he is poor, he is honest.",
-        "explanation": "Sai: viết Despite being poor, he is honest hoặc Although he is poor, ...; Despite không nhận mệnh đề trần."
+        "explanation": "Sai: viết Despite being poor, he is honest hoặc Although he is poor, ...; Despite không nhận mệnh đề trần.",
+        "correct": false
       },
       {
         "text": "He is honest so he is poor.",
-        "explanation": "Sai. Cấu trúc 'He is honest so he is poor.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'He is honest so he is poor.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Rewrite: 'I finished my work and then I went home.' (finished: xong, went home: về nhà)",
+    "q": "Rewrite: 'I finished my work and then I went home.'",
     "a": [
       {
         "text": "After I finished my work, I went home.",
@@ -3942,20 +4266,23 @@ const fullQuestionBank = [
       },
       {
         "text": "Before I finished my work, I went home.",
-        "explanation": "Sai: câu này cho thấy về nhà trước khi hoàn thành việc, ngược trình tự đề bài."
+        "explanation": "Sai: câu này cho thấy về nhà trước khi hoàn thành việc, ngược trình tự đề bài.",
+        "correct": false
       },
       {
         "text": "While I finished my work, I went home.",
-        "explanation": "Sai: đi về không diễn ra đồng thời với việc hoàn thành; đề bài nêu rõ then."
+        "explanation": "Sai: đi về không diễn ra đồng thời với việc hoàn thành; đề bài nêu rõ then.",
+        "correct": false
       },
       {
         "text": "I went home until I finished my work.",
-        "explanation": "Sai. Cấu trúc 'I went home until I finished my work.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'I went home until I finished my work.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Rewrite: 'In spite of the heavy rain, they went out.' (heavy rain: mưa to, went out: đi chơi)",
+    "q": "Rewrite: 'In spite of the heavy rain, they went out.'",
     "a": [
       {
         "text": "Although it rained heavily, they went out.",
@@ -3964,42 +4291,48 @@ const fullQuestionBank = [
       },
       {
         "text": "Because it rained, they went out.",
-        "explanation": "Sai. Cấu trúc 'Because it rained, they went out.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'Because it rained, they went out.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       },
       {
         "text": "Despite it rained, they went out.",
-        "explanation": "Sai: Despite không đi trực tiếp với it rained; phải dùng Despite the rain hoặc Although it rained."
+        "explanation": "Sai: Despite không đi trực tiếp với it rained; phải dùng Despite the rain hoặc Although it rained.",
+        "correct": false
       },
       {
         "text": "It rained but they didn't go out.",
-        "explanation": "Sai. Cấu trúc 'It rained but they didn't go out.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài."
+        "explanation": "Sai. Cấu trúc 'It rained but they didn't go out.' bị sai ngữ pháp hoặc lệch ý nghĩa so với yêu cầu của đề bài.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "He studied hard. ___, he failed the exam. (studied hard: học chăm, failed: trượt)",
+    "q": "He studied hard. ___, he failed the exam.",
     "a": [
       {
         "text": "However",
         "correct": true,
-        "explanation": "Tuy nhiên."
+        "explanation": "Tuy nhiên. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "Therefore",
-        "explanation": "Vì vậy (sai)."
+        "explanation": "Vì vậy (sai). Cách dùng phù hợp trong câu này là “However”.",
+        "correct": false
       },
       {
         "text": "Moreover",
-        "explanation": "Thêm vào đó (sai)."
+        "explanation": "Thêm vào đó (sai). Cách dùng phù hợp trong câu này là “However”.",
+        "correct": false
       },
       {
         "text": "So",
-        "explanation": "Vì thế (sai)."
+        "explanation": "Vì thế (sai). Cách dùng phù hợp trong câu này là “However”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I'll wait for you ___ the bus comes. (wait: đợi, bus comes: xe buýt đến)",
+    "q": "I'll wait for you ___ the bus comes.",
     "a": [
       {
         "text": "until",
@@ -4008,42 +4341,48 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: while chỉ thời gian đồng thời, còn wait kéo dài đến mốc xe buýt đến."
+        "explanation": "Sai: while chỉ thời gian đồng thời, còn wait kéo dài đến mốc xe buýt đến.",
+        "correct": false
       },
       {
         "text": "since",
-        "explanation": "Sai: since đánh dấu điểm bắt đầu trong quá khứ, không phù hợp với việc chờ đến khi xe đến."
+        "explanation": "Sai: since đánh dấu điểm bắt đầu trong quá khứ, không phù hợp với việc chờ đến khi xe đến.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Có thể nhưng until hay nhất."
+        "explanation": "Có thể nhưng until hay nhất.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I follow you to any place ___ you go. (follow: đi theo)",
+    "q": "I follow you to any place ___ you go.",
     "a": [
       {
         "text": "wherever",
         "correct": true,
-        "explanation": "Bất cứ nơi nào."
+        "explanation": "Bất cứ nơi nào. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "whenever",
-        "explanation": "Bất cứ khi nào."
+        "explanation": "Bất cứ khi nào. Cách dùng phù hợp trong câu này là “wherever”.",
+        "correct": false
       },
       {
         "text": "however",
-        "explanation": "Bất cứ cách nào."
+        "explanation": "Bất cứ cách nào. Cách dùng phù hợp trong câu này là “wherever”.",
+        "correct": false
       },
       {
         "text": "whatever",
-        "explanation": "Bất cứ cái gì."
+        "explanation": "Bất cứ cái gì. Cách dùng phù hợp trong câu này là “wherever”.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the traffic was bad, I arrived on time. (traffic: giao thông, bad: tệ, on time: đúng giờ)",
+    "q": "___ the traffic was bad, I arrived on time.",
     "a": [
       {
         "text": "Although",
@@ -4051,21 +4390,24 @@ const fullQuestionBank = [
         "explanation": "Đúng: Although nối hai mệnh đề đối lập bad traffic và arrived on time."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: giao thông xấu là trở ngại tương phản với việc đến đúng giờ, không phải nguyên nhân."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
-        "text": "Since",
-        "explanation": "Sai: Since cũng diễn tả nguyên nhân, trái với quan hệ nhượng bộ của câu."
+        "text": "However",
+        "explanation": "Sai: 'however' là trạng từ nối, không mở mệnh đề ở vị trí này.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần the bad traffic hoặc having bad traffic; không đi trực tiếp với traffic was bad."
+        "explanation": "Sai: Despite cần the bad traffic hoặc having bad traffic; không đi trực tiếp với traffic was bad.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "We went to the beach ___ the sun was shining. (beach: bãi biển, sun: mặt trời, shining: đang chiếu sáng)",
+    "q": "We went to the beach ___ the sun was shining.",
     "a": [
       {
         "text": "while",
@@ -4074,20 +4416,23 @@ const fullQuestionBank = [
       },
       {
         "text": "until",
-        "explanation": "Sai: câu chỉ bối cảnh lúc đi biển, không nói hành động kéo dài đến khi mặt trời tắt."
+        "explanation": "Sai: câu chỉ bối cảnh lúc đi biển, không nói hành động kéo dài đến khi mặt trời tắt.",
+        "correct": false
       },
       {
         "text": "although",
-        "explanation": "Sai: không có ý tương phản giữa đi biển và trời nắng; although không phù hợp nghĩa."
+        "explanation": "Sai: không có ý tương phản giữa đi biển và trời nắng; although không phù hợp nghĩa.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: đi biển không được đặt trước một mốc cụ thể; sun was shining là bối cảnh đồng thời."
+        "explanation": "Sai: đi biển không được đặt trước một mốc cụ thể; sun was shining là bối cảnh đồng thời.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "You can put your coat ___ there is space. (coat: áo khoác, space: chỗ trống)",
+    "q": "You can put your coat ___ there is space.",
     "a": [
       {
         "text": "wherever",
@@ -4096,20 +4441,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Khi nào có chỗ."
+        "explanation": "Khi nào có chỗ. Cách dùng phù hợp trong câu này là “wherever”.",
+        "correct": false
       },
       {
         "text": "what",
-        "explanation": "Sai: what không chỉ nơi có chỗ trống; cần wherever/where để nói địa điểm."
+        "explanation": "Sai: what không chỉ nơi có chỗ trống; cần wherever/where để nói địa điểm.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: which cần danh từ tiền ngữ, không nối trực tiếp với mệnh đề there is space."
+        "explanation": "Sai: which cần danh từ tiền ngữ, không nối trực tiếp với mệnh đề there is space.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ it was late, he continued to study. (late: muộn, continued: tiếp tục)",
+    "q": "___ it was late, he continued to study.",
     "a": [
       {
         "text": "Though",
@@ -4117,21 +4465,24 @@ const fullQuestionBank = [
         "explanation": "Đúng: Though it was late nhấn mạnh việc vẫn học dù đã muộn."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: muộn không phải lý do khiến anh tiếp tục học; câu nhấn mạnh sự trái dự đoán."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However không mở trực tiếp mệnh đề it was late; cần Although/Though."
+        "explanation": "Sai: However không mở trực tiếp mệnh đề it was late; cần Although/Though.",
+        "correct": false
       },
       {
         "text": "In spite of",
-        "explanation": "Sai: In spite of cần the late hour hoặc being late, không nhận mệnh đề it was late."
+        "explanation": "Sai: In spite of cần the late hour hoặc being late, không nhận mệnh đề it was late.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will stay in bed ___ I feel better. (stay in bed: nằm trên giường, feel better: thấy khỏe hơn)",
+    "q": "I will stay in bed ___ I feel better.",
     "a": [
       {
         "text": "until",
@@ -4140,20 +4491,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: feel better là mốc kết thúc việc nằm nghỉ, không phải khoảng thời gian đồng thời."
+        "explanation": "Sai: feel better là mốc kết thúc việc nằm nghỉ, không phải khoảng thời gian đồng thời.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: câu yêu cầu nằm nghỉ trước khi khỏe lại, không phải sau khi đã khỏe."
+        "explanation": "Sai: câu yêu cầu nằm nghỉ trước khi khỏe lại, không phải sau khi đã khỏe.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before không thể hiện việc tiếp tục nằm cho đến lúc cảm thấy khỏe hơn."
+        "explanation": "Sai: before không thể hiện việc tiếp tục nằm cho đến lúc cảm thấy khỏe hơn.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "She went to the one park beside her house, ___ she could relax. (relax: thư giãn)",
+    "q": "She went to the one park beside her house, ___ she could relax.",
     "a": [
       {
         "text": "where",
@@ -4162,20 +4516,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Khi cô ấy có thể thư giãn."
+        "explanation": "Khi cô ấy có thể thư giãn.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: park là nơi thư giãn, cần where; which muốn dùng phải có in which."
+        "explanation": "Sai: park là nơi thư giãn, cần where; which muốn dùng phải có in which.",
+        "correct": false
       },
       {
         "text": "wherever",
-        "explanation": "Sai. Câu đã xác định một công viên duy nhất; 'wherever' chỉ một nơi bất kỳ, không phù hợp với mệnh đề quan hệ sau dấu phẩy."
+        "explanation": "Sai. Câu đã xác định một công viên duy nhất; 'wherever' chỉ một nơi bất kỳ, không phù hợp với mệnh đề quan hệ sau dấu phẩy.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ he was tired, he finished his work. (tired: mệt, finished: hoàn thành)",
+    "q": "___ he was tired, he finished his work.",
     "a": [
       {
         "text": "Although",
@@ -4184,20 +4541,23 @@ const fullQuestionBank = [
       },
       {
         "text": "In spite of",
-        "explanation": "'In spite of' phải đi với danh từ hoặc V-ing, không đi trực tiếp với mệnh đề 'he was tired'."
+        "explanation": "'In spite of' phải đi với danh từ hoặc V-ing, không đi trực tiếp với mệnh đề 'he was tired'.",
+        "correct": false
       },
       {
         "text": "However",
-        "explanation": "Sai: However là trạng từ nối, không đứng trước mệnh đề he was tired ở đầu câu."
+        "explanation": "Sai: However là trạng từ nối, không đứng trước mệnh đề he was tired ở đầu câu.",
+        "correct": false
       },
       {
-        "text": "Because",
-        "explanation": "Sai: mệt không giải thích việc hoàn thành công việc; đây là ý tương phản."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Wait ___ the music starts. (music starts: nhạc bắt đầu)",
+    "q": "Wait ___ the music starts.",
     "a": [
       {
         "text": "until",
@@ -4206,20 +4566,23 @@ const fullQuestionBank = [
       },
       {
         "text": "while",
-        "explanation": "Sai: chờ kéo dài đến khi nhạc bắt đầu, không phải chờ trong lúc nhạc đang bắt đầu."
+        "explanation": "Sai: chờ kéo dài đến khi nhạc bắt đầu, không phải chờ trong lúc nhạc đang bắt đầu.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before không đánh dấu điểm kết thúc chờ; câu yêu cầu until."
+        "explanation": "Sai: before không đánh dấu điểm kết thúc chờ; câu yêu cầu until.",
+        "correct": false
       },
       {
         "text": "since",
-        "explanation": "Sai: since chỉ điểm bắt đầu, còn music starts là mốc kết thúc việc chờ."
+        "explanation": "Sai: since chỉ điểm bắt đầu, còn music starts là mốc kết thúc việc chờ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I will find my cat ___ it is hiding, even if it has moved to another room. (find: tìm thấy)",
+    "q": "I will find my cat ___ it is hiding, even if it has moved to another room.",
     "a": [
       {
         "text": "wherever",
@@ -4228,20 +4591,23 @@ const fullQuestionBank = [
       },
       {
         "text": "which",
-        "explanation": "'Find my cat which it is hiding' sai; 'which' không thay cho trạng từ chỉ nơi chốn."
+        "explanation": "'Find my cat which it is hiding' sai; 'which' không thay cho trạng từ chỉ nơi chốn.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: câu nhấn mạnh mọi căn phòng mèo có thể trốn, không phải thời điểm nó trốn."
+        "explanation": "Sai: câu nhấn mạnh mọi căn phòng mèo có thể trốn, không phải thời điểm nó trốn.",
+        "correct": false
       },
       {
         "text": "there",
-        "explanation": "Sai: there chỉ một địa điểm đã xác định, không bao quát căn phòng bất kỳ."
+        "explanation": "Sai: there chỉ một địa điểm đã xác định, không bao quát căn phòng bất kỳ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ his heavy backpack, he ran very fast. (heavy backpack: ba lô nặng)",
+    "q": "___ his heavy backpack, he ran very fast.",
     "a": [
       {
         "text": "despite",
@@ -4250,20 +4616,23 @@ const fullQuestionBank = [
       },
       {
         "text": "although",
-        "explanation": "Sau 'although' cần chủ ngữ và động từ đầy đủ."
+        "explanation": "Sau 'although' cần chủ ngữ và động từ đầy đủ.",
+        "correct": false
       },
       {
         "text": "because",
-        "explanation": "Sai. Phương án 'because' mang nghĩa không phù hợp với ngữ cảnh chung của câu."
+        "explanation": "Sai. Phương án 'because' mang nghĩa không phù hợp với ngữ cảnh chung của câu.",
+        "correct": false
       },
       {
         "text": "so",
-        "explanation": "Sai: so không đứng trước cụm danh từ his heavy backpack và không diễn tả sự nhượng bộ."
+        "explanation": "Sai: so không đứng trước cụm danh từ his heavy backpack và không diễn tả sự nhượng bộ.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I saw a shooting star ___ I was looking at the sky. (shooting star: sao băng, sky: bầu trời)",
+    "q": "I saw a shooting star ___ I was looking at the sky.",
     "a": [
       {
         "text": "while",
@@ -4272,20 +4641,23 @@ const fullQuestionBank = [
       },
       {
         "text": "before",
-        "explanation": "Sai: sao băng được nhìn thấy trong lúc đang ngắm trời, không phải trước đó."
+        "explanation": "Sai: sao băng được nhìn thấy trong lúc đang ngắm trời, không phải trước đó.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Sai: until không mô tả sự kiện nhìn thấy xảy ra giữa lúc looking at the sky."
+        "explanation": "Sai: until không mô tả sự kiện nhìn thấy xảy ra giữa lúc looking at the sky.",
+        "correct": false
       },
       {
         "text": "after",
-        "explanation": "Sai: không có mốc cho thấy việc ngắm trời đã kết thúc trước khi thấy sao băng."
+        "explanation": "Sai: không có mốc cho thấy việc ngắm trời đã kết thúc trước khi thấy sao băng.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "This is the room ___ I study English. (room: căn phòng)",
+    "q": "This is the room ___ I study English.",
     "a": [
       {
         "text": "where",
@@ -4294,20 +4666,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai: room là địa điểm học, không phải thời điểm để dùng when."
+        "explanation": "Sai: room là địa điểm học, không phải thời điểm để dùng when.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: phải dùng in which nếu chọn which; where đã bao hàm in the room."
+        "explanation": "Sai: phải dùng in which nếu chọn which; where đã bao hàm in the room.",
+        "correct": false
       },
       {
         "text": "that",
-        "explanation": "Sai: that cũng cần giới từ in trong cấu trúc the room in which/that I study."
+        "explanation": "Sai: that cũng cần giới từ in trong cấu trúc the room in which/that I study.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ he is small, he is very strong. (small: nhỏ con, strong: khỏe)",
+    "q": "___ he is small, he is very strong.",
     "a": [
       {
         "text": "Although",
@@ -4315,43 +4690,49 @@ const fullQuestionBank = [
         "explanation": "Dù nhỏ con nhưng rất khỏe."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: vóc dáng nhỏ không được nêu là nguyên nhân của sức mạnh; ý câu là tương phản."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
         "text": "So",
-        "explanation": "Sai: So tạo quan hệ kết quả, không phù hợp với he is small ... very strong."
+        "explanation": "Sai: So tạo quan hệ kết quả, không phù hợp với he is small ... very strong.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần his small size hoặc being small, không nhận mệnh đề he is small."
+        "explanation": "Sai: Despite cần his small size hoặc being small, không nhận mệnh đề he is small.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I'll be there ___ I can. (there: ở đó)",
+    "q": "I'll be there ___ I can.",
     "a": [
       {
         "text": "as soon as",
         "correct": true,
-        "explanation": "Sớm nhất có thể."
+        "explanation": "Sớm nhất có thể. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "until",
-        "explanation": "Sai: until cần một mốc kết thúc, còn I can diễn tả khả năng/thời điểm có thể đến."
+        "explanation": "Sai: until cần một mốc kết thúc, còn I can diễn tả khả năng/thời điểm có thể đến.",
+        "correct": false
       },
       {
         "text": "while",
-        "explanation": "Sai: while không nối được mệnh đề khả năng I can trong ý này."
+        "explanation": "Sai: while không nối được mệnh đề khả năng I can trong ý này.",
+        "correct": false
       },
       {
         "text": "before",
-        "explanation": "Sai: before cần một sự kiện làm mốc trước, không phù hợp với I can."
+        "explanation": "Sai: before cần một sự kiện làm mốc trước, không phù hợp với I can.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "Go ___ you like; you may choose any destination. (go: đi, like: thích)",
+    "q": "Go ___ you like; you may choose any destination.",
     "a": [
       {
         "text": "wherever",
@@ -4360,20 +4741,23 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Sai. 'When' chỉ thời gian, không thể bổ nghĩa cho nơi đến."
+        "explanation": "Sai. 'When' chỉ thời gian, không thể bổ nghĩa cho nơi đến.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai. 'Which' không làm liên từ chỉ nơi chốn trước mệnh đề 'you like'."
+        "explanation": "Sai. 'Which' không làm liên từ chỉ nơi chốn trước mệnh đề 'you like'.",
+        "correct": false
       },
       {
         "text": "everywhere",
-        "explanation": "Sai: everywhere không nối với mệnh đề you like; cần wherever để chỉ điểm đến tùy ý."
+        "explanation": "Sai: everywhere không nối với mệnh đề you like; cần wherever để chỉ điểm đến tùy ý.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "___ the test was difficult, I got an A. (difficult: khó, got an A: được điểm A)",
+    "q": "___ the test was difficult, I got an A.",
     "a": [
       {
         "text": "Even though",
@@ -4381,43 +4765,49 @@ const fullQuestionBank = [
         "explanation": "Dù bài thi khó nhưng vẫn được điểm A."
       },
       {
-        "text": "Because",
-        "explanation": "Sai: bài khó không phải nguyên nhân trực tiếp của điểm A; câu nêu kết quả trái dự đoán."
+        "text": "Therefore",
+        "explanation": "Sai: 'therefore' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
-        "text": "Since",
-        "explanation": "Sai: Since biến độ khó thành nguyên nhân của điểm cao, không đúng ý nhượng bộ."
+        "text": "So",
+        "explanation": "Sai: 'so' chỉ kết quả, không mở mệnh đề nhượng bộ ở đầu câu.",
+        "correct": false
       },
       {
         "text": "Despite",
-        "explanation": "Sai: Despite cần the difficulty hoặc being difficult, không đi trực tiếp với mệnh đề the test was difficult."
+        "explanation": "Sai: Despite cần the difficulty hoặc being difficult, không đi trực tiếp với mệnh đề the test was difficult.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I haven't eaten ___ this morning. (eaten: ăn, morning: buổi sáng)",
+    "q": "I haven't eaten ___ this morning.",
     "a": [
       {
         "text": "since",
         "correct": true,
-        "explanation": "Kể từ sáng nay."
+        "explanation": "Kể từ sáng nay. Đây là lựa chọn phù hợp với dữ kiện và cấu trúc được hỏi."
       },
       {
         "text": "for",
-        "explanation": "Sai: for cần khoảng thời lượng (for three hours), còn this morning là mốc bắt đầu dùng since."
+        "explanation": "Sai: for cần khoảng thời lượng (for three hours), còn this morning là mốc bắt đầu dùng since.",
+        "correct": false
       },
       {
         "text": "until",
-        "explanation": "Có thể nhưng since đúng với thì hiện tại hoàn thành."
+        "explanation": "Có thể nhưng since đúng với thì hiện tại hoàn thành.",
+        "correct": false
       },
       {
         "text": "when",
-        "explanation": "Sai: when chỉ thời điểm nói chung, không kết hợp với hiện tại hoàn thành để chỉ mốc bắt đầu này."
+        "explanation": "Sai: when chỉ thời điểm nói chung, không kết hợp với hiện tại hoàn thành để chỉ mốc bắt đầu này.",
+        "correct": false
       }
     ]
   },
   {
-    "q": "I'll meet you at the place ___ we met last time. (meet: gặp, last time: lần trước)",
+    "q": "I'll meet you at the place ___ we met last time.",
     "a": [
       {
         "text": "where",
@@ -4426,15 +4816,18 @@ const fullQuestionBank = [
       },
       {
         "text": "when",
-        "explanation": "Khi nào."
+        "explanation": "Khi nào. Cách dùng phù hợp trong câu này là “where”.",
+        "correct": false
       },
       {
         "text": "which",
-        "explanation": "Sai: place cần trạng từ quan hệ where; which muốn dùng phải có at which."
+        "explanation": "Sai: place cần trạng từ quan hệ where; which muốn dùng phải có at which.",
+        "correct": false
       },
       {
         "text": "there",
-        "explanation": "Sai: there không nối mệnh đề quan hệ sau danh từ place; where mới làm rõ địa điểm."
+        "explanation": "Sai: there không nối mệnh đề quan hệ sau danh từ place; where mới làm rõ địa điểm.",
+        "correct": false
       }
     ]
   }
