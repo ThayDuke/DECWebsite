@@ -175,6 +175,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            min-height: 100dvh;
+            width: 100%;
+            overflow-x: hidden;
             box-sizing: border-box;
             transition: background-color var(--theme-motion-medium), color var(--theme-motion-fast);
         }
@@ -190,6 +193,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             max-width: 900px;
             margin: 0 auto 20px;
             width: 100%;
+            min-width: 0;
             background: var(--card-bg);
             border-radius: 22px;
             border: 1px solid var(--border-main);
@@ -202,6 +206,90 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             overflow: hidden;
             box-sizing: border-box;
             transition: background var(--theme-motion-medium), border-color var(--theme-motion-fast), box-shadow var(--theme-motion-medium);
+        }
+
+        /* Normal view: keep the quiz shell inside the actual browser viewport. */
+        @media (min-width: 601px) and (min-height: 640px) {
+            body:not(.focus-mode) {
+                height: 100dvh;
+                padding: 10px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            body:not(.focus-mode) .container {
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            body:not(.focus-mode) #quiz-area {
+                grid-template-rows: auto minmax(0, 1fr) auto;
+                flex: 1 1 auto;
+                min-height: 0;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            body:not(.focus-mode) #question-container {
+                min-height: 0;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                padding-right: 0;
+                padding-bottom: 58px;
+                box-sizing: border-box;
+                position: relative;
+            }
+
+            body:not(.focus-mode) #header-area {
+                gap: 8px;
+                padding: 12px 22px;
+            }
+
+            body:not(.focus-mode) #lessonTitle.dec-ui-game-title {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+
+            body:not(.focus-mode) .question-block {
+                margin-bottom: 8px;
+                font-size: 1.6rem;
+            }
+
+            body:not(.focus-mode) .options-grid {
+                gap: 10px;
+            }
+
+            body:not(.focus-mode) .option-label {
+                padding: 6px 12px;
+                font-size: 1.35rem;
+            }
+
+            body:not(.focus-mode) .feedback.is-visible {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: auto;
+                min-height: 0;
+                margin: 0;
+                padding: 4px 8px;
+                font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+                line-height: 1.25;
+                overflow: visible;
+                z-index: 1;
+            }
+
+            body:not(.focus-mode) .feedback.is-visible div[style] {
+                margin-top: 2px !important;
+            }
+
+            body:not(.focus-mode) .dec-footer {
+                flex: 0 0 auto;
+                margin-top: 0;
+                padding: 6px 22px 10px;
+            }
         }
 
         .container::before {
@@ -236,7 +324,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         #lessonTitle.dec-ui-game-title {
             font-family: "Be Vietnam Pro", sans-serif;
             font-weight:var(--dummy,800);
-            font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+            font-size: clamp(2rem, 2.7vw, 2.4rem);
             letter-spacing: 0.0625rem;
             text-align: center;
             background: var(--accent-gradient, var(--btn-secondary-bg));
@@ -322,6 +410,8 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             gap: 14px;
             padding: 16px 22px 22px;
             background: var(--container-bg);
+            min-width: 0;
+            overflow-x: hidden;
             box-sizing: border-box;
         }
 
@@ -330,10 +420,20 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         #lessonTitle,
+        #focus-progress-row,
         #question-container,
         .progress-container,
         .dec-footer {
             grid-column: 1 / -1;
+        }
+
+        #focus-progress-row {
+            min-width: 0;
+            display: contents;
+        }
+
+        #question-container {
+            min-width: 0;
         }
 
         #subtitle-placeholder:empty {
@@ -369,7 +469,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             text-align: left;
             color: var(--text-color);
             line-height: 1.45;
-            min-height: calc(3.1em + 34px);
+            min-height: calc(2 * 1.45em + 40px);
+            overflow-wrap: anywhere;
+            text-wrap: pretty;
             transition: background var(--theme-motion-medium), border-color var(--theme-motion-fast), color var(--theme-motion-fast);
         }
 
@@ -418,6 +520,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             font-size: 1.55rem;
             position: relative;
             overflow: hidden;
+            min-width: 0;
+            overflow-wrap: anywhere;
+            text-wrap: pretty;
         }
 
         .option-label::before {
@@ -482,6 +587,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             opacity: 0.65;
             align-items: flex-start;
             text-align: left;
+            display: none;
         }
 
         .feedback {
@@ -720,6 +826,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             padding-top: 0;
             border-top: none;
             width: 100%;
+            min-width: 0;
         }
 
         .progress-container.wrap-mode {
@@ -1334,10 +1441,10 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             --focus-option-font-size: 1.12rem;
             --focus-option-radius: 10px;
             --focus-option-gap: 8px;
-            --focus-btn-height: 32px;
-            --focus-btn-padding: 6px 16px;
-            --focus-btn-font-size: 0.85rem;
-            --focus-btn-radius: 10px;
+            --focus-btn-height: clamp(44px, 5vh, 56px);
+            --focus-btn-padding: clamp(9px, 1.2vh, 12px) clamp(20px, 2vw, 28px);
+            --focus-btn-font-size: clamp(1rem, 1.65vw, 1.2rem);
+            --focus-btn-radius: 12px;
             --focus-controls-margin-top: 12px;
             --focus-feedback-padding: 10px 12px;
             --focus-feedback-margin-top: 10px;
@@ -1374,10 +1481,8 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         body.focus-mode #btnFocusMode {
-            grid-column: 1 / -1 !important;
-            justify-self: end !important;
-            align-self: flex-start !important;
-            margin: 0 0 var(--focus-exit-margin-bottom) 0 !important;
+            flex: 0 0 auto;
+            margin: 0 !important;
             height: auto !important;
             padding: 8px 16px !important;
             border-radius: 999px !important;
@@ -1420,7 +1525,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         /* Focus shell: giữ progress/controls cố định, chỉ cho nội dung câu hỏi cuộn khi cần. */
         body.focus-mode #quiz-area {
             display: grid !important;
-            grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+            grid-template-rows: auto minmax(0, 1fr) auto !important;
             align-items: stretch !important;
             flex: none !important;
             height: 100% !important;
@@ -1430,13 +1535,22 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             box-sizing: border-box !important;
         }
 
+        body.focus-mode #focus-progress-row {
+            display: flex !important;
+            grid-column: 1 / -1 !important;
+            grid-row: 1 !important;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            min-width: 0;
+            margin-bottom: var(--focus-progress-margin-bottom);
+        }
+
         body.focus-mode #question-container {
             min-height: 0 !important;
             overflow-x: hidden !important;
-            overflow-y: auto !important;
-            overscroll-behavior: contain;
-            scrollbar-gutter: stable;
-            padding-right: 4px;
+            overflow-y: hidden !important;
+            padding-right: 0;
         }
 
         body.focus-mode .question-block {
@@ -1444,6 +1558,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             margin-bottom: var(--focus-q-block-margin-bottom) !important;
             padding: var(--focus-q-block-padding) !important;
             font-size: var(--focus-q-block-font-size) !important;
+            min-height: calc(2 * 1.45em + 60px) !important;
         }
 
         body.focus-mode .options-grid {
@@ -1480,30 +1595,78 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         body.focus-mode #progress-area {
+            flex: 1 1 auto;
+            min-width: 0;
             margin-top: var(--focus-progress-margin-top) !important;
-            margin-bottom: var(--focus-progress-margin-bottom) !important;
+            margin-bottom: 0 !important;
             padding-top: 0 !important;
-            width: 100% !important;
+            width: auto !important;
             max-width: none !important;
+            justify-content: flex-start;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
 
 
         body.focus-mode .feedback,
         body.focus-mode .feedback-placeholder {
-            padding: var(--feedback-padding) !important;
-            margin-top: var(--feedback-margin-top) !important;
-            font-size: var(--focus-option-font-size) !important;
+            padding: 4px 8px !important;
+            margin-top: 4px !important;
+            font-size: clamp(0.9rem, 1.15vw, 1.1rem) !important;
+            line-height: 1.25;
             border-radius: var(--feedback-radius) !important;
             height: auto !important;
-            min-height: var(--feedback-height) !important;
+            min-height: 0 !important;
+            max-height: none !important;
             overflow: visible !important;
+            overflow-wrap: anywhere;
+        }
+
+        body.focus-mode .feedback div[style] {
+            margin-top: 2px !important;
         }
 
         body.focus-mode #quiz-area.zoom-pending {
             visibility: hidden !important;
             opacity: 0 !important;
             transition: none !important;
+        }
+
+        #quiz-area.result-state .controls {
+            display: none !important;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .result-actions #reset-btn {
+            margin: 0;
+        }
+
+        body.focus-mode #quiz-area.result-state #question-container {
+            display: flex;
+            grid-row: 2 !important;
+            overflow: hidden !important;
+        }
+
+        body.focus-mode #quiz-area.result-state .confirm-msg-area {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.focus-mode #quiz-area.result-state .confirm-msg-area > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
 
         @keyframes questionGradientMove {
@@ -1537,7 +1700,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
 
         <!-- Quiz Content -->
         <div id="quiz-area">
-            <div id="progress-area" class="progress-container"></div>
+            <div id="focus-progress-row">
+                <div id="progress-area" class="progress-container"></div>
+            </div>
             <div id="question-container"></div>
 
             <div class="controls">
@@ -1582,7 +1747,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "This is a long, padded seat for several people in the living room: ___.",
+    "q": "Trong phòng khách, đây là chiếc ghế dài mềm cho nhiều người: ___.",
     "a": [
       {
         "text": "sofa",
@@ -1632,7 +1797,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "I put my head on a soft cushion when I sleep: I sleep with a ___.",
+    "q": "Khi ngủ, em gối đầu lên chiếc gối mềm: Em ngủ với một ___.",
     "a": [
       {
         "text": "pillow",
@@ -1682,7 +1847,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Which utensil has a deep bowl for lifting soup?",
+    "q": "Dụng cụ nào có lòng sâu để múc canh?",
     "a": [
       {
         "text": "spoon",
@@ -1732,7 +1897,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Look! The ___ spins and blows air around the room.",
+    "q": "Nhìn kìa! ___ quay và thổi gió quanh phòng.",
     "a": [
       {
         "text": "fan",
@@ -1782,7 +1947,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "I look at the ___ to see my face.",
+    "q": "Em nhìn vào ___ để thấy khuôn mặt.",
     "a": [
       {
         "text": "mirror",
@@ -1882,7 +2047,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "After eating soup, please wash the ___.",
+    "q": "Ăn canh xong, hãy rửa ___.",
     "a": [
       {
         "text": "bowl",
@@ -1957,7 +2122,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "After washing your hands, wipe them with a ___.",
+    "q": "Sau khi rửa tay, lau tay bằng ___.",
     "a": [
       {
         "text": "towel",
@@ -1982,7 +2147,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Which word names the fixture that sprays water for a shower?",
+    "q": "Từ nào gọi tên vòi nước dùng khi tắm?",
     "a": [
       {
         "text": "shower",
@@ -2007,7 +2172,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The ___ in the kitchen is used for cooking with heat.",
+    "q": "___ trong bếp dùng để nấu bằng nhiệt.",
     "a": [
       {
         "text": "cooker",
@@ -2082,7 +2247,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Put the clothes in the tall cupboard with a rail for hanging shirts.",
+    "q": "Cho quần áo vào chiếc tủ có thanh treo áo.",
     "a": [
       {
         "text": "wardrobe",
@@ -2132,7 +2297,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Inside the house, I walk on the ___.",
+    "q": "Trong nhà, em đi trên ___.",
     "a": [
       {
         "text": "floor",
@@ -2207,7 +2372,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Throw the paper into the container used for rubbish.",
+    "q": "Ném giấy vào thùng đựng rác.",
     "a": [
       {
         "text": "bin",
@@ -2257,7 +2422,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Put the book on the furniture with several fixed levels for books.",
+    "q": "Đặt sách lên chiếc kệ có nhiều tầng.",
     "a": [
       {
         "text": "shelf",
@@ -2332,7 +2497,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Look at the ___ on the wall; it shows roads and places.",
+    "q": "Nhìn vào ___ trên tường; nó cho biết đường và địa điểm.",
     "a": [
       {
         "text": "map",
@@ -2382,7 +2547,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Sit on the soft floor covering to play.",
+    "q": "Ngồi trên tấm thảm mềm để chơi.",
     "a": [
       {
         "text": "rug",
@@ -2457,7 +2622,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Look! The container holding the flowers is pink.",
+    "q": "Nhìn kìa! ___ đựng hoa có màu hồng.",
     "a": [
       {
         "text": "vase",
@@ -2507,7 +2672,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Look at the device on the wall that tells the time.",
+    "q": "Nhìn vào thiết bị trên tường cho biết giờ.",
     "a": [
       {
         "text": "clock",
@@ -2582,7 +2747,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "This is the room where I sleep.",
+    "q": "Đây là căn phòng em ngủ.",
     "a": [
       {
         "text": "bedroom",
@@ -2632,7 +2797,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Brush your teeth in the room with a sink and shower.",
+    "q": "Đánh răng trong căn phòng có bồn rửa và vòi sen.",
     "a": [
       {
         "text": "bathroom",
@@ -2682,7 +2847,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "In the kitchen, which appliance keeps food cold?",
+    "q": "Trong bếp, thiết bị nào giữ thức ăn lạnh?",
     "a": [
       {
         "text": "fridge",
@@ -2707,7 +2872,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Wash your face in the basin with a tap.",
+    "q": "Rửa mặt trong chậu có vòi nước.",
     "a": [
       {
         "text": "sink",
@@ -2757,7 +2922,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Turn on the device that gives light so you can read.",
+    "q": "Bật thiết bị cho ánh sáng để em đọc sách.",
     "a": [
       {
         "text": "lamp",
@@ -2807,7 +2972,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You lie on this piece of furniture to sleep: ___ 🛌",
+    "q": "Em nằm trên đồ vật này để ngủ: ___ 🛌",
     "a": [
       {
         "text": "bed",
@@ -2832,7 +2997,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You sit on this while studying at a desk: ___ 🪑",
+    "q": "Em ngồi trên vật này khi học ở bàn: ___ 🪑",
     "a": [
       {
         "text": "chair",
@@ -2882,7 +3047,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You open this to enter a house: ___ 🚪",
+    "q": "Em mở vật này để vào nhà: ___ 🚪",
     "a": [
       {
         "text": "door",
@@ -2907,7 +3072,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You look through this to see the sky: ___ 🪟",
+    "q": "Em nhìn qua vật này để thấy bầu trời: ___ 🪟",
     "a": [
       {
         "text": "window",
@@ -2932,7 +3097,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You switch this on to light a room: ___ 💡",
+    "q": "Em bật vật này để thắp sáng phòng: ___ 💡",
     "a": [
       {
         "text": "lamp",
@@ -2957,7 +3122,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "This tells you the time when it hangs on a wall: ___ ⏰",
+    "q": "Vật này cho biết giờ khi treo trên tường: ___ ⏰",
     "a": [
       {
         "text": "clock",
@@ -2982,7 +3147,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use this to see your face: ___ 🪞",
+    "q": "Em dùng vật này để nhìn thấy mặt: ___ 🪞",
     "a": [
       {
         "text": "mirror",
@@ -3032,7 +3197,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You watch cartoons on this screen: ___ 📺",
+    "q": "Em xem hoạt hình trên màn hình này: ___ 📺",
     "a": [
       {
         "text": "TV",
@@ -3057,7 +3222,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You drink water in small sips from this container with a narrow opening: ___ 🥤",
+    "q": "Em uống nước từ chiếc bình có miệng hẹp: ___ 🥤",
     "a": [
       {
         "text": "cup",
@@ -3082,7 +3247,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use this round dish for one serving of rice or soup: ___ 🍚",
+    "q": "Em dùng chiếc bát này để đựng một phần cơm hoặc canh: ___ 🍚",
     "a": [
       {
         "text": "bowl",
@@ -3107,7 +3272,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use this utensil to scoop food: ___ 🥄",
+    "q": "Em dùng dụng cụ này để múc thức ăn: ___ 🥄",
     "a": [
       {
         "text": "spoon",
@@ -3132,7 +3297,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use these two thin sticks to pick up food: ___ 🥢",
+    "q": "Em dùng hai que mỏng này để gắp thức ăn: ___ 🥢",
     "a": [
       {
         "text": "chopsticks",
@@ -3157,7 +3322,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use this sharp utensil to cut food: ___ 🔪",
+    "q": "Em dùng dụng cụ sắc này để cắt thức ăn: ___ 🔪",
     "a": [
       {
         "text": "knife",
@@ -3182,7 +3347,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You cook soup in this deep container with high sides: ___ 🍲",
+    "q": "Em nấu canh trong chiếc nồi sâu: ___ 🍲",
     "a": [
       {
         "text": "pot",
@@ -3207,7 +3372,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You fry eggs on this wide, flat cooking surface: ___ 🍳",
+    "q": "Em rán trứng trên bề mặt nấu rộng và phẳng: ___ 🍳",
     "a": [
       {
         "text": "pan",
@@ -3232,7 +3397,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You keep food cold inside this appliance: ___ 🧊",
+    "q": "Em giữ thức ăn lạnh trong thiết bị này: ___ 🧊",
     "a": [
       {
         "text": "fridge",
@@ -3257,7 +3422,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You wash your hands in this basin with a tap: ___ 🚰",
+    "q": "Em rửa tay trong chậu có vòi: ___ 🚰",
     "a": [
       {
         "text": "sink",
@@ -3282,7 +3447,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Water sprays from this fixture when you shower: ___ 🚿",
+    "q": "Nước phun ra từ vật này khi em tắm: ___ 🚿",
     "a": [
       {
         "text": "shower",
@@ -3307,7 +3472,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You lie in this large container to take a bath: ___ 🛀",
+    "q": "Em nằm trong vật lớn này để tắm: ___ 🛀",
     "a": [
       {
         "text": "bathtub",
@@ -3332,7 +3497,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use this to dry your body after a shower: ___",
+    "q": "Em dùng vật này để lau khô người sau khi tắm: ___",
     "a": [
       {
         "text": "towel",
@@ -3357,7 +3522,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You cover yourself with this soft item while sleeping: ___",
+    "q": "Em đắp vật mềm này khi ngủ: ___",
     "a": [
       {
         "text": "blanket",
@@ -3382,7 +3547,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You rest your head on this soft item: ___ ☁️",
+    "q": "Em tựa đầu lên vật mềm này: ___ ☁️",
     "a": [
       {
         "text": "pillow",
@@ -3407,7 +3572,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You draw this across a window to block sunlight: ___",
+    "q": "Em kéo vật này ngang cửa sổ để che nắng: ___",
     "a": [
       {
         "text": "curtain",
@@ -3432,7 +3597,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "This machine moves air to make a room cooler: ___ 🌬️",
+    "q": "Máy này làm không khí chuyển động để phòng mát hơn: ___ 🌬️",
     "a": [
       {
         "text": "fan",
@@ -3457,7 +3622,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use this long-handled tool to sweep the floor: ___ 🧹",
+    "q": "Em dùng dụng cụ cán dài này để quét sàn: ___ 🧹",
     "a": [
       {
         "text": "broom",
@@ -3482,7 +3647,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You put rubbish in this container: ___ 🗑️",
+    "q": "Em bỏ rác vào thùng này: ___ 🗑️",
     "a": [
       {
         "text": "bin",
@@ -3507,7 +3672,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Several people can sit on this long seat in a living room: ___ 🛋️",
+    "q": "Nhiều người có thể ngồi trên chiếc ghế dài này trong phòng khách: ___ 🛋️",
     "a": [
       {
         "text": "sofa",
@@ -3532,7 +3697,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You arrange books on this piece of furniture with fixed shelves: ___ 📚",
+    "q": "Em xếp sách lên món đồ có các ngăn: ___ 📚",
     "a": [
       {
         "text": "bookshelf",
@@ -3557,7 +3722,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use this device to call your grandparents: ___ ☎️",
+    "q": "Em dùng thiết bị này để gọi ông bà: ___ ☎️",
     "a": [
       {
         "text": "phone",
@@ -3607,7 +3772,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You walk on this surface inside a house: ___ 👣",
+    "q": "Em đi trên bề mặt này trong nhà: ___ 👣",
     "a": [
       {
         "text": "floor",
@@ -3632,7 +3797,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "This thick fabric lies by a door for wiping your feet: ___",
+    "q": "Tấm vải dày này đặt gần cửa để lau chân: ___",
     "a": [
       {
         "text": "rug",
@@ -3657,7 +3822,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You store toys in this lidded cardboard container: ___ 📦",
+    "q": "Em cất đồ chơi trong chiếc hộp bìa có nắp: ___ 📦",
     "a": [
       {
         "text": "box",
@@ -3682,7 +3847,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "This wax object has a wick and gives light during a power cut: ___ 🕯️",
+    "q": "Đồ vật bằng sáp này có bấc và phát sáng khi mất điện: ___ 🕯️",
     "a": [
       {
         "text": "candle",
@@ -3707,7 +3872,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You turn this in a lock to secure a door: ___ 🔑",
+    "q": "Em xoay vật này trong ổ khóa để khóa cửa: ___ 🔑",
     "a": [
       {
         "text": "key",
@@ -3732,7 +3897,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You hang this artwork on a wall for decoration: ___ 🖼️",
+    "q": "Em treo tác phẩm này lên tường để trang trí: ___ 🖼️",
     "a": [
       {
         "text": "picture",
@@ -3757,7 +3922,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You pour hot tea from this container through its spout: ___",
+    "q": "Em rót trà nóng từ vật này qua vòi của nó: ___",
     "a": [
       {
         "text": "teapot",
@@ -3782,7 +3947,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "You use these steps to go to a higher floor: ___ 🪜",
+    "q": "Em dùng những bậc này để đi lên tầng cao hơn: ___ 🪜",
     "a": [
       {
         "text": "stairs",
@@ -4682,7 +4847,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "What time is it? Look at the wall clock with hands, not a phone. ⏰",
+    "q": "Mấy giờ rồi? Hãy nhìn đồng hồ treo tường. ⏰",
     "a": [
       {
         "text": "clock",
@@ -5282,7 +5447,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "I like to pour hot tea from a ___ into my cup. 🍵",
+    "q": "Em dùng ___ để rót trà nóng vào cốc. 🍵",
     "a": [
       {
         "text": "teapot",
@@ -5332,7 +5497,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Don't jump on the ___ where you sleep; it may damage the mattress. 🛌!",
+    "q": "Đừng nhảy lên ___ nơi em ngủ nhé. 🛌!",
     "a": [
       {
         "text": "bed",
@@ -5557,6 +5722,13 @@ const fullQuestionBank = [
             });
 
             // 3. UI Reset
+            const quizArea = document.getElementById('quiz-area');
+            const resetBtn = document.getElementById('reset-btn');
+            const controls = document.querySelector('.controls');
+            if (resetBtn && controls && resetBtn.parentElement !== controls) {
+                controls.appendChild(resetBtn);
+            }
+            if (quizArea) quizArea.classList.remove('result-state');
             setDisplay('reset-btn', 'none');
             setDisplay('confirm-back-btn', 'none');
             setDisplay('confirm-submit-btn', 'none');
@@ -5685,11 +5857,33 @@ const fullQuestionBank = [
             // Update Progress UI
             updateProgressUI();
 
+            requestAnimationFrame(fitFeedbackToViewport);
+
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Trigger Zoom Fit on question transition
-            scheduleFocusFit();
+            // Keep Focus scale stable while navigating between questions.
+            // Focus entry and window resize handle any required refit.
+        }
+
+        function fitFeedbackToViewport() {
+            const viewport = document.getElementById('question-container');
+            const feedback = viewport?.querySelector('.feedback.is-visible');
+            if (!viewport || !feedback) return;
+
+            const minFontSize = 11;
+            let fontSize = parseFloat(getComputedStyle(feedback).fontSize);
+            let attempts = 0;
+
+            while (
+                feedback.getBoundingClientRect().bottom > viewport.getBoundingClientRect().bottom &&
+                fontSize > minFontSize &&
+                attempts < 24
+            ) {
+                fontSize -= 0.5;
+                feedback.style.setProperty('font-size', `${fontSize}px`, 'important');
+                attempts += 1;
+            }
         }
 
         function handleAnswer(qIndex, text, isCorrect, explanation) {
@@ -5847,11 +6041,15 @@ const fullQuestionBank = [
             const passingScore = Math.ceil(questionCount * PASSING_RATE);
             const msgText = score >= passingScore ? 'Tuyệt vời! Bạn làm rất tốt! 🎉🥳' : 'Hãy cố gắng hơn lần sau nhé! 💜💪';
             const msgClass = score >= passingScore ? 'result-pass' : 'result-retry';
+            const quizArea = document.getElementById('quiz-area');
+            if (quizArea) quizArea.classList.add('result-state');
 
-            document.getElementById('question-container').innerHTML = `
+            const questionContainer = document.getElementById('question-container');
+            questionContainer.innerHTML = `
             <div class="confirm-msg-area"><div>
                 <div class="result-score">${score} / ${questionCount}</div>
                 <div class="result-msg ${msgClass}">${msgText}</div>
+                <div class="result-actions"></div>
             </div></div>`;
 
             setDisplay('prev-btn', 'none');
@@ -5859,7 +6057,10 @@ const fullQuestionBank = [
             setDisplay('submit-btn', 'none');
             setDisplay('confirm-back-btn', 'none');
             setDisplay('confirm-submit-btn', 'none');
-            setDisplay('reset-btn', 'block');
+            const resetBtn = document.getElementById('reset-btn');
+            const resultActions = questionContainer.querySelector('.result-actions');
+            if (resetBtn && resultActions) resultActions.appendChild(resetBtn);
+            setDisplay(resetBtn, 'inline-flex');
 
             quizState.isFinished = true;
         }
@@ -5997,12 +6198,12 @@ const fullQuestionBank = [
             if (!btn) return;
             const isFocus = document.body.classList.contains('focus-mode');
             
-            const quizArea = document.getElementById('quiz-area');
             const headerMeta = document.querySelector('.header-meta');
+            const focusProgressRow = document.getElementById('focus-progress-row');
             
             if (isFocus) {
-                if (quizArea && btn.parentElement !== quizArea) {
-                    quizArea.insertBefore(btn, quizArea.firstChild);
+                if (focusProgressRow && btn.parentElement !== focusProgressRow) {
+                    focusProgressRow.appendChild(btn);
                 }
             } else {
                 if (headerMeta && btn.parentElement !== headerMeta) {

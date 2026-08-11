@@ -175,6 +175,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            min-height: 100dvh;
+            width: 100%;
+            overflow-x: hidden;
             box-sizing: border-box;
             transition: background-color var(--theme-motion-medium), color var(--theme-motion-fast);
         }
@@ -190,6 +193,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             max-width: 900px;
             margin: 0 auto 20px;
             width: 100%;
+            min-width: 0;
             background: var(--card-bg);
             border-radius: 22px;
             border: 1px solid var(--border-main);
@@ -202,6 +206,90 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             overflow: hidden;
             box-sizing: border-box;
             transition: background var(--theme-motion-medium), border-color var(--theme-motion-fast), box-shadow var(--theme-motion-medium);
+        }
+
+        /* Normal view: keep the quiz shell inside the actual browser viewport. */
+        @media (min-width: 601px) and (min-height: 640px) {
+            body:not(.focus-mode) {
+                height: 100dvh;
+                padding: 10px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            body:not(.focus-mode) .container {
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            body:not(.focus-mode) #quiz-area {
+                grid-template-rows: auto minmax(0, 1fr) auto;
+                flex: 1 1 auto;
+                min-height: 0;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            body:not(.focus-mode) #question-container {
+                min-height: 0;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                padding-right: 0;
+                padding-bottom: 58px;
+                box-sizing: border-box;
+                position: relative;
+            }
+
+            body:not(.focus-mode) #header-area {
+                gap: 8px;
+                padding: 12px 22px;
+            }
+
+            body:not(.focus-mode) #lessonTitle.dec-ui-game-title {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+
+            body:not(.focus-mode) .question-block {
+                margin-bottom: 8px;
+                font-size: 1.6rem;
+            }
+
+            body:not(.focus-mode) .options-grid {
+                gap: 10px;
+            }
+
+            body:not(.focus-mode) .option-label {
+                padding: 6px 12px;
+                font-size: 1.35rem;
+            }
+
+            body:not(.focus-mode) .feedback.is-visible {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: auto;
+                min-height: 0;
+                margin: 0;
+                padding: 4px 8px;
+                font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+                line-height: 1.25;
+                overflow: visible;
+                z-index: 1;
+            }
+
+            body:not(.focus-mode) .feedback.is-visible div[style] {
+                margin-top: 2px !important;
+            }
+
+            body:not(.focus-mode) .dec-footer {
+                flex: 0 0 auto;
+                margin-top: 0;
+                padding: 6px 22px 10px;
+            }
         }
 
         .container::before {
@@ -236,7 +324,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         #lessonTitle.dec-ui-game-title {
             font-family: "Be Vietnam Pro", sans-serif;
             font-weight:var(--dummy,800);
-            font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+            font-size: clamp(2rem, 2.7vw, 2.4rem);
             letter-spacing: 0.0625rem;
             text-align: center;
             background: var(--accent-gradient, var(--btn-secondary-bg));
@@ -322,6 +410,8 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             gap: 14px;
             padding: 16px 22px 22px;
             background: var(--container-bg);
+            min-width: 0;
+            overflow-x: hidden;
             box-sizing: border-box;
         }
 
@@ -330,10 +420,20 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         #lessonTitle,
+        #focus-progress-row,
         #question-container,
         .progress-container,
         .dec-footer {
             grid-column: 1 / -1;
+        }
+
+        #focus-progress-row {
+            min-width: 0;
+            display: contents;
+        }
+
+        #question-container {
+            min-width: 0;
         }
 
         #subtitle-placeholder:empty {
@@ -369,7 +469,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             text-align: left;
             color: var(--text-color);
             line-height: 1.45;
-            min-height: calc(3.1em + 34px);
+            min-height: calc(2 * 1.45em + 40px);
+            overflow-wrap: anywhere;
+            text-wrap: pretty;
             transition: background var(--theme-motion-medium), border-color var(--theme-motion-fast), color var(--theme-motion-fast);
         }
 
@@ -418,6 +520,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             font-size: 1.55rem;
             position: relative;
             overflow: hidden;
+            min-width: 0;
+            overflow-wrap: anywhere;
+            text-wrap: pretty;
         }
 
         .option-label::before {
@@ -482,6 +587,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             opacity: 0.65;
             align-items: flex-start;
             text-align: left;
+            display: none;
         }
 
         .feedback {
@@ -720,6 +826,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             padding-top: 0;
             border-top: none;
             width: 100%;
+            min-width: 0;
         }
 
         .progress-container.wrap-mode {
@@ -1334,10 +1441,10 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             --focus-option-font-size: 1.12rem;
             --focus-option-radius: 10px;
             --focus-option-gap: 8px;
-            --focus-btn-height: 32px;
-            --focus-btn-padding: 6px 16px;
-            --focus-btn-font-size: 0.85rem;
-            --focus-btn-radius: 10px;
+            --focus-btn-height: clamp(44px, 5vh, 56px);
+            --focus-btn-padding: clamp(9px, 1.2vh, 12px) clamp(20px, 2vw, 28px);
+            --focus-btn-font-size: clamp(1rem, 1.65vw, 1.2rem);
+            --focus-btn-radius: 12px;
             --focus-controls-margin-top: 12px;
             --focus-feedback-padding: 10px 12px;
             --focus-feedback-margin-top: 10px;
@@ -1374,10 +1481,8 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         body.focus-mode #btnFocusMode {
-            grid-column: 1 / -1 !important;
-            justify-self: end !important;
-            align-self: flex-start !important;
-            margin: 0 0 var(--focus-exit-margin-bottom) 0 !important;
+            flex: 0 0 auto;
+            margin: 0 !important;
             height: auto !important;
             padding: 8px 16px !important;
             border-radius: 999px !important;
@@ -1420,7 +1525,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         /* Focus shell: giữ progress/controls cố định, chỉ cho nội dung câu hỏi cuộn khi cần. */
         body.focus-mode #quiz-area {
             display: grid !important;
-            grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+            grid-template-rows: auto minmax(0, 1fr) auto !important;
             align-items: stretch !important;
             flex: none !important;
             height: 100% !important;
@@ -1430,13 +1535,22 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             box-sizing: border-box !important;
         }
 
+        body.focus-mode #focus-progress-row {
+            display: flex !important;
+            grid-column: 1 / -1 !important;
+            grid-row: 1 !important;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            min-width: 0;
+            margin-bottom: var(--focus-progress-margin-bottom);
+        }
+
         body.focus-mode #question-container {
             min-height: 0 !important;
             overflow-x: hidden !important;
-            overflow-y: auto !important;
-            overscroll-behavior: contain;
-            scrollbar-gutter: stable;
-            padding-right: 4px;
+            overflow-y: hidden !important;
+            padding-right: 0;
         }
 
         body.focus-mode .question-block {
@@ -1444,6 +1558,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             margin-bottom: var(--focus-q-block-margin-bottom) !important;
             padding: var(--focus-q-block-padding) !important;
             font-size: var(--focus-q-block-font-size) !important;
+            min-height: calc(2 * 1.45em + 60px) !important;
         }
 
         body.focus-mode .options-grid {
@@ -1480,30 +1595,78 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         body.focus-mode #progress-area {
+            flex: 1 1 auto;
+            min-width: 0;
             margin-top: var(--focus-progress-margin-top) !important;
-            margin-bottom: var(--focus-progress-margin-bottom) !important;
+            margin-bottom: 0 !important;
             padding-top: 0 !important;
-            width: 100% !important;
+            width: auto !important;
             max-width: none !important;
+            justify-content: flex-start;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
 
 
         body.focus-mode .feedback,
         body.focus-mode .feedback-placeholder {
-            padding: var(--feedback-padding) !important;
-            margin-top: var(--feedback-margin-top) !important;
-            font-size: var(--focus-option-font-size) !important;
+            padding: 4px 8px !important;
+            margin-top: 4px !important;
+            font-size: clamp(0.9rem, 1.15vw, 1.1rem) !important;
+            line-height: 1.25;
             border-radius: var(--feedback-radius) !important;
             height: auto !important;
-            min-height: var(--feedback-height) !important;
+            min-height: 0 !important;
+            max-height: none !important;
             overflow: visible !important;
+            overflow-wrap: anywhere;
+        }
+
+        body.focus-mode .feedback div[style] {
+            margin-top: 2px !important;
         }
 
         body.focus-mode #quiz-area.zoom-pending {
             visibility: hidden !important;
             opacity: 0 !important;
             transition: none !important;
+        }
+
+        #quiz-area.result-state .controls {
+            display: none !important;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .result-actions #reset-btn {
+            margin: 0;
+        }
+
+        body.focus-mode #quiz-area.result-state #question-container {
+            display: flex;
+            grid-row: 2 !important;
+            overflow: hidden !important;
+        }
+
+        body.focus-mode #quiz-area.result-state .confirm-msg-area {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.focus-mode #quiz-area.result-state .confirm-msg-area > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
 
         @keyframes questionGradientMove {
@@ -1537,7 +1700,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
 
         <!-- Quiz Content -->
         <div id="quiz-area">
-            <div id="progress-area" class="progress-container"></div>
+            <div id="focus-progress-row">
+                <div id="progress-area" class="progress-container"></div>
+            </div>
             <div id="question-container"></div>
 
             <div class="controls">
@@ -1982,7 +2147,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The ___ says tick-tock, tick-tock.",
+    "q": "Vật nào kêu tích tắc, tích tắc?",
     "a": [
       {
         "text": "clock",
@@ -2182,7 +2347,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "What color is classroom chalk usually?",
+    "q": "Phấn viết bảng thường có màu gì?",
     "a": [
       {
         "text": "white",
@@ -2807,7 +2972,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 1?",
+    "q": "Viết số 1 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "One",
@@ -2832,7 +2997,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 2?",
+    "q": "Viết số 2 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Two",
@@ -2857,7 +3022,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 3?",
+    "q": "Viết số 3 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Three",
@@ -2882,7 +3047,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 4?",
+    "q": "Viết số 4 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Four",
@@ -2907,7 +3072,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 5?",
+    "q": "Viết số 5 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Five",
@@ -2932,7 +3097,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 6?",
+    "q": "Viết số 6 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Six",
@@ -2957,7 +3122,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 7?",
+    "q": "Viết số 7 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Seven",
@@ -2982,7 +3147,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 8?",
+    "q": "Viết số 8 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Eight",
@@ -3007,7 +3172,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 9?",
+    "q": "Viết số 9 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Nine",
@@ -3032,7 +3197,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "How do we write number 10?",
+    "q": "Viết số 10 bằng tiếng Anh như thế nào?",
     "a": [
       {
         "text": "Ten",
@@ -3882,7 +4047,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The King of the jungle.",
+    "q": "Vua của rừng xanh.",
     "a": [
       {
         "text": "Lion",
@@ -4832,7 +4997,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The place where you learn.",
+    "q": "Nơi em học.",
     "a": [
       {
         "text": "School",
@@ -4857,7 +5022,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The person who teaches you.",
+    "q": "Người dạy em.",
     "a": [
       {
         "text": "Teacher",
@@ -4907,7 +5072,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The big board in the classroom.",
+    "q": "Cái bảng lớn trong lớp học.",
     "a": [
       {
         "text": "Blackboard",
@@ -4932,7 +5097,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A book you write notes in.",
+    "q": "Quyển sách em dùng để ghi chép.",
     "a": [
       {
         "text": "Notebook",
@@ -5057,7 +5222,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Where you play outside at school.",
+    "q": "Nơi em chơi ngoài trời ở trường.",
     "a": [
       {
         "text": "Playground",
@@ -5082,7 +5247,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A ball that is a map of Earth.",
+    "q": "Quả bóng có hình bản đồ Trái Đất.",
     "a": [
       {
         "text": "Globe",
@@ -5107,7 +5272,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A big pen for the whiteboard.",
+    "q": "Bút to dùng để viết bảng trắng.",
     "a": [
       {
         "text": "Marker",
@@ -5207,7 +5372,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Where you throw trash.",
+    "q": "Nơi em bỏ rác.",
     "a": [
       {
         "text": "Bin",
@@ -5307,7 +5472,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The first school day of a Monday-to-Friday week.",
+    "q": "Ngày học đầu tiên trong tuần học từ thứ Hai đến thứ Sáu.",
     "a": [
       {
         "text": "Monday",
@@ -5332,7 +5497,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The second day of the week.",
+    "q": "Ngày thứ hai trong tuần.",
     "a": [
       {
         "text": "Tuesday",
@@ -5357,7 +5522,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The third day of a Monday-to-Friday school week.",
+    "q": "Ngày thứ ba trong tuần học từ thứ Hai đến thứ Sáu.",
     "a": [
       {
         "text": "Wednesday",
@@ -5382,7 +5547,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The day after Wednesday.",
+    "q": "Ngày sau thứ Tư.",
     "a": [
       {
         "text": "Thursday",
@@ -5407,7 +5572,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The day before Saturday.",
+    "q": "Ngày trước thứ Bảy.",
     "a": [
       {
         "text": "Friday",
@@ -5432,7 +5597,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The first day of the weekend.",
+    "q": "Ngày đầu tiên của cuối tuần.",
     "a": [
       {
         "text": "Saturday",
@@ -5457,7 +5622,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The day after Saturday when you stay home and play.",
+    "q": "Ngày sau thứ Bảy, khi em ở nhà và vui chơi.",
     "a": [
       {
         "text": "Sunday",
@@ -5557,7 +5722,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The early evening time after sunset when you eat dinner but before bedtime.",
+    "q": "Buổi đầu tối, sau khi mặt trời lặn và trước giờ đi ngủ.",
     "a": [
       {
         "text": "Evening",
@@ -5732,7 +5897,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The time right now.",
+    "q": "Thời gian ngay lúc này.",
     "a": [
       {
         "text": "Now",
@@ -5757,7 +5922,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The day before today.",
+    "q": "Ngày trước hôm nay.",
     "a": [
       {
         "text": "Yesterday",
@@ -5782,7 +5947,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The day after today.",
+    "q": "Ngày sau hôm nay.",
     "a": [
       {
         "text": "Tomorrow",
@@ -5807,7 +5972,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "What do you call the current day?",
+    "q": "Ngày hôm nay gọi là gì?",
     "a": [
       {
         "text": "Today",
@@ -5832,7 +5997,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "What do you call 12:00 at night?",
+    "q": "12 giờ đêm gọi là gì?",
     "a": [
       {
         "text": "Midnight",
@@ -5907,7 +6072,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A very short time.",
+    "q": "Một khoảng thời gian rất ngắn.",
     "a": [
       {
         "text": "Second",
@@ -6157,7 +6322,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A very big boat on the ocean.",
+    "q": "Một chiếc thuyền rất lớn trên biển.",
     "a": [
       {
         "text": "Ship",
@@ -6207,7 +6372,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A yellow car you pay to ride.",
+    "q": "Chiếc ô tô màu vàng mà em trả tiền để đi.",
     "a": [
       {
         "text": "Taxi",
@@ -6407,7 +6572,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A train under the ground.",
+    "q": "Một chuyến tàu chạy dưới lòng đất.",
     "a": [
       {
         "text": "Subway",
@@ -6432,7 +6597,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A small narrow boat.",
+    "q": "Một chiếc thuyền nhỏ và hẹp.",
     "a": [
       {
         "text": "Canoe",
@@ -6482,7 +6647,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A toy vehicle with a handle.",
+    "q": "Một phương tiện đồ chơi có tay cầm.",
     "a": [
       {
         "text": "Scooter",
@@ -6507,7 +6672,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A car bigger than a car but smaller than a bus.",
+    "q": "Một chiếc xe lớn hơn ô tô nhưng nhỏ hơn xe buýt.",
     "a": [
       {
         "text": "Van",
@@ -6582,7 +6747,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "The front part of a train.",
+    "q": "Phần đầu của một đoàn tàu.",
     "a": [
       {
         "text": "Engine",
@@ -6632,7 +6797,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Where you wait for a bus.",
+    "q": "Nơi em chờ xe buýt.",
     "a": [
       {
         "text": "Bus stop",
@@ -6657,7 +6822,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Where planes land and take off.",
+    "q": "Nơi máy bay hạ cánh và cất cánh.",
     "a": [
       {
         "text": "Airport",
@@ -6707,7 +6872,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Which vehicle is used to plough a farm field?",
+    "q": "Phương tiện nào dùng để cày ruộng?",
     "a": [
       {
         "text": "Tractor",
@@ -6757,7 +6922,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "Where trains stop.",
+    "q": "Nơi tàu dừng lại.",
     "a": [
       {
         "text": "Train station",
@@ -6882,7 +7047,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A soft seat for many people.",
+    "q": "Một chiếc ghế mềm cho nhiều người ngồi.",
     "a": [
       {
         "text": "Sofa",
@@ -7582,7 +7747,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A pretty one-piece item of clothing for girls.",
+    "q": "Một bộ quần áo đẹp gồm một mảnh dành cho bé gái.",
     "a": [
       {
         "text": "Dress",
@@ -7757,7 +7922,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "A long heavy jacket.",
+    "q": "Một chiếc áo khoác dài và dày.",
     "a": [
       {
         "text": "Coat",
@@ -8157,7 +8322,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "What do you call shoes worn for sports?",
+    "q": "Giày dùng khi chơi thể thao gọi là gì?",
     "a": [
       {
         "text": "Sneakers",
@@ -8232,7 +8397,7 @@ const fullQuestionBank = [
     ]
   },
   {
-    "q": "What do you call matching clothes worn by students?",
+    "q": "Bộ quần áo giống nhau học sinh mặc gọi là gì?",
     "a": [
       {
         "text": "Uniform",
@@ -8432,6 +8597,13 @@ const fullQuestionBank = [
             });
 
             // 3. UI Reset
+            const quizArea = document.getElementById('quiz-area');
+            const resetBtn = document.getElementById('reset-btn');
+            const controls = document.querySelector('.controls');
+            if (resetBtn && controls && resetBtn.parentElement !== controls) {
+                controls.appendChild(resetBtn);
+            }
+            if (quizArea) quizArea.classList.remove('result-state');
             setDisplay('reset-btn', 'none');
             setDisplay('confirm-back-btn', 'none');
             setDisplay('confirm-submit-btn', 'none');
@@ -8560,11 +8732,33 @@ const fullQuestionBank = [
             // Update Progress UI
             updateProgressUI();
 
+            requestAnimationFrame(fitFeedbackToViewport);
+
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Trigger Zoom Fit on question transition
-            scheduleFocusFit();
+            // Keep Focus scale stable while navigating between questions.
+            // Focus entry and window resize handle any required refit.
+        }
+
+        function fitFeedbackToViewport() {
+            const viewport = document.getElementById('question-container');
+            const feedback = viewport?.querySelector('.feedback.is-visible');
+            if (!viewport || !feedback) return;
+
+            const minFontSize = 11;
+            let fontSize = parseFloat(getComputedStyle(feedback).fontSize);
+            let attempts = 0;
+
+            while (
+                feedback.getBoundingClientRect().bottom > viewport.getBoundingClientRect().bottom &&
+                fontSize > minFontSize &&
+                attempts < 24
+            ) {
+                fontSize -= 0.5;
+                feedback.style.setProperty('font-size', `${fontSize}px`, 'important');
+                attempts += 1;
+            }
         }
 
         function handleAnswer(qIndex, text, isCorrect, explanation) {
@@ -8722,11 +8916,15 @@ const fullQuestionBank = [
             const passingScore = Math.ceil(questionCount * PASSING_RATE);
             const msgText = score >= passingScore ? 'Tuyệt vời! Bạn làm rất tốt! 🎉🥳' : 'Hãy cố gắng hơn lần sau nhé! 💜💪';
             const msgClass = score >= passingScore ? 'result-pass' : 'result-retry';
+            const quizArea = document.getElementById('quiz-area');
+            if (quizArea) quizArea.classList.add('result-state');
 
-            document.getElementById('question-container').innerHTML = `
+            const questionContainer = document.getElementById('question-container');
+            questionContainer.innerHTML = `
             <div class="confirm-msg-area"><div>
                 <div class="result-score">${score} / ${questionCount}</div>
                 <div class="result-msg ${msgClass}">${msgText}</div>
+                <div class="result-actions"></div>
             </div></div>`;
 
             setDisplay('prev-btn', 'none');
@@ -8734,7 +8932,10 @@ const fullQuestionBank = [
             setDisplay('submit-btn', 'none');
             setDisplay('confirm-back-btn', 'none');
             setDisplay('confirm-submit-btn', 'none');
-            setDisplay('reset-btn', 'block');
+            const resetBtn = document.getElementById('reset-btn');
+            const resultActions = questionContainer.querySelector('.result-actions');
+            if (resetBtn && resultActions) resultActions.appendChild(resetBtn);
+            setDisplay(resetBtn, 'inline-flex');
 
             quizState.isFinished = true;
         }
@@ -8872,12 +9073,12 @@ const fullQuestionBank = [
             if (!btn) return;
             const isFocus = document.body.classList.contains('focus-mode');
             
-            const quizArea = document.getElementById('quiz-area');
             const headerMeta = document.querySelector('.header-meta');
+            const focusProgressRow = document.getElementById('focus-progress-row');
             
             if (isFocus) {
-                if (quizArea && btn.parentElement !== quizArea) {
-                    quizArea.insertBefore(btn, quizArea.firstChild);
+                if (focusProgressRow && btn.parentElement !== focusProgressRow) {
+                    focusProgressRow.appendChild(btn);
                 }
             } else {
                 if (headerMeta && btn.parentElement !== headerMeta) {

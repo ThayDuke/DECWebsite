@@ -175,6 +175,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            min-height: 100dvh;
+            width: 100%;
+            overflow-x: hidden;
             box-sizing: border-box;
             transition: background-color var(--theme-motion-medium), color var(--theme-motion-fast);
         }
@@ -190,6 +193,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             max-width: 900px;
             margin: 0 auto 20px;
             width: 100%;
+            min-width: 0;
             background: var(--card-bg);
             border-radius: 22px;
             border: 1px solid var(--border-main);
@@ -202,6 +206,90 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             overflow: hidden;
             box-sizing: border-box;
             transition: background var(--theme-motion-medium), border-color var(--theme-motion-fast), box-shadow var(--theme-motion-medium);
+        }
+
+        /* Normal view: keep the quiz shell inside the actual browser viewport. */
+        @media (min-width: 601px) and (min-height: 640px) {
+            body:not(.focus-mode) {
+                height: 100dvh;
+                padding: 10px;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+
+            body:not(.focus-mode) .container {
+                height: 100%;
+                margin: 0 auto;
+            }
+
+            body:not(.focus-mode) #quiz-area {
+                grid-template-rows: auto minmax(0, 1fr) auto;
+                flex: 1 1 auto;
+                min-height: 0;
+                padding-top: 12px;
+                padding-bottom: 12px;
+            }
+
+            body:not(.focus-mode) #question-container {
+                min-height: 0;
+                overflow-x: hidden;
+                overflow-y: hidden;
+                padding-right: 0;
+                padding-bottom: 58px;
+                box-sizing: border-box;
+                position: relative;
+            }
+
+            body:not(.focus-mode) #header-area {
+                gap: 8px;
+                padding: 12px 22px;
+            }
+
+            body:not(.focus-mode) #lessonTitle.dec-ui-game-title {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+
+            body:not(.focus-mode) .question-block {
+                margin-bottom: 8px;
+                font-size: 1.6rem;
+            }
+
+            body:not(.focus-mode) .options-grid {
+                gap: 10px;
+            }
+
+            body:not(.focus-mode) .option-label {
+                padding: 6px 12px;
+                font-size: 1.35rem;
+            }
+
+            body:not(.focus-mode) .feedback.is-visible {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                height: auto;
+                min-height: 0;
+                margin: 0;
+                padding: 4px 8px;
+                font-size: clamp(0.9rem, 1.15vw, 1.1rem);
+                line-height: 1.25;
+                overflow: visible;
+                z-index: 1;
+            }
+
+            body:not(.focus-mode) .feedback.is-visible div[style] {
+                margin-top: 2px !important;
+            }
+
+            body:not(.focus-mode) .dec-footer {
+                flex: 0 0 auto;
+                margin-top: 0;
+                padding: 6px 22px 10px;
+            }
         }
 
         .container::before {
@@ -236,7 +324,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         #lessonTitle.dec-ui-game-title {
             font-family: "Be Vietnam Pro", sans-serif;
             font-weight:var(--dummy,800);
-            font-size: clamp(1.8rem, 2.5vw, 2.2rem);
+            font-size: clamp(2rem, 2.7vw, 2.4rem);
             letter-spacing: 0.0625rem;
             text-align: center;
             background: var(--accent-gradient, var(--btn-secondary-bg));
@@ -322,6 +410,8 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             gap: 14px;
             padding: 16px 22px 22px;
             background: var(--container-bg);
+            min-width: 0;
+            overflow-x: hidden;
             box-sizing: border-box;
         }
 
@@ -330,10 +420,20 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         #lessonTitle,
+        #focus-progress-row,
         #question-container,
         .progress-container,
         .dec-footer {
             grid-column: 1 / -1;
+        }
+
+        #focus-progress-row {
+            min-width: 0;
+            display: contents;
+        }
+
+        #question-container {
+            min-width: 0;
         }
 
         #subtitle-placeholder:empty {
@@ -369,7 +469,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             text-align: left;
             color: var(--text-color);
             line-height: 1.45;
-            min-height: calc(3.1em + 34px);
+            min-height: calc(2 * 1.45em + 40px);
+            overflow-wrap: anywhere;
+            text-wrap: pretty;
             transition: background var(--theme-motion-medium), border-color var(--theme-motion-fast), color var(--theme-motion-fast);
         }
 
@@ -418,6 +520,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             font-size: 1.55rem;
             position: relative;
             overflow: hidden;
+            min-width: 0;
+            overflow-wrap: anywhere;
+            text-wrap: pretty;
         }
 
         .option-label::before {
@@ -482,6 +587,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             opacity: 0.65;
             align-items: flex-start;
             text-align: left;
+            display: none;
         }
 
         .feedback {
@@ -720,6 +826,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             padding-top: 0;
             border-top: none;
             width: 100%;
+            min-width: 0;
         }
 
         .progress-container.wrap-mode {
@@ -1334,10 +1441,10 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             --focus-option-font-size: 1.12rem;
             --focus-option-radius: 10px;
             --focus-option-gap: 8px;
-            --focus-btn-height: 32px;
-            --focus-btn-padding: 6px 16px;
-            --focus-btn-font-size: 0.85rem;
-            --focus-btn-radius: 10px;
+            --focus-btn-height: clamp(44px, 5vh, 56px);
+            --focus-btn-padding: clamp(9px, 1.2vh, 12px) clamp(20px, 2vw, 28px);
+            --focus-btn-font-size: clamp(1rem, 1.65vw, 1.2rem);
+            --focus-btn-radius: 12px;
             --focus-controls-margin-top: 12px;
             --focus-feedback-padding: 10px 12px;
             --focus-feedback-margin-top: 10px;
@@ -1374,10 +1481,8 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         body.focus-mode #btnFocusMode {
-            grid-column: 1 / -1 !important;
-            justify-self: end !important;
-            align-self: flex-start !important;
-            margin: 0 0 var(--focus-exit-margin-bottom) 0 !important;
+            flex: 0 0 auto;
+            margin: 0 !important;
             height: auto !important;
             padding: 8px 16px !important;
             border-radius: 999px !important;
@@ -1420,7 +1525,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         /* Focus shell: giữ progress/controls cố định, chỉ cho nội dung câu hỏi cuộn khi cần. */
         body.focus-mode #quiz-area {
             display: grid !important;
-            grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+            grid-template-rows: auto minmax(0, 1fr) auto !important;
             align-items: stretch !important;
             flex: none !important;
             height: 100% !important;
@@ -1430,13 +1535,22 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             box-sizing: border-box !important;
         }
 
+        body.focus-mode #focus-progress-row {
+            display: flex !important;
+            grid-column: 1 / -1 !important;
+            grid-row: 1 !important;
+            align-items: center;
+            gap: 12px;
+            width: 100%;
+            min-width: 0;
+            margin-bottom: var(--focus-progress-margin-bottom);
+        }
+
         body.focus-mode #question-container {
             min-height: 0 !important;
             overflow-x: hidden !important;
-            overflow-y: auto !important;
-            overscroll-behavior: contain;
-            scrollbar-gutter: stable;
-            padding-right: 4px;
+            overflow-y: hidden !important;
+            padding-right: 0;
         }
 
         body.focus-mode .question-block {
@@ -1444,6 +1558,7 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
             margin-bottom: var(--focus-q-block-margin-bottom) !important;
             padding: var(--focus-q-block-padding) !important;
             font-size: var(--focus-q-block-font-size) !important;
+            min-height: calc(2 * 1.45em + 60px) !important;
         }
 
         body.focus-mode .options-grid {
@@ -1480,30 +1595,78 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
         }
 
         body.focus-mode #progress-area {
+            flex: 1 1 auto;
+            min-width: 0;
             margin-top: var(--focus-progress-margin-top) !important;
-            margin-bottom: var(--focus-progress-margin-bottom) !important;
+            margin-bottom: 0 !important;
             padding-top: 0 !important;
-            width: 100% !important;
+            width: auto !important;
             max-width: none !important;
+            justify-content: flex-start;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
 
 
         body.focus-mode .feedback,
         body.focus-mode .feedback-placeholder {
-            padding: var(--feedback-padding) !important;
-            margin-top: var(--feedback-margin-top) !important;
-            font-size: var(--focus-option-font-size) !important;
+            padding: 4px 8px !important;
+            margin-top: 4px !important;
+            font-size: clamp(0.9rem, 1.15vw, 1.1rem) !important;
+            line-height: 1.25;
             border-radius: var(--feedback-radius) !important;
             height: auto !important;
-            min-height: var(--feedback-height) !important;
+            min-height: 0 !important;
+            max-height: none !important;
             overflow: visible !important;
+            overflow-wrap: anywhere;
+        }
+
+        body.focus-mode .feedback div[style] {
+            margin-top: 2px !important;
         }
 
         body.focus-mode #quiz-area.zoom-pending {
             visibility: hidden !important;
             opacity: 0 !important;
             transition: none !important;
+        }
+
+        #quiz-area.result-state .controls {
+            display: none !important;
+        }
+
+        .result-actions {
+            display: flex;
+            justify-content: center;
+            margin-top: 4px;
+        }
+
+        .result-actions #reset-btn {
+            margin: 0;
+        }
+
+        body.focus-mode #quiz-area.result-state #question-container {
+            display: flex;
+            grid-row: 2 !important;
+            overflow: hidden !important;
+        }
+
+        body.focus-mode #quiz-area.result-state .confirm-msg-area {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+            padding: 0;
+            align-items: center;
+            justify-content: center;
+        }
+
+        body.focus-mode #quiz-area.result-state .confirm-msg-area > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
 
         @keyframes questionGradientMove {
@@ -1537,7 +1700,9 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
 
         <!-- Quiz Content -->
         <div id="quiz-area">
-            <div id="progress-area" class="progress-container"></div>
+            <div id="focus-progress-row">
+                <div id="progress-area" class="progress-container"></div>
+            </div>
             <div id="question-container"></div>
 
             <div class="controls">
@@ -7582,6 +7747,13 @@ const fullQuestionBank = [
             });
 
             // 3. UI Reset
+            const quizArea = document.getElementById('quiz-area');
+            const resetBtn = document.getElementById('reset-btn');
+            const controls = document.querySelector('.controls');
+            if (resetBtn && controls && resetBtn.parentElement !== controls) {
+                controls.appendChild(resetBtn);
+            }
+            if (quizArea) quizArea.classList.remove('result-state');
             setDisplay('reset-btn', 'none');
             setDisplay('confirm-back-btn', 'none');
             setDisplay('confirm-submit-btn', 'none');
@@ -7710,11 +7882,33 @@ const fullQuestionBank = [
             // Update Progress UI
             updateProgressUI();
 
+            requestAnimationFrame(fitFeedbackToViewport);
+
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // Trigger Zoom Fit on question transition
-            scheduleFocusFit();
+            // Keep Focus scale stable while navigating between questions.
+            // Focus entry and window resize handle any required refit.
+        }
+
+        function fitFeedbackToViewport() {
+            const viewport = document.getElementById('question-container');
+            const feedback = viewport?.querySelector('.feedback.is-visible');
+            if (!viewport || !feedback) return;
+
+            const minFontSize = 11;
+            let fontSize = parseFloat(getComputedStyle(feedback).fontSize);
+            let attempts = 0;
+
+            while (
+                feedback.getBoundingClientRect().bottom > viewport.getBoundingClientRect().bottom &&
+                fontSize > minFontSize &&
+                attempts < 24
+            ) {
+                fontSize -= 0.5;
+                feedback.style.setProperty('font-size', `${fontSize}px`, 'important');
+                attempts += 1;
+            }
         }
 
         function handleAnswer(qIndex, text, isCorrect, explanation) {
@@ -7872,11 +8066,15 @@ const fullQuestionBank = [
             const passingScore = Math.ceil(questionCount * PASSING_RATE);
             const msgText = score >= passingScore ? 'Tuyệt vời! Bạn làm rất tốt! 🎉🥳' : 'Hãy cố gắng hơn lần sau nhé! 💜💪';
             const msgClass = score >= passingScore ? 'result-pass' : 'result-retry';
+            const quizArea = document.getElementById('quiz-area');
+            if (quizArea) quizArea.classList.add('result-state');
 
-            document.getElementById('question-container').innerHTML = `
+            const questionContainer = document.getElementById('question-container');
+            questionContainer.innerHTML = `
             <div class="confirm-msg-area"><div>
                 <div class="result-score">${score} / ${questionCount}</div>
                 <div class="result-msg ${msgClass}">${msgText}</div>
+                <div class="result-actions"></div>
             </div></div>`;
 
             setDisplay('prev-btn', 'none');
@@ -7884,7 +8082,10 @@ const fullQuestionBank = [
             setDisplay('submit-btn', 'none');
             setDisplay('confirm-back-btn', 'none');
             setDisplay('confirm-submit-btn', 'none');
-            setDisplay('reset-btn', 'block');
+            const resetBtn = document.getElementById('reset-btn');
+            const resultActions = questionContainer.querySelector('.result-actions');
+            if (resetBtn && resultActions) resultActions.appendChild(resetBtn);
+            setDisplay(resetBtn, 'inline-flex');
 
             quizState.isFinished = true;
         }
@@ -8022,12 +8223,12 @@ const fullQuestionBank = [
             if (!btn) return;
             const isFocus = document.body.classList.contains('focus-mode');
             
-            const quizArea = document.getElementById('quiz-area');
             const headerMeta = document.querySelector('.header-meta');
+            const focusProgressRow = document.getElementById('focus-progress-row');
             
             if (isFocus) {
-                if (quizArea && btn.parentElement !== quizArea) {
-                    quizArea.insertBefore(btn, quizArea.firstChild);
+                if (focusProgressRow && btn.parentElement !== focusProgressRow) {
+                    focusProgressRow.appendChild(btn);
                 }
             } else {
                 if (headerMeta && btn.parentElement !== headerMeta) {
