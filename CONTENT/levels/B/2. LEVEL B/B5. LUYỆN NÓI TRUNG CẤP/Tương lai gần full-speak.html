@@ -727,7 +727,7 @@ body.focus-mode .control-bar {
     }
 }
 </style>
-    <meta name="dec-scoring-engine" content="DukePronunciationEngine@2.0.0;sha256=29fb17c9072f6a529c30c3189423a22289592aa90e1f623ad6d4528c5cb7cd87;inline=true">
+    <meta name="dec-scoring-engine" content="DukePronunciationEngine@2.0.0;sha256=d203773f7a5ab6f31048419de3282836a719aa9840cea47f25fcc52ed3b87b39;inline=true">
 </head>
 
 <body data-dec-template="speak" data-mode="speak">
@@ -798,6 +798,13 @@ const DukePronunciationEngine = (function createDukePronunciationEngine() {
     const IPA_PASS_SCORE = Object.freeze({ A: 84, B: 88, C: 90 });
     const MAX_LISTENING_ALTERNATIVES = Object.freeze({ A: 3, B: 3, C: 5 });
     const FILLERS = new Set(['uh', 'um', 'ah', 'er', 'hmm']);
+    const MOVABLE_ADVERBS = new Set([
+        'already', 'badly', 'carefully', 'certainly', 'currently', 'definitely',
+        'early', 'easily', 'fast', 'finally', 'happily', 'immediately', 'instead',
+        'late', 'later', 'never', 'now', 'often', 'otherwise', 'perhaps', 'probably',
+        'quickly', 'quietly', 'recently', 'rarely', 'seldom', 'slowly', 'sometimes',
+        'soon', 'then', 'today', 'tomorrow', 'tonight', 'usually', 'well', 'yesterday'
+    ]);
 
     // True acoustic homophones only. They are explicit, reviewable ASR aliases.
     const IPA_ACOUSTIC_EQUIVALENTS = Object.freeze({
@@ -1244,6 +1251,70 @@ const DukePronunciationEngine = (function createDukePronunciationEngine() {
         return 0;
     }
 
+    function isMovableAdverbPart(targetPart) {
+        const part = String(targetPart && targetPart.part || '').toLowerCase();
+        return targetPart
+            && !targetPart.isCritical
+            && (targetPart.tokenClass === 'adverb'
+                || MOVABLE_ADVERBS.has(part)
+                || (part.length > 4 && part.endsWith('ly')));
+    }
+
+    function alignWithMovableAdverb(targetParts, candidateParts) {
+        if (targetParts.length !== candidateParts.length) return null;
+
+        const movableIndexes = targetParts.reduce((indexes, part, index) => {
+            if (isMovableAdverbPart(part)) indexes.push(index);
+            return indexes;
+        }, []);
+        if (movableIndexes.length !== 1) return null;
+
+        const targetAdverbIndex = movableIndexes[0];
+        const candidateAdverbIndex = candidateParts[0] === targetParts[targetAdverbIndex].part
+            ? 0
+            : candidateParts[candidateParts.length - 1] === targetParts[targetAdverbIndex].part
+                ? candidateParts.length - 1
+                : -1;
+        if (candidateAdverbIndex < 0 || candidateAdverbIndex === targetAdverbIndex) return null;
+
+        const details = Array(targetParts.length).fill(null);
+        let candidateIndex = 0;
+        for (let targetIndex = 0; targetIndex < targetParts.length; targetIndex++) {
+            if (targetIndex === targetAdverbIndex) {
+                const adverbFactor = listeningMatchFactor(
+                    targetParts[targetIndex],
+                    candidateParts[candidateAdverbIndex]
+                );
+                if (adverbFactor <= 0) return null;
+                details[targetIndex] = {
+                    factor: adverbFactor,
+                    candidateIndex: candidateAdverbIndex,
+                    candidate: candidateParts[candidateAdverbIndex]
+                };
+                continue;
+            }
+            if (candidateIndex === candidateAdverbIndex) candidateIndex += 1;
+            const factor = listeningMatchFactor(targetParts[targetIndex], candidateParts[candidateIndex]);
+            if (factor <= 0) return null;
+            details[targetIndex] = {
+                factor,
+                candidateIndex,
+                candidate: candidateParts[candidateIndex]
+            };
+            candidateIndex += 1;
+        }
+
+        return {
+            details,
+            matchedCandidateIndexes: new Set(candidateParts.map((_, index) => index)),
+            insertions: [],
+            deletions: [],
+            substitutions: [],
+            transpositions: 0,
+            adverbReordered: true
+        };
+    }
+
     function insertionUnits(token) {
         return FILLERS.has(token) ? 0.03 : 0.18;
     }
@@ -1251,6 +1322,8 @@ const DukePronunciationEngine = (function createDukePronunciationEngine() {
     function alignListening(targetParts, candidateParts) {
         const n = targetParts.length;
         const m = candidateParts.length;
+        const adverbAlignment = alignWithMovableAdverb(targetParts, candidateParts);
+        if (adverbAlignment) return adverbAlignment;
         const dp = Array.from({ length: n + 1 }, () => Array(m + 1).fill(0));
         const back = Array.from({ length: n + 1 }, () => Array(m + 1).fill(null));
 
@@ -1446,6 +1519,7 @@ const DukePronunciationEngine = (function createDukePronunciationEngine() {
             diagnostics: {
                 candidateTokenCount: candidateParts.length,
                 targetTokenCount: targetParts.length,
+                adverbReordered: Boolean(alignment.adverbReordered),
                 rulesHash: String(profile.rulesHash || '')
             }
         };
