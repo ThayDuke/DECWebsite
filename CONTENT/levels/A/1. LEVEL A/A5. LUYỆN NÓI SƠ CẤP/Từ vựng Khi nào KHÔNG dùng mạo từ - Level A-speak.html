@@ -763,7 +763,7 @@ body.focus-mode .control-bar {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý">Gợi ý 1</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1819,7 +1819,828 @@ if (typeof module === 'object' && module.exports) {
 </script>
     <script>const SPEAK_LEVEL = "A";
 const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 0, "sourceText": "I play football after school.", "sourceHash": "279912e7", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "play", "parts": ["play"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "football", "parts": ["football"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "after", "parts": ["after"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "school.", "parts": ["school"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["football"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 1, "sourceText": "I like apples.", "sourceHash": "f8e84a76", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "apples.", "parts": ["apples"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 2, "sourceText": "My mother teaches English at school.", "sourceHash": "f85e391a", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "mother", "parts": ["mother"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "teaches", "parts": ["teaches"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "English", "parts": ["english"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "at", "parts": ["at"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "school.", "parts": ["school"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["teaches", "English"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 3, "sourceText": "She can play chess very well.", "sourceHash": "72cd7fdb", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "She", "parts": ["she"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "can", "parts": ["can"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "play", "parts": ["play"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "chess", "parts": ["chess"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "very", "parts": ["very"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "well.", "parts": ["well"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 4, "sourceText": "Monday is the first day of the week.", "sourceHash": "3b4c1a3c", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Monday", "parts": ["monday"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "the", "parts": ["the"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "first", "parts": ["1"], "weight": 2.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "critical", "criticalReason": "number", "equivalenceClass": "number", "entityType": null, "requiredPartIndexes": [0], "partClasses": ["content"], "criticalReasons": ["number"], "equivalenceClasses": ["number"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "day", "parts": ["day"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "of", "parts": ["of"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "the", "parts": ["the"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "week.", "parts": ["week"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["weak"]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["first"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 5, "sourceText": "He speaks English every day.", "sourceHash": "d669f4f6", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "He", "parts": ["he"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "speaks", "parts": ["speaks"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "English", "parts": ["english"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "every", "parts": ["every"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "day.", "parts": ["day"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["English"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 6, "sourceText": "My name is Ba.", "sourceHash": "da134d13", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "name", "parts": ["name"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "Ba.", "parts": ["ba"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 7, "sourceText": "I like milk.", "sourceHash": "c1e6052c", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "milk.", "parts": ["milk"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "recognizer_alias", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["recognizer_alias"], "homophonesByPart": [[]], "aliasesByPart": [["milc", "mil k"]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 8, "sourceText": "Is your name Mai?", "sourceHash": "990d53f3", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "your", "parts": ["your"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "name", "parts": ["name"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "Mai?", "parts": ["mai"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 9, "sourceText": "They are from America.", "sourceHash": "ad8641ab", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "They", "parts": ["they"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "from", "parts": ["from"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "America.", "parts": ["america"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["they're"], "targetParts": ["they", "are"], "kind": "contraction"}, {"surfaceParts": ["theyre"], "targetParts": ["they", "are"], "kind": "contraction"}, {"surfaceParts": ["they", "re"], "targetParts": ["they", "are"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": ["America."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 10, "sourceText": "I like red.", "sourceHash": "c04efece", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "red.", "parts": ["red"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["read"]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 11, "sourceText": "This is Lan.", "sourceHash": "615e285a", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "This", "parts": ["this"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "Lan.", "parts": ["lan"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 12, "sourceText": "I like cats.", "sourceHash": "d120d5de", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "cats.", "parts": ["cats"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 13, "sourceText": "My friend can speak English.", "sourceHash": "18b90ba5", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "friend", "parts": ["friend"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "can", "parts": ["can"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "speak", "parts": ["speak"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "English.", "parts": ["english"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["English."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 14, "sourceText": "We study Math today.", "sourceHash": "fa432fb3", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "We", "parts": ["we"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "study", "parts": ["study"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "Math", "parts": ["math"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "today.", "parts": ["today"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 15, "sourceText": "It is time to eat lunch.", "sourceHash": "fe790286", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "It", "parts": ["it"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "time", "parts": ["time"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "to", "parts": ["to"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]]}, {"id": 4, "display": "eat", "parts": ["eat"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "lunch.", "parts": ["lunch"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["it's"], "targetParts": ["it", "is"], "kind": "contraction"}, {"surfaceParts": ["its"], "targetParts": ["it", "is"], "kind": "contraction"}, {"surfaceParts": ["it", "s"], "targetParts": ["it", "is"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 16, "sourceText": "My father is at home.", "sourceHash": "ea0b66b5", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "father", "parts": ["father"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "at", "parts": ["at"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "home.", "parts": ["home"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 17, "sourceText": "The students go to school by bus to study.", "sourceHash": "573d71be", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "The", "parts": ["the"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "students", "parts": ["students"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "go", "parts": ["go"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "to", "parts": ["to"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]]}, {"id": 4, "display": "school", "parts": ["school"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "by", "parts": ["by"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["buy", "bye"]], "aliasesByPart": [[]]}, {"id": 6, "display": "bus", "parts": ["bus"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "to", "parts": ["to"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]]}, {"id": 8, "display": "study.", "parts": ["study"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["students"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 18, "sourceText": "I have piano class on Monday.", "sourceHash": "498250aa", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "have", "parts": ["have"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "piano", "parts": ["piano"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "class", "parts": ["class"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "on", "parts": ["on"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "Monday.", "parts": ["monday"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["i've"], "targetParts": ["i", "have"], "kind": "contraction"}, {"surfaceParts": ["ive"], "targetParts": ["i", "have"], "kind": "contraction"}, {"surfaceParts": ["i", "ve"], "targetParts": ["i", "have"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 19, "sourceText": "Ba lives in Vietnam.", "sourceHash": "94d2a8f4", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Ba", "parts": ["ba"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "lives", "parts": ["lives"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "in", "parts": ["in"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "Vietnam.", "parts": ["vietnam"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["Vietnam."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 20, "sourceText": "Nam is my best friend.", "sourceHash": "34512903", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Nam", "parts": ["nam"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "my", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "best", "parts": ["best"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "friend.", "parts": ["friend"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 21, "sourceText": "Do you like playing badminton?", "sourceHash": "954d3487", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Do", "parts": ["do"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "you", "parts": ["you"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "playing", "parts": ["playing"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "badminton?", "parts": ["badminton"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["playing", "badminton?"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 22, "sourceText": "We eat breakfast at seven.", "sourceHash": "cf1a14b8", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "We", "parts": ["we"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "eat", "parts": ["eat"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "breakfast", "parts": ["breakfast"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "at", "parts": ["at"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "seven.", "parts": ["7"], "weight": 2.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "critical", "criticalReason": "number", "equivalenceClass": "number", "entityType": null, "requiredPartIndexes": [0], "partClasses": ["content"], "criticalReasons": ["number"], "equivalenceClasses": ["number"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["breakfast", "seven."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 23, "sourceText": "It is late, so we should go to bed.", "sourceHash": "d1b08a1d", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "It", "parts": ["it"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "late,", "parts": ["late"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "so", "parts": ["so"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "we", "parts": ["we"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "should", "parts": ["should"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "go", "parts": ["go"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 7, "display": "to", "parts": ["to"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]]}, {"id": 8, "display": "bed.", "parts": ["bed"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["it's"], "targetParts": ["it", "is"], "kind": "contraction"}, {"surfaceParts": ["its"], "targetParts": ["it", "is"], "kind": "contraction"}, {"surfaceParts": ["it", "s"], "targetParts": ["it", "is"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 24, "sourceText": "I want to go home now.", "sourceHash": "4e7e45e4", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "want", "parts": ["want"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "to", "parts": ["to"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "homophone", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["homophone"], "homophonesByPart": [["two", "too"]], "aliasesByPart": [[]]}, {"id": 3, "display": "go", "parts": ["go"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "home", "parts": ["home"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "now.", "parts": ["now"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 25, "sourceText": "Elephants are large animals.", "sourceHash": "6912bbe1", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Elephants", "parts": ["elephants"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "large", "parts": ["large"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "animals.", "parts": ["animals"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["Elephants", "animals."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 26, "sourceText": "I am at home today.", "sourceHash": "d08e0217", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "am", "parts": ["am"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "at", "parts": ["at"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "home", "parts": ["home"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "today.", "parts": ["today"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["i'm"], "targetParts": ["i", "am"], "kind": "contraction"}, {"surfaceParts": ["im"], "targetParts": ["i", "am"], "kind": "contraction"}, {"surfaceParts": ["i", "m"], "targetParts": ["i", "am"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 27, "sourceText": "I love Music and Art.", "sourceHash": "4b7b96eb", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "love", "parts": ["love"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "Music", "parts": ["music"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "and", "parts": ["and"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "Art.", "parts": ["art"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 28, "sourceText": "The school year starts in September.", "sourceHash": "d1f58e3c", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "The", "parts": ["the"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "school", "parts": ["school"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "year", "parts": ["year"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "starts", "parts": ["starts"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "in", "parts": ["in"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "September.", "parts": ["september"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["September."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 29, "sourceText": "We are learning Vietnamese.", "sourceHash": "930c684c", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "We", "parts": ["we"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "learning", "parts": ["learning"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "Vietnamese.", "parts": ["vietnamese"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["we're"], "targetParts": ["we", "are"], "kind": "contraction"}, {"surfaceParts": ["were"], "targetParts": ["we", "are"], "kind": "contraction"}, {"surfaceParts": ["we", "re"], "targetParts": ["we", "are"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": ["learning", "Vietnamese."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 30, "sourceText": "I do not like carrots.", "sourceHash": "9d0a2273", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "do", "parts": ["do"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "not", "parts": ["not"], "weight": 2.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "critical", "criticalReason": "negation", "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [0], "partClasses": ["content"], "criticalReasons": ["negation"], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "carrots.", "parts": ["carrots"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["don't"], "targetParts": ["do", "not"], "kind": "contraction"}, {"surfaceParts": ["dont"], "targetParts": ["do", "not"], "kind": "contraction"}, {"surfaceParts": ["don", "t"], "targetParts": ["do", "not"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": ["not", "carrots."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 31, "sourceText": "My uncle is from Japan.", "sourceHash": "e6572f52", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "uncle", "parts": ["uncle"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "from", "parts": ["from"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "Japan.", "parts": ["japan"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 32, "sourceText": "The children are playing hide and seek.", "sourceHash": "b410b582", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "The", "parts": ["the"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "children", "parts": ["children"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "are", "parts": ["are"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "playing", "parts": ["playing"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "hide", "parts": ["hide"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "and", "parts": ["and"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "seek.", "parts": ["seek"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["children", "playing"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 33, "sourceText": "What do you want for dinner?", "sourceHash": "0124ae51", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "What", "parts": ["what"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "do", "parts": ["do"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "you", "parts": ["you"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "want", "parts": ["want"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "for", "parts": ["for"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "dinner?", "parts": ["dinner"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 34, "sourceText": "We live in Hanoi.", "sourceHash": "59b066f7", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "We", "parts": ["we"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "live", "parts": ["live"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "in", "parts": ["in"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "Hanoi.", "parts": ["hanoi"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 35, "sourceText": "Flowers are beautiful.", "sourceHash": "11d973a4", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Flowers", "parts": ["flowers"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "are", "parts": ["are"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "beautiful.", "parts": ["beautiful"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["Flowers", "beautiful."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 36, "sourceText": "Can you play tennis?", "sourceHash": "85af2b2c", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Can", "parts": ["can"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "you", "parts": ["you"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "play", "parts": ["play"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "tennis?", "parts": ["tennis"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 37, "sourceText": "Let us go home now.", "sourceHash": "88e7b05b", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Let", "parts": ["let"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "us", "parts": ["us"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "go", "parts": ["go"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "home", "parts": ["home"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "now.", "parts": ["now"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [{"surfaceParts": ["let's"], "targetParts": ["let", "us"], "kind": "contraction"}, {"surfaceParts": ["lets"], "targetParts": ["let", "us"], "kind": "contraction"}, {"surfaceParts": ["let", "s"], "targetParts": ["let", "us"], "kind": "contraction"}], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 38, "sourceText": "My brother likes Science.", "sourceHash": "04166493", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "brother", "parts": ["brother"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "likes", "parts": ["likes"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "Science.", "parts": ["science"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["brother", "Science."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 39, "sourceText": "Birds have wings.", "sourceHash": "37a5e217", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Birds", "parts": ["birds"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "have", "parts": ["have"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "wings.", "parts": ["wings"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 40, "sourceText": "Minh is in London.", "sourceHash": "97497ffe", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Minh", "parts": ["minh"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "in", "parts": ["in"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "London.", "parts": ["london"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 41, "sourceText": "Do you like oranges? I prefer apples.", "sourceHash": "252ec888", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Do", "parts": ["do"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "you", "parts": ["you"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "oranges?", "parts": ["oranges"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "prefer", "parts": ["prefer"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "apples.", "parts": ["apples"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["oranges?"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 42, "sourceText": "My sister is learning French.", "sourceHash": "26ed29a1", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "sister", "parts": ["sister"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "learning", "parts": ["learning"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "French.", "parts": ["french"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["learning"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 43, "sourceText": "My birthday is in May.", "sourceHash": "31c74988", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "birthday", "parts": ["birthday"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "in", "parts": ["in"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "May.", "parts": ["may"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["birthday"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 44, "sourceText": "I go swimming on Saturdays.", "sourceHash": "d8f79fea", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "go", "parts": ["go"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "swimming", "parts": ["swimming"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "on", "parts": ["on"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "Saturdays.", "parts": ["saturdays"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["swimming", "Saturdays."]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 45, "sourceText": "My favorite subject is IT.", "sourceHash": "1c1da052", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "My", "parts": ["my"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "favorite", "parts": ["favorite"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "subject", "parts": ["subject"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "is", "parts": ["is"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "IT.", "parts": ["it"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["favorite", "subject"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 46, "sourceText": "We study English at school.", "sourceHash": "0ea61e93", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "We", "parts": ["we"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "study", "parts": ["study"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "English", "parts": ["english"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "at", "parts": ["at"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "school.", "parts": ["school"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["English"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 47, "sourceText": "Nam and Ba play football on Monday.", "sourceHash": "28b284eb", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "Nam", "parts": ["nam"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "and", "parts": ["and"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "Ba", "parts": ["ba"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 3, "display": "play", "parts": ["play"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 4, "display": "football", "parts": ["football"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 5, "display": "on", "parts": ["on"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 6, "display": "Monday.", "parts": ["monday"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["football"]}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 48, "sourceText": "I like cats.", "sourceHash": "d120d5de", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "like", "parts": ["like"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "cats.", "parts": ["cats"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": []}, {"schemaVersion": "3.0.0", "policyVersion": "3.1.0", "rulesHash": "079db0afccc9ab5fe0a6238142478b9cdfa170744ea16d71e03fa1a5e3db5d16", "itemIndex": 49, "sourceText": "I play football.", "sourceHash": "7a1b0d67", "level": "A", "passScore": 70, "tokens": [{"id": 0, "display": "I", "parts": ["i"], "weight": 0.55, "scorePolicy": "normal", "skipReason": null, "tokenClass": "function", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["function"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 1, "display": "play", "parts": ["play"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}, {"id": 2, "display": "football.", "parts": ["football"], "weight": 1.0, "scorePolicy": "normal", "skipReason": null, "tokenClass": "content", "criticalReason": null, "equivalenceClass": "exact", "entityType": null, "requiredPartIndexes": [], "partClasses": ["content"], "criticalReasons": [null], "equivalenceClasses": ["exact"], "homophonesByPart": [[]], "aliasesByPart": [[]]}], "phraseVariants": [{"canonical": "oclock", "variants": ["o clock", "o'clock"]}, {"canonical": "going to", "variants": ["gonna"]}, {"canonical": "want to", "variants": ["wanna"]}, {"canonical": "got to", "variants": ["gotta"]}], "candidateEquivalences": [], "entityEquivalences": [], "recognitionHints": ["football."]}];
-const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ học.", "answer": "I play football after school.", "help1": "Môn thể thao và school trong hoạt động học tập không cần mạo từ.", "help2": "I play football after school."}, {"id": "q002", "question": "Tôi thích táo nói chung.", "answer": "I like apples.", "help1": "Danh từ số nhiều nói về cả loài hoặc nhóm nói chung không dùng mạo từ.", "help2": "I like apples."}, {"id": "q003", "question": "Mẹ tôi dạy tiếng Anh ở trường.", "answer": "My mother teaches English at school.", "help1": "Tên ngôn ngữ và school trong chức năng học tập không dùng mạo từ.", "help2": "My mother teaches English at school."}, {"id": "q004", "question": "Cô ấy có thể chơi cờ vua rất giỏi.", "answer": "She can play chess very well.", "help1": "Tên môn thể thao hoặc trò chơi nói chung thường đứng sau play không có mạo từ.", "help2": "She can play chess very well."}, {"id": "q005", "question": "Thứ Hai là ngày đầu tiên trong tuần.", "answer": "Monday is the first day of the week.", "help1": "Tên ngày trong tuần đứng riêng không cần mạo từ.", "help2": "Monday is the first day of the week."}, {"id": "q006", "question": "Cậu ấy nói tiếng Anh mỗi ngày.", "answer": "He speaks English every day.", "help1": "Tên ngôn ngữ nói chung không dùng mạo từ.", "help2": "He speaks English every day."}, {"id": "q007", "question": "Tên của tôi là Ba.", "answer": "My name is Ba.", "help1": "Tên riêng đứng sau is không dùng mạo từ.", "help2": "My name is Ba."}, {"id": "q008", "question": "Tôi thích sữa nói chung.", "answer": "I like milk.", "help1": "Danh từ không đếm được nói chung không dùng mạo từ.", "help2": "I like milk."}, {"id": "q009", "question": "Tên của bạn có phải là Mai không?", "answer": "Is your name Mai?", "help1": "Tên riêng sau động từ be không có mạo từ.", "help2": "Is your name Mai?"}, {"id": "q010", "question": "Họ đến từ nước Mỹ.", "answer": "They are from America.", "help1": "Tên riêng của quốc gia đơn lẻ không dùng mạo từ.", "help2": "They are from America."}, {"id": "q011", "question": "Tôi thích màu đỏ nói chung.", "answer": "I like red.", "help1": "Tên màu được dùng như khái niệm chung không cần mạo từ.", "help2": "I like red."}, {"id": "q012", "question": "Đây là Lan.", "answer": "This is Lan.", "help1": "Tên riêng Lan đứng sau is không dùng mạo từ.", "help2": "This is Lan."}, {"id": "q013", "question": "Tôi thích loài mèo nói chung.", "answer": "I like cats.", "help1": "Danh từ số nhiều nói chung không dùng mạo từ.", "help2": "I like cats."}, {"id": "q014", "question": "Bạn tôi có thể nói tiếng Anh.", "answer": "My friend can speak English.", "help1": "Tên ngôn ngữ nói chung không dùng mạo từ.", "help2": "My friend can speak English."}, {"id": "q015", "question": "Hôm nay chúng tôi học môn Toán.", "answer": "We study Math today.", "help1": "Tên môn học đứng riêng không dùng mạo từ.", "help2": "We study Math today."}, {"id": "q016", "question": "Đã đến lúc ăn bữa trưa rồi.", "answer": "It is time to eat lunch.", "help1": "Tên bữa ăn thường lệ sau eat không cần mạo từ.", "help2": "It is time to eat lunch."}, {"id": "q017", "question": "Bố tôi đang ở nhà.", "answer": "My father is at home.", "help1": "Home trong cụm chỉ đang ở nhà không dùng mạo từ.", "help2": "My father is at home."}, {"id": "q018", "question": "Những học sinh đi xe buýt đến trường để học.", "answer": "The students go to school by bus to study.", "help1": "School với nghĩa hoạt động học tập và bus sau by không dùng mạo từ.", "help2": "The students go to school by bus to study."}, {"id": "q019", "question": "Tôi có lớp piano vào thứ Hai.", "answer": "I have piano class on Monday.", "help1": "Tên ngày Monday và tên lớp học dùng theo lịch không cần mạo từ.", "help2": "I have piano class on Monday."}, {"id": "q020", "question": "Ba sống ở Việt Nam.", "answer": "Ba lives in Vietnam.", "help1": "Tên quốc gia đơn lẻ Vietnam không dùng mạo từ.", "help2": "Ba lives in Vietnam."}, {"id": "q021", "question": "Nam là người bạn thân nhất của tôi.", "answer": "Nam is my best friend.", "help1": "Tên riêng Nam đứng đầu câu không có mạo từ.", "help2": "Nam is my best friend."}, {"id": "q022", "question": "Bạn có thích chơi cầu lông không?", "answer": "Do you like playing badminton?", "help1": "Tên môn thể thao sau playing nói chung không dùng mạo từ.", "help2": "Do you like playing badminton?"}, {"id": "q023", "question": "Chúng tôi ăn sáng lúc bảy giờ.", "answer": "We eat breakfast at seven.", "help1": "Tên bữa ăn thường lệ không dùng mạo từ.", "help2": "We eat breakfast at seven."}, {"id": "q024", "question": "Đã muộn nên chúng ta nên đi ngủ.", "answer": "It is late, so we should go to bed.", "help1": "Bed trong cụm go to bed chỉ hoạt động ngủ, không dùng mạo từ.", "help2": "It is late, so we should go to bed."}, {"id": "q025", "question": "Bây giờ tôi muốn về nhà.", "answer": "I want to go home now.", "help1": "Home sau go chỉ nơi ở nói chung nên không dùng mạo từ.", "help2": "I want to go home now."}, {"id": "q026", "question": "Loài voi là những động vật to lớn.", "answer": "Elephants are large animals.", "help1": "Danh từ số nhiều nói về cả loài không dùng mạo từ.", "help2": "Elephants are large animals."}, {"id": "q027", "question": "Hôm nay tôi đang ở nhà.", "answer": "I am at home today.", "help1": "Home trong cụm at home không dùng mạo từ.", "help2": "I am at home today."}, {"id": "q028", "question": "Tôi yêu môn Âm nhạc và môn Nghệ thuật.", "answer": "I love Music and Art.", "help1": "Tên môn học đứng riêng không dùng mạo từ.", "help2": "I love Music and Art."}, {"id": "q029", "question": "Năm học bắt đầu vào tháng Chín.", "answer": "The school year starts in September.", "help1": "Tên tháng September đứng riêng không dùng mạo từ.", "help2": "The school year starts in September."}, {"id": "q030", "question": "Chúng tôi đang học tiếng Việt.", "answer": "We are learning Vietnamese.", "help1": "Tên ngôn ngữ nói chung không dùng mạo từ.", "help2": "We are learning Vietnamese."}, {"id": "q031", "question": "Tôi không thích cà rốt nói chung.", "answer": "I do not like carrots.", "help1": "Danh từ số nhiều nói chung không dùng mạo từ.", "help2": "I do not like carrots."}, {"id": "q032", "question": "Chú tôi đến từ Nhật Bản.", "answer": "My uncle is from Japan.", "help1": "Tên quốc gia đơn lẻ Japan không dùng mạo từ.", "help2": "My uncle is from Japan."}, {"id": "q033", "question": "Những đứa trẻ đang chơi trò trốn tìm.", "answer": "The children are playing hide and seek.", "help1": "Tên trò chơi nói chung sau playing không dùng mạo từ.", "help2": "The children are playing hide and seek."}, {"id": "q034", "question": "Bạn muốn ăn gì cho bữa tối?", "answer": "What do you want for dinner?", "help1": "Tên bữa ăn thường lệ sau for không dùng mạo từ.", "help2": "What do you want for dinner?"}, {"id": "q035", "question": "Chúng tôi sống ở Hà Nội.", "answer": "We live in Hanoi.", "help1": "Tên thành phố Hanoi không dùng mạo từ.", "help2": "We live in Hanoi."}, {"id": "q036", "question": "Hoa nói chung thì rất đẹp.", "answer": "Flowers are beautiful.", "help1": "Danh từ số nhiều nói về sự vật nói chung không dùng mạo từ.", "help2": "Flowers are beautiful."}, {"id": "q037", "question": "Bạn có thể chơi quần vợt không?", "answer": "Can you play tennis?", "help1": "Tên môn thể thao sau play không dùng mạo từ.", "help2": "Can you play tennis?"}, {"id": "q038", "question": "Bây giờ chúng ta hãy về nhà.", "answer": "Let us go home now.", "help1": "Home sau go chỉ nơi ở nói chung nên không dùng mạo từ.", "help2": "Let us go home now."}, {"id": "q039", "question": "Anh trai tôi thích môn Khoa học.", "answer": "My brother likes Science.", "help1": "Tên môn học đứng riêng không dùng mạo từ.", "help2": "My brother likes Science."}, {"id": "q040", "question": "Loài chim có cánh.", "answer": "Birds have wings.", "help1": "Danh từ số nhiều nói về cả loài không dùng mạo từ.", "help2": "Birds have wings."}, {"id": "q041", "question": "Minh đang ở Luân Đôn.", "answer": "Minh is in London.", "help1": "Tên riêng của người và thành phố không dùng mạo từ.", "help2": "Minh is in London."}, {"id": "q042", "question": "Bạn có thích cam nói chung và thích táo hơn không?", "answer": "Do you like oranges? I prefer apples.", "help1": "Hai danh từ số nhiều đều nói chung nên không dùng mạo từ.", "help2": "Do you like oranges? I prefer apples."}, {"id": "q043", "question": "Chị gái tôi đang học tiếng Pháp.", "answer": "My sister is learning French.", "help1": "Tên ngôn ngữ nói chung không dùng mạo từ.", "help2": "My sister is learning French."}, {"id": "q044", "question": "Sinh nhật của tôi vào tháng Năm.", "answer": "My birthday is in May.", "help1": "Tên tháng May đứng riêng không dùng mạo từ.", "help2": "My birthday is in May."}, {"id": "q045", "question": "Tôi đi bơi vào các ngày thứ Bảy.", "answer": "I go swimming on Saturdays.", "help1": "Tên hoạt động thể thao và ngày thứ Bảy ở dạng số nhiều không cần mạo từ.", "help2": "I go swimming on Saturdays."}, {"id": "q046", "question": "Môn học yêu thích của tôi là Tin học.", "answer": "My favorite subject is IT.", "help1": "Tên môn học hoặc lĩnh vực IT đứng riêng không dùng mạo từ.", "help2": "My favorite subject is IT."}, {"id": "q047", "question": "Chúng tôi học tiếng Anh ở trường.", "answer": "We study English at school.", "help1": "Tên ngôn ngữ và school trong hoạt động học tập không dùng mạo từ.", "help2": "We study English at school."}, {"id": "q048", "question": "Nam và Ba chơi bóng đá vào thứ Hai.", "answer": "Nam and Ba play football on Monday.", "help1": "Tên riêng, môn thể thao và tên ngày đều đứng không có mạo từ.", "help2": "Nam and Ba play football on Monday."}, {"id": "q049", "question": "Tôi thích loài mèo nói chung.", "answer": "I like cats.", "help1": "Danh từ số nhiều nói chung không dùng mạo từ.", "help2": "I like cats."}, {"id": "q050", "question": "Tôi chơi bóng đá.", "answer": "I play football.", "help1": "Tên môn thể thao nói chung sau play không dùng mạo từ.", "help2": "I play football."}];
+const lessonData = [
+  {
+    "id": "q001",
+    "question": "Tôi chơi bóng đá sau giờ học.",
+    "keywords": [
+      "i",
+      "play",
+      "football",
+      "after",
+      "school"
+    ],
+    "variants": [
+      "I play football after school.",
+      "I play soccer after school."
+    ],
+    "help1": "I play / football after school",
+    "help2": "I play football after school.",
+    "answer": "I play football after school."
+  },
+  {
+    "id": "q002",
+    "question": "Tôi thích táo nói chung.",
+    "keywords": [
+      "i",
+      "like",
+      "apples"
+    ],
+    "variants": [
+      "I like apples."
+    ],
+    "help1": "I / like / apples",
+    "help2": "I like apples.",
+    "answer": "I like apples."
+  },
+  {
+    "id": "q003",
+    "question": "Mẹ tôi dạy tiếng Anh ở trường.",
+    "keywords": [
+      "my",
+      "mother",
+      "teaches",
+      "english",
+      "school"
+    ],
+    "variants": [
+      "My mother teaches English at school.",
+      "My mom teaches English at school."
+    ],
+    "help1": "My mother / teaches English / at school",
+    "help2": "My mother teaches English at school.",
+    "answer": "My mother teaches English at school."
+  },
+  {
+    "id": "q004",
+    "question": "Cô ấy có thể chơi cờ vua rất giỏi.",
+    "keywords": [
+      "she",
+      "can",
+      "play",
+      "chess",
+      "very",
+      "well"
+    ],
+    "variants": [
+      "She can play chess very well."
+    ],
+    "help1": "She can / play chess / very well",
+    "help2": "She can play chess very well.",
+    "answer": "She can play chess very well."
+  },
+  {
+    "id": "q005",
+    "question": "Thứ Hai là ngày đầu tiên trong tuần.",
+    "keywords": [
+      "monday",
+      "first",
+      "week"
+    ],
+    "variants": [
+      "Monday is the first day of the week."
+    ],
+    "help1": "Monday is / the first / day of the week",
+    "help2": "Monday is the first day of the week.",
+    "answer": "Monday is the first day of the week."
+  },
+  {
+    "id": "q006",
+    "question": "Cậu ấy nói tiếng Anh mỗi ngày.",
+    "keywords": [
+      "every day",
+      "he",
+      "speaks",
+      "english"
+    ],
+    "variants": [
+      "He speaks English every day.",
+      "Every day he speaks english.",
+      "Every day, he speaks english."
+    ],
+    "help1": "He speaks English / every day",
+    "help2": "He speaks English every day.",
+    "answer": "He speaks English every day."
+  },
+  {
+    "id": "q007",
+    "question": "Tên của tôi là Ba.",
+    "keywords": [
+      "my",
+      "name",
+      "is",
+      "ba"
+    ],
+    "variants": [
+      "My name is Ba."
+    ],
+    "help1": "My name / is Ba",
+    "help2": "My name is Ba.",
+    "answer": "My name is Ba."
+  },
+  {
+    "id": "q008",
+    "question": "Tôi thích sữa nói chung.",
+    "keywords": [
+      "i",
+      "like",
+      "milk"
+    ],
+    "variants": [
+      "I like milk."
+    ],
+    "help1": "I / like / milk",
+    "help2": "I like milk.",
+    "answer": "I like milk."
+  },
+  {
+    "id": "q009",
+    "question": "Tên của bạn có phải là Mai không?",
+    "keywords": [
+      "is",
+      "your",
+      "name",
+      "mai"
+    ],
+    "variants": [
+      "Is your name Mai?"
+    ],
+    "help1": "Is your / name Mai",
+    "help2": "Is your name Mai?",
+    "answer": "Is your name Mai?"
+  },
+  {
+    "id": "q010",
+    "question": "Họ đến từ nước Mỹ.",
+    "keywords": [
+      "they",
+      "are",
+      "america"
+    ],
+    "variants": [
+      "They are from America.",
+      "they're from America.",
+      "they are from America."
+    ],
+    "help1": "They are / from America",
+    "help2": "They are from America.",
+    "answer": "They are from America."
+  },
+  {
+    "id": "q011",
+    "question": "Tôi thích màu đỏ nói chung.",
+    "keywords": [
+      "i",
+      "like",
+      "red"
+    ],
+    "variants": [
+      "I like red."
+    ],
+    "help1": "I / like / red",
+    "help2": "I like red.",
+    "answer": "I like red."
+  },
+  {
+    "id": "q012",
+    "question": "Đây là Lan.",
+    "keywords": [
+      "this",
+      "is",
+      "lan"
+    ],
+    "variants": [
+      "This is Lan."
+    ],
+    "help1": "This / is / Lan",
+    "help2": "This is Lan.",
+    "answer": "This is Lan."
+  },
+  {
+    "id": "q013",
+    "question": "Tôi thích loài mèo nói chung.",
+    "keywords": [
+      "i",
+      "like",
+      "cats"
+    ],
+    "variants": [
+      "I like cats."
+    ],
+    "help1": "I / like / cats",
+    "help2": "I like cats.",
+    "answer": "I like cats."
+  },
+  {
+    "id": "q014",
+    "question": "Bạn tôi có thể nói tiếng Anh.",
+    "keywords": [
+      "my",
+      "friend",
+      "can",
+      "speak",
+      "english"
+    ],
+    "variants": [
+      "My friend can speak English."
+    ],
+    "help1": "My friend / can speak English",
+    "help2": "My friend can speak English.",
+    "answer": "My friend can speak English."
+  },
+  {
+    "id": "q015",
+    "question": "Hôm nay chúng tôi học môn Toán.",
+    "keywords": [
+      "we",
+      "study",
+      "math",
+      "today"
+    ],
+    "variants": [
+      "We study Math today.",
+      "Today we study math.",
+      "Today, we study math."
+    ],
+    "help1": "We study Math / today",
+    "help2": "We study Math today.",
+    "answer": "We study Math today."
+  },
+  {
+    "id": "q016",
+    "question": "Đã đến lúc ăn bữa trưa rồi.",
+    "keywords": [
+      "time",
+      "eat",
+      "lunch"
+    ],
+    "variants": [
+      "It is time to eat lunch.",
+      "it's time to eat lunch.",
+      "it is time to eat lunch."
+    ],
+    "help1": "It is / time to / eat lunch",
+    "help2": "It is time to eat lunch.",
+    "answer": "It is time to eat lunch."
+  },
+  {
+    "id": "q017",
+    "question": "Bố tôi đang ở nhà.",
+    "keywords": [
+      "my",
+      "father",
+      "home"
+    ],
+    "variants": [
+      "My father is at home.",
+      "My dad is at home."
+    ],
+    "help1": "My father / is at home",
+    "help2": "My father is at home.",
+    "answer": "My father is at home."
+  },
+  {
+    "id": "q018",
+    "question": "Những học sinh đi xe buýt đến trường để học.",
+    "keywords": [
+      "students",
+      "go",
+      "school",
+      "bus",
+      "study"
+    ],
+    "variants": [
+      "The students go to school by bus to study."
+    ],
+    "help1": "The students go / to school by / bus to study",
+    "help2": "The students go to school by bus to study.",
+    "answer": "The students go to school by bus to study."
+  },
+  {
+    "id": "q019",
+    "question": "Tôi có lớp piano vào thứ Hai.",
+    "keywords": [
+      "i",
+      "piano",
+      "class",
+      "monday"
+    ],
+    "variants": [
+      "I have piano class on Monday.",
+      "I've piano class on Monday."
+    ],
+    "help1": "I have / piano class / on Monday",
+    "help2": "I have piano class on Monday.",
+    "answer": "I have piano class on Monday."
+  },
+  {
+    "id": "q020",
+    "question": "Ba sống ở Việt Nam.",
+    "keywords": [
+      "ba",
+      "lives",
+      "vietnam"
+    ],
+    "variants": [
+      "Ba lives in Vietnam."
+    ],
+    "help1": "Ba lives / in Vietnam",
+    "help2": "Ba lives in Vietnam.",
+    "answer": "Ba lives in Vietnam."
+  },
+  {
+    "id": "q021",
+    "question": "Nam là người bạn thân nhất của tôi.",
+    "keywords": [
+      "nam",
+      "my",
+      "best",
+      "friend"
+    ],
+    "variants": [
+      "Nam is my best friend."
+    ],
+    "help1": "Nam is / my best friend",
+    "help2": "Nam is my best friend.",
+    "answer": "Nam is my best friend."
+  },
+  {
+    "id": "q022",
+    "question": "Bạn có thích chơi cầu lông không?",
+    "keywords": [
+      "you",
+      "like",
+      "playing",
+      "badminton"
+    ],
+    "variants": [
+      "Do you like playing badminton?"
+    ],
+    "help1": "Do you / like playing badminton",
+    "help2": "Do you like playing badminton?",
+    "answer": "Do you like playing badminton?"
+  },
+  {
+    "id": "q023",
+    "question": "Chúng tôi ăn sáng lúc bảy giờ.",
+    "keywords": [
+      "we",
+      "eat",
+      "breakfast",
+      "seven"
+    ],
+    "variants": [
+      "We eat breakfast at seven.",
+      "We eat breakfast at 7."
+    ],
+    "help1": "We eat / breakfast at seven",
+    "help2": "We eat breakfast at seven.",
+    "answer": "We eat breakfast at seven."
+  },
+  {
+    "id": "q024",
+    "question": "Đã muộn nên chúng ta nên đi ngủ.",
+    "keywords": [
+      "late",
+      "so",
+      "we",
+      "should",
+      "go",
+      "bed"
+    ],
+    "variants": [
+      "It is late, so we should go to bed.",
+      "it's late, so we should go to bed.",
+      "it is late, so we should go to bed."
+    ],
+    "help1": "It is late / so we should / go to bed",
+    "help2": "It is late, so we should go to bed.",
+    "answer": "It is late, so we should go to bed."
+  },
+  {
+    "id": "q025",
+    "question": "Bây giờ tôi muốn về nhà.",
+    "keywords": [
+      "now",
+      "i",
+      "want",
+      "go",
+      "home"
+    ],
+    "variants": [
+      "I want to go home now.",
+      "Now I want to go home.",
+      "Now, I want to go home."
+    ],
+    "help1": "I want / to go home / now",
+    "help2": "I want to go home now.",
+    "answer": "I want to go home now."
+  },
+  {
+    "id": "q026",
+    "question": "Loài voi là những động vật to lớn.",
+    "keywords": [
+      "elephants",
+      "are",
+      "large",
+      "animals"
+    ],
+    "variants": [
+      "Elephants are large animals."
+    ],
+    "help1": "Elephants are / large animals",
+    "help2": "Elephants are large animals.",
+    "answer": "Elephants are large animals."
+  },
+  {
+    "id": "q027",
+    "question": "Hôm nay tôi đang ở nhà.",
+    "keywords": [
+      "today",
+      "i",
+      "home"
+    ],
+    "variants": [
+      "I am at home today.",
+      "Today I am at home.",
+      "Today, I am at home."
+    ],
+    "help1": "I am / at home / today",
+    "help2": "I am at home today.",
+    "answer": "I am at home today."
+  },
+  {
+    "id": "q028",
+    "question": "Tôi yêu môn Âm nhạc và môn Nghệ thuật.",
+    "keywords": [
+      "i",
+      "love",
+      "music",
+      "art"
+    ],
+    "variants": [
+      "I love Music and Art."
+    ],
+    "help1": "I love / Music and Art",
+    "help2": "I love Music and Art.",
+    "answer": "I love Music and Art."
+  },
+  {
+    "id": "q029",
+    "question": "Năm học bắt đầu vào tháng Chín.",
+    "keywords": [
+      "school",
+      "year",
+      "starts",
+      "september"
+    ],
+    "variants": [
+      "The school year starts in September."
+    ],
+    "help1": "The school / year starts / in September",
+    "help2": "The school year starts in September.",
+    "answer": "The school year starts in September."
+  },
+  {
+    "id": "q030",
+    "question": "Chúng tôi đang học tiếng Việt.",
+    "keywords": [
+      "we",
+      "are",
+      "learning",
+      "vietnamese"
+    ],
+    "variants": [
+      "We are learning Vietnamese.",
+      "we're learning Vietnamese.",
+      "we are learning Vietnamese."
+    ],
+    "help1": "We are / learning Vietnamese",
+    "help2": "We are learning Vietnamese.",
+    "answer": "We are learning Vietnamese."
+  },
+  {
+    "id": "q031",
+    "question": "Tôi không thích cà rốt nói chung.",
+    "keywords": [
+      "i",
+      "not",
+      "like",
+      "carrots"
+    ],
+    "variants": [
+      "I do not like carrots.",
+      "I don't like carrots."
+    ],
+    "help1": "I do / not like carrots",
+    "help2": "I do not like carrots.",
+    "answer": "I do not like carrots."
+  },
+  {
+    "id": "q032",
+    "question": "Chú tôi đến từ Nhật Bản.",
+    "keywords": [
+      "my",
+      "uncle",
+      "japan"
+    ],
+    "variants": [
+      "My uncle is from Japan."
+    ],
+    "help1": "My uncle / is from Japan",
+    "help2": "My uncle is from Japan.",
+    "answer": "My uncle is from Japan."
+  },
+  {
+    "id": "q033",
+    "question": "Những đứa trẻ đang chơi trò trốn tìm.",
+    "keywords": [
+      "children",
+      "playing",
+      "hide",
+      "seek"
+    ],
+    "variants": [
+      "The children are playing hide and seek."
+    ],
+    "help1": "The children / are playing / hide and seek",
+    "help2": "The children are playing hide and seek.",
+    "answer": "The children are playing hide and seek."
+  },
+  {
+    "id": "q034",
+    "question": "Bạn muốn ăn gì cho bữa tối?",
+    "keywords": [
+      "what",
+      "you",
+      "want",
+      "dinner"
+    ],
+    "variants": [
+      "What do you want for dinner?"
+    ],
+    "help1": "What do / you want / for dinner",
+    "help2": "What do you want for dinner?",
+    "answer": "What do you want for dinner?"
+  },
+  {
+    "id": "q035",
+    "question": "Chúng tôi sống ở Hà Nội.",
+    "keywords": [
+      "we",
+      "live",
+      "hanoi"
+    ],
+    "variants": [
+      "We live in Hanoi."
+    ],
+    "help1": "We live / in Hanoi",
+    "help2": "We live in Hanoi.",
+    "answer": "We live in Hanoi."
+  },
+  {
+    "id": "q036",
+    "question": "Hoa nói chung thì rất đẹp.",
+    "keywords": [
+      "flowers",
+      "are",
+      "beautiful"
+    ],
+    "variants": [
+      "Flowers are beautiful."
+    ],
+    "help1": "Flowers / are / beautiful",
+    "help2": "Flowers are beautiful.",
+    "answer": "Flowers are beautiful."
+  },
+  {
+    "id": "q037",
+    "question": "Bạn có thể chơi quần vợt không?",
+    "keywords": [
+      "can",
+      "you",
+      "play",
+      "tennis"
+    ],
+    "variants": [
+      "Can you play tennis?"
+    ],
+    "help1": "Can you / play tennis",
+    "help2": "Can you play tennis?",
+    "answer": "Can you play tennis?"
+  },
+  {
+    "id": "q038",
+    "question": "Bây giờ chúng ta hãy về nhà.",
+    "keywords": [
+      "now",
+      "let",
+      "us",
+      "go",
+      "home"
+    ],
+    "variants": [
+      "Let us go home now.",
+      "Now let us go home.",
+      "Now, let us go home."
+    ],
+    "help1": "Let us / go home / now",
+    "help2": "Let us go home now.",
+    "answer": "Let us go home now."
+  },
+  {
+    "id": "q039",
+    "question": "Anh trai tôi thích môn Khoa học.",
+    "keywords": [
+      "my",
+      "brother",
+      "likes",
+      "science"
+    ],
+    "variants": [
+      "My brother likes Science."
+    ],
+    "help1": "My brother / likes Science",
+    "help2": "My brother likes Science.",
+    "answer": "My brother likes Science."
+  },
+  {
+    "id": "q040",
+    "question": "Loài chim có cánh.",
+    "keywords": [
+      "birds",
+      "have",
+      "wings"
+    ],
+    "variants": [
+      "Birds have wings."
+    ],
+    "help1": "Birds / have / wings",
+    "help2": "Birds have wings.",
+    "answer": "Birds have wings."
+  },
+  {
+    "id": "q041",
+    "question": "Minh đang ở Luân Đôn.",
+    "keywords": [
+      "minh",
+      "is",
+      "london"
+    ],
+    "variants": [
+      "Minh is in London."
+    ],
+    "help1": "Minh is / in London",
+    "help2": "Minh is in London.",
+    "answer": "Minh is in London."
+  },
+  {
+    "id": "q042",
+    "question": "Bạn có thích cam nói chung và thích táo hơn không?",
+    "keywords": [
+      "you",
+      "like",
+      "oranges",
+      "prefer",
+      "apples"
+    ],
+    "variants": [
+      "Do you like oranges? I prefer apples."
+    ],
+    "help1": "Do you / like oranges / I prefer apples",
+    "help2": "Do you like oranges? I prefer apples.",
+    "answer": "Do you like oranges? I prefer apples."
+  },
+  {
+    "id": "q043",
+    "question": "Chị gái tôi đang học tiếng Pháp.",
+    "keywords": [
+      "my",
+      "sister",
+      "learning",
+      "french"
+    ],
+    "variants": [
+      "My sister is learning French."
+    ],
+    "help1": "My sister / is learning French",
+    "help2": "My sister is learning French.",
+    "answer": "My sister is learning French."
+  },
+  {
+    "id": "q044",
+    "question": "Sinh nhật của tôi vào tháng Năm.",
+    "keywords": [
+      "my",
+      "birthday",
+      "may"
+    ],
+    "variants": [
+      "My birthday is in May."
+    ],
+    "help1": "My birthday / is in May",
+    "help2": "My birthday is in May.",
+    "answer": "My birthday is in May."
+  },
+  {
+    "id": "q045",
+    "question": "Tôi đi bơi vào các ngày thứ Bảy.",
+    "keywords": [
+      "on saturdays",
+      "i",
+      "go",
+      "swimming"
+    ],
+    "variants": [
+      "I go swimming on Saturdays.",
+      "On saturdays I go swimming.",
+      "On saturdays, I go swimming."
+    ],
+    "help1": "I go swimming / on saturdays",
+    "help2": "I go swimming on Saturdays.",
+    "answer": "I go swimming on Saturdays."
+  },
+  {
+    "id": "q046",
+    "question": "Môn học yêu thích của tôi là Tin học.",
+    "keywords": [
+      "my",
+      "favorite",
+      "subject"
+    ],
+    "variants": [
+      "My favorite subject is IT."
+    ],
+    "help1": "My favorite / subject is IT",
+    "help2": "My favorite subject is IT.",
+    "answer": "My favorite subject is IT."
+  },
+  {
+    "id": "q047",
+    "question": "Chúng tôi học tiếng Anh ở trường.",
+    "keywords": [
+      "we",
+      "study",
+      "english",
+      "school"
+    ],
+    "variants": [
+      "We study English at school."
+    ],
+    "help1": "We study / English at school",
+    "help2": "We study English at school.",
+    "answer": "We study English at school."
+  },
+  {
+    "id": "q048",
+    "question": "Nam và Ba chơi bóng đá vào thứ Hai.",
+    "keywords": [
+      "nam",
+      "ba",
+      "play",
+      "football",
+      "monday"
+    ],
+    "variants": [
+      "Nam and Ba play football on Monday.",
+      "Nam and Ba play soccer on Monday."
+    ],
+    "help1": "Nam and / Ba play / football on Monday",
+    "help2": "Nam and Ba play football on Monday.",
+    "answer": "Nam and Ba play football on Monday."
+  },
+  {
+    "id": "q049",
+    "question": "Tôi thích loài mèo nói chung.",
+    "keywords": [
+      "i",
+      "like",
+      "cats"
+    ],
+    "variants": [
+      "I like cats."
+    ],
+    "help1": "I / like / cats",
+    "help2": "I like cats.",
+    "answer": "I like cats."
+  },
+  {
+    "id": "q050",
+    "question": "Tôi chơi bóng đá.",
+    "keywords": [
+      "i",
+      "play",
+      "football"
+    ],
+    "variants": [
+      "I play football.",
+      "I play soccer."
+    ],
+    "help1": "I / play / football",
+    "help2": "I play football.",
+    "answer": "I play football."
+  }
+];
 
 (function initSpeakLesson(window, document) {
     'use strict';
@@ -1828,6 +2649,7 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
     const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
     const state = {
         currentIndex: 0,
+        order: [],
         completed: new Set(),
         helpStage: 0,
         recognition: null,
@@ -1853,8 +2675,23 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
         restart: document.getElementById('restart-session-btn')
     };
 
+    function shuffleOrder() {
+        state.order = lessonData.map((_, i) => i);
+        for (let i = state.order.length - 1; i > 0; i -= 1) {
+            const j = Math.floor(Math.random() * (i + 1));
+            const temp = state.order[i];
+            state.order[i] = state.order[j];
+            state.order[j] = temp;
+        }
+    }
+
+    function currentRawIndex() {
+        if (!state.order.length || state.currentIndex >= state.order.length) return state.currentIndex;
+        return state.order[state.currentIndex];
+    }
+
     function currentItem() {
-        return lessonData[state.currentIndex] || null;
+        return lessonData[currentRawIndex()] || null;
     }
 
     function setResult(message, type) {
@@ -1918,7 +2755,7 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1';
+        dom.helpButton.textContent = 'Gợi ý 1 (H)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -1949,7 +2786,7 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -1974,20 +2811,122 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
         dom.modal.classList.remove('is-hidden');
     }
 
-    function scoreCandidates(candidates) {
-        const profile = LESSON_SCORING_PROFILES[state.currentIndex];
-        if (!profile || profile.schemaVersion !== '3.0.0') {
-            setResult('Dữ liệu chấm chưa hợp lệ.', 'error');
-            return;
+    function normalizeText(text) {
+        return String(text || '')
+            .toLowerCase()
+            .replace(/['’`]/g, '')
+            .replace(/[.,!?;:"()\-–—]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    const ASR_SYNONYM_MAP = {
+        'hey': 'he',
+        'listen': 'listened',
+        'sandcastles': 'sandcastle',
+        'mother': 'mom',
+        'mom': 'mother',
+        'bike': 'car',
+        'bicycle': 'car',
+        'motorbike': 'car',
+        'brought': 'carried',
+        'onto': 'the',
+        'up': 'the'
+    };
+
+    function matchKeywordCoverage(candidateNorm, item) {
+        const keywords = item.keywords || [];
+        if (!keywords.length) return 0;
+        const candidateWords = new Set(candidateNorm.split(' '));
+        const expandedWords = new Set(candidateWords);
+        candidateWords.forEach((w) => {
+            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
+        });
+
+        let matched = 0;
+        keywords.forEach((kw) => {
+            const kwNorm = normalizeText(kw);
+            if (kwNorm.includes(' ')) {
+                if (candidateNorm.includes(kwNorm)) {
+                    matched += 1;
+                    return;
+                }
+                const parts = kwNorm.split(' ');
+                if (parts.every((p) => expandedWords.has(p))) {
+                    matched += 1;
+                    return;
+                }
+            } else {
+                if (expandedWords.has(kwNorm)) {
+                    matched += 1;
+                    return;
+                }
+                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
+                    if (v === kwNorm && expandedWords.has(k)) {
+                        matched += 1;
+                        return;
+                    }
+                }
+            }
+        });
+        return matched / keywords.length;
+    }
+
+    function matchVariants(candidateNorm, item) {
+        const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        for (let i = 0; i < variants.length; i += 1) {
+            const vNorm = normalizeText(variants[i]);
+            if (candidateNorm === vNorm) return true;
+            const cWords = candidateNorm.split(' ');
+            const vWords = vNorm.split(' ');
+            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
+                return true;
+            }
         }
-        if (!window.DukePronunciationEngine || typeof window.DukePronunciationEngine.scoreListeningCandidates !== 'function') {
-            setResult('Bộ chấm phát âm chưa được nạp.', 'error');
+        return false;
+    }
+
+    function scoreCandidates(candidates) {
+        const item = currentItem();
+        const rawIdx = currentRawIndex();
+        if (!item) {
+            setResult('Dữ liệu câu hỏi chưa hợp lệ.', 'error');
             return;
         }
 
-        const score = window.DukePronunciationEngine.scoreListeningCandidates(profile, candidates, SPEAK_LEVEL);
-        dom.transcript.textContent = score.selectedCandidate || candidates[0].transcript;
-        if (score.isPass) {
+        let passed = false;
+        let bestTranscript = candidates[0] ? candidates[0].transcript : '';
+
+        // 1. Kiểm tra đa biến thể và từ khóa
+        for (let i = 0; i < candidates.length; i += 1) {
+            const cNorm = normalizeText(candidates[i].transcript);
+            if (matchVariants(cNorm, item)) {
+                passed = true;
+                bestTranscript = candidates[i].transcript;
+                break;
+            }
+            const coverage = matchKeywordCoverage(cNorm, item);
+            if (coverage >= 0.75) {
+                passed = true;
+                bestTranscript = candidates[i].transcript;
+                break;
+            }
+        }
+
+        // 2. Fallback sang PronunciationEngine nếu có
+        if (!passed && window.DukePronunciationEngine && typeof window.DukePronunciationEngine.scoreListeningCandidates === 'function') {
+            const profile = LESSON_SCORING_PROFILES[rawIdx];
+            if (profile && profile.schemaVersion === '3.0.0') {
+                const score = window.DukePronunciationEngine.scoreListeningCandidates(profile, candidates, SPEAK_LEVEL);
+                if (score.isPass) {
+                    passed = true;
+                    bestTranscript = score.selectedCandidate || bestTranscript;
+                }
+            }
+        }
+
+        dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
+        if (passed) {
             state.completed.add(state.currentIndex);
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
@@ -2052,6 +2991,7 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
         renderQuestion();
@@ -2068,6 +3008,11 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
+        if (event.key.toLowerCase() === 'h') {
+            event.preventDefault();
+            showHelp();
+            return;
+        }
         if (event.key.toLowerCase() === 'f') {
             event.preventDefault();
             toggleFocus();
@@ -2096,6 +3041,7 @@ const lessonData = [{"id": "q001", "question": "Tôi chơi bóng đá sau giờ 
 
     initTheme();
     applyFocusMode(false);
+    shuffleOrder();
     renderQuestion();
     if (!Recognition && lessonData.length) setResult('Trình duyệt này không hỗ trợ nhận dạng giọng nói.', 'error');
 }(window, document));
