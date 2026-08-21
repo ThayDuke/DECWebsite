@@ -8347,8 +8347,8 @@ const fullQuestionBank = [
                 const safeText = escapeHtml(opt.text);
                 const safeExplanation = escapeHtml(opt.explanation || '');
 
-                // Map index 0-3 to A-B-C-D
-                const labelPrefix = String.fromCharCode(65 + idx); // 65 is 'A'
+                // Map index 0-3 to 1-2-3-4
+                const labelPrefix = idx + 1;
 
                 html += `
                 <div class="option-item">
