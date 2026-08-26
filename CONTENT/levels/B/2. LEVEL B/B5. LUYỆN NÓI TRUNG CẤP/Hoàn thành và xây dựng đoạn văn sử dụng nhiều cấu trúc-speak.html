@@ -1822,67 +1822,67 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Hãy kể thói quen buổi sáng theo đúng trình tự: thức dậy lúc sáu giờ, ăn sáng rồi đi học.",
+    "question": "Thói quen buổi sáng theo đúng trình tự: thức dậy lúc sáu giờ, ăn sáng rồi đi học.",
     "keywords": [
       "first",
       "wake",
       "up",
-      "6",
+      "am",
       "then",
-      "breakfast"
+      "have"
     ],
     "variants": [
       "First, I wake up at 6 AM. Then, I have breakfast. Finally, I go to school.",
       "First, I wake up at 6 AM. Then, I've breakfast. Finally, I go to school."
     ],
-    "help1": "First, I wake up at / 6 AM Then, I have / breakfast Finally, I go to school",
+    "help1": "First / wake up / 6 AM Then / have breakfast Finally",
     "help2": "First, I wake up at 6 AM. Then, I have breakfast. Finally, I go to school.",
     "answer": "First, I wake up at 6 AM. Then, I have breakfast. Finally, I go to school."
   },
   {
     "id": "q002",
-    "question": "Hãy kể chuyến đi sở thú hôm qua: đi sở thú, nhìn thấy sư tử và hổ, rồi ăn trưa.",
+    "question": "Chuyến đi sở thú hôm qua: đi sở thú, nhìn thấy sư tử và hổ, rồi ăn trưa.",
     "keywords": [
-      "yesterday",
-      "we",
       "went",
       "zoo",
       "saw",
-      "many"
+      "many",
+      "lions",
+      "and"
     ],
     "variants": [
       "We went to the zoo yesterday. We saw many lions and tigers. After that, we had lunch."
     ],
-    "help1": "We went to the zoo We saw many / lions and tigers After that, we had lunch / yesterday",
+    "help1": "went / zoo / saw many lions and tigers After / had lunch",
     "help2": "We went to the zoo yesterday. We saw many lions and tigers. After that, we had lunch.",
     "answer": "We went to the zoo yesterday. We saw many lions and tigers. After that, we had lunch."
   },
   {
     "id": "q003",
-    "question": "Hãy kể việc Nam chơi bóng đá cả buổi chiều, cảm thấy mệt và đi ngủ sớm.",
+    "question": "Việc Nam chơi bóng đá cả buổi chiều, cảm thấy mệt và đi ngủ sớm.",
     "keywords": [
       "nam",
       "played",
       "football",
+      "all",
       "afternoon",
-      "he",
       "felt"
     ],
     "variants": [
       "Nam played football all afternoon. He felt very tired, so he went to bed early.",
       "Nam played soccer all afternoon. He felt very tired, so he went to bed early."
     ],
-    "help1": "Nam played football all afternoon / He felt very tired, so / he went to bed early",
+    "help1": "Nam played football all afternoon / felt very tired so / went / bed early",
     "help2": "Nam played football all afternoon. He felt very tired, so he went to bed early.",
     "answer": "Nam played football all afternoon. He felt very tired, so he went to bed early."
   },
   {
     "id": "q004",
-    "question": "Hãy kể một ngày đẹp trời: chúng tôi thả diều trong công viên rồi vui vẻ về nhà.",
+    "question": "Một ngày đẹp trời: chúng tôi thả diều trong công viên rồi vui vẻ về nhà.",
     "keywords": [
+      "was",
       "beautiful",
       "day",
-      "we",
       "flew",
       "kites",
       "park"
@@ -1890,7 +1890,7 @@ const lessonData = [
     "variants": [
       "It was a beautiful day. We flew kites in the park. Finally, we went home happily."
     ],
-    "help1": "It was a beautiful day / We flew kites in the / park Finally, we went home happily",
+    "help1": "was / beautiful day / flew kites / park Finally",
     "help2": "It was a beautiful day. We flew kites in the park. Finally, we went home happily.",
     "answer": "It was a beautiful day. We flew kites in the park. Finally, we went home happily."
   },
@@ -1898,36 +1898,35 @@ const lessonData = [
     "id": "q005",
     "question": "Hãy tự giới thiệu: tên Lan, mười tuổi và sống ở Hà Nội cùng gia đình.",
     "keywords": [
-      "my",
       "name",
+      "is",
       "lan",
       "next",
-      "i",
+      "am",
       "ten"
     ],
     "variants": [
-      "My name is Lan. Next, I am ten years old. Finally, I live in Hanoi with my family.",
-      "My name is Lan. Next, I am 10 years old. Finally, I live in Hanoi with my family."
+      "My name is Lan. Next, I am ten years old. Finally, I live in Hanoi with my family."
     ],
-    "help1": "My name is Lan Next, I / am ten years old Finally, I / live in Hanoi with my family",
+    "help1": "name is Lan Next / am ten years old Finally / live / Hanoi",
     "help2": "My name is Lan. Next, I am ten years old. Finally, I live in Hanoi with my family.",
     "answer": "My name is Lan. Next, I am ten years old. Finally, I live in Hanoi with my family."
   },
   {
     "id": "q006",
-    "question": "Hãy kể ba việc buổi sáng theo trình tự: ra khỏi giường, đánh răng, rửa mặt.",
+    "question": "Ba việc buổi sáng theo trình tự: ra khỏi giường, đánh răng, rửa mặt.",
     "keywords": [
       "first",
       "get",
-      "out",
       "bed",
       "then",
-      "brush"
+      "brush",
+      "teeth"
     ],
     "variants": [
       "First, I get out of bed. Then, I brush my teeth. Finally, I wash my face."
     ],
-    "help1": "First, I get out of / bed Then, I brush my / teeth Finally, I wash my face",
+    "help1": "First / get / bed Then / brush",
     "help2": "First, I get out of bed. Then, I brush my teeth. Finally, I wash my face.",
     "answer": "First, I get out of bed. Then, I brush my teeth. Finally, I wash my face."
   },
@@ -1936,16 +1935,16 @@ const lessonData = [
     "question": "Hãy mô tả cách pha trà: rót trà, thêm đường rồi uống.",
     "keywords": [
       "first",
-      "she",
       "pours",
       "tea",
       "next",
-      "adds"
+      "adds",
+      "some"
     ],
     "variants": [
       "First, she pours the tea. Next, she adds some sugar. Finally, she drinks it."
     ],
-    "help1": "First, she pours the / tea Next, she adds / some sugar Finally, she drinks it",
+    "help1": "First / pours / tea Next / adds some sugar Finally",
     "help2": "First, she pours the tea. Next, she adds some sugar. Finally, she drinks it.",
     "answer": "First, she pours the tea. Next, she adds some sugar. Finally, she drinks it."
   },
@@ -1955,7 +1954,7 @@ const lessonData = [
     "keywords": [
       "hello",
       "everyone",
-      "i",
+      "am",
       "student",
       "study",
       "thang"
@@ -1963,25 +1962,25 @@ const lessonData = [
     "variants": [
       "Hello everyone. I am a student. I study at Thang Long School."
     ],
-    "help1": "Hello everyone I am / a student I study / at Thang Long School",
+    "help1": "Hello everyone / am / student / study",
     "help2": "Hello everyone. I am a student. I study at Thang Long School.",
     "answer": "Hello everyone. I am a student. I study at Thang Long School."
   },
   {
     "id": "q009",
-    "question": "Hãy kể nguyên nhân khiến chúng tôi không đi cắm trại: trời mưa to nên phải ở nhà.",
+    "question": "Nguyên nhân khiến chúng tôi không đi cắm trại: trời mưa to nên phải ở nhà.",
     "keywords": [
       "rained",
       "heavily",
-      "we",
       "could",
       "not",
-      "go"
+      "go",
+      "camping"
     ],
     "variants": [
       "It rained heavily. We could not go camping, so we stayed at home."
     ],
-    "help1": "It rained heavily We / could not go camping / so we stayed at home",
+    "help1": "rained heavily / could not go camping so / stayed / home",
     "help2": "It rained heavily. We could not go camping, so we stayed at home.",
     "answer": "It rained heavily. We could not go camping, so we stayed at home."
   },
@@ -1990,30 +1989,30 @@ const lessonData = [
     "question": "Hãy giới thiệu chị gái Hoa: trước hết nêu tên, sau đó nói chị ấy cao và chơi bóng rổ giỏi.",
     "keywords": [
       "first",
-      "my",
       "sister",
+      "is",
       "hoa",
       "then",
-      "she"
+      "very"
     ],
     "variants": [
       "First, my sister is Hoa. Then, she is very tall. Finally, she plays basketball well.",
       "First, my sister is Hoa. Then, she's very tall. Finally, she plays basketball well."
     ],
-    "help1": "First, my sister is Hoa / Then, she is very tall / Finally, she plays basketball well",
+    "help1": "First / sister is Hoa Then / is very tall Finally / plays basketball well",
     "help2": "First, my sister is Hoa. Then, she is very tall. Finally, she plays basketball well.",
     "answer": "First, my sister is Hoa. Then, she is very tall. Finally, she plays basketball well."
   },
   {
     "id": "q011",
-    "question": "Hãy kể chuyến đi chơi Chủ nhật: đi xem phim, sau đó nói bộ phim rất hài.",
+    "question": "Chuyến đi chơi Chủ nhật: đi xem phim, sau đó nói bộ phim rất hài.",
     "keywords": [
-      "last sunday",
-      "i",
       "went",
-      "out",
-      "my",
-      "friends"
+      "friends",
+      "then",
+      "saw",
+      "movie",
+      "last"
     ],
     "variants": [
       "Last Sunday, I went out with my friends. Then, we saw a movie. It was very funny.",
@@ -2021,27 +2020,27 @@ const lessonData = [
       "Last Sunday, I went out with my friends. Then, we saw a film. It was very funny.",
       "I went out with my friends. then, we saw a film. it was very funny last sunday."
     ],
-    "help1": "I went out with my friends Then / we saw a movie It was very funny / last sunday",
+    "help1": "went / friends Then / saw / movie",
     "help2": "Last Sunday, I went out with my friends. Then, we saw a movie. It was very funny.",
     "answer": "Last Sunday, I went out with my friends. Then, we saw a movie. It was very funny."
   },
   {
     "id": "q012",
-    "question": "Hãy kể việc mẹ đi chợ, mua sữa rồi về nhà.",
+    "question": "Việc mẹ đi chợ, mua sữa rồi về nhà.",
     "keywords": [
       "mom",
       "went",
       "market",
-      "she",
       "bought",
-      "some"
+      "some",
+      "milk"
     ],
     "variants": [
       "Mom went to the market. She bought some milk. Then, she went home.",
       "mother went to the market. She bought some milk. Then, she went home.",
       "mom went to the market. She bought some milk. Then, she went home."
     ],
-    "help1": "Mom went to the / market She bought some / milk Then, she went home",
+    "help1": "Mom went / market / bought some milk Then / went home",
     "help2": "Mom went to the market. She bought some milk. Then, she went home.",
     "answer": "Mom went to the market. She bought some milk. Then, she went home."
   },
@@ -2049,24 +2048,21 @@ const lessonData = [
     "id": "q013",
     "question": "Hãy giới thiệu hai con mèo nhỏ của tôi, nói tên chúng là Mimi và Lulu rồi nhận xét chúng đáng yêu.",
     "keywords": [
-      "i",
+      "have",
       "two",
       "small",
       "cats",
-      "their",
-      "names"
+      "names",
+      "are"
     ],
     "variants": [
       "I have two small cats. Their names are Mimi and Lulu. They are very cute.",
       "I've two small cats. Their names are Mimi and Lulu. They are very cute.",
       "I have two small cats. Their names are Mimi and Lulu. they're very cute.",
       "I've two small cats. Their names are Mimi and Lulu. they're very cute.",
-      "I have two small cats. Their names are Mimi and Lulu. they are very cute.",
-      "I've two small cats. Their names are Mimi and Lulu. they are very cute.",
-      "I have 2 small cats. Their names are Mimi and Lulu. They are very cute.",
-      "I've 2 small cats. Their names are Mimi and Lulu. They are very cute."
+      "I have two small cats. Their names are Mimi and Lulu. they are very cute."
     ],
-    "help1": "I have two small cats / Their names are Mimi and / Lulu They are very cute",
+    "help1": "have two small cats / names are Mimi and Lulu / are very cute",
     "help2": "I have two small cats. Their names are Mimi and Lulu. They are very cute.",
     "answer": "I have two small cats. Their names are Mimi and Lulu. They are very cute."
   },
@@ -2074,7 +2070,7 @@ const lessonData = [
     "id": "q014",
     "question": "Hãy giới thiệu bố tôi: ông ấy là bác sĩ và làm việc trong bệnh viện lớn.",
     "keywords": [
-      "my",
+      "is",
       "father",
       "doctor",
       "works",
@@ -2086,40 +2082,39 @@ const lessonData = [
       "This is my father. he's a doctor. He works in a big hospital.",
       "This is my father. he is a doctor. He works in a big hospital.",
       "This is my dad. He is a doctor. He works in a big hospital.",
-      "This is my dad. he's a doctor. He works in a big hospital.",
-      "This is my dad. he is a doctor. He works in a big hospital."
+      "This is my dad. he's a doctor. He works in a big hospital."
     ],
-    "help1": "This is my father / He is a doctor / He works in a big hospital",
+    "help1": "is / father / is / doctor",
     "help2": "This is my father. He is a doctor. He works in a big hospital.",
     "answer": "This is my father. He is a doctor. He works in a big hospital."
   },
   {
     "id": "q015",
-    "question": "Hãy nói tôi rất thích xoài vì chúng ngọt và đó là loại quả yêu thích.",
+    "question": "Tôi rất thích xoài vì chúng ngọt và đó là loại quả yêu thích.",
     "keywords": [
-      "i",
       "like",
       "mangoes",
       "very",
       "much",
-      "because"
+      "because",
+      "are"
     ],
     "variants": [
       "I like mangoes very much because they are sweet. They are my favorite fruit.",
       "I like mangoes very much because they're sweet. they're my favorite fruit.",
       "I like mangoes very much because they are sweet. they are my favorite fruit."
     ],
-    "help1": "I like mangoes very / much because they are / sweet They are my favorite fruit",
+    "help1": "like mangoes very much because / are sweet / are / favorite fruit",
     "help2": "I like mangoes very much because they are sweet. They are my favorite fruit.",
     "answer": "I like mangoes very much because they are sweet. They are my favorite fruit."
   },
   {
     "id": "q016",
-    "question": "Hãy kể về sinh nhật hôm nay: hôm nay là sinh nhật tôi, tôi rất hào hứng và bạn bè tặng nhiều quà.",
+    "question": "Về sinh nhật hôm nay: hôm nay là sinh nhật tôi, tôi rất hào hứng và bạn bè tặng nhiều quà.",
     "keywords": [
-      "today",
-      "my",
+      "is",
       "birthday",
+      "am",
       "very",
       "excited",
       "friends"
@@ -2128,83 +2123,83 @@ const lessonData = [
       "Today is my birthday. I am very excited. My friends give me many gifts.",
       "Is my birthday. I am very excited. my friends give me many gifts today."
     ],
-    "help1": "is my birthday I am very / excited My friends give me many gifts / today",
+    "help1": "is / birthday / am very excited / friends give",
     "help2": "Today is my birthday. I am very excited. My friends give me many gifts.",
     "answer": "Today is my birthday. I am very excited. My friends give me many gifts."
   },
   {
     "id": "q017",
-    "question": "Hãy nói ước mơ nghề nghiệp của tôi: trong tương lai tôi muốn làm giáo viên vì yêu trẻ em.",
+    "question": "Ước mơ nghề nghiệp của tôi: trong tương lai tôi muốn làm giáo viên vì yêu trẻ em.",
     "keywords": [
       "future",
-      "i",
+      "have",
       "dream",
       "want",
-      "teacher",
-      "because"
+      "be",
+      "teacher"
     ],
     "variants": [
       "In the future, I have a dream. I want to be a teacher because I love children.",
       "In the future, I've a dream. I want to be a teacher because I love children."
     ],
-    "help1": "In the future, I have / a dream I want to / be a teacher because I love children",
+    "help1": "future / have / dream / want",
     "help2": "In the future, I have a dream. I want to be a teacher because I love children.",
     "answer": "In the future, I have a dream. I want to be a teacher because I love children."
   },
   {
     "id": "q018",
-    "question": "Hãy kể con mèo cố bắt con chim nhưng thất bại và con chim bay đi.",
+    "question": "Con mèo cố bắt con chim nhưng thất bại và con chim bay đi.",
     "keywords": [
       "cat",
       "tried",
       "catch",
       "bird",
-      "failed",
-      "then"
+      "but",
+      "failed"
     ],
     "variants": [
       "The cat tried to catch the bird, but it failed. Then, the bird flew away."
     ],
-    "help1": "The cat tried to catch / the bird, but it failed / Then, the bird flew away",
+    "help1": "cat tried / catch / bird but / failed Then",
     "help2": "The cat tried to catch the bird, but it failed. Then, the bird flew away.",
     "answer": "The cat tried to catch the bird, but it failed. Then, the bird flew away."
   },
   {
     "id": "q019",
-    "question": "Hãy kể chuyến thăm Đà Lạt mùa hè trước: thời tiết mát đẹp và chúng tôi rất vui.",
+    "question": "Chuyến thăm Đà Lạt mùa hè trước: thời tiết mát đẹp và chúng tôi rất vui.",
     "keywords": [
       "last",
       "summer",
-      "we",
       "visited",
       "da",
-      "lat"
+      "lat",
+      "weather"
     ],
     "variants": [
       "Last summer, we visited Da Lat. The weather was cool and nice. We had a lot of fun.",
       "Last summer, we visited Da Lat. The weather was cool and nice. We had a great time.",
       "Last summer, we visited Da Lat. The weather was cool and nice. We had lots of fun."
     ],
-    "help1": "Last summer, we visited Da Lat / The weather was cool and nice / We had a lot of fun",
+    "help1": "Last summer / visited Da Lat / weather was cool and nice / had",
     "help2": "Last summer, we visited Da Lat. The weather was cool and nice. We had a lot of fun.",
     "answer": "Last summer, we visited Da Lat. The weather was cool and nice. We had a lot of fun."
   },
   {
     "id": "q020",
-    "question": "Hãy nói ở trường có nhiều môn học, tôi thích tiếng Anh nhất vì môn này thú vị.",
+    "question": "Ở trường có nhiều môn học, tôi thích tiếng Anh nhất vì môn này thú vị.",
     "keywords": [
-      "there",
+      "are",
       "many",
       "subjects",
       "school",
-      "i",
-      "like"
+      "like",
+      "english"
     ],
     "variants": [
       "There are many subjects at school. I like English best because it is very interesting.",
       "There are many subjects at school. I like English best because it's very interesting."
     ],
-    "help1": "There are many subjects at / school I like English best / because it is very interesting",
+    "help1": "are many subjects / school / like English best because / is very interesting",
     "help2": "There are many subjects at school. I like English best because it is very interesting.",
     "answer": "There are many subjects at school. I like English best because it is very interesting."
   },
@@ -2213,16 +2208,16 @@ const lessonData = [
     "question": "Hãy hướng dẫn ăn một quả táo: rửa, bóc vỏ rồi ăn.",
     "keywords": [
       "first",
-      "you",
       "wash",
       "apple",
       "next",
-      "peel"
+      "peel",
+      "skin"
     ],
     "variants": [
       "First, you wash the apple. Next, you peel the skin. Finally, you eat it."
     ],
-    "help1": "First, you wash the / apple Next, you peel / the skin Finally, you eat it",
+    "help1": "First / wash / apple Next / peel",
     "help2": "First, you wash the apple. Next, you peel the skin. Finally, you eat it.",
     "answer": "First, you wash the apple. Next, you peel the skin. Finally, you eat it."
   },
@@ -2230,11 +2225,11 @@ const lessonData = [
     "id": "q022",
     "question": "Hãy giới thiệu một người bạn mới tên Peter và nói bạn ấy thân thiện.",
     "keywords": [
-      "i",
+      "have",
       "new",
       "friend",
-      "his",
       "name",
+      "is",
       "peter"
     ],
     "variants": [
@@ -2242,58 +2237,57 @@ const lessonData = [
       "I've a new friend. His name is Peter. He is very friendly.",
       "I have a new friend. His name is Peter. he's very friendly.",
       "I've a new friend. His name is Peter. he's very friendly.",
-      "I have a new friend. His name is Peter. he is very friendly.",
-      "I've a new friend. His name is Peter. he is very friendly."
+      "I have a new friend. His name is Peter. he is very friendly."
     ],
-    "help1": "I have a new / friend His name is / Peter He is very friendly",
+    "help1": "have / new friend / name is Peter / is very friendly",
     "help2": "I have a new friend. His name is Peter. He is very friendly.",
     "answer": "I have a new friend. His name is Peter. He is very friendly."
   },
   {
     "id": "q023",
-    "question": "Hãy kể thói quen sau giờ học: về nhà, làm bài tập rồi ăn tối.",
+    "question": "Thói quen sau giờ học: về nhà, làm bài tập rồi ăn tối.",
     "keywords": [
       "after",
       "school",
-      "i",
       "go",
       "home",
-      "then"
+      "then",
+      "do"
     ],
     "variants": [
       "After school, I go home. Then, I do my homework. Finally, I have dinner.",
       "After school, I go home. Then, I do my homework. Finally, I've dinner."
     ],
-    "help1": "After school, I go / home Then, I do / my homework Finally, I have dinner",
+    "help1": "After school / go home Then / do / homework Finally",
     "help2": "After school, I go home. Then, I do my homework. Finally, I have dinner.",
     "answer": "After school, I go home. Then, I do my homework. Finally, I have dinner."
   },
   {
     "id": "q024",
-    "question": "Hãy nói màu yêu thích của tôi là xanh, tôi có nhiều áo và phần lớn màu xanh.",
+    "question": "Màu yêu thích của tôi là xanh, tôi có nhiều áo và phần lớn màu xanh.",
     "keywords": [
-      "my",
       "favorite",
       "color",
+      "is",
       "blue",
-      "many",
-      "shirts"
+      "have",
+      "many"
     ],
     "variants": [
       "My favorite color is blue. I have many shirts. Most of them are blue.",
       "My favorite color is blue. I've many shirts. Most of them are blue."
     ],
-    "help1": "My favorite color is / blue I have many / shirts Most of them are blue",
+    "help1": "favorite color is blue / have many shirts Most / are blue",
     "help2": "My favorite color is blue. I have many shirts. Most of them are blue.",
     "answer": "My favorite color is blue. I have many shirts. Most of them are blue."
   },
   {
     "id": "q025",
-    "question": "Hãy kể Hoa bị ốm nên không đi dự tiệc và phải nằm trên giường.",
+    "question": "Hoa bị ốm nên không đi dự tiệc và phải nằm trên giường.",
     "keywords": [
       "hoa",
+      "was",
       "sick",
-      "she",
       "could",
       "not",
       "go"
@@ -2301,7 +2295,7 @@ const lessonData = [
     "variants": [
       "Hoa was sick. She could not go to the party, so she stayed in bed."
     ],
-    "help1": "Hoa was sick She could / not go to the party / so she stayed in bed",
+    "help1": "Hoa was sick / could not go / party so / stayed",
     "help2": "Hoa was sick. She could not go to the party, so she stayed in bed.",
     "answer": "Hoa was sick. She could not go to the party, so she stayed in bed."
   },
@@ -2311,36 +2305,34 @@ const lessonData = [
     "keywords": [
       "first",
       "love",
-      "my",
       "house",
       "then",
-      "there"
+      "are",
+      "five"
     ],
     "variants": [
       "First, I love my house. Then, there are five rooms in it. Finally, it is small but beautiful.",
-      "First, I love my house. Then, there are five rooms in it. Finally, it's small but beautiful.",
-      "First, I love my house. Then, there are 5 rooms in it. Finally, it is small but beautiful.",
-      "First, I love my house. Then, there are 5 rooms in it. Finally, it's small but beautiful."
+      "First, I love my house. Then, there are five rooms in it. Finally, it's small but beautiful."
     ],
-    "help1": "First, I love my house Then / there are five rooms in it / Finally, it is small but beautiful",
+    "help1": "First / love / house Then / are five rooms",
     "help2": "First, I love my house. Then, there are five rooms in it. Finally, it is small but beautiful.",
     "answer": "First, I love my house. Then, there are five rooms in it. Finally, it is small but beautiful."
   },
   {
     "id": "q027",
-    "question": "Hãy kể một cầu thủ đá bóng mạnh, ghi bàn và mọi người reo hò.",
+    "question": "Một cầu thủ đá bóng mạnh, ghi bàn và mọi người reo hò.",
     "keywords": [
-      "he",
       "kicked",
       "ball",
       "hard",
       "finally",
-      "scored"
+      "scored",
+      "goal"
     ],
     "variants": [
       "He kicked the ball hard. Finally, he scored a goal. Everyone cheered loudly."
     ],
-    "help1": "He kicked the ball / hard Finally, he scored / a goal Everyone cheered loudly",
+    "help1": "kicked / ball hard Finally / scored / goal Everyone cheered loudly",
     "help2": "He kicked the ball hard. Finally, he scored a goal. Everyone cheered loudly.",
     "answer": "He kicked the ball hard. Finally, he scored a goal. Everyone cheered loudly."
   },
@@ -2348,11 +2340,11 @@ const lessonData = [
     "id": "q028",
     "question": "Hãy giới thiệu em gái nhỏ: tôi có em gái, tên Nga và em ấy năm tuổi.",
     "keywords": [
-      "i",
+      "have",
       "younger",
       "sister",
-      "her",
       "name",
+      "is",
       "nga"
     ],
     "variants": [
@@ -2360,12 +2352,9 @@ const lessonData = [
       "I've a younger sister. Her name is Nga. She is five years old.",
       "I have a younger sister. Her name is Nga. she's five years old.",
       "I've a younger sister. Her name is Nga. she's five years old.",
-      "I have a younger sister. Her name is Nga. she is five years old.",
-      "I've a younger sister. Her name is Nga. she is five years old.",
-      "I have a younger sister. Her name is Nga. She is 5 years old.",
-      "I've a younger sister. Her name is Nga. She is 5 years old."
+      "I have a younger sister. Her name is Nga. she is five years old."
     ],
-    "help1": "I have a younger / sister Her name is / Nga She is five years old",
+    "help1": "have / younger sister / name is Nga / is five years old",
     "help2": "I have a younger sister. Her name is Nga. She is five years old.",
     "answer": "I have a younger sister. Her name is Nga. She is five years old."
   },
@@ -2385,13 +2374,13 @@ const lessonData = [
       "First, I peel the orange. Then, I eat a piece. it's very sweet.",
       "First, I peel the orange. Then, I eat a piece. it is very sweet."
     ],
-    "help1": "First, I peel the / orange Then, I eat / a piece It is very sweet",
+    "help1": "First / peel / orange Then / eat",
     "help2": "First, I peel the orange. Then, I eat a piece. It is very sweet.",
     "answer": "First, I peel the orange. Then, I eat a piece. It is very sweet."
   },
   {
     "id": "q030",
-    "question": "Hãy kể Mary học rất chăm cho bài kiểm tra, đạt điểm A+ và rất vui.",
+    "question": "Mary học rất chăm cho bài kiểm tra, đạt điểm A+ và rất vui.",
     "keywords": [
       "mary",
       "studied",
@@ -2403,7 +2392,7 @@ const lessonData = [
     "variants": [
       "Mary studied very hard for the test, so she got an A+. She was very happy."
     ],
-    "help1": "Mary studied very hard for / the test, so she got / an A She was very happy",
+    "help1": "Mary studied very hard / test so / got / was very happy",
     "help2": "Mary studied very hard for the test, so she got an A+. She was very happy.",
     "answer": "Mary studied very hard for the test, so she got an A+. She was very happy."
   },
@@ -2412,16 +2401,16 @@ const lessonData = [
     "question": "Hãy mô tả Nam là học sinh giỏi, luôn đi học đúng giờ, làm bài cẩn thận nên giáo viên yêu quý.",
     "keywords": [
       "nam",
+      "is",
       "good",
       "student",
-      "he",
       "always",
       "goes"
     ],
     "variants": [
       "Nam is a good student. He always goes to school on time. He does his homework carefully. Teachers love him very much."
     ],
-    "help1": "Nam is a good student He always / goes to school on time He does / his homework carefully Teachers love him very much",
+    "help1": "Nam is / good student / always goes / school",
     "help2": "Nam is a good student. He always goes to school on time. He does his homework carefully. Teachers love him very much.",
     "answer": "Nam is a good student. He always goes to school on time. He does his homework carefully. Teachers love him very much."
   },
@@ -2429,7 +2418,7 @@ const lessonData = [
     "id": "q032",
     "question": "Hôm qua trời rất nóng nên chúng tôi đi bơi trong hồ và cảm thấy mát mẻ, vui vẻ.",
     "keywords": [
-      "yesterday",
+      "was",
       "sunday",
       "weather",
       "very",
@@ -2440,7 +2429,7 @@ const lessonData = [
       "Yesterday was Sunday. The weather was very hot, so we went swimming in the pool. We felt very cool and happy.",
       "Was sunday. the weather was very hot, so we went swimming in the pool. we felt very cool and happy yesterday."
     ],
-    "help1": "was Sunday The weather was very hot, so we went / swimming in the pool We felt very cool and happy / yesterday",
+    "help1": "was Sunday / weather was very hot so / went swimming / pool",
     "help2": "Yesterday was Sunday. The weather was very hot, so we went swimming in the pool. We felt very cool and happy.",
     "answer": "Yesterday was Sunday. The weather was very hot, so we went swimming in the pool. We felt very cool and happy."
   },
@@ -2448,22 +2437,21 @@ const lessonData = [
     "id": "q033",
     "question": "Hãy giới thiệu bố tôi là bác sĩ, làm việc ở bệnh viện lớn và giúp nhiều người bệnh mỗi ngày.",
     "keywords": [
-      "every day",
-      "my",
       "father",
+      "is",
       "doctor",
       "works",
-      "big"
+      "big",
+      "hospital"
     ],
     "variants": [
       "My father is a doctor. He works in a big hospital in the city. He helps many sick people every day. He is a very kind person.",
       "My father is a doctor. He works in a big hospital in the city. He helps many sick people every day. he's a very kind person.",
       "My father is a doctor. He works in a big hospital in the city. He helps many sick people every day. he is a very kind person.",
       "My dad is a doctor. He works in a big hospital in the city. He helps many sick people every day. He is a very kind person.",
-      "My dad is a doctor. He works in a big hospital in the city. He helps many sick people every day. he's a very kind person.",
-      "My dad is a doctor. He works in a big hospital in the city. He helps many sick people every day. he is a very kind person."
+      "My dad is a doctor. He works in a big hospital in the city. He helps many sick people every day. he's a very kind person."
     ],
-    "help1": "My father is a doctor He works in a big hospital in / the city He helps many sick people He is a very kind person / every day",
+    "help1": "father is / doctor / works / big hospital",
     "help2": "My father is a doctor. He works in a big hospital in the city. He helps many sick people every day. He is a very kind person.",
     "answer": "My father is a doctor. He works in a big hospital in the city. He helps many sick people every day. He is a very kind person."
   },
@@ -2471,41 +2459,40 @@ const lessonData = [
     "id": "q034",
     "question": "Hãy mô tả chú chó Lucky: có lông trắng, đuôi dài và thường được tôi đưa đi công viên buổi chiều.",
     "keywords": [
-      "in the afternoon",
+      "have",
       "small",
       "dog",
       "named",
       "lucky",
-      "white"
+      "has"
     ],
     "variants": [
       "I have a small dog named Lucky. It has white fur and a long tail. I often take it to the park in the afternoon.",
       "In the afternoon I have a small dog named lucky. it has white fur and a long tail. I often take it to the park.",
       "In the afternoon, I have a small dog named lucky. it has white fur and a long tail. I often take it to the park.",
       "I've a small dog named Lucky. It has white fur and a long tail. I often take it to the park in the afternoon.",
-      "In the afternoon I've a small dog named lucky. it has white fur and a long tail. I often take it to the park.",
-      "In the afternoon, I've a small dog named lucky. it has white fur and a long tail. I often take it to the park."
+      "In the afternoon I've a small dog named lucky. it has white fur and a long tail. I often take it to the park."
     ],
-    "help1": "I have a small dog named Lucky It has white fur / and a long tail I often take it to the park / in the afternoon",
+    "help1": "have / small dog named Lucky / has white fur and / long tail",
     "help2": "I have a small dog named Lucky. It has white fur and a long tail. I often take it to the park in the afternoon.",
     "answer": "I have a small dog named Lucky. It has white fur and a long tail. I often take it to the park in the afternoon."
   },
   {
     "id": "q035",
-    "question": "Hãy nói mẹ nấu ăn rất ngon, món ăn luôn ngon và mẹ còn giúp tôi làm bài tập.",
+    "question": "Mẹ nấu ăn rất ngon, món ăn luôn ngon và mẹ còn giúp tôi làm bài tập.",
     "keywords": [
-      "i",
       "love",
-      "my",
       "mother",
       "very",
-      "much"
+      "much",
+      "cooks",
+      "well"
     ],
     "variants": [
       "I love my mother very much. She cooks very well. Her food is always delicious. She also helps me with my homework.",
       "I love my mom very much. She cooks very well. Her food is always delicious. She also helps me with my homework."
     ],
-    "help1": "I love my mother very much She / cooks very well Her food is always / delicious She also helps me with my homework",
+    "help1": "love / mother very much / cooks very well / food is always delicious",
     "help2": "I love my mother very much. She cooks very well. Her food is always delicious. She also helps me with my homework.",
     "answer": "I love my mother very much. She cooks very well. Her food is always delicious. She also helps me with my homework."
   },
@@ -2513,62 +2500,59 @@ const lessonData = [
     "id": "q036",
     "question": "Hãy mô tả phòng ngủ nhỏ nhưng ấm cúng, có bàn nhỏ cạnh cửa sổ và tôi thường đọc sách ở đó.",
     "keywords": [
-      "my",
+      "is",
       "bedroom",
       "not",
       "very",
       "big",
-      "cozy"
+      "but"
     ],
     "variants": [
       "This is my bedroom. It is not very big but it is cozy. There is a small desk near the window. I usually read books there.",
       "This is my bedroom. It isn't very big but it is cozy. There is a small desk near the window. I usually read books there.",
       "This is my bedroom. it's not very big but it's cozy. There is a small desk near the window. I usually read books there.",
       "This is my bedroom. It isn't very big but it's cozy. There is a small desk near the window. I usually read books there.",
-      "This is my bedroom. it is not very big but it is cozy. There is a small desk near the window. I usually read books there.",
-      "This is my bedroom. It is not very big but it is cozy. there's a small desk near the window. I usually read books there.",
-      "This is my bedroom. It isn't very big but it is cozy. there's a small desk near the window. I usually read books there.",
-      "This is my bedroom. it's not very big but it's cozy. there's a small desk near the window. I usually read books there."
+      "This is my bedroom. it is not very big but it is cozy. There is a small desk near the window. I usually read books there."
     ],
-    "help1": "This is my bedroom It is not very / big but it is cozy There is a / small desk near the window I usually read books there",
+    "help1": "is / bedroom / is not very big but / is cozy",
     "help2": "This is my bedroom. It is not very big but it is cozy. There is a small desk near the window. I usually read books there.",
     "answer": "This is my bedroom. It is not very big but it is cozy. There is a small desk near the window. I usually read books there."
   },
   {
     "id": "q037",
-    "question": "Hãy kể chuyến đi biển Sầm Sơn mùa hè trước: sáng nào cũng bơi ở biển xanh và ăn nhiều hải sản.",
+    "question": "Chuyến đi biển Sầm Sơn mùa hè trước: sáng nào cũng bơi ở biển xanh và ăn nhiều hải sản.",
     "keywords": [
-      "every morning",
       "last",
       "summer",
-      "my",
       "family",
-      "visited"
+      "visited",
+      "sam",
+      "son"
     ],
     "variants": [
       "Last summer, my family visited Sam Son beach. We swam in the blue sea every morning. We ate a lot of seafood too.",
       "Last summer, my family visited Sam Son beach. We swam in the blue sea every morning. We ate lots of seafood too."
     ],
-    "help1": "Last summer, my family visited Sam Son beach We swam / in the blue sea We ate a lot of seafood too / every morning",
+    "help1": "Last summer / family visited Sam Son beach / swam / blue sea",
     "help2": "Last summer, my family visited Sam Son beach. We swam in the blue sea every morning. We ate a lot of seafood too.",
     "answer": "Last summer, my family visited Sam Son beach. We swam in the blue sea every morning. We ate a lot of seafood too."
   },
   {
     "id": "q038",
-    "question": "Hãy nói học tiếng Anh rất vui: tôi thích hát bài tiếng Anh, xem hoạt hình tiếng Anh và giáo viên rất hữu ích.",
+    "question": "Học tiếng Anh rất vui: tôi thích hát bài tiếng Anh, xem hoạt hình tiếng Anh và giáo viên rất hữu ích.",
     "keywords": [
       "learning",
       "english",
+      "is",
       "fun",
       "like",
-      "singing",
-      "songs"
+      "singing"
     ],
     "variants": [
       "Learning English is fun. I like singing English songs. I also watch English cartoons on TV. My teacher is very helpful.",
       "Learning English is fun. I like singing English songs. I also watch English cartoons on television. My teacher is very helpful."
     ],
-    "help1": "Learning English is fun I like singing / English songs I also watch English cartoons / on TV My teacher is very helpful",
+    "help1": "Learning English is fun / like singing English songs / also watch English cartoons / TV",
     "help2": "Learning English is fun. I like singing English songs. I also watch English cartoons on TV. My teacher is very helpful.",
     "answer": "Learning English is fun. I like singing English songs. I also watch English cartoons on TV. My teacher is very helpful."
   },
@@ -2576,11 +2560,11 @@ const lessonData = [
     "id": "q039",
     "question": "Hãy giới thiệu bạn thân Minh cùng lớp, vui tính và tốt bụng; chúng tôi thường chơi bóng đá.",
     "keywords": [
-      "my",
       "best",
       "friend",
+      "is",
       "minh",
-      "we",
+      "are",
       "same"
     ],
     "variants": [
@@ -2588,34 +2572,27 @@ const lessonData = [
       "My best friend is Minh. we're in the same class. He is very funny and kind. We often play football together.",
       "My best friend is Minh. we are in the same class. He is very funny and kind. We often play football together.",
       "My best friend is Minh. We are in the same class. he's very funny and kind. We often play football together.",
-      "My best friend is Minh. we're in the same class. he's very funny and kind. We often play football together.",
-      "My best friend is Minh. we are in the same class. he's very funny and kind. We often play football together.",
-      "My best friend is Minh. We are in the same class. he is very funny and kind. We often play football together.",
-      "My best friend is Minh. we're in the same class. he is very funny and kind. We often play football together.",
-      "My best friend is Minh. We are in the same class. He is very funny and kind. We often play soccer together.",
-      "My best friend is Minh. we're in the same class. He is very funny and kind. We often play soccer together.",
-      "My best friend is Minh. we are in the same class. He is very funny and kind. We often play soccer together.",
-      "My best friend is Minh. We are in the same class. he's very funny and kind. We often play soccer together."
+      "My best friend is Minh. we're in the same class. he's very funny and kind. We often play football together."
     ],
-    "help1": "My best friend is Minh We are / in the same class He is very / funny and kind We often play football together",
+    "help1": "best friend is Minh / are / same class / is very funny and kind",
     "help2": "My best friend is Minh. We are in the same class. He is very funny and kind. We often play football together.",
     "answer": "My best friend is Minh. We are in the same class. He is very funny and kind. We often play football together."
   },
   {
     "id": "q040",
-    "question": "Hãy nói tôi thích mùa xuân vì trời ấm, cây xanh đẹp và nhiều hoa nở trong vườn.",
+    "question": "Tôi thích mùa xuân vì trời ấm, cây xanh đẹp và nhiều hoa nở trong vườn.",
     "keywords": [
-      "i",
       "like",
       "spring",
       "because",
       "weather",
+      "is",
       "warm"
     ],
     "variants": [
       "I like spring because the weather is warm. The trees are green and beautiful. Many flowers bloom in the garden."
     ],
-    "help1": "I like spring because the weather / is warm The trees are green / and beautiful Many flowers bloom in the garden",
+    "help1": "like spring because / weather is warm / trees are green and beautiful Many flowers bloom / garden",
     "help2": "I like spring because the weather is warm. The trees are green and beautiful. Many flowers bloom in the garden.",
     "answer": "I like spring because the weather is warm. The trees are green and beautiful. Many flowers bloom in the garden."
   },
@@ -2623,30 +2600,30 @@ const lessonData = [
     "id": "q041",
     "question": "Hãy mô tả trường lớn đẹp có ba mươi phòng học, sân chơi rộng xanh và học sinh yêu trường.",
     "keywords": [
-      "my",
       "school",
+      "is",
       "very",
       "big",
-      "beautiful",
-      "there"
+      "and",
+      "beautiful"
     ],
     "variants": [
       "My school is very big and beautiful. There are thirty classrooms. The playground is large and green. We love our school very much."
     ],
-    "help1": "My school is very big and beautiful / There are thirty classrooms The playground is / large and green We love our school very much",
+    "help1": "school is very big and beautiful / are thirty classrooms / playground is large and green / love",
     "help2": "My school is very big and beautiful. There are thirty classrooms. The playground is large and green. We love our school very much.",
     "answer": "My school is very big and beautiful. There are thirty classrooms. The playground is large and green. We love our school very much."
   },
   {
     "id": "q042",
-    "question": "Hãy kể thói quen buổi sáng: dậy sớm, tập thể dục, ăn sáng với gia đình rồi đi học.",
+    "question": "Thói quen buổi sáng: dậy sớm, tập thể dục, ăn sáng với gia đình rồi đi học.",
     "keywords": [
-      "every morning",
       "get",
       "up",
       "early",
-      "exercises",
-      "after"
+      "do",
+      "morning",
+      "exercises"
     ],
     "variants": [
       "Every morning, I get up early. I do morning exercises. After that, I have breakfast with my family. Then I go to school.",
@@ -2654,7 +2631,7 @@ const lessonData = [
       "Every morning, I get up early. I do morning exercises. After that, I've breakfast with my family. Then I go to school.",
       "I get up early. I do morning exercises. after that, I've breakfast with my family. then I go to school every morning."
     ],
-    "help1": "I get up early I do morning exercises After that / I have breakfast with my family Then I go to school / every morning",
+    "help1": "get up early / do morning exercises After / have breakfast / family Then",
     "help2": "Every morning, I get up early. I do morning exercises. After that, I have breakfast with my family. Then I go to school.",
     "answer": "Every morning, I get up early. I do morning exercises. After that, I have breakfast with my family. Then I go to school."
   },
@@ -2662,32 +2639,29 @@ const lessonData = [
     "id": "q043",
     "question": "Hôm qua là sinh nhật mẹ: bố mua bánh lớn, tôi tặng hoa đẹp và mẹ bất ngờ, vui vẻ.",
     "keywords": [
-      "yesterday",
-      "my",
+      "was",
       "mom's",
       "birthday",
       "father",
-      "bought"
+      "bought",
+      "big"
     ],
     "variants": [
       "Yesterday was my mom's birthday. My father bought a big cake. I gave her a beautiful flower. Mom was very surprised and happy.",
       "Was my mom's birthday. my father bought a big cake. I gave her a beautiful flower. mom was very surprised and happy yesterday.",
       "Yesterday was my mother's birthday. My father bought a big cake. I gave her a beautiful flower. mother was very surprised and happy.",
       "Was my mother's birthday. my father bought a big cake. I gave her a beautiful flower. mother was very surprised and happy yesterday.",
-      "Yesterday was my mom's birthday. My father bought a big cake. I gave her a beautiful flower. mom was very surprised and happy.",
-      "Yesterday was my mom's birthday. My dad bought a big cake. I gave her a beautiful flower. Mom was very surprised and happy.",
-      "Was my mom's birthday. my dad bought a big cake. I gave her a beautiful flower. mom was very surprised and happy yesterday.",
-      "Yesterday was my mother's birthday. My dad bought a big cake. I gave her a beautiful flower. mother was very surprised and happy."
+      "Yesterday was my mom's birthday. My father bought a big cake. I gave her a beautiful flower. mom was very surprised and happy."
     ],
-    "help1": "was my mom's birthday My father bought a big cake I / gave her a beautiful flower Mom was very surprised and happy / yesterday",
+    "help1": "was / mom's birthday / father bought / big cake",
     "help2": "Yesterday was my mom's birthday. My father bought a big cake. I gave her a beautiful flower. Mom was very surprised and happy.",
     "answer": "Yesterday was my mom's birthday. My father bought a big cake. I gave her a beautiful flower. Mom was very surprised and happy."
   },
   {
     "id": "q044",
-    "question": "Hãy nói tôi có nhiều sở thích, thích đọc và vẽ nhưng thích bơi nhất, những hoạt động này khiến tôi thư giãn.",
+    "question": "Tôi có nhiều sở thích, thích đọc và vẽ nhưng thích bơi nhất, những hoạt động này khiến tôi thư giãn.",
     "keywords": [
-      "i",
+      "have",
       "lot",
       "hobbies",
       "like",
@@ -2700,27 +2674,27 @@ const lessonData = [
       "I have lots of hobbies. I like reading books and drawing. But my favorite hobby is swimming. I feel very relaxed when I do them.",
       "I've lots of hobbies. I like reading books and drawing. But my favorite hobby is swimming. I feel very relaxed when I do them."
     ],
-    "help1": "I have a lot of hobbies I like / reading books and drawing But my favorite hobby / is swimming I feel very relaxed when I do them",
+    "help1": "have / lot / hobbies / like reading books and drawing But",
     "help2": "I have a lot of hobbies. I like reading books and drawing. But my favorite hobby is swimming. I feel very relaxed when I do them.",
     "answer": "I have a lot of hobbies. I like reading books and drawing. But my favorite hobby is swimming. I feel very relaxed when I do them."
   },
   {
     "id": "q045",
-    "question": "Hãy nói trái cây tốt cho sức khỏe, có nhiều vitamin, táo và chuối ngon nên chúng ta nên ăn mỗi ngày.",
+    "question": "Trái cây tốt cho sức khỏe, có nhiều vitamin, táo và chuối ngon nên chúng ta nên ăn mỗi ngày.",
     "keywords": [
-      "every day",
       "fruits",
+      "are",
       "good",
-      "our",
       "health",
-      "they"
+      "have",
+      "many"
     ],
     "variants": [
       "Fruits are good for our health. They have many vitamins. Apples and bananas are very delicious. We should eat fruit every day.",
       "Every day fruits are good for our health. they have many vitamins. apples and bananas are very delicious. we should eat fruit.",
       "Every day, fruits are good for our health. they have many vitamins. apples and bananas are very delicious. we should eat fruit."
     ],
-    "help1": "Fruits are good for our health They have many vitamins / Apples and bananas are very delicious We should eat fruit / every day",
+    "help1": "Fruits are good / health / have many vitamins Apples and bananas are very delicious / should eat fruit",
     "help2": "Fruits are good for our health. They have many vitamins. Apples and bananas are very delicious. We should eat fruit every day.",
     "answer": "Fruits are good for our health. They have many vitamins. Apples and bananas are very delicious. We should eat fruit every day."
   },
@@ -2728,19 +2702,19 @@ const lessonData = [
     "id": "q046",
     "question": "Hãy mô tả ngôi làng yên tĩnh, không khí trong lành và có một con sông nhỏ gần nhà.",
     "keywords": [
-      "my",
       "village",
+      "is",
       "very",
       "quiet",
-      "peaceful",
-      "air"
+      "and",
+      "peaceful"
     ],
     "variants": [
       "My village is very quiet and peaceful. The air is fresh and clean. There is a small river near my house.",
       "My village is very quiet and peaceful. The air is fresh and clean. there's a small river near my house.",
       "My village is very quiet and peaceful. The air is fresh and clean. there is a small river near my house."
     ],
-    "help1": "My village is very quiet and peaceful / The air is fresh and clean There / is a small river near my house",
+    "help1": "village is very quiet and peaceful / air is fresh and clean / is / small river",
     "help2": "My village is very quiet and peaceful. The air is fresh and clean. There is a small river near my house.",
     "answer": "My village is very quiet and peaceful. The air is fresh and clean. There is a small river near my house."
   },
@@ -2748,11 +2722,11 @@ const lessonData = [
     "id": "q047",
     "question": "Hôm nay mưa nên tôi không thể chơi bóng đá ngoài trời; tôi ở nhà đọc truyện tranh.",
     "keywords": [
-      "today",
+      "is",
       "rainy",
+      "day",
       "cannot",
       "go",
-      "out",
       "play"
     ],
     "variants": [
@@ -2760,41 +2734,38 @@ const lessonData = [
       "Is a rainy day. I cannot go out to play football. so I stay at home and read comics today.",
       "Today is a rainy day. I can't go out to play football. So I stay at home and read comics.",
       "Is a rainy day. I can't go out to play football. so I stay at home and read comics today.",
-      "Today is a rainy day. I cannot go out to play soccer. So I stay at home and read comics.",
-      "Is a rainy day. I cannot go out to play soccer. so I stay at home and read comics today.",
-      "Today is a rainy day. I can't go out to play soccer. So I stay at home and read comics.",
-      "Is a rainy day. I can't go out to play soccer. so I stay at home and read comics today."
+      "Today is a rainy day. I cannot go out to play soccer. So I stay at home and read comics."
     ],
-    "help1": "is a rainy day I cannot go out to / play football So I stay at home and read comics / today",
+    "help1": "is / rainy day / cannot go / play football So",
     "help2": "Today is a rainy day. I cannot go out to play football. So I stay at home and read comics.",
     "answer": "Today is a rainy day. I cannot go out to play football. So I stay at home and read comics."
   },
   {
     "id": "q048",
-    "question": "Hãy nói tôi muốn làm ca sĩ trong tương lai vì có giọng tốt và yêu âm nhạc, nên thường hát trước gương.",
+    "question": "Tôi muốn làm ca sĩ trong tương lai vì có giọng tốt và yêu âm nhạc, nên thường hát trước gương.",
     "keywords": [
-      "i",
       "want",
+      "be",
       "singer",
       "future",
       "because",
-      "good"
+      "have"
     ],
     "variants": [
       "I want to be a singer in the future. I want this because I have a good voice and I love music. I often sing in front of the mirror.",
       "I want to be a singer in the future. I want this because I've a good voice and I love music. I often sing in front of the mirror."
     ],
-    "help1": "I want to be a singer in the future I / want this because I have a good voice and I / love music I often sing in front of the mirror",
+    "help1": "want / be / singer / future",
     "help2": "I want to be a singer in the future. I want this because I have a good voice and I love music. I often sing in front of the mirror.",
     "answer": "I want to be a singer in the future. I want this because I have a good voice and I love music. I often sing in front of the mirror."
   },
   {
     "id": "q049",
-    "question": "Hãy nói môn yêu thích của tôi là Khoa học vì môn này thú vị và dạy về động vật, cây cối.",
+    "question": "Môn yêu thích của tôi là Khoa học vì môn này thú vị và dạy về động vật, cây cối.",
     "keywords": [
-      "my",
       "favorite",
       "subject",
+      "is",
       "science",
       "very",
       "interesting"
@@ -2804,7 +2775,7 @@ const lessonData = [
       "My favorite subject is Science. it's very interesting and fun. We can learn many things about animals and plants.",
       "My favorite subject is Science. it is very interesting and fun. We can learn many things about animals and plants."
     ],
-    "help1": "My favorite subject is Science It / is very interesting and fun We / can learn many things about animals and plants",
+    "help1": "favorite subject is Science / is very interesting and fun / can learn many things / animals and plants",
     "help2": "My favorite subject is Science. It is very interesting and fun. We can learn many things about animals and plants.",
     "answer": "My favorite subject is Science. It is very interesting and fun. We can learn many things about animals and plants."
   },
@@ -2813,23 +2784,20 @@ const lessonData = [
     "question": "Hãy mô tả bữa tối gia đình: mọi người ngồi nói chuyện, mẹ dọn món ngon và gia đình hạnh phúc.",
     "keywords": [
       "dinner",
+      "is",
       "best",
       "time",
-      "my",
       "family",
-      "we"
+      "sit"
     ],
     "variants": [
       "Dinner is the best time for my family. We sit together and talk. Mom serves delicious food on the table. We are a happy family.",
       "Dinner is the best time for my family. We sit together and talk. Mom serves delicious food on the table. we're a happy family.",
       "Dinner is the best time for my family. We sit together and talk. Mom serves delicious food on the table. we are a happy family.",
       "Dinner is the best time for my family. We sit together and talk. mother serves delicious food on the table. We are a happy family.",
-      "Dinner is the best time for my family. We sit together and talk. mother serves delicious food on the table. we're a happy family.",
-      "Dinner is the best time for my family. We sit together and talk. mother serves delicious food on the table. we are a happy family.",
-      "Dinner is the best time for my family. We sit together and talk. mom serves delicious food on the table. We are a happy family.",
-      "Dinner is the best time for my family. We sit together and talk. mom serves delicious food on the table. we're a happy family."
+      "Dinner is the best time for my family. We sit together and talk. mother serves delicious food on the table. we're a happy family."
     ],
-    "help1": "Dinner is the best time for my family / We sit together and talk Mom serves delicious / food on the table We are a happy family",
+    "help1": "Dinner is / best time / family / sit together and talk Mom serves delicious food",
     "help2": "Dinner is the best time for my family. We sit together and talk. Mom serves delicious food on the table. We are a happy family.",
     "answer": "Dinner is the best time for my family. We sit together and talk. Mom serves delicious food on the table. We are a happy family."
   }
