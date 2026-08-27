@@ -205,42 +205,41 @@ input:focus-visible {
     zoom: 0.7;
 }
 
-.theme-row,
-.sub-header-controls,
 .control-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.theme-row {
-    margin: clamp(6px, 1dvh, 10px) 0;
-}
-
-.sub-header-controls {
-    gap: 10px;
-    flex-wrap: wrap;
+.progress-area-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    margin: clamp(4px, 0.8dvh, 8px) 0 clamp(8px, 1.4dvh, 14px);
 }
 
 .focus-toggle-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: var(--spacing-sm);
-    height: var(--toggle-height);
-    padding: 0 var(--spacing-md);
+    gap: 6px;
+    height: 32px;
+    padding: 0 10px;
     border: 1px solid var(--focus-action-border);
     border-radius: var(--radius-sm);
     background: var(--focus-action-bg);
     color: var(--focus-action-text);
     box-sizing: border-box;
     cursor: pointer;
-    font-size: 0.8rem;
-    font-weight: 500;
+    font-size: 0.75rem;
+    font-weight: 600;
     line-height: 1;
     white-space: nowrap;
     box-shadow: var(--focus-action-shadow);
     transition: all 0.2s;
+    flex-shrink: 0;
 }
 
 .focus-toggle-btn:hover {
@@ -250,10 +249,11 @@ input:focus-visible {
 .theme-toggle-switch {
     position: relative;
     display: inline-block;
-    width: var(--toggle-width);
-    height: var(--toggle-height);
+    width: 104px;
+    height: 32px;
     margin: 0;
     vertical-align: middle;
+    flex-shrink: 0;
 }
 
 .theme-toggle-switch input {
@@ -267,7 +267,7 @@ input:focus-visible {
     align-items: center;
     cursor: pointer;
     overflow: hidden;
-    border-radius: var(--toggle-height);
+    border-radius: 32px;
     border: 1px solid var(--toggle-slider-border);
     background: var(--toggle-slider-bg);
     box-shadow: var(--toggle-slider-shadow);
@@ -277,9 +277,9 @@ input:focus-visible {
 .theme-toggle-switch .slider::before {
     position: absolute;
     bottom: 3px;
-    left: 4px;
-    width: var(--toggle-knob);
-    height: var(--toggle-knob);
+    left: 3px;
+    width: 24px;
+    height: 24px;
     border: 2px solid var(--toggle-knob-border);
     border-radius: 50%;
     background-color: var(--toggle-knob-bg);
@@ -291,11 +291,11 @@ input:focus-visible {
 
 .theme-toggle-switch .slider-text {
     position: absolute;
-    left: var(--toggle-text-youth-left);
+    left: 8px;
     width: 100%;
     color: var(--toggle-text-color);
     font-family: "Be Vietnam Pro", sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.72rem;
     font-weight: var(--font-weight-strong);
     pointer-events: none;
     text-align: center;
@@ -311,21 +311,24 @@ input:focus-visible {
 }
 
 .theme-toggle-switch input:checked + .slider .slider-text {
-    left: var(--toggle-text-elegant-left);
+    left: -8px;
     color: var(--toggle-text-checked-color);
 }
 
 .theme-toggle-switch input:checked + .slider::before {
-    transform: translateX(var(--toggle-shift));
+    transform: translateX(72px);
 }
 
 .progress-container {
-    width: 100%;
-    height: var(--adaptive-progress-height);
+    flex: 1 1 auto;
     display: flex;
-    gap: var(--adaptive-progress-gap);
-    margin-bottom: calc(var(--accent-height) * 4);
+    flex-wrap: wrap !important;
+    gap: 3px;
+    width: 100%;
+    margin: 0;
     background: none;
+    justify-content: center;
+    align-content: center;
 }
 
 .progress-container.wrap-mode {
@@ -333,19 +336,16 @@ input:focus-visible {
     height: auto !important;
 }
 
-.progress-container.wrap-mode .progress-segment {
-    flex: 0 0 calc((100% - (29 * var(--adaptive-progress-gap))) / 30) !important;
-    box-sizing: border-box !important;
-}
-
+.progress-container.wrap-mode .progress-segment,
 .progress-segment {
-    flex: 1;
-    height: var(--adaptive-progress-height);
-    border: var(--adaptive-progress-border-width) solid var(--border-main);
-    border-radius: var(--adaptive-progress-segment-radius);
+    flex: 0 0 calc((100% - (24 * 3px)) / 25) !important;
+    max-width: calc((100% - (24 * 3px)) / 25) !important;
+    height: 18px;
+    border: var(--adaptive-progress-border-width, 1px) solid var(--border-main);
+    border-radius: 4px;
     background: var(--adaptive-progress-empty-bg);
     color: var(--adaptive-progress-empty-text);
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     appearance: none;
     padding: 0;
     font-family: inherit;
@@ -353,7 +353,7 @@ input:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.72rem;
+    font-size: 0.65rem;
     font-weight: var(--font-weight-strong);
     transition: background var(--adaptive-progress-motion), border-color var(--adaptive-progress-motion), color var(--adaptive-progress-motion), box-shadow var(--adaptive-progress-motion), transform var(--adaptive-progress-motion);
     user-select: none;
@@ -404,6 +404,15 @@ input:focus-visible {
     flex-direction: column;
 }
 
+.speak-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: clamp(6px, 1.2dvh, 12px);
+    min-height: 32px;
+}
+
 .question-kicker,
 .transcript-label {
     color: var(--teal-dark);
@@ -413,7 +422,7 @@ input:focus-visible {
 }
 
 .question-kicker {
-    margin: 4px 0 clamp(12px, 2dvh, 18px);
+    margin: 0;
 }
 
 .question-text {
@@ -694,20 +703,8 @@ body.focus-mode .app-container {
 }
 
 body.focus-mode .header-area,
-body.focus-mode .progress-container,
-body.focus-mode .theme-toggle-switch {
-    display: none;
-}
-
-body.focus-mode .theme-row {
-    margin: 0;
-}
-
-body.focus-mode .focus-toggle-btn {
-    position: fixed;
-    top: var(--spacing-sm);
-    left: var(--spacing-sm);
-    z-index: 20;
+body.focus-mode .progress-area-row {
+    display: none !important;
 }
 
 body.focus-mode .speak-card {
@@ -821,20 +818,19 @@ body.focus-mode .btn-nav {
             <h1 id="lesson-title" class="dec-ui-game-title">Chọn lập luận hợp lý và mạch logic trong bài viết-speak</h1>
         </header>
 
-        <div class="theme-row">
-            <div class="sub-header-controls">
-                <button class="focus-toggle-btn" id="btn-focus" type="button" title="Bật Focus Mode" aria-pressed="false" data-dec-icon-scope="ultitemp" data-dec-icon="focus"><i class="fa-solid fa-expand" aria-hidden="true"></i><span id="focus-label">Focus Mode</span></button>
-                <label class="theme-toggle-switch" title="Chuyển đổi giao diện">
-                    <input type="checkbox" id="themeToggleCheckbox">
-                    <span class="slider"><span class="slider-text" id="themeToggleText">YOUTH</span></span>
-                </label>
-            </div>
+                <div class="progress-area-row" id="progress-area-row">
+            <button class="focus-toggle-btn" id="btn-focus" type="button" title="Bật Focus Mode" aria-pressed="false" data-dec-icon-scope="ultitemp" data-dec-icon="focus"><i class="fa-solid fa-expand" aria-hidden="true"></i><span id="focus-label">Focus Mode</span></button>
+            <div class="progress-container" id="progress-bar-container" aria-label="Tiến độ bài tập"></div>
+            <label class="theme-toggle-switch" title="Chuyển đổi giao diện">
+                <input type="checkbox" id="themeToggleCheckbox">
+                <span class="slider"><span class="slider-text" id="themeToggleText">YOUTH</span></span>
+            </label>
         </div>
 
-        <div class="progress-container" id="progress-bar-container" aria-label="Tiến độ bài tập"></div>
-
-        <section class="speak-card" aria-live="polite">
-            <p class="question-kicker">NÓI CÂU TIẾNG ANH PHÙ HỢP</p>
+                <section class="speak-card" aria-live="polite">
+            <div class="speak-card-header" id="speak-card-header">
+                <p class="question-kicker">NÓI CÂU TIẾNG ANH PHÙ HỢP</p>
+            </div>
             <h2 id="question-text" class="question-text">Đang tải...</h2>
             <div id="help-panel" class="help-panel is-hidden"></div>
             <div class="transcript-panel">
@@ -2830,6 +2826,8 @@ const lessonData = [
         mic: document.getElementById('btn-mic'),
         focus: document.getElementById('btn-focus'),
         focusLabel: document.getElementById('focus-label'),
+        progressRow: document.getElementById('progress-area-row'),
+        cardHeader: document.getElementById('speak-card-header'),
         theme: document.getElementById('themeToggleCheckbox'),
         themeText: document.getElementById('themeToggleText'),
         modal: document.getElementById('score-modal'),
@@ -3160,6 +3158,11 @@ const lessonData = [
         if (dom.focus) {
             dom.focus.setAttribute('aria-pressed', String(isEnabled));
             dom.focus.title = isEnabled ? 'Thoát Focus Mode' : 'Bật Focus Mode';
+            if (isEnabled && dom.cardHeader) {
+                dom.cardHeader.appendChild(dom.focus);
+            } else if (!isEnabled && dom.progressRow) {
+                dom.progressRow.prepend(dom.focus);
+            }
         }
         if (dom.focusLabel) {
             dom.focusLabel.textContent = isEnabled ? 'Thoát Focus' : 'Focus Mode';
