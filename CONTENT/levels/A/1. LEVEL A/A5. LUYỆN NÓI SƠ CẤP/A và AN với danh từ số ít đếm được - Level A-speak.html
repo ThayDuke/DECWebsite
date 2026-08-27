@@ -162,6 +162,8 @@ input:focus-visible {
 }
 
 .app-container {
+    position: relative;
+    overflow: hidden;
     width: min(900px, 100%);
     min-height: calc(100dvh - clamp(24px, 4.8dvh, 56px));
     margin: auto;
@@ -175,22 +177,32 @@ input:focus-visible {
     flex-direction: column;
 }
 
+.app-container::before {
+    position: absolute;
+    inset: 0 0 auto;
+    height: var(--accent-height, 6px);
+    background: var(--accent-gradient);
+    content: "";
+}
+
 .header-area {
     text-align: center;
+    margin-bottom: 2px;
 }
 
 .dec-ui-game-title {
-    margin: 0;
-    background: var(--heading-gradient);
+    margin: 0.25rem 0;
+    background: var(--accent-gradient);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent;
-    font-size: clamp(1.5rem, 2.7vw, 2.1rem);
+    font-size: clamp(1.8rem, 2.5vw, 2.2rem);
     font-weight: 800;
     line-height: 1.2;
-    letter-spacing: -0.015em;
+    letter-spacing: 0.0625rem;
     text-wrap: balance;
+    zoom: 0.7;
 }
 
 .theme-row,
@@ -202,7 +214,7 @@ input:focus-visible {
 }
 
 .theme-row {
-    margin: clamp(12px, 1.8dvh, 18px) 0;
+    margin: clamp(6px, 1dvh, 10px) 0;
 }
 
 .sub-header-controls {
@@ -392,14 +404,6 @@ input:focus-visible {
     flex-direction: column;
 }
 
-.speak-card::before {
-    position: absolute;
-    inset: 0 0 auto;
-    height: var(--accent-height-sm, 3px);
-    background: var(--accent-gradient);
-    content: "";
-}
-
 .question-kicker,
 .transcript-label {
     color: var(--teal-dark);
@@ -418,6 +422,23 @@ input:focus-visible {
     font-size: clamp(1.35rem, 3vw, 2.1rem);
     line-height: 1.35;
     text-wrap: balance;
+    transition: background-image 0.3s ease, color 0.3s ease;
+}
+
+.question-text.dec-text-primary {
+    background-image: var(--btn-primary-bg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.question-text.dec-text-secondary {
+    background-image: var(--btn-secondary-bg);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 
 .help-panel,
@@ -662,12 +683,14 @@ body[data-theme="elegant"] .slider {
 }
 
 body.focus-mode {
-    padding: clamp(6px, 1.5dvh, 16px);
+    padding: clamp(10px, 2dvh, 24px);
 }
 
 body.focus-mode .app-container {
-    width: min(1180px, 100%);
-    min-height: calc(100dvh - clamp(12px, 3dvh, 32px));
+    width: min(1280px, 100%);
+    min-height: calc(100dvh - clamp(20px, 4dvh, 48px));
+    display: flex;
+    flex-direction: column;
 }
 
 body.focus-mode .header-area,
@@ -689,10 +712,71 @@ body.focus-mode .focus-toggle-btn {
 
 body.focus-mode .speak-card {
     overflow: auto;
+    padding: clamp(28px, 3.8vw, 52px);
+    justify-content: center;
+    gap: clamp(12px, 1.8dvh, 22px);
+}
+
+body.focus-mode .question-kicker {
+    font-size: clamp(0.92rem, 1.25vw, 1.2rem);
+    letter-spacing: 0.1em;
+    margin: 0 0 clamp(8px, 1.2dvh, 16px);
+}
+
+body.focus-mode .question-text {
+    font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+    line-height: 1.3;
+    font-weight: 800;
+    margin: 0;
+}
+
+body.focus-mode .transcript-panel {
+    margin-top: clamp(18px, 2.6dvh, 32px);
+    padding: clamp(16px, 2.2dvh, 24px) clamp(20px, 2vw, 30px);
+    border-radius: var(--radius-md);
+}
+
+body.focus-mode .transcript-label {
+    font-size: clamp(0.88rem, 1.15vw, 1.1rem);
+}
+
+body.focus-mode .transcript-text {
+    font-size: clamp(1.35rem, 2.2vw, 2rem);
+    line-height: 1.45;
+    margin-top: 8px;
+}
+
+body.focus-mode .help-panel {
+    font-size: clamp(1.3rem, 2.1vw, 1.85rem);
+    padding: clamp(16px, 2.2dvh, 24px) clamp(20px, 2vw, 30px);
+    margin-top: clamp(16px, 2.2dvh, 26px);
+    border-radius: var(--radius-md);
+}
+
+body.focus-mode .result-message {
+    font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+    padding-top: clamp(16px, 2.2dvh, 26px);
 }
 
 body.focus-mode .control-bar {
-    margin-top: clamp(10px, 1.5dvh, 16px);
+    margin-top: clamp(14px, 2dvh, 24px);
+    min-height: 86px;
+}
+
+body.focus-mode .btn-help {
+    min-height: 48px;
+    font-size: 0.95rem;
+    padding-inline: 18px;
+}
+
+body.focus-mode .btn-mic {
+    width: 66px;
+    height: 66px;
+}
+
+body.focus-mode .btn-nav {
+    width: 50px;
+    height: 50px;
 }
 
 @media (max-width: 640px) {
@@ -2667,6 +2751,10 @@ const lessonData = [
   }
 ];
 
+const SPEAK_LEVEL = "B";
+const LESSON_SCORING_PROFILES = [];
+const lessonData = [];
+
 (function initSpeakLesson(window, document) {
     'use strict';
 
@@ -2798,6 +2886,9 @@ const lessonData = [
 
         resetQuestionState();
         dom.question.textContent = item.question;
+        const isOdd = (state.currentIndex + 1) % 2 === 1;
+        dom.question.classList.toggle('dec-text-primary', isOdd);
+        dom.question.classList.toggle('dec-text-secondary', !isOdd);
         dom.previous.disabled = state.currentIndex === 0;
         dom.next.disabled = state.currentIndex === lessonData.length - 1;
         dom.helpButton.disabled = false;
@@ -3002,16 +3093,43 @@ const lessonData = [
         renderQuestion();
     }
 
-    function applyFocusMode(enabled) {
-        document.body.classList.toggle('focus-mode', enabled);
-        dom.focus.setAttribute('aria-pressed', String(enabled));
-        dom.focusLabel.textContent = enabled ? 'Thoát Focus' : 'Focus Mode';
-        dom.focus.title = enabled ? 'Thoát Focus Mode' : 'Bật Focus Mode';
+    async function syncFocusFullscreen(enabled) {
+        try {
+            if (enabled && !document.fullscreenElement && document.documentElement.requestFullscreen) {
+                await document.documentElement.requestFullscreen();
+            } else if (!enabled && document.fullscreenElement && document.exitFullscreen) {
+                await document.exitFullscreen();
+            }
+        } catch (error) {
+            // Trình duyệt có thể chặn fullscreen nếu thiếu user gesture
+        }
+    }
+
+    function applyFocusMode(enabled, options = {}) {
+        const isEnabled = Boolean(enabled);
+        document.body.classList.toggle('focus-mode', isEnabled);
+        if (dom.focus) {
+            dom.focus.setAttribute('aria-pressed', String(isEnabled));
+            dom.focus.title = isEnabled ? 'Thoát Focus Mode' : 'Bật Focus Mode';
+        }
+        if (dom.focusLabel) {
+            dom.focusLabel.textContent = isEnabled ? 'Thoát Focus' : 'Focus Mode';
+        }
+        if (options.syncFullscreen !== false) {
+            syncFocusFullscreen(isEnabled);
+        }
     }
 
     function toggleFocus() {
         applyFocusMode(!document.body.classList.contains('focus-mode'));
     }
+
+    document.addEventListener('fullscreenchange', () => {
+        const isFullscreen = Boolean(document.fullscreenElement);
+        if (isFullscreen !== document.body.classList.contains('focus-mode')) {
+            applyFocusMode(isFullscreen, { syncFullscreen: false });
+        }
+    });
 
     function restartLesson() {
         stopRecognition();
