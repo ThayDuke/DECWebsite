@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,942 +1924,761 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Nam đang chơi bóng đá ngay bây giờ trên sân trường.",
+    "question": "Nam đang chơi bóng đá.",
+    "answer": "Nam is playing football.",
+    "variants": [
+      "Nam is playing football.",
+      "Nam is playing soccer."
+    ],
+    "help1": "nam / playing / football",
+    "help2": "Nam is playing football.",
     "keywords": [
       "nam",
-      "is",
       "playing",
-      "football",
-      "school",
-      "field"
-    ],
-    "variants": [
-      "Nam is playing football on the school field now.",
-      "Now nam is playing football on the school field.",
-      "Now, nam is playing football on the school field.",
-      "Nam is playing soccer on the school field now.",
-      "Now nam is playing soccer on the school field."
-    ],
-    "help1": "Nam is playing football / school field / now",
-    "help2": "Nam is playing football on the school field now.",
-    "answer": "Nam is playing football on the school field now."
+      "football"
+    ]
   },
   {
     "id": "q002",
-    "question": "Họ đang đọc sách trong thư viện vào lúc này.",
-    "keywords": [
-      "are",
-      "reading",
-      "books",
-      "library",
-      "now"
-    ],
+    "question": "Họ đang đọc sách.",
+    "answer": "They are reading books.",
     "variants": [
-      "They are reading books in the library now.",
-      "Now they are reading books in the library.",
-      "Now, they are reading books in the library.",
-      "they're reading books in the library now.",
-      "Now they're reading books in the library."
+      "They are reading books.",
+      "They're reading books."
     ],
-    "help1": "are reading books / library / now",
-    "help2": "They are reading books in the library now.",
-    "answer": "They are reading books in the library now."
+    "help1": "reading / books",
+    "help2": "They are reading books.",
+    "keywords": [
+      "reading",
+      "books"
+    ]
   },
   {
     "id": "q003",
-    "question": "Nam đang chạy trong công viên ngay lúc này.",
+    "question": "Nam đang chạy trong công viên.",
+    "answer": "Nam is running in the park.",
+    "variants": [
+      "Nam is running in the park."
+    ],
+    "help1": "nam / running / park",
+    "help2": "Nam is running in the park.",
     "keywords": [
       "nam",
-      "is",
       "running",
-      "park",
-      "right",
-      "now"
-    ],
-    "variants": [
-      "Nam is running in the park right now.",
-      "Right now nam is running in the park.",
-      "Right now, nam is running in the park.",
-      "Now nam is running in the park right.",
-      "Now, nam is running in the park right."
-    ],
-    "help1": "Nam is running / park / right now",
-    "help2": "Nam is running in the park right now.",
-    "answer": "Nam is running in the park right now."
+      "park"
+    ]
   },
   {
     "id": "q004",
-    "question": "Hiện giờ chúng tôi đang học tiếng Anh trong lớp.",
-    "keywords": [
-      "are",
-      "learning",
-      "english",
-      "class",
-      "moment"
-    ],
+    "question": "Chúng tôi đang học tiếng Anh.",
+    "answer": "We are learning English.",
     "variants": [
-      "We are learning English in class at the moment.",
-      "At the moment we are learning english in class.",
-      "At the moment, we are learning english in class.",
-      "we're learning English in class at the moment.",
-      "At the moment we're learning english in class."
+      "We are learning English.",
+      "We're learning English.",
+      "We are studying English.",
+      "We're studying English."
     ],
-    "help1": "are learning English / class / moment",
-    "help2": "We are learning English in class at the moment.",
-    "answer": "We are learning English in class at the moment."
+    "help1": "learning / english",
+    "help2": "We are learning English.",
+    "keywords": [
+      "learning",
+      "english"
+    ]
   },
   {
     "id": "q005",
-    "question": "Nhìn kìa, các học sinh đang bơi trong hồ.",
-    "keywords": [
-      "look",
-      "students",
-      "are",
-      "swimming",
-      "pool"
-    ],
+    "question": "Học sinh đang bơi.",
+    "answer": "The students are swimming.",
     "variants": [
-      "Look! The students are swimming in the pool."
+      "The students are swimming."
     ],
-    "help1": "Look / students are swimming / pool",
-    "help2": "Look! The students are swimming in the pool.",
-    "answer": "Look! The students are swimming in the pool."
+    "help1": "students / swimming",
+    "help2": "The students are swimming.",
+    "keywords": [
+      "students",
+      "swimming"
+    ]
   },
   {
     "id": "q006",
-    "question": "Mẹ tôi đang nấu bữa tối trong bếp.",
-    "keywords": [
-      "mother",
-      "is",
-      "cooking",
-      "dinner",
-      "kitchen"
-    ],
+    "question": "Mẹ đang nấu bữa tối.",
+    "answer": "Mom is cooking dinner.",
     "variants": [
-      "My mother is cooking dinner in the kitchen.",
-      "My mom is cooking dinner in the kitchen."
+      "Mom is cooking dinner.",
+      "My mom is cooking dinner.",
+      "My mother is cooking dinner.",
+      "mother is cooking dinner.",
+      "mom is cooking dinner."
     ],
-    "help1": "mother is cooking dinner / kitchen",
-    "help2": "My mother is cooking dinner in the kitchen.",
-    "answer": "My mother is cooking dinner in the kitchen."
+    "help1": "mom / cooking / dinner",
+    "help2": "Mom is cooking dinner.",
+    "keywords": [
+      "mom",
+      "cooking",
+      "dinner"
+    ]
   },
   {
     "id": "q007",
-    "question": "Các bạn nhỏ đang chơi trốn tìm ngoài sân.",
+    "question": "Trẻ em đang chơi đùa.",
+    "answer": "The children are playing.",
+    "variants": [
+      "The children are playing."
+    ],
+    "help1": "children / playing",
+    "help2": "The children are playing.",
     "keywords": [
       "children",
-      "are",
-      "playing",
-      "hide",
-      "and",
-      "seek"
-    ],
-    "variants": [
-      "The children are playing hide and seek outside."
-    ],
-    "help1": "children are playing hide and seek outside",
-    "help2": "The children are playing hide and seek outside.",
-    "answer": "The children are playing hide and seek outside."
+      "playing"
+    ]
   },
   {
     "id": "q008",
-    "question": "Tôi đang chạy trong công viên ngay bây giờ.",
-    "keywords": [
-      "am",
-      "running",
-      "park",
-      "right",
-      "now"
-    ],
+    "question": "Tôi đang chạy bộ.",
+    "answer": "I am running.",
     "variants": [
-      "I am running in the park right now.",
-      "Right now I am running in the park.",
-      "Right now, I am running in the park.",
-      "Now I am running in the park right.",
-      "Now, I am running in the park right."
+      "I am running.",
+      "I'm running."
     ],
-    "help1": "am running / park / right now",
-    "help2": "I am running in the park right now.",
-    "answer": "I am running in the park right now."
+    "help1": "running",
+    "help2": "I am running.",
+    "keywords": [
+      "running"
+    ]
   },
   {
     "id": "q009",
-    "question": "Họ đang ăn trưa tại một nhà hàng gần trường.",
-    "keywords": [
-      "are",
-      "having",
-      "lunch",
-      "restaurant",
-      "school"
-    ],
+    "question": "Họ đang ăn trưa.",
+    "answer": "They are having lunch.",
     "variants": [
-      "They are having lunch at a restaurant near the school.",
-      "they're having lunch at a restaurant near the school.",
-      "they are having lunch at a restaurant near the school."
+      "They are having lunch.",
+      "They're having lunch.",
+      "They are eating lunch.",
+      "They're eating lunch."
     ],
-    "help1": "are having lunch / restaurant / school",
-    "help2": "They are having lunch at a restaurant near the school.",
-    "answer": "They are having lunch at a restaurant near the school."
+    "help1": "having / lunch",
+    "help2": "They are having lunch.",
+    "keywords": [
+      "having",
+      "lunch"
+    ]
   },
   {
     "id": "q010",
-    "question": "Cô ấy đang làm một chiếc bánh ngay bây giờ.",
-    "keywords": [
-      "is",
-      "making",
-      "cake",
-      "now"
-    ],
+    "question": "Cô ấy đang làm bánh.",
+    "answer": "She is making a cake.",
     "variants": [
-      "She is making a cake now.",
-      "Now she is making a cake.",
-      "Now, she is making a cake.",
-      "she's making a cake now.",
-      "Now she's making a cake."
+      "She is making a cake.",
+      "She's making a cake."
     ],
-    "help1": "is making / cake / now",
-    "help2": "She is making a cake now.",
-    "answer": "She is making a cake now."
+    "help1": "making / cake",
+    "help2": "She is making a cake.",
+    "keywords": [
+      "making",
+      "cake"
+    ]
   },
   {
     "id": "q011",
-    "question": "Con mèo của tôi đang ngủ trên ghế sofa.",
+    "question": "Con mèo đang ngủ.",
+    "answer": "The cat is sleeping.",
+    "variants": [
+      "The cat is sleeping."
+    ],
+    "help1": "cat / sleeping",
+    "help2": "The cat is sleeping.",
     "keywords": [
       "cat",
-      "is",
-      "sleeping",
-      "sofa"
-    ],
-    "variants": [
-      "My cat is sleeping on the sofa."
-    ],
-    "help1": "cat is sleeping / sofa",
-    "help2": "My cat is sleeping on the sofa.",
-    "answer": "My cat is sleeping on the sofa."
+      "sleeping"
+    ]
   },
   {
     "id": "q012",
-    "question": "Anh ấy hiện không đạp xe vì trời mưa.",
-    "keywords": [
-      "is",
-      "not",
-      "riding",
-      "bike",
-      "because",
-      "raining"
-    ],
+    "question": "Trời đang mưa.",
+    "answer": "It is raining.",
     "variants": [
-      "He is not riding a bike because it is raining.",
-      "He isn't riding a bike because it is raining.",
-      "he's not riding a bike because it is raining.",
-      "he is not riding a bike because it is raining.",
-      "He is not riding a bike because it's raining."
+      "It is raining.",
+      "It's raining."
     ],
-    "help1": "is not riding / bike because / is raining",
-    "help2": "He is not riding a bike because it is raining.",
-    "answer": "He is not riding a bike because it is raining."
+    "help1": "raining",
+    "help2": "It is raining.",
+    "keywords": [
+      "raining"
+    ]
   },
   {
     "id": "q013",
-    "question": "Họ đang cùng nhau nhảy trong phòng khách.",
-    "keywords": [
-      "are",
-      "dancing",
-      "together",
-      "living",
-      "room"
-    ],
+    "question": "Họ đang khiêu vũ.",
+    "answer": "They are dancing.",
     "variants": [
-      "They are dancing together in the living room.",
-      "they're dancing together in the living room.",
-      "they are dancing together in the living room."
+      "They are dancing.",
+      "They're dancing."
     ],
-    "help1": "are dancing together / living room",
-    "help2": "They are dancing together in the living room.",
-    "answer": "They are dancing together in the living room."
+    "help1": "dancing",
+    "help2": "They are dancing.",
+    "keywords": [
+      "dancing"
+    ]
   },
   {
     "id": "q014",
-    "question": "Anh ấy đang bơi ở hồ vào lúc này.",
-    "keywords": [
-      "is",
-      "swimming",
-      "lake",
-      "moment"
-    ],
+    "question": "Anh ấy đang bơi.",
+    "answer": "He is swimming.",
     "variants": [
-      "He is swimming in the lake at the moment.",
-      "At the moment he is swimming in the lake.",
-      "At the moment, he is swimming in the lake.",
-      "he's swimming in the lake at the moment.",
-      "At the moment he's swimming in the lake."
+      "He is swimming.",
+      "He's swimming."
     ],
-    "help1": "is swimming / lake / moment",
-    "help2": "He is swimming in the lake at the moment.",
-    "answer": "He is swimming in the lake at the moment."
+    "help1": "swimming",
+    "help2": "He is swimming.",
+    "keywords": [
+      "swimming"
+    ]
   },
   {
     "id": "q015",
-    "question": "Cô ấy đang đọc một quyển sách trong phòng ngủ.",
-    "keywords": [
-      "is",
-      "reading",
-      "book",
-      "bedroom"
-    ],
+    "question": "Cô ấy đang đọc sách.",
+    "answer": "She is reading a book.",
     "variants": [
-      "She is reading a book in the bedroom.",
-      "she's reading a book in the bedroom.",
-      "she is reading a book in the bedroom."
+      "She is reading a book.",
+      "She's reading a book."
     ],
-    "help1": "is reading / book / bedroom",
-    "help2": "She is reading a book in the bedroom.",
-    "answer": "She is reading a book in the bedroom."
+    "help1": "reading / book",
+    "help2": "She is reading a book.",
+    "keywords": [
+      "reading",
+      "book"
+    ]
   },
   {
     "id": "q016",
-    "question": "Nam và Ba đang chạy đua trên sân thể thao.",
+    "question": "Nam và Ba đang chạy.",
+    "answer": "Nam and Ba are running.",
+    "variants": [
+      "Nam and Ba are running."
+    ],
+    "help1": "nam / ba / running",
+    "help2": "Nam and Ba are running.",
     "keywords": [
       "nam",
-      "and",
       "ba",
-      "are",
-      "running",
-      "sports"
-    ],
-    "variants": [
-      "Nam and Ba are running on the sports field."
-    ],
-    "help1": "Nam and Ba are running / sports field",
-    "help2": "Nam and Ba are running on the sports field.",
-    "answer": "Nam and Ba are running on the sports field."
+      "running"
+    ]
   },
   {
     "id": "q017",
-    "question": "Bạn hỏi cô ấy hiện giờ đang làm gì.",
-    "keywords": [
-      "what",
-      "is",
-      "doing",
-      "now"
-    ],
+    "question": "Cô ấy đang làm gì?",
+    "answer": "What is she doing?",
     "variants": [
-      "What is she doing now?",
-      "Now what is she doing?",
-      "Now, what is she doing?"
+      "What is she doing?",
+      "What's she doing?"
     ],
-    "help1": "What is / doing / now",
-    "help2": "What is she doing now?",
-    "answer": "What is she doing now?"
+    "help1": "doing",
+    "help2": "What is she doing?",
+    "keywords": [
+      "doing"
+    ]
   },
   {
     "id": "q018",
-    "question": "Bố tôi đang lái xe đi làm vào sáng nay.",
-    "keywords": [
-      "father",
-      "is",
-      "driving",
-      "work",
-      "morning"
-    ],
+    "question": "Bố tôi đang lái xe.",
+    "answer": "My dad is driving.",
     "variants": [
-      "My father is driving to work this morning.",
-      "This morning my father is driving to work.",
-      "This morning, my father is driving to work.",
-      "My dad is driving to work this morning.",
-      "This morning my dad is driving to work."
+      "My dad is driving.",
+      "My father is driving."
     ],
-    "help1": "father is driving / work / morning",
-    "help2": "My father is driving to work this morning.",
-    "answer": "My father is driving to work this morning."
+    "help1": "dad / driving",
+    "help2": "My dad is driving.",
+    "keywords": [
+      "dad",
+      "driving"
+    ]
   },
   {
     "id": "q019",
-    "question": "Trời đang mưa ngoài cửa sổ ngay lúc này.",
-    "keywords": [
-      "is",
-      "raining",
-      "outside",
-      "window",
-      "now"
-    ],
+    "question": "Bên ngoài trời đang mưa.",
+    "answer": "It is raining outside.",
     "variants": [
-      "It is raining outside the window now.",
-      "Now it is raining outside the window.",
-      "Now, it is raining outside the window.",
-      "it's raining outside the window now.",
-      "Now it's raining outside the window."
+      "It is raining outside.",
+      "It's raining outside."
     ],
-    "help1": "is raining outside / window / now",
-    "help2": "It is raining outside the window now.",
-    "answer": "It is raining outside the window now."
+    "help1": "raining / outside",
+    "help2": "It is raining outside.",
+    "keywords": [
+      "raining",
+      "outside"
+    ]
   },
   {
     "id": "q020",
-    "question": "Chúng tôi đang cùng nhau xem một bộ phim.",
-    "keywords": [
-      "are",
-      "watching",
-      "movie",
-      "together"
-    ],
+    "question": "Chúng tôi đang xem phim.",
+    "answer": "We are watching a movie.",
     "variants": [
-      "We are watching a movie together.",
-      "we're watching a movie together.",
-      "we are watching a movie together.",
-      "We are watching a film together.",
-      "we're watching a film together."
+      "We are watching a movie.",
+      "We're watching a movie.",
+      "We are watching a film.",
+      "We're watching a film."
     ],
-    "help1": "are watching / movie together",
-    "help2": "We are watching a movie together.",
-    "answer": "We are watching a movie together."
+    "help1": "watching / movie",
+    "help2": "We are watching a movie.",
+    "keywords": [
+      "watching",
+      "movie"
+    ]
   },
   {
     "id": "q021",
-    "question": "Các học sinh đang vẽ tranh trong lớp mỹ thuật.",
+    "question": "Học sinh đang vẽ tranh.",
+    "answer": "The students are drawing.",
+    "variants": [
+      "The students are drawing.",
+      "The students are drawing pictures."
+    ],
+    "help1": "students / drawing",
+    "help2": "The students are drawing.",
     "keywords": [
       "students",
-      "are",
-      "drawing",
-      "pictures",
-      "art",
-      "class"
-    ],
-    "variants": [
-      "The students are drawing pictures in art class."
-    ],
-    "help1": "students are drawing pictures / art class",
-    "help2": "The students are drawing pictures in art class.",
-    "answer": "The students are drawing pictures in art class."
+      "drawing"
+    ]
   },
   {
     "id": "q022",
-    "question": "Con chim đang bay trên bầu trời xanh.",
+    "question": "Con chim đang bay.",
+    "answer": "The bird is flying.",
+    "variants": [
+      "The bird is flying."
+    ],
+    "help1": "bird / flying",
+    "help2": "The bird is flying.",
     "keywords": [
       "bird",
-      "is",
-      "flying",
-      "blue",
-      "sky"
-    ],
-    "variants": [
-      "The bird is flying in the blue sky."
-    ],
-    "help1": "bird is flying / blue sky",
-    "help2": "The bird is flying in the blue sky.",
-    "answer": "The bird is flying in the blue sky."
+      "flying"
+    ]
   },
   {
     "id": "q023",
-    "question": "Cô ấy đang hát một bài hát trong phòng.",
-    "keywords": [
-      "is",
-      "singing",
-      "song",
-      "room"
-    ],
+    "question": "Cô ấy đang hát.",
+    "answer": "She is singing.",
     "variants": [
-      "She is singing a song in the room.",
-      "she's singing a song in the room.",
-      "she is singing a song in the room."
+      "She is singing.",
+      "She's singing.",
+      "She is singing a song.",
+      "She's singing a song."
     ],
-    "help1": "is singing / song / room",
-    "help2": "She is singing a song in the room.",
-    "answer": "She is singing a song in the room."
+    "help1": "singing",
+    "help2": "She is singing.",
+    "keywords": [
+      "singing"
+    ]
   },
   {
     "id": "q024",
-    "question": "Chúng tôi đang ăn những quả táo trong bếp.",
-    "keywords": [
-      "are",
-      "eating",
-      "apples",
-      "kitchen"
-    ],
+    "question": "Chúng tôi đang ăn táo.",
+    "answer": "We are eating apples.",
     "variants": [
-      "We are eating apples in the kitchen.",
-      "we're eating apples in the kitchen.",
-      "we are eating apples in the kitchen."
+      "We are eating apples.",
+      "We're eating apples."
     ],
-    "help1": "are eating apples / kitchen",
-    "help2": "We are eating apples in the kitchen.",
-    "answer": "We are eating apples in the kitchen."
+    "help1": "eating / apples",
+    "help2": "We are eating apples.",
+    "keywords": [
+      "eating",
+      "apples"
+    ]
   },
   {
     "id": "q025",
-    "question": "Con chó đang chạy trong sân nhà.",
+    "question": "Con chó đang chạy.",
+    "answer": "The dog is running.",
+    "variants": [
+      "The dog is running."
+    ],
+    "help1": "dog / running",
+    "help2": "The dog is running.",
     "keywords": [
       "dog",
-      "is",
-      "running",
-      "yard"
-    ],
-    "variants": [
-      "The dog is running in the yard."
-    ],
-    "help1": "dog is running / yard",
-    "help2": "The dog is running in the yard.",
-    "answer": "The dog is running in the yard."
+      "running"
+    ]
   },
   {
     "id": "q026",
-    "question": "Họ đang viết thư cho bạn bè.",
-    "keywords": [
-      "are",
-      "writing",
-      "letters",
-      "friends"
-    ],
+    "question": "Họ đang viết thư.",
+    "answer": "They are writing a letter.",
     "variants": [
-      "They are writing letters to their friends.",
-      "they're writing letters to their friends.",
-      "they are writing letters to their friends."
+      "They are writing a letter.",
+      "They're writing a letter.",
+      "They are writing letters.",
+      "They're writing letters."
     ],
-    "help1": "are writing letters / friends",
-    "help2": "They are writing letters to their friends.",
-    "answer": "They are writing letters to their friends."
+    "help1": "writing / letter",
+    "help2": "They are writing a letter.",
+    "keywords": [
+      "writing",
+      "letter"
+    ]
   },
   {
     "id": "q027",
-    "question": "Họ đang học tiếng Anh trong thư viện.",
-    "keywords": [
-      "are",
-      "studying",
-      "english",
-      "library"
-    ],
+    "question": "Họ đang học bài.",
+    "answer": "They are studying.",
     "variants": [
-      "They are studying English in the library.",
-      "they're studying English in the library.",
-      "they are studying English in the library."
+      "They are studying.",
+      "They're studying."
     ],
-    "help1": "are studying English / library",
-    "help2": "They are studying English in the library.",
-    "answer": "They are studying English in the library."
+    "help1": "studying",
+    "help2": "They are studying.",
+    "keywords": [
+      "studying"
+    ]
   },
   {
     "id": "q028",
-    "question": "Em bé đang ngủ trong nôi ngay bây giờ.",
+    "question": "Em bé đang ngủ.",
+    "answer": "The baby is sleeping.",
+    "variants": [
+      "The baby is sleeping."
+    ],
+    "help1": "baby / sleeping",
+    "help2": "The baby is sleeping.",
     "keywords": [
       "baby",
-      "is",
-      "sleeping",
-      "crib",
-      "now"
-    ],
-    "variants": [
-      "The baby is sleeping in the crib now.",
-      "Now the baby is sleeping in the crib.",
-      "Now, the baby is sleeping in the crib."
-    ],
-    "help1": "baby is sleeping / crib / now",
-    "help2": "The baby is sleeping in the crib now.",
-    "answer": "The baby is sleeping in the crib now."
+      "sleeping"
+    ]
   },
   {
     "id": "q029",
-    "question": "Tôi đang làm một chiếc bánh kẹp trong bếp.",
-    "keywords": [
-      "am",
-      "making",
-      "sandwich",
-      "kitchen"
-    ],
+    "question": "Tôi đang làm bánh kẹp.",
+    "answer": "I am making a sandwich.",
     "variants": [
-      "I am making a sandwich in the kitchen."
+      "I am making a sandwich.",
+      "I'm making a sandwich."
     ],
-    "help1": "am making / sandwich / kitchen",
-    "help2": "I am making a sandwich in the kitchen.",
-    "answer": "I am making a sandwich in the kitchen."
+    "help1": "making / sandwich",
+    "help2": "I am making a sandwich.",
+    "keywords": [
+      "making",
+      "sandwich"
+    ]
   },
   {
     "id": "q030",
-    "question": "Nam đang chơi đồ chơi trong phòng ngủ.",
+    "question": "Nam đang chơi đồ chơi.",
+    "answer": "Nam is playing with toys.",
+    "variants": [
+      "Nam is playing with toys."
+    ],
+    "help1": "nam / playing / toys",
+    "help2": "Nam is playing with toys.",
     "keywords": [
       "nam",
-      "is",
       "playing",
-      "toys",
-      "bedroom"
-    ],
-    "variants": [
-      "Nam is playing with toys in the bedroom."
-    ],
-    "help1": "Nam is playing / toys / bedroom",
-    "help2": "Nam is playing with toys in the bedroom.",
-    "answer": "Nam is playing with toys in the bedroom."
+      "toys"
+    ]
   },
   {
     "id": "q031",
-    "question": "Con mèo đang trèo lên cây ngoài vườn.",
+    "question": "Con mèo đang trèo cây.",
+    "answer": "The cat is climbing a tree.",
+    "variants": [
+      "The cat is climbing a tree.",
+      "The cat is climbing the tree."
+    ],
+    "help1": "cat / climbing / tree",
+    "help2": "The cat is climbing a tree.",
     "keywords": [
       "cat",
-      "is",
       "climbing",
-      "tree",
-      "garden"
-    ],
-    "variants": [
-      "The cat is climbing the tree in the garden."
-    ],
-    "help1": "cat is climbing / tree / garden",
-    "help2": "The cat is climbing the tree in the garden.",
-    "answer": "The cat is climbing the tree in the garden."
+      "tree"
+    ]
   },
   {
     "id": "q032",
-    "question": "Chúng tôi đang ăn tối ngay bây giờ.",
+    "question": "Bây giờ chúng tôi đang ăn tối.",
+    "answer": "We are eating dinner now.",
+    "variants": [
+      "We are eating dinner now.",
+      "We're eating dinner now."
+    ],
+    "help1": "eating / dinner / now",
+    "help2": "We are eating dinner now.",
     "keywords": [
-      "are",
       "eating",
       "dinner",
       "now"
-    ],
-    "variants": [
-      "We are eating dinner now.",
-      "Now we are eating dinner.",
-      "Now, we are eating dinner.",
-      "we're eating dinner now.",
-      "Now we're eating dinner."
-    ],
-    "help1": "are eating dinner / now",
-    "help2": "We are eating dinner now.",
-    "answer": "We are eating dinner now."
+    ]
   },
   {
     "id": "q033",
-    "question": "Họ đang nhảy dây trong sân trường.",
-    "keywords": [
-      "are",
-      "skipping",
-      "rope",
-      "schoolyard"
-    ],
+    "question": "Họ đang nhảy dây.",
+    "answer": "They are skipping.",
     "variants": [
-      "They are skipping rope in the schoolyard.",
-      "they're skipping rope in the schoolyard.",
-      "they are skipping rope in the schoolyard."
+      "They are skipping.",
+      "They're skipping.",
+      "They are skipping rope.",
+      "They're skipping rope."
     ],
-    "help1": "are skipping rope / schoolyard",
-    "help2": "They are skipping rope in the schoolyard.",
-    "answer": "They are skipping rope in the schoolyard."
+    "help1": "skipping",
+    "help2": "They are skipping.",
+    "keywords": [
+      "skipping"
+    ]
   },
   {
     "id": "q034",
-    "question": "Giáo viên đang nói chuyện với cả lớp.",
+    "question": "Giáo viên đang nói chuyện.",
+    "answer": "The teacher is talking.",
+    "variants": [
+      "The teacher is talking."
+    ],
+    "help1": "teacher / talking",
+    "help2": "The teacher is talking.",
     "keywords": [
       "teacher",
-      "is",
-      "talking",
-      "class"
-    ],
-    "variants": [
-      "The teacher is talking to the class."
-    ],
-    "help1": "teacher is talking / class",
-    "help2": "The teacher is talking to the class.",
-    "answer": "The teacher is talking to the class."
+      "talking"
+    ]
   },
   {
     "id": "q035",
-    "question": "Cô ấy đang chạy trong vườn vào lúc này.",
-    "keywords": [
-      "is",
-      "running",
-      "garden",
-      "moment"
-    ],
+    "question": "Cô ấy đang chạy trong vườn.",
+    "answer": "She is running in the garden.",
     "variants": [
-      "She is running in the garden at the moment.",
-      "At the moment she is running in the garden.",
-      "At the moment, she is running in the garden.",
-      "she's running in the garden at the moment.",
-      "At the moment she's running in the garden."
+      "She is running in the garden.",
+      "She's running in the garden."
     ],
-    "help1": "is running / garden / moment",
-    "help2": "She is running in the garden at the moment.",
-    "answer": "She is running in the garden at the moment."
+    "help1": "running / garden",
+    "help2": "She is running in the garden.",
+    "keywords": [
+      "running",
+      "garden"
+    ]
   },
   {
     "id": "q036",
-    "question": "Nam đang làm bài tập trong phòng học.",
+    "question": "Nam đang làm bài tập.",
+    "answer": "Nam is doing homework.",
+    "variants": [
+      "Nam is doing homework.",
+      "Nam is doing his homework."
+    ],
+    "help1": "nam / doing / homework",
+    "help2": "Nam is doing homework.",
     "keywords": [
       "nam",
-      "is",
       "doing",
-      "homework",
-      "study",
-      "room"
-    ],
-    "variants": [
-      "Nam is doing his homework in the study room."
-    ],
-    "help1": "Nam is doing / homework / study room",
-    "help2": "Nam is doing his homework in the study room.",
-    "answer": "Nam is doing his homework in the study room."
+      "homework"
+    ]
   },
   {
     "id": "q037",
-    "question": "Nhìn kìa, em bé đang ngủ trong nôi.",
+    "question": "Em bé đang ngủ trong nôi.",
+    "answer": "The baby is sleeping in the crib.",
+    "variants": [
+      "The baby is sleeping in the crib."
+    ],
+    "help1": "baby / sleeping / crib",
+    "help2": "The baby is sleeping in the crib.",
     "keywords": [
-      "look",
       "baby",
-      "is",
       "sleeping",
       "crib"
-    ],
-    "variants": [
-      "Look! The baby is sleeping in the crib."
-    ],
-    "help1": "Look / baby is sleeping / crib",
-    "help2": "Look! The baby is sleeping in the crib.",
-    "answer": "Look! The baby is sleeping in the crib."
+    ]
   },
   {
     "id": "q038",
-    "question": "Lắng nghe! Có ai đó đang gõ cửa.",
+    "question": "Ai đó đang gõ cửa.",
+    "answer": "Someone is knocking at the door.",
+    "variants": [
+      "Someone is knocking at the door.",
+      "Someone's knocking at the door."
+    ],
+    "help1": "someone / knocking / door",
+    "help2": "Someone is knocking at the door.",
     "keywords": [
-      "listen",
       "someone",
-      "is",
       "knocking",
       "door"
-    ],
-    "variants": [
-      "Listen! Someone is knocking at the door."
-    ],
-    "help1": "Listen Someone is knocking / door",
-    "help2": "Listen! Someone is knocking at the door.",
-    "answer": "Listen! Someone is knocking at the door."
+    ]
   },
   {
     "id": "q039",
-    "question": "Mary đang ở trong bếp và đang nấu bữa tối.",
+    "question": "Mary đang nấu bữa tối.",
+    "answer": "Mary is cooking dinner.",
+    "variants": [
+      "Mary is cooking dinner."
+    ],
+    "help1": "mary / cooking / dinner",
+    "help2": "Mary is cooking dinner.",
     "keywords": [
       "mary",
-      "is",
-      "kitchen",
-      "and",
       "cooking",
       "dinner"
-    ],
-    "variants": [
-      "Mary is in the kitchen, and she is cooking dinner.",
-      "Mary is in the kitchen, and she's cooking dinner."
-    ],
-    "help1": "Mary is / kitchen and / is cooking dinner",
-    "help2": "Mary is in the kitchen, and she is cooking dinner.",
-    "answer": "Mary is in the kitchen, and she is cooking dinner."
+    ]
   },
   {
     "id": "q040",
-    "question": "Tôi đang làm bài tập nên bây giờ tôi không xem tivi.",
-    "keywords": [
-      "am",
-      "doing",
-      "homework",
-      "so",
-      "not",
-      "watching"
-    ],
+    "question": "Bây giờ tôi không xem tivi.",
+    "answer": "I am not watching TV now.",
     "variants": [
-      "I am doing my homework, so I am not watching television now.",
-      "Now I am doing my homework, so I am not watching television.",
-      "Now, I am doing my homework, so I am not watching television.",
-      "I am doing my homework, so I am not watching TV now.",
-      "Now I am doing my homework, so I am not watching TV."
+      "I am not watching TV now.",
+      "I'm not watching TV now."
     ],
-    "help1": "am doing / homework so / am not watching television / now",
-    "help2": "I am doing my homework, so I am not watching television now.",
-    "answer": "I am doing my homework, so I am not watching television now."
+    "help1": "not / watching / tv",
+    "help2": "I am not watching TV now.",
+    "keywords": [
+      "not",
+      "watching",
+      "tv"
+    ]
   },
   {
     "id": "q041",
-    "question": "Bạn hỏi xem những con mèo có đang chơi với quả bóng hay không.",
-    "keywords": [
-      "are",
-      "cats",
-      "playing",
-      "ball"
-    ],
+    "question": "Những con mèo đang chơi đùa.",
+    "answer": "The cats are playing.",
     "variants": [
-      "Are the cats playing with the ball?"
+      "The cats are playing.",
+      "The cats are playing with the ball."
     ],
-    "help1": "Are / cats playing / ball",
-    "help2": "Are the cats playing with the ball?",
-    "answer": "Are the cats playing with the ball?"
+    "help1": "cats / playing",
+    "help2": "The cats are playing.",
+    "keywords": [
+      "cats",
+      "playing"
+    ]
   },
   {
     "id": "q042",
-    "question": "Im lặng nào, ông tôi đang ngủ trong phòng bên cạnh.",
-    "keywords": [
-      "be",
-      "quiet",
-      "grandfather",
-      "is",
-      "sleeping",
-      "next"
-    ],
+    "question": "Ông tôi đang ngủ.",
+    "answer": "My grandpa is sleeping.",
     "variants": [
-      "Be quiet; my grandfather is sleeping in the next room."
+      "My grandpa is sleeping.",
+      "My grandfather is sleeping."
     ],
-    "help1": "Be quiet / grandfather is sleeping / next room",
-    "help2": "Be quiet; my grandfather is sleeping in the next room.",
-    "answer": "Be quiet; my grandfather is sleeping in the next room."
+    "help1": "grandpa / sleeping",
+    "help2": "My grandpa is sleeping.",
+    "keywords": [
+      "grandpa",
+      "sleeping"
+    ]
   },
   {
     "id": "q043",
-    "question": "Đừng gây ồn, tôi đang nghe đài trong phòng khách.",
-    "keywords": [
-      "do",
-      "not",
-      "make",
-      "noise",
-      "am",
-      "listening"
-    ],
+    "question": "Tôi đang nghe đài.",
+    "answer": "I am listening to the radio.",
     "variants": [
-      "Do not make noise; I am listening to the radio in the living room.",
-      "don't make noise; I am listening to the radio in the living room.",
-      "do not make noise; I am listening to the radio in the living room."
+      "I am listening to the radio.",
+      "I'm listening to the radio."
     ],
-    "help1": "Do not make noise / am listening / radio / living room",
-    "help2": "Do not make noise; I am listening to the radio in the living room.",
-    "answer": "Do not make noise; I am listening to the radio in the living room."
+    "help1": "listening / radio",
+    "help2": "I am listening to the radio.",
+    "keywords": [
+      "listening",
+      "radio"
+    ]
   },
   {
     "id": "q044",
-    "question": "A: Bạn đang làm gì? B: Tôi đang viết một lá thư.",
+    "question": "Tôi đang viết thư.",
+    "answer": "I am writing a letter.",
+    "variants": [
+      "I am writing a letter.",
+      "I'm writing a letter."
+    ],
+    "help1": "writing / letter",
+    "help2": "I am writing a letter.",
     "keywords": [
-      "what",
-      "are",
-      "doing",
-      "am",
       "writing",
       "letter"
-    ],
-    "variants": [
-      "A: What are you doing? B: I am writing a letter."
-    ],
-    "help1": "What are / doing B / am writing / letter",
-    "help2": "A: What are you doing? B: I am writing a letter.",
-    "answer": "A: What are you doing? B: I am writing a letter."
+    ]
   },
   {
     "id": "q045",
-    "question": "Bầu trời quang và mặt đất khô, nên lúc này trời không mưa.",
-    "keywords": [
-      "sky",
-      "is",
-      "clear",
-      "and",
-      "ground",
-      "dry"
-    ],
+    "question": "Bây giờ trời không mưa.",
+    "answer": "It is not raining now.",
     "variants": [
-      "The sky is clear and the ground is dry, so it is not raining now.",
-      "Now the sky is clear and the ground is dry, so it is not raining.",
-      "Now, the sky is clear and the ground is dry, so it is not raining.",
-      "The sky is clear and the ground is dry, so it isn't raining now.",
-      "Now the sky is clear and the ground is dry, so it isn't raining."
+      "It is not raining now.",
+      "It's not raining now."
     ],
-    "help1": "sky is clear and / ground is dry so / is not raining / now",
-    "help2": "The sky is clear and the ground is dry, so it is not raining now.",
-    "answer": "The sky is clear and the ground is dry, so it is not raining now."
+    "help1": "not / raining / now",
+    "help2": "It is not raining now.",
+    "keywords": [
+      "not",
+      "raining",
+      "now"
+    ]
   },
   {
     "id": "q046",
-    "question": "Bạn hỏi xem anh trai tôi có đang làm việc không.",
+    "question": "Anh trai bạn đang làm việc.",
+    "answer": "Your brother is working.",
+    "variants": [
+      "Your brother is working."
+    ],
+    "help1": "brother / working",
+    "help2": "Your brother is working.",
     "keywords": [
-      "is",
       "brother",
       "working"
-    ],
-    "variants": [
-      "Is your brother working?"
-    ],
-    "help1": "Is / brother working",
-    "help2": "Is your brother working?",
-    "answer": "Is your brother working?"
+    ]
   },
   {
     "id": "q047",
-    "question": "Nhìn kìa, mặt trời đang tỏa sáng trên bầu trời.",
-    "keywords": [
-      "look",
-      "sun",
-      "is",
-      "shining",
-      "sky"
-    ],
+    "question": "Mặt trời đang chiếu sáng.",
+    "answer": "The sun is shining.",
     "variants": [
-      "Look! The sun is shining in the sky."
+      "The sun is shining."
     ],
-    "help1": "Look / sun is shining / sky",
-    "help2": "Look! The sun is shining in the sky.",
-    "answer": "Look! The sun is shining in the sky."
+    "help1": "sun / shining",
+    "help2": "The sun is shining.",
+    "keywords": [
+      "sun",
+      "shining"
+    ]
   },
   {
     "id": "q048",
-    "question": "Ngay bây giờ, các chị em gái của tôi đang giặt búp bê đồ chơi.",
-    "keywords": [
-      "sisters",
-      "are",
-      "washing",
-      "dolls",
-      "right",
-      "now"
-    ],
+    "question": "Chị gái tôi đang giặt búp bê.",
+    "answer": "My sister is washing the doll.",
     "variants": [
-      "Right now, my sisters are washing their dolls.",
-      "My sisters are washing their dolls right now."
+      "My sister is washing the doll."
     ],
-    "help1": "sisters are washing / dolls / right now",
-    "help2": "Right now, my sisters are washing their dolls.",
-    "answer": "Right now, my sisters are washing their dolls."
+    "help1": "sister / washing / doll",
+    "help2": "My sister is washing the doll.",
+    "keywords": [
+      "sister",
+      "washing",
+      "doll"
+    ]
   },
   {
     "id": "q049",
-    "question": "Nam và Ba đang ở phòng khách và đang xem tivi.",
-    "keywords": [
-      "nam",
-      "and",
-      "ba",
-      "are",
-      "living",
-      "room"
-    ],
+    "question": "Họ đang xem tivi.",
+    "answer": "They are watching TV.",
     "variants": [
-      "Nam and Ba are in the living room, and they are watching television.",
-      "Nam and Ba are in the living room, and they're watching television.",
-      "Nam and Ba are in the living room, and they are watching TV.",
-      "Nam and Ba are in the living room, and they're watching TV."
+      "They are watching TV.",
+      "They're watching TV."
     ],
-    "help1": "Nam and Ba are / living room and / are watching television",
-    "help2": "Nam and Ba are in the living room, and they are watching television.",
-    "answer": "Nam and Ba are in the living room, and they are watching television."
+    "help1": "watching / tv",
+    "help2": "They are watching TV.",
+    "keywords": [
+      "watching",
+      "tv"
+    ]
   },
   {
     "id": "q050",
-    "question": "Hôm nay là Chủ nhật nên hôm nay chúng tôi không đi học.",
-    "keywords": [
-      "is",
-      "sunday",
-      "so",
-      "are",
-      "not",
-      "going"
-    ],
+    "question": "Hôm nay chúng tôi không đi học.",
+    "answer": "We are not going to school today.",
     "variants": [
-      "Today is Sunday, so we are not going to school today.",
-      "Today today is sunday, so we are not going to school.",
-      "Today, today is sunday, so we are not going to school.",
-      "Today is Sunday, so we aren't going to school today.",
-      "Today today is sunday, so we aren't going to school."
+      "We are not going to school today.",
+      "We're not going to school today.",
+      "We aren't going to school today."
     ],
-    "help1": "is Sunday so / are not going / school / today",
-    "help2": "Today is Sunday, so we are not going to school today.",
-    "answer": "Today is Sunday, so we are not going to school today."
+    "help1": "not / going / school",
+    "help2": "We are not going to school today.",
+    "keywords": [
+      "not",
+      "going",
+      "school"
+    ]
   }
 ];
 
@@ -2850,6 +2691,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2936,9 +2778,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2946,9 +2794,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2956,7 +2809,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2990,7 +2843,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -3015,77 +2868,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -3101,16 +2959,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3132,19 +2984,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3155,6 +3011,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3171,6 +3028,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3227,6 +3085,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3244,7 +3103,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;

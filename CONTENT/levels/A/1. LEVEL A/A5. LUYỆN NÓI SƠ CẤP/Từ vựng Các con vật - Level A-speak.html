@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,810 +1924,756 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Con vật nhỏ kêu meo meo đang ngủ trên ghế.",
+    "question": "Con mèo đang ngủ trên ghế.",
+    "answer": "The cat is sleeping on the chair.",
+    "variants": [
+      "The cat is sleeping on the chair.",
+      "The cat's sleeping on the chair."
+    ],
+    "help1": "cat / sleeping / chair",
+    "help2": "The cat is sleeping on the chair.",
     "keywords": [
       "cat",
-      "is",
       "sleeping",
-      "sofa"
-    ],
-    "variants": [
-      "The cat is sleeping on the sofa."
-    ],
-    "help1": "cat is sleeping / sofa",
-    "help2": "The cat is sleeping on the sofa.",
-    "answer": "The cat is sleeping on the sofa."
+      "chair"
+    ]
   },
   {
     "id": "q002",
-    "question": "Con chó đang sủa ngoài sân.",
+    "question": "Con chó đang sủa.",
+    "answer": "The dog is barking.",
+    "variants": [
+      "The dog is barking.",
+      "The dog's barking."
+    ],
+    "help1": "dog / barking",
+    "help2": "The dog is barking.",
     "keywords": [
       "dog",
-      "is",
-      "barking",
-      "yard"
-    ],
-    "variants": [
-      "The dog is barking in the yard."
-    ],
-    "help1": "dog is barking / yard",
-    "help2": "The dog is barking in the yard.",
-    "answer": "The dog is barking in the yard."
+      "barking"
+    ]
   },
   {
     "id": "q003",
     "question": "Con voi rất to.",
+    "answer": "The elephant is big.",
+    "variants": [
+      "The elephant is big.",
+      "The elephant is very big."
+    ],
+    "help1": "elephant / big",
+    "help2": "The elephant is big.",
     "keywords": [
       "elephant",
-      "is",
       "big"
-    ],
-    "variants": [
-      "The elephant is big."
-    ],
-    "help1": "elephant is big",
-    "help2": "The elephant is big.",
-    "answer": "The elephant is big."
+    ]
   },
   {
     "id": "q004",
-    "question": "Tôi thích loài khỉ nói chung.",
-    "keywords": [
-      "like",
-      "monkeys"
-    ],
+    "question": "Tôi thích những chú khỉ.",
+    "answer": "I like monkeys.",
     "variants": [
       "I like monkeys."
     ],
-    "help1": "like monkeys",
+    "help1": "like / monkeys",
     "help2": "I like monkeys.",
-    "answer": "I like monkeys."
+    "keywords": [
+      "like",
+      "monkeys"
+    ]
   },
   {
     "id": "q005",
-    "question": "Cá không thể đi trên cạn.",
+    "question": "Cá bơi dưới nước.",
+    "answer": "Fish swim in the water.",
+    "variants": [
+      "Fish swim in the water.",
+      "Fish swim in water."
+    ],
+    "help1": "fish / swim / water",
+    "help2": "Fish swim in the water.",
     "keywords": [
       "fish",
-      "cannot",
-      "walk",
-      "land"
-    ],
-    "variants": [
-      "Fish cannot walk on land.",
-      "Fish can't walk on land."
-    ],
-    "help1": "Fish cannot walk / land",
-    "help2": "Fish cannot walk on land.",
-    "answer": "Fish cannot walk on land."
+      "swim",
+      "water"
+    ]
   },
   {
     "id": "q006",
-    "question": "Sư tử thường được gọi là vua của rừng xanh.",
+    "question": "Con sư tử rất khỏe.",
+    "answer": "The lion is strong.",
+    "variants": [
+      "The lion is strong.",
+      "The lion is very strong."
+    ],
+    "help1": "lion / strong",
+    "help2": "The lion is strong.",
     "keywords": [
       "lion",
-      "is",
-      "king",
-      "jungle"
-    ],
-    "variants": [
-      "The lion is the king of the jungle."
-    ],
-    "help1": "lion is / king / jungle",
-    "help2": "The lion is the king of the jungle.",
-    "answer": "The lion is the king of the jungle."
+      "strong"
+    ]
   },
   {
     "id": "q007",
-    "question": "Hươu cao cổ có chiếc cổ dài.",
-    "keywords": [
-      "giraffe",
-      "has",
-      "long",
-      "neck"
-    ],
+    "question": "Hươu cao cổ có cổ dài.",
+    "answer": "The giraffe has a long neck.",
     "variants": [
       "The giraffe has a long neck."
     ],
-    "help1": "giraffe has / long neck",
+    "help1": "giraffe / long / neck",
     "help2": "The giraffe has a long neck.",
-    "answer": "The giraffe has a long neck."
+    "keywords": [
+      "giraffe",
+      "long",
+      "neck"
+    ]
   },
   {
     "id": "q008",
     "question": "Con vịt đang bơi trong hồ.",
+    "answer": "The duck is swimming in the pond.",
+    "variants": [
+      "The duck is swimming in the pond.",
+      "The duck's swimming in the pond."
+    ],
+    "help1": "duck / swimming / pond",
+    "help2": "The duck is swimming in the pond.",
     "keywords": [
       "duck",
-      "is",
       "swimming",
       "pond"
-    ],
-    "variants": [
-      "The duck is swimming in the pond."
-    ],
-    "help1": "duck is swimming / pond",
-    "help2": "The duck is swimming in the pond.",
-    "answer": "The duck is swimming in the pond."
+    ]
   },
   {
     "id": "q009",
-    "question": "Ngựa vằn có những sọc đen và trắng.",
+    "question": "Con ngựa vằn màu đen và trắng.",
+    "answer": "The zebra is black and white.",
+    "variants": [
+      "The zebra is black and white."
+    ],
+    "help1": "zebra / black / white",
+    "help2": "The zebra is black and white.",
     "keywords": [
       "zebra",
-      "has",
       "black",
-      "and",
-      "white",
-      "stripes"
-    ],
-    "variants": [
-      "The zebra has black and white stripes."
-    ],
-    "help1": "zebra has black and white stripes",
-    "help2": "The zebra has black and white stripes.",
-    "answer": "The zebra has black and white stripes."
+      "white"
+    ]
   },
   {
     "id": "q010",
-    "question": "Con mèo đang ngủ trên ghế sofa.",
-    "keywords": [
-      "cat",
-      "is",
-      "sleeping",
-      "sofa"
-    ],
+    "question": "Con mèo con đang uống sữa.",
+    "answer": "The kitten is drinking milk.",
     "variants": [
-      "The cat is sleeping on the sofa."
+      "The kitten is drinking milk.",
+      "The kitten's drinking milk."
     ],
-    "help1": "cat is sleeping / sofa",
-    "help2": "The cat is sleeping on the sofa.",
-    "answer": "The cat is sleeping on the sofa."
+    "help1": "kitten / drinking / milk",
+    "help2": "The kitten is drinking milk.",
+    "keywords": [
+      "kitten",
+      "drinking",
+      "milk"
+    ]
   },
   {
     "id": "q011",
-    "question": "Con cừu này có bộ lông dày.",
+    "question": "Con cừu này màu trắng.",
+    "answer": "This sheep is white.",
+    "variants": [
+      "This sheep is white."
+    ],
+    "help1": "sheep / white",
+    "help2": "This sheep is white.",
     "keywords": [
       "sheep",
-      "has",
-      "thick",
-      "wool"
-    ],
-    "variants": [
-      "This sheep has thick wool."
-    ],
-    "help1": "sheep has thick wool",
-    "help2": "This sheep has thick wool.",
-    "answer": "This sheep has thick wool."
+      "white"
+    ]
   },
   {
     "id": "q012",
     "question": "Con dê đang ăn cỏ.",
-    "keywords": [
-      "goat",
-      "eats",
-      "grass"
-    ],
+    "answer": "The goat is eating grass.",
     "variants": [
+      "The goat is eating grass.",
+      "The goat's eating grass.",
       "The goat eats grass."
     ],
-    "help1": "goat eats grass",
-    "help2": "The goat eats grass.",
-    "answer": "The goat eats grass."
+    "help1": "goat / eating / grass",
+    "help2": "The goat is eating grass.",
+    "keywords": [
+      "goat",
+      "eating",
+      "grass"
+    ]
   },
   {
     "id": "q013",
-    "question": "Cậu ấy có hai con mèo làm thú cưng.",
-    "keywords": [
-      "has",
-      "two",
-      "pet",
-      "cats"
-    ],
+    "question": "Tôi có hai con mèo.",
+    "answer": "I have two cats.",
     "variants": [
-      "He has two pet cats."
+      "I have two cats."
     ],
-    "help1": "has two pet cats",
-    "help2": "He has two pet cats.",
-    "answer": "He has two pet cats."
+    "help1": "two / cats",
+    "help2": "I have two cats.",
+    "keywords": [
+      "two",
+      "cats"
+    ]
   },
   {
     "id": "q014",
     "question": "Con rùa bò rất chậm.",
+    "answer": "The turtle is slow.",
+    "variants": [
+      "The turtle is slow.",
+      "The turtle moves slowly."
+    ],
+    "help1": "turtle / slow",
+    "help2": "The turtle is slow.",
     "keywords": [
       "turtle",
-      "crawls",
-      "very",
-      "slowly"
-    ],
-    "variants": [
-      "The turtle crawls very slowly."
-    ],
-    "help1": "turtle crawls very slowly",
-    "help2": "The turtle crawls very slowly.",
-    "answer": "The turtle crawls very slowly."
+      "slow"
+    ]
   },
   {
     "id": "q015",
-    "question": "Con hamster nhỏ và có bộ lông mềm.",
+    "question": "Con chuột hamster rất nhỏ.",
+    "answer": "The hamster is small.",
+    "variants": [
+      "The hamster is small.",
+      "The hamster is very small."
+    ],
+    "help1": "hamster / small",
+    "help2": "The hamster is small.",
     "keywords": [
       "hamster",
-      "is",
-      "small",
-      "and",
-      "fluffy"
-    ],
-    "variants": [
-      "The hamster is small and fluffy."
-    ],
-    "help1": "hamster is small and fluffy",
-    "help2": "The hamster is small and fluffy.",
-    "answer": "The hamster is small and fluffy."
+      "small"
+    ]
   },
   {
     "id": "q016",
-    "question": "Những con ngựa có thể chạy rất nhanh.",
-    "keywords": [
-      "horses",
-      "can",
-      "run",
-      "very",
-      "fast"
-    ],
+    "question": "Con ngựa chạy rất nhanh.",
+    "answer": "The horse runs fast.",
     "variants": [
-      "Horses can run very fast."
+      "The horse runs fast.",
+      "The horse can run fast."
     ],
-    "help1": "Horses can run very fast",
-    "help2": "Horses can run very fast.",
-    "answer": "Horses can run very fast."
+    "help1": "horse / runs / fast",
+    "help2": "The horse runs fast.",
+    "keywords": [
+      "horse",
+      "runs",
+      "fast"
+    ]
   },
   {
     "id": "q017",
-    "question": "Con vẹt có thể nói một vài từ.",
+    "question": "Con vẹt có thể nói.",
+    "answer": "The parrot can talk.",
+    "variants": [
+      "The parrot can talk.",
+      "The parrot can speak."
+    ],
+    "help1": "parrot / talk",
+    "help2": "The parrot can talk.",
     "keywords": [
       "parrot",
-      "can",
-      "say",
-      "few",
-      "words"
-    ],
-    "variants": [
-      "The parrot can say a few words."
-    ],
-    "help1": "parrot can say / few words",
-    "help2": "The parrot can say a few words.",
-    "answer": "The parrot can say a few words."
+      "talk"
+    ]
   },
   {
     "id": "q018",
-    "question": "Con bọ rùa màu đỏ có những chấm đen.",
+    "question": "Con bọ rùa có màu đỏ.",
+    "answer": "The ladybug is red.",
+    "variants": [
+      "The ladybug is red."
+    ],
+    "help1": "ladybug / red",
+    "help2": "The ladybug is red.",
     "keywords": [
       "ladybug",
-      "is",
-      "red",
-      "black",
-      "spots"
-    ],
-    "variants": [
-      "The ladybug is red with black spots."
-    ],
-    "help1": "ladybug is red / black spots",
-    "help2": "The ladybug is red with black spots.",
-    "answer": "The ladybug is red with black spots."
+      "red"
+    ]
   },
   {
     "id": "q019",
-    "question": "Con mèo đang bắt một con chuột.",
+    "question": "Con mèo bắt được một con chuột.",
+    "answer": "The cat catches a mouse.",
+    "variants": [
+      "The cat catches a mouse.",
+      "The cat catches the mouse."
+    ],
+    "help1": "cat / catches / mouse",
+    "help2": "The cat catches a mouse.",
     "keywords": [
       "cat",
-      "is",
-      "catching",
+      "catches",
       "mouse"
-    ],
-    "variants": [
-      "The cat is catching a mouse."
-    ],
-    "help1": "cat is catching / mouse",
-    "help2": "The cat is catching a mouse.",
-    "answer": "The cat is catching a mouse."
+    ]
   },
   {
     "id": "q020",
-    "question": "Con cừu cho chúng ta len.",
+    "question": "Con cừu có bộ lông dày.",
+    "answer": "The sheep has wool.",
+    "variants": [
+      "The sheep has wool.",
+      "The sheep has thick wool."
+    ],
+    "help1": "sheep / wool",
+    "help2": "The sheep has wool.",
     "keywords": [
       "sheep",
-      "gives",
       "wool"
-    ],
-    "variants": [
-      "The sheep gives us wool."
-    ],
-    "help1": "sheep gives / wool",
-    "help2": "The sheep gives us wool.",
-    "answer": "The sheep gives us wool."
+    ]
   },
   {
     "id": "q021",
-    "question": "Đây là một chú gà trống đang gáy.",
+    "question": "Con gà trống đang gáy.",
+    "answer": "The rooster is crowing.",
+    "variants": [
+      "The rooster is crowing.",
+      "The rooster's crowing."
+    ],
+    "help1": "rooster / crowing",
+    "help2": "The rooster is crowing.",
     "keywords": [
-      "is",
       "rooster",
       "crowing"
-    ],
-    "variants": [
-      "This is a rooster crowing."
-    ],
-    "help1": "is / rooster crowing",
-    "help2": "This is a rooster crowing.",
-    "answer": "This is a rooster crowing."
+    ]
   },
   {
     "id": "q022",
-    "question": "Con ong làm ra mật trong tổ.",
+    "question": "Con ong làm ra mật.",
+    "answer": "The bee makes honey.",
+    "variants": [
+      "The bee makes honey.",
+      "Bees make honey."
+    ],
+    "help1": "bee / makes / honey",
+    "help2": "The bee makes honey.",
     "keywords": [
       "bee",
       "makes",
-      "honey",
-      "hive"
-    ],
-    "variants": [
-      "The bee makes honey in the hive."
-    ],
-    "help1": "bee makes honey / hive",
-    "help2": "The bee makes honey in the hive.",
-    "answer": "The bee makes honey in the hive."
+      "honey"
+    ]
   },
   {
     "id": "q023",
     "question": "Mẹ tôi đang cho gà ăn.",
+    "answer": "My mom is feeding the chickens.",
+    "variants": [
+      "My mom is feeding the chickens.",
+      "My mother is feeding the chickens."
+    ],
+    "help1": "mom / feeding / chickens",
+    "help2": "My mom is feeding the chickens.",
     "keywords": [
-      "mother",
-      "is",
+      "mom",
       "feeding",
       "chickens"
-    ],
-    "variants": [
-      "My mother is feeding the chickens.",
-      "My mom is feeding the chickens."
-    ],
-    "help1": "mother is feeding / chickens",
-    "help2": "My mother is feeding the chickens.",
-    "answer": "My mother is feeding the chickens."
+    ]
   },
   {
     "id": "q024",
-    "question": "Con vẹt có bộ lông nhiều màu sắc.",
+    "question": "Con vẹt có nhiều màu sắc.",
+    "answer": "The parrot is colorful.",
+    "variants": [
+      "The parrot is colorful."
+    ],
+    "help1": "parrot / colorful",
+    "help2": "The parrot is colorful.",
     "keywords": [
       "parrot",
-      "has",
-      "colorful",
-      "feathers"
-    ],
-    "variants": [
-      "The parrot has colorful feathers."
-    ],
-    "help1": "parrot has colorful feathers",
-    "help2": "The parrot has colorful feathers.",
-    "answer": "The parrot has colorful feathers."
+      "colorful"
+    ]
   },
   {
     "id": "q025",
-    "question": "Những con mèo đang chơi với một quả bóng.",
-    "keywords": [
-      "cats",
-      "are",
-      "playing",
-      "ball"
-    ],
+    "question": "Những con mèo đang chơi bóng.",
+    "answer": "The cats are playing with a ball.",
     "variants": [
       "The cats are playing with a ball."
     ],
-    "help1": "cats are playing / ball",
+    "help1": "cats / playing / ball",
     "help2": "The cats are playing with a ball.",
-    "answer": "The cats are playing with a ball."
+    "keywords": [
+      "cats",
+      "playing",
+      "ball"
+    ]
   },
   {
     "id": "q026",
-    "question": "Con thỏ rất đáng yêu.",
-    "keywords": [
-      "rabbit",
-      "is",
-      "very",
-      "cute"
-    ],
+    "question": "Con thỏ rất dễ thương.",
+    "answer": "The rabbit is cute.",
     "variants": [
+      "The rabbit is cute.",
       "The rabbit is very cute."
     ],
-    "help1": "rabbit is very cute",
-    "help2": "The rabbit is very cute.",
-    "answer": "The rabbit is very cute."
+    "help1": "rabbit / cute",
+    "help2": "The rabbit is cute.",
+    "keywords": [
+      "rabbit",
+      "cute"
+    ]
   },
   {
     "id": "q027",
     "question": "Con dơi bay vào ban đêm.",
+    "answer": "The bat flies at night.",
+    "variants": [
+      "The bat flies at night.",
+      "Bats fly at night."
+    ],
+    "help1": "bat / flies / night",
+    "help2": "The bat flies at night.",
     "keywords": [
       "bat",
       "flies",
       "night"
-    ],
-    "variants": [
-      "The bat flies at night.",
-      "At night the bat flies.",
-      "At night, the bat flies."
-    ],
-    "help1": "bat flies / night",
-    "help2": "The bat flies at night.",
-    "answer": "The bat flies at night."
+    ]
   },
   {
     "id": "q028",
-    "question": "Con ngựa đang chạy rất nhanh.",
+    "question": "Con ngựa đang chạy.",
+    "answer": "The horse is running.",
+    "variants": [
+      "The horse is running.",
+      "The horse's running."
+    ],
+    "help1": "horse / running",
+    "help2": "The horse is running.",
     "keywords": [
       "horse",
-      "is",
-      "running",
-      "very",
-      "fast"
-    ],
-    "variants": [
-      "The horse is running very fast."
-    ],
-    "help1": "horse is running very fast",
-    "help2": "The horse is running very fast.",
-    "answer": "The horse is running very fast."
+      "running"
+    ]
   },
   {
     "id": "q029",
-    "question": "Con bò kêu ò ò trên cánh đồng.",
+    "question": "Con bò đang ăn cỏ.",
+    "answer": "The cow is eating grass.",
+    "variants": [
+      "The cow is eating grass.",
+      "The cow's eating grass."
+    ],
+    "help1": "cow / eating / grass",
+    "help2": "The cow is eating grass.",
     "keywords": [
       "cow",
-      "says",
-      "moo",
-      "field"
-    ],
-    "variants": [
-      "The cow says moo in the field."
-    ],
-    "help1": "cow says moo / field",
-    "help2": "The cow says moo in the field.",
-    "answer": "The cow says moo in the field."
+      "eating",
+      "grass"
+    ]
   },
   {
     "id": "q030",
-    "question": "Những con chim đang hót trên cây.",
+    "question": "Những con chim đang hót.",
+    "answer": "The birds are singing.",
+    "variants": [
+      "The birds are singing."
+    ],
+    "help1": "birds / singing",
+    "help2": "The birds are singing.",
     "keywords": [
       "birds",
-      "are",
-      "singing",
-      "tree"
-    ],
-    "variants": [
-      "The birds are singing in the tree."
-    ],
-    "help1": "birds are singing / tree",
-    "help2": "The birds are singing in the tree.",
-    "answer": "The birds are singing in the tree."
+      "singing"
+    ]
   },
   {
     "id": "q031",
-    "question": "Con lợn rất mập.",
+    "question": "Con lợn màu hồng.",
+    "answer": "The pig is pink.",
+    "variants": [
+      "The pig is pink."
+    ],
+    "help1": "pig / pink",
+    "help2": "The pig is pink.",
     "keywords": [
       "pig",
-      "is",
-      "very",
-      "fat"
-    ],
-    "variants": [
-      "The pig is very fat."
-    ],
-    "help1": "pig is very fat",
-    "help2": "The pig is very fat.",
-    "answer": "The pig is very fat."
+      "pink"
+    ]
   },
   {
     "id": "q032",
-    "question": "Những chú vịt đang bơi trên hồ.",
+    "question": "Những con vịt đang bơi.",
+    "answer": "The ducks are swimming.",
+    "variants": [
+      "The ducks are swimming."
+    ],
+    "help1": "ducks / swimming",
+    "help2": "The ducks are swimming.",
     "keywords": [
       "ducks",
-      "are",
-      "swimming",
-      "pond"
-    ],
-    "variants": [
-      "The ducks are swimming in the pond."
-    ],
-    "help1": "ducks are swimming / pond",
-    "help2": "The ducks are swimming in the pond.",
-    "answer": "The ducks are swimming in the pond."
+      "swimming"
+    ]
   },
   {
     "id": "q033",
-    "question": "Tôi có một con hamster nhỏ làm thú cưng.",
-    "keywords": [
-      "have",
-      "small",
-      "hamster",
-      "as",
-      "pet"
-    ],
+    "question": "Tôi có một con chuột hamster.",
+    "answer": "I have a hamster.",
     "variants": [
-      "I have a small hamster as a pet.",
-      "I've a small hamster as a pet."
+      "I have a hamster."
     ],
-    "help1": "have / small hamster as / pet",
-    "help2": "I have a small hamster as a pet.",
-    "answer": "I have a small hamster as a pet."
+    "help1": "hamster",
+    "help2": "I have a hamster.",
+    "keywords": [
+      "hamster"
+    ]
   },
   {
     "id": "q034",
-    "question": "Con hươu cao cổ đang ăn lá cây.",
+    "question": "Con hươu cao cổ đang ăn lá.",
+    "answer": "The giraffe is eating leaves.",
+    "variants": [
+      "The giraffe is eating leaves.",
+      "The giraffe's eating leaves."
+    ],
+    "help1": "giraffe / eating / leaves",
+    "help2": "The giraffe is eating leaves.",
     "keywords": [
       "giraffe",
-      "is",
       "eating",
       "leaves"
-    ],
-    "variants": [
-      "The giraffe is eating leaves."
-    ],
-    "help1": "giraffe is eating leaves",
-    "help2": "The giraffe is eating leaves.",
-    "answer": "The giraffe is eating leaves."
+    ]
   },
   {
     "id": "q035",
-    "question": "Con cá vàng bơi trong bể.",
+    "question": "Con cá vàng đang bơi.",
+    "answer": "The goldfish is swimming.",
+    "variants": [
+      "The goldfish is swimming.",
+      "The goldfish's swimming."
+    ],
+    "help1": "goldfish / swimming",
+    "help2": "The goldfish is swimming.",
     "keywords": [
       "goldfish",
-      "swims",
-      "tank"
-    ],
-    "variants": [
-      "The goldfish swims in the tank."
-    ],
-    "help1": "goldfish swims / tank",
-    "help2": "The goldfish swims in the tank.",
-    "answer": "The goldfish swims in the tank."
+      "swimming"
+    ]
   },
   {
     "id": "q036",
     "question": "Anh ấy có hai con thỏ.",
-    "keywords": [
-      "has",
-      "two",
-      "rabbits"
-    ],
+    "answer": "He has two rabbits.",
     "variants": [
       "He has two rabbits."
     ],
-    "help1": "has two rabbits",
+    "help1": "two / rabbits",
     "help2": "He has two rabbits.",
-    "answer": "He has two rabbits."
+    "keywords": [
+      "two",
+      "rabbits"
+    ]
   },
   {
     "id": "q037",
-    "question": "Nhìn kìa! Con chim đang bay trên bầu trời.",
-    "keywords": [
-      "look",
-      "bird",
-      "is",
-      "flying",
-      "sky"
-    ],
+    "question": "Con chim đang bay.",
+    "answer": "The bird is flying.",
     "variants": [
-      "Look! The bird is flying in the sky."
+      "The bird is flying.",
+      "The bird's flying."
     ],
-    "help1": "Look / bird is flying / sky",
-    "help2": "Look! The bird is flying in the sky.",
-    "answer": "Look! The bird is flying in the sky."
+    "help1": "bird / flying",
+    "help2": "The bird is flying.",
+    "keywords": [
+      "bird",
+      "flying"
+    ]
   },
   {
     "id": "q038",
-    "question": "Con thỏ đang đứng trên cỏ, không phải ở bên trong cỏ.",
+    "question": "Con thỏ ở trên bãi cỏ.",
+    "answer": "The rabbit is on the grass.",
+    "variants": [
+      "The rabbit is on the grass.",
+      "The rabbit's on the grass."
+    ],
+    "help1": "rabbit / grass",
+    "help2": "The rabbit is on the grass.",
     "keywords": [
       "rabbit",
-      "is",
-      "standing",
       "grass"
-    ],
-    "variants": [
-      "The rabbit is standing on the grass."
-    ],
-    "help1": "rabbit is standing / grass",
-    "help2": "The rabbit is standing on the grass.",
-    "answer": "The rabbit is standing on the grass."
+    ]
   },
   {
     "id": "q039",
-    "question": "Con vật cho chúng ta sữa là con bò.",
-    "keywords": [
-      "cow",
-      "gives",
-      "milk"
-    ],
+    "question": "Con bò cho sữa.",
+    "answer": "Cows give milk.",
     "variants": [
-      "A cow gives us milk."
+      "Cows give milk.",
+      "A cow gives milk."
     ],
-    "help1": "cow gives / milk",
-    "help2": "A cow gives us milk.",
-    "answer": "A cow gives us milk."
+    "help1": "cows / give / milk",
+    "help2": "Cows give milk.",
+    "keywords": [
+      "cows",
+      "give",
+      "milk"
+    ]
   },
   {
     "id": "q040",
-    "question": "Con khỉ đang ăn một quả chuối.",
+    "question": "Con khỉ đang ăn chuối.",
+    "answer": "The monkey is eating a banana.",
+    "variants": [
+      "The monkey is eating a banana.",
+      "The monkey's eating a banana."
+    ],
+    "help1": "monkey / eating / banana",
+    "help2": "The monkey is eating a banana.",
     "keywords": [
       "monkey",
-      "is",
       "eating",
       "banana"
-    ],
-    "variants": [
-      "The monkey is eating a banana."
-    ],
-    "help1": "monkey is eating / banana",
-    "help2": "The monkey is eating a banana.",
-    "answer": "The monkey is eating a banana."
+    ]
   },
   {
     "id": "q041",
-    "question": "Con gà mái đang đẻ một quả trứng.",
-    "keywords": [
-      "hen",
-      "is",
-      "laying",
-      "egg"
-    ],
+    "question": "Con gà mái đẻ trứng.",
+    "answer": "The hen lays eggs.",
     "variants": [
+      "The hen lays eggs.",
       "The hen is laying an egg."
     ],
-    "help1": "hen is laying / egg",
-    "help2": "The hen is laying an egg.",
-    "answer": "The hen is laying an egg."
+    "help1": "hen / lays / eggs",
+    "help2": "The hen lays eggs.",
+    "keywords": [
+      "hen",
+      "lays",
+      "eggs"
+    ]
   },
   {
     "id": "q042",
-    "question": "Một con rắn không có chân.",
+    "question": "Con rắn không có chân.",
+    "answer": "A snake has no legs.",
+    "variants": [
+      "A snake has no legs.",
+      "Snakes have no legs."
+    ],
+    "help1": "snake / legs",
+    "help2": "A snake has no legs.",
     "keywords": [
       "snake",
-      "has",
-      "no",
       "legs"
-    ],
-    "variants": [
-      "A snake has no legs."
-    ],
-    "help1": "snake has no legs",
-    "help2": "A snake has no legs.",
-    "answer": "A snake has no legs."
+    ]
   },
   {
     "id": "q043",
-    "question": "Tôi có một con vẹt xinh đẹp.",
-    "keywords": [
-      "have",
-      "beautiful",
-      "parrot"
-    ],
+    "question": "Tôi có một con vẹt.",
+    "answer": "I have a parrot.",
     "variants": [
-      "I have a beautiful parrot.",
-      "I've a beautiful parrot."
+      "I have a parrot."
     ],
-    "help1": "have / beautiful parrot",
-    "help2": "I have a beautiful parrot.",
-    "answer": "I have a beautiful parrot."
+    "help1": "parrot",
+    "help2": "I have a parrot.",
+    "keywords": [
+      "parrot"
+    ]
   },
   {
     "id": "q044",
-    "question": "Nhìn kìa! Có một con kiến trên bông hoa.",
+    "question": "Có một con kiến trên bông hoa.",
+    "answer": "There is an ant on the flower.",
+    "variants": [
+      "There is an ant on the flower.",
+      "There's an ant on the flower."
+    ],
+    "help1": "ant / flower",
+    "help2": "There is an ant on the flower.",
     "keywords": [
-      "look",
-      "is",
       "ant",
       "flower"
-    ],
-    "variants": [
-      "Look! There is an ant on the flower.",
-      "Look! there's an ant on the flower.",
-      "Look! there is an ant on the flower."
-    ],
-    "help1": "Look / is / ant / flower",
-    "help2": "Look! There is an ant on the flower.",
-    "answer": "Look! There is an ant on the flower."
+    ]
   },
   {
     "id": "q045",
-    "question": "Con vật đó là một con cú.",
-    "keywords": [
-      "animal",
-      "is",
-      "owl"
-    ],
+    "question": "Đó là một con cú mèo.",
+    "answer": "That is an owl.",
     "variants": [
-      "That animal is an owl."
+      "That is an owl.",
+      "That's an owl."
     ],
-    "help1": "animal is / owl",
-    "help2": "That animal is an owl.",
-    "answer": "That animal is an owl."
+    "help1": "owl",
+    "help2": "That is an owl.",
+    "keywords": [
+      "owl"
+    ]
   },
   {
     "id": "q046",
-    "question": "Con bướm cụ thể trước mắt rất nhiều màu sắc.",
+    "question": "Con bướm rất đẹp.",
+    "answer": "The butterfly is beautiful.",
+    "variants": [
+      "The butterfly is beautiful.",
+      "The butterfly is pretty."
+    ],
+    "help1": "butterfly / beautiful",
+    "help2": "The butterfly is beautiful.",
     "keywords": [
       "butterfly",
-      "is",
-      "very",
-      "colorful"
-    ],
-    "variants": [
-      "The butterfly is very colorful."
-    ],
-    "help1": "butterfly is very colorful",
-    "help2": "The butterfly is very colorful.",
-    "answer": "The butterfly is very colorful."
+      "beautiful"
+    ]
   },
   {
     "id": "q047",
-    "question": "Con ếch có thể nhảy rất cao để chạm tới lá.",
+    "question": "Con ếch có thể nhảy.",
+    "answer": "The frog can jump.",
+    "variants": [
+      "The frog can jump."
+    ],
+    "help1": "frog / jump",
+    "help2": "The frog can jump.",
     "keywords": [
       "frog",
-      "can",
-      "jump",
-      "very",
-      "high",
-      "reach"
-    ],
-    "variants": [
-      "The frog can jump very high to reach the leaves."
-    ],
-    "help1": "frog can jump very high / reach / leaves",
-    "help2": "The frog can jump very high to reach the leaves.",
-    "answer": "The frog can jump very high to reach the leaves."
+      "jump"
+    ]
   },
   {
     "id": "q048",
-    "question": "Con sóc đang trèo lên cây.",
+    "question": "Con sóc đang trèo cây.",
+    "answer": "The squirrel is climbing a tree.",
+    "variants": [
+      "The squirrel is climbing a tree.",
+      "The squirrel's climbing a tree."
+    ],
+    "help1": "squirrel / climbing / tree",
+    "help2": "The squirrel is climbing a tree.",
     "keywords": [
       "squirrel",
-      "is",
       "climbing",
       "tree"
-    ],
-    "variants": [
-      "The squirrel is climbing the tree."
-    ],
-    "help1": "squirrel is climbing / tree",
-    "help2": "The squirrel is climbing the tree.",
-    "answer": "The squirrel is climbing the tree."
+    ]
   },
   {
     "id": "q049",
-    "question": "Một con cá sống dưới nước.",
+    "question": "Con cá sống dưới nước.",
+    "answer": "A fish lives in water.",
+    "variants": [
+      "A fish lives in water.",
+      "Fish live in water."
+    ],
+    "help1": "fish / lives / water",
+    "help2": "A fish lives in water.",
     "keywords": [
       "fish",
       "lives",
       "water"
-    ],
-    "variants": [
-      "A fish lives in the water."
-    ],
-    "help1": "fish lives / water",
-    "help2": "A fish lives in the water.",
-    "answer": "A fish lives in the water."
+    ]
   },
   {
     "id": "q050",
-    "question": "Một con ong có màu đen và những sọc vàng.",
+    "question": "Con ong có màu vàng và đen.",
+    "answer": "The bee is yellow and black.",
+    "variants": [
+      "The bee is yellow and black."
+    ],
+    "help1": "bee / yellow / black",
+    "help2": "The bee is yellow and black.",
     "keywords": [
       "bee",
-      "is",
-      "black",
       "yellow",
-      "stripes"
-    ],
-    "variants": [
-      "A bee is black with yellow stripes."
-    ],
-    "help1": "bee is black / yellow stripes",
-    "help2": "A bee is black with yellow stripes.",
-    "answer": "A bee is black with yellow stripes."
+      "black"
+    ]
   }
 ];
 
@@ -2718,6 +2686,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2804,9 +2773,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2814,9 +2789,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2824,7 +2804,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2858,7 +2838,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -2883,77 +2863,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -2969,16 +2954,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3000,19 +2979,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3023,6 +3006,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3039,6 +3023,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3095,6 +3080,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3112,7 +3098,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;

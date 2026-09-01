@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,876 +1924,758 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Buổi sáng khi gặp giáo viên, em chào cô bằng một lời chào lịch sự.",
+    "question": "Chào buổi sáng!",
+    "answer": "Good morning!",
+    "variants": [
+      "Good morning!"
+    ],
+    "help1": "good / morning",
+    "help2": "Good morning!",
     "keywords": [
       "good",
-      "morning",
-      "teacher"
-    ],
-    "variants": [
-      "Good morning, teacher."
-    ],
-    "help1": "Good morning teacher",
-    "help2": "Good morning, teacher.",
-    "answer": "Good morning, teacher."
+      "morning"
+    ]
   },
   {
     "id": "q002",
-    "question": "Khi đi ngủ vào ban đêm, em chúc mẹ ngủ ngon.",
+    "question": "Chào buổi chiều!",
+    "answer": "Good afternoon!",
+    "variants": [
+      "Good afternoon!"
+    ],
+    "help1": "good / afternoon",
+    "help2": "Good afternoon!",
     "keywords": [
       "good",
-      "night",
-      "mom"
-    ],
-    "variants": [
-      "Good night, Mom.",
-      "Good night, mother.",
-      "Good night, mom."
-    ],
-    "help1": "Good night Mom",
-    "help2": "Good night, Mom.",
-    "answer": "Good night, Mom."
+      "afternoon"
+    ]
   },
   {
     "id": "q003",
-    "question": "Sau buổi trưa và trước buổi tối là buổi chiều.",
-    "keywords": [
-      "afternoon",
-      "comes",
-      "after",
-      "noon",
-      "and",
-      "before"
-    ],
+    "question": "Chào buổi tối!",
+    "answer": "Good evening!",
     "variants": [
-      "The afternoon comes after noon and before evening."
+      "Good evening!"
     ],
-    "help1": "afternoon comes after noon and before evening",
-    "help2": "The afternoon comes after noon and before evening.",
-    "answer": "The afternoon comes after noon and before evening."
+    "help1": "good / evening",
+    "help2": "Good evening!",
+    "keywords": [
+      "good",
+      "evening"
+    ]
   },
   {
     "id": "q004",
-    "question": "Khoảng sáu đến tám giờ tối sau bữa tối được gọi là buổi tối.",
-    "keywords": [
-      "time",
-      "six",
-      "eight",
-      "after",
-      "dinner",
-      "is"
-    ],
+    "question": "Chúc bạn ngủ ngon!",
+    "answer": "Good night!",
     "variants": [
-      "The time from six to eight after dinner is the evening."
+      "Good night!"
     ],
-    "help1": "time / six / eight after dinner is / evening",
-    "help2": "The time from six to eight after dinner is the evening.",
-    "answer": "The time from six to eight after dinner is the evening."
+    "help1": "good / night",
+    "help2": "Good night!",
+    "keywords": [
+      "good",
+      "night"
+    ]
   },
   {
     "id": "q005",
-    "question": "Mười hai giờ trưa được gọi là buổi trưa.",
-    "keywords": [
-      "twelve",
-      "o'clock",
-      "day",
-      "is",
-      "called",
-      "noon"
-    ],
+    "question": "Bây giờ là mấy giờ?",
+    "answer": "What time is it?",
     "variants": [
-      "Twelve o'clock in the day is called noon."
+      "What time is it?",
+      "What time is it now?"
     ],
-    "help1": "Twelve o'clock / day is called noon",
-    "help2": "Twelve o'clock in the day is called noon.",
-    "answer": "Twelve o'clock in the day is called noon."
+    "help1": "time",
+    "help2": "What time is it?",
+    "keywords": [
+      "time"
+    ]
   },
   {
     "id": "q006",
+    "question": "Bây giờ là bảy giờ sáng.",
+    "answer": "It is seven in the morning.",
+    "variants": [
+      "It is seven in the morning.",
+      "It's seven in the morning.",
+      "It is 7 AM.",
+      "It's 7 AM."
+    ],
+    "help1": "seven / morning",
+    "help2": "It is seven in the morning.",
+    "keywords": [
+      "seven",
+      "morning"
+    ]
+  },
+  {
+    "id": "q007",
+    "question": "Bây giờ là mười hai giờ trưa.",
+    "answer": "It is twelve noon.",
+    "variants": [
+      "It is twelve noon.",
+      "It's twelve noon.",
+      "It is twelve o'clock noon.",
+      "It's twelve o'clock noon."
+    ],
+    "help1": "twelve / noon",
+    "help2": "It is twelve noon.",
+    "keywords": [
+      "twelve",
+      "noon"
+    ]
+  },
+  {
+    "id": "q008",
+    "question": "Bây giờ là ba giờ chiều.",
+    "answer": "It is three in the afternoon.",
+    "variants": [
+      "It is three in the afternoon.",
+      "It's three in the afternoon.",
+      "It is 3 PM.",
+      "It's 3 PM."
+    ],
+    "help1": "three / afternoon",
+    "help2": "It is three in the afternoon.",
+    "keywords": [
+      "three",
+      "afternoon"
+    ]
+  },
+  {
+    "id": "q009",
+    "question": "Bây giờ là tám giờ tối.",
+    "answer": "It is eight in the evening.",
+    "variants": [
+      "It is eight in the evening.",
+      "It's eight in the evening.",
+      "It is 8 PM.",
+      "It's 8 PM."
+    ],
+    "help1": "eight / evening",
+    "help2": "It is eight in the evening.",
+    "keywords": [
+      "eight",
+      "evening"
+    ]
+  },
+  {
+    "id": "q010",
+    "question": "Bây giờ là mười giờ đêm.",
+    "answer": "It is ten at night.",
+    "variants": [
+      "It is ten at night.",
+      "It's ten at night.",
+      "It is ten o'clock at night.",
+      "It's ten o'clock at night."
+    ],
+    "help1": "ten / night",
+    "help2": "It is ten at night.",
+    "keywords": [
+      "ten",
+      "night"
+    ]
+  },
+  {
+    "id": "q011",
+    "question": "Hôm nay là thứ mấy?",
+    "answer": "What day is today?",
+    "variants": [
+      "What day is today?",
+      "What day is it today?"
+    ],
+    "help1": "day / today",
+    "help2": "What day is today?",
+    "keywords": [
+      "day",
+      "today"
+    ]
+  },
+  {
+    "id": "q012",
+    "question": "Hôm nay là thứ Hai.",
+    "answer": "Today is Monday.",
+    "variants": [
+      "Today is Monday."
+    ],
+    "help1": "today / monday",
+    "help2": "Today is Monday.",
+    "keywords": [
+      "today",
+      "monday"
+    ]
+  },
+  {
+    "id": "q013",
+    "question": "Hôm nay là thứ Ba.",
+    "answer": "Today is Tuesday.",
+    "variants": [
+      "Today is Tuesday."
+    ],
+    "help1": "today / tuesday",
+    "help2": "Today is Tuesday.",
+    "keywords": [
+      "today",
+      "tuesday"
+    ]
+  },
+  {
+    "id": "q014",
+    "question": "Hôm nay là thứ Tư.",
+    "answer": "Today is Wednesday.",
+    "variants": [
+      "Today is Wednesday."
+    ],
+    "help1": "today / wednesday",
+    "help2": "Today is Wednesday.",
+    "keywords": [
+      "today",
+      "wednesday"
+    ]
+  },
+  {
+    "id": "q015",
+    "question": "Hôm nay là thứ Năm.",
+    "answer": "Today is Thursday.",
+    "variants": [
+      "Today is Thursday."
+    ],
+    "help1": "today / thursday",
+    "help2": "Today is Thursday.",
+    "keywords": [
+      "today",
+      "thursday"
+    ]
+  },
+  {
+    "id": "q016",
+    "question": "Hôm nay là thứ Sáu.",
+    "answer": "Today is Friday.",
+    "variants": [
+      "Today is Friday."
+    ],
+    "help1": "today / friday",
+    "help2": "Today is Friday.",
+    "keywords": [
+      "today",
+      "friday"
+    ]
+  },
+  {
+    "id": "q017",
+    "question": "Hôm nay là thứ Bảy.",
+    "answer": "Today is Saturday.",
+    "variants": [
+      "Today is Saturday."
+    ],
+    "help1": "today / saturday",
+    "help2": "Today is Saturday.",
+    "keywords": [
+      "today",
+      "saturday"
+    ]
+  },
+  {
+    "id": "q018",
+    "question": "Hôm nay là Chủ nhật.",
+    "answer": "Today is Sunday.",
+    "variants": [
+      "Today is Sunday."
+    ],
+    "help1": "today / sunday",
+    "help2": "Today is Sunday.",
+    "keywords": [
+      "today",
+      "sunday"
+    ]
+  },
+  {
+    "id": "q019",
+    "question": "Ngày mai là thứ mấy?",
+    "answer": "What day is tomorrow?",
+    "variants": [
+      "What day is tomorrow?"
+    ],
+    "help1": "day / tomorrow",
+    "help2": "What day is tomorrow?",
+    "keywords": [
+      "day",
+      "tomorrow"
+    ]
+  },
+  {
+    "id": "q020",
+    "question": "Ngày mai là thứ Ba.",
+    "answer": "Tomorrow is Tuesday.",
+    "variants": [
+      "Tomorrow is Tuesday."
+    ],
+    "help1": "tomorrow / tuesday",
+    "help2": "Tomorrow is Tuesday.",
+    "keywords": [
+      "tomorrow",
+      "tuesday"
+    ]
+  },
+  {
+    "id": "q021",
+    "question": "Hôm qua là Chủ nhật.",
+    "answer": "Yesterday was Sunday.",
+    "variants": [
+      "Yesterday was Sunday."
+    ],
+    "help1": "yesterday / sunday",
+    "help2": "Yesterday was Sunday.",
+    "keywords": [
+      "yesterday",
+      "sunday"
+    ]
+  },
+  {
+    "id": "q022",
+    "question": "Một tuần có bảy ngày.",
+    "answer": "A week has seven days.",
+    "variants": [
+      "A week has seven days.",
+      "There are seven days in a week."
+    ],
+    "help1": "week / seven / days",
+    "help2": "A week has seven days.",
+    "keywords": [
+      "week",
+      "seven",
+      "days"
+    ]
+  },
+  {
+    "id": "q023",
+    "question": "Một ngày có hai mươi bốn giờ.",
+    "answer": "A day has twenty-four hours.",
+    "variants": [
+      "A day has twenty-four hours."
+    ],
+    "help1": "day / twenty-four / hours",
+    "help2": "A day has twenty-four hours.",
+    "keywords": [
+      "day",
+      "twenty-four",
+      "hours"
+    ]
+  },
+  {
+    "id": "q024",
+    "question": "Một giờ có sáu mươi phút.",
+    "answer": "An hour has sixty minutes.",
+    "variants": [
+      "An hour has sixty minutes."
+    ],
+    "help1": "hour / sixty / minutes",
+    "help2": "An hour has sixty minutes.",
+    "keywords": [
+      "hour",
+      "sixty",
+      "minutes"
+    ]
+  },
+  {
+    "id": "q025",
+    "question": "Một phút có sáu mươi giây.",
+    "answer": "A minute has sixty seconds.",
+    "variants": [
+      "A minute has sixty seconds."
+    ],
+    "help1": "minute / sixty / seconds",
+    "help2": "A minute has sixty seconds.",
+    "keywords": [
+      "minute",
+      "sixty",
+      "seconds"
+    ]
+  },
+  {
+    "id": "q026",
+    "question": "Tôi thức dậy lúc sáu giờ.",
+    "answer": "I wake up at six.",
+    "variants": [
+      "I wake up at six.",
+      "I wake up at six in the morning."
+    ],
+    "help1": "wake / six",
+    "help2": "I wake up at six.",
+    "keywords": [
+      "wake",
+      "six"
+    ]
+  },
+  {
+    "id": "q027",
+    "question": "Tôi ăn sáng lúc bảy giờ.",
+    "answer": "I eat breakfast at seven.",
+    "variants": [
+      "I eat breakfast at seven.",
+      "I have breakfast at seven."
+    ],
+    "help1": "eat / breakfast / seven",
+    "help2": "I eat breakfast at seven.",
+    "keywords": [
+      "eat",
+      "breakfast",
+      "seven"
+    ]
+  },
+  {
+    "id": "q028",
+    "question": "Tôi đi học lúc bảy rưỡi.",
+    "answer": "I go to school at seven thirty.",
+    "variants": [
+      "I go to school at seven thirty."
+    ],
+    "help1": "go / school / seven",
+    "help2": "I go to school at seven thirty.",
+    "keywords": [
+      "go",
+      "school",
+      "seven"
+    ]
+  },
+  {
+    "id": "q029",
+    "question": "Chúng tôi ăn trưa lúc mười hai giờ.",
+    "answer": "We eat lunch at twelve.",
+    "variants": [
+      "We eat lunch at twelve.",
+      "We have lunch at twelve."
+    ],
+    "help1": "eat / lunch / twelve",
+    "help2": "We eat lunch at twelve.",
+    "keywords": [
+      "eat",
+      "lunch",
+      "twelve"
+    ]
+  },
+  {
+    "id": "q030",
+    "question": "Tôi về nhà lúc năm giờ.",
+    "answer": "I go home at five.",
+    "variants": [
+      "I go home at five.",
+      "I come home at five."
+    ],
+    "help1": "go / home / five",
+    "help2": "I go home at five.",
+    "keywords": [
+      "go",
+      "home",
+      "five"
+    ]
+  },
+  {
+    "id": "q031",
+    "question": "Tôi ăn tối vào buổi tối.",
+    "answer": "I eat dinner in the evening.",
+    "variants": [
+      "I eat dinner in the evening."
+    ],
+    "help1": "eat / dinner / evening",
+    "help2": "I eat dinner in the evening.",
+    "keywords": [
+      "eat",
+      "dinner",
+      "evening"
+    ]
+  },
+  {
+    "id": "q032",
+    "question": "Tôi đi ngủ lúc mười giờ.",
+    "answer": "I go to bed at ten.",
+    "variants": [
+      "I go to bed at ten.",
+      "I go to bed at ten at night."
+    ],
+    "help1": "go / bed / ten",
+    "help2": "I go to bed at ten.",
+    "keywords": [
+      "go",
+      "bed",
+      "ten"
+    ]
+  },
+  {
+    "id": "q033",
+    "question": "Tôi đi học từ thứ Hai đến thứ Sáu.",
+    "answer": "I go to school from Monday to Friday.",
+    "variants": [
+      "I go to school from Monday to Friday."
+    ],
+    "help1": "go / school / monday",
+    "help2": "I go to school from Monday to Friday.",
+    "keywords": [
+      "go",
+      "school",
+      "monday"
+    ]
+  },
+  {
+    "id": "q034",
+    "question": "Tôi được nghỉ học vào cuối tuần.",
+    "answer": "I have no school on the weekend.",
+    "variants": [
+      "I have no school on the weekend."
+    ],
+    "help1": "no / school / weekend",
+    "help2": "I have no school on the weekend.",
+    "keywords": [
+      "no",
+      "school",
+      "weekend"
+    ]
+  },
+  {
+    "id": "q035",
+    "question": "Chúng tôi chơi bóng đá vào thứ Bảy.",
+    "answer": "We play football on Saturday.",
+    "variants": [
+      "We play football on Saturday.",
+      "We play soccer on Saturday."
+    ],
+    "help1": "play / football / saturday",
+    "help2": "We play football on Saturday.",
+    "keywords": [
+      "play",
+      "football",
+      "saturday"
+    ]
+  },
+  {
+    "id": "q036",
+    "question": "Tôi thăm ông bà vào Chủ nhật.",
+    "answer": "I visit my grandparents on Sunday.",
+    "variants": [
+      "I visit my grandparents on Sunday."
+    ],
+    "help1": "visit / grandparents / sunday",
+    "help2": "I visit my grandparents on Sunday.",
+    "keywords": [
+      "visit",
+      "grandparents",
+      "sunday"
+    ]
+  },
+  {
+    "id": "q037",
+    "question": "Thứ Bảy và Chủ nhật là cuối tuần.",
+    "answer": "Saturday and Sunday are the weekend.",
+    "variants": [
+      "Saturday and Sunday are the weekend."
+    ],
+    "help1": "saturday / sunday / weekend",
+    "help2": "Saturday and Sunday are the weekend.",
+    "keywords": [
+      "saturday",
+      "sunday",
+      "weekend"
+    ]
+  },
+  {
+    "id": "q038",
+    "question": "Bạn làm gì vào buổi chiều?",
+    "answer": "What do you do in the afternoon?",
+    "variants": [
+      "What do you do in the afternoon?",
+      "What do you do in the afternoons?"
+    ],
+    "help1": "afternoon",
+    "help2": "What do you do in the afternoon?",
+    "keywords": [
+      "afternoon"
+    ]
+  },
+  {
+    "id": "q039",
+    "question": "Tôi tập thể dục mỗi sáng.",
+    "answer": "I exercise every morning.",
+    "variants": [
+      "I exercise every morning."
+    ],
+    "help1": "exercise / every / morning",
+    "help2": "I exercise every morning.",
+    "keywords": [
+      "exercise",
+      "every",
+      "morning"
+    ]
+  },
+  {
+    "id": "q040",
+    "question": "Buổi sáng trời rất mát mẻ.",
+    "answer": "It is cool in the morning.",
+    "variants": [
+      "It is cool in the morning.",
+      "It's cool in the morning."
+    ],
+    "help1": "cool / morning",
+    "help2": "It is cool in the morning.",
+    "keywords": [
+      "cool",
+      "morning"
+    ]
+  },
+  {
+    "id": "q041",
     "question": "Mặt trời mọc vào buổi sáng.",
+    "answer": "The sun rises in the morning.",
+    "variants": [
+      "The sun rises in the morning."
+    ],
+    "help1": "sun / rises / morning",
+    "help2": "The sun rises in the morning.",
     "keywords": [
       "sun",
       "rises",
       "morning"
-    ],
-    "variants": [
-      "The sun rises in the morning.",
-      "In the morning the sun rises.",
-      "In the morning, the sun rises."
-    ],
-    "help1": "sun rises / morning",
-    "help2": "The sun rises in the morning.",
-    "answer": "The sun rises in the morning."
-  },
-  {
-    "id": "q007",
-    "question": "Cuối ngày, sau khi đánh răng, em đi ngủ vào ban đêm.",
-    "keywords": [
-      "end",
-      "day",
-      "go",
-      "bed",
-      "after",
-      "brushing"
-    ],
-    "variants": [
-      "At the end of the day, I go to bed at night after brushing my teeth."
-    ],
-    "help1": "end / day / go / bed after brushing",
-    "help2": "At the end of the day, I go to bed at night after brushing my teeth.",
-    "answer": "At the end of the day, I go to bed at night after brushing my teeth."
-  },
-  {
-    "id": "q008",
-    "question": "Từ tiếng Anh chỉ buổi sáng bắt đầu bằng chữ M.",
-    "keywords": [
-      "english",
-      "word",
-      "morning",
-      "begins",
-      "letter"
-    ],
-    "variants": [
-      "The English word for morning begins with the letter M."
-    ],
-    "help1": "English word / morning begins / letter M",
-    "help2": "The English word for morning begins with the letter M.",
-    "answer": "The English word for morning begins with the letter M."
-  },
-  {
-    "id": "q009",
-    "question": "Ban đêm là khoảng thời gian có mặt trăng và sao.",
-    "keywords": [
-      "night",
-      "is",
-      "time",
-      "when",
-      "moon",
-      "and"
-    ],
-    "variants": [
-      "Night is the time when the moon and stars appear."
-    ],
-    "help1": "Night is / time when / moon and stars appear",
-    "help2": "Night is the time when the moon and stars appear.",
-    "answer": "Night is the time when the moon and stars appear."
-  },
-  {
-    "id": "q010",
-    "question": "Tôi học bài vào buổi chiều sau khi ăn trưa.",
-    "keywords": [
-      "study",
-      "after",
-      "lunch",
-      "afternoon"
-    ],
-    "variants": [
-      "I study in the afternoon after lunch."
-    ],
-    "help1": "study after lunch / afternoon",
-    "help2": "I study in the afternoon after lunch.",
-    "answer": "I study in the afternoon after lunch."
-  },
-  {
-    "id": "q011",
-    "question": "Từ tiếng Anh chỉ buổi sáng được viết là morning.",
-    "keywords": [
-      "english",
-      "word",
-      "morning",
-      "is",
-      "spelled"
-    ],
-    "variants": [
-      "The English word for morning is spelled morning."
-    ],
-    "help1": "English word / morning is spelled morning",
-    "help2": "The English word for morning is spelled morning.",
-    "answer": "The English word for morning is spelled morning."
-  },
-  {
-    "id": "q012",
-    "question": "Khi thấy trăng và sao trên trời, đó là ban đêm.",
-    "keywords": [
-      "when",
-      "see",
-      "moon",
-      "and",
-      "stars",
-      "is"
-    ],
-    "variants": [
-      "When we see the moon and stars, it is night.",
-      "When we see the moon and stars, it's night."
-    ],
-    "help1": "When / see / moon and stars / is night",
-    "help2": "When we see the moon and stars, it is night.",
-    "answer": "When we see the moon and stars, it is night."
-  },
-  {
-    "id": "q013",
-    "question": "Chúng tôi ăn bữa sáng vào buổi sáng trước khi đi học.",
-    "keywords": [
-      "eat",
-      "breakfast",
-      "before",
-      "going",
-      "school",
-      "morning"
-    ],
-    "variants": [
-      "We eat breakfast in the morning before going to school."
-    ],
-    "help1": "eat breakfast before going / school / morning",
-    "help2": "We eat breakfast in the morning before going to school.",
-    "answer": "We eat breakfast in the morning before going to school."
-  },
-  {
-    "id": "q014",
-    "question": "Lúc ba giờ chiều, em chào cô giáo bằng lời chào buổi chiều.",
-    "keywords": [
-      "three",
-      "say",
-      "good",
-      "afternoon",
-      "teacher"
-    ],
-    "variants": [
-      "At three in the afternoon, I say good afternoon to my teacher."
-    ],
-    "help1": "three / say good afternoon / teacher / afternoon",
-    "help2": "At three in the afternoon, I say good afternoon to my teacher.",
-    "answer": "At three in the afternoon, I say good afternoon to my teacher."
-  },
-  {
-    "id": "q015",
-    "question": "Từ tiếng Anh chỉ buổi tối bắt đầu bằng chữ E.",
-    "keywords": [
-      "english",
-      "word",
-      "evening",
-      "begins",
-      "letter"
-    ],
-    "variants": [
-      "The English word for evening begins with the letter E."
-    ],
-    "help1": "English word / evening begins / letter E",
-    "help2": "The English word for evening begins with the letter E.",
-    "answer": "The English word for evening begins with the letter E."
-  },
-  {
-    "id": "q016",
-    "question": "Các chữ cái tạo thành từ chỉ ban đêm được sắp xếp thành night.",
-    "keywords": [
-      "letters",
-      "form",
-      "word",
-      "night"
-    ],
-    "variants": [
-      "The letters form the word night."
-    ],
-    "help1": "letters form / word night",
-    "help2": "The letters form the word night.",
-    "answer": "The letters form the word night."
-  },
-  {
-    "id": "q017",
-    "question": "Trong ba từ morning, afternoon và noon, từ ngắn nhất là noon.",
-    "keywords": [
-      "among",
-      "morning",
-      "afternoon",
-      "and",
-      "noon",
-      "shortest"
-    ],
-    "variants": [
-      "Among morning, afternoon, and noon, the shortest word is noon."
-    ],
-    "help1": "Among morning afternoon and noon / shortest word is noon",
-    "help2": "Among morning, afternoon, and noon, the shortest word is noon.",
-    "answer": "Among morning, afternoon, and noon, the shortest word is noon."
-  },
-  {
-    "id": "q018",
-    "question": "Gia đình tôi thường ăn bữa tối vào buổi tối.",
-    "keywords": [
-      "family",
-      "usually",
-      "eats",
-      "dinner",
-      "evening"
-    ],
-    "variants": [
-      "My family usually eats dinner in the evening.",
-      "In the evening my family usually eats dinner.",
-      "In the evening, my family usually eats dinner."
-    ],
-    "help1": "family usually eats dinner / evening",
-    "help2": "My family usually eats dinner in the evening.",
-    "answer": "My family usually eats dinner in the evening."
-  },
-  {
-    "id": "q019",
-    "question": "Từ afternoon có hai chữ cái o.",
-    "keywords": [
-      "word",
-      "afternoon",
-      "has",
-      "two",
-      "letter",
-      "o's"
-    ],
-    "variants": [
-      "The word afternoon has two letter o's."
-    ],
-    "help1": "word afternoon has two letter o's",
-    "help2": "The word afternoon has two letter o's.",
-    "answer": "The word afternoon has two letter o's."
-  },
-  {
-    "id": "q020",
-    "question": "Khi đi học về vào buổi chiều, em chào cô bằng lời chào buổi chiều.",
-    "keywords": [
-      "when",
-      "come",
-      "home",
-      "school",
-      "say",
-      "good"
-    ],
-    "variants": [
-      "When I come home from school in the afternoon, I say good afternoon."
-    ],
-    "help1": "When / come home / school / say good afternoon",
-    "help2": "When I come home from school in the afternoon, I say good afternoon.",
-    "answer": "When I come home from school in the afternoon, I say good afternoon."
-  },
-  {
-    "id": "q021",
-    "question": "Khoảng mười hai giờ trưa thường được gọi là buổi trưa.",
-    "keywords": [
-      "around",
-      "twelve",
-      "day",
-      "is",
-      "usually",
-      "called"
-    ],
-    "variants": [
-      "Around twelve in the day is usually called noon."
-    ],
-    "help1": "Around twelve / day is usually called noon",
-    "help2": "Around twelve in the day is usually called noon.",
-    "answer": "Around twelve in the day is usually called noon."
-  },
-  {
-    "id": "q022",
-    "question": "Từ morning có bảy chữ cái.",
-    "keywords": [
-      "word",
-      "morning",
-      "has",
-      "seven",
-      "letters"
-    ],
-    "variants": [
-      "The word morning has seven letters."
-    ],
-    "help1": "word morning has seven letters",
-    "help2": "The word morning has seven letters.",
-    "answer": "The word morning has seven letters."
-  },
-  {
-    "id": "q023",
-    "question": "Hình ảnh mặt trăng đại diện cho ban đêm.",
-    "keywords": [
-      "picture",
-      "moon",
-      "represents",
-      "night"
-    ],
-    "variants": [
-      "The picture of the moon represents night.",
-      "The photo of the moon represents night."
-    ],
-    "help1": "picture / moon represents night",
-    "help2": "The picture of the moon represents night.",
-    "answer": "The picture of the moon represents night."
-  },
-  {
-    "id": "q024",
-    "question": "Lúc bảy giờ tối, em chào bạn bằng lời chào buổi tối.",
-    "keywords": [
-      "seven",
-      "say",
-      "good",
-      "evening",
-      "friend"
-    ],
-    "variants": [
-      "At seven in the evening, I say good evening to my friend."
-    ],
-    "help1": "seven / say good evening / friend / evening",
-    "help2": "At seven in the evening, I say good evening to my friend.",
-    "answer": "At seven in the evening, I say good evening to my friend."
-  },
-  {
-    "id": "q025",
-    "question": "Để chào buổi sáng, cụm từ đúng là Good morning.",
-    "keywords": [
-      "correct",
-      "phrase",
-      "morning",
-      "greeting",
-      "is",
-      "good"
-    ],
-    "variants": [
-      "The correct phrase for a morning greeting is Good morning."
-    ],
-    "help1": "correct phrase / morning greeting is Good morning",
-    "help2": "The correct phrase for a morning greeting is Good morning.",
-    "answer": "The correct phrase for a morning greeting is Good morning."
-  },
-  {
-    "id": "q026",
-    "question": "Ngày đầu tiên trong tuần học của chúng ta là thứ Hai.",
-    "keywords": [
-      "first",
-      "day",
-      "school",
-      "week",
-      "is",
-      "monday"
-    ],
-    "variants": [
-      "The first day of our school week is Monday."
-    ],
-    "help1": "first day / school week is Monday",
-    "help2": "The first day of our school week is Monday.",
-    "answer": "The first day of our school week is Monday."
-  },
-  {
-    "id": "q027",
-    "question": "Ngày đứng sau thứ Hai là thứ Ba.",
-    "keywords": [
-      "day",
-      "after",
-      "monday",
-      "is",
-      "tuesday"
-    ],
-    "variants": [
-      "The day after Monday is Tuesday."
-    ],
-    "help1": "day after Monday is Tuesday",
-    "help2": "The day after Monday is Tuesday.",
-    "answer": "The day after Monday is Tuesday."
-  },
-  {
-    "id": "q028",
-    "question": "Ngày đứng sau thứ Ba là thứ Tư.",
-    "keywords": [
-      "day",
-      "after",
-      "tuesday",
-      "is",
-      "wednesday"
-    ],
-    "variants": [
-      "The day after Tuesday is Wednesday."
-    ],
-    "help1": "day after Tuesday is Wednesday",
-    "help2": "The day after Tuesday is Wednesday.",
-    "answer": "The day after Tuesday is Wednesday."
-  },
-  {
-    "id": "q029",
-    "question": "Ngày đứng sau thứ Tư là thứ Năm.",
-    "keywords": [
-      "day",
-      "after",
-      "wednesday",
-      "is",
-      "thursday"
-    ],
-    "variants": [
-      "The day after Wednesday is Thursday."
-    ],
-    "help1": "day after Wednesday is Thursday",
-    "help2": "The day after Wednesday is Thursday.",
-    "answer": "The day after Wednesday is Thursday."
-  },
-  {
-    "id": "q030",
-    "question": "Ngày đứng sau thứ Năm là thứ Sáu.",
-    "keywords": [
-      "day",
-      "after",
-      "thursday",
-      "is",
-      "friday"
-    ],
-    "variants": [
-      "The day after Thursday is Friday."
-    ],
-    "help1": "day after Thursday is Friday",
-    "help2": "The day after Thursday is Friday.",
-    "answer": "The day after Thursday is Friday."
-  },
-  {
-    "id": "q031",
-    "question": "Ngày đứng sau thứ Sáu là thứ Bảy.",
-    "keywords": [
-      "day",
-      "after",
-      "friday",
-      "is",
-      "saturday"
-    ],
-    "variants": [
-      "The day after Friday is Saturday."
-    ],
-    "help1": "day after Friday is Saturday",
-    "help2": "The day after Friday is Saturday.",
-    "answer": "The day after Friday is Saturday."
-  },
-  {
-    "id": "q032",
-    "question": "Ngày đứng sau thứ Bảy là Chủ nhật.",
-    "keywords": [
-      "day",
-      "after",
-      "saturday",
-      "is",
-      "sunday"
-    ],
-    "variants": [
-      "The day after Saturday is Sunday."
-    ],
-    "help1": "day after Saturday is Sunday",
-    "help2": "The day after Saturday is Sunday.",
-    "answer": "The day after Saturday is Sunday."
-  },
-  {
-    "id": "q033",
-    "question": "Sau thứ Hai là thứ Ba trong lịch tuần.",
-    "keywords": [
-      "tuesday",
-      "comes",
-      "after",
-      "monday",
-      "weekly",
-      "calendar"
-    ],
-    "variants": [
-      "Tuesday comes after Monday in the weekly calendar."
-    ],
-    "help1": "Tuesday comes after Monday / weekly calendar",
-    "help2": "Tuesday comes after Monday in the weekly calendar.",
-    "answer": "Tuesday comes after Monday in the weekly calendar."
-  },
-  {
-    "id": "q034",
-    "question": "Trước Chủ nhật là thứ Bảy trong lịch tuần.",
-    "keywords": [
-      "saturday",
-      "comes",
-      "before",
-      "sunday",
-      "weekly",
-      "calendar"
-    ],
-    "variants": [
-      "Saturday comes before Sunday in the weekly calendar."
-    ],
-    "help1": "Saturday comes before Sunday / weekly calendar",
-    "help2": "Saturday comes before Sunday in the weekly calendar.",
-    "answer": "Saturday comes before Sunday in the weekly calendar."
-  },
-  {
-    "id": "q035",
-    "question": "Nếu trường học từ thứ Hai đến thứ Bảy và nghỉ một ngày cuối tuần, ngày nghỉ là Chủ nhật.",
-    "keywords": [
-      "if",
-      "school",
-      "runs",
-      "monday",
-      "saturday",
-      "day"
-    ],
-    "variants": [
-      "If school runs from Monday to Saturday, the day off is Sunday."
-    ],
-    "help1": "If school runs / Monday / Saturday / day",
-    "help2": "If school runs from Monday to Saturday, the day off is Sunday.",
-    "answer": "If school runs from Monday to Saturday, the day off is Sunday."
-  },
-  {
-    "id": "q036",
-    "question": "Trong các ngày trong tuần, thứ Sáu bắt đầu bằng chữ F.",
-    "keywords": [
-      "among",
-      "days",
-      "week",
-      "friday",
-      "begins",
-      "letter"
-    ],
-    "variants": [
-      "Among the days of the week, Friday begins with the letter F."
-    ],
-    "help1": "Among / days / week Friday begins / letter F",
-    "help2": "Among the days of the week, Friday begins with the letter F.",
-    "answer": "Among the days of the week, Friday begins with the letter F."
-  },
-  {
-    "id": "q037",
-    "question": "Trong các ngày trong tuần, thứ Tư bắt đầu bằng chữ W.",
-    "keywords": [
-      "among",
-      "days",
-      "week",
-      "wednesday",
-      "begins",
-      "letter"
-    ],
-    "variants": [
-      "Among the days of the week, Wednesday begins with the letter W."
-    ],
-    "help1": "Among / days / week Wednesday begins / letter W",
-    "help2": "Among the days of the week, Wednesday begins with the letter W.",
-    "answer": "Among the days of the week, Wednesday begins with the letter W."
-  },
-  {
-    "id": "q038",
-    "question": "Ngày có chữ Sun trong tên tiếng Anh là Chủ nhật.",
-    "keywords": [
-      "day",
-      "sun",
-      "english",
-      "name",
-      "is",
-      "sunday"
-    ],
-    "variants": [
-      "The day with Sun in its English name is Sunday."
-    ],
-    "help1": "day / Sun / English name is Sunday",
-    "help2": "The day with Sun in its English name is Sunday.",
-    "answer": "The day with Sun in its English name is Sunday."
-  },
-  {
-    "id": "q039",
-    "question": "Nếu thứ Hai là Monday thì thứ Ba là Tuesday.",
-    "keywords": [
-      "if",
-      "monday",
-      "means",
-      "thứ",
-      "hai",
-      "tuesday"
-    ],
-    "variants": [
-      "If Monday means thứ Hai, Tuesday means thứ Ba."
-    ],
-    "help1": "If Monday means thứ Hai Tuesday means thứ Ba",
-    "help2": "If Monday means thứ Hai, Tuesday means thứ Ba.",
-    "answer": "If Monday means thứ Hai, Tuesday means thứ Ba."
-  },
-  {
-    "id": "q040",
-    "question": "Các chữ cái sắp xếp thành tên tiếng Anh của Chủ nhật là Sunday.",
-    "keywords": [
-      "letters",
-      "spell",
-      "english",
-      "name",
-      "sunday"
-    ],
-    "variants": [
-      "The letters spell the English name Sunday."
-    ],
-    "help1": "letters spell / English name Sunday",
-    "help2": "The letters spell the English name Sunday.",
-    "answer": "The letters spell the English name Sunday."
-  },
-  {
-    "id": "q041",
-    "question": "Một tuần có bảy ngày.",
-    "keywords": [
-      "are",
-      "seven",
-      "days",
-      "week"
-    ],
-    "variants": [
-      "There are seven days in a week."
-    ],
-    "help1": "are seven days / week",
-    "help2": "There are seven days in a week.",
-    "answer": "There are seven days in a week."
+    ]
   },
   {
     "id": "q042",
-    "question": "Theo quy ước, hai ngày cuối tuần là thứ Bảy và Chủ nhật.",
-    "keywords": [
-      "convention",
-      "weekend",
-      "includes",
-      "saturday",
-      "and",
-      "sunday"
-    ],
+    "question": "Mặt trời lặn vào buổi chiều.",
+    "answer": "The sun sets in the afternoon.",
     "variants": [
-      "By convention, the weekend includes Saturday and Sunday."
+      "The sun sets in the afternoon."
     ],
-    "help1": "convention / weekend includes Saturday and Sunday",
-    "help2": "By convention, the weekend includes Saturday and Sunday.",
-    "answer": "By convention, the weekend includes Saturday and Sunday."
+    "help1": "sun / sets / afternoon",
+    "help2": "The sun sets in the afternoon.",
+    "keywords": [
+      "sun",
+      "sets",
+      "afternoon"
+    ]
   },
   {
     "id": "q043",
-    "question": "Tên tiếng Anh của thứ Hai bắt đầu bằng chữ M.",
-    "keywords": [
-      "english",
-      "name",
-      "monday",
-      "begins",
-      "letter"
-    ],
+    "question": "Trời có sao vào ban đêm.",
+    "answer": "The sky has stars at night.",
     "variants": [
-      "The English name for Monday begins with the letter M."
+      "The sky has stars at night.",
+      "There are stars at night."
     ],
-    "help1": "English name / Monday begins / letter M",
-    "help2": "The English name for Monday begins with the letter M.",
-    "answer": "The English name for Monday begins with the letter M."
+    "help1": "sky / stars / night",
+    "help2": "The sky has stars at night.",
+    "keywords": [
+      "sky",
+      "stars",
+      "night"
+    ]
   },
   {
     "id": "q044",
-    "question": "Ngày làm việc cuối cùng trước hai ngày nghỉ cuối tuần được gọi là thứ Sáu.",
-    "keywords": [
-      "friday",
-      "is",
-      "last",
-      "working",
-      "day",
-      "before"
-    ],
+    "question": "Bạn có rảnh vào tối thứ Sáu không?",
+    "answer": "Are you free on Friday evening?",
     "variants": [
-      "Friday is the last working day before the weekend."
+      "Are you free on Friday evening?"
     ],
-    "help1": "Friday is / last working day before / weekend",
-    "help2": "Friday is the last working day before the weekend.",
-    "answer": "Friday is the last working day before the weekend."
+    "help1": "free / friday / evening",
+    "help2": "Are you free on Friday evening?",
+    "keywords": [
+      "free",
+      "friday",
+      "evening"
+    ]
   },
   {
     "id": "q045",
-    "question": "Sau thứ Sáu là thứ Bảy.",
-    "keywords": [
-      "saturday",
-      "comes",
-      "after",
-      "friday"
-    ],
+    "question": "Tôi có cuộc họp sáng thứ Hai.",
+    "answer": "I have a meeting on Monday morning.",
     "variants": [
-      "Saturday comes after Friday."
+      "I have a meeting on Monday morning."
     ],
-    "help1": "Saturday comes after Friday",
-    "help2": "Saturday comes after Friday.",
-    "answer": "Saturday comes after Friday."
+    "help1": "meeting / monday / morning",
+    "help2": "I have a meeting on Monday morning.",
+    "keywords": [
+      "meeting",
+      "monday",
+      "morning"
+    ]
   },
   {
     "id": "q046",
-    "question": "Ngày đứng ngay trước thứ Ba là thứ Hai.",
-    "keywords": [
-      "day",
-      "immediately",
-      "before",
-      "tuesday",
-      "is",
-      "monday"
-    ],
+    "question": "Chúng tôi học tiếng Anh vào thứ Tư.",
+    "answer": "We have English on Wednesday.",
     "variants": [
-      "The day immediately before Tuesday is Monday."
+      "We have English on Wednesday.",
+      "We have English class on Wednesday."
     ],
-    "help1": "day immediately before Tuesday is Monday",
-    "help2": "The day immediately before Tuesday is Monday.",
-    "answer": "The day immediately before Tuesday is Monday."
+    "help1": "english / wednesday",
+    "help2": "We have English on Wednesday.",
+    "keywords": [
+      "english",
+      "wednesday"
+    ]
   },
   {
     "id": "q047",
-    "question": "Tuesday và Thursday đều bắt đầu bằng chữ T.",
-    "keywords": [
-      "tuesday",
-      "and",
-      "thursday",
-      "both",
-      "begin",
-      "letter"
-    ],
+    "question": "Bố rửa xe vào thứ Bảy.",
+    "answer": "Dad washes the car on Saturday.",
     "variants": [
-      "Tuesday and Thursday both begin with the letter T."
+      "Dad washes the car on Saturday.",
+      "My dad washes the car on Saturday.",
+      "father washes the car on Saturday.",
+      "My father washes the car on Saturday.",
+      "dad washes the car on Saturday."
     ],
-    "help1": "Tuesday and Thursday both begin / letter T",
-    "help2": "Tuesday and Thursday both begin with the letter T.",
-    "answer": "Tuesday and Thursday both begin with the letter T."
+    "help1": "dad / washes / car",
+    "help2": "Dad washes the car on Saturday.",
+    "keywords": [
+      "dad",
+      "washes",
+      "car"
+    ]
   },
   {
     "id": "q048",
-    "question": "Tên tiếng Anh viết đúng của thứ Bảy là Saturday.",
-    "keywords": [
-      "correct",
-      "english",
-      "spelling",
-      "thứ",
-      "bảy",
-      "is"
-    ],
+    "question": "Gia đình tôi đi công viên vào Chủ nhật.",
+    "answer": "My family goes to the park on Sunday.",
     "variants": [
-      "The correct English spelling for thứ Bảy is Saturday."
+      "My family goes to the park on Sunday."
     ],
-    "help1": "correct English spelling / thứ Bảy is Saturday",
-    "help2": "The correct English spelling for thứ Bảy is Saturday.",
-    "answer": "The correct English spelling for thứ Bảy is Saturday."
+    "help1": "family / goes / park",
+    "help2": "My family goes to the park on Sunday.",
+    "keywords": [
+      "family",
+      "goes",
+      "park"
+    ]
   },
   {
     "id": "q049",
-    "question": "Ngày nằm giữa thứ Ba và thứ Năm là thứ Tư.",
-    "keywords": [
-      "day",
-      "tuesday",
-      "and",
-      "thursday",
-      "is",
-      "wednesday"
-    ],
+    "question": "Thời gian trôi rất nhanh.",
+    "answer": "Time flies fast.",
     "variants": [
-      "The day between Tuesday and Thursday is Wednesday."
+      "Time flies fast.",
+      "Time flies very fast."
     ],
-    "help1": "day / Tuesday and Thursday is Wednesday",
-    "help2": "The day between Tuesday and Thursday is Wednesday.",
-    "answer": "The day between Tuesday and Thursday is Wednesday."
+    "help1": "time / flies / fast",
+    "help2": "Time flies fast.",
+    "keywords": [
+      "time",
+      "flies",
+      "fast"
+    ]
   },
   {
     "id": "q050",
-    "question": "Một ngày là khoảng thời gian kéo dài hai mươi bốn giờ.",
-    "keywords": [
-      "day",
-      "is",
-      "period",
-      "twenty-four",
-      "hours"
-    ],
+    "question": "Chúc bạn cuối tuần vui vẻ!",
+    "answer": "Have a nice weekend!",
     "variants": [
-      "A day is a period of twenty-four hours."
+      "Have a nice weekend!"
     ],
-    "help1": "day is / period / twenty-four hours",
-    "help2": "A day is a period of twenty-four hours.",
-    "answer": "A day is a period of twenty-four hours."
+    "help1": "nice / weekend",
+    "help2": "Have a nice weekend!",
+    "keywords": [
+      "nice",
+      "weekend"
+    ]
   }
 ];
 
@@ -2784,6 +2688,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2870,9 +2775,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2880,9 +2791,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2890,7 +2806,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2924,7 +2840,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -2949,77 +2865,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -3035,16 +2956,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3066,19 +2981,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3089,6 +3008,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3105,6 +3025,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3161,6 +3082,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3178,7 +3100,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;

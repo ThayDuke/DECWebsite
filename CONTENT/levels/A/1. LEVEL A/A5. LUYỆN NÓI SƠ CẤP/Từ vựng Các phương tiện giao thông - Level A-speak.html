@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,888 +1924,756 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Một chiếc xe tải lớn đang chở hàng trên đường cao tốc.",
-    "keywords": [
-      "large",
-      "truck",
-      "is",
-      "carrying",
-      "goods",
-      "highway"
-    ],
+    "question": "Chiếc xe tải này rất to.",
+    "answer": "This truck is big.",
     "variants": [
-      "A large truck is carrying goods on the highway."
+      "This truck is big.",
+      "The truck is big."
     ],
-    "help1": "large truck is carrying goods / highway",
-    "help2": "A large truck is carrying goods on the highway.",
-    "answer": "A large truck is carrying goods on the highway."
+    "help1": "truck / big",
+    "help2": "This truck is big.",
+    "keywords": [
+      "truck",
+      "big"
+    ]
   },
   {
     "id": "q002",
-    "question": "Tôi gọi một chiếc taxi để đi đến nhà ga.",
-    "keywords": [
-      "call",
-      "taxi",
-      "go",
-      "station"
-    ],
+    "question": "Tôi đi học bằng xe buýt.",
+    "answer": "I go to school by bus.",
     "variants": [
-      "I call a taxi to go to the station."
+      "I go to school by bus.",
+      "I take the bus to school."
     ],
-    "help1": "call / taxi / go / station",
-    "help2": "I call a taxi to go to the station.",
-    "answer": "I call a taxi to go to the station."
+    "help1": "go / school / bus",
+    "help2": "I go to school by bus.",
+    "keywords": [
+      "go",
+      "school",
+      "bus"
+    ]
   },
   {
     "id": "q003",
-    "question": "Đây là chiếc ô tô màu xanh có bốn cửa đỗ trước nhà.",
-    "keywords": [
-      "is",
-      "blue",
-      "car",
-      "four",
-      "doors",
-      "parked"
-    ],
+    "question": "Máy bay đang bay trên trời.",
+    "answer": "The plane is flying in the sky.",
     "variants": [
-      "This is a blue car with four doors parked in front of the house.",
-      "This is a blue automobile with four doors parked in front of the house."
+      "The plane is flying in the sky.",
+      "The airplane is flying in the sky."
     ],
-    "help1": "is / blue car / four doors parked / front",
-    "help2": "This is a blue car with four doors parked in front of the house.",
-    "answer": "This is a blue car with four doors parked in front of the house."
+    "help1": "plane / flying / sky",
+    "help2": "The plane is flying in the sky.",
+    "keywords": [
+      "plane",
+      "flying",
+      "sky"
+    ]
   },
   {
     "id": "q004",
-    "question": "Tôi đi bằng xe máy hai bánh có hộp số tay, không phải xe tay ga.",
-    "keywords": [
-      "travel",
-      "motorbike",
-      "two",
-      "wheels",
-      "and",
-      "gears"
-    ],
+    "question": "Con tàu thủy rất to lớn.",
+    "answer": "The ship is very big.",
     "variants": [
-      "I travel by a motorbike with two wheels and gears, not a scooter."
+      "The ship is very big.",
+      "The ship is big."
     ],
-    "help1": "travel / motorbike / two wheels and gears not / scooter",
-    "help2": "I travel by a motorbike with two wheels and gears, not a scooter.",
-    "answer": "I travel by a motorbike with two wheels and gears, not a scooter."
+    "help1": "ship / big",
+    "help2": "The ship is very big.",
+    "keywords": [
+      "ship",
+      "big"
+    ]
   },
   {
     "id": "q005",
-    "question": "Tôi đi tàu điện ngầm để tránh tắc đường trong thành phố.",
-    "keywords": [
-      "take",
-      "subway",
-      "avoid",
-      "traffic",
-      "city"
-    ],
+    "question": "Tôi có một chiếc xe đạp.",
+    "answer": "I have a bicycle.",
     "variants": [
-      "I take the subway to avoid traffic in the city."
+      "I have a bicycle.",
+      "I have a bike."
     ],
-    "help1": "take / subway / avoid traffic / city",
-    "help2": "I take the subway to avoid traffic in the city.",
-    "answer": "I take the subway to avoid traffic in the city."
+    "help1": "bicycle",
+    "help2": "I have a bicycle.",
+    "keywords": [
+      "bicycle"
+    ]
   },
   {
     "id": "q006",
-    "question": "Một con tàu thủy lớn đang di chuyển trên mặt biển.",
-    "keywords": [
-      "large",
-      "ship",
-      "is",
-      "traveling",
-      "sea"
-    ],
+    "question": "Chiếc ô tô này màu đỏ.",
+    "answer": "This car is red.",
     "variants": [
-      "A large ship is traveling across the sea."
+      "This car is red.",
+      "The car is red."
     ],
-    "help1": "large ship is traveling / sea",
-    "help2": "A large ship is traveling across the sea.",
-    "answer": "A large ship is traveling across the sea."
+    "help1": "car / red",
+    "help2": "This car is red.",
+    "keywords": [
+      "car",
+      "red"
+    ]
   },
   {
     "id": "q007",
-    "question": "Bố mẹ lái ô tô đưa tôi đi học mỗi sáng.",
-    "keywords": [
-      "parents",
-      "drive",
-      "school",
-      "car",
-      "every",
-      "morning"
-    ],
+    "question": "Bố tôi lái ô tô.",
+    "answer": "My dad drives a car.",
     "variants": [
-      "My parents drive me to school by car every morning.",
-      "Every morning my parents drive me to school by car.",
-      "Every morning, my parents drive me to school by car.",
-      "My parents drive me to school by automobile every morning.",
-      "Every morning my parents drive me to school by automobile."
+      "My dad drives a car.",
+      "My father drives a car."
     ],
-    "help1": "parents drive / school / car / every morning",
-    "help2": "My parents drive me to school by car every morning.",
-    "answer": "My parents drive me to school by car every morning."
+    "help1": "dad / drives / car",
+    "help2": "My dad drives a car.",
+    "keywords": [
+      "dad",
+      "drives",
+      "car"
+    ]
   },
   {
     "id": "q008",
-    "question": "Tàu hỏa chở chúng tôi đến thành phố bên cạnh.",
+    "question": "Đoàn tàu chạy rất nhanh.",
+    "answer": "The train runs fast.",
+    "variants": [
+      "The train runs fast.",
+      "The train is fast."
+    ],
+    "help1": "train / runs / fast",
+    "help2": "The train runs fast.",
     "keywords": [
       "train",
-      "takes",
-      "neighboring",
-      "city"
-    ],
-    "variants": [
-      "The train takes us to the neighboring city."
-    ],
-    "help1": "train takes / neighboring city",
-    "help2": "The train takes us to the neighboring city.",
-    "answer": "The train takes us to the neighboring city."
+      "runs",
+      "fast"
+    ]
   },
   {
     "id": "q009",
-    "question": "Một chiếc thuyền nhỏ đang trôi trên sông.",
-    "keywords": [
-      "small",
-      "boat",
-      "is",
-      "floating",
-      "river"
-    ],
+    "question": "Có một chiếc thuyền trên sông.",
+    "answer": "There is a boat on the river.",
     "variants": [
-      "A small boat is floating on the river."
+      "There is a boat on the river.",
+      "There's a boat on the river."
     ],
-    "help1": "small boat is floating / river",
-    "help2": "A small boat is floating on the river.",
-    "answer": "A small boat is floating on the river."
+    "help1": "boat / river",
+    "help2": "There is a boat on the river.",
+    "keywords": [
+      "boat",
+      "river"
+    ]
   },
   {
     "id": "q010",
-    "question": "Chiếc xe tải trước cửa đang chở đồ nội thất.",
+    "question": "Chiếc xe tải đang chở hàng.",
+    "answer": "The truck is carrying goods.",
+    "variants": [
+      "The truck is carrying goods."
+    ],
+    "help1": "truck / carrying / goods",
+    "help2": "The truck is carrying goods.",
     "keywords": [
       "truck",
-      "front",
-      "door",
-      "is",
       "carrying",
-      "furniture"
-    ],
-    "variants": [
-      "The truck in front of the door is carrying furniture."
-    ],
-    "help1": "truck / front / door is carrying furniture",
-    "help2": "The truck in front of the door is carrying furniture.",
-    "answer": "The truck in front of the door is carrying furniture."
+      "goods"
+    ]
   },
   {
     "id": "q011",
-    "question": "Anh ấy đi xe máy hai bánh có hộp số tay đến nơi làm việc.",
+    "question": "Anh ấy đi xe máy đi làm.",
+    "answer": "He rides a motorbike to work.",
+    "variants": [
+      "He rides a motorbike to work.",
+      "He goes to work by motorbike."
+    ],
+    "help1": "rides / motorbike / work",
+    "help2": "He rides a motorbike to work.",
     "keywords": [
       "rides",
       "motorbike",
-      "gears",
       "work"
-    ],
-    "variants": [
-      "He rides a motorbike with gears to work."
-    ],
-    "help1": "rides / motorbike / gears / work",
-    "help2": "He rides a motorbike with gears to work.",
-    "answer": "He rides a motorbike with gears to work."
+    ]
   },
   {
     "id": "q012",
-    "question": "Bạn có nhìn thấy một chiếc trực thăng đang bay trên đầu không?",
-    "keywords": [
-      "can",
-      "see",
-      "helicopter",
-      "flying"
-    ],
+    "question": "Tôi nhìn thấy một chiếc trực thăng.",
+    "answer": "I see a helicopter.",
     "variants": [
-      "Can you see a helicopter flying above us?"
+      "I see a helicopter."
     ],
-    "help1": "Can / see / helicopter flying",
-    "help2": "Can you see a helicopter flying above us?",
-    "answer": "Can you see a helicopter flying above us?"
+    "help1": "see / helicopter",
+    "help2": "I see a helicopter.",
+    "keywords": [
+      "see",
+      "helicopter"
+    ]
   },
   {
     "id": "q013",
-    "question": "Cô ấy đi xe tay ga tự động đến cửa hàng gần nhà.",
+    "question": "Cô ấy đi xe tay ga.",
+    "answer": "She rides a scooter.",
+    "variants": [
+      "She rides a scooter."
+    ],
+    "help1": "rides / scooter",
+    "help2": "She rides a scooter.",
     "keywords": [
       "rides",
-      "scooter",
-      "shop",
-      "house"
-    ],
-    "variants": [
-      "She rides a scooter to the shop near her house."
-    ],
-    "help1": "rides / scooter / shop / house",
-    "help2": "She rides a scooter to the shop near her house.",
-    "answer": "She rides a scooter to the shop near her house."
+      "scooter"
+    ]
   },
   {
     "id": "q014",
-    "question": "Phương tiện có biển trên nóc và chở khách trả tiền là một chiếc taxi.",
-    "keywords": [
-      "vehicle",
-      "sign",
-      "roof",
-      "carries",
-      "paying",
-      "passengers"
-    ],
+    "question": "Tôi đi taxi về nhà.",
+    "answer": "I take a taxi home.",
     "variants": [
-      "A vehicle with a sign on its roof that carries paying passengers is a taxi."
+      "I take a taxi home.",
+      "I go home by taxi."
     ],
-    "help1": "vehicle / sign / roof / carries paying passengers is",
-    "help2": "A vehicle with a sign on its roof that carries paying passengers is a taxi.",
-    "answer": "A vehicle with a sign on its roof that carries paying passengers is a taxi."
+    "help1": "take / taxi / home",
+    "help2": "I take a taxi home.",
+    "keywords": [
+      "take",
+      "taxi",
+      "home"
+    ]
   },
   {
     "id": "q015",
-    "question": "Tôi xuống tàu điện ngầm ở ga trung tâm thành phố.",
-    "keywords": [
-      "get",
-      "subway",
-      "central",
-      "city",
-      "station"
-    ],
+    "question": "Tôi đi tàu điện ngầm.",
+    "answer": "I take the subway.",
     "variants": [
-      "I get off the subway at the central city station."
+      "I take the subway.",
+      "I ride the subway."
     ],
-    "help1": "get / subway / central city station",
-    "help2": "I get off the subway at the central city station.",
-    "answer": "I get off the subway at the central city station."
+    "help1": "take / subway",
+    "help2": "I take the subway.",
+    "keywords": [
+      "take",
+      "subway"
+    ]
   },
   {
     "id": "q016",
-    "question": "Một chiếc xe buýt lớn đang chở nhiều người trên phố.",
-    "keywords": [
-      "large",
-      "bus",
-      "is",
-      "carrying",
-      "many",
-      "people"
-    ],
+    "question": "Chiếc xe buýt này màu vàng.",
+    "answer": "This bus is yellow.",
     "variants": [
-      "A large bus is carrying many people on the street."
+      "This bus is yellow.",
+      "The bus is yellow."
     ],
-    "help1": "large bus is carrying many people / street",
-    "help2": "A large bus is carrying many people on the street.",
-    "answer": "A large bus is carrying many people on the street."
+    "help1": "bus / yellow",
+    "help2": "This bus is yellow.",
+    "keywords": [
+      "bus",
+      "yellow"
+    ]
   },
   {
     "id": "q017",
-    "question": "Tàu hỏa rời ga lúc bảy giờ sáng.",
+    "question": "Đoàn tàu đang rời ga.",
+    "answer": "The train is leaving the station.",
+    "variants": [
+      "The train is leaving the station."
+    ],
+    "help1": "train / leaving / station",
+    "help2": "The train is leaving the station.",
     "keywords": [
       "train",
-      "leaves",
-      "station",
-      "seven",
-      "morning"
-    ],
-    "variants": [
-      "The train leaves the station at seven in the morning.",
-      "In the morning the train leaves the station at seven.",
-      "In the morning, the train leaves the station at seven."
-    ],
-    "help1": "train leaves / station / seven / morning",
-    "help2": "The train leaves the station at seven in the morning.",
-    "answer": "The train leaves the station at seven in the morning."
+      "leaving",
+      "station"
+    ]
   },
   {
     "id": "q018",
-    "question": "Em trai tôi đi xe tay ga đến trường mỗi ngày.",
-    "keywords": [
-      "younger",
-      "brother",
-      "rides",
-      "scooter",
-      "school",
-      "every"
-    ],
+    "question": "Em trai tôi có một chiếc xe trượt.",
+    "answer": "My brother has a scooter.",
     "variants": [
-      "My younger brother rides a scooter to school every day.",
-      "Every day my younger brother rides a scooter to school.",
-      "Every day, my younger brother rides a scooter to school."
+      "My brother has a scooter."
     ],
-    "help1": "younger brother rides / scooter / school / every day",
-    "help2": "My younger brother rides a scooter to school every day.",
-    "answer": "My younger brother rides a scooter to school every day."
+    "help1": "brother / scooter",
+    "help2": "My brother has a scooter.",
+    "keywords": [
+      "brother",
+      "scooter"
+    ]
   },
   {
     "id": "q019",
-    "question": "Con tàu rất nhanh đang đi qua biển để đến đảo.",
+    "question": "Con tàu đang ở trên biển.",
+    "answer": "The ship is on the sea.",
+    "variants": [
+      "The ship is on the sea."
+    ],
+    "help1": "ship / sea",
+    "help2": "The ship is on the sea.",
     "keywords": [
       "ship",
-      "is",
-      "moving",
-      "quickly",
-      "sea",
-      "island"
-    ],
-    "variants": [
-      "The ship is moving quickly across the sea to the island."
-    ],
-    "help1": "ship is moving quickly / sea / island",
-    "help2": "The ship is moving quickly across the sea to the island.",
-    "answer": "The ship is moving quickly across the sea to the island."
+      "sea"
+    ]
   },
   {
     "id": "q020",
-    "question": "Tôi thuê một chiếc xe tay ga để đi quanh khu phố.",
-    "keywords": [
-      "rent",
-      "scooter",
-      "travel",
-      "around",
-      "neighborhood"
-    ],
+    "question": "Tôi đi dạo bằng xe đạp.",
+    "answer": "I ride my bike.",
     "variants": [
-      "I rent a scooter to travel around the neighborhood."
+      "I ride my bike.",
+      "I ride a bicycle.",
+      "I ride my bicycle.",
+      "I ride a bike."
     ],
-    "help1": "rent / scooter / travel around / neighborhood",
-    "help2": "I rent a scooter to travel around the neighborhood.",
-    "answer": "I rent a scooter to travel around the neighborhood."
+    "help1": "ride / bike",
+    "help2": "I ride my bike.",
+    "keywords": [
+      "ride",
+      "bike"
+    ]
   },
   {
     "id": "q021",
-    "question": "Tôi đi xe đạp đến công viên vào buổi chiều.",
+    "question": "Tôi đạp xe trong công viên.",
+    "answer": "I ride a bike in the park.",
+    "variants": [
+      "I ride a bike in the park.",
+      "I ride my bike in the park.",
+      "I ride a bicycle in the park.",
+      "I ride my bicycle in the park."
+    ],
+    "help1": "ride / bike / park",
+    "help2": "I ride a bike in the park.",
     "keywords": [
       "ride",
       "bike",
-      "park",
-      "afternoon"
-    ],
-    "variants": [
-      "I ride a bike to the park in the afternoon.",
-      "In the afternoon I ride a bike to the park.",
-      "In the afternoon, I ride a bike to the park.",
-      "I ride a bicycle to the park in the afternoon.",
-      "In the afternoon I ride a bicycle to the park."
-    ],
-    "help1": "ride / bike / park / afternoon",
-    "help2": "I ride a bike to the park in the afternoon.",
-    "answer": "I ride a bike to the park in the afternoon."
+      "park"
+    ]
   },
   {
     "id": "q022",
-    "question": "Chiếc ô tô của gia đình không phải taxi và đang đỗ trong gara.",
-    "keywords": [
-      "family",
-      "car",
-      "not",
-      "taxi",
-      "is",
-      "parked"
-    ],
+    "question": "Chiếc ô tô đang ở trong gara.",
+    "answer": "The car is in the garage.",
     "variants": [
-      "The family car, not a taxi, is parked in the garage.",
-      "The family automobile, not a taxi, is parked in the garage."
+      "The car is in the garage."
     ],
-    "help1": "family car not / taxi is parked / garage",
-    "help2": "The family car, not a taxi, is parked in the garage.",
-    "answer": "The family car, not a taxi, is parked in the garage."
+    "help1": "car / garage",
+    "help2": "The car is in the garage.",
+    "keywords": [
+      "car",
+      "garage"
+    ]
   },
   {
     "id": "q023",
-    "question": "Nhìn kìa, chiếc ô tô rất to có bốn cửa đang đỗ trong gara.",
-    "keywords": [
-      "look",
-      "large",
-      "car",
-      "four",
-      "doors",
-      "is"
-    ],
+    "question": "Chiếc ô tô này rất đẹp.",
+    "answer": "This car is very nice.",
     "variants": [
-      "Look! The large car with four doors is parked in the garage.",
-      "Look! The large automobile with four doors is parked in the garage."
+      "This car is very nice.",
+      "This car is nice."
     ],
-    "help1": "Look / large car / four doors is parked / garage",
-    "help2": "Look! The large car with four doors is parked in the garage.",
-    "answer": "Look! The large car with four doors is parked in the garage."
+    "help1": "car / nice",
+    "help2": "This car is very nice.",
+    "keywords": [
+      "car",
+      "nice"
+    ]
   },
   {
     "id": "q024",
-    "question": "Một chiếc trực thăng đang hạ cánh trên bãi đáp.",
+    "question": "Trực thăng đang hạ cánh.",
+    "answer": "The helicopter is landing.",
+    "variants": [
+      "The helicopter is landing.",
+      "The helicopter's landing."
+    ],
+    "help1": "helicopter / landing",
+    "help2": "The helicopter is landing.",
     "keywords": [
       "helicopter",
-      "is",
-      "landing",
-      "helipad"
-    ],
-    "variants": [
-      "A helicopter is landing on the helipad."
-    ],
-    "help1": "helicopter is landing / helipad",
-    "help2": "A helicopter is landing on the helipad.",
-    "answer": "A helicopter is landing on the helipad."
+      "landing"
+    ]
   },
   {
     "id": "q025",
-    "question": "Bố tôi mua một chiếc xe máy mới màu đen.",
-    "keywords": [
-      "father",
-      "bought",
-      "new",
-      "black",
-      "motorbike"
-    ],
+    "question": "Bố tôi có một chiếc xe máy mới.",
+    "answer": "My dad has a new motorbike.",
     "variants": [
-      "My father bought a new black motorbike.",
-      "My dad bought a new black motorbike."
+      "My dad has a new motorbike.",
+      "My father has a new motorbike."
     ],
-    "help1": "father bought / new black motorbike",
-    "help2": "My father bought a new black motorbike.",
-    "answer": "My father bought a new black motorbike."
+    "help1": "dad / new / motorbike",
+    "help2": "My dad has a new motorbike.",
+    "keywords": [
+      "dad",
+      "new",
+      "motorbike"
+    ]
   },
   {
     "id": "q026",
-    "question": "Tôi trả tiền cho tài xế để đi taxi đến trường.",
-    "keywords": [
-      "pay",
-      "driver",
-      "take",
-      "taxi",
-      "school"
-    ],
+    "question": "Tôi bắt một chiếc taxi.",
+    "answer": "I catch a taxi.",
     "variants": [
-      "I pay the driver to take a taxi to school."
+      "I catch a taxi.",
+      "I take a taxi."
     ],
-    "help1": "pay / driver / take / taxi",
-    "help2": "I pay the driver to take a taxi to school.",
-    "answer": "I pay the driver to take a taxi to school."
+    "help1": "catch / taxi",
+    "help2": "I catch a taxi.",
+    "keywords": [
+      "catch",
+      "taxi"
+    ]
   },
   {
     "id": "q027",
-    "question": "Một chiếc máy bay có cánh cố định đang bay trên bầu trời.",
+    "question": "Máy bay màu trắng.",
+    "answer": "The plane is white.",
+    "variants": [
+      "The plane is white.",
+      "The airplane is white."
+    ],
+    "help1": "plane / white",
+    "help2": "The plane is white.",
     "keywords": [
       "plane",
-      "fixed",
-      "wings",
-      "is",
-      "flying",
-      "sky"
-    ],
-    "variants": [
-      "A plane with fixed wings is flying in the sky."
-    ],
-    "help1": "plane / fixed wings is flying / sky",
-    "help2": "A plane with fixed wings is flying in the sky.",
-    "answer": "A plane with fixed wings is flying in the sky."
+      "white"
+    ]
   },
   {
     "id": "q028",
-    "question": "Phương tiện công cộng có đồng hồ tính tiền là một chiếc taxi.",
-    "keywords": [
-      "public",
-      "vehicle",
-      "meter",
-      "is",
-      "taxi"
-    ],
+    "question": "Chiếc taxi màu vàng.",
+    "answer": "The taxi is yellow.",
     "variants": [
-      "A public vehicle with a meter is a taxi."
+      "The taxi is yellow."
     ],
-    "help1": "public vehicle / meter is / taxi",
-    "help2": "A public vehicle with a meter is a taxi.",
-    "answer": "A public vehicle with a meter is a taxi."
+    "help1": "taxi / yellow",
+    "help2": "The taxi is yellow.",
+    "keywords": [
+      "taxi",
+      "yellow"
+    ]
   },
   {
     "id": "q029",
-    "question": "Chiếc taxi màu vàng đang đón hành khách trước khách sạn.",
-    "keywords": [
-      "yellow",
-      "taxi",
-      "is",
-      "picking",
-      "up",
-      "passengers"
-    ],
+    "question": "Chiếc taxi đang dừng lại.",
+    "answer": "The taxi is stopping.",
     "variants": [
-      "The yellow taxi is picking up passengers in front of the hotel."
+      "The taxi is stopping.",
+      "The taxi's stopping."
     ],
-    "help1": "yellow taxi is picking up passengers / front / hotel",
-    "help2": "The yellow taxi is picking up passengers in front of the hotel.",
-    "answer": "The yellow taxi is picking up passengers in front of the hotel."
+    "help1": "taxi / stopping",
+    "help2": "The taxi is stopping.",
+    "keywords": [
+      "taxi",
+      "stopping"
+    ]
   },
   {
     "id": "q030",
-    "question": "Chiếc trực thăng đang bay trên thành phố để đưa đội cứu hộ đến nơi.",
+    "question": "Trực thăng bay trên bầu trời.",
+    "answer": "The helicopter flies in the sky.",
+    "variants": [
+      "The helicopter flies in the sky."
+    ],
+    "help1": "helicopter / flies / sky",
+    "help2": "The helicopter flies in the sky.",
     "keywords": [
       "helicopter",
-      "is",
-      "flying",
-      "city",
-      "take",
-      "rescue"
-    ],
-    "variants": [
-      "The helicopter is flying over the city to take the rescue team there."
-    ],
-    "help1": "helicopter is flying / city / take / rescue team",
-    "help2": "The helicopter is flying over the city to take the rescue team there.",
-    "answer": "The helicopter is flying over the city to take the rescue team there."
+      "flies",
+      "sky"
+    ]
   },
   {
     "id": "q031",
-    "question": "Cô ấy đi xe tay ga màu đỏ đến cửa hàng.",
-    "keywords": [
-      "rides",
-      "red",
-      "scooter",
-      "shop"
-    ],
+    "question": "Cô ấy có chiếc xe tay ga màu đỏ.",
+    "answer": "She has a red scooter.",
     "variants": [
-      "She rides a red scooter to the shop."
+      "She has a red scooter."
     ],
-    "help1": "rides / red scooter / shop",
-    "help2": "She rides a red scooter to the shop.",
-    "answer": "She rides a red scooter to the shop."
+    "help1": "red / scooter",
+    "help2": "She has a red scooter.",
+    "keywords": [
+      "red",
+      "scooter"
+    ]
   },
   {
     "id": "q032",
-    "question": "Chiếc xe này là ô tô màu xanh của gia đình tôi.",
-    "keywords": [
-      "vehicle",
-      "is",
-      "family's",
-      "blue",
-      "car"
-    ],
+    "question": "Chiếc ô tô này màu xanh dương.",
+    "answer": "This car is blue.",
     "variants": [
-      "This vehicle is my family's blue car.",
-      "This vehicle is my family's blue automobile."
+      "This car is blue."
     ],
-    "help1": "vehicle is / family's blue car",
-    "help2": "This vehicle is my family's blue car.",
-    "answer": "This vehicle is my family's blue car."
+    "help1": "car / blue",
+    "help2": "This car is blue.",
+    "keywords": [
+      "car",
+      "blue"
+    ]
   },
   {
     "id": "q033",
-    "question": "Chiếc xe này là xe đạp màu đỏ của tôi.",
-    "keywords": [
-      "vehicle",
-      "is",
-      "red",
-      "bike"
-    ],
+    "question": "Chiếc xe đạp này màu đỏ.",
+    "answer": "This bike is red.",
     "variants": [
-      "This vehicle is my red bike.",
-      "This vehicle is my red bicycle."
+      "This bike is red.",
+      "This bicycle is red."
     ],
-    "help1": "vehicle is / red bike",
-    "help2": "This vehicle is my red bike.",
-    "answer": "This vehicle is my red bike."
+    "help1": "bike / red",
+    "help2": "This bike is red.",
+    "keywords": [
+      "bike",
+      "red"
+    ]
   },
   {
     "id": "q034",
-    "question": "Một phương tiện có cánh cố định đang bay trên trời.",
+    "question": "Máy bay bay rất cao.",
+    "answer": "The plane flies high.",
+    "variants": [
+      "The plane flies high.",
+      "Planes fly high."
+    ],
+    "help1": "plane / flies / high",
+    "help2": "The plane flies high.",
     "keywords": [
       "plane",
-      "fixed",
-      "wings",
-      "is",
-      "flying",
-      "sky"
-    ],
-    "variants": [
-      "A plane with fixed wings is flying in the sky."
-    ],
-    "help1": "plane / fixed wings is flying / sky",
-    "help2": "A plane with fixed wings is flying in the sky.",
-    "answer": "A plane with fixed wings is flying in the sky."
+      "flies",
+      "high"
+    ]
   },
   {
     "id": "q035",
-    "question": "Một chiếc xe buýt công cộng lớn đang chở nhiều học sinh.",
-    "keywords": [
-      "large",
-      "public",
-      "bus",
-      "is",
-      "carrying",
-      "many"
-    ],
+    "question": "Nhiều học sinh đi xe buýt.",
+    "answer": "Students take the bus.",
     "variants": [
-      "A large public bus is carrying many students."
+      "Students take the bus.",
+      "Many students take the bus."
     ],
-    "help1": "large public bus is carrying many students",
-    "help2": "A large public bus is carrying many students.",
-    "answer": "A large public bus is carrying many students."
+    "help1": "students / take / bus",
+    "help2": "Students take the bus.",
+    "keywords": [
+      "students",
+      "take",
+      "bus"
+    ]
   },
   {
     "id": "q036",
-    "question": "Chiếc xe hai bánh có còi kêu píp píp là xe tay ga.",
-    "keywords": [
-      "two-wheeled",
-      "vehicle",
-      "beeping",
-      "horn",
-      "is",
-      "scooter"
-    ],
+    "question": "Chiếc xe tay ga màu trắng.",
+    "answer": "The scooter is white.",
     "variants": [
-      "The two-wheeled vehicle with a beeping horn is a scooter."
+      "The scooter is white."
     ],
-    "help1": "two-wheeled vehicle / beeping horn is / scooter",
-    "help2": "The two-wheeled vehicle with a beeping horn is a scooter.",
-    "answer": "The two-wheeled vehicle with a beeping horn is a scooter."
+    "help1": "scooter / white",
+    "help2": "The scooter is white.",
+    "keywords": [
+      "scooter",
+      "white"
+    ]
   },
   {
     "id": "q037",
-    "question": "Một phương tiện chạy trên đường ray đang đến ga.",
+    "question": "Đoàn tàu đang tới nhà ga.",
+    "answer": "The train is coming to the station.",
+    "variants": [
+      "The train is coming to the station."
+    ],
+    "help1": "train / coming / station",
+    "help2": "The train is coming to the station.",
     "keywords": [
       "train",
-      "running",
-      "tracks",
-      "is",
       "coming",
       "station"
-    ],
-    "variants": [
-      "A train running on the tracks is coming to the station."
-    ],
-    "help1": "train running / tracks is coming / station",
-    "help2": "A train running on the tracks is coming to the station.",
-    "answer": "A train running on the tracks is coming to the station."
+    ]
   },
   {
     "id": "q038",
-    "question": "Một tàu thủy lớn đang chạy trên mặt nước.",
-    "keywords": [
-      "large",
-      "ship",
-      "is",
-      "traveling",
-      "water"
-    ],
+    "question": "Con tàu thủy đang chạy trên biển.",
+    "answer": "The ship is sailing on the sea.",
     "variants": [
-      "A large ship is traveling on the water."
+      "The ship is sailing on the sea."
     ],
-    "help1": "large ship is traveling / water",
-    "help2": "A large ship is traveling on the water.",
-    "answer": "A large ship is traveling on the water."
+    "help1": "ship / sailing / sea",
+    "help2": "The ship is sailing on the sea.",
+    "keywords": [
+      "ship",
+      "sailing",
+      "sea"
+    ]
   },
   {
     "id": "q039",
-    "question": "Một chiếc thuyền nhỏ đang bơi trên sông.",
-    "keywords": [
-      "small",
-      "boat",
-      "is",
-      "moving",
-      "river"
-    ],
+    "question": "Chiếc thuyền trôi trên sông.",
+    "answer": "The boat floats on the river.",
     "variants": [
-      "A small boat is moving along the river."
+      "The boat floats on the river.",
+      "The boat is on the river."
     ],
-    "help1": "small boat is moving / river",
-    "help2": "A small boat is moving along the river.",
-    "answer": "A small boat is moving along the river."
+    "help1": "boat / river",
+    "help2": "The boat floats on the river.",
+    "keywords": [
+      "boat",
+      "river"
+    ]
   },
   {
     "id": "q040",
-    "question": "Một chiếc xe tải rất to đang chở các thùng hàng.",
-    "keywords": [
-      "very",
-      "large",
-      "truck",
-      "is",
-      "carrying",
-      "boxes"
-    ],
+    "question": "Xe tải màu xanh lá cây.",
+    "answer": "The truck is green.",
     "variants": [
-      "A very large truck is carrying boxes of goods."
+      "The truck is green."
     ],
-    "help1": "very large truck is carrying boxes / goods",
-    "help2": "A very large truck is carrying boxes of goods.",
-    "answer": "A very large truck is carrying boxes of goods."
+    "help1": "truck / green",
+    "help2": "The truck is green.",
+    "keywords": [
+      "truck",
+      "green"
+    ]
   },
   {
     "id": "q041",
-    "question": "Một chiếc xe cứu thương có đèn ưu tiên đang đưa bệnh nhân đến bệnh viện.",
-    "keywords": [
-      "ambulance",
-      "warning",
-      "light",
-      "is",
-      "taking",
-      "patient"
-    ],
+    "question": "Đó là một chiếc xe cứu thương.",
+    "answer": "That is an ambulance.",
     "variants": [
-      "An ambulance with a warning light is taking a patient to the hospital."
+      "That is an ambulance.",
+      "That's an ambulance."
     ],
-    "help1": "ambulance / warning light is taking / patient / hospital",
-    "help2": "An ambulance with a warning light is taking a patient to the hospital.",
-    "answer": "An ambulance with a warning light is taking a patient to the hospital."
+    "help1": "ambulance",
+    "help2": "That is an ambulance.",
+    "keywords": [
+      "ambulance"
+    ]
   },
   {
     "id": "q042",
-    "question": "Một máy bay trực thăng đang bay trên nóc bệnh viện.",
+    "question": "Trực thăng đang bay.",
+    "answer": "The helicopter is flying.",
+    "variants": [
+      "The helicopter is flying.",
+      "The helicopter's flying."
+    ],
+    "help1": "helicopter / flying",
+    "help2": "The helicopter is flying.",
     "keywords": [
       "helicopter",
-      "is",
-      "flying",
-      "hospital",
-      "roof"
-    ],
-    "variants": [
-      "A helicopter is flying above the hospital roof."
-    ],
-    "help1": "helicopter is flying / hospital roof",
-    "help2": "A helicopter is flying above the hospital roof.",
-    "answer": "A helicopter is flying above the hospital roof."
+      "flying"
+    ]
   },
   {
     "id": "q043",
-    "question": "Xe của chú cảnh sát đang tuần tra trên phố.",
+    "question": "Đó là một chiếc xe cảnh sát.",
+    "answer": "That is a police car.",
+    "variants": [
+      "That is a police car.",
+      "That's a police car."
+    ],
+    "help1": "police / car",
+    "help2": "That is a police car.",
     "keywords": [
       "police",
-      "car",
-      "is",
-      "patrolling",
-      "street"
-    ],
-    "variants": [
-      "The police car is patrolling the street.",
-      "The police automobile is patrolling the street."
-    ],
-    "help1": "police car is patrolling / street",
-    "help2": "The police car is patrolling the street.",
-    "answer": "The police car is patrolling the street."
+      "car"
+    ]
   },
   {
     "id": "q044",
-    "question": "Anh ấy đi xe máy có động cơ xăng, không phải xe đạp điện.",
+    "question": "Anh ấy lái xe máy.",
+    "answer": "He rides a motorbike.",
+    "variants": [
+      "He rides a motorbike."
+    ],
+    "help1": "rides / motorbike",
+    "help2": "He rides a motorbike.",
     "keywords": [
       "rides",
-      "motorbike",
-      "petrol",
-      "engine",
-      "not",
-      "electric"
-    ],
-    "variants": [
-      "He rides a motorbike with a petrol engine, not an electric bicycle.",
-      "He rides a motorbike with a petrol engine, not an electric bike."
-    ],
-    "help1": "rides / motorbike / petrol engine not / electric bicycle",
-    "help2": "He rides a motorbike with a petrol engine, not an electric bicycle.",
-    "answer": "He rides a motorbike with a petrol engine, not an electric bicycle."
+      "motorbike"
+    ]
   },
   {
     "id": "q045",
-    "question": "Theo cách gọi Anh-Anh, xe tải thùng chở quà được gọi là một lorry.",
-    "keywords": [
-      "british",
-      "english",
-      "box",
-      "truck",
-      "carrying",
-      "gifts"
-    ],
+    "question": "Đó là một chiếc xe tải.",
+    "answer": "That is a truck.",
     "variants": [
-      "In British English, a box truck carrying gifts is called a lorry."
+      "That is a truck.",
+      "That's a truck.",
+      "That is a lorry.",
+      "That's a lorry."
     ],
-    "help1": "British English / box truck carrying gifts is called / lorry",
-    "help2": "In British English, a box truck carrying gifts is called a lorry.",
-    "answer": "In British English, a box truck carrying gifts is called a lorry."
+    "help1": "truck",
+    "help2": "That is a truck.",
+    "keywords": [
+      "truck"
+    ]
   },
   {
     "id": "q046",
-    "question": "Một tên lửa được phóng lên không gian từ bệ phóng.",
+    "question": "Tên lửa bay vào vũ trụ.",
+    "answer": "The rocket flies into space.",
+    "variants": [
+      "The rocket flies into space."
+    ],
+    "help1": "rocket / flies / space",
+    "help2": "The rocket flies into space.",
     "keywords": [
       "rocket",
-      "is",
-      "launched",
-      "space",
-      "platform"
-    ],
-    "variants": [
-      "A rocket is launched into space from the platform."
-    ],
-    "help1": "rocket is launched / space / platform",
-    "help2": "A rocket is launched into space from the platform.",
-    "answer": "A rocket is launched into space from the platform."
+      "flies",
+      "space"
+    ]
   },
   {
     "id": "q047",
-    "question": "Một tàu ngầm đang đi dưới biển để nghiên cứu đại dương.",
+    "question": "Tàu ngầm lặn dưới biển.",
+    "answer": "The submarine goes under the sea.",
+    "variants": [
+      "The submarine goes under the sea."
+    ],
+    "help1": "submarine / sea",
+    "help2": "The submarine goes under the sea.",
     "keywords": [
       "submarine",
-      "is",
-      "traveling",
-      "sea",
-      "study",
-      "ocean"
-    ],
-    "variants": [
-      "A submarine is traveling under the sea to study the ocean."
-    ],
-    "help1": "submarine is traveling / sea / study / ocean",
-    "help2": "A submarine is traveling under the sea to study the ocean.",
-    "answer": "A submarine is traveling under the sea to study the ocean."
+      "sea"
+    ]
   },
   {
     "id": "q048",
-    "question": "Em bé đang đi một chiếc xe ba bánh quanh sân.",
-    "keywords": [
-      "child",
-      "is",
-      "riding",
-      "tricycle",
-      "around",
-      "yard"
-    ],
+    "question": "Em bé đi xe ba bánh.",
+    "answer": "The baby rides a tricycle.",
     "variants": [
-      "The child is riding a tricycle around the yard."
+      "The baby rides a tricycle.",
+      "The child rides a tricycle."
     ],
-    "help1": "child is riding / tricycle around / yard",
-    "help2": "The child is riding a tricycle around the yard.",
-    "answer": "The child is riding a tricycle around the yard."
+    "help1": "baby / rides / tricycle",
+    "help2": "The baby rides a tricycle.",
+    "keywords": [
+      "baby",
+      "rides",
+      "tricycle"
+    ]
   },
   {
     "id": "q049",
-    "question": "Một chiếc xe van đang chở khách du lịch đến khách sạn.",
-    "keywords": [
-      "van",
-      "is",
-      "taking",
-      "tourists",
-      "hotel"
-    ],
+    "question": "Đó là một chiếc xe van.",
+    "answer": "That is a van.",
     "variants": [
-      "A van is taking the tourists to the hotel."
+      "That is a van.",
+      "That's a van."
     ],
-    "help1": "van is taking / tourists / hotel",
-    "help2": "A van is taking the tourists to the hotel.",
-    "answer": "A van is taking the tourists to the hotel."
+    "help1": "van",
+    "help2": "That is a van.",
+    "keywords": [
+      "van"
+    ]
   },
   {
     "id": "q050",
-    "question": "Một chiếc xe cứu hỏa đang đến để dập tắt đám cháy.",
+    "question": "Đó là một chiếc xe cứu hỏa.",
+    "answer": "That is a fire truck.",
+    "variants": [
+      "That is a fire truck.",
+      "That's a fire truck.",
+      "That is a fire engine.",
+      "That's a fire engine."
+    ],
+    "help1": "fire / truck",
+    "help2": "That is a fire truck.",
     "keywords": [
       "fire",
-      "engine",
-      "is",
-      "coming",
-      "put"
-    ],
-    "variants": [
-      "A fire engine is coming to put out the fire."
-    ],
-    "help1": "fire engine is coming / put / fire",
-    "help2": "A fire engine is coming to put out the fire.",
-    "answer": "A fire engine is coming to put out the fire."
+      "truck"
+    ]
   }
 ];
 
@@ -2796,6 +2686,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2882,9 +2773,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2892,9 +2789,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2902,7 +2804,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2936,7 +2838,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -2961,77 +2863,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -3047,16 +2954,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3078,19 +2979,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3101,6 +3006,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3117,6 +3023,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3173,6 +3080,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3190,7 +3098,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;

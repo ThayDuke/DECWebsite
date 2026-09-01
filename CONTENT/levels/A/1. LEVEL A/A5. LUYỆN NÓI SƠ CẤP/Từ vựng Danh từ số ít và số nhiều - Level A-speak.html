@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,845 +1924,728 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Một con mèo đang ngủ trên ghế sofa.",
+    "question": "Một con mèo đang ngủ.",
+    "answer": "A cat is sleeping.",
+    "variants": [
+      "A cat is sleeping."
+    ],
+    "help1": "cat / sleeping",
+    "help2": "A cat is sleeping.",
     "keywords": [
       "cat",
-      "is",
-      "sleeping",
-      "sofa"
-    ],
-    "variants": [
-      "A cat is sleeping on the sofa."
-    ],
-    "help1": "cat is sleeping / sofa",
-    "help2": "A cat is sleeping on the sofa.",
-    "answer": "A cat is sleeping on the sofa."
+      "sleeping"
+    ]
   },
   {
     "id": "q002",
-    "question": "Nhiều con chó đang chạy trong công viên.",
-    "keywords": [
-      "dogs",
-      "are",
-      "running",
-      "park"
-    ],
+    "question": "Nhiều con chó đang chạy.",
+    "answer": "Many dogs are running.",
     "variants": [
-      "Dogs are running in the park."
+      "Many dogs are running.",
+      "Dogs are running."
     ],
-    "help1": "Dogs are running / park",
-    "help2": "Dogs are running in the park.",
-    "answer": "Dogs are running in the park."
+    "help1": "many / dogs / running",
+    "help2": "Many dogs are running.",
+    "keywords": [
+      "many",
+      "dogs",
+      "running"
+    ]
   },
   {
     "id": "q003",
-    "question": "Một quả táo đỏ nằm trong hộp cơm.",
-    "keywords": [
-      "is",
-      "apple",
-      "lunch",
-      "box"
-    ],
+    "question": "Có một quả táo đỏ.",
+    "answer": "There is a red apple.",
     "variants": [
-      "There is an apple in the lunch box.",
-      "there's an apple in the lunch box.",
-      "there is an apple in the lunch box."
+      "There is a red apple.",
+      "There's a red apple."
     ],
-    "help1": "is / apple / lunch box",
-    "help2": "There is an apple in the lunch box.",
-    "answer": "There is an apple in the lunch box."
+    "help1": "red / apple",
+    "help2": "There is a red apple.",
+    "keywords": [
+      "red",
+      "apple"
+    ]
   },
   {
     "id": "q004",
-    "question": "Có hai quả táo trên bàn bếp.",
-    "keywords": [
-      "are",
-      "two",
-      "apples",
-      "kitchen",
-      "table"
-    ],
+    "question": "Có hai quả táo.",
+    "answer": "There are two apples.",
     "variants": [
-      "There are two apples on the kitchen table."
+      "There are two apples."
     ],
-    "help1": "are two apples / kitchen table",
-    "help2": "There are two apples on the kitchen table.",
-    "answer": "There are two apples on the kitchen table."
+    "help1": "two / apples",
+    "help2": "There are two apples.",
+    "keywords": [
+      "two",
+      "apples"
+    ]
   },
   {
     "id": "q005",
-    "question": "Năm con chim đang hót trên cành cây.",
+    "question": "Năm con chim đang hót.",
+    "answer": "Five birds are singing.",
+    "variants": [
+      "Five birds are singing."
+    ],
+    "help1": "five / birds / singing",
+    "help2": "Five birds are singing.",
     "keywords": [
       "five",
       "birds",
-      "are",
-      "singing",
-      "branch"
-    ],
-    "variants": [
-      "Five birds are singing on the branch."
-    ],
-    "help1": "Five birds are singing / branch",
-    "help2": "Five birds are singing on the branch.",
-    "answer": "Five birds are singing on the branch."
+      "singing"
+    ]
   },
   {
     "id": "q006",
-    "question": "Nhìn kìa, ba con chim đang bay trên trời.",
+    "question": "Ba con chim đang bay.",
+    "answer": "Three birds are flying.",
+    "variants": [
+      "Three birds are flying."
+    ],
+    "help1": "three / birds / flying",
+    "help2": "Three birds are flying.",
     "keywords": [
-      "look",
       "three",
       "birds",
-      "are",
-      "flying",
-      "sky"
-    ],
-    "variants": [
-      "Look! Three birds are flying in the sky."
-    ],
-    "help1": "Look Three birds are flying / sky",
-    "help2": "Look! Three birds are flying in the sky.",
-    "answer": "Look! Three birds are flying in the sky."
+      "flying"
+    ]
   },
   {
     "id": "q007",
-    "question": "Tôi ăn một quả trứng vào bữa sáng.",
+    "question": "Tôi ăn một quả trứng.",
+    "answer": "I eat an egg.",
+    "variants": [
+      "I eat an egg."
+    ],
+    "help1": "eat / egg",
+    "help2": "I eat an egg.",
     "keywords": [
       "eat",
-      "egg",
-      "breakfast"
-    ],
-    "variants": [
-      "I eat an egg for breakfast."
-    ],
-    "help1": "eat / egg / breakfast",
-    "help2": "I eat an egg for breakfast.",
-    "answer": "I eat an egg for breakfast."
+      "egg"
+    ]
   },
   {
     "id": "q008",
-    "question": "Mẹ luộc năm quả trứng cho cả gia đình.",
+    "question": "Mẹ luộc năm quả trứng.",
+    "answer": "Mom boils five eggs.",
+    "variants": [
+      "Mom boils five eggs.",
+      "My mom boils five eggs.",
+      "mother boils five eggs.",
+      "My mother boils five eggs.",
+      "mom boils five eggs."
+    ],
+    "help1": "mom / boils / five",
+    "help2": "Mom boils five eggs.",
     "keywords": [
       "mom",
       "boils",
-      "five",
-      "eggs",
-      "whole",
-      "family"
-    ],
-    "variants": [
-      "Mom boils five eggs for the whole family.",
-      "mother boils five eggs for the whole family.",
-      "mom boils five eggs for the whole family."
-    ],
-    "help1": "Mom boils five eggs / whole family",
-    "help2": "Mom boils five eggs for the whole family.",
-    "answer": "Mom boils five eggs for the whole family."
+      "five"
+    ]
   },
   {
     "id": "q009",
-    "question": "Hai chiếc xe buýt đang đợi ở bến.",
+    "question": "Hai chiếc xe buýt đang đợi.",
+    "answer": "Two buses are waiting.",
+    "variants": [
+      "Two buses are waiting."
+    ],
+    "help1": "two / buses / waiting",
+    "help2": "Two buses are waiting.",
     "keywords": [
       "two",
       "buses",
-      "are",
-      "waiting",
-      "stop"
-    ],
-    "variants": [
-      "Two buses are waiting at the stop."
-    ],
-    "help1": "Two buses are waiting / stop",
-    "help2": "Two buses are waiting at the stop.",
-    "answer": "Two buses are waiting at the stop."
+      "waiting"
+    ]
   },
   {
     "id": "q010",
-    "question": "Tôi nhìn thấy hai chiếc xe buýt trên đường.",
+    "question": "Tôi nhìn thấy hai chiếc xe buýt.",
+    "answer": "I see two buses.",
+    "variants": [
+      "I see two buses."
+    ],
+    "help1": "see / two / buses",
+    "help2": "I see two buses.",
     "keywords": [
       "see",
       "two",
-      "buses",
-      "road"
-    ],
-    "variants": [
-      "I see two buses on the road."
-    ],
-    "help1": "see two buses / road",
-    "help2": "I see two buses on the road.",
-    "answer": "I see two buses on the road."
+      "buses"
+    ]
   },
   {
     "id": "q011",
-    "question": "Có nhiều cái hộp được xếp trong kho.",
-    "keywords": [
-      "are",
-      "many",
-      "boxes",
-      "storeroom"
-    ],
+    "question": "Có nhiều cái hộp.",
+    "answer": "There are many boxes.",
     "variants": [
-      "There are many boxes in the storeroom."
+      "There are many boxes."
     ],
-    "help1": "are many boxes / storeroom",
-    "help2": "There are many boxes in the storeroom.",
-    "answer": "There are many boxes in the storeroom."
+    "help1": "many / boxes",
+    "help2": "There are many boxes.",
+    "keywords": [
+      "many",
+      "boxes"
+    ]
   },
   {
     "id": "q012",
-    "question": "Mười cái hộp nằm cạnh cửa.",
+    "question": "Có mười cái hộp.",
+    "answer": "There are ten boxes.",
+    "variants": [
+      "There are ten boxes."
+    ],
+    "help1": "ten / boxes",
+    "help2": "There are ten boxes.",
     "keywords": [
       "ten",
-      "boxes",
-      "are",
-      "door"
-    ],
-    "variants": [
-      "Ten boxes are beside the door."
-    ],
-    "help1": "Ten boxes are / door",
-    "help2": "Ten boxes are beside the door.",
-    "answer": "Ten boxes are beside the door."
+      "boxes"
+    ]
   },
   {
     "id": "q013",
-    "question": "Những chiếc đồng hồ đeo tay nằm trong hộp trang sức.",
+    "question": "Những chiếc đồng hồ rất đẹp.",
+    "answer": "The watches are beautiful.",
+    "variants": [
+      "The watches are beautiful."
+    ],
+    "help1": "watches / beautiful",
+    "help2": "The watches are beautiful.",
     "keywords": [
       "watches",
-      "are",
-      "jewelry",
-      "box"
-    ],
-    "variants": [
-      "The watches are in the jewelry box."
-    ],
-    "help1": "watches are / jewelry box",
-    "help2": "The watches are in the jewelry box.",
-    "answer": "The watches are in the jewelry box."
+      "beautiful"
+    ]
   },
   {
     "id": "q014",
-    "question": "Tôi rửa những cái đĩa sau bữa tối.",
+    "question": "Tôi rửa những cái đĩa.",
+    "answer": "I wash the dishes.",
+    "variants": [
+      "I wash the dishes."
+    ],
+    "help1": "wash / dishes",
+    "help2": "I wash the dishes.",
     "keywords": [
       "wash",
-      "dishes",
-      "after",
-      "dinner"
-    ],
-    "variants": [
-      "I wash the dishes after dinner."
-    ],
-    "help1": "wash / dishes after dinner",
-    "help2": "I wash the dishes after dinner.",
-    "answer": "I wash the dishes after dinner."
+      "dishes"
+    ]
   },
   {
     "id": "q015",
-    "question": "Có nhiều cái đĩa sạch trên bàn.",
-    "keywords": [
-      "are",
-      "many",
-      "dishes",
-      "table"
-    ],
+    "question": "Có nhiều chiếc đĩa.",
+    "answer": "There are many dishes.",
     "variants": [
-      "There are many dishes on the table."
+      "There are many dishes."
     ],
-    "help1": "are many dishes / table",
-    "help2": "There are many dishes on the table.",
-    "answer": "There are many dishes on the table."
+    "help1": "many / dishes",
+    "help2": "There are many dishes.",
+    "keywords": [
+      "many",
+      "dishes"
+    ]
   },
   {
     "id": "q016",
-    "question": "Ba chiếc ly thủy tinh đứng trên khay.",
+    "question": "Có ba chiếc ly.",
+    "answer": "There are three glasses.",
+    "variants": [
+      "There are three glasses."
+    ],
+    "help1": "three / glasses",
+    "help2": "There are three glasses.",
     "keywords": [
       "three",
-      "glasses",
-      "are",
-      "tray"
-    ],
-    "variants": [
-      "Three glasses are on the tray."
-    ],
-    "help1": "Three glasses are / tray",
-    "help2": "Three glasses are on the tray.",
-    "answer": "Three glasses are on the tray."
+      "glasses"
+    ]
   },
   {
     "id": "q017",
-    "question": "Sáu cái ly được đặt trong tủ bếp.",
+    "question": "Có sáu cái ly.",
+    "answer": "There are six glasses.",
+    "variants": [
+      "There are six glasses."
+    ],
+    "help1": "six / glasses",
+    "help2": "There are six glasses.",
     "keywords": [
       "six",
-      "glasses",
-      "are",
-      "kitchen",
-      "cupboard"
-    ],
-    "variants": [
-      "Six glasses are in the kitchen cupboard."
-    ],
-    "help1": "Six glasses are / kitchen cupboard",
-    "help2": "Six glasses are in the kitchen cupboard.",
-    "answer": "Six glasses are in the kitchen cupboard."
+      "glasses"
+    ]
   },
   {
     "id": "q018",
-    "question": "Một người đàn ông đang đọc báo.",
+    "question": "Một người đàn ông đang đọc sách.",
+    "answer": "A man is reading.",
+    "variants": [
+      "A man is reading.",
+      "A man is reading a book."
+    ],
+    "help1": "man / reading",
+    "help2": "A man is reading.",
     "keywords": [
       "man",
-      "is",
-      "reading",
-      "newspaper"
-    ],
-    "variants": [
-      "A man is reading a newspaper."
-    ],
-    "help1": "man is reading / newspaper",
-    "help2": "A man is reading a newspaper.",
-    "answer": "A man is reading a newspaper."
+      "reading"
+    ]
   },
   {
     "id": "q019",
-    "question": "Ba người đàn ông đang nói chuyện ngoài sân.",
+    "question": "Ba người đàn ông đang nói chuyện.",
+    "answer": "Three men are talking.",
+    "variants": [
+      "Three men are talking."
+    ],
+    "help1": "three / men / talking",
+    "help2": "Three men are talking.",
     "keywords": [
       "three",
       "men",
-      "are",
-      "talking",
-      "outside"
-    ],
-    "variants": [
-      "Three men are talking outside."
-    ],
-    "help1": "Three men are talking outside",
-    "help2": "Three men are talking outside.",
-    "answer": "Three men are talking outside."
+      "talking"
+    ]
   },
   {
     "id": "q020",
-    "question": "Một người phụ nữ đang đứng ở cửa.",
+    "question": "Một người phụ nữ đang đứng.",
+    "answer": "A woman is standing.",
+    "variants": [
+      "A woman is standing."
+    ],
+    "help1": "woman / standing",
+    "help2": "A woman is standing.",
     "keywords": [
       "woman",
-      "is",
-      "standing",
-      "door"
-    ],
-    "variants": [
-      "A woman is standing at the door."
-    ],
-    "help1": "woman is standing / door",
-    "help2": "A woman is standing at the door.",
-    "answer": "A woman is standing at the door."
+      "standing"
+    ]
   },
   {
     "id": "q021",
-    "question": "Hai người phụ nữ đang mua rau ở chợ.",
+    "question": "Hai người phụ nữ đang nói chuyện.",
+    "answer": "Two women are talking.",
+    "variants": [
+      "Two women are talking."
+    ],
+    "help1": "two / women / talking",
+    "help2": "Two women are talking.",
     "keywords": [
       "two",
       "women",
-      "are",
-      "buying",
-      "vegetables",
-      "market"
-    ],
-    "variants": [
-      "Two women are buying vegetables at the market."
-    ],
-    "help1": "Two women are buying vegetables / market",
-    "help2": "Two women are buying vegetables at the market.",
-    "answer": "Two women are buying vegetables at the market."
+      "talking"
+    ]
   },
   {
     "id": "q022",
-    "question": "Những đứa trẻ đang chơi trong sân.",
+    "question": "Những đứa trẻ đang chơi đùa.",
+    "answer": "The children are playing.",
+    "variants": [
+      "The children are playing."
+    ],
+    "help1": "children / playing",
+    "help2": "The children are playing.",
     "keywords": [
       "children",
-      "are",
-      "playing",
-      "yard"
-    ],
-    "variants": [
-      "The children are playing in the yard."
-    ],
-    "help1": "children are playing / yard",
-    "help2": "The children are playing in the yard.",
-    "answer": "The children are playing in the yard."
+      "playing"
+    ]
   },
   {
     "id": "q023",
-    "question": "Nhìn kìa, tôi thấy nhiều đứa trẻ bên hồ.",
+    "question": "Tôi thấy nhiều đứa trẻ.",
+    "answer": "I see many children.",
+    "variants": [
+      "I see many children."
+    ],
+    "help1": "see / many / children",
+    "help2": "I see many children.",
     "keywords": [
-      "look",
       "see",
       "many",
-      "children",
-      "lake"
-    ],
-    "variants": [
-      "Look! I see many children by the lake."
-    ],
-    "help1": "Look / see many children / lake",
-    "help2": "Look! I see many children by the lake.",
-    "answer": "Look! I see many children by the lake."
+      "children"
+    ]
   },
   {
     "id": "q024",
-    "question": "Có hai em bé đang ngủ trong nôi.",
-    "keywords": [
-      "are",
-      "two",
-      "babies",
-      "sleeping",
-      "cribs"
-    ],
+    "question": "Có hai em bé.",
+    "answer": "There are two babies.",
     "variants": [
-      "There are two babies sleeping in the cribs."
+      "There are two babies."
     ],
-    "help1": "are two babies sleeping / cribs",
-    "help2": "There are two babies sleeping in the cribs.",
-    "answer": "There are two babies sleeping in the cribs."
+    "help1": "two / babies",
+    "help2": "There are two babies.",
+    "keywords": [
+      "two",
+      "babies"
+    ]
   },
   {
     "id": "q025",
-    "question": "Các em nhỏ nhận nhiều viên kẹo trong ngày hội.",
-    "keywords": [
-      "children",
-      "receive",
-      "many",
-      "candies",
-      "festival"
-    ],
+    "question": "Tôi có nhiều viên kẹo.",
+    "answer": "I have many candies.",
     "variants": [
-      "The children receive many candies at the festival."
+      "I have many candies."
     ],
-    "help1": "children receive many candies / festival",
-    "help2": "The children receive many candies at the festival.",
-    "answer": "The children receive many candies at the festival."
+    "help1": "many / candies",
+    "help2": "I have many candies.",
+    "keywords": [
+      "many",
+      "candies"
+    ]
   },
   {
     "id": "q026",
-    "question": "Nhiều người đang xếp hàng trước cửa hàng.",
+    "question": "Có nhiều người ở đây.",
+    "answer": "There are many people here.",
+    "variants": [
+      "There are many people here.",
+      "There are many people."
+    ],
+    "help1": "many / people",
+    "help2": "There are many people here.",
     "keywords": [
       "many",
-      "people",
-      "are",
-      "waiting",
-      "line",
-      "outside"
-    ],
-    "variants": [
-      "Many people are waiting in line outside the shop."
-    ],
-    "help1": "Many people are waiting / line outside / shop",
-    "help2": "Many people are waiting in line outside the shop.",
-    "answer": "Many people are waiting in line outside the shop."
+      "people"
+    ]
   },
   {
     "id": "q027",
-    "question": "Có bốn người trong phòng họp.",
-    "keywords": [
-      "are",
-      "four",
-      "people",
-      "meeting",
-      "room"
-    ],
+    "question": "Có bốn người trong phòng.",
+    "answer": "There are four people.",
     "variants": [
-      "There are four people in the meeting room."
+      "There are four people.",
+      "There are four people in the room."
     ],
-    "help1": "are four people / meeting room",
-    "help2": "There are four people in the meeting room.",
-    "answer": "There are four people in the meeting room."
+    "help1": "four / people",
+    "help2": "There are four people.",
+    "keywords": [
+      "four",
+      "people"
+    ]
   },
   {
     "id": "q028",
-    "question": "Tôi bị đau cả hai bàn chân sau khi đi bộ.",
-    "keywords": [
-      "both",
-      "feet",
-      "hurt",
-      "after",
-      "walking"
-    ],
+    "question": "Tôi bị đau hai bàn chân.",
+    "answer": "My feet hurt.",
     "variants": [
-      "Both of my feet hurt after walking."
+      "My feet hurt."
     ],
-    "help1": "Both / feet hurt after walking",
-    "help2": "Both of my feet hurt after walking.",
-    "answer": "Both of my feet hurt after walking."
+    "help1": "feet / hurt",
+    "help2": "My feet hurt.",
+    "keywords": [
+      "feet",
+      "hurt"
+    ]
   },
   {
     "id": "q029",
-    "question": "Hai bàn chân của em đang ở dưới bàn.",
+    "question": "Tôi có hai bàn chân.",
+    "answer": "I have two feet.",
+    "variants": [
+      "I have two feet."
+    ],
+    "help1": "two / feet",
+    "help2": "I have two feet.",
     "keywords": [
       "two",
-      "feet",
-      "are",
-      "table"
-    ],
-    "variants": [
-      "My two feet are under the table."
-    ],
-    "help1": "two feet are / table",
-    "help2": "My two feet are under the table.",
-    "answer": "My two feet are under the table."
+      "feet"
+    ]
   },
   {
     "id": "q030",
-    "question": "Tôi đánh răng để làm sạch những chiếc răng.",
+    "question": "Tôi đánh răng.",
+    "answer": "I brush my teeth.",
+    "variants": [
+      "I brush my teeth.",
+      "I brush my teeth clean."
+    ],
+    "help1": "brush / teeth",
+    "help2": "I brush my teeth.",
     "keywords": [
       "brush",
-      "teeth",
-      "clean"
-    ],
-    "variants": [
-      "I brush my teeth to clean them."
-    ],
-    "help1": "brush / teeth / clean",
-    "help2": "I brush my teeth to clean them.",
-    "answer": "I brush my teeth to clean them."
+      "teeth"
+    ]
   },
   {
     "id": "q031",
-    "question": "Hai con chuột đang chạy dưới bếp.",
+    "question": "Có hai con chuột.",
+    "answer": "There are two mice.",
+    "variants": [
+      "There are two mice."
+    ],
+    "help1": "two / mice",
+    "help2": "There are two mice.",
     "keywords": [
       "two",
-      "mice",
-      "are",
-      "running",
-      "kitchen"
-    ],
-    "variants": [
-      "Two mice are running under the kitchen."
-    ],
-    "help1": "Two mice are running / kitchen",
-    "help2": "Two mice are running under the kitchen.",
-    "answer": "Two mice are running under the kitchen."
+      "mice"
+    ]
   },
   {
     "id": "q032",
-    "question": "Ba con chuột đang trốn sau chiếc hộp.",
+    "question": "Ba con chuột đang trốn.",
+    "answer": "Three mice are hiding.",
+    "variants": [
+      "Three mice are hiding."
+    ],
+    "help1": "three / mice / hiding",
+    "help2": "Three mice are hiding.",
     "keywords": [
       "three",
       "mice",
-      "are",
-      "hiding",
-      "box"
-    ],
-    "variants": [
-      "Three mice are hiding behind the box."
-    ],
-    "help1": "Three mice are hiding / box",
-    "help2": "Three mice are hiding behind the box.",
-    "answer": "Three mice are hiding behind the box."
+      "hiding"
+    ]
   },
   {
     "id": "q033",
-    "question": "Nhiều con cá cùng loài đang bơi trong hồ.",
+    "question": "Nhiều con cá đang bơi.",
+    "answer": "Many fish are swimming.",
+    "variants": [
+      "Many fish are swimming."
+    ],
+    "help1": "many / fish / swimming",
+    "help2": "Many fish are swimming.",
     "keywords": [
       "many",
       "fish",
-      "same",
-      "species",
-      "are",
       "swimming"
-    ],
-    "variants": [
-      "Many fish of the same species are swimming in the lake."
-    ],
-    "help1": "Many fish / same species are swimming / lake",
-    "help2": "Many fish of the same species are swimming in the lake.",
-    "answer": "Many fish of the same species are swimming in the lake."
+    ]
   },
   {
     "id": "q034",
-    "question": "Bốn con cá cùng loài đang bơi trong bể.",
+    "question": "Có bốn con cá.",
+    "answer": "There are four fish.",
+    "variants": [
+      "There are four fish."
+    ],
+    "help1": "four / fish",
+    "help2": "There are four fish.",
     "keywords": [
       "four",
-      "fish",
-      "same",
-      "species",
-      "are",
-      "swimming"
-    ],
-    "variants": [
-      "Four fish of the same species are swimming in the tank."
-    ],
-    "help1": "Four fish / same species are swimming / tank",
-    "help2": "Four fish of the same species are swimming in the tank.",
-    "answer": "Four fish of the same species are swimming in the tank."
+      "fish"
+    ]
   },
   {
     "id": "q035",
-    "question": "Mười con cừu đang ăn cỏ trên cánh đồng.",
+    "question": "Mười con cừu đang ăn cỏ.",
+    "answer": "Ten sheep are eating grass.",
+    "variants": [
+      "Ten sheep are eating grass."
+    ],
+    "help1": "ten / sheep / eating",
+    "help2": "Ten sheep are eating grass.",
     "keywords": [
       "ten",
       "sheep",
-      "are",
-      "eating",
-      "grass",
-      "field"
-    ],
-    "variants": [
-      "Ten sheep are eating grass in the field."
-    ],
-    "help1": "Ten sheep are eating grass / field",
-    "help2": "Ten sheep are eating grass in the field.",
-    "answer": "Ten sheep are eating grass in the field."
+      "eating"
+    ]
   },
   {
     "id": "q036",
-    "question": "Có một cây bút trên chiếc ghế.",
-    "keywords": [
-      "is",
-      "one",
-      "pen",
-      "chair"
-    ],
+    "question": "Có một cây bút.",
+    "answer": "There is one pen.",
     "variants": [
-      "There is one pen on the chair.",
-      "there's one pen on the chair.",
-      "there is one pen on the chair."
+      "There is one pen.",
+      "There's one pen."
     ],
-    "help1": "is one pen / chair",
-    "help2": "There is one pen on the chair.",
-    "answer": "There is one pen on the chair."
+    "help1": "one / pen",
+    "help2": "There is one pen.",
+    "keywords": [
+      "one",
+      "pen"
+    ]
   },
   {
     "id": "q037",
-    "question": "Có hai cây bút trên chiếc ghế.",
-    "keywords": [
-      "are",
-      "two",
-      "pens",
-      "chair"
-    ],
+    "question": "Có hai cây bút.",
+    "answer": "There are two pens.",
     "variants": [
-      "There are two pens on the chair."
+      "There are two pens."
     ],
-    "help1": "are two pens / chair",
-    "help2": "There are two pens on the chair.",
-    "answer": "There are two pens on the chair."
+    "help1": "two / pens",
+    "help2": "There are two pens.",
+    "keywords": [
+      "two",
+      "pens"
+    ]
   },
   {
     "id": "q038",
-    "question": "Bảy quả cà chua nằm trong giỏ.",
+    "question": "Có bảy quả cà chua.",
+    "answer": "There are seven tomatoes.",
+    "variants": [
+      "There are seven tomatoes."
+    ],
+    "help1": "seven / tomatoes",
+    "help2": "There are seven tomatoes.",
     "keywords": [
       "seven",
-      "tomatoes",
-      "are",
-      "basket"
-    ],
-    "variants": [
-      "Seven tomatoes are in the basket."
-    ],
-    "help1": "Seven tomatoes are / basket",
-    "help2": "Seven tomatoes are in the basket.",
-    "answer": "Seven tomatoes are in the basket."
+      "tomatoes"
+    ]
   },
   {
     "id": "q039",
-    "question": "Tôi mua bảy quả cà chua ở chợ.",
-    "keywords": [
-      "bought",
-      "seven",
-      "tomatoes",
-      "market"
-    ],
+    "question": "Tôi mua bảy quả cà chua.",
+    "answer": "I buy seven tomatoes.",
     "variants": [
-      "I bought seven tomatoes at the market."
+      "I buy seven tomatoes."
     ],
-    "help1": "bought seven tomatoes / market",
-    "help2": "I bought seven tomatoes at the market.",
-    "answer": "I bought seven tomatoes at the market."
+    "help1": "buy / seven / tomatoes",
+    "help2": "I buy seven tomatoes.",
+    "keywords": [
+      "buy",
+      "seven",
+      "tomatoes"
+    ]
   },
   {
     "id": "q040",
-    "question": "Có bốn củ khoai tây trong túi.",
-    "keywords": [
-      "are",
-      "four",
-      "potatoes",
-      "bag"
-    ],
+    "question": "Có bốn củ khoai tây.",
+    "answer": "There are four potatoes.",
     "variants": [
-      "There are four potatoes in the bag."
+      "There are four potatoes."
     ],
-    "help1": "are four potatoes / bag",
-    "help2": "There are four potatoes in the bag.",
-    "answer": "There are four potatoes in the bag."
+    "help1": "four / potatoes",
+    "help2": "There are four potatoes.",
+    "keywords": [
+      "four",
+      "potatoes"
+    ]
   },
   {
     "id": "q041",
-    "question": "Mười củ khoai tây được đặt cạnh bếp.",
+    "question": "Có mười củ khoai tây.",
+    "answer": "There are ten potatoes.",
+    "variants": [
+      "There are ten potatoes."
+    ],
+    "help1": "ten / potatoes",
+    "help2": "There are ten potatoes.",
     "keywords": [
       "ten",
-      "potatoes",
-      "are",
-      "cooker"
-    ],
-    "variants": [
-      "Ten potatoes are beside the cooker."
-    ],
-    "help1": "Ten potatoes are / cooker",
-    "help2": "Ten potatoes are beside the cooker.",
-    "answer": "Ten potatoes are beside the cooker."
+      "potatoes"
+    ]
   },
   {
     "id": "q042",
-    "question": "Tám chiếc lá rơi xuống sân vào mùa thu.",
-    "keywords": [
-      "eight",
-      "leaves",
-      "fall",
-      "yard",
-      "autumn"
-    ],
+    "question": "Những chiếc lá đang rơi.",
+    "answer": "The leaves are falling.",
     "variants": [
-      "Eight leaves fall into the yard in autumn."
+      "The leaves are falling."
     ],
-    "help1": "Eight leaves fall / yard / autumn",
-    "help2": "Eight leaves fall into the yard in autumn.",
-    "answer": "Eight leaves fall into the yard in autumn."
+    "help1": "leaves / falling",
+    "help2": "The leaves are falling.",
+    "keywords": [
+      "leaves",
+      "falling"
+    ]
   },
   {
     "id": "q043",
-    "question": "Tám chiếc lá màu vàng nằm trên mặt đất.",
+    "question": "Có tám chiếc lá vàng.",
+    "answer": "There are eight yellow leaves.",
+    "variants": [
+      "There are eight yellow leaves."
+    ],
+    "help1": "eight / yellow / leaves",
+    "help2": "There are eight yellow leaves.",
     "keywords": [
       "eight",
       "yellow",
-      "leaves",
-      "are",
-      "ground"
-    ],
-    "variants": [
-      "Eight yellow leaves are on the ground."
-    ],
-    "help1": "Eight yellow leaves are / ground",
-    "help2": "Eight yellow leaves are on the ground.",
-    "answer": "Eight yellow leaves are on the ground."
+      "leaves"
+    ]
   },
   {
     "id": "q044",
-    "question": "Nhiều con ruồi bay quanh thùng rác.",
+    "question": "Có nhiều con ruồi.",
+    "answer": "There are many flies.",
+    "variants": [
+      "There are many flies."
+    ],
+    "help1": "many / flies",
+    "help2": "There are many flies.",
     "keywords": [
       "many",
-      "flies",
-      "are",
-      "flying",
-      "around",
-      "bin"
-    ],
-    "variants": [
-      "Many flies are flying around the bin."
-    ],
-    "help1": "Many flies are flying around / bin",
-    "help2": "Many flies are flying around the bin.",
-    "answer": "Many flies are flying around the bin."
+      "flies"
+    ]
   },
   {
     "id": "q045",
-    "question": "Một quả chuối và một quả cam nằm trên đĩa; banana thêm s ở số nhiều.",
-    "keywords": [
-      "banana",
-      "and",
-      "orange",
-      "are",
-      "plate",
-      "bananas"
-    ],
+    "question": "Tôi có một quả chuối.",
+    "answer": "I have a banana.",
     "variants": [
-      "A banana and an orange are on the plate; bananas take s in the plural."
+      "I have a banana."
     ],
-    "help1": "banana and / orange are / plate bananas take s / plural",
-    "help2": "A banana and an orange are on the plate; bananas take s in the plural.",
-    "answer": "A banana and an orange are on the plate; bananas take s in the plural."
+    "help1": "banana",
+    "help2": "I have a banana.",
+    "keywords": [
+      "banana"
+    ]
   },
   {
     "id": "q046",
-    "question": "Tôi có một quyển sách trên bàn học.",
-    "keywords": [
-      "have",
-      "one",
-      "book",
-      "desk"
-    ],
+    "question": "Tôi có một quyển sách.",
+    "answer": "I have one book.",
     "variants": [
-      "I have one book on my desk.",
-      "I've one book on my desk."
+      "I have one book."
     ],
-    "help1": "have one book / desk",
-    "help2": "I have one book on my desk.",
-    "answer": "I have one book on my desk."
+    "help1": "one / book",
+    "help2": "I have one book.",
+    "keywords": [
+      "one",
+      "book"
+    ]
   },
   {
     "id": "q047",
-    "question": "Tôi có ba quyển sách trên bàn học.",
-    "keywords": [
-      "have",
-      "three",
-      "books",
-      "desk"
-    ],
+    "question": "Tôi có ba quyển sách.",
+    "answer": "I have three books.",
     "variants": [
-      "I have three books on my desk.",
-      "I've three books on my desk."
+      "I have three books."
     ],
-    "help1": "have three books / desk",
-    "help2": "I have three books on my desk.",
-    "answer": "I have three books on my desk."
+    "help1": "three / books",
+    "help2": "I have three books.",
+    "keywords": [
+      "three",
+      "books"
+    ]
   },
   {
     "id": "q048",
-    "question": "Tôi có bốn chiếc đồng hồ trên tường.",
-    "keywords": [
-      "have",
-      "four",
-      "watches",
-      "wall"
-    ],
+    "question": "Tôi có bốn chiếc đồng hồ.",
+    "answer": "I have four watches.",
     "variants": [
-      "I have four watches on the wall.",
-      "I've four watches on the wall."
+      "I have four watches."
     ],
-    "help1": "have four watches / wall",
-    "help2": "I have four watches on the wall.",
-    "answer": "I have four watches on the wall."
+    "help1": "four / watches",
+    "help2": "I have four watches.",
+    "keywords": [
+      "four",
+      "watches"
+    ]
   },
   {
     "id": "q049",
-    "question": "Hãy đánh răng mỗi ngày để giữ răng sạch.",
-    "keywords": [
-      "brush",
-      "teeth",
-      "keep",
-      "clean",
-      "every",
-      "day"
-    ],
+    "question": "Những chiếc răng rất trắng.",
+    "answer": "The teeth are white.",
     "variants": [
-      "Brush your teeth every day to keep them clean."
+      "The teeth are white."
     ],
-    "help1": "Brush / teeth / keep / clean",
-    "help2": "Brush your teeth every day to keep them clean.",
-    "answer": "Brush your teeth every day to keep them clean."
+    "help1": "teeth / white",
+    "help2": "The teeth are white.",
+    "keywords": [
+      "teeth",
+      "white"
+    ]
   },
   {
     "id": "q050",
-    "question": "Tôi nhìn thấy năm con cừu trên trang trại.",
+    "question": "Tôi thấy năm con cừu.",
+    "answer": "I see five sheep.",
+    "variants": [
+      "I see five sheep."
+    ],
+    "help1": "see / five / sheep",
+    "help2": "I see five sheep.",
     "keywords": [
-      "can",
       "see",
       "five",
-      "sheep",
-      "farm"
-    ],
-    "variants": [
-      "I can see five sheep on the farm."
-    ],
-    "help1": "can see five sheep / farm",
-    "help2": "I can see five sheep on the farm.",
-    "answer": "I can see five sheep on the farm."
+      "sheep"
+    ]
   }
 ];
 
@@ -2753,6 +2658,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2839,9 +2745,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2849,9 +2761,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2859,7 +2776,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2893,7 +2810,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -2918,77 +2835,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -3004,16 +2926,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3035,19 +2951,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3058,6 +2978,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3074,6 +2995,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3130,6 +3052,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3147,7 +3070,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;

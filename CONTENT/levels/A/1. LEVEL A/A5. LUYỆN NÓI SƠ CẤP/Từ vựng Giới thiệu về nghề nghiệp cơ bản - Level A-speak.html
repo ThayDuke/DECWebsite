@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,881 +1924,737 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Người dạy học sinh trong lớp được gọi là giáo viên.",
-    "keywords": [
-      "teacher",
-      "teaches",
-      "students",
-      "class"
-    ],
+    "question": "Cô ấy là một giáo viên.",
+    "answer": "She is a teacher.",
     "variants": [
-      "A teacher teaches students in a class."
+      "She is a teacher.",
+      "She's a teacher."
     ],
-    "help1": "teacher teaches students / class",
-    "help2": "A teacher teaches students in a class.",
-    "answer": "A teacher teaches students in a class."
+    "help1": "teacher",
+    "help2": "She is a teacher.",
+    "keywords": [
+      "teacher"
+    ]
   },
   {
     "id": "q002",
-    "question": "Khi bị ốm, tôi đến bệnh viện gặp bác sĩ.",
-    "keywords": [
-      "when",
-      "am",
-      "sick",
-      "see",
-      "doctor",
-      "hospital"
-    ],
+    "question": "Bố tôi là một bác sĩ.",
+    "answer": "My dad is a doctor.",
     "variants": [
-      "When I am sick, I see a doctor at the hospital."
+      "My dad is a doctor.",
+      "My father is a doctor."
     ],
-    "help1": "When / am sick / see / doctor",
-    "help2": "When I am sick, I see a doctor at the hospital.",
-    "answer": "When I am sick, I see a doctor at the hospital."
+    "help1": "dad / doctor",
+    "help2": "My dad is a doctor.",
+    "keywords": [
+      "dad",
+      "doctor"
+    ]
   },
   {
     "id": "q003",
-    "question": "Mẹ tôi là ca sĩ và thường hát trên sân khấu.",
-    "keywords": [
-      "mother",
-      "is",
-      "singer",
-      "and",
-      "often",
-      "sings"
-    ],
+    "question": "Mẹ tôi là một ca sĩ.",
+    "answer": "My mom is a singer.",
     "variants": [
-      "My mother is a singer and often sings on stage.",
-      "My mom is a singer and often sings on stage."
+      "My mom is a singer.",
+      "My mother is a singer."
     ],
-    "help1": "mother is / singer and often sings / stage",
-    "help2": "My mother is a singer and often sings on stage.",
-    "answer": "My mother is a singer and often sings on stage."
+    "help1": "mom / singer",
+    "help2": "My mom is a singer.",
+    "keywords": [
+      "mom",
+      "singer"
+    ]
   },
   {
     "id": "q004",
-    "question": "Người điều khiển máy bay chở hành khách là phi công.",
-    "keywords": [
-      "pilot",
-      "flies",
-      "passenger",
-      "plane"
-    ],
+    "question": "Anh ấy là một phi công.",
+    "answer": "He is a pilot.",
     "variants": [
-      "A pilot flies a passenger plane."
+      "He is a pilot.",
+      "He's a pilot."
     ],
-    "help1": "pilot flies / passenger plane",
-    "help2": "A pilot flies a passenger plane.",
-    "answer": "A pilot flies a passenger plane."
+    "help1": "pilot",
+    "help2": "He is a pilot.",
+    "keywords": [
+      "pilot"
+    ]
   },
   {
     "id": "q005",
-    "question": "Y tá chăm sóc bệnh nhân trong bệnh viện.",
-    "keywords": [
-      "nurse",
-      "takes",
-      "care",
-      "patients",
-      "hospital"
-    ],
+    "question": "Chị ấy là một y tá.",
+    "answer": "She is a nurse.",
     "variants": [
-      "A nurse takes care of patients in a hospital."
+      "She is a nurse.",
+      "She's a nurse."
     ],
-    "help1": "nurse takes care / patients / hospital",
-    "help2": "A nurse takes care of patients in a hospital.",
-    "answer": "A nurse takes care of patients in a hospital."
+    "help1": "nurse",
+    "help2": "She is a nurse.",
+    "keywords": [
+      "nurse"
+    ]
   },
   {
     "id": "q006",
-    "question": "Tôi là học sinh đang học tiếng Anh ở trường.",
-    "keywords": [
-      "am",
-      "student",
-      "learning",
-      "english",
-      "school"
-    ],
+    "question": "Tôi là một học sinh.",
+    "answer": "I am a student.",
     "variants": [
-      "I am a student learning English at school."
+      "I am a student.",
+      "I'm a student."
     ],
-    "help1": "am / student learning English / school",
-    "help2": "I am a student learning English at school.",
-    "answer": "I am a student learning English at school."
+    "help1": "student",
+    "help2": "I am a student.",
+    "keywords": [
+      "student"
+    ]
   },
   {
     "id": "q007",
-    "question": "Một người làm việc ở văn phòng hoặc nhà máy là công nhân.",
-    "keywords": [
-      "worker",
-      "works",
-      "office",
-      "or",
-      "factory"
-    ],
+    "question": "Anh ấy là một công nhân.",
+    "answer": "He is a worker.",
     "variants": [
-      "A worker works in an office or a factory."
+      "He is a worker.",
+      "He's a worker."
     ],
-    "help1": "worker works / office or / factory",
-    "help2": "A worker works in an office or a factory.",
-    "answer": "A worker works in an office or a factory."
+    "help1": "worker",
+    "help2": "He is a worker.",
+    "keywords": [
+      "worker"
+    ]
   },
   {
     "id": "q008",
-    "question": "Người nấu món ăn chuyên nghiệp trong nhà hàng là đầu bếp.",
-    "keywords": [
-      "cook",
-      "prepares",
-      "food",
-      "restaurant"
-    ],
+    "question": "Ông ấy là một đầu bếp.",
+    "answer": "He is a chef.",
     "variants": [
-      "A cook prepares food in a restaurant."
+      "He is a chef.",
+      "He's a chef.",
+      "He is a cook.",
+      "He's a cook."
     ],
-    "help1": "cook prepares food / restaurant",
-    "help2": "A cook prepares food in a restaurant.",
-    "answer": "A cook prepares food in a restaurant."
+    "help1": "chef",
+    "help2": "He is a chef.",
+    "keywords": [
+      "chef"
+    ]
   },
   {
     "id": "q009",
-    "question": "Chú cảnh sát đang giúp mọi người trên đường phố.",
-    "keywords": [
-      "policeman",
-      "is",
-      "helping",
-      "people",
-      "street"
-    ],
+    "question": "Chú tôi là cảnh sát.",
+    "answer": "My uncle is a police officer.",
     "variants": [
-      "The policeman is helping people in the street."
+      "My uncle is a police officer.",
+      "My uncle is a policeman."
     ],
-    "help1": "policeman is helping people / street",
-    "help2": "The policeman is helping people in the street.",
-    "answer": "The policeman is helping people in the street."
+    "help1": "uncle / police / officer",
+    "help2": "My uncle is a police officer.",
+    "keywords": [
+      "uncle",
+      "police",
+      "officer"
+    ]
   },
   {
     "id": "q010",
-    "question": "Bác sĩ làm việc tại phòng khám gần nhà tôi.",
+    "question": "Bác sĩ làm việc ở bệnh viện.",
+    "answer": "The doctor works at a hospital.",
+    "variants": [
+      "The doctor works at a hospital."
+    ],
+    "help1": "doctor / works / hospital",
+    "help2": "The doctor works at a hospital.",
     "keywords": [
       "doctor",
       "works",
-      "clinic",
-      "house"
-    ],
-    "variants": [
-      "The doctor works at a clinic near my house."
-    ],
-    "help1": "doctor works / clinic / house",
-    "help2": "The doctor works at a clinic near my house.",
-    "answer": "The doctor works at a clinic near my house."
+      "hospital"
+    ]
   },
   {
     "id": "q011",
-    "question": "Cô ấy vẽ những bức tranh đẹp nên cô ấy là họa sĩ.",
-    "keywords": [
-      "paints",
-      "beautiful",
-      "pictures",
-      "so",
-      "is",
-      "artist"
-    ],
+    "question": "Cô ấy là một họa sĩ.",
+    "answer": "She is an artist.",
     "variants": [
-      "She paints beautiful pictures, so she is an artist.",
-      "She paints beautiful pictures, so she's an artist."
+      "She is an artist.",
+      "She's an artist."
     ],
-    "help1": "paints beautiful pictures so / is / artist",
-    "help2": "She paints beautiful pictures, so she is an artist.",
-    "answer": "She paints beautiful pictures, so she is an artist."
+    "help1": "artist",
+    "help2": "She is an artist.",
+    "keywords": [
+      "artist"
+    ]
   },
   {
     "id": "q012",
-    "question": "Người khám và chữa răng cho tôi là nha sĩ.",
-    "keywords": [
-      "dentist",
-      "examines",
-      "and",
-      "treats",
-      "teeth"
-    ],
+    "question": "Anh ấy là một nha sĩ.",
+    "answer": "He is a dentist.",
     "variants": [
-      "A dentist examines and treats my teeth."
+      "He is a dentist.",
+      "He's a dentist."
     ],
-    "help1": "dentist examines and treats / teeth",
-    "help2": "A dentist examines and treats my teeth.",
-    "answer": "A dentist examines and treats my teeth."
+    "help1": "dentist",
+    "help2": "He is a dentist.",
+    "keywords": [
+      "dentist"
+    ]
   },
   {
     "id": "q013",
-    "question": "Người lái xe buýt hoặc ô tô chở khách là tài xế.",
-    "keywords": [
-      "driver",
-      "drives",
-      "bus",
-      "or",
-      "car"
-    ],
+    "question": "Bố tôi là tài xế.",
+    "answer": "My dad is a driver.",
     "variants": [
-      "A driver drives a bus or a car.",
-      "A driver drives a bus or a automobile."
+      "My dad is a driver.",
+      "My father is a driver."
     ],
-    "help1": "driver drives / bus or / car",
-    "help2": "A driver drives a bus or a car.",
-    "answer": "A driver drives a bus or a car."
+    "help1": "dad / driver",
+    "help2": "My dad is a driver.",
+    "keywords": [
+      "dad",
+      "driver"
+    ]
   },
   {
     "id": "q014",
-    "question": "Lính cứu hỏa dập tắt đám cháy trong tòa nhà.",
-    "keywords": [
-      "firefighter",
-      "puts",
-      "fire",
-      "building"
-    ],
+    "question": "Anh ấy là lính cứu hỏa.",
+    "answer": "He is a firefighter.",
     "variants": [
-      "A firefighter puts out a fire in a building."
+      "He is a firefighter.",
+      "He's a firefighter."
     ],
-    "help1": "firefighter puts / fire / building",
-    "help2": "A firefighter puts out a fire in a building.",
-    "answer": "A firefighter puts out a fire in a building."
+    "help1": "firefighter",
+    "help2": "He is a firefighter.",
+    "keywords": [
+      "firefighter"
+    ]
   },
   {
     "id": "q015",
-    "question": "Người giúp những con vật bị bệnh là bác sĩ thú y.",
-    "keywords": [
-      "vet",
-      "helps",
-      "sick",
-      "animals"
-    ],
+    "question": "Cô ấy là bác sĩ thú y.",
+    "answer": "She is a vet.",
     "variants": [
-      "A vet helps sick animals."
+      "She is a vet.",
+      "She's a vet."
     ],
-    "help1": "vet helps sick animals",
-    "help2": "A vet helps sick animals.",
-    "answer": "A vet helps sick animals."
+    "help1": "vet",
+    "help2": "She is a vet.",
+    "keywords": [
+      "vet"
+    ]
   },
   {
     "id": "q016",
-    "question": "Anh ấy hát trong một ban nhạc nên anh ấy là ca sĩ.",
-    "keywords": [
-      "sings",
-      "band",
-      "so",
-      "is",
-      "singer"
-    ],
+    "question": "Anh trai tôi là ca sĩ.",
+    "answer": "My brother is a singer.",
     "variants": [
-      "He sings in a band, so he is a singer.",
-      "He sings in a band, so he's a singer."
+      "My brother is a singer."
     ],
-    "help1": "sings / band so / is / singer",
-    "help2": "He sings in a band, so he is a singer.",
-    "answer": "He sings in a band, so he is a singer."
+    "help1": "brother / singer",
+    "help2": "My brother is a singer.",
+    "keywords": [
+      "brother",
+      "singer"
+    ]
   },
   {
     "id": "q017",
-    "question": "Người đưa thư mang thư đến từng ngôi nhà.",
-    "keywords": [
-      "postman",
-      "delivers",
-      "letters",
-      "each",
-      "house"
-    ],
+    "question": "Ông ấy là người đưa thư.",
+    "answer": "He is a postman.",
     "variants": [
-      "The postman delivers letters to each house."
+      "He is a postman.",
+      "He's a postman."
     ],
-    "help1": "postman delivers letters / each house",
-    "help2": "The postman delivers letters to each house.",
-    "answer": "The postman delivers letters to each house."
+    "help1": "postman",
+    "help2": "He is a postman.",
+    "keywords": [
+      "postman"
+    ]
   },
   {
     "id": "q018",
-    "question": "Một quyển sách là đồ vật, không phải nghề nghiệp.",
-    "keywords": [
-      "book",
-      "is",
-      "object",
-      "not",
-      "profession"
-    ],
+    "question": "Tôi yêu nghề giáo viên.",
+    "answer": "I love teachers.",
     "variants": [
-      "A book is an object, not a profession."
+      "I love teachers."
     ],
-    "help1": "book is / object not / profession",
-    "help2": "A book is an object, not a profession.",
-    "answer": "A book is an object, not a profession."
+    "help1": "love / teachers",
+    "help2": "I love teachers.",
+    "keywords": [
+      "love",
+      "teachers"
+    ]
   },
   {
     "id": "q019",
-    "question": "Vũ công đang biểu diễn trên sân khấu.",
-    "keywords": [
-      "dancer",
-      "is",
-      "performing",
-      "stage"
-    ],
+    "question": "Cô ấy là một vũ công.",
+    "answer": "She is a dancer.",
     "variants": [
-      "The dancer is performing on the stage."
+      "She is a dancer.",
+      "She's a dancer."
     ],
-    "help1": "dancer is performing / stage",
-    "help2": "The dancer is performing on the stage.",
-    "answer": "The dancer is performing on the stage."
+    "help1": "dancer",
+    "help2": "She is a dancer.",
+    "keywords": [
+      "dancer"
+    ]
   },
   {
     "id": "q020",
-    "question": "Bố tôi làm việc ở trang trại nên ông ấy là nông dân.",
+    "question": "Bố tôi là nông dân.",
+    "answer": "My dad is a farmer.",
+    "variants": [
+      "My dad is a farmer.",
+      "My father is a farmer."
+    ],
+    "help1": "dad / farmer",
+    "help2": "My dad is a farmer.",
     "keywords": [
       "dad",
-      "works",
-      "farm",
-      "so",
-      "is",
       "farmer"
-    ],
-    "variants": [
-      "My dad works on a farm, so he is a farmer.",
-      "My dad works on a farm, so he's a farmer.",
-      "My father works on a farm, so he is a farmer.",
-      "My father works on a farm, so he's a farmer."
-    ],
-    "help1": "dad works / farm so / is / farmer",
-    "help2": "My dad works on a farm, so he is a farmer.",
-    "answer": "My dad works on a farm, so he is a farmer."
+    ]
   },
   {
     "id": "q021",
-    "question": "Người biểu diễn trên sân khấu hoặc trong phim là diễn viên.",
-    "keywords": [
-      "actor",
-      "performs",
-      "stage",
-      "or",
-      "films"
-    ],
+    "question": "Anh ấy là một diễn viên.",
+    "answer": "He is an actor.",
     "variants": [
-      "An actor performs on stage or in films."
+      "He is an actor.",
+      "He's an actor."
     ],
-    "help1": "actor performs / stage or / films",
-    "help2": "An actor performs on stage or in films.",
-    "answer": "An actor performs on stage or in films."
+    "help1": "actor",
+    "help2": "He is an actor.",
+    "keywords": [
+      "actor"
+    ]
   },
   {
     "id": "q022",
-    "question": "Học sinh đang làm bài tập trong lớp.",
+    "question": "Học sinh đang học bài.",
+    "answer": "The student is studying.",
+    "variants": [
+      "The student is studying."
+    ],
+    "help1": "student / studying",
+    "help2": "The student is studying.",
     "keywords": [
       "student",
-      "is",
-      "doing",
-      "homework",
-      "classroom"
-    ],
-    "variants": [
-      "The student is doing homework in the classroom."
-    ],
-    "help1": "student is doing homework / classroom",
-    "help2": "The student is doing homework in the classroom.",
-    "answer": "The student is doing homework in the classroom."
+      "studying"
+    ]
   },
   {
     "id": "q023",
-    "question": "Nha sĩ kiểm tra răng của em mỗi sáu tháng.",
+    "question": "Nha sĩ khám răng.",
+    "answer": "The dentist checks teeth.",
+    "variants": [
+      "The dentist checks teeth."
+    ],
+    "help1": "dentist / checks / teeth",
+    "help2": "The dentist checks teeth.",
     "keywords": [
       "dentist",
       "checks",
-      "teeth",
-      "every",
-      "six",
-      "months"
-    ],
-    "variants": [
-      "The dentist checks my teeth every six months."
-    ],
-    "help1": "dentist checks / teeth every six months",
-    "help2": "The dentist checks my teeth every six months.",
-    "answer": "The dentist checks my teeth every six months."
+      "teeth"
+    ]
   },
   {
     "id": "q024",
-    "question": "Chú cảnh sát giúp bắt kẻ trộm trong cửa hàng.",
-    "keywords": [
-      "policeman",
-      "helps",
-      "catch",
-      "thief",
-      "shop"
-    ],
+    "question": "Cảnh sát giúp đỡ mọi người.",
+    "answer": "The police help people.",
     "variants": [
-      "The policeman helps catch the thief in the shop."
+      "The police help people."
     ],
-    "help1": "policeman helps catch / thief / shop",
-    "help2": "The policeman helps catch the thief in the shop.",
-    "answer": "The policeman helps catch the thief in the shop."
+    "help1": "police / help / people",
+    "help2": "The police help people.",
+    "keywords": [
+      "police",
+      "help",
+      "people"
+    ]
   },
   {
     "id": "q025",
-    "question": "Cô ấy là một giáo viên tốt và luôn kiên nhẫn với học sinh.",
-    "keywords": [
-      "is",
-      "good",
-      "teacher",
-      "and",
-      "always",
-      "patient"
-    ],
+    "question": "Cô ấy là giáo viên tốt.",
+    "answer": "She is a good teacher.",
     "variants": [
-      "She is a good teacher and is always patient with her students.",
-      "she's a good teacher and is always patient with her students.",
-      "she is a good teacher and is always patient with her students."
+      "She is a good teacher.",
+      "She's a good teacher."
     ],
-    "help1": "is / good teacher and is always patient / students",
-    "help2": "She is a good teacher and is always patient with her students.",
-    "answer": "She is a good teacher and is always patient with her students."
+    "help1": "good / teacher",
+    "help2": "She is a good teacher.",
+    "keywords": [
+      "good",
+      "teacher"
+    ]
   },
   {
     "id": "q026",
-    "question": "Họa sĩ đang vẽ một bức tranh phong cảnh.",
+    "question": "Họa sĩ vẽ tranh.",
+    "answer": "The artist draws pictures.",
+    "variants": [
+      "The artist draws pictures.",
+      "The artist draws beautiful pictures.",
+      "The artist paints pictures."
+    ],
+    "help1": "artist / draws / pictures",
+    "help2": "The artist draws pictures.",
     "keywords": [
       "artist",
-      "is",
-      "painting",
-      "landscape",
-      "picture"
-    ],
-    "variants": [
-      "The artist is painting a landscape picture.",
-      "The artist is painting a landscape photo."
-    ],
-    "help1": "artist is painting / landscape picture",
-    "help2": "The artist is painting a landscape picture.",
-    "answer": "The artist is painting a landscape picture."
+      "draws",
+      "pictures"
+    ]
   },
   {
     "id": "q027",
-    "question": "Anh ấy đang lái một chiếc taxi màu vàng.",
-    "keywords": [
-      "is",
-      "driving",
-      "yellow",
-      "taxi"
-    ],
+    "question": "Anh ấy lái xe taxi.",
+    "answer": "He drives a taxi.",
     "variants": [
-      "He is driving a yellow taxi.",
-      "he's driving a yellow taxi.",
-      "he is driving a yellow taxi."
+      "He drives a taxi."
     ],
-    "help1": "is driving / yellow taxi",
-    "help2": "He is driving a yellow taxi.",
-    "answer": "He is driving a yellow taxi."
+    "help1": "drives / taxi",
+    "help2": "He drives a taxi.",
+    "keywords": [
+      "drives",
+      "taxi"
+    ]
   },
   {
     "id": "q028",
-    "question": "Họ là những công nhân đang làm việc trong nhà máy.",
-    "keywords": [
-      "are",
-      "workers",
-      "working",
-      "factory"
-    ],
+    "question": "Họ là những công nhân.",
+    "answer": "They are workers.",
     "variants": [
-      "They are workers working in the factory.",
-      "they're workers working in the factory.",
-      "they are workers working in the factory."
+      "They are workers.",
+      "They're workers."
     ],
-    "help1": "are workers working / factory",
-    "help2": "They are workers working in the factory.",
-    "answer": "They are workers working in the factory."
+    "help1": "workers",
+    "help2": "They are workers.",
+    "keywords": [
+      "workers"
+    ]
   },
   {
     "id": "q029",
-    "question": "Phi công đang kiểm tra máy bay trước chuyến bay.",
+    "question": "Phi công lái máy bay.",
+    "answer": "The pilot flies a plane.",
+    "variants": [
+      "The pilot flies a plane."
+    ],
+    "help1": "pilot / flies / plane",
+    "help2": "The pilot flies a plane.",
     "keywords": [
       "pilot",
-      "is",
-      "checking",
-      "plane",
-      "before",
-      "flight"
-    ],
-    "variants": [
-      "The pilot is checking the plane before the flight."
-    ],
-    "help1": "pilot is checking / plane before / flight",
-    "help2": "The pilot is checking the plane before the flight.",
-    "answer": "The pilot is checking the plane before the flight."
+      "flies",
+      "plane"
+    ]
   },
   {
     "id": "q030",
-    "question": "Tôi muốn trở thành bác sĩ để chữa bệnh cho người ốm.",
+    "question": "Tôi muốn làm bác sĩ.",
+    "answer": "I want to be a doctor.",
+    "variants": [
+      "I want to be a doctor."
+    ],
+    "help1": "want / doctor",
+    "help2": "I want to be a doctor.",
     "keywords": [
       "want",
-      "be",
-      "doctor",
-      "treat",
-      "sick",
-      "people"
-    ],
-    "variants": [
-      "I want to be a doctor to treat sick people."
-    ],
-    "help1": "want / be / doctor / treat sick people",
-    "help2": "I want to be a doctor to treat sick people.",
-    "answer": "I want to be a doctor to treat sick people."
+      "doctor"
+    ]
   },
   {
     "id": "q031",
-    "question": "Người đưa thư làm việc ở bưu điện và giao thư mỗi sáng.",
+    "question": "Người đưa thư giao thư.",
+    "answer": "The postman delivers letters.",
+    "variants": [
+      "The postman delivers letters."
+    ],
+    "help1": "postman / delivers / letters",
+    "help2": "The postman delivers letters.",
     "keywords": [
       "postman",
-      "works",
-      "post",
-      "office",
-      "and",
-      "delivers"
-    ],
-    "variants": [
-      "The postman works at the post office and delivers letters every morning.",
-      "Every morning the postman works at the post office and delivers letters.",
-      "Every morning, the postman works at the post office and delivers letters."
-    ],
-    "help1": "postman works / post office and delivers letters / every morning",
-    "help2": "The postman works at the post office and delivers letters every morning.",
-    "answer": "The postman works at the post office and delivers letters every morning."
+      "delivers",
+      "letters"
+    ]
   },
   {
     "id": "q032",
-    "question": "Một y tá làm việc trong bệnh viện cùng với bác sĩ.",
+    "question": "Y tá chăm sóc người bệnh.",
+    "answer": "The nurse cares for patients.",
+    "variants": [
+      "The nurse cares for patients."
+    ],
+    "help1": "nurse / cares / patients",
+    "help2": "The nurse cares for patients.",
     "keywords": [
       "nurse",
-      "works",
-      "hospital",
-      "doctor"
-    ],
-    "variants": [
-      "A nurse works in a hospital with a doctor."
-    ],
-    "help1": "nurse works / hospital / doctor",
-    "help2": "A nurse works in a hospital with a doctor.",
-    "answer": "A nurse works in a hospital with a doctor."
+      "cares",
+      "patients"
+    ]
   },
   {
     "id": "q033",
-    "question": "Người làm bánh chuẩn bị bánh mì và bánh ngọt trong tiệm.",
-    "keywords": [
-      "baker",
-      "prepares",
-      "bread",
-      "and",
-      "cakes",
-      "bakery"
-    ],
+    "question": "Ông ấy làm bánh mì.",
+    "answer": "He is a baker.",
     "variants": [
-      "A baker prepares bread and cakes in the bakery."
+      "He is a baker.",
+      "He's a baker.",
+      "He makes bread."
     ],
-    "help1": "baker prepares bread and cakes / bakery",
-    "help2": "A baker prepares bread and cakes in the bakery.",
-    "answer": "A baker prepares bread and cakes in the bakery."
+    "help1": "baker",
+    "help2": "He is a baker.",
+    "keywords": [
+      "baker"
+    ]
   },
   {
     "id": "q034",
-    "question": "Người dạy học sinh ở trường có nghề giáo viên.",
-    "keywords": [
-      "teacher",
-      "helps",
-      "students",
-      "learn",
-      "school"
-    ],
+    "question": "Giáo viên dạy học ở trường.",
+    "answer": "Teachers teach at school.",
     "variants": [
-      "A teacher helps students learn at school."
+      "Teachers teach at school."
     ],
-    "help1": "teacher helps students learn / school",
-    "help2": "A teacher helps students learn at school.",
-    "answer": "A teacher helps students learn at school."
+    "help1": "teachers / teach / school",
+    "help2": "Teachers teach at school.",
+    "keywords": [
+      "teachers",
+      "teach",
+      "school"
+    ]
   },
   {
     "id": "q035",
-    "question": "Giáo viên giúp chúng ta học các bài ở trường.",
+    "question": "Giáo viên giúp đỡ học sinh.",
+    "answer": "The teacher helps students.",
+    "variants": [
+      "The teacher helps students."
+    ],
+    "help1": "teacher / helps / students",
+    "help2": "The teacher helps students.",
     "keywords": [
       "teacher",
       "helps",
-      "learn",
-      "school"
-    ],
-    "variants": [
-      "A teacher helps us learn at school."
-    ],
-    "help1": "teacher helps / learn / school",
-    "help2": "A teacher helps us learn at school.",
-    "answer": "A teacher helps us learn at school."
+      "students"
+    ]
   },
   {
     "id": "q036",
-    "question": "Người làm việc ở trang trại và chăm sóc cây trồng là nông dân.",
-    "keywords": [
-      "farmer",
-      "works",
-      "farm",
-      "and",
-      "cares",
-      "crops"
-    ],
+    "question": "Nông dân làm việc trên đồng.",
+    "answer": "Farmers work on the farm.",
     "variants": [
-      "A farmer works on a farm and cares for crops."
+      "Farmers work on the farm."
     ],
-    "help1": "farmer works / farm and cares / crops",
-    "help2": "A farmer works on a farm and cares for crops.",
-    "answer": "A farmer works on a farm and cares for crops."
+    "help1": "farmers / work / farm",
+    "help2": "Farmers work on the farm.",
+    "keywords": [
+      "farmers",
+      "work",
+      "farm"
+    ]
   },
   {
     "id": "q037",
-    "question": "Trong phòng khám thú y, bác sĩ thú y chữa bệnh cho động vật.",
-    "keywords": [
-      "veterinary",
-      "clinic",
-      "vet",
-      "treats",
-      "animals"
-    ],
+    "question": "Bác sĩ thú y yêu động vật.",
+    "answer": "The vet loves animals.",
     "variants": [
-      "In a veterinary clinic, a vet treats animals."
+      "The vet loves animals."
     ],
-    "help1": "veterinary clinic / vet treats animals",
-    "help2": "In a veterinary clinic, a vet treats animals.",
-    "answer": "In a veterinary clinic, a vet treats animals."
+    "help1": "vet / loves / animals",
+    "help2": "The vet loves animals.",
+    "keywords": [
+      "vet",
+      "loves",
+      "animals"
+    ]
   },
   {
     "id": "q038",
-    "question": "Anh ấy là một công nhân khỏe mạnh làm việc trong nhà máy.",
-    "keywords": [
-      "is",
-      "strong",
-      "worker",
-      "who",
-      "works",
-      "factory"
-    ],
+    "question": "Anh ấy là công nhân giỏi.",
+    "answer": "He is a good worker.",
     "variants": [
-      "He is a strong worker who works in a factory.",
-      "he's a strong worker who works in a factory.",
-      "he is a strong worker who works in a factory."
+      "He is a good worker.",
+      "He's a good worker."
     ],
-    "help1": "is / strong worker who works / factory",
-    "help2": "He is a strong worker who works in a factory.",
-    "answer": "He is a strong worker who works in a factory."
+    "help1": "good / worker",
+    "help2": "He is a good worker.",
+    "keywords": [
+      "good",
+      "worker"
+    ]
   },
   {
     "id": "q039",
-    "question": "Mẹ tôi là một y tá đang chăm sóc bệnh nhân.",
-    "keywords": [
-      "mother",
-      "is",
-      "nurse",
-      "caring",
-      "patients"
-    ],
+    "question": "Mẹ tôi là một y tá.",
+    "answer": "My mom is a nurse.",
     "variants": [
-      "My mother is a nurse caring for patients.",
-      "My mom is a nurse caring for patients."
+      "My mom is a nurse.",
+      "My mother is a nurse."
     ],
-    "help1": "mother is / nurse caring / patients",
-    "help2": "My mother is a nurse caring for patients.",
-    "answer": "My mother is a nurse caring for patients."
+    "help1": "mom / nurse",
+    "help2": "My mom is a nurse.",
+    "keywords": [
+      "mom",
+      "nurse"
+    ]
   },
   {
     "id": "q040",
-    "question": "Người lái máy bay là phi công, còn người lái ô tô là tài xế.",
-    "keywords": [
-      "person",
-      "who",
-      "flies",
-      "plane",
-      "is",
-      "pilot"
-    ],
+    "question": "Phi công mặc đồng phục.",
+    "answer": "The pilot wears a uniform.",
     "variants": [
-      "A person who flies a plane is a pilot, and a person who drives a car is a driver.",
-      "A person who flies a plane is a pilot, and a person who drives a automobile is a driver."
+      "The pilot wears a uniform."
     ],
-    "help1": "person who flies / plane is / pilot and / person who drives",
-    "help2": "A person who flies a plane is a pilot, and a person who drives a car is a driver.",
-    "answer": "A person who flies a plane is a pilot, and a person who drives a car is a driver."
+    "help1": "pilot / wears / uniform",
+    "help2": "The pilot wears a uniform.",
+    "keywords": [
+      "pilot",
+      "wears",
+      "uniform"
+    ]
   },
   {
     "id": "q041",
-    "question": "Nữ cảnh sát đang hướng dẫn giao thông trước trường học.",
+    "question": "Nữ cảnh sát rất thân thiện.",
+    "answer": "The policewoman is friendly.",
+    "variants": [
+      "The policewoman is friendly."
+    ],
+    "help1": "policewoman / friendly",
+    "help2": "The policewoman is friendly.",
     "keywords": [
       "policewoman",
-      "is",
-      "directing",
-      "traffic",
-      "outside",
-      "school"
-    ],
-    "variants": [
-      "The policewoman is directing traffic outside the school."
-    ],
-    "help1": "policewoman is directing traffic outside / school",
-    "help2": "The policewoman is directing traffic outside the school.",
-    "answer": "The policewoman is directing traffic outside the school."
+      "friendly"
+    ]
   },
   {
     "id": "q042",
-    "question": "Cô ấy có giọng hát đẹp nên cô ấy là một ca sĩ.",
-    "keywords": [
-      "has",
-      "beautiful",
-      "voice",
-      "so",
-      "is",
-      "singer"
-    ],
+    "question": "Ca sĩ hát rất hay.",
+    "answer": "The singer sings well.",
     "variants": [
-      "She has a beautiful voice, so she is a singer.",
-      "She has a beautiful voice, so she's a singer."
+      "The singer sings well."
     ],
-    "help1": "has / beautiful voice so / is / singer",
-    "help2": "She has a beautiful voice, so she is a singer.",
-    "answer": "She has a beautiful voice, so she is a singer."
-  },
-  {
-    "id": "q043",
-    "question": "Đầu bếp chuyên nghiệp chuẩn bị món ăn trong nhà hàng lớn.",
-    "keywords": [
-      "chef",
-      "prepares",
-      "food",
-      "large",
-      "restaurant"
-    ],
-    "variants": [
-      "The chef prepares food in a large restaurant."
-    ],
-    "help1": "chef prepares food / large restaurant",
-    "help2": "The chef prepares food in a large restaurant.",
-    "answer": "The chef prepares food in a large restaurant."
-  },
-  {
-    "id": "q044",
-    "question": "Bác sĩ làm việc trong bệnh viện để chữa bệnh cho mọi người.",
-    "keywords": [
-      "doctor",
-      "works",
-      "hospital",
-      "treat",
-      "people"
-    ],
-    "variants": [
-      "A doctor works in a hospital to treat people."
-    ],
-    "help1": "doctor works / hospital / treat people",
-    "help2": "A doctor works in a hospital to treat people.",
-    "answer": "A doctor works in a hospital to treat people."
-  },
-  {
-    "id": "q045",
-    "question": "Giáo viên dạy các môn học ở trường tiểu học.",
-    "keywords": [
-      "teacher",
-      "teaches",
-      "subjects",
-      "primary",
-      "school"
-    ],
-    "variants": [
-      "A teacher teaches subjects at a primary school."
-    ],
-    "help1": "teacher teaches subjects / primary school",
-    "help2": "A teacher teaches subjects at a primary school.",
-    "answer": "A teacher teaches subjects at a primary school."
-  },
-  {
-    "id": "q046",
-    "question": "Bác sĩ khám và chữa bệnh cho người ốm.",
-    "keywords": [
-      "doctor",
-      "examines",
-      "and",
-      "treats",
-      "sick",
-      "people"
-    ],
-    "variants": [
-      "A doctor examines and treats sick people."
-    ],
-    "help1": "doctor examines and treats sick people",
-    "help2": "A doctor examines and treats sick people.",
-    "answer": "A doctor examines and treats sick people."
-  },
-  {
-    "id": "q047",
-    "question": "Phi công lái máy bay qua bầu trời.",
-    "keywords": [
-      "pilot",
-      "flies",
-      "plane",
-      "sky"
-    ],
-    "variants": [
-      "A pilot flies a plane through the sky."
-    ],
-    "help1": "pilot flies / plane / sky",
-    "help2": "A pilot flies a plane through the sky.",
-    "answer": "A pilot flies a plane through the sky."
-  },
-  {
-    "id": "q048",
-    "question": "Đầu bếp nấu ăn trong nhà hàng vào mỗi buổi tối.",
-    "keywords": [
-      "cook",
-      "prepares",
-      "food",
-      "restaurant",
-      "every",
-      "evening"
-    ],
-    "variants": [
-      "A cook prepares food in the restaurant every evening.",
-      "Every evening a cook prepares food in the restaurant.",
-      "Every evening, a cook prepares food in the restaurant."
-    ],
-    "help1": "cook prepares food / restaurant / every evening",
-    "help2": "A cook prepares food in the restaurant every evening.",
-    "answer": "A cook prepares food in the restaurant every evening."
-  },
-  {
-    "id": "q049",
-    "question": "Ca sĩ hát cho khán giả nghe trên sân khấu.",
+    "help1": "singer / sings / well",
+    "help2": "The singer sings well.",
     "keywords": [
       "singer",
       "sings",
-      "audience",
-      "stage"
-    ],
+      "well"
+    ]
+  },
+  {
+    "id": "q043",
+    "question": "Đầu bếp nấu món ăn ngon.",
+    "answer": "The cook makes good food.",
     "variants": [
-      "A singer sings for the audience on the stage."
+      "The cook makes good food.",
+      "The chef makes good food."
     ],
-    "help1": "singer sings / audience / stage",
-    "help2": "A singer sings for the audience on the stage.",
-    "answer": "A singer sings for the audience on the stage."
+    "help1": "cook / makes / good",
+    "help2": "The cook makes good food.",
+    "keywords": [
+      "cook",
+      "makes",
+      "good"
+    ]
+  },
+  {
+    "id": "q044",
+    "question": "Bác sĩ chữa bệnh cho tôi.",
+    "answer": "The doctor treats me.",
+    "variants": [
+      "The doctor treats me."
+    ],
+    "help1": "doctor / treats",
+    "help2": "The doctor treats me.",
+    "keywords": [
+      "doctor",
+      "treats"
+    ]
+  },
+  {
+    "id": "q045",
+    "question": "Cô giáo dạy tiếng Anh.",
+    "answer": "The teacher teaches English.",
+    "variants": [
+      "The teacher teaches English."
+    ],
+    "help1": "teacher / teaches / english",
+    "help2": "The teacher teaches English.",
+    "keywords": [
+      "teacher",
+      "teaches",
+      "english"
+    ]
+  },
+  {
+    "id": "q046",
+    "question": "Bác sĩ rất bận rộn.",
+    "answer": "The doctor is busy.",
+    "variants": [
+      "The doctor is busy."
+    ],
+    "help1": "doctor / busy",
+    "help2": "The doctor is busy.",
+    "keywords": [
+      "doctor",
+      "busy"
+    ]
+  },
+  {
+    "id": "q047",
+    "question": "Phi công bay trên bầu trời.",
+    "answer": "The pilot flies in the sky.",
+    "variants": [
+      "The pilot flies in the sky."
+    ],
+    "help1": "pilot / flies / sky",
+    "help2": "The pilot flies in the sky.",
+    "keywords": [
+      "pilot",
+      "flies",
+      "sky"
+    ]
+  },
+  {
+    "id": "q048",
+    "question": "Đầu bếp đang nấu ăn.",
+    "answer": "The chef is cooking.",
+    "variants": [
+      "The chef is cooking.",
+      "The cook is cooking."
+    ],
+    "help1": "chef / cooking",
+    "help2": "The chef is cooking.",
+    "keywords": [
+      "chef",
+      "cooking"
+    ]
+  },
+  {
+    "id": "q049",
+    "question": "Ca sĩ đang hát trên sân khấu.",
+    "answer": "The singer is singing.",
+    "variants": [
+      "The singer is singing.",
+      "The singer is singing on stage."
+    ],
+    "help1": "singer / singing",
+    "help2": "The singer is singing.",
+    "keywords": [
+      "singer",
+      "singing"
+    ]
   },
   {
     "id": "q050",
-    "question": "Y tá giúp bác sĩ chăm sóc người bệnh trong bệnh viện.",
+    "question": "Y tá làm việc ở bệnh viện.",
+    "answer": "The nurse works at a hospital.",
+    "variants": [
+      "The nurse works at a hospital."
+    ],
+    "help1": "nurse / works / hospital",
+    "help2": "The nurse works at a hospital.",
     "keywords": [
       "nurse",
-      "helps",
-      "doctor",
-      "care",
-      "patients",
+      "works",
       "hospital"
-    ],
-    "variants": [
-      "A nurse helps the doctor care for patients in the hospital."
-    ],
-    "help1": "nurse helps / doctor care / patients / hospital",
-    "help2": "A nurse helps the doctor care for patients in the hospital.",
-    "answer": "A nurse helps the doctor care for patients in the hospital."
+    ]
   }
 ];
 
@@ -2789,6 +2667,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2875,9 +2754,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2885,9 +2770,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2895,7 +2785,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2929,7 +2819,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -2954,77 +2844,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -3040,16 +2935,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3071,19 +2960,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3094,6 +2987,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3110,6 +3004,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3166,6 +3061,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3183,7 +3079,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;

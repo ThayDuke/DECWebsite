@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,894 +1924,755 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Bố tôi làm việc ở bệnh viện và luôn giúp đỡ gia đình.",
-    "keywords": [
-      "father",
-      "works",
-      "hospital",
-      "and",
-      "always",
-      "helps"
-    ],
+    "question": "Bố tôi làm việc ở bệnh viện.",
+    "answer": "My dad works at a hospital.",
     "variants": [
-      "My father works at a hospital and always helps the family.",
-      "My dad works at a hospital and always helps the family."
+      "My dad works at a hospital.",
+      "My father works at a hospital."
     ],
-    "help1": "father works / hospital and always helps / family",
-    "help2": "My father works at a hospital and always helps the family.",
-    "answer": "My father works at a hospital and always helps the family."
+    "help1": "dad / works / hospital",
+    "help2": "My dad works at a hospital.",
+    "keywords": [
+      "dad",
+      "works",
+      "hospital"
+    ]
   },
   {
     "id": "q002",
-    "question": "Mẹ tôi nấu bữa tối cho cả gia đình mỗi ngày.",
-    "keywords": [
-      "mother",
-      "cooks",
-      "dinner",
-      "whole",
-      "family",
-      "every"
-    ],
+    "question": "Mẹ tôi đang nấu bữa tối.",
+    "answer": "My mom is cooking dinner.",
     "variants": [
-      "My mother cooks dinner for the whole family every day.",
-      "Every day my mother cooks dinner for the whole family.",
-      "Every day, my mother cooks dinner for the whole family.",
-      "My mom cooks dinner for the whole family every day.",
-      "Every day my mom cooks dinner for the whole family."
+      "My mom is cooking dinner.",
+      "My mother is cooking dinner."
     ],
-    "help1": "mother cooks dinner / whole family / every day",
-    "help2": "My mother cooks dinner for the whole family every day.",
-    "answer": "My mother cooks dinner for the whole family every day."
+    "help1": "mom / cooking / dinner",
+    "help2": "My mom is cooking dinner.",
+    "keywords": [
+      "mom",
+      "cooking",
+      "dinner"
+    ]
   },
   {
     "id": "q003",
-    "question": "Anh trai tôi chơi bóng đá với tôi sau giờ học.",
+    "question": "Anh trai tôi chơi bóng đá.",
+    "answer": "My brother plays football.",
+    "variants": [
+      "My brother plays football.",
+      "My brother plays soccer."
+    ],
+    "help1": "brother / plays / football",
+    "help2": "My brother plays football.",
     "keywords": [
       "brother",
       "plays",
-      "football",
-      "after",
-      "school"
-    ],
-    "variants": [
-      "My brother plays football with me after school.",
-      "My brother plays soccer with me after school."
-    ],
-    "help1": "brother plays football / after school",
-    "help2": "My brother plays football with me after school.",
-    "answer": "My brother plays football with me after school."
+      "football"
+    ]
   },
   {
     "id": "q004",
-    "question": "Ông của bố tôi kể cho tôi nghe những câu chuyện cũ.",
-    "keywords": [
-      "grandfather",
-      "tells",
-      "old",
-      "stories"
-    ],
+    "question": "Ông tôi kể chuyện xưa.",
+    "answer": "My grandpa tells stories.",
     "variants": [
-      "My grandfather tells me old stories."
+      "My grandpa tells stories.",
+      "My grandfather tells stories."
     ],
-    "help1": "grandfather tells / old stories",
-    "help2": "My grandfather tells me old stories.",
-    "answer": "My grandfather tells me old stories."
+    "help1": "grandpa / tells / stories",
+    "help2": "My grandpa tells stories.",
+    "keywords": [
+      "grandpa",
+      "tells",
+      "stories"
+    ]
   },
   {
     "id": "q005",
-    "question": "Bà tôi thường làm bánh cho các cháu vào cuối tuần.",
-    "keywords": [
-      "grandmother",
-      "often",
-      "bakes",
-      "cakes",
-      "grandchildren",
-      "weekends"
-    ],
+    "question": "Bà tôi làm bánh.",
+    "answer": "My grandma makes cakes.",
     "variants": [
-      "My grandmother often bakes cakes for her grandchildren at weekends."
+      "My grandma makes cakes.",
+      "My grandmother makes cakes."
     ],
-    "help1": "grandmother often bakes cakes / grandchildren / weekends",
-    "help2": "My grandmother often bakes cakes for her grandchildren at weekends.",
-    "answer": "My grandmother often bakes cakes for her grandchildren at weekends."
+    "help1": "grandma / makes / cakes",
+    "help2": "My grandma makes cakes.",
+    "keywords": [
+      "grandma",
+      "makes",
+      "cakes"
+    ]
   },
   {
     "id": "q006",
-    "question": "Em trai của bố tôi là chú của tôi.",
-    "keywords": [
-      "father's",
-      "younger",
-      "brother",
-      "is",
-      "uncle"
-    ],
+    "question": "Chú tôi là giáo viên.",
+    "answer": "My uncle is a teacher.",
     "variants": [
-      "My father's younger brother is my uncle.",
-      "My dad's younger brother is my uncle."
+      "My uncle is a teacher."
     ],
-    "help1": "father's younger brother is / uncle",
-    "help2": "My father's younger brother is my uncle.",
-    "answer": "My father's younger brother is my uncle."
+    "help1": "uncle / teacher",
+    "help2": "My uncle is a teacher.",
+    "keywords": [
+      "uncle",
+      "teacher"
+    ]
   },
   {
     "id": "q007",
-    "question": "Chị gái của mẹ tôi là dì của tôi.",
-    "keywords": [
-      "mother's",
-      "older",
-      "sister",
-      "is",
-      "aunt"
-    ],
+    "question": "Dì tôi rất tốt bụng.",
+    "answer": "My aunt is kind.",
     "variants": [
-      "My mother's older sister is my aunt.",
-      "My mom's older sister is my aunt."
+      "My aunt is kind.",
+      "My aunt is very kind."
     ],
-    "help1": "mother's older sister is / aunt",
-    "help2": "My mother's older sister is my aunt.",
-    "answer": "My mother's older sister is my aunt."
+    "help1": "aunt / kind",
+    "help2": "My aunt is kind.",
+    "keywords": [
+      "aunt",
+      "kind"
+    ]
   },
   {
     "id": "q008",
-    "question": "Tôi chơi với các anh chị em họ trong kỳ nghỉ hè.",
+    "question": "Tôi chơi với anh em họ.",
+    "answer": "I play with my cousins.",
+    "variants": [
+      "I play with my cousins."
+    ],
+    "help1": "play / cousins",
+    "help2": "I play with my cousins.",
     "keywords": [
       "play",
-      "cousins",
-      "summer",
-      "holiday"
-    ],
-    "variants": [
-      "I play with my cousins during the summer holiday."
-    ],
-    "help1": "play / cousins / summer holiday",
-    "help2": "I play with my cousins during the summer holiday.",
-    "answer": "I play with my cousins during the summer holiday."
+      "cousins"
+    ]
   },
   {
     "id": "q009",
-    "question": "Cả bố mẹ, con cái và ông bà của tôi sống trong một gia đình hạnh phúc.",
-    "keywords": [
-      "parents",
-      "children",
-      "and",
-      "grandparents",
-      "live",
-      "happy"
-    ],
+    "question": "Gia đình tôi rất hạnh phúc.",
+    "answer": "My family is happy.",
     "variants": [
-      "My parents, children, and grandparents live in a happy family."
+      "My family is happy.",
+      "My family is very happy."
     ],
-    "help1": "parents children and grandparents live / happy family",
-    "help2": "My parents, children, and grandparents live in a happy family.",
-    "answer": "My parents, children, and grandparents live in a happy family."
+    "help1": "family / happy",
+    "help2": "My family is happy.",
+    "keywords": [
+      "family",
+      "happy"
+    ]
   },
   {
     "id": "q010",
-    "question": "Em bé đang ngủ trong vòng tay của mẹ.",
+    "question": "Em bé đang ngủ.",
+    "answer": "The baby is sleeping.",
+    "variants": [
+      "The baby is sleeping."
+    ],
+    "help1": "baby / sleeping",
+    "help2": "The baby is sleeping.",
     "keywords": [
       "baby",
-      "is",
-      "sleeping",
-      "mother's",
-      "arms"
-    ],
-    "variants": [
-      "The baby is sleeping in his mother's arms.",
-      "The baby is sleeping in his mom's arms."
-    ],
-    "help1": "baby is sleeping / mother's arms",
-    "help2": "The baby is sleeping in his mother's arms.",
-    "answer": "The baby is sleeping in his mother's arms."
+      "sleeping"
+    ]
   },
   {
     "id": "q011",
-    "question": "Bố và mẹ tôi là bố mẹ của tôi.",
-    "keywords": [
-      "father",
-      "and",
-      "mother",
-      "are",
-      "parents"
-    ],
+    "question": "Bố mẹ yêu thương tôi.",
+    "answer": "My parents love me.",
     "variants": [
-      "My father and mother are my parents.",
-      "My father and mom are my parents.",
-      "My dad and mother are my parents.",
-      "My dad and mom are my parents."
+      "My parents love me."
     ],
-    "help1": "father and mother are / parents",
-    "help2": "My father and mother are my parents.",
-    "answer": "My father and mother are my parents."
+    "help1": "parents / love",
+    "help2": "My parents love me.",
+    "keywords": [
+      "parents",
+      "love"
+    ]
   },
   {
     "id": "q012",
-    "question": "Ông tôi đang ngồi trong vườn và đọc báo.",
-    "keywords": [
-      "grandfather",
-      "is",
-      "sitting",
-      "garden",
-      "and",
-      "reading"
-    ],
+    "question": "Ông tôi đang đọc báo.",
+    "answer": "My grandpa is reading news.",
     "variants": [
-      "My grandfather is sitting in the garden and reading a newspaper."
+      "My grandpa is reading news.",
+      "My grandfather is reading a newspaper."
     ],
-    "help1": "grandfather is sitting / garden and reading / newspaper",
-    "help2": "My grandfather is sitting in the garden and reading a newspaper.",
-    "answer": "My grandfather is sitting in the garden and reading a newspaper."
+    "help1": "grandpa / reading / news",
+    "help2": "My grandpa is reading news.",
+    "keywords": [
+      "grandpa",
+      "reading",
+      "news"
+    ]
   },
   {
     "id": "q013",
-    "question": "Người phụ nữ đang bế em bé là mẹ của em bé.",
-    "keywords": [
-      "woman",
-      "holding",
-      "baby",
-      "is",
-      "baby's",
-      "mother"
-    ],
+    "question": "Mẹ đang bế em bé.",
+    "answer": "Mom is holding the baby.",
     "variants": [
-      "The woman holding the baby is the baby's mother.",
-      "The woman holding the baby is the baby's mom."
+      "Mom is holding the baby.",
+      "My mom is holding the baby.",
+      "mother is holding the baby.",
+      "My mother is holding the baby.",
+      "mom is holding the baby."
     ],
-    "help1": "woman holding / baby is / baby's mother",
-    "help2": "The woman holding the baby is the baby's mother.",
-    "answer": "The woman holding the baby is the baby's mother."
+    "help1": "mom / holding / baby",
+    "help2": "Mom is holding the baby.",
+    "keywords": [
+      "mom",
+      "holding",
+      "baby"
+    ]
   },
   {
     "id": "q014",
-    "question": "Bố mẹ gọi con trai của họ là con trai.",
-    "keywords": [
-      "parents",
-      "call",
-      "male",
-      "child",
-      "son"
-    ],
+    "question": "Họ có một người con trai.",
+    "answer": "They have a son.",
     "variants": [
-      "Parents call their male child their son."
+      "They have a son."
     ],
-    "help1": "Parents call / male child / son",
-    "help2": "Parents call their male child their son.",
-    "answer": "Parents call their male child their son."
+    "help1": "son",
+    "help2": "They have a son.",
+    "keywords": [
+      "son"
+    ]
   },
   {
     "id": "q015",
-    "question": "Bố mẹ gọi con gái của họ là con gái.",
-    "keywords": [
-      "parents",
-      "call",
-      "female",
-      "child",
-      "daughter"
-    ],
+    "question": "Họ có một người con gái.",
+    "answer": "They have a daughter.",
     "variants": [
-      "Parents call their female child their daughter."
+      "They have a daughter."
     ],
-    "help1": "Parents call / female child / daughter",
-    "help2": "Parents call their female child their daughter.",
-    "answer": "Parents call their female child their daughter."
+    "help1": "daughter",
+    "help2": "They have a daughter.",
+    "keywords": [
+      "daughter"
+    ]
   },
   {
     "id": "q016",
-    "question": "Anh trai tôi lớn tuổi hơn tôi và giúp tôi làm bài tập.",
-    "keywords": [
-      "older",
-      "brother",
-      "helps",
-      "homework"
-    ],
+    "question": "Anh trai giúp tôi học bài.",
+    "answer": "My brother helps me.",
     "variants": [
-      "My older brother helps me with my homework."
+      "My brother helps me.",
+      "My brother helps me study."
     ],
-    "help1": "older brother helps / homework",
-    "help2": "My older brother helps me with my homework.",
-    "answer": "My older brother helps me with my homework."
+    "help1": "brother / helps",
+    "help2": "My brother helps me.",
+    "keywords": [
+      "brother",
+      "helps"
+    ]
   },
   {
     "id": "q017",
-    "question": "Em gái tôi nhỏ tuổi hơn tôi và thích vẽ tranh.",
-    "keywords": [
-      "younger",
-      "sister",
-      "is",
-      "than",
-      "and",
-      "likes"
-    ],
+    "question": "Em gái tôi thích vẽ tranh.",
+    "answer": "My sister likes drawing.",
     "variants": [
-      "My younger sister is younger than me and likes drawing pictures."
+      "My sister likes drawing."
     ],
-    "help1": "younger sister is younger than / and likes drawing pictures",
-    "help2": "My younger sister is younger than me and likes drawing pictures.",
-    "answer": "My younger sister is younger than me and likes drawing pictures."
+    "help1": "sister / likes / drawing",
+    "help2": "My sister likes drawing.",
+    "keywords": [
+      "sister",
+      "likes",
+      "drawing"
+    ]
   },
   {
     "id": "q018",
-    "question": "Anh trai lớn của tôi đang học đại học.",
-    "keywords": [
-      "big",
-      "brother",
-      "is",
-      "studying",
-      "university"
-    ],
+    "question": "Anh trai tôi là sinh viên.",
+    "answer": "My brother is a student.",
     "variants": [
-      "My big brother is studying at university."
+      "My brother is a student."
     ],
-    "help1": "big brother is studying / university",
-    "help2": "My big brother is studying at university.",
-    "answer": "My big brother is studying at university."
+    "help1": "brother / student",
+    "help2": "My brother is a student.",
+    "keywords": [
+      "brother",
+      "student"
+    ]
   },
   {
     "id": "q019",
-    "question": "Em gái nhỏ của tôi đang chơi với búp bê.",
-    "keywords": [
-      "little",
-      "sister",
-      "is",
-      "playing",
-      "doll"
-    ],
+    "question": "Em gái tôi chơi búp bê.",
+    "answer": "My sister plays with dolls.",
     "variants": [
-      "My little sister is playing with a doll."
+      "My sister plays with dolls."
     ],
-    "help1": "little sister is playing / doll",
-    "help2": "My little sister is playing with a doll.",
-    "answer": "My little sister is playing with a doll."
+    "help1": "sister / plays / dolls",
+    "help2": "My sister plays with dolls.",
+    "keywords": [
+      "sister",
+      "plays",
+      "dolls"
+    ]
   },
   {
     "id": "q020",
-    "question": "Đúng, người phụ nữ này là cô của tôi.",
-    "keywords": [
-      "yes",
-      "woman",
-      "is",
-      "aunt"
-    ],
+    "question": "Bà ấy là dì của tôi.",
+    "answer": "She is my aunt.",
     "variants": [
-      "Yes, this woman is my aunt."
+      "She is my aunt.",
+      "She's my aunt."
     ],
-    "help1": "Yes / woman is / aunt",
-    "help2": "Yes, this woman is my aunt.",
-    "answer": "Yes, this woman is my aunt."
+    "help1": "aunt",
+    "help2": "She is my aunt.",
+    "keywords": [
+      "aunt"
+    ]
   },
   {
     "id": "q021",
-    "question": "Đúng, người đàn ông này là chú của tôi.",
-    "keywords": [
-      "yes",
-      "man",
-      "is",
-      "uncle"
-    ],
+    "question": "Ông ấy là chú của tôi.",
+    "answer": "He is my uncle.",
     "variants": [
-      "Yes, this man is my uncle."
+      "He is my uncle.",
+      "He's my uncle."
     ],
-    "help1": "Yes / man is / uncle",
-    "help2": "Yes, this man is my uncle.",
-    "answer": "Yes, this man is my uncle."
+    "help1": "uncle",
+    "help2": "He is my uncle.",
+    "keywords": [
+      "uncle"
+    ]
   },
   {
     "id": "q022",
-    "question": "Mỗi thành viên trong gia đình đều giúp làm việc nhà.",
-    "keywords": [
-      "every",
-      "family",
-      "member",
-      "helps",
-      "housework"
-    ],
+    "question": "Gia đình tôi giúp đỡ nhau.",
+    "answer": "My family helps each other.",
     "variants": [
-      "Every family member helps with the housework."
+      "My family helps each other."
     ],
-    "help1": "Every family member helps / housework",
-    "help2": "Every family member helps with the housework.",
-    "answer": "Every family member helps with the housework."
+    "help1": "family / helps",
+    "help2": "My family helps each other.",
+    "keywords": [
+      "family",
+      "helps"
+    ]
   },
   {
     "id": "q023",
-    "question": "Quả táo là một loại quả, không phải thành viên gia đình.",
-    "keywords": [
-      "apple",
-      "is",
-      "fruit",
-      "not",
-      "family",
-      "member"
-    ],
+    "question": "Tôi yêu gia đình của tôi.",
+    "answer": "I love my family.",
     "variants": [
-      "An apple is a fruit, not a family member."
+      "I love my family."
     ],
-    "help1": "apple is / fruit not / family member",
-    "help2": "An apple is a fruit, not a family member.",
-    "answer": "An apple is a fruit, not a family member."
+    "help1": "love / family",
+    "help2": "I love my family.",
+    "keywords": [
+      "love",
+      "family"
+    ]
   },
   {
     "id": "q024",
-    "question": "Bố tôi là một trong hai người sinh ra và nuôi dưỡng tôi.",
-    "keywords": [
-      "father",
-      "is",
-      "one",
-      "two",
-      "people",
-      "who"
-    ],
+    "question": "Bố tôi rất tốt bụng.",
+    "answer": "My dad is kind.",
     "variants": [
-      "My father is one of the two people who raised me.",
-      "My dad is one of the two people who raised me."
+      "My dad is kind.",
+      "My father is kind."
     ],
-    "help1": "father is one / two people who raised",
-    "help2": "My father is one of the two people who raised me.",
-    "answer": "My father is one of the two people who raised me."
+    "help1": "dad / kind",
+    "help2": "My dad is kind.",
+    "keywords": [
+      "dad",
+      "kind"
+    ]
   },
   {
     "id": "q025",
-    "question": "Tôi chơi với các anh chị em họ, là con của cô, dì, chú hoặc bác.",
-    "keywords": [
-      "play",
-      "cousins",
-      "who",
-      "are",
-      "children",
-      "aunts"
-    ],
+    "question": "Tôi có hai người em họ.",
+    "answer": "I have two cousins.",
     "variants": [
-      "I play with my cousins, who are the children of my aunts and uncles."
+      "I have two cousins."
     ],
-    "help1": "play / cousins who are / children / aunts and uncles",
-    "help2": "I play with my cousins, who are the children of my aunts and uncles.",
-    "answer": "I play with my cousins, who are the children of my aunts and uncles."
+    "help1": "two / cousins",
+    "help2": "I have two cousins.",
+    "keywords": [
+      "two",
+      "cousins"
+    ]
   },
   {
     "id": "q026",
-    "question": "Tôi gọi ông của mình bằng cách thân mật là ông nội.",
-    "keywords": [
-      "call",
-      "grandfather",
-      "grandpa",
-      "as",
-      "familiar",
-      "name"
-    ],
+    "question": "Tôi yêu ông nội của tôi.",
+    "answer": "I love my grandpa.",
     "variants": [
-      "I call my grandfather Grandpa as a familiar name."
+      "I love my grandpa.",
+      "I love my grandfather."
     ],
-    "help1": "call / grandfather Grandpa as / familiar name",
-    "help2": "I call my grandfather Grandpa as a familiar name.",
-    "answer": "I call my grandfather Grandpa as a familiar name."
+    "help1": "love / grandpa",
+    "help2": "I love my grandpa.",
+    "keywords": [
+      "love",
+      "grandpa"
+    ]
   },
   {
     "id": "q027",
-    "question": "Tôi gọi bà của mình bằng cách thân mật là bà.",
-    "keywords": [
-      "call",
-      "grandmother",
-      "grandma",
-      "as",
-      "familiar",
-      "name"
-    ],
+    "question": "Tôi yêu bà ngoại của tôi.",
+    "answer": "I love my grandma.",
     "variants": [
-      "I call my grandmother Grandma as a familiar name."
+      "I love my grandma.",
+      "I love my grandmother."
     ],
-    "help1": "call / grandmother Grandma as / familiar name",
-    "help2": "I call my grandmother Grandma as a familiar name.",
-    "answer": "I call my grandmother Grandma as a familiar name."
+    "help1": "love / grandma",
+    "help2": "I love my grandma.",
+    "keywords": [
+      "love",
+      "grandma"
+    ]
   },
   {
     "id": "q028",
-    "question": "Bố của bố tôi là ông của tôi.",
-    "keywords": [
-      "father's",
-      "father",
-      "is",
-      "grandfather"
-    ],
+    "question": "Bố của bố là ông nội.",
+    "answer": "My father's father is grandpa.",
     "variants": [
-      "My father's father is my grandfather.",
-      "My dad's dad is my grandfather."
+      "My father's father is grandpa.",
+      "My dad's dad is grandpa."
     ],
-    "help1": "father's father is / grandfather",
-    "help2": "My father's father is my grandfather.",
-    "answer": "My father's father is my grandfather."
+    "help1": "father / father / grandpa",
+    "help2": "My father's father is grandpa.",
+    "keywords": [
+      "father",
+      "father",
+      "grandpa"
+    ]
   },
   {
     "id": "q029",
-    "question": "Mẹ của mẹ tôi là bà của tôi.",
-    "keywords": [
-      "mother's",
-      "mother",
-      "is",
-      "grandmother"
-    ],
+    "question": "Mẹ của mẹ là bà ngoại.",
+    "answer": "My mother's mother is grandma.",
     "variants": [
-      "My mother's mother is my grandmother.",
-      "My mom's mom is my grandmother."
+      "My mother's mother is grandma.",
+      "My mom's mom is grandma."
     ],
-    "help1": "mother's mother is / grandmother",
-    "help2": "My mother's mother is my grandmother.",
-    "answer": "My mother's mother is my grandmother."
+    "help1": "mother / mother / grandma",
+    "help2": "My mother's mother is grandma.",
+    "keywords": [
+      "mother",
+      "mother",
+      "grandma"
+    ]
   },
   {
     "id": "q030",
-    "question": "Mẹ tôi là giáo viên và dạy tiếng Anh ở trường.",
+    "question": "Mẹ tôi dạy tiếng Anh.",
+    "answer": "My mom teaches English.",
+    "variants": [
+      "My mom teaches English.",
+      "My mother teaches English."
+    ],
+    "help1": "mom / teaches / english",
+    "help2": "My mom teaches English.",
     "keywords": [
-      "mother",
-      "is",
-      "teacher",
-      "and",
+      "mom",
       "teaches",
       "english"
-    ],
-    "variants": [
-      "My mother is a teacher and teaches English at school.",
-      "My mom is a teacher and teaches English at school."
-    ],
-    "help1": "mother is / teacher and teaches English / school",
-    "help2": "My mother is a teacher and teaches English at school.",
-    "answer": "My mother is a teacher and teaches English at school."
+    ]
   },
   {
     "id": "q031",
-    "question": "Bố tôi rất cao và thường chơi bóng rổ với tôi.",
-    "keywords": [
-      "father",
-      "is",
-      "very",
-      "tall",
-      "and",
-      "often"
-    ],
+    "question": "Bố tôi rất cao.",
+    "answer": "My dad is tall.",
     "variants": [
-      "My father is very tall and often plays basketball with me.",
-      "My dad is very tall and often plays basketball with me."
+      "My dad is tall.",
+      "My father is tall.",
+      "My dad is very tall.",
+      "My father is very tall."
     ],
-    "help1": "father is very tall and often plays basketball",
-    "help2": "My father is very tall and often plays basketball with me.",
-    "answer": "My father is very tall and often plays basketball with me."
+    "help1": "dad / tall",
+    "help2": "My dad is tall.",
+    "keywords": [
+      "dad",
+      "tall"
+    ]
   },
   {
     "id": "q032",
-    "question": "Em bé còn rất nhỏ và thích đồ ngọt.",
+    "question": "Em bé thích kem.",
+    "answer": "The baby likes ice cream.",
+    "variants": [
+      "The baby likes ice cream.",
+      "The baby likes eating ice cream."
+    ],
+    "help1": "baby / likes / ice",
+    "help2": "The baby likes ice cream.",
     "keywords": [
       "baby",
-      "is",
-      "very",
-      "small",
-      "and",
-      "likes"
-    ],
-    "variants": [
-      "The baby is very small and likes sweet things."
-    ],
-    "help1": "baby is very small and likes sweet things",
-    "help2": "The baby is very small and likes sweet things.",
-    "answer": "The baby is very small and likes sweet things."
+      "likes",
+      "ice"
+    ]
   },
   {
     "id": "q033",
-    "question": "Gia đình tôi có bốn người cùng sống trong một ngôi nhà.",
-    "keywords": [
-      "are",
-      "four",
-      "people",
-      "family",
-      "living",
-      "one"
-    ],
+    "question": "Gia đình tôi có bốn người.",
+    "answer": "My family has four people.",
     "variants": [
-      "There are four people in my family living in one house."
+      "My family has four people.",
+      "There are four people in my family."
     ],
-    "help1": "are four people / family living / one house",
-    "help2": "There are four people in my family living in one house.",
-    "answer": "There are four people in my family living in one house."
+    "help1": "family / four / people",
+    "help2": "My family has four people.",
+    "keywords": [
+      "family",
+      "four",
+      "people"
+    ]
   },
   {
     "id": "q034",
-    "question": "Gia đình tôi sống ở một ngôi nhà nhỏ gần trường.",
+    "question": "Gia đình tôi sống ở Hà Nội.",
+    "answer": "My family lives in Hanoi.",
+    "variants": [
+      "My family lives in Hanoi."
+    ],
+    "help1": "family / lives / hanoi",
+    "help2": "My family lives in Hanoi.",
     "keywords": [
       "family",
       "lives",
-      "small",
-      "house",
-      "school"
-    ],
-    "variants": [
-      "My family lives in a small house near the school."
-    ],
-    "help1": "family lives / small house / school",
-    "help2": "My family lives in a small house near the school.",
-    "answer": "My family lives in a small house near the school."
+      "hanoi"
+    ]
   },
   {
     "id": "q035",
-    "question": "Người phụ nữ trong bếp là mẹ tôi và cô ấy đang nấu ăn.",
-    "keywords": [
-      "woman",
-      "kitchen",
-      "is",
-      "mom",
-      "and",
-      "cooking"
-    ],
+    "question": "Mẹ tôi đang nấu ăn.",
+    "answer": "My mom is cooking.",
     "variants": [
-      "The woman in the kitchen is my mom, and she is cooking.",
-      "The woman in the kitchen is my mom, and she's cooking.",
-      "The woman in the kitchen is my mother, and she is cooking.",
-      "The woman in the kitchen is my mother, and she's cooking."
+      "My mom is cooking.",
+      "My mother is cooking."
     ],
-    "help1": "woman / kitchen is / mom and / is cooking",
-    "help2": "The woman in the kitchen is my mom, and she is cooking.",
-    "answer": "The woman in the kitchen is my mom, and she is cooking."
+    "help1": "mom / cooking",
+    "help2": "My mom is cooking.",
+    "keywords": [
+      "mom",
+      "cooking"
+    ]
   },
   {
     "id": "q036",
-    "question": "Chị gái của mẹ tôi là cô hoặc dì của tôi.",
-    "keywords": [
-      "mother's",
-      "sister",
-      "is",
-      "aunt"
-    ],
+    "question": "Dì tôi sống ở gần đây.",
+    "answer": "My aunt lives near here.",
     "variants": [
-      "My mother's sister is my aunt.",
-      "My mom's sister is my aunt."
+      "My aunt lives near here."
     ],
-    "help1": "mother's sister is / aunt",
-    "help2": "My mother's sister is my aunt.",
-    "answer": "My mother's sister is my aunt."
+    "help1": "aunt / lives",
+    "help2": "My aunt lives near here.",
+    "keywords": [
+      "aunt",
+      "lives"
+    ]
   },
   {
     "id": "q037",
-    "question": "Em trai của mẹ tôi là chú hoặc cậu của tôi.",
-    "keywords": [
-      "mother's",
-      "brother",
-      "is",
-      "uncle"
-    ],
+    "question": "Chú tôi có một chiếc xe hơi.",
+    "answer": "My uncle has a car.",
     "variants": [
-      "My mother's brother is my uncle.",
-      "My mom's brother is my uncle."
+      "My uncle has a car."
     ],
-    "help1": "mother's brother is / uncle",
-    "help2": "My mother's brother is my uncle.",
-    "answer": "My mother's brother is my uncle."
+    "help1": "uncle / car",
+    "help2": "My uncle has a car.",
+    "keywords": [
+      "uncle",
+      "car"
+    ]
   },
   {
     "id": "q038",
-    "question": "Em trai nhỏ của tôi đang chơi đồ chơi trong phòng.",
-    "keywords": [
-      "little",
-      "brother",
-      "is",
-      "playing",
-      "toys",
-      "room"
-    ],
+    "question": "Em trai tôi chơi đồ chơi.",
+    "answer": "My brother plays with toys.",
     "variants": [
-      "My little brother is playing with toys in the room."
+      "My brother plays with toys."
     ],
-    "help1": "little brother is playing / toys / room",
-    "help2": "My little brother is playing with toys in the room.",
-    "answer": "My little brother is playing with toys in the room."
+    "help1": "brother / plays / toys",
+    "help2": "My brother plays with toys.",
+    "keywords": [
+      "brother",
+      "plays",
+      "toys"
+    ]
   },
   {
     "id": "q039",
-    "question": "Chị gái lớn của tôi đang đọc sách bên cửa sổ.",
-    "keywords": [
-      "big",
-      "sister",
-      "is",
-      "reading",
-      "book",
-      "window"
-    ],
+    "question": "Chị gái tôi đang đọc sách.",
+    "answer": "My sister is reading a book.",
     "variants": [
-      "My big sister is reading a book by the window."
+      "My sister is reading a book."
     ],
-    "help1": "big sister is reading / book / window",
-    "help2": "My big sister is reading a book by the window.",
-    "answer": "My big sister is reading a book by the window."
+    "help1": "sister / reading / book",
+    "help2": "My sister is reading a book.",
+    "keywords": [
+      "sister",
+      "reading",
+      "book"
+    ]
   },
   {
     "id": "q040",
-    "question": "Đây là ảnh của ông bà tôi trong ngày cưới.",
-    "keywords": [
-      "is",
-      "picture",
-      "grandparents",
-      "wedding",
-      "day"
-    ],
+    "question": "Ông bà tôi đã già.",
+    "answer": "My grandparents are old.",
     "variants": [
-      "This is a picture of my grandparents on their wedding day.",
-      "This is a photo of my grandparents on their wedding day."
+      "My grandparents are old."
     ],
-    "help1": "is / picture / grandparents / wedding day",
-    "help2": "This is a picture of my grandparents on their wedding day.",
-    "answer": "This is a picture of my grandparents on their wedding day."
+    "help1": "grandparents / old",
+    "help2": "My grandparents are old.",
+    "keywords": [
+      "grandparents",
+      "old"
+    ]
   },
   {
     "id": "q041",
-    "question": "Anh chị em họ của tôi đến chơi vào Chủ nhật.",
-    "keywords": [
-      "cousins",
-      "come",
-      "visit",
-      "sunday"
-    ],
+    "question": "Anh họ tôi đến thăm tôi.",
+    "answer": "My cousin visits me.",
     "variants": [
-      "My cousins come to visit on Sunday."
+      "My cousin visits me."
     ],
-    "help1": "cousins come / visit / Sunday",
-    "help2": "My cousins come to visit on Sunday.",
-    "answer": "My cousins come to visit on Sunday."
+    "help1": "cousin / visits",
+    "help2": "My cousin visits me.",
+    "keywords": [
+      "cousin",
+      "visits"
+    ]
   },
   {
     "id": "q042",
-    "question": "Anh trai và chị gái của tôi là anh chị em ruột của tôi.",
-    "keywords": [
-      "brother",
-      "and",
-      "sister",
-      "are",
-      "siblings"
-    ],
+    "question": "Tôi có một anh trai.",
+    "answer": "I have an older brother.",
     "variants": [
-      "My brother and sister are my siblings."
+      "I have an older brother.",
+      "I have a brother."
     ],
-    "help1": "brother and sister are / siblings",
-    "help2": "My brother and sister are my siblings.",
-    "answer": "My brother and sister are my siblings."
+    "help1": "older / brother",
+    "help2": "I have an older brother.",
+    "keywords": [
+      "older",
+      "brother"
+    ]
   },
   {
     "id": "q043",
-    "question": "Tôi có một anh trai lớn tuổi hơn và là nam.",
-    "keywords": [
-      "have",
-      "older",
-      "brother",
-      "who",
-      "is",
-      "male"
-    ],
+    "question": "Tôi có một người chị gái.",
+    "answer": "I have an older sister.",
     "variants": [
-      "I have an older brother who is male.",
-      "I've an older brother who is male."
+      "I have an older sister.",
+      "I have a sister."
     ],
-    "help1": "have / older brother who is male",
-    "help2": "I have an older brother who is male.",
-    "answer": "I have an older brother who is male."
+    "help1": "older / sister",
+    "help2": "I have an older sister.",
+    "keywords": [
+      "older",
+      "sister"
+    ]
   },
   {
     "id": "q044",
-    "question": "Tôi có hai chị em gái trong gia đình.",
-    "keywords": [
-      "have",
-      "two",
-      "sisters",
-      "family"
-    ],
+    "question": "Tôi có hai người chị em gái.",
+    "answer": "I have two sisters.",
     "variants": [
-      "I have two sisters in my family.",
-      "I've two sisters in my family."
+      "I have two sisters."
     ],
-    "help1": "have two sisters / family",
-    "help2": "I have two sisters in my family.",
-    "answer": "I have two sisters in my family."
+    "help1": "two / sisters",
+    "help2": "I have two sisters.",
+    "keywords": [
+      "two",
+      "sisters"
+    ]
   },
   {
     "id": "q045",
-    "question": "Đúng, cậu ấy là em trai của tôi.",
-    "keywords": [
-      "yes",
-      "is",
-      "younger",
-      "brother"
-    ],
+    "question": "Cậu ấy là em trai tôi.",
+    "answer": "He is my brother.",
     "variants": [
-      "Yes, he is my younger brother.",
-      "Yes, he's my younger brother."
+      "He is my brother.",
+      "He's my brother.",
+      "He is my younger brother.",
+      "He's my younger brother."
     ],
-    "help1": "Yes / is / younger brother",
-    "help2": "Yes, he is my younger brother.",
-    "answer": "Yes, he is my younger brother."
+    "help1": "brother",
+    "help2": "He is my brother.",
+    "keywords": [
+      "brother"
+    ]
   },
   {
     "id": "q046",
-    "question": "Đúng, cô ấy là em gái của tôi.",
-    "keywords": [
-      "yes",
-      "is",
-      "younger",
-      "sister"
-    ],
+    "question": "Cô ấy là em gái tôi.",
+    "answer": "She is my sister.",
     "variants": [
-      "Yes, she is my younger sister.",
-      "Yes, she's my younger sister."
+      "She is my sister.",
+      "She's my sister.",
+      "She is my younger sister.",
+      "She's my younger sister."
     ],
-    "help1": "Yes / is / younger sister",
-    "help2": "Yes, she is my younger sister.",
-    "answer": "Yes, she is my younger sister."
+    "help1": "sister",
+    "help2": "She is my sister.",
+    "keywords": [
+      "sister"
+    ]
   },
   {
     "id": "q047",
-    "question": "Bé trai mới sinh trong gia đình đang ngủ trong nôi.",
+    "question": "Bé trai đang ngủ trong nôi.",
+    "answer": "The baby boy is sleeping.",
+    "variants": [
+      "The baby boy is sleeping.",
+      "The baby boy is sleeping in the crib."
+    ],
+    "help1": "baby / boy / sleeping",
+    "help2": "The baby boy is sleeping.",
     "keywords": [
       "baby",
       "boy",
-      "family",
-      "is",
-      "sleeping",
-      "crib"
-    ],
-    "variants": [
-      "The baby boy in the family is sleeping in a crib."
-    ],
-    "help1": "baby boy / family is sleeping / crib",
-    "help2": "The baby boy in the family is sleeping in a crib.",
-    "answer": "The baby boy in the family is sleeping in a crib."
+      "sleeping"
+    ]
   },
   {
     "id": "q048",
-    "question": "Bé gái mới sinh trong gia đình đang được mẹ bế.",
+    "question": "Bé gái đang cười vui vẻ.",
+    "answer": "The baby girl is smiling.",
+    "variants": [
+      "The baby girl is smiling."
+    ],
+    "help1": "baby / girl / smiling",
+    "help2": "The baby girl is smiling.",
     "keywords": [
       "baby",
       "girl",
-      "family",
-      "is",
-      "being",
-      "held"
-    ],
-    "variants": [
-      "The baby girl in the family is being held by her mother.",
-      "The baby girl in the family is being held by her mom."
-    ],
-    "help1": "baby girl / family is being held / mother",
-    "help2": "The baby girl in the family is being held by her mother.",
-    "answer": "The baby girl in the family is being held by her mother."
+      "smiling"
+    ]
   },
   {
     "id": "q049",
-    "question": "Gia đình tôi rất hạnh phúc vì mọi người luôn yêu thương nhau.",
+    "question": "Cả nhà tôi xem tivi cùng nhau.",
+    "answer": "My family watches TV together.",
+    "variants": [
+      "My family watches TV together."
+    ],
+    "help1": "family / watches / tv",
+    "help2": "My family watches TV together.",
     "keywords": [
       "family",
-      "is",
-      "very",
-      "happy",
-      "because",
-      "everyone"
-    ],
-    "variants": [
-      "My family is very happy because everyone loves one another."
-    ],
-    "help1": "family is very happy because everyone loves one another",
-    "help2": "My family is very happy because everyone loves one another.",
-    "answer": "My family is very happy because everyone loves one another."
+      "watches",
+      "tv"
+    ]
   },
   {
     "id": "q050",
-    "question": "Cha tôi làm việc chăm chỉ để chăm sóc gia đình.",
-    "keywords": [
-      "father",
-      "works",
-      "hard",
-      "take",
-      "care",
-      "family"
-    ],
+    "question": "Bố tôi làm việc chăm chỉ.",
+    "answer": "My dad works hard.",
     "variants": [
-      "My father works hard to take care of the family.",
-      "My dad works hard to take care of the family."
+      "My dad works hard.",
+      "My father works hard."
     ],
-    "help1": "father works hard / take care / family",
-    "help2": "My father works hard to take care of the family.",
-    "answer": "My father works hard to take care of the family."
+    "help1": "dad / works / hard",
+    "help2": "My dad works hard.",
+    "keywords": [
+      "dad",
+      "works",
+      "hard"
+    ]
   }
 ];
 
@@ -2802,6 +2685,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2888,9 +2772,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2898,9 +2788,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2908,7 +2803,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2942,7 +2837,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -2967,77 +2862,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -3053,16 +2953,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3084,19 +2978,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3107,6 +3005,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3123,6 +3022,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3179,6 +3079,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3196,7 +3097,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;

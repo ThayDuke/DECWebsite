@@ -108,10 +108,12 @@ html,body,button,input,select,textarea{font-family:var(--dec-font-family-offline
     --adaptive-progress-empty-text: var(--muted-text);
     --adaptive-progress-active-bg: var(--muted-text);
     --adaptive-progress-active-text: var(--color-on-accent);
-    --adaptive-progress-done-bg: var(--border-main);
-    --adaptive-progress-done-text: var(--muted-text);
+    --adaptive-progress-done-bg: #e8f5e9;
+    --adaptive-progress-done-text: #2e7d32;
+    --adaptive-progress-done-border: #4caf50;
     --adaptive-progress-warn-bg: #ffebee;
-    --adaptive-progress-warn-text: var(--muted-text);
+    --adaptive-progress-warn-text: #c62828;
+    --adaptive-progress-warn-border: #e57373;
     --progress-hover-bg: rgba(25, 167, 160, 0.2);
     --shell-background-image:
         radial-gradient(circle at 12% 10%, rgba(36, 191, 181, 0.16), transparent 36%),
@@ -374,20 +376,25 @@ input:focus-visible {
     pointer-events: none;
 }
 
-.progress-segment.done {
-    background: var(--adaptive-progress-done-bg);
-    color: var(--adaptive-progress-done-text);
+.progress-segment.done,
+.progress-segment.correct {
+    background: var(--adaptive-progress-done-bg) !important;
+    color: var(--adaptive-progress-done-text) !important;
+    border-color: var(--adaptive-progress-done-border, var(--border-main)) !important;
 }
 
-.progress-segment.warn {
-    background: var(--adaptive-progress-warn-bg);
-    color: var(--adaptive-progress-warn-text);
+.progress-segment.warn,
+.progress-segment.wrong {
+    background: var(--adaptive-progress-warn-bg) !important;
+    color: var(--adaptive-progress-warn-text) !important;
+    border-color: var(--adaptive-progress-warn-border, var(--border-main)) !important;
 }
 
-.progress-segment.active {
-    border-color: var(--adaptive-progress-active-bg);
-    background: var(--adaptive-progress-active-bg);
-    color: var(--adaptive-progress-active-text);
+.progress-segment.active,
+.progress-segment.current {
+    border-color: var(--adaptive-progress-active-bg) !important;
+    background: var(--adaptive-progress-active-bg) !important;
+    color: var(--adaptive-progress-active-text) !important;
 }
 
 .speak-card {
@@ -596,6 +603,11 @@ input:focus-visible {
 }
 
 .btn-mic.listening {
+    background-image: none !important;
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.75), 0 0 0 4px rgba(239, 68, 68, 0.25) !important;
+    border-color: #f87171 !important;
+    color: #ffffff !important;
     animation: mic-pulse 1s ease-in-out infinite;
 }
 
@@ -680,6 +692,16 @@ body[data-theme="elegant"] {
     --toggle-slider-border: #788b9d;
     --toggle-slider-checked-border: #788b9d;
     --toggle-knob-bg: #4a5c70;
+    --adaptive-progress-empty-bg: rgba(255, 255, 255, 0.08);
+    --adaptive-progress-empty-text: #94a3b8;
+    --adaptive-progress-active-bg: #475569;
+    --adaptive-progress-active-text: #ffffff;
+    --adaptive-progress-done-bg: rgba(46, 125, 50, 0.35);
+    --adaptive-progress-done-text: #86efac;
+    --adaptive-progress-done-border: #22c55e;
+    --adaptive-progress-warn-bg: rgba(198, 40, 40, 0.35);
+    --adaptive-progress-warn-text: #fca5a5;
+    --adaptive-progress-warn-border: #ef4444;
     --shell-background-image:
         radial-gradient(circle at 10% 12%, rgba(132, 166, 210, 0.46), transparent 33%),
         radial-gradient(circle at 88% 86%, rgba(106, 141, 183, 0.42), transparent 31%),
@@ -843,7 +865,7 @@ body.focus-mode .btn-nav {
         <nav class="control-bar" aria-label="Điều khiển bài Speak">
             <div class="control-left"></div>
             <div class="control-center">
-                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím H)">Gợi ý 1 (H)</button>
+                <button class="btn-control btn-help" id="btn-help" type="button" title="Gợi ý (Phím Space)">Gợi ý 1 (Space)</button>
                 <button class="btn-control btn-sm btn-nav" id="btn-prev" type="button" title="Câu trước (←)" aria-label="Câu trước" data-dec-icon-scope="ultitemp" data-dec-icon="previous"><i class="fa-solid fa-backward" aria-hidden="true"></i></button>
                 <button class="btn-control btn-mic" id="btn-mic" type="button" title="Bắt đầu nói (Enter)" aria-label="Bắt đầu nói" data-dec-icon-scope="ultitemp" data-dec-icon="mic"><i class="fa-solid fa-microphone" aria-hidden="true"></i></button>
                 <button class="btn-control btn-sm btn-nav" id="btn-next" type="button" title="Câu sau (→)" aria-label="Câu sau" data-dec-icon-scope="ultitemp" data-dec-icon="next"><i class="fa-solid fa-forward" aria-hidden="true"></i></button>
@@ -1902,848 +1924,716 @@ const LESSON_SCORING_PROFILES = [{"schemaVersion": "3.0.0", "policyVersion": "3.
 const lessonData = [
   {
     "id": "q001",
-    "question": "Đây là một quả cam trên bàn.",
-    "keywords": [
-      "is",
-      "orange",
-      "table"
-    ],
+    "question": "Đây là một quả cam.",
+    "answer": "This is an orange.",
     "variants": [
-      "This is an orange on the table."
+      "This is an orange.",
+      "This's an orange."
     ],
-    "help1": "is / orange / table",
-    "help2": "This is an orange on the table.",
-    "answer": "This is an orange on the table."
+    "help1": "orange",
+    "help2": "This is an orange.",
+    "keywords": [
+      "orange"
+    ]
   },
   {
     "id": "q002",
-    "question": "Cô ấy có một con voi nhỏ trong vườn thú.",
-    "keywords": [
-      "has",
-      "elephant",
-      "small",
-      "zoo"
-    ],
+    "question": "Tôi nhìn thấy một con voi.",
+    "answer": "I see an elephant.",
     "variants": [
-      "She has an elephant at the small zoo."
+      "I see an elephant."
     ],
-    "help1": "has / elephant / small zoo",
-    "help2": "She has an elephant at the small zoo.",
-    "answer": "She has an elephant at the small zoo."
+    "help1": "see / elephant",
+    "help2": "I see an elephant.",
+    "keywords": [
+      "see",
+      "elephant"
+    ]
   },
   {
     "id": "q003",
-    "question": "Tôi có một con mèo màu trắng ở nhà.",
-    "keywords": [
-      "have",
-      "white",
-      "cat",
-      "home"
-    ],
+    "question": "Tôi có một con mèo trắng.",
+    "answer": "I have a white cat.",
     "variants": [
-      "I have a white cat at home.",
-      "I've a white cat at home."
+      "I have a white cat."
     ],
-    "help1": "have / white cat / home",
-    "help2": "I have a white cat at home.",
-    "answer": "I have a white cat at home."
+    "help1": "white / cat",
+    "help2": "I have a white cat.",
+    "keywords": [
+      "white",
+      "cat"
+    ]
   },
   {
     "id": "q004",
-    "question": "Một con kiến rất nhỏ đang bò trên lá.",
-    "keywords": [
-      "ant",
-      "is",
-      "very",
-      "small",
-      "and",
-      "crawling"
-    ],
+    "question": "Đó là một con kiến.",
+    "answer": "That is an ant.",
     "variants": [
-      "An ant is very small and is crawling on a leaf."
+      "That is an ant.",
+      "That's an ant."
     ],
-    "help1": "ant is very small and is crawling / leaf",
-    "help2": "An ant is very small and is crawling on a leaf.",
-    "answer": "An ant is very small and is crawling on a leaf."
+    "help1": "ant",
+    "help2": "That is an ant.",
+    "keywords": [
+      "ant"
+    ]
   },
   {
     "id": "q005",
-    "question": "Ba là một cậu bé người Anh đang học ở trường này.",
-    "keywords": [
-      "ba",
-      "is",
-      "english",
-      "boy",
-      "studying",
-      "school"
-    ],
+    "question": "Ba là một cậu bé người Anh.",
+    "answer": "Ba is an English boy.",
     "variants": [
-      "Ba is an English boy studying at this school."
+      "Ba is an English boy."
     ],
-    "help1": "Ba is / English boy studying / school",
-    "help2": "Ba is an English boy studying at this school.",
-    "answer": "Ba is an English boy studying at this school."
+    "help1": "english / boy",
+    "help2": "Ba is an English boy.",
+    "keywords": [
+      "english",
+      "boy"
+    ]
   },
   {
     "id": "q006",
-    "question": "Đó là một con cá sấu đang nằm bên sông.",
-    "keywords": [
-      "is",
-      "alligator",
-      "lying",
-      "river"
-    ],
+    "question": "Đó là một con cá sấu.",
+    "answer": "That is an alligator.",
     "variants": [
-      "That is an alligator lying beside the river."
+      "That is an alligator.",
+      "That's an alligator."
     ],
-    "help1": "is / alligator lying / river",
-    "help2": "That is an alligator lying beside the river.",
-    "answer": "That is an alligator lying beside the river."
+    "help1": "alligator",
+    "help2": "That is an alligator.",
+    "keywords": [
+      "alligator"
+    ]
   },
   {
     "id": "q007",
-    "question": "Cô ấy nhìn thấy một con cú trên mái nhà.",
+    "question": "Cô ấy nhìn thấy một con cú.",
+    "answer": "She sees an owl.",
+    "variants": [
+      "She sees an owl."
+    ],
+    "help1": "sees / owl",
+    "help2": "She sees an owl.",
     "keywords": [
       "sees",
-      "owl",
-      "roof"
-    ],
-    "variants": [
-      "She sees an owl on the roof."
-    ],
-    "help1": "sees / owl / roof",
-    "help2": "She sees an owl on the roof.",
-    "answer": "She sees an owl on the roof."
+      "owl"
+    ]
   },
   {
     "id": "q008",
-    "question": "Tôi muốn một cục tẩy mới để xóa bài viết.",
-    "keywords": [
-      "want",
-      "eraser",
-      "remove",
-      "writing"
-    ],
+    "question": "Tôi cần một cục tẩy.",
+    "answer": "I need an eraser.",
     "variants": [
-      "I want an eraser to remove the writing."
+      "I need an eraser."
     ],
-    "help1": "want / eraser / remove / writing",
-    "help2": "I want an eraser to remove the writing.",
-    "answer": "I want an eraser to remove the writing."
+    "help1": "need / eraser",
+    "help2": "I need an eraser.",
+    "keywords": [
+      "need",
+      "eraser"
+    ]
   },
   {
     "id": "q009",
-    "question": "Đây là một ngôi nhà băng igloo ở vùng lạnh.",
-    "keywords": [
-      "is",
-      "igloo",
-      "cold",
-      "region"
-    ],
+    "question": "Đây là một ngôi nhà băng.",
+    "answer": "This is an igloo.",
     "variants": [
-      "This is an igloo in a cold region."
+      "This is an igloo."
     ],
-    "help1": "is / igloo / cold region",
-    "help2": "This is an igloo in a cold region.",
-    "answer": "This is an igloo in a cold region."
+    "help1": "igloo",
+    "help2": "This is an igloo.",
+    "keywords": [
+      "igloo"
+    ]
   },
   {
     "id": "q010",
-    "question": "Tôi ăn một quả trứng vào mỗi buổi sáng.",
+    "question": "Tôi ăn một quả trứng.",
+    "answer": "I eat an egg.",
+    "variants": [
+      "I eat an egg."
+    ],
+    "help1": "eat / egg",
+    "help2": "I eat an egg.",
     "keywords": [
       "eat",
-      "egg",
-      "every",
-      "morning"
-    ],
-    "variants": [
-      "I eat an egg every morning.",
-      "Every morning I eat an egg.",
-      "Every morning, I eat an egg."
-    ],
-    "help1": "eat / egg / every morning",
-    "help2": "I eat an egg every morning.",
-    "answer": "I eat an egg every morning."
+      "egg"
+    ]
   },
   {
     "id": "q011",
-    "question": "Bố tôi là một người chú tốt với các cháu.",
-    "keywords": [
-      "father",
-      "is",
-      "good",
-      "uncle",
-      "nieces",
-      "and"
-    ],
+    "question": "Ông ấy là một người chú.",
+    "answer": "He is an uncle.",
     "variants": [
-      "My father is a good uncle to his nieces and nephews.",
-      "My dad is a good uncle to his nieces and nephews."
+      "He is an uncle.",
+      "He's an uncle."
     ],
-    "help1": "father is / good uncle / nieces and nephews",
-    "help2": "My father is a good uncle to his nieces and nephews.",
-    "answer": "My father is a good uncle to his nieces and nephews."
+    "help1": "uncle",
+    "help2": "He is an uncle.",
+    "keywords": [
+      "uncle"
+    ]
   },
   {
     "id": "q012",
-    "question": "Đây là một lọ mực đặt cạnh quyển vở.",
-    "keywords": [
-      "is",
-      "ink",
-      "pot",
-      "notebook"
-    ],
+    "question": "Đây là một lọ mực.",
+    "answer": "This is an ink pot.",
     "variants": [
-      "It is an ink pot beside the notebook.",
-      "it's an ink pot beside the notebook.",
-      "it is an ink pot beside the notebook."
+      "This is an ink pot.",
+      "It is an ink pot.",
+      "It's an ink pot."
     ],
-    "help1": "is / ink pot / notebook",
-    "help2": "It is an ink pot beside the notebook.",
-    "answer": "It is an ink pot beside the notebook."
+    "help1": "ink / pot",
+    "help2": "This is an ink pot.",
+    "keywords": [
+      "ink",
+      "pot"
+    ]
   },
   {
     "id": "q013",
-    "question": "Ông ấy là một người đàn ông lớn tuổi sống cạnh nhà tôi.",
-    "keywords": [
-      "is",
-      "old",
-      "man",
-      "who",
-      "lives",
-      "next"
-    ],
+    "question": "Ông ấy là một người đàn ông lớn tuổi.",
+    "answer": "He is an old man.",
     "variants": [
-      "He is an old man who lives next door.",
-      "he's an old man who lives next door.",
-      "he is an old man who lives next door."
+      "He is an old man.",
+      "He's an old man."
     ],
-    "help1": "is / old man who lives next door",
-    "help2": "He is an old man who lives next door.",
-    "answer": "He is an old man who lives next door."
+    "help1": "old / man",
+    "help2": "He is an old man.",
+    "keywords": [
+      "old",
+      "man"
+    ]
   },
   {
     "id": "q014",
-    "question": "Tôi cần một chiếc phong bì để gửi lá thư này.",
+    "question": "Tôi cần một chiếc phong bì.",
+    "answer": "I need an envelope.",
+    "variants": [
+      "I need an envelope."
+    ],
+    "help1": "need / envelope",
+    "help2": "I need an envelope.",
     "keywords": [
       "need",
-      "envelope",
-      "letter"
-    ],
-    "variants": [
-      "I need an envelope for this letter."
-    ],
-    "help1": "need / envelope / letter",
-    "help2": "I need an envelope for this letter.",
-    "answer": "I need an envelope for this letter."
+      "envelope"
+    ]
   },
   {
     "id": "q015",
-    "question": "Ông ấy là một người chú đang chăm sóc em bé.",
-    "keywords": [
-      "is",
-      "uncle",
-      "who",
-      "taking",
-      "care",
-      "baby"
-    ],
+    "question": "Đó là chú của tôi.",
+    "answer": "That is my uncle.",
     "variants": [
-      "He is an uncle who is taking care of the baby.",
-      "he's an uncle who is taking care of the baby.",
-      "he is an uncle who is taking care of the baby."
+      "That is my uncle.",
+      "That's my uncle."
     ],
-    "help1": "is / uncle who is taking care / baby",
-    "help2": "He is an uncle who is taking care of the baby.",
-    "answer": "He is an uncle who is taking care of the baby."
+    "help1": "uncle",
+    "help2": "That is my uncle.",
+    "keywords": [
+      "uncle"
+    ]
   },
   {
     "id": "q016",
-    "question": "Mẹ tôi có một chiếc ô màu đỏ trong túi.",
-    "keywords": [
-      "mother",
-      "has",
-      "red",
-      "umbrella",
-      "bag"
-    ],
+    "question": "Mẹ tôi có một chiếc ô.",
+    "answer": "My mom has an umbrella.",
     "variants": [
-      "My mother has a red umbrella in her bag.",
-      "My mom has a red umbrella in her bag."
+      "My mom has an umbrella.",
+      "My mother has an umbrella."
     ],
-    "help1": "mother has / red umbrella / bag",
-    "help2": "My mother has a red umbrella in her bag.",
-    "answer": "My mother has a red umbrella in her bag."
+    "help1": "mom / umbrella",
+    "help2": "My mom has an umbrella.",
+    "keywords": [
+      "mom",
+      "umbrella"
+    ]
   },
   {
     "id": "q017",
-    "question": "Một quả trứng nằm trên chiếc đĩa trắng.",
+    "question": "Quả trứng ở trên đĩa.",
+    "answer": "The egg is on the plate.",
+    "variants": [
+      "The egg is on the plate."
+    ],
+    "help1": "egg / plate",
+    "help2": "The egg is on the plate.",
     "keywords": [
       "egg",
-      "is",
-      "white",
       "plate"
-    ],
-    "variants": [
-      "An egg is on the white plate."
-    ],
-    "help1": "egg is / white plate",
-    "help2": "An egg is on the white plate.",
-    "answer": "An egg is on the white plate."
+    ]
   },
   {
     "id": "q018",
-    "question": "Cô ấy có một cánh tay bị đau sau khi chơi thể thao.",
-    "keywords": [
-      "has",
-      "arm",
-      "hurts",
-      "after",
-      "playing",
-      "sports"
-    ],
+    "question": "Đây là cánh tay của tôi.",
+    "answer": "This is my arm.",
     "variants": [
-      "She has an arm that hurts after playing sports."
+      "This is my arm."
     ],
-    "help1": "has / arm / hurts after playing sports",
-    "help2": "She has an arm that hurts after playing sports.",
-    "answer": "She has an arm that hurts after playing sports."
+    "help1": "arm",
+    "help2": "This is my arm.",
+    "keywords": [
+      "arm"
+    ]
   },
   {
     "id": "q019",
-    "question": "Có một con côn trùng màu xanh trên chiếc lá.",
-    "keywords": [
-      "is",
-      "insect",
-      "green",
-      "leaf"
-    ],
+    "question": "Có một con côn trùng trên lá.",
+    "answer": "There is an insect on the leaf.",
     "variants": [
-      "There is an insect on the green leaf.",
-      "there's an insect on the green leaf.",
-      "there is an insect on the green leaf."
+      "There is an insect on the leaf.",
+      "There's an insect on the leaf."
     ],
-    "help1": "is / insect / green leaf",
-    "help2": "There is an insect on the green leaf.",
-    "answer": "There is an insect on the green leaf."
+    "help1": "insect / leaf",
+    "help2": "There is an insect on the leaf.",
+    "keywords": [
+      "insect",
+      "leaf"
+    ]
   },
   {
     "id": "q020",
-    "question": "Tôi nhìn thấy một con ngựa vằn trong khu bảo tồn.",
+    "question": "Tôi nhìn thấy một con ngựa vằn.",
+    "answer": "I see a zebra.",
+    "variants": [
+      "I see a zebra."
+    ],
+    "help1": "see / zebra",
+    "help2": "I see a zebra.",
     "keywords": [
       "see",
-      "zebra",
-      "wildlife",
-      "reserve"
-    ],
-    "variants": [
-      "I see a zebra in the wildlife reserve."
-    ],
-    "help1": "see / zebra / wildlife reserve",
-    "help2": "I see a zebra in the wildlife reserve.",
-    "answer": "I see a zebra in the wildlife reserve."
+      "zebra"
+    ]
   },
   {
     "id": "q021",
-    "question": "Cô ấy có một cây thước kẻ màu xanh.",
-    "keywords": [
-      "has",
-      "blue",
-      "ruler"
-    ],
+    "question": "Cô ấy có một cây thước kẻ.",
+    "answer": "She has a ruler.",
     "variants": [
-      "She has a blue ruler."
+      "She has a ruler."
     ],
-    "help1": "has / blue ruler",
-    "help2": "She has a blue ruler.",
-    "answer": "She has a blue ruler."
+    "help1": "ruler",
+    "help2": "She has a ruler.",
+    "keywords": [
+      "ruler"
+    ]
   },
   {
     "id": "q022",
-    "question": "Có một con kiến đang bò trên sàn phòng.",
-    "keywords": [
-      "is",
-      "ant",
-      "crawling",
-      "room",
-      "floor"
-    ],
+    "question": "Con kiến đang bò.",
+    "answer": "The ant is crawling.",
     "variants": [
-      "There is an ant crawling across the room floor.",
-      "there's an ant crawling across the room floor.",
-      "there is an ant crawling across the room floor."
+      "The ant is crawling.",
+      "The ant's crawling."
     ],
-    "help1": "is / ant crawling / room floor",
-    "help2": "There is an ant crawling across the room floor.",
-    "answer": "There is an ant crawling across the room floor."
+    "help1": "ant / crawling",
+    "help2": "The ant is crawling.",
+    "keywords": [
+      "ant",
+      "crawling"
+    ]
   },
   {
     "id": "q023",
-    "question": "Tôi muốn nhìn thấy một con đại bàng bay trên núi.",
-    "keywords": [
-      "want",
-      "see",
-      "eagle",
-      "flying",
-      "mountain"
-    ],
+    "question": "Tôi nhìn thấy một con đại bàng.",
+    "answer": "I see an eagle.",
     "variants": [
-      "I want to see an eagle flying over the mountain."
+      "I see an eagle."
     ],
-    "help1": "want / see / eagle flying / mountain",
-    "help2": "I want to see an eagle flying over the mountain.",
-    "answer": "I want to see an eagle flying over the mountain."
+    "help1": "see / eagle",
+    "help2": "I see an eagle.",
+    "keywords": [
+      "see",
+      "eagle"
+    ]
   },
   {
     "id": "q024",
-    "question": "Tôi nhìn thấy một con bò đực trong trang trại.",
+    "question": "Tôi nhìn thấy một con bò đực.",
+    "answer": "I see an ox.",
+    "variants": [
+      "I see an ox."
+    ],
+    "help1": "see / ox",
+    "help2": "I see an ox.",
     "keywords": [
       "see",
-      "ox",
-      "farm"
-    ],
-    "variants": [
-      "I see an ox on the farm."
-    ],
-    "help1": "see / ox / farm",
-    "help2": "I see an ox on the farm.",
-    "answer": "I see an ox on the farm."
+      "ox"
+    ]
   },
   {
     "id": "q025",
-    "question": "Đó là một con kỳ nhông màu xanh trong lồng kính.",
-    "keywords": [
-      "is",
-      "iguana",
-      "glass",
-      "enclosure"
-    ],
+    "question": "Đó là một con kỳ nhông.",
+    "answer": "That is an iguana.",
     "variants": [
-      "It is an iguana in the glass enclosure.",
-      "it's an iguana in the glass enclosure.",
-      "it is an iguana in the glass enclosure."
+      "That is an iguana.",
+      "That's an iguana."
     ],
-    "help1": "is / iguana / glass enclosure",
-    "help2": "It is an iguana in the glass enclosure.",
-    "answer": "It is an iguana in the glass enclosure."
+    "help1": "iguana",
+    "help2": "That is an iguana.",
+    "keywords": [
+      "iguana"
+    ]
   },
   {
     "id": "q026",
-    "question": "Bố tôi có một chiếc cặp sách màu nâu.",
-    "keywords": [
-      "father",
-      "has",
-      "brown",
-      "schoolbag"
-    ],
+    "question": "Bố tôi có một chiếc cặp sách.",
+    "answer": "My dad has a schoolbag.",
     "variants": [
-      "My father has a brown schoolbag.",
-      "My dad has a brown schoolbag."
+      "My dad has a schoolbag.",
+      "My father has a schoolbag."
     ],
-    "help1": "father has / brown schoolbag",
-    "help2": "My father has a brown schoolbag.",
-    "answer": "My father has a brown schoolbag."
+    "help1": "dad / schoolbag",
+    "help2": "My dad has a schoolbag.",
+    "keywords": [
+      "dad",
+      "schoolbag"
+    ]
   },
   {
     "id": "q027",
-    "question": "Có một con bạch tuộc đang bơi trong bể.",
-    "keywords": [
-      "is",
-      "octopus",
-      "swimming",
-      "tank"
-    ],
+    "question": "Con bạch tuộc đang bơi.",
+    "answer": "The octopus is swimming.",
     "variants": [
-      "There is an octopus swimming in the tank.",
-      "there's an octopus swimming in the tank.",
-      "there is an octopus swimming in the tank."
+      "The octopus is swimming.",
+      "The octopus's swimming."
     ],
-    "help1": "is / octopus swimming / tank",
-    "help2": "There is an octopus swimming in the tank.",
-    "answer": "There is an octopus swimming in the tank."
+    "help1": "octopus / swimming",
+    "help2": "The octopus is swimming.",
+    "keywords": [
+      "octopus",
+      "swimming"
+    ]
   },
   {
     "id": "q028",
-    "question": "Anh ấy nhìn thấy một con đại bàng trên vách núi.",
+    "question": "Anh ấy nhìn thấy một con đại bàng.",
+    "answer": "He sees an eagle.",
+    "variants": [
+      "He sees an eagle."
+    ],
+    "help1": "sees / eagle",
+    "help2": "He sees an eagle.",
     "keywords": [
       "sees",
-      "eagle",
-      "cliff"
-    ],
-    "variants": [
-      "He sees an eagle on the cliff."
-    ],
-    "help1": "sees / eagle / cliff",
-    "help2": "He sees an eagle on the cliff.",
-    "answer": "He sees an eagle on the cliff."
+      "eagle"
+    ]
   },
   {
     "id": "q029",
-    "question": "Đây là một câu trả lời đúng cho bài tập.",
-    "keywords": [
-      "is",
-      "correct",
-      "answer",
-      "exercise"
-    ],
+    "question": "Đây là một câu trả lời đúng.",
+    "answer": "This is a correct answer.",
     "variants": [
-      "This is a correct answer to the exercise."
+      "This is a correct answer."
     ],
-    "help1": "is / correct answer / exercise",
-    "help2": "This is a correct answer to the exercise.",
-    "answer": "This is a correct answer to the exercise."
+    "help1": "correct / answer",
+    "help2": "This is a correct answer.",
+    "keywords": [
+      "correct",
+      "answer"
+    ]
   },
   {
     "id": "q030",
-    "question": "Tôi có một con đà điểu trong bức tranh động vật.",
-    "keywords": [
-      "have",
-      "ostrich",
-      "animal",
-      "picture"
-    ],
+    "question": "Đó là một con đà điểu.",
+    "answer": "That is an ostrich.",
     "variants": [
-      "I have an ostrich in the animal picture.",
-      "I've an ostrich in the animal picture.",
-      "I have an ostrich in the animal photo.",
-      "I've an ostrich in the animal photo."
+      "That is an ostrich.",
+      "That's an ostrich."
     ],
-    "help1": "have / ostrich / animal picture",
-    "help2": "I have an ostrich in the animal picture.",
-    "answer": "I have an ostrich in the animal picture."
+    "help1": "ostrich",
+    "help2": "That is an ostrich.",
+    "keywords": [
+      "ostrich"
+    ]
   },
   {
     "id": "q031",
-    "question": "Cô ấy nhìn thấy một con kiến trên tường.",
+    "question": "Cô ấy nhìn thấy một con kiến.",
+    "answer": "She sees an ant.",
+    "variants": [
+      "She sees an ant."
+    ],
+    "help1": "sees / ant",
+    "help2": "She sees an ant.",
     "keywords": [
       "sees",
-      "ant",
-      "wall"
-    ],
-    "variants": [
-      "She sees an ant on the wall."
-    ],
-    "help1": "sees / ant / wall",
-    "help2": "She sees an ant on the wall.",
-    "answer": "She sees an ant on the wall."
+      "ant"
+    ]
   },
   {
     "id": "q032",
-    "question": "Vị bác sĩ có một chiếc xe hơi màu trắng.",
+    "question": "Bác sĩ có một chiếc ô tô.",
+    "answer": "The doctor has a car.",
+    "variants": [
+      "The doctor has a car."
+    ],
+    "help1": "doctor / car",
+    "help2": "The doctor has a car.",
     "keywords": [
       "doctor",
-      "has",
-      "white",
       "car"
-    ],
-    "variants": [
-      "The doctor has a white car.",
-      "The doctor has a white automobile."
-    ],
-    "help1": "doctor has / white car",
-    "help2": "The doctor has a white car.",
-    "answer": "The doctor has a white car."
+    ]
   },
   {
     "id": "q033",
-    "question": "Một con kiến đang đứng trên bàn.",
+    "question": "Con kiến ở trên bàn.",
+    "answer": "The ant is on the table.",
+    "variants": [
+      "The ant is on the table."
+    ],
+    "help1": "ant / table",
+    "help2": "The ant is on the table.",
     "keywords": [
       "ant",
-      "is",
       "table"
-    ],
-    "variants": [
-      "An ant is on the table."
-    ],
-    "help1": "ant is / table",
-    "help2": "An ant is on the table.",
-    "answer": "An ant is on the table."
+    ]
   },
   {
     "id": "q034",
-    "question": "Anh ấy bị đau một khuỷu tay sau khi ngã.",
+    "question": "Anh ấy bị đau khuỷu tay.",
+    "answer": "He hurt his elbow.",
+    "variants": [
+      "He hurt his elbow."
+    ],
+    "help1": "hurt / elbow",
+    "help2": "He hurt his elbow.",
     "keywords": [
       "hurt",
-      "elbow",
-      "after",
-      "falling"
-    ],
-    "variants": [
-      "He hurt an elbow after falling."
-    ],
-    "help1": "hurt / elbow after falling",
-    "help2": "He hurt an elbow after falling.",
-    "answer": "He hurt an elbow after falling."
+      "elbow"
+    ]
   },
   {
     "id": "q035",
-    "question": "Nam có một chiếc giường mới trong phòng ngủ.",
-    "keywords": [
-      "nam",
-      "has",
-      "new",
-      "bed",
-      "bedroom"
-    ],
+    "question": "Nam có một chiếc giường mới.",
+    "answer": "Nam has a new bed.",
     "variants": [
-      "Nam has a new bed in his bedroom."
+      "Nam has a new bed."
     ],
-    "help1": "Nam has / new bed / bedroom",
-    "help2": "Nam has a new bed in his bedroom.",
-    "answer": "Nam has a new bed in his bedroom."
+    "help1": "new / bed",
+    "help2": "Nam has a new bed.",
+    "keywords": [
+      "new",
+      "bed"
+    ]
   },
   {
     "id": "q036",
-    "question": "Tôi ăn một củ hành trong bữa tối.",
+    "question": "Tôi ăn một củ hành tây.",
+    "answer": "I eat an onion.",
+    "variants": [
+      "I eat an onion."
+    ],
+    "help1": "eat / onion",
+    "help2": "I eat an onion.",
     "keywords": [
       "eat",
-      "onion",
-      "dinner"
-    ],
-    "variants": [
-      "I eat an onion at dinner."
-    ],
-    "help1": "eat / onion / dinner",
-    "help2": "I eat an onion at dinner.",
-    "answer": "I eat an onion at dinner."
+      "onion"
+    ]
   },
   {
     "id": "q037",
-    "question": "Anh ấy có một chiếc thước màu cam trong hộp bút.",
-    "keywords": [
-      "has",
-      "orange",
-      "ruler",
-      "pencil",
-      "case"
-    ],
+    "question": "Anh ấy có một cây thước màu cam.",
+    "answer": "He has an orange ruler.",
     "variants": [
-      "He has an orange ruler in his pencil case."
+      "He has an orange ruler."
     ],
-    "help1": "has / orange ruler / pencil case",
-    "help2": "He has an orange ruler in his pencil case.",
-    "answer": "He has an orange ruler in his pencil case."
+    "help1": "orange / ruler",
+    "help2": "He has an orange ruler.",
+    "keywords": [
+      "orange",
+      "ruler"
+    ]
   },
   {
     "id": "q038",
-    "question": "Cô ấy là một người mẹ hiền luôn chăm sóc con.",
-    "keywords": [
-      "is",
-      "kind",
-      "mother",
-      "who",
-      "always",
-      "cares"
-    ],
+    "question": "Bà ấy là một người mẹ tốt.",
+    "answer": "She is a good mother.",
     "variants": [
-      "She is a kind mother who always cares for her child.",
-      "she's a kind mother who always cares for her child.",
-      "she is a kind mother who always cares for her child.",
-      "She is a kind mom who always cares for her child.",
-      "she's a kind mom who always cares for her child."
+      "She is a good mother.",
+      "She's a good mother.",
+      "She is a good mom.",
+      "She's a good mom."
     ],
-    "help1": "is / kind mother who always cares / child",
-    "help2": "She is a kind mother who always cares for her child.",
-    "answer": "She is a kind mother who always cares for her child."
+    "help1": "good / mother",
+    "help2": "She is a good mother.",
+    "keywords": [
+      "good",
+      "mother"
+    ]
   },
   {
     "id": "q039",
-    "question": "Anh ấy có một người cô đang sống ở London.",
-    "keywords": [
-      "has",
-      "aunt",
-      "who",
-      "lives",
-      "london"
-    ],
+    "question": "Cô ấy là một người cô tốt.",
+    "answer": "She is a kind aunt.",
     "variants": [
-      "He has an aunt who lives in London."
+      "She is a kind aunt.",
+      "She's a kind aunt."
     ],
-    "help1": "has / aunt who lives / London",
-    "help2": "He has an aunt who lives in London.",
-    "answer": "He has an aunt who lives in London."
+    "help1": "kind / aunt",
+    "help2": "She is a kind aunt.",
+    "keywords": [
+      "kind",
+      "aunt"
+    ]
   },
   {
     "id": "q040",
-    "question": "Chúng tôi có một căn phòng sạch sẽ ở tầng trên.",
-    "keywords": [
-      "have",
-      "clean",
-      "room",
-      "upstairs"
-    ],
+    "question": "Chúng tôi có một căn phòng sạch sẽ.",
+    "answer": "We have a clean room.",
     "variants": [
-      "We have a clean room upstairs."
+      "We have a clean room."
     ],
-    "help1": "have / clean room upstairs",
-    "help2": "We have a clean room upstairs.",
-    "answer": "We have a clean room upstairs."
+    "help1": "clean / room",
+    "help2": "We have a clean room.",
+    "keywords": [
+      "clean",
+      "room"
+    ]
   },
   {
     "id": "q041",
-    "question": "Tôi có một quả táo đỏ trong cặp.",
-    "keywords": [
-      "have",
-      "apple",
-      "schoolbag"
-    ],
+    "question": "Tôi có một quả táo.",
+    "answer": "I have an apple.",
     "variants": [
-      "I have an apple in my schoolbag.",
-      "I've an apple in my schoolbag."
+      "I have an apple."
     ],
-    "help1": "have / apple / schoolbag",
-    "help2": "I have an apple in my schoolbag.",
-    "answer": "I have an apple in my schoolbag."
+    "help1": "apple",
+    "help2": "I have an apple.",
+    "keywords": [
+      "apple"
+    ]
   },
   {
     "id": "q042",
-    "question": "Nhìn kìa, có một con chim trên cây.",
+    "question": "Có một con chim trên cây.",
+    "answer": "There is a bird in the tree.",
+    "variants": [
+      "There is a bird in the tree.",
+      "There's a bird in the tree."
+    ],
+    "help1": "bird / tree",
+    "help2": "There is a bird in the tree.",
     "keywords": [
-      "look",
-      "is",
       "bird",
       "tree"
-    ],
-    "variants": [
-      "Look, there is a bird in the tree.",
-      "Look, there's a bird in the tree."
-    ],
-    "help1": "Look / is / bird / tree",
-    "help2": "Look, there is a bird in the tree.",
-    "answer": "Look, there is a bird in the tree."
+    ]
   },
   {
     "id": "q043",
-    "question": "A: Đây là gì? B: Đó là một quả trứng.",
-    "keywords": [
-      "what",
-      "is",
-      "egg"
-    ],
+    "question": "Đó là một quả trứng.",
+    "answer": "That is an egg.",
     "variants": [
-      "A: What is this? B: It is an egg.",
-      "A: What is this? B: it's an egg.",
-      "A: What is this? B: it is an egg."
+      "That is an egg.",
+      "That's an egg.",
+      "It is an egg.",
+      "It's an egg."
     ],
-    "help1": "What is / B / is / egg",
-    "help2": "A: What is this? B: It is an egg.",
-    "answer": "A: What is this? B: It is an egg."
+    "help1": "egg",
+    "help2": "That is an egg.",
+    "keywords": [
+      "egg"
+    ]
   },
   {
     "id": "q044",
-    "question": "Bạn hỏi xem vật trên bàn có phải là một cái ô hay không.",
-    "keywords": [
-      "is",
-      "umbrella",
-      "table"
-    ],
+    "question": "Đó là một chiếc ô.",
+    "answer": "That is an umbrella.",
     "variants": [
-      "Is that an umbrella on the table?"
+      "That is an umbrella.",
+      "That's an umbrella."
     ],
-    "help1": "Is / umbrella / table",
-    "help2": "Is that an umbrella on the table?",
-    "answer": "Is that an umbrella on the table?"
+    "help1": "umbrella",
+    "help2": "That is an umbrella.",
+    "keywords": [
+      "umbrella"
+    ]
   },
   {
     "id": "q045",
-    "question": "Tôi nhìn thấy một con kiến trên bức tường trắng.",
-    "keywords": [
-      "see",
-      "ant",
-      "white",
-      "wall"
-    ],
+    "question": "Con kiến ở trên tường.",
+    "answer": "The ant is on the wall.",
     "variants": [
-      "I see an ant on the white wall."
+      "The ant is on the wall."
     ],
-    "help1": "see / ant / white wall",
-    "help2": "I see an ant on the white wall.",
-    "answer": "I see an ant on the white wall."
+    "help1": "ant / wall",
+    "help2": "The ant is on the wall.",
+    "keywords": [
+      "ant",
+      "wall"
+    ]
   },
   {
     "id": "q046",
-    "question": "Nhìn kìa, cậu ấy đang đọc một quyển sách trong thư viện.",
-    "keywords": [
-      "look",
-      "is",
-      "reading",
-      "book",
-      "library"
-    ],
+    "question": "Cậu ấy đang đọc một quyển sách.",
+    "answer": "He is reading a book.",
     "variants": [
-      "Look, he is reading a book in the library.",
-      "Look, he's reading a book in the library."
+      "He is reading a book.",
+      "He's reading a book."
     ],
-    "help1": "Look / is reading / book / library",
-    "help2": "Look, he is reading a book in the library.",
-    "answer": "Look, he is reading a book in the library."
+    "help1": "reading / book",
+    "help2": "He is reading a book.",
+    "keywords": [
+      "reading",
+      "book"
+    ]
   },
   {
     "id": "q047",
-    "question": "A: Bạn muốn gì? B: Cho tôi một cây kem ốc quế.",
-    "keywords": [
-      "what",
-      "do",
-      "want",
-      "give",
-      "ice-cream",
-      "cone"
-    ],
+    "question": "Tôi muốn một cây kem.",
+    "answer": "I want an ice cream.",
     "variants": [
-      "A: What do you want? B: Give me an ice-cream cone, please."
+      "I want an ice cream."
     ],
-    "help1": "What do / want B Give / ice-cream cone please",
-    "help2": "A: What do you want? B: Give me an ice-cream cone, please.",
-    "answer": "A: What do you want? B: Give me an ice-cream cone, please."
+    "help1": "want / ice / cream",
+    "help2": "I want an ice cream.",
+    "keywords": [
+      "want",
+      "ice",
+      "cream"
+    ]
   },
   {
     "id": "q048",
-    "question": "Đó không phải là một chiếc thước cũ của tôi.",
+    "question": "Đây là một cây thước cũ.",
+    "answer": "This is an old ruler.",
+    "variants": [
+      "This is an old ruler."
+    ],
+    "help1": "old / ruler",
+    "help2": "This is an old ruler.",
     "keywords": [
-      "is",
-      "not",
       "old",
       "ruler"
-    ],
-    "variants": [
-      "That is not an old ruler of mine.",
-      "That isn't an old ruler of mine."
-    ],
-    "help1": "is not / old ruler",
-    "help2": "That is not an old ruler of mine.",
-    "answer": "That is not an old ruler of mine."
+    ]
   },
   {
     "id": "q049",
-    "question": "Tôi ăn một quả chuối vào bữa sáng.",
+    "question": "Tôi ăn một quả chuối.",
+    "answer": "I eat a banana.",
+    "variants": [
+      "I eat a banana."
+    ],
+    "help1": "eat / banana",
+    "help2": "I eat a banana.",
     "keywords": [
       "eat",
-      "banana",
-      "breakfast"
-    ],
-    "variants": [
-      "I eat a banana for breakfast."
-    ],
-    "help1": "eat / banana / breakfast",
-    "help2": "I eat a banana for breakfast.",
-    "answer": "I eat a banana for breakfast."
+      "banana"
+    ]
   },
   {
     "id": "q050",
-    "question": "Nhìn kìa, một con bạch tuộc đang bơi trong bể.",
-    "keywords": [
-      "look",
-      "octopus",
-      "is",
-      "swimming",
-      "tank"
-    ],
+    "question": "Một con bạch tuộc đang bơi.",
+    "answer": "An octopus is swimming.",
     "variants": [
-      "Look, an octopus is swimming in the tank."
+      "An octopus is swimming."
     ],
-    "help1": "Look / octopus is swimming / tank",
-    "help2": "Look, an octopus is swimming in the tank.",
-    "answer": "Look, an octopus is swimming in the tank."
+    "help1": "octopus / swimming",
+    "help2": "An octopus is swimming.",
+    "keywords": [
+      "octopus",
+      "swimming"
+    ]
   }
 ];
 
@@ -2756,6 +2646,7 @@ const lessonData = [
         currentIndex: 0,
         order: [],
         completed: new Set(),
+        questionStatus: new Map(),
         helpStage: 0,
         recognition: null,
         listening: false
@@ -2842,9 +2733,15 @@ const lessonData = [
             segment.className = 'progress-segment';
             segment.textContent = index + 1;
             segment.addEventListener('click', () => moveTo(index));
-            if (state.completed.has(index)) segment.classList.add('done');
-            if (index < state.currentIndex && !state.completed.has(index)) segment.classList.add('warn');
-            if (index === state.currentIndex) segment.classList.add('active');
+            const status = state.questionStatus ? state.questionStatus.get(index) : null;
+            if (status === 'correct') {
+                segment.classList.add('done', 'correct');
+            } else if (status === 'wrong') {
+                segment.classList.add('warn', 'wrong');
+            }
+            if (index === state.currentIndex) {
+                segment.classList.add('active', 'current');
+            }
             segment.title = `Câu ${index + 1}`;
             segment.setAttribute('aria-label', `Đi đến câu ${index + 1}`);
             dom.progress.appendChild(segment);
@@ -2852,9 +2749,14 @@ const lessonData = [
     }
 
     function stopRecognition() {
-        if (state.recognition && state.listening) state.recognition.abort();
+        if (state.recognition && state.listening) {
+            state.recognition.abort();
+        }
         state.listening = false;
-        dom.mic.classList.remove('listening');
+        if (dom.mic) {
+            dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
+        }
     }
 
     function resetQuestionState() {
@@ -2862,7 +2764,7 @@ const lessonData = [
         state.helpStage = 0;
         dom.help.classList.add('is-hidden');
         dom.help.textContent = '';
-        dom.helpButton.textContent = 'Gợi ý 1 (H)';
+        dom.helpButton.textContent = 'Gợi ý 1 (Space)';
         dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
         setResult('Sẵn sàng.');
     }
@@ -2896,7 +2798,7 @@ const lessonData = [
         state.helpStage = Math.min(2, state.helpStage + 1);
         dom.help.textContent = state.helpStage === 1 ? item.help1 : item.help2;
         dom.help.classList.remove('is-hidden');
-        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (H)' : 'Đang xem gợi ý 2';
+        dom.helpButton.textContent = state.helpStage === 1 ? 'Gợi ý 2 (Space)' : 'Đang xem gợi ý 2';
     }
 
     function collectCandidates(event) {
@@ -2921,77 +2823,82 @@ const lessonData = [
         dom.modal.classList.remove('is-hidden');
     }
 
+    const CONTRACTION_MAP = {
+        "i'm": "i am", "im": "i am",
+        "you're": "you are", "youre": "you are",
+        "he's": "he is", "hes": "he is",
+        "she's": "she is", "shes": "she is",
+        "it's": "it is", "its": "it is",
+        "we're": "we are", "were": "we are",
+        "they're": "they are", "theyre": "they are",
+        "isn't": "is not", "isnt": "is not",
+        "aren't": "are not", "arent": "are not",
+        "wasn't": "was not", "wasnt": "was not",
+        "weren't": "were not", "werent": "were not",
+        "don't": "do not", "dont": "do not",
+        "doesn't": "does not", "doesnt": "does not",
+        "didn't": "did not", "didnt": "did not",
+        "can't": "can not", "cant": "can not", "cannot": "can not",
+        "won't": "will not", "wont": "will not",
+        "gonna": "going to", "wanna": "want to", "gotta": "got to"
+    };
+
     function normalizeText(text) {
-        return String(text || '')
+        let cleaned = String(text || '')
             .toLowerCase()
             .replace(/['’`]/g, '')
             .replace(/[.,!?;:"()\-–—]/g, ' ')
             .replace(/\s+/g, ' ')
             .trim();
+        if (!cleaned) return '';
+        const words = cleaned.split(' ').map(w => CONTRACTION_MAP[w] || w);
+        return words.join(' ').replace(/\s+/g, ' ').trim();
     }
 
-    const ASR_SYNONYM_MAP = {
-        'hey': 'he',
-        'listen': 'listened',
-        'sandcastles': 'sandcastle',
-        'mother': 'mom',
-        'mom': 'mother',
-        'bike': 'car',
-        'bicycle': 'car',
-        'motorbike': 'car',
-        'brought': 'carried',
-        'onto': 'the',
-        'up': 'the'
-    };
+    function calculateSimilarity(candidateTokens, targetTokens) {
+        if (!candidateTokens.length || !targetTokens.length) return 0;
+        const dp = Array.from({ length: candidateTokens.length + 1 }, () =>
+            new Array(targetTokens.length + 1).fill(0)
+        );
+        for (let i = 0; i <= candidateTokens.length; i++) dp[i][0] = i;
+        for (let j = 0; j <= targetTokens.length; j++) dp[0][j] = j;
 
-    function matchKeywordCoverage(candidateNorm, item) {
-        const keywords = item.keywords || [];
-        if (!keywords.length) return 0;
-        const candidateWords = new Set(candidateNorm.split(' '));
-        const expandedWords = new Set(candidateWords);
-        candidateWords.forEach((w) => {
-            if (ASR_SYNONYM_MAP[w]) expandedWords.add(ASR_SYNONYM_MAP[w]);
-        });
-
-        let matched = 0;
-        keywords.forEach((kw) => {
-            const kwNorm = normalizeText(kw);
-            if (kwNorm.includes(' ')) {
-                if (candidateNorm.includes(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                const parts = kwNorm.split(' ');
-                if (parts.every((p) => expandedWords.has(p))) {
-                    matched += 1;
-                    return;
-                }
-            } else {
-                if (expandedWords.has(kwNorm)) {
-                    matched += 1;
-                    return;
-                }
-                for (const [k, v] of Object.entries(ASR_SYNONYM_MAP)) {
-                    if (v === kwNorm && expandedWords.has(k)) {
-                        matched += 1;
-                        return;
-                    }
+        for (let i = 1; i <= candidateTokens.length; i++) {
+            for (let j = 1; j <= targetTokens.length; j++) {
+                if (candidateTokens[i - 1] === targetTokens[j - 1]) {
+                    dp[i][j] = dp[i - 1][j - 1];
+                } else {
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + 1
+                    );
                 }
             }
-        });
-        return matched / keywords.length;
+        }
+        const dist = dp[candidateTokens.length][targetTokens.length];
+        const maxLen = Math.max(candidateTokens.length, targetTokens.length);
+        return (maxLen - dist) / maxLen;
     }
 
     function matchVariants(candidateNorm, item) {
         const variants = [item.answer].concat(Array.isArray(item.variants) ? item.variants : []);
+        const candidateWords = candidateNorm.split(' ').filter(Boolean);
+        const criticalWords = ['what', 'where', 'when', 'why', 'who', 'how', 'not', 'no', 'never'];
+
         for (let i = 0; i < variants.length; i += 1) {
             const vNorm = normalizeText(variants[i]);
             if (candidateNorm === vNorm) return true;
-            const cWords = candidateNorm.split(' ');
-            const vWords = vNorm.split(' ');
-            if (cWords.length === vWords.length && cWords.slice().sort().join(' ') === vWords.slice().sort().join(' ')) {
-                return true;
-            }
+
+            const vWords = vNorm.split(' ').filter(Boolean);
+            if (Math.abs(candidateWords.length - vWords.length) > 1) continue;
+
+            const requiredCritical = vWords.filter(w => criticalWords.includes(w));
+            const hasAllCritical = requiredCritical.every(w => candidateWords.includes(w));
+            if (!hasAllCritical && requiredCritical.length > 0) continue;
+
+            const sim = calculateSimilarity(candidateWords, vWords);
+            if (sim >= 0.88) return true;
         }
         return false;
     }
@@ -3007,16 +2914,10 @@ const lessonData = [
         let passed = false;
         let bestTranscript = candidates[0] ? candidates[0].transcript : '';
 
-        // 1. Kiểm tra đa biến thể và từ khóa
+        // 1. Kiểm tra đa biến thể với chuẩn hóa nghiêm ngặt
         for (let i = 0; i < candidates.length; i += 1) {
             const cNorm = normalizeText(candidates[i].transcript);
             if (matchVariants(cNorm, item)) {
-                passed = true;
-                bestTranscript = candidates[i].transcript;
-                break;
-            }
-            const coverage = matchKeywordCoverage(cNorm, item);
-            if (coverage >= 0.75) {
                 passed = true;
                 bestTranscript = candidates[i].transcript;
                 break;
@@ -3038,19 +2939,23 @@ const lessonData = [
         dom.transcript.textContent = bestTranscript || (candidates[0] && candidates[0].transcript) || '';
         if (passed) {
             state.completed.add(state.currentIndex);
+            state.questionStatus.set(state.currentIndex, 'correct');
             setResult('Đạt. Chuỗi phát âm đã khớp yêu cầu.', 'success');
             renderProgress();
             finishLessonIfComplete();
         } else {
+            state.questionStatus.set(state.currentIndex, 'wrong');
             setResult('Chưa đạt. Hãy nói lại đúng cả chuỗi.', 'error');
+            renderProgress();
         }
     }
 
     function startRecognition() {
         if (!Recognition || !currentItem()) return;
         if (state.listening && state.recognition) {
-            state.recognition.stop();
-            setResult('Đang chấm câu vừa nói.');
+            stopRecognition();
+            setResult('Đã hủy nghe. Nhấn micro để thử lại.');
+            dom.transcript.textContent = 'Nhấn micro và bắt đầu nói.';
             return;
         }
         const recognition = new Recognition();
@@ -3061,6 +2966,7 @@ const lessonData = [
         state.recognition = recognition;
         state.listening = true;
         dom.mic.classList.add('listening');
+        dom.mic.title = 'Đang nghe... Nhấn để hủy';
         dom.transcript.textContent = 'Đang nghe...';
         setResult('Hãy nói trọn câu.');
 
@@ -3077,6 +2983,7 @@ const lessonData = [
         recognition.onend = () => {
             state.listening = false;
             dom.mic.classList.remove('listening');
+            dom.mic.title = 'Bắt đầu nói';
         };
         recognition.start();
     }
@@ -3133,6 +3040,7 @@ const lessonData = [
     function restartLesson() {
         stopRecognition();
         state.completed.clear();
+        if (state.questionStatus) state.questionStatus.clear();
         shuffleOrder();
         state.currentIndex = 0;
         dom.modal.classList.add('is-hidden');
@@ -3150,7 +3058,7 @@ const lessonData = [
         if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) return;
         if (event.ctrlKey || event.metaKey || event.altKey) return;
 
-        if (event.key.toLowerCase() === 'h') {
+        if (event.code === 'Space' || event.key === ' ' || event.key.toLowerCase() === 'h') {
             event.preventDefault();
             showHelp();
             return;
